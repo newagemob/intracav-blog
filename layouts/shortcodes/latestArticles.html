@@ -1,0 +1,11 @@
+<!-- latest articles shortcode -->
+
+<div class="latest-articles">
+  <ul>
+    {{ range first 5 .Site.RegularPages.ByDate.Reverse}}
+    <li>
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </li>
+    {{ end }}
+  </ul>
+</div>

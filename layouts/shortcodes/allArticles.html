@@ -1,0 +1,11 @@
+<!-- all articles -->
+
+<div class="all-articles">
+  <ul>
+    {{ range .Site.RegularPages.ByDate.Reverse}}
+    <li>
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </li>
+    {{ end }}
+  </ul>
+</div>

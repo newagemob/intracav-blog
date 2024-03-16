@@ -1,0 +1,192 @@
+baseURL: https://blog.intracav.ai
+languageCode: en-us
+title: IntraCav Blog
+paginate: 5
+theme: PaperMod
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+params:
+  env: production
+  title: "IntraCav Blog"
+  description: "Vascular Access Knowledge Base and Data Science"
+  author: ["I.M. Wright", "Dennis Woo", "Blaine Pantano", "Mike Stern"]
+  keywords:
+    [
+      "IntraCav",
+      "IntraCav Blog",
+      "IntraCav AI",
+      "IntraCav",
+      "Vascular Access",
+      "Data Science",
+      "Machine Learning",
+      "Deep Learning",
+      "Artificial Intelligence",
+      "TheVascularGuy",
+      "ThatVascularGuy",
+      "VascularGuy",
+      "Dennis Woo",
+      "Dr. Mike Stern",
+      "Dr. Stern Vascular",
+      "Isaiah M. Wright",
+      "I.M. Wright",
+      "Blaine Pantano",
+      "Blaine Derrick",
+      "Healthcare",
+      "Medical Imaging",
+      "Ultrasound",
+      "Doppler",
+      "Vascular Ultrasound",
+      "Vascular Doppler",
+      "Vascular Access",
+      "Vascular Access Ultrasound",
+      "Vascular Access Doppler",
+      "Vascular Access Ultrasound Imaging",
+      "Vascular Access Doppler Imaging",
+      "Medical AI",
+      "Clinical Machine Learning",
+      "Clinical AI",
+      "Clinical Data Science",
+      "Clinical Data Analysis",
+      "Clinical Data Mining",
+      "Clinical Data Visualization",
+      "Clinical Data Analytics",
+      "Clinical Data Engineering",
+      "Clinical Data Management",
+      "Clinical Data Integration",
+      "Clinical Data Warehousing",
+      "Clinical Data Lake",
+      "Clinical Data Mart",
+      "Clinical Data Repository",
+      "Clinical Data Model",
+      "Clinical Data Standard",
+      "Clinical Data Quality",
+      "Clinical Data Governance",
+      "Clinical Data Security",
+      "Clinical Data Privacy",
+      "Clinical Data Ethics",
+      "Clinical Data Policy",
+      "Clinical Data Regulation",
+      "Clinical Data Compliance",
+      "Clinical Data Protection",
+      "Clinical Data Sovereignty",
+      "Clinical Data Ownership",
+      "Clinical Data Stewardship",
+      "Clinical Data Custodianship",
+      "Clinical Data Trust",
+      "Clinical Data Provenance",
+      "Clinical Data Lineage",
+      "Clinical Data Traceability",
+      "Clinical Data Transparency",
+      "Clinical Data Accountability",
+      "Clinical Data Responsibility",
+      "Clinical Data Liability",
+      "Clinical Data Risk",
+      "Clinical Data Assurance",
+      "Clinical Data Resilience",
+      "Clinical Data Continuity",
+      "Clinical Data Recovery",
+      "Clinical Data Backup",
+      "Clinical Data Archiving",
+      "Clinical Data Retention",
+      "Clinical Data Disposal",
+      "Clinical Data Destruction",
+      "Clinical Data Deletion",
+      "Clinical Data Erasure",
+      "Clinical Data Purge",
+      "Clinical Data Sanitization",
+      "Clinical Data Anonymization",
+      "Clinical Data Pseudonymization",
+      "Clinical Data Encryption",
+      "Clinical Data Tokenization",
+      "Clinical Data Masking",
+      "Clinical Data Obfuscation",
+      "Clinical Data Redaction",
+      "Clinical Data Deidentification",
+      "Clinical Data Reidentification",
+      "Clinical Data Identification",
+      "Clinical Data Authentication",
+      "Clinical Data Authorization",
+      "Clinical Data Access",
+      "Clinical Data Control",
+      "Clinical Data Audit",
+      "Clinical Data Monitoring",
+      "Clinical Data Surveillance",
+      "Clinical Data Inspection",
+      "Clinical Data Investigation",
+      "Clinical Data Analysis",
+      "Clinical Data Interpretation",
+      "Clinical Data Evaluation",
+      "Clinical Data Validation",
+      "Clinical Data Verification",
+      "Clinical Data Certification",
+      "Clinical Data Accreditation",
+      "Clinical Data Attestation",
+      "Clinical Data Assurance",
+      "Clinical Data Compliance",
+      "Clinical Data Conformance",
+      "Clinical Data Quality",
+      "Clinical Data Integrity",
+      "Clinical Data Reliability",
+      "Clinical Data Availability",
+      "Clinical Data Accessibility",
+      "Clinical Data Usability",
+      "Clinical Data Interoperability",
+      "Clinical Data Portability",
+      "Clinical Data Transferability",
+      "Clinical Data Mobility",
+    ]
+  DateFormat: "January 2, 2006"
+  defaultTheme: auto # dark, light
+  disableThemeToggle: false
+
+  ShowReadingTime: true
+  ShowShareButtons: false
+  ShowPostNavLinks: false
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: false
+  ShowWordCount: true
+  ShowRssButtonInSectionTermList: true
+  UseHugoToc: true
+  disableSpecial1stPost: false
+  disableScrollToTop: false
+  comments: false
+  hidemeta: false
+  hideSummary: false
+  showtoc: false
+  tocopen: false
+
+  socialIcons:
+    - name: x
+      url: "https://x.com/"
+    - name: tiktok
+      url: "https://tiktok.com"
+    - name: github
+      url: "https://github.com/"
+
+  # profile-mode
+  profileMode:
+    enabled: false # needs to be explicitly set
+    title: Intracav Blog
+    subtitle: "Vascular Access Knowledge Base and Data Science"
+    imageUrl: "<img location>"
+    imageWidth: 120
+    imageHeight: 120
+    imageTitle: intracav
+    buttons:
+      - name: Posts
+        url: posts
+      - name: Tags
+        url: tags
+
+  # home-info mode
+  homeInfoParams:
+    Title: "IntraCav \U0001F44B"
+    Content: Vascular Access Knowledge Base and Data Science
