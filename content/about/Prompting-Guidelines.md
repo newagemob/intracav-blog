@@ -2,6 +2,7 @@
 title = 'Exploring the Dynamics of Clinical Decision Making in Vascular Access'
 date = 2024-03-16T13:16:02-05:00
 tags = ["Vascular Access", "Patient Care", "Clinical Decisions", "Human Judgement"]
+author = ["IntraCav-CM01"]
 +++
 
 # Maximizing Your Experience with IntraCav AI: A Comprehensive Guide
