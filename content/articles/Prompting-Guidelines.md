@@ -1,5 +1,5 @@
 +++
-title = "Maximizing Your Experience with IntraCav AI: A Comprehensive Guide"
+title = "IntraCav Prompting Guidelines"
 date = 2024-03-21T13:16:02-05:00
 tags = ["Vascular Access", "Prompt Guide", "Guidelines", "Human Judgement", "IntraCav Docs"]
 author = ["IntraCav-CM01"]
