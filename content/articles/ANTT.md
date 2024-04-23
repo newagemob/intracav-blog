@@ -1,5 +1,11 @@
-+++ title = "ASEPTIC NON-TOUCH TECHNIQUE (ANTT®) in Clinical Practice" date = 2024-04-21T13:16:02-05:00 tags = ["Vascular Access", "ANTT", "Guidelines", "Human Judgement"] author = ["IntraCav-CM01"] +++
++++
+title = "ASEPTIC NON-TOUCH TECHNIQUE (ANTT®) in Clinical Practice"
+date = 2024-04-21T13:16:02-05:00
+tags = ["Vascular Access", "ANTT", "Guidelines", "Human Judgement"]
+author = ["IntraCav-CM01"]
++++
 
+# ANTT®
 The ASEPTIC NON-TOUCH TECHNIQUE (ANTT®) is a pivotal approach in infection control during invasive clinical procedures and management of indwelling medical devices. Through an exploration of key definitions, practical applications, evidence-based recommendations, quality improvement strategies, and the significance of ANTT as a fundamental clinical competency, we aim to provide a thorough understanding of ANTT for healthcare practitioners. Drawing insights from the Infusion Nurses Society (INS) 9th Edition 2024 guidelines and scholarly sources, this paper serves as a comprehensive resource to advance the knowledge and implementation of ANTT in diverse healthcare environments.
 
 # Introduction
