@@ -7,16 +7,15 @@ author = ["Dennis Woo"]
 
 # Deep Dive Blood Draws and Hemolysis
 
-Follow along Intracav Chat and interact with it yourself with this link  
-https://www.intracav.ai/chat?chatId=n934mw6jvnxddlevmiiesrxs
+Follow along Intracav Chat and interact with it yourself with [this link](https://www.intracav.ai/chat?chatId=n934mw6jvnxddlevmiiesrxs)
 
 CVR (Catheter to Vein Ratio). The Optimal ratio is \<45%.
 
 ## The Physics and Math
 
-Alright, lets talk about hemolysis but in this piece we’ll focus the context on blood draws, lab draws, blood samples, and lab samples. There’s a lot of contradicting anecdotes and confusion around which is the best device or technique to use. So lets deep dive into the physics and biochemistry for this one. LETS GOOO\!\!\! First we’ll dive into the physics and then we’ll go into the biochemistry specifically around the red blood cells. 
+Alright, let's talk about hemolysis but in this piece we’ll focus the context on blood draws, lab draws, blood samples, and lab samples. There’s a lot of contradicting anecdotes and confusion around which is the best device or technique to use. So let's deep dive into the physics and biochemistry for this one. LET'S GOOO\!\!\! First we’ll dive into the physics and then we’ll go into the biochemistry specifically around the red blood cells. 
 
-First off which physics? Fluid dynamics specifically. But lets narrow it down even further to what I think are the 4 major components to our everyday practice and then we’ll hyperfocus on blood draws. Here are the 4 physics laws and principles we need to understand fully before we can make any conclusions on best practice. Hagen–Poiseuille’s Law, Bernoulli, Venturi, and Cavitation. Let’s start with the most complex: Here’s Poiseuille’s Law equation:  
+First off which physics? Fluid dynamics specifically. But let's narrow it down even further to what I think are the 4 major components to our everyday practice and then we’ll hyperfocus on blood draws. Here are the 4 physics laws and principles we need to understand fully before we can make any conclusions on best practice. Hagen–Poiseuille’s Law, Bernoulli, Venturi, and Cavitation. Let’s start with the most complex: Here’s Poiseuille’s Law equation:  
 ![][image1]
 
 where
@@ -36,9 +35,9 @@ where
 Now I know that even this equation is flawed because we are not taking into account the Darcy–Weisbach equation… Let’s hold off on that for now and just focus on Poiseuille’s Law. 
 
 ![][image2]  
-Now lets disregard the “Viscosity” because it’s something we cannot change during blood draw (blood aspiration)(Lab draw). Let’s also disregard “Area” since radius is a easier metric to mentally convert with our known gauge and french catheter sizes. And then of course for the context of blood draw lets also disregard “Length” in Poiseuille’s equation we don’t have much control over that either.   
+Now let's disregard the “Viscosity” because it’s something we cannot change during blood draw (blood aspiration)(Lab draw). Let’s also disregard “Area” since radius is an easier metric to mentally convert with our known gauge and french catheter sizes. And then of course for the context of blood draw let's also disregard “Length” in Poiseuille’s equation we don’t have much control over that either.   
 ![][image3]  
-So now lets just look at the Delta p, Q, and R. IMO these are the most easily influenced by our day to day decisions in what we do. So let’s start with Delta p. This is the pressure affected by all the other variables and ultimately affects the red blood cells. Negative pressure being the critical factor that hemolyzes our blood samples.   
+So now let's just look at the Delta p, Q, and R. IMO these are the most easily influenced by our day to day decisions in what we do. So let’s start with Delta p. This is the pressure affected by all the other variables and ultimately affects the red blood cells. Negative pressure being the critical factor that hemolyzes our blood samples.   
 ![][image4]  
 LOOK AT THE RADIUS, what do you see next to it on the top right corner of that “R”?   
 ![][image5]  
@@ -46,7 +45,7 @@ It’s an EXPONENT of 4\! That is more than just 400% of R. That is R to the POW
 ![][image6]  
 So for every change in radius there is a HUGE jump in the effect that the gauge size has on the pressure and flowrate. So a change of RADIUS from a 22g to a 20g catheter does not affect the pressure by 2x of “gauge”… Its effect is WAAAAY more. Soak that in for a few minutes before moving on.   
 ![][image7]  
-Now the other variable we significantly influence in our day-to-day practice is the “Q” in this equation, representing Volumetric Flow Rate. “Q” in my opinion is THE MOST important variable and the most controllable. This is how hard we flush or aspirate \= “Human Effort”. So to summarize; the catheter and vein RADIUS we choose, to intervene (insert) (draw blood) from, has a significant influence on the outcome of our interventions. In my opinion the “Q” is the keystone. It’s the most controllable by the clinician and the most range of influence but it’s THE MOST UNKNOWN. We as clinicians who act everyday on the most influential part of this physics LAW, have the LEAST amount of knowledge on it. When’s the last time you measured the volumetric flow rate of your flush or aspiration? Fine, let’s make it more easily measurable; When was the last time you knew the psi of how hard you flush or aspirate? The most influential variable and we NEVER measure it… And in our infinite wisdom we adjust our flowrate by telling each other “flush hard”, “less hard”, “not so hard”, or “niiiiiiice and easy”. Unquantified, subjective, and qualitative feedback. This is the wrong way to pass down the skill to the next generation of highly trained clinicians. So let’s take one more step in breaking the cycle of “catheter abuse” by elevating our understanding of the physics behind our interventions, by understanding the “WHY”. Lets move onto the main reason why we’re here, CAVITATION.   
+Now the other variable we significantly influence in our day-to-day practice is the “Q” in this equation, representing Volumetric Flow Rate. “Q” in my opinion is THE MOST important variable and the most controllable. This is how hard we flush or aspirate \= “Human Effort”. So to summarize; the catheter and vein RADIUS we choose, to intervene (insert) (draw blood) from, has a significant influence on the outcome of our interventions. In my opinion the “Q” is the keystone. It’s the most controllable by the clinician and the most range of influence but it’s THE MOST UNKNOWN. We as clinicians who act everyday on the most influential part of this physics LAW, have the LEAST amount of knowledge on it. When’s the last time you measured the volumetric flow rate of your flush or aspiration? Fine, let’s make it more easily measurable; When was the last time you knew the psi of how hard you flush or aspirate? The most influential variable and we NEVER measure it… And in our infinite wisdom we adjust our flowrate by telling each other “flush hard”, “less hard”, “not so hard”, or “niiiiiiice and easy”. Unquantified, subjective, and qualitative feedback. This is the wrong way to pass down the skill to the next generation of highly trained clinicians. So let’s take one more step in breaking the cycle of “catheter abuse” by elevating our understanding of the physics behind our interventions, by understanding the “WHY”. Let's move onto the main reason why we’re here, CAVITATION.   
 ![][image8]
 
 It’s when the red blood cells experience so much negative pressure that the blood cells either rupture, structurally compromise, or the contents of the red blood cell are pulled out of the membranes and into the extracellular space. Here’s what leaks out of the RBC’s (Red Blood Cells) and will result in falsely elevated lab values:  
@@ -58,7 +57,6 @@ Every amount of negative pressure starts to hemolyze blood but there are factors
 
 1. \> \-4 psi dramatically increases hemolysis   
    ![][image10]  
-   https://www.ncbi.nlm.nih.gov/core/lw/2.0/html/tileshop\_pmc/tileshop\_pmc\_inline.html?title=Click%20on%20image%20to%20zoom\&p=PMC3\&id=3662481\_nihms139674f2.jpg  
    1. Our human effort when aspirating with syringes  
    2. The vacutainers and the amount of negative pressure
 
@@ -66,7 +64,6 @@ Every amount of negative pressure starts to hemolyze blood but there are factors
 
 2. The longer we HOLD negative pressure the more we hemolyze.  
    ![][image11]  
-   https://www.ncbi.nlm.nih.gov/core/lw/2.0/html/tileshop\_pmc/tileshop\_pmc\_inline.html?title=Click%20on%20image%20to%20zoom\&p=PMC3\&id=3662481\_nihms139674f3.jpg  
    1. The longer we hold that neg pressure with the syringe, the more we hemolyze.  
    2. The longer we have the vacutainers partially filled without venting the tube, the more we hemolyze
 
@@ -83,7 +80,7 @@ So now that we’ve addressed PSI and concluded that the least amount of psi the
 ![][image12]  
 “R” being a denominator indicates the catheter diameter size has an exponentially inverse correlation with pressure. Meaning; the larger the gauge of the catheter the less pressure we will output. This means the larger the catheter the faster we can pull blood without hemolyzing the sample. That’s great news\!.... Right?\! Doesn’t that mean the larger the better? Yes\! And NO\! Yes, it’s better if we are only taking into account the diameter of the catheter however we need to take into account CVR (Catheter to Vein Ratio). This means if the catheter and syringe is larger in an APPROPRIATE CVR vein, there will be enough blood flowing around the catheter and toward the tip without hemolytic negative pressure effects. HOWEVER, if the catheter is so large that it chokes the veins, preventing blood flow, decreasing the pressure at the tip of the catheter we will increase the negative pressure at that site and inside of the vein, catheter, syringe, or tube. This will more likely hemolyze, cavitate the blood cells. So if the catheter is too big for the vein it will more likely hemolyze the blood. This is why bigger isn’t always better. CVR needs to be taken into account. 
 
-But lets say it’s already in there and we can’t just replace it with a smaller or larger catheter. What else can we change or adjust in our practice? The diameter of the syringe and the diameter of the vein (When possible)\! 
+But let's say it’s already in there and we can’t just replace it with a smaller or larger catheter. What else can we change or adjust in our practice? The diameter of the syringe and the diameter of the vein (When possible)\! 
 
 ![][image12]  
 The diameter of the vein can be increased by preventing backflow of the blood with a tourniquet or placing the potential insertion site and lowering it so gravity will help slow down the flow back to the heart. Be cautious with this technique. Although it will hyperinflate the vein it can also hyper concentrate the contents of whole blood which will result in incorrect results. Even after releasing the tourniquet for 60 seconds before aspirating is not enough. We’ll deep dive on that later.
@@ -94,7 +91,7 @@ This means that the syringe sizes we use also influence the effort required to a
 
 Bigger is better if the CVR is optimal \<45%. But bigger is worse as the CVR increases. 
 
-There is a crucial variable that significantly distinguishes the hemolysis outcome between vacutainers and syringe blood draw. TIME. This is why we have such better results with 10ml large diameter syringe blood draws, than we do with 3ml small diameter syringe. We can decide to stop pulling and normalize the pressure and wait for the vein to fill back up with blood at the tip of the catheter. This will repressurize that part of the vein with more blood, but it requires TIME. The “Pull Pause” method will apply less TIME with negative pressure applied to the red blood cells. Unfortunately the vacutainers WILL hold that negative pressure forever… or at least until the pressure inside the tube is normalized by the clinician. So best thing to do is fill the entire tube COMPLETELY with the blood sample, Release the negative pressure by popping the top and immediately putting the top back on or allowing air to flow into the tubing while the top is still punctured with the needle. Normalize that pressure sooner than later to reduce hemolysis.
+There is a crucial variable that significantly distinguishes the hemolysis outcome between vacutainers and syringe blood draw. TIME. This is why we have such better results with 10ml large diameter syringe blood draws, than we do with 3ml small diameter syringe. We can decide to stop pulling and normalize the pressure and wait for the vein to fill back up with blood at the tip of the catheter. This will repressurize that part of the vein with more blood, but it requires TIME. The “Pull Pause” method will apply less TIME with negative pressure applied to the red blood cells. Unfortunately the vacutainers WILL hold that negative pressure forever… or at least until the pressure inside the tube is normalized by the clinician. So, the best thing to do is fill the entire tube COMPLETELY with the blood sample, Release the negative pressure by popping the top and immediately putting the top back on or allowing air to flow into the tubing while the top is still punctured with the needle. Normalize that pressure sooner than later to reduce hemolysis.
 
 ## TECHNIQUES
 
@@ -113,8 +110,8 @@ There is a crucial variable that significantly distinguishes the hemolysis outco
    1. **Solution:** Fill the tubes to recommended capacity.   
    2. **Solution:** Aspirate blood into smaller capacity tubes, ie pediatric/NICU/microtainers tubes  
 5. **Problem:** If the initial draw with vacutainer is too slow or stops, the sustained negative pressure will hemolyze the sample.  
-   1. **Solution:** Change to syringe draw system. If fails to draw from large diameter syringe, reattempt with thinner syringe.   
-   2. **Solution:** Pull Pause Method \- Pull gently to move blood into syringe then release tension to normalize pressure and allow for the veins to refill with blood at the tip of the catheter/needle. Repeat as necessary to obtain enough blood sample.   
+   1. **Solution:** Change to syringe draw system. If it fails to draw from a large diameter syringe, reattempt with thinner syringe.   
+   2. **Solution:** Pull Pause Method \- Pull gently to move blood into syringe then release tension to normalize pressure and allow for the veins to refill with blood at the tip of the catheter/needle. Repeat as necessary to obtain enough blood samples.   
 6. **Problem:** If the tourniquet is applied for too long it will inappropriately hemoconentrate at the puncture site resulting in falsely elevated results.   
    1. **Solution:** Don’t use tourniquet  
    2. **Solution:** Apply the tourniquet as far up away from the insertion site as possible  
@@ -137,8 +134,8 @@ There is a crucial variable that significantly distinguishes the hemolysis outco
 
 ## Discussion
 
-\*I know there’s studies out there that claim that the catheter size is what causes hemolysis, they’re right and they’re so wrong. They have partial data to prove it, and it doesn’t correlate with anecdote. “If the data and anecdote don’t line up, re-evaluate the data”, Jeff Bezos.  
-I keep hearing “22g and smaller catheters are causing hemolysis don’t draw blood from them” ok so we can’t use the 22g catheters but we can use the 23 gauge butterfly? What about our pediatric patients? What about the blood draw from initial stick, how come they’re allowed but nothing after? Then it must NOT be the catheter size but something else. That’s why we’re here. To re-evaluate the data so we can find solutions to prevent unnecessary trauma to the patient’s body.
+\*I know there’s studies out there that claim that the catheter size is what causes hemolysis, they’re right and they’re so wrong. They have partial data to prove it, and it doesn’t correlate with anecdotes. “If the data and anecdotes don’t line up, re-evaluate the data”, Jeff Bezos.  
+I keep hearing “22g and smaller catheters are causing hemolysis, don’t draw blood from them” ok so we can’t use the 22g catheters but we can use the 23 gauge butterfly? What about our pediatric patients? What about the blood draw from initial stick, how come they’re allowed but nothing after? Then it must NOT be the catheter size but something else. That’s why we’re here. To re-evaluate the data so we can find solutions to prevent unnecessary trauma to the patient’s body.
 
 I hear people say “why fix what ain’t broke”. Well… the deeper I dive into this thing called Vascular Access, the more broken I’m finding our standard practice to be. 50% of PIVC fail before end of treatment. Increased vein trauma and long term venous depletion due to multiple venipunctures or improper aspiration techniques throughout the hospital stay, even more so with hemolyzed lab samples. Iatrogenic anemia we like to chase after with blood transfusion. 
 
