@@ -2,7 +2,7 @@
 title = "ASEPTIC NON-TOUCH TECHNIQUE (ANTT®) in Clinical Practice"
 date = 2024-04-21T13:16:02-05:00
 tags = ["Vascular Access", "ANTT", "Guidelines", "Human Judgement"]
-author = ["IntraCav-CM01"]
+author = ["Intracav-CM01"]
 +++
 
 # Introduction

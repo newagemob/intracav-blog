@@ -1,6 +1,6 @@
 baseURL: https://blog.intracav.ai
 languageCode: en-us
-title: IntraCav Blog
+title: Intracav Blog
 paginate: 5
 theme: PaperMod
 
@@ -15,15 +15,15 @@ minify:
 
 params:
   env: production
-  title: "IntraCav Blog"
+  title: "Intracav Blog"
   description: "Vascular Access Knowledge Base and Data Science"
   author: ["I.M. Wright", "Dennis Woo", "Blaine Pantano", "Mike Stern"]
   keywords:
     [
-      "IntraCav",
-      "IntraCav Blog",
-      "IntraCav AI",
-      "IntraCav",
+      "Intracav",
+      "Intracav Blog",
+      "Intracav AI",
+      "Intracav",
       "Vascular Access",
       "Data Science",
       "Machine Learning",
@@ -188,5 +188,5 @@ params:
 
   # home-info mode
   homeInfoParams:
-    Title: "IntraCav \U0001F44B"
+    Title: "Intracav \U0001F44B"
     Content: Vascular Access Knowledge Base and Data Science

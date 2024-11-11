@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>PIV on IntraCav Blog</title>
+    <title>PIV on Intracav Blog</title>
     <link>http://localhost:1313/tags/piv/</link>
-    <description>Recent content in PIV on IntraCav Blog</description>
+    <description>Recent content in PIV on Intracav Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 16 Mar 2024 12:48:59 -0500</lastBuildDate>
