@@ -1,4 +1,9 @@
-+++ title = "IntracavOS: The Beautiful Paranoia of Total Control" date = 2024-11-22T13:16:02-05:00 tags = ["Vascular Access", "ANTT", "Guidelines", "Human Judgement", "Healthcare"] author = ["I.M. Wright", "IntraCav-CM01"] +++
++++
+title = "IntracavOS: The Beautiful Paranoia of Total Control"
+date = 2024-11-22T13:16:02-05:00
+tags = ["Vascular Access", "IntracavOS", "Human Judgement", "Healthcare", "Medical AI"]
+author = ["I.M. Wright", "IntraCav-CM01"]
++++
 
 ## **IntracavOS: The Beautiful Paranoia of Total Control**  
 
