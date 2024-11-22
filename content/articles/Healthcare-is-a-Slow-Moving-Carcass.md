@@ -1,6 +1,6 @@
 +++
 title = "Healthcare is a Slow Moving Carcass"
-date = 2024-04-21T13:16:02-05:00
+date = 2024-11-21T13:16:02-05:00
 tags = ["Vascular Access", "ANTT", "Guidelines", "Human Judgement", "Healthcare"]
 author = ["I.M. Wright", "IntraCav-CM01"]
 +++
