@@ -11,6 +11,8 @@ Welcome to Intracav AI, your dedicated assistant in the field of vascular access
 
 ## Prompting Guidelines and Recommendations
 
+<img width="1086" alt="prompt-architecture" src="https://github.com/user-attachments/assets/52e5295c-b47a-4657-939e-23bc9ef6b6e1" />
+
 ### 1. Be Specific and Clear in Your Queries
 
 When seeking information or guidance, providing specific details about the patient population, the intervention required, the control measures in place, and the desired outcomes will help tailor the response to your unique needs effectively. For example, instead of asking, "What are the complications of central lines?" consider asking, "What are the most common complications associated with the use of non-tunneled central venous catheters in critically ill adult patients, and how can they be prevented or managed?"
