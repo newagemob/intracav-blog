@@ -1,5 +1,5 @@
 +++
-title = "ASEPTIC NON-TOUCH TECHNIQUE (ANTT®) in Clinical Practice"
+title = "APIs Over Guidelines"
 date = 2025-05-03T21:36:02-05:00
 tags = ["Vascular Access", "Policies", "Guidelines", "Human Judgement", "Open Source Healthcare"]
 author = ["I.M. Wright"]
