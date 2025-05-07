@@ -7,7 +7,7 @@ author = ["I.M. Wright"]
 
 # Clinical Guidelines Are Rotting: The Case for API-First Medical Knowledge
 
-*To the clinicians, developers, and guideline stewards reading this—we need to talk about how medical knowledge is failing in the digital age.*
+*"All the projects I've had to make, I've made because I couldn't find anything better. I much prefer other people solving my problems. Me having to come up with a project is actually a failure on the world." - Linus Torvalds*
 
 ## The Problem: PDFs Aren't Healthcare APIs
 
