@@ -1,7 +1,7 @@
 +++
 title = "Blood Draws and Hemolysis"
 date = 2024-10-16T13:16:02-05:00
-tags = ["Vascular Access", "Hemolysis", "Blood Draws", "Cavitation", "CVR", "Catheter to Vein Ratio"]
+tags = ["Vascular Access", "Hemolysis", "Blood Draws", "Cavitation", "CVR", "Catheter to Vein Ratio", "nurse"]
 author = ["Dennis Woo"]
 +++
 
