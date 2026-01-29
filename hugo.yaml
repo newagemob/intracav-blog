@@ -10,6 +10,8 @@ security:
       - ^HUGO_
       - ^CI$
       - ^ADMIN_PASSWORD_HASH$
+      - ^GITHUB_REPO$
+      - ^GITHUB_TOKEN$
 
 # Pagination configuration
 pagination:

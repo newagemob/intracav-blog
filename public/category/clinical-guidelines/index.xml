@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Clinical Guidelines on Intracav Wiki</title>
-    <link>http://localhost:54936/category/clinical-guidelines/</link>
+    <link>http://localhost:1313/category/clinical-guidelines/</link>
     <description>Recent content in Clinical Guidelines on Intracav Wiki</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 21 Apr 2024 13:16:02 -0500</lastBuildDate>
-    <atom:link href="http://localhost:54936/category/clinical-guidelines/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/category/clinical-guidelines/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ASEPTIC NON-TOUCH TECHNIQUE (ANTT®) in Clinical Practice</title>
-      <link>http://localhost:54936/policies/antt/</link>
+      <link>http://localhost:1313/policies/antt/</link>
       <pubDate>Sun, 21 Apr 2024 13:16:02 -0500</pubDate>
-      <guid>http://localhost:54936/policies/antt/</guid>
+      <guid>http://localhost:1313/policies/antt/</guid>
       <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
 &lt;p&gt;The ASEPTIC NON-TOUCH TECHNIQUE (ANTT®) is a pivotal approach in infection control during invasive clinical procedures and management of indwelling medical devices. Through an exploration of key definitions, practical applications, evidence-based recommendations, quality improvement strategies, and the significance of ANTT as a fundamental clinical competency, we aim to provide a thorough understanding of ANTT for healthcare practitioners. Drawing insights from the Infusion Nurses Society (INS) 9th Edition 2024 guidelines and scholarly sources, this paper serves as a comprehensive resource to advance the knowledge and implementation of ANTT in diverse healthcare environments.&lt;/p&gt;</description>
     </item>

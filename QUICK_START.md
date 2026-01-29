@@ -14,20 +14,31 @@ Example output:
 7c13ab2e1d157284ccb11e9737f90cbb611b0acdb8f8dcd4e303a680e58a8b1b
 ```
 
-### 2. Build the Site with the Password Hash
+### 2. Set Up GitHub Token (for automatic file creation)
 
+Follow the instructions in [GITHUB_TOKEN_SETUP.md](./GITHUB_TOKEN_SETUP.md) to:
+1. Create a GitHub Personal Access Token
+2. Add it as a GitHub secret named `ADMIN_GITHUB_TOKEN`
+
+### 3. Build the Site with Environment Variables
+
+For production (GitHub Actions will handle this automatically once secrets are set):
 ```bash
-export ADMIN_PASSWORD_HASH="7c13ab2e1d157284ccb11e9737f90cbb611b0acdb8f8dcd4e303a680e58a8b1b"
+export ADMIN_PASSWORD_HASH="your-password-hash"
+export GITHUB_REPO="your-username/intracav-blog"
+export GITHUB_TOKEN="your-github-token"
 hugo
 ```
 
-Or for development:
+For local development:
 ```bash
 export ADMIN_PASSWORD_HASH="7c13ab2e1d157284ccb11e9737f90cbb611b0acdb8f8dcd4e303a680e58a8b1b"
+export GITHUB_REPO="your-username/intracav-blog"
+export GITHUB_TOKEN="your-github-token"
 hugo server
 ```
 
-### 3. Share the Password
+### 4. Share the Password
 
 Share the **password** (not the hash) with your clinical team via a secure channel.
 
@@ -43,6 +54,8 @@ Share the **password** (not the hash) with your clinical team via a secure chann
 
 ### Creating a New Article
 
+**Note**: Articles are now created automatically! The form will commit directly to your GitHub repository.
+
 1. Fill out the form:
    - **Title**: Article title (required)
    - **Content Type**: Choose "Policies" or "Blog"
@@ -56,13 +69,16 @@ Share the **password** (not the hash) with your clinical team via a secure chann
 2. Click "Preview" to see how it will look (optional)
 
 3. Click "Create Article" to submit
+   - The button will show "Creating..." while it works
+   - You'll see a success message when done
+   - The file will be committed to your GitHub repository
+   - The site will automatically rebuild and publish
 
-### If API is Not Configured
+### Troubleshooting
 
-If you see a message saying "API endpoint not configured", the system will:
-- Generate the markdown file content for you
-- Display it in an alert
-- You can copy this content and send it to your administrator to add manually
+If you see "GitHub integration not configured":
+- The admin needs to set up the GitHub token (see [GITHUB_TOKEN_SETUP.md](./GITHUB_TOKEN_SETUP.md))
+- For now, you can copy the markdown content from the browser console
 
 ---
 

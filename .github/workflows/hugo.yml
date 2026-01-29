@@ -55,6 +55,9 @@ jobs:
           HUGO_ENV: production
           # Admin password hash for secure authentication
           ADMIN_PASSWORD_HASH: ${{ secrets.ADMIN_PASSWORD_HASH }}
+          # GitHub integration for direct file creation from admin panel
+          GITHUB_REPO: ${{ github.repository }}
+          GITHUB_TOKEN: ${{ secrets.ADMIN_GITHUB_TOKEN }}
         run: |
           hugo \
             --minify \

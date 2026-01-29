@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Vascular Access on Intracav Wiki</title>
-    <link>http://localhost:54936/category/vascular-access/</link>
+    <link>http://localhost:1313/category/vascular-access/</link>
     <description>Recent content in Vascular Access on Intracav Wiki</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 16 Oct 2024 13:16:02 -0500</lastBuildDate>
-    <atom:link href="http://localhost:54936/category/vascular-access/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/category/vascular-access/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Blood Draws and Hemolysis</title>
-      <link>http://localhost:54936/policies/blood-draws-and-hemolysis/</link>
+      <link>http://localhost:1313/policies/blood-draws-and-hemolysis/</link>
       <pubDate>Wed, 16 Oct 2024 13:16:02 -0500</pubDate>
-      <guid>http://localhost:54936/policies/blood-draws-and-hemolysis/</guid>
+      <guid>http://localhost:1313/policies/blood-draws-and-hemolysis/</guid>
       <description>&lt;h1 id=&#34;deep-dive-blood-draws-and-hemolysis&#34;&gt;Deep Dive Blood Draws and Hemolysis&lt;/h1&gt;
 &lt;p&gt;Follow along Intracav Chat and interact with it yourself with &lt;a href=&#34;https://www.intracav.ai/chat?chatId=n934mw6jvnxddlevmiiesrxs&#34;&gt;this link&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;CVR (Catheter to Vein Ratio). The Optimal ratio is &amp;lt;45%.&lt;/p&gt;
