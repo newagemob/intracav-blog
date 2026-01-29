@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Blog on Intracav Wiki</title>
-    <link>http://localhost:53726/content_type/blog/</link>
+    <link>http://localhost:54936/content_type/blog/</link>
     <description>Recent content in Blog on Intracav Wiki</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 03 May 2025 21:36:02 -0500</lastBuildDate>
-    <atom:link href="http://localhost:53726/content_type/blog/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:54936/content_type/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>APIs Over Guidelines</title>
-      <link>http://localhost:53726/blog/apis-over-guidelines/</link>
+      <link>http://localhost:54936/blog/apis-over-guidelines/</link>
       <pubDate>Sat, 03 May 2025 21:36:02 -0500</pubDate>
-      <guid>http://localhost:53726/blog/apis-over-guidelines/</guid>
+      <guid>http://localhost:54936/blog/apis-over-guidelines/</guid>
       <description>&lt;h1 id=&#34;clinical-guidelines-are-rotting-the-case-for-api-first-medical-knowledge&#34;&gt;Clinical Guidelines Are Rotting: The Case for API-First Medical Knowledge&lt;/h1&gt;
 &lt;p&gt;&lt;em&gt;&amp;ldquo;All the projects I&amp;rsquo;ve had to make, I&amp;rsquo;ve made because I couldn&amp;rsquo;t find anything better. I much prefer other people solving my problems. Me having to come up with a project is actually a failure on the world.&amp;rdquo; - Linus Torvalds&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id=&#34;the-problem-pdfs-arent-healthcare-apis&#34;&gt;The Problem: PDFs Aren&amp;rsquo;t Healthcare APIs&lt;/h2&gt;
@@ -20,26 +20,26 @@
     </item>
     <item>
       <title>IntracavOS: The Beautiful Paranoia of Total Control</title>
-      <link>http://localhost:53726/blog/intracavos-the-beautiful-paranoia-of-total-control/</link>
+      <link>http://localhost:54936/blog/intracavos-the-beautiful-paranoia-of-total-control/</link>
       <pubDate>Fri, 22 Nov 2024 13:16:02 -0500</pubDate>
-      <guid>http://localhost:53726/blog/intracavos-the-beautiful-paranoia-of-total-control/</guid>
+      <guid>http://localhost:54936/blog/intracavos-the-beautiful-paranoia-of-total-control/</guid>
       <description>&lt;h2 id=&#34;intracavos-the-beautiful-paranoia-of-total-control&#34;&gt;&lt;strong&gt;IntracavOS: The Beautiful Paranoia of Total Control&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;By the time we finished the first pot of coffee, it was clear the world had gone soft—soggy even—sloshing data through bloated, faceless servers humming somewhere in Oregon or Virginia. Call it the convenience of APIs. Call it the outsourcing of trust. Call it what it is: a ticking bomb with a cheery user interface. When you’re dealing with healthcare—when you’re swimming in HIPAA compliance and patient data—the stakes aren’t just regulatory. They’re existential. And that’s why IntracavOS exists.&lt;/em&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Healthcare is a Slow Moving Carcass</title>
-      <link>http://localhost:53726/blog/healthcare-is-a-slow-moving-carcass/</link>
+      <link>http://localhost:54936/blog/healthcare-is-a-slow-moving-carcass/</link>
       <pubDate>Thu, 21 Nov 2024 13:16:02 -0500</pubDate>
-      <guid>http://localhost:53726/blog/healthcare-is-a-slow-moving-carcass/</guid>
+      <guid>http://localhost:54936/blog/healthcare-is-a-slow-moving-carcass/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;breaking-the-mold-in-vascular-access-why-healthcare-needs-a-gut-check&#34;&gt;Breaking the Mold in Vascular Access: Why Healthcare Needs a Gut Check&lt;/h2&gt;
 &lt;p&gt;I’m over the “innovation” talk in healthcare. Really. We’re all so busy positioning ourselves as the next big tech company with our “custom AI” projects, yet CLABSIs—central line-associated bloodstream infections—still run rampant across the country. Every professional I’ve met in healthcare has this bizarre inertia: they’re quick to ask but excruciatingly slow to spend, like they’re clinging to the hope that maybe if they wait just long enough, their problems will solve themselves. Spoiler alert: they won’t.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Introducing IntracavOS</title>
-      <link>http://localhost:53726/blog/introducing-intracavos/</link>
+      <link>http://localhost:54936/blog/introducing-intracavos/</link>
       <pubDate>Sat, 09 Nov 2024 13:16:02 -0500</pubDate>
-      <guid>http://localhost:53726/blog/introducing-intracavos/</guid>
+      <guid>http://localhost:54936/blog/introducing-intracavos/</guid>
       <description>&lt;h1 id=&#34;why-were-building-intracavos-real-talk-about-healthcare-ai&#34;&gt;Why We&amp;rsquo;re Building IntracavOS: Real Talk About Healthcare AI&lt;/h1&gt;
 &lt;p&gt;Look, let&amp;rsquo;s cut through the BS - healthcare AI is a mess. Everyone&amp;rsquo;s rushing to slap an LLM onto their product and call it &amp;ldquo;revolutionary,&amp;rdquo; but nobody&amp;rsquo;s talking about the elephant in the room: most of these solutions are held together with duct tape and prayers. At Intracav AI, we&amp;rsquo;re doing something different, and I&amp;rsquo;m going to tell you exactly why our approach is going to eat everyone else&amp;rsquo;s lunch.&lt;/p&gt;</description>
     </item>

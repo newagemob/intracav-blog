@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Admin on Intracav Wiki</title>
-    <link>http://localhost:53726/admin/</link>
+    <link>http://localhost:54936/admin/</link>
     <description>Recent content in Admin on Intracav Wiki</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:53726/admin/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:54936/admin/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
