@@ -4,22 +4,48 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 {{- /* Primary Meta Tags */ -}}
-<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} | {{ site.Title }}{{ end }}</title>
-<meta name="title" content="{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} | {{ site.Title }}{{ end }}">
-<meta name="description" content="{{ if .Description }}{{ .Description }}{{ else if .Summary }}{{ .Summary | truncate 160 }}{{ else }}{{ site.Params.description }}{{ end }}">
+<title>{{ if .IsHome }}{{ site.Title }} - {{ site.Params.description }}{{ else }}{{ .Title }} | {{ site.Title }}{{ end }}</title>
+<meta name="title" content="{{ if .IsHome }}{{ site.Title }} - {{ site.Params.description }}{{ else }}{{ .Title }} | {{ site.Title }}{{ end }}">
+<meta name="description" content="{{ if .Description }}{{ .Description }}{{ else if .Summary }}{{ .Summary | plainify | truncate 160 }}{{ else }}{{ site.Params.description }}{{ end }}">
+<meta name="author" content="{{ if .Params.author }}{{ delimit .Params.author ", " }}{{ else }}{{ delimit site.Params.author ", " }}{{ end }}">
+<meta name="keywords" content="{{ if .Params.category }}{{ delimit .Params.category ", " }}{{ else if .Params.tags }}{{ delimit .Params.tags ", " }}{{ else }}{{ delimit site.Params.keywords ", " }}{{ end }}">
+
+{{- /* Robots Meta Tags */ -}}
+{{- if or (isset .Params "noindex") (isset .Params "nofollow") }}
+<meta name="robots" content="{{ if .Params.noindex }}noindex{{ else }}index{{ end }}, {{ if .Params.nofollow }}nofollow{{ else }}follow{{ end }}">
+{{- else }}
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+{{- end }}
+<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 
 {{- /* Open Graph / Facebook */ -}}
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
 <meta property="og:url" content="{{ .Permalink }}">
 <meta property="og:title" content="{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }}{{ end }}">
-<meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else if .Summary }}{{ .Summary | truncate 200 }}{{ else }}{{ site.Params.description }}{{ end }}">
+<meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else if .Summary }}{{ .Summary | plainify | truncate 200 }}{{ else }}{{ site.Params.description }}{{ end }}">
 <meta property="og:site_name" content="{{ site.Title }}">
+{{- if .Params.image }}
+<meta property="og:image" content="{{ .Params.image | absURL }}">
+{{- else }}
+<meta property="og:image" content="{{ "/og-image.png" | absURL }}">
+{{- end }}
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="{{ site.LanguageCode | default "en_US" }}">
 
-{{- /* Twitter */ -}}
+{{- /* Twitter / X */ -}}
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="{{ .Permalink }}">
 <meta name="twitter:title" content="{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }}{{ end }}">
-<meta name="twitter:description" content="{{ if .Description }}{{ .Description }}{{ else if .Summary }}{{ .Summary | truncate 200 }}{{ else }}{{ site.Params.description }}{{ end }}">
+<meta name="twitter:description" content="{{ if .Description }}{{ .Description }}{{ else if .Summary }}{{ .Summary | plainify | truncate 200 }}{{ else }}{{ site.Params.description }}{{ end }}">
+{{- if .Params.image }}
+<meta name="twitter:image" content="{{ .Params.image | absURL }}">
+{{- else }}
+<meta name="twitter:image" content="{{ "/og-image.png" | absURL }}">
+{{- end }}
+<meta name="twitter:creator" content="@{{ if .Params.twitter }}{{ .Params.twitter }}{{ else }}intracav{{ end }}">
+<meta name="twitter:site" content="@intracav">
 
 {{- /* Article-specific meta tags */ -}}
 {{- if .IsPage }}
@@ -31,7 +57,12 @@
 <meta property="article:author" content="{{ index .Params.author 0 }}">
 {{- end }}
 {{- if .Params.category }}
-{{- range first 3 .Params.category }}
+{{- range first 5 .Params.category }}
+<meta property="article:tag" content="{{ . }}">
+{{- end }}
+{{- end }}
+{{- if .Params.tags }}
+{{- range first 5 .Params.tags }}
 <meta property="article:tag" content="{{ . }}">
 {{- end }}
 {{- end }}
@@ -48,8 +79,17 @@
 <link rel="alternate" type="application/rss+xml" href="{{ .Permalink }}" title="{{ site.Title }}">
 {{- end }}
 
-{{- /* Favicon */ -}}
+{{- /* Favicons and App Icons */ -}}
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="{{ site.Title }}">
 
 {{- /* Structured Data (JSON-LD) for SEO */ -}}
 {{- if .IsPage }}
@@ -58,23 +98,48 @@
   "@context": "https://schema.org",
   "@type": "{{ if eq .Params.content_type "policies" }}MedicalGuideline{{ else }}Article{{ end }}",
   "headline": "{{ .Title }}",
-  "description": "{{ if .Description }}{{ .Description }}{{ else if .Summary }}{{ .Summary | truncate 200 }}{{ end }}",
+  "description": "{{ if .Description }}{{ .Description }}{{ else if .Summary }}{{ .Summary | plainify | truncate 200 }}{{ end }}",
   "url": "{{ .Permalink }}",
   "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
   {{- if .Lastmod }}
   "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
   {{- end }}
+  {{- if .Params.image }}
+  "image": {
+    "@type": "ImageObject",
+    "url": "{{ .Params.image | absURL }}",
+    "width": 1200,
+    "height": 630
+  },
+  {{- else }}
+  "image": {
+    "@type": "ImageObject",
+    "url": "{{ "/og-image.png" | absURL }}",
+    "width": 1024,
+    "height": 1024
+  },
+  {{- end }}
   "author": {
-    "@type": "Organization",
+    "@type": "{{ if eq .Params.content_type "policies" }}Organization{{ else }}Person{{ end }}",
     "name": "{{ if .Params.author }}{{ index .Params.author 0 }}{{ else }}{{ site.Title }}{{ end }}"
   },
   "publisher": {
     "@type": "Organization",
     "name": "{{ site.Title }}",
-    "url": "{{ site.BaseURL }}"
+    "url": "{{ site.BaseURL }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ "/android-chrome-512x512.png" | absURL }}"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ .Permalink }}"
   }
   {{- if .Params.category }},
   "keywords": "{{ delimit .Params.category ", " }}"
+  {{- else if .Params.tags }},
+  "keywords": "{{ delimit .Params.tags ", " }}"
   {{- end }}
 }
 </script>
@@ -86,9 +151,21 @@
   "name": "{{ site.Title }}",
   "url": "{{ site.BaseURL }}",
   "description": "{{ site.Params.description }}",
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ site.Title }}",
+    "url": "{{ site.BaseURL }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ "/android-chrome-512x512.png" | absURL }}"
+    }
+  },
   "potentialAction": {
     "@type": "SearchAction",
-    "target": "{{ site.BaseURL }}/search?q={search_term_string}",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "{{ site.BaseURL }}/search?q={search_term_string}"
+    },
     "query-input": "required name=search_term_string"
   }
 }
@@ -102,24 +179,98 @@
   "@context": "https://schema.org",
   "@type": "MedicalGuideline",
   "name": "{{ .Title }}",
-  "description": "{{ if .Description }}{{ .Description }}{{ else if .Summary }}{{ .Summary | truncate 200 }}{{ end }}",
+  "description": "{{ if .Description }}{{ .Description }}{{ else if .Summary }}{{ .Summary | plainify | truncate 200 }}{{ end }}",
   "url": "{{ .Permalink }}",
-  {{- if .Params.effective_date }}
-  "datePublished": "{{ .Params.effective_date }}",
+  {{- if .Date }}
+  "datePublished": "{{ .Date.Format "2006-01-02" }}",
+  {{- end }}
+  {{- if .Lastmod }}
+  "dateModified": "{{ .Lastmod.Format "2006-01-02" }}",
   {{- end }}
   {{- if .Params.authority }}
-  "author": {
+  "recognizingAuthority": {
     "@type": "Organization",
     "name": "{{ .Params.authority }}"
   },
   {{- end }}
-  "guideline": {
-    "@type": "MedicalGuideline",
-    "guidelineSubject": "{{ if .Params.category }}{{ index .Params.category 0 }}{{ end }}"
+  {{- if .Params.author }}
+  "author": {
+    "@type": "Organization",
+    "name": "{{ index .Params.author 0 }}"
+  },
+  {{- end }}
+  "guidelineSubject": {
+    "@type": "MedicalEntity",
+    "name": "{{ if .Params.category }}{{ index .Params.category 0 }}{{ end }}"
   }
 }
 </script>
 {{- end }}
+
+{{- /* Breadcrumb Schema */ -}}
+{{- if not .IsHome }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "{{ site.BaseURL }}"
+    }
+    {{- if .Parent }}
+    ,{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "{{ .Parent.Title }}",
+      "item": "{{ .Parent.Permalink }}"
+    }
+    {{- end }}
+    {{- if .IsPage }}
+    ,{
+      "@type": "ListItem",
+      "position": {{ if .Parent }}3{{ else }}2{{ end }},
+      "name": "{{ .Title }}",
+      "item": "{{ .Permalink }}"
+    }
+    {{- end }}
+  ]
+}
+</script>
+{{- end }}
+
+{{- /* Organization Schema for Medical/Healthcare Site */ -}}
+{{- if .IsHome }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "{{ site.Title }}",
+  "url": "{{ site.BaseURL }}",
+  "logo": "{{ "/android-chrome-512x512.png" | absURL }}",
+  "description": "{{ site.Params.description }}",
+  "sameAs": [
+    {{- $length := len site.Params.socialIcons }}
+    {{- range $index, $social := site.Params.socialIcons }}
+    "{{ $social.url }}"{{ if ne (add $index 1) $length }},{{ end }}
+    {{- end }}
+  ]
+}
+</script>
+{{- end }}
+
+{{- /* Additional SEO Metadata */ -}}
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="format-detection" content="date=no">
+<meta name="format-detection" content="address=no">
+<meta name="format-detection" content="email=no">
+
+{{- /* Preconnect to external domains for performance */ -}}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 {{- /* Include extend_head for custom CSS/JS */ -}}
 {{- partial "extend_head.html" . }}

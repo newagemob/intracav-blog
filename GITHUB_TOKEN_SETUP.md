@@ -27,13 +27,13 @@ The admin panel needs a GitHub token to:
 2. Click **Settings** → **Secrets and variables** → **Actions**
 3. Click **"New repository secret"**
 4. Fill in:
-   - **Name**: `ADMIN_GITHUB_TOKEN`
+   - **Name**: `INTRACAV_ADMIN_TOKEN`
    - **Secret**: Paste the token you copied from Step 1
 5. Click **"Add secret"**
 
 ## Step 3: Verify Setup
 
-After adding both secrets (`ADMIN_PASSWORD_HASH` and `ADMIN_GITHUB_TOKEN`), your admin panel will be able to:
+After adding both secrets (`ADMIN_PASSWORD_HASH` and `INTRACAV_ADMIN_TOKEN`), your admin panel will be able to:
 
 1. Authenticate users with the password
 2. Create new policy/blog files directly in GitHub
@@ -63,7 +63,7 @@ After setup:
 ## Troubleshooting
 
 ### "GitHub integration not configured" error
-- Verify `ADMIN_GITHUB_TOKEN` is set in GitHub Secrets
+- Verify `INTRACAV_ADMIN_TOKEN` is set in GitHub Secrets
 - Make sure you've pushed the updated workflow file
 - Rebuild the site after adding the secret
 
@@ -74,7 +74,7 @@ After setup:
 
 ### Token expired
 - Generate a new token following Step 1
-- Update the `ADMIN_GITHUB_TOKEN` secret with the new token
+- Update the `INTRACAV_ADMIN_TOKEN` secret with the new token
 - Trigger a new deployment
 
 ## Summary
@@ -82,6 +82,6 @@ After setup:
 You need **2 secrets** in your GitHub repository:
 
 1. **`ADMIN_PASSWORD_HASH`**: For admin authentication (generated via `node scripts/generate-admin-token.js`)
-2. **`ADMIN_GITHUB_TOKEN`**: For creating files (GitHub Personal Access Token with `repo` scope)
+2. **`INTRACAV_ADMIN_TOKEN`**: For creating files (GitHub Personal Access Token with `repo` scope)
 
 Once both are set up, your clinical team can create content directly from the admin panel, and it will automatically appear in your repository and on your live site!

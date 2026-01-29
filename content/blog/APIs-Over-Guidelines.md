@@ -1,10 +1,16 @@
 +++
 title = "APIs Over Guidelines"
 date = 2025-05-03T21:36:02-05:00
+lastmod = 2025-05-03T21:36:02-05:00
 tags = ["Vascular Access", "Policies", "Guidelines", "Human Judgement", "Open Source Healthcare"]
+category = ["Healthcare Technology", "Clinical Guidelines", "Open Source"]
 content_type = "blog"
 audience = "clinician"
 author = ["I.M. Wright"]
+description = "Clinical guidelines as static PDFs are failing healthcare. Learn why API-first medical knowledge distribution is essential for modern clinical decision support and how open-source approaches can revolutionize healthcare interoperability."
+summary = "Why healthcare must move beyond PDF guidelines to API-first medical knowledge: exploring the interoperability crisis and the case for machine-readable clinical protocols."
+slug = "apis-over-guidelines"
+keywords = ["Healthcare APIs", "Clinical Guidelines", "Medical Interoperability", "FHIR", "Open Source Healthcare", "Clinical Decision Support", "HL7"]
 +++
 
 # Clinical Guidelines Are Rotting: The Case for API-First Medical Knowledge

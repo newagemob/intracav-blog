@@ -116,6 +116,17 @@
   {{- end }}
 {{- end }}
 
+{{- /* About Page CSS */ -}}
+{{- $aboutPage := resources.Get "css/about-page.css" -}}
+{{- if $aboutPage }}
+  {{- if not site.Params.assets.disableFingerprinting }}
+    {{- $aboutPage = $aboutPage | fingerprint }}
+    <link rel="stylesheet" href="{{ $aboutPage.RelPermalink }}" integrity="{{ $aboutPage.Data.Integrity }}" crossorigin="anonymous">
+  {{- else }}
+    <link rel="stylesheet" href="{{ $aboutPage.RelPermalink }}">
+  {{- end }}
+{{- end }}
+
 {{- /* Mobile Navigation JavaScript */ -}}
 {{- $mobileNavJS := resources.Get "js/mobile-nav.js" -}}
 {{- if $mobileNavJS }}

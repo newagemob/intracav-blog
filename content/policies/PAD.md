@@ -1,9 +1,17 @@
 +++
-title = 'PAD'
+title = 'Peripheral Arterial Disease (PAD): Clinical Overview and Vascular Access Considerations'
 date = 2024-03-16T12:47:43-05:00
+lastmod = 2024-03-16T12:47:43-05:00
 tags = ["Vascular Access", "PAD", "Peripheral"]
+category = ["Vascular Access", "Clinical Guidelines"]
 content_type = "policies"
 audience = "clinician"
+author = ["Intracav-CM01"]
+description = "Comprehensive clinical guideline for Peripheral Arterial Disease (PAD) management in vascular access: evidence-based protocols for assessment, prevention, and treatment strategies."
+summary = "Complete PAD clinical overview including diagnostic criteria, risk factors, and vascular access considerations based on INS guidelines and medical literature."
+slug = "peripheral-arterial-disease-pad"
+keywords = ["Peripheral Arterial Disease", "PAD", "Atherosclerosis", "Vascular Access", "Thrombophlebitis", "Clinical Guidelines"]
+authority = "Infusion Nurses Society (INS)"
 +++
 
 # **Peripheral Arterial Disease (PAD): A Comprehensive Overview**

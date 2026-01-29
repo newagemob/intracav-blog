@@ -4,53 +4,63 @@
 
 ### Main Pages
 - `/` - Homepage
-- `/articles/` - All articles listing
-- `/about/` - About page
+- `/about/` - About Intracav and the team
 - `/admin/` - Admin dashboard (password protected)
 
-### Content Type Routes
-- `/content_type/policies/` - All policy articles
-- `/content_type/blog/` - All blog posts
+### Content Sections
+- `/policies/` - Clinical policies and guidelines
+- `/blog/` - Clinical insights and analysis
 
 ### Audience Routes
-- `/audience/clinician/` - Clinician-facing content
-- `/audience/patient/` - Patient-facing content
+- `/audience/clinician/` - Content for clinicians
+- `/audience/patient/` - Content for patients
 
 ### Category Routes
 - `/category/` - All categories listing
 - `/category/{category-name}/` - Articles in a specific category
 
 ### Individual Articles
-- `/articles/{article-slug}/` - Individual article pages
+- `/policies/{article-slug}/` - Individual policy pages
+- `/blog/{article-slug}/` - Individual blog post pages
 
 ## Removed Routes
 
+- `/content_type/policies/` - **Redundant** (use `/policies/` instead)
+- `/content_type/blog/` - **Redundant** (use `/blog/` instead)
+- `/articles/` - **Removed** (content now organized by section)
 - `/tags/` - Tags taxonomy page (removed)
 - `/tags/{tag-name}/` - Individual tag pages (removed)
 
-Tags are still stored in frontmatter for potential future use but are not displayed or linked in the UI.
-
 ## Navigation Structure
 
-### Sidebar Navigation
-- Home
-- All Content
-- Content Types (Policies, Blog)
-- Audience (Clinician, Patient)
-- Browse (Categories, About)
-
 ### Header Navigation
-- Knowledge Base
 - Policies
 - Blog
 - For Clinicians
 - For Patients
+- Categories
 - About
+
+### Sidebar Navigation
+- **Intracav Wiki**
+  - Home
+  - Policies
+  - Blog
+- **Audience**
+  - For Clinicians
+  - For Patients
+- **Browse**
+  - Categories
+  - About
+
+### Mobile Navigation
+Same as Header Navigation plus quick access to emergency/high-priority content.
 
 ## Data Organization
 
-All content is organized using:
-- **content_type**: policies or blog
-- **audience**: clinician or patient
-- **category**: topic-based categories (primary organization method)
-- **tags**: stored in frontmatter but not displayed (for internal use)
+All content is organized using Hugo taxonomies:
+- **content_type**: `policies` or `blog` (used for internal organization, not exposed as routes)
+- **audience**: `clinician` or `patient` (exposed as `/audience/{type}/`)
+- **category**: Topic-based categories (primary browsing method)
+
+**Note**: The `content_type` taxonomy remains in the configuration for content organization but is not exposed as public routes to avoid redundancy with section-based routes (`/policies/` and `/blog/`).

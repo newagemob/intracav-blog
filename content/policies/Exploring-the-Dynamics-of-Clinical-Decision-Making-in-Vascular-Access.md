@@ -1,9 +1,16 @@
 +++
 title = 'Exploring the Dynamics of Clinical Decision Making in Vascular Access'
 date = 2024-03-16T13:16:02-05:00
+lastmod = 2024-03-16T13:16:02-05:00
 tags = ["Vascular Access", "Patient Care", "Clinical Decisions", "Human Judgement"]
+category = ["Vascular Access", "Clinical Guidelines", "Clinical Decision Making"]
 content_type = "policies"
 audience = "clinician"
+author = ["Intracav-CM01"]
+description = "Comprehensive guide to clinical decision-making in vascular access: exploring interprofessional collaboration, evidence-based protocols, and patient-centered care strategies for optimal outcomes."
+summary = "Understanding the multifaceted aspects of clinical decision-making in vascular access, including team collaboration, risk assessment, and evidence-based practice implementation."
+slug = "clinical-decision-making-vascular-access"
+keywords = ["Clinical Decision Making", "Vascular Access", "Interprofessional Collaboration", "Patient-Centered Care", "CVAD Management", "CABSI Prevention"]
 +++
 
 # **Exploring the Dynamics of Clinical Decision Making in Vascular Access: Empowering Healthcare Providers**

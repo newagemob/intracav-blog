@@ -1,9 +1,17 @@
 +++
-title = 'Optimizing Vascular Device Removal'
+title = 'Optimizing Vascular Device Removal: Evidence-Based Strategies'
 date = 2024-03-16T12:48:59-05:00
+lastmod = 2024-03-16T12:48:59-05:00
 tags = ["Vascular Access", "PIV", "Access Device", "Device Removal"]
+category = ["Vascular Access", "Clinical Procedures"]
 content_type = "policies"
 audience = "clinician"
+author = ["Intracav-CM01"]
+description = "Evidence-based clinical guidelines for vascular access device removal: comprehensive protocols for PIVCs, midline catheters, and central lines to optimize patient safety and outcomes."
+summary = "Complete guide to vascular device removal strategies including assessment criteria, removal techniques, and complication prevention based on INS guidelines."
+slug = "optimizing-vascular-device-removal"
+keywords = ["Vascular Device Removal", "PIVC Removal", "Catheter Removal", "Central Line Removal", "Midline Catheter", "Clinical Protocol"]
+authority = "Infusion Nurses Society (INS)"
 +++
 
 # Optimizing Vascular Access Device Removal: Evidence-Based Strategies and Recommendations

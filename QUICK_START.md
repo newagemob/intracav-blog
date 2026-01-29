@@ -25,16 +25,16 @@ Follow the instructions in [GITHUB_TOKEN_SETUP.md](./GITHUB_TOKEN_SETUP.md) to:
 For production (GitHub Actions will handle this automatically once secrets are set):
 ```bash
 export ADMIN_PASSWORD_HASH="your-password-hash"
-export GITHUB_REPO="your-username/intracav-blog"
-export GITHUB_TOKEN="your-github-token"
+export INTRACAV_REPO="your-username/intracav-blog"
+export INTRACAV_ADMIN_TOKEN="your-github-token"
 hugo
 ```
 
 For local development:
 ```bash
 export ADMIN_PASSWORD_HASH="7c13ab2e1d157284ccb11e9737f90cbb611b0acdb8f8dcd4e303a680e58a8b1b"
-export GITHUB_REPO="your-username/intracav-blog"
-export GITHUB_TOKEN="your-github-token"
+export INTRACAV_REPO="your-username/intracav-blog"
+export INTRACAV_ADMIN_TOKEN="your-github-token"
 hugo server
 ```
 

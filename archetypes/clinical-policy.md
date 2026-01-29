@@ -33,7 +33,12 @@ regulatory_refs = [""]
 
 # Hugo Metadata
 date = {{ .Date }}
-description = ""
+lastmod = {{ .Date }}
+description = ""           # SEO meta description (150-160 characters)
+summary = ""               # Short summary for listings and social sharing
+slug = ""                  # URL slug (optional)
+image = ""                 # Featured image URL for Open Graph
+keywords = []              # Additional SEO keywords
 draft = true
 +++
 

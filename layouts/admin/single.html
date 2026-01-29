@@ -98,8 +98,8 @@ Your article content here in Markdown format..."></textarea>
 // Expected password hash (set at build time via ADMIN_PASSWORD_HASH env var)
 const EXPECTED_PASSWORD_HASH = '{{ getenv "ADMIN_PASSWORD_HASH" | default "" }}';
 // GitHub configuration for direct file creation
-const GITHUB_REPO = '{{ getenv "GITHUB_REPO" | default "" }}'; // e.g., "username/intracav-blog"
-const GITHUB_TOKEN = '{{ getenv "GITHUB_TOKEN" | default "" }}'; // GitHub Personal Access Token
+const INTRACAV_REPO = '{{ getenv "INTRACAV_REPO" | default "" }}'; // e.g., "username/intracav-blog"
+const INTRACAV_ADMIN_TOKEN = '{{ getenv "INTRACAV_ADMIN_TOKEN" | default "" }}'; // GitHub Personal Access Token
 
 // Hash function (SHA-256)
 async function hashPassword(password) {
@@ -196,15 +196,15 @@ ${data.category.length > 0 ? `category = [${data.category.map(c => `"${c}"`).joi
 ${data.content}`;
 
   // Check if GitHub integration is configured
-  if (!GITHUB_REPO || !GITHUB_TOKEN) {
-    alert(`GitHub integration not configured. Please set GITHUB_REPO and GITHUB_TOKEN environment variables.\n\nYou can manually create the file at: content/${contentDir}/${filename}`);
+  if (!INTRACAV_REPO || !INTRACAV_ADMIN_TOKEN) {
+    alert(`GitHub integration not configured. Please set INTRACAV_REPO and INTRACAV_ADMIN_TOKEN environment variables.\n\nYou can manually create the file at: content/${contentDir}/${filename}`);
     console.log('Generated markdown:', frontmatter);
     return;
   }
 
   try {
     // Create file via GitHub API
-    const [owner, repo] = GITHUB_REPO.split('/');
+    const [owner, repo] = INTRACAV_REPO.split('/');
     const path = `content/${contentDir}/${filename}`;
     
     // Show loading state
@@ -216,7 +216,7 @@ ${data.content}`;
     const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`, {
       method: 'PUT',
       headers: {
-        'Authorization': `token ${GITHUB_TOKEN}`,
+        'Authorization': `token ${INTRACAV_ADMIN_TOKEN}`,
         'Accept': 'application/vnd.github.v3+json',
         'Content-Type': 'application/json'
       },

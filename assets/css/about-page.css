@@ -1,0 +1,289 @@
+/* =====================================================
+   About Page
+   ===================================================== */
+
+.handbook-about-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 var(--space-6) var(--space-24);
+}
+
+@media (max-width: 768px) {
+  .handbook-about-page {
+    padding: 0 var(--space-4) var(--space-16);
+  }
+}
+
+/* Hero Section */
+.handbook-about-hero {
+  text-align: center;
+  padding: var(--space-20) 0 var(--space-16);
+}
+
+@media (max-width: 768px) {
+  .handbook-about-hero {
+    padding: var(--space-12) 0 var(--space-10);
+  }
+}
+
+.handbook-about-hero-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin: 0 0 var(--space-5) 0;
+  color: var(--color-text-primary);
+}
+
+.dark .handbook-about-hero-title {
+  color: var(--color-dark-text-primary);
+}
+
+.handbook-about-hero-description {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  max-width: 720px;
+  margin: 0 auto;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.dark .handbook-about-hero-description {
+  color: var(--color-dark-text-secondary);
+}
+
+/* Content */
+.handbook-about-content {
+  margin-bottom: var(--space-20);
+}
+
+.handbook-about-content h2 {
+  font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--color-text-primary);
+  margin: var(--space-16) 0 var(--space-6) 0;
+  padding-top: var(--space-16);
+  border-top: 1px solid var(--color-border-primary);
+}
+
+.dark .handbook-about-content h2 {
+  color: var(--color-dark-text-primary);
+  border-top-color: var(--color-dark-border);
+}
+
+.handbook-about-content h2:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.handbook-about-content h3 {
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--color-text-primary);
+  margin: var(--space-10) 0 var(--space-3) 0;
+}
+
+.dark .handbook-about-content h3 {
+  color: var(--color-dark-text-primary);
+}
+
+.handbook-about-content p {
+  font-size: var(--text-base);
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--space-4) 0;
+}
+
+.dark .handbook-about-content p {
+  color: var(--color-dark-text-secondary);
+}
+
+.handbook-about-content p strong {
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.dark .handbook-about-content p strong {
+  color: var(--color-dark-text-primary);
+}
+
+.handbook-about-content hr {
+  margin: var(--space-16) 0;
+  border: none;
+  border-top: 1px solid var(--color-border-primary);
+}
+
+.dark .handbook-about-content hr {
+  border-top-color: var(--color-dark-border);
+}
+
+.handbook-about-content ul {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-6) 0;
+}
+
+.handbook-about-content ul li {
+  padding-left: var(--space-6);
+  margin-bottom: var(--space-3);
+  position: relative;
+}
+
+.handbook-about-content ul li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--color-info-accent);
+  font-weight: 600;
+}
+
+.handbook-about-content a {
+  color: var(--color-info-accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--transition-base);
+}
+
+.handbook-about-content a:hover {
+  color: var(--color-info-accent-hover);
+  text-decoration: underline;
+}
+
+/* CTA Section */
+.handbook-about-cta {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-primary);
+  border-radius: 16px;
+  padding: var(--space-12);
+  margin-top: var(--space-20);
+}
+
+.dark .handbook-about-cta {
+  background: var(--color-dark-bg-secondary);
+  border-color: var(--color-dark-border);
+}
+
+@media (max-width: 768px) {
+  .handbook-about-cta {
+    padding: var(--space-8) var(--space-5);
+  }
+}
+
+.handbook-about-cta-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.handbook-about-cta-title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-3) 0;
+}
+
+.dark .handbook-about-cta-title {
+  color: var(--color-dark-text-primary);
+}
+
+.handbook-about-cta-description {
+  font-size: var(--text-lg);
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--space-10) 0;
+}
+
+.dark .handbook-about-cta-description {
+  color: var(--color-dark-text-secondary);
+}
+
+.handbook-about-cta-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.handbook-about-cta-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-6);
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border-primary);
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark .handbook-about-cta-link {
+  background: var(--color-dark-bg-primary);
+  border-color: var(--color-dark-border);
+}
+
+.handbook-about-cta-link:hover {
+  border-color: var(--color-info-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.dark .handbook-about-cta-link:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.handbook-about-cta-link > svg:first-child {
+  flex-shrink: 0;
+  color: var(--color-info-accent);
+}
+
+.handbook-about-cta-link > div {
+  flex: 1;
+  text-align: left;
+}
+
+.handbook-about-cta-link h3 {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-1) 0;
+}
+
+.dark .handbook-about-cta-link h3 {
+  color: var(--color-dark-text-primary);
+}
+
+.handbook-about-cta-link:hover h3 {
+  color: var(--color-info-accent);
+}
+
+.handbook-about-cta-link p {
+  font-size: var(--text-sm);
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.dark .handbook-about-cta-link p {
+  color: var(--color-dark-text-secondary);
+}
+
+.handbook-about-cta-link > svg:last-child {
+  flex-shrink: 0;
+  color: var(--color-text-tertiary);
+  transition: transform var(--transition-base), color var(--transition-base);
+}
+
+.handbook-about-cta-link:hover > svg:last-child {
+  transform: translateX(4px);
+  color: var(--color-info-accent);
+}

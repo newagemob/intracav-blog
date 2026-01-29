@@ -10,8 +10,8 @@ security:
       - ^HUGO_
       - ^CI$
       - ^ADMIN_PASSWORD_HASH$
-      - ^GITHUB_REPO$
-      - ^GITHUB_TOKEN$
+      - ^INTRACAV_REPO$
+      - ^INTRACAV_ADMIN_TOKEN$
 
 # Pagination configuration
 pagination:
@@ -30,8 +30,31 @@ buildDrafts: false
 buildFuture: false
 buildExpired: false
 
+# SEO and Sitemap Configuration
+sitemap:
+  changefreq: weekly
+  filename: sitemap.xml
+  priority: 0.5
+
+# Permalinks for clean URLs
+permalinks:
+  blog: /blog/:slug/
+  policies: /policies/:slug/
+
+# Output formats
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+  section:
+    - HTML
+    - RSS
+  page:
+    - HTML
+
 minify:
-  disableXML: true
+  disableXML: false
   minifyOutput: true
 
 # Markup configuration
@@ -46,6 +69,7 @@ params:
   title: "Intracav Wiki"
   description: "Living documentation and guidelines for vascular access and clinical practice"
   author: ["I.M. Wright", "Dennis Woo", "Blaine Pantano", "Mike Stern"]
+  images: ["/og-image.png"]
   keywords:
     [
       "Intracav",

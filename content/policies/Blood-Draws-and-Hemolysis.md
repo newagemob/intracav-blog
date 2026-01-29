@@ -1,11 +1,16 @@
 +++
-title = "Blood Draws and Hemolysis"
+title = "Blood Draws and Hemolysis: Physics, Biochemistry, and Best Practices"
 date = 2024-10-16T13:16:02-05:00
+lastmod = 2024-10-16T13:16:02-05:00
 content_type = "policies"
 audience = "clinician"
 category = ["Vascular Access", "Clinical Procedures"]
 tags = ["Hemolysis", "Blood Draws", "Cavitation", "CVR", "Catheter to Vein Ratio"]
 author = ["Dennis Woo"]
+description = "Comprehensive guide to preventing hemolysis during blood draws: understanding catheter-to-vein ratio (CVR), cavitation physics, and evidence-based techniques for optimal lab sample quality."
+summary = "Deep dive into hemolysis prevention in blood draws, exploring the physics of cavitation, optimal CVR ratios, and clinical best practices for maintaining sample integrity."
+slug = "blood-draws-hemolysis-prevention"
+keywords = ["Hemolysis Prevention", "Blood Draw Technique", "Catheter to Vein Ratio", "CVR", "Cavitation", "Lab Sample Quality", "Phlebotomy"]
 +++
 
 # Deep Dive Blood Draws and Hemolysis

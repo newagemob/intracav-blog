@@ -1,10 +1,16 @@
 +++
 title = "Healthcare is a Slow Moving Carcass"
 date = 2024-11-21T13:16:02-05:00
+lastmod = 2024-11-21T13:16:02-05:00
 tags = ["Vascular Access", "ANTT", "Guidelines", "Human Judgement", "Healthcare"]
+category = ["Healthcare Innovation", "Vascular Access", "Clinical Practice"]
 content_type = "blog"
 audience = "clinician"
 author = ["I.M. Wright", "IntraCav-CM01"]
+description = "A candid critique of healthcare's resistance to innovation: why vascular access and clinical practice remain stuck in outdated patterns while real problems like CLABSIs persist."
+summary = "Breaking through healthcare's bureaucratic inertia: why the industry needs to stop fetishizing AI and start solving actual clinical problems."
+slug = "healthcare-slow-moving-carcass"
+keywords = ["Healthcare Innovation", "CLABSI Prevention", "Vascular Access", "Healthcare Technology", "Clinical Practice Change"]
 +++
 
 ---

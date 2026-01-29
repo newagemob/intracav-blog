@@ -1,11 +1,18 @@
 +++
 title = "ASEPTIC NON-TOUCH TECHNIQUE (ANTT®) in Clinical Practice"
 date = 2024-04-21T13:16:02-05:00
+lastmod = 2024-04-21T13:16:02-05:00
 content_type = "policies"
 audience = "clinician"
 category = ["Infection Control", "Clinical Guidelines"]
 tags = ["ANTT", "Guidelines", "Human Judgement"]
 author = ["Intracav-CM01"]
+description = "Comprehensive clinical guideline for ASEPTIC NON-TOUCH TECHNIQUE (ANTT®) - evidence-based infection control protocols for invasive procedures and medical device management in healthcare settings."
+summary = "Complete ANTT® implementation guide covering Standard-ANTT and Surgical-ANTT protocols, quality improvement strategies, and evidence-based recommendations for infection prevention."
+slug = "antt-aseptic-non-touch-technique"
+keywords = ["ANTT", "Aseptic Technique", "Infection Control", "Healthcare Associated Infections", "Clinical Guidelines", "Standard Precautions", "Medical Device Safety"]
+authority = "Infusion Nurses Society (INS)"
+effective_date = "2024-04-21"
 +++
 
 # Introduction

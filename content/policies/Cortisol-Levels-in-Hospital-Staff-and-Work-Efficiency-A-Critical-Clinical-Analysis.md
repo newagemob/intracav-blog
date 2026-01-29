@@ -1,10 +1,16 @@
 +++
 title = "Cortisol Levels in Hospital Staff and Work Efficiency: A Critical Clinical Analysis"
 date = 2024-06-01T13:16:02-05:00
-tags = [  "Vascular Access" ]
+lastmod = 2024-06-01T13:16:02-05:00
+tags = ["Vascular Access", "Healthcare Workers", "Burnout", "Clinical Excellence"]
+category = ["Healthcare Workforce", "Clinical Guidelines"]
 author = ["Dennis Woo", "IntraCav-CM01"]
 content_type = "policies"
 audience = "clinician"
+description = "Critical analysis of cortisol dysregulation in hospital staff and its impact on clinical performance, patient safety, and healthcare workforce wellbeing with evidence-based interventions."
+summary = "Addressing the hidden crisis of cortisol dysregulation among healthcare workers: evidence-based analysis of stress impact on medical excellence and practical interventions."
+slug = "cortisol-levels-hospital-staff-work-efficiency"
+keywords = ["Healthcare Worker Burnout", "Cortisol Dysregulation", "Clinical Performance", "Patient Safety", "Staff Wellbeing", "Hospital Efficiency"]
 +++
 
 # Cortisol Levels in Hospital Staff and Work Efficiency: A Critical Clinical Analysis
