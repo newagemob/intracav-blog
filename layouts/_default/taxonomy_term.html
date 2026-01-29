@@ -1,0 +1,54 @@
+{{- /* Layout for taxonomy TERM pages (e.g., /content_type/policies/, /category/infection-control/) */ -}}
+{{- define "main" }}
+<div class="handbook-taxonomy-term-page">
+  <nav class="handbook-breadcrumbs">
+    <a href="/">Home</a>
+    <span class="handbook-breadcrumbs-separator">/</span>
+    <a href="/{{ .Data.Singular }}/">{{ .Data.Singular | title }}</a>
+    <span class="handbook-breadcrumbs-separator">/</span>
+    <span class="handbook-breadcrumbs-current">{{ .Title }}</span>
+  </nav>
+
+  <header class="handbook-page-header">
+    <h1 class="handbook-page-title">{{ .Title }}</h1>
+    {{- if .Description }}
+    <p class="handbook-page-description">{{ .Description }}</p>
+    {{- end }}
+  </header>
+
+  <div class="handbook-article-list">
+    {{- $pages := .Pages }}
+    {{- if $pages }}
+      {{- range $pages.ByDate.Reverse }}
+      <article class="handbook-article-card">
+        <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+        {{- if .Description }}
+        <p class="handbook-article-description">{{ .Description }}</p>
+        {{- else if .Summary }}
+        <p class="handbook-article-description">{{ .Summary | truncate 200 }}</p>
+        {{- end }}
+        <div class="handbook-article-meta">
+          {{- if .Params.content_type }}
+          <span class="handbook-badge handbook-badge-{{ .Params.content_type | lower }}">{{ .Params.content_type }}</span>
+          {{- end }}
+          {{- if .Params.audience }}
+          <span class="handbook-badge handbook-badge-audience-{{ .Params.audience | lower }}">{{ .Params.audience | title }}</span>
+          {{- end }}
+          {{- if .Params.category }}
+          <span class="handbook-badge handbook-badge-category">{{ index .Params.category 0 }}</span>
+          {{- end }}
+          {{- if .Date }}
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+          {{- end }}
+        </div>
+      </article>
+      {{- end }}
+    {{- else }}
+    <div class="handbook-empty-state">
+      <h2>No articles found</h2>
+      <p>There are no articles in this {{ .Data.Singular }} yet.</p>
+    </div>
+    {{- end }}
+  </div>
+</div>
+{{- end }}

@@ -1,0 +1,58 @@
+{{- /*
+  CALLOUT SHORTCODE
+  Medical-grade callout blocks for information, warnings, contraindications
+  
+  Usage:
+    {{< callout type="info" title="Information" >}}
+    Content goes here...
+    {{< /callout >}}
+  
+  Parameters:
+    - type: info | success | warning | critical | regulatory
+    - title: Optional title (defaults based on type)
+    - icon: Optional custom icon (defaults based on type)
+*/ -}}
+
+{{- $type := .Get "type" | default "info" -}}
+{{- $title := .Get "title" | default "" -}}
+{{- $icon := .Get "icon" | default "" -}}
+
+{{- if not $title -}}
+  {{- if eq $type "info" -}}
+    {{- $title = "Information" -}}
+  {{- else if eq $type "success" -}}
+    {{- $title = "Success" -}}
+  {{- else if eq $type "warning" -}}
+    {{- $title = "Caution" -}}
+  {{- else if eq $type "critical" -}}
+    {{- $title = "Contraindication" -}}
+  {{- else if eq $type "regulatory" -}}
+    {{- $title = "Regulatory Requirement" -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if not $icon -}}
+  {{- if eq $type "info" -}}
+    {{- $icon = "ⓘ" -}}
+  {{- else if eq $type "success" -}}
+    {{- $icon = "✓" -}}
+  {{- else if eq $type "warning" -}}
+    {{- $icon = "⚠" -}}
+  {{- else if eq $type "critical" -}}
+    {{- $icon = "⊗" -}}
+  {{- else if eq $type "regulatory" -}}
+    {{- $icon = "§" -}}
+  {{- end -}}
+{{- end -}}
+
+<aside class="callout callout-{{ $type }}" role="note" aria-label="{{ $title }}">
+  <div class="callout-header">
+    {{- if $icon -}}
+    <span class="callout-icon" aria-hidden="true">{{ $icon }}</span>
+    {{- end -}}
+    <h4 class="callout-title">{{ $title }}</h4>
+  </div>
+  <div class="callout-content">
+    {{ .Inner | markdownify }}
+  </div>
+</aside>

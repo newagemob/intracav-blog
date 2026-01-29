@@ -2,60 +2,84 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://blog.intracav.ai/</loc>
+    <loc>http://localhost:1313/blog/apis-over-guidelines/</loc>
+    <lastmod>2025-05-03T21:36:02-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/audience/</loc>
+    <lastmod>2025-05-03T21:36:02-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/content_type/blog/</loc>
+    <lastmod>2025-05-03T21:36:02-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/content_type/</loc>
+    <lastmod>2025-05-03T21:36:02-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/intracavos-the-beautiful-paranoia-of-total-control/</loc>
+    <lastmod>2024-11-22T13:16:02-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/healthcare-is-a-slow-moving-carcass/</loc>
+    <lastmod>2024-11-21T13:16:02-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/introducing-intracavos/</loc>
+    <lastmod>2024-11-09T13:16:02-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/policies/blood-draws-and-hemolysis/</loc>
+    <lastmod>2024-10-16T13:16:02-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/category/</loc>
+    <lastmod>2024-10-16T13:16:02-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/category/clinical-procedures/</loc>
+    <lastmod>2024-10-16T13:16:02-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/content_type/policies/</loc>
+    <lastmod>2024-10-16T13:16:02-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/category/vascular-access/</loc>
+    <lastmod>2024-10-16T13:16:02-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/policies/cortisol-levels-in-hospital-staff-and-work-efficiency-a-critical-clinical-analysis/</loc>
+    <lastmod>2024-06-01T13:16:02-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/policies/antt/</loc>
+    <lastmod>2024-04-21T13:16:02-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/category/clinical-guidelines/</loc>
+    <lastmod>2024-04-21T13:16:02-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/category/infection-control/</loc>
+    <lastmod>2024-04-21T13:16:02-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/policies/prompting-guidelines/</loc>
+    <lastmod>2024-03-21T13:16:02-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/policies/exploring-the-dynamics-of-clinical-decision-making-in-vascular-access/</loc>
     <lastmod>2024-03-16T13:16:02-05:00</lastmod>
   </url><url>
-    <loc>https://blog.intracav.ai/tags/clinical-decisions/</loc>
-    <lastmod>2024-03-16T13:16:02-05:00</lastmod>
-  </url><url>
-    <loc>https://blog.intracav.ai/articles/exploring-the-dynamics-of-clinical-decision-making-in-vascular-access/</loc>
-    <lastmod>2024-03-16T13:16:02-05:00</lastmod>
-  </url><url>
-    <loc>https://blog.intracav.ai/tags/human-judgement/</loc>
-    <lastmod>2024-03-16T13:16:02-05:00</lastmod>
-  </url><url>
-    <loc>https://blog.intracav.ai/tags/patient-care/</loc>
-    <lastmod>2024-03-16T13:16:02-05:00</lastmod>
-  </url><url>
-    <loc>https://blog.intracav.ai/tags/</loc>
-    <lastmod>2024-03-16T13:16:02-05:00</lastmod>
-  </url><url>
-    <loc>https://blog.intracav.ai/tags/vascular-access/</loc>
-    <lastmod>2024-03-16T13:16:02-05:00</lastmod>
-  </url><url>
-    <loc>https://blog.intracav.ai/articles/</loc>
+    <loc>http://localhost:1313/blog/</loc>
     <lastmod>2024-03-16T13:09:51-05:00</lastmod>
   </url><url>
-    <loc>https://blog.intracav.ai/tags/access-device/</loc>
+    <loc>http://localhost:1313/policies/</loc>
+    <lastmod>2024-03-16T13:09:51-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/audience/clinician/</loc>
+    <lastmod>2024-03-16T13:09:51-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/audience/patient/</loc>
+    <lastmod>2024-03-16T13:09:51-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2024-03-16T13:09:51-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/policies/optimizing-vascular-device-removal/</loc>
     <lastmod>2024-03-16T12:48:59-05:00</lastmod>
   </url><url>
-    <loc>https://blog.intracav.ai/tags/device-removal/</loc>
-    <lastmod>2024-03-16T12:48:59-05:00</lastmod>
-  </url><url>
-    <loc>https://blog.intracav.ai/articles/optimizing-vascular-device-removal/</loc>
-    <lastmod>2024-03-16T12:48:59-05:00</lastmod>
-  </url><url>
-    <loc>https://blog.intracav.ai/tags/piv/</loc>
-    <lastmod>2024-03-16T12:48:59-05:00</lastmod>
-  </url><url>
-    <loc>https://blog.intracav.ai/tags/pad/</loc>
+    <loc>http://localhost:1313/policies/pad/</loc>
     <lastmod>2024-03-16T12:47:43-05:00</lastmod>
   </url><url>
-    <loc>https://blog.intracav.ai/articles/pad/</loc>
-    <lastmod>2024-03-16T12:47:43-05:00</lastmod>
-  </url><url>
-    <loc>https://blog.intracav.ai/tags/peripheral/</loc>
-    <lastmod>2024-03-16T12:47:43-05:00</lastmod>
-  </url><url>
-    <loc>https://blog.intracav.ai/tags/about/</loc>
+    <loc>http://localhost:1313/about/</loc>
     <lastmod>2024-03-16T12:23:18-05:00</lastmod>
   </url><url>
-    <loc>https://blog.intracav.ai/about/</loc>
-    <lastmod>2024-03-16T12:23:18-05:00</lastmod>
-  </url><url>
-    <loc>https://blog.intracav.ai/tags/updates/</loc>
-    <lastmod>2024-03-16T12:23:18-05:00</lastmod>
-  </url><url>
-    <loc>https://blog.intracav.ai/categories/</loc>
+    <loc>http://localhost:1313/admin/</loc>
   </url>
 </urlset>

@@ -1,0 +1,69 @@
+{{- /*
+  DOCUMENT METADATA BLOCK SHORTCODE
+  Display formal document metadata in a structured grid
+  
+  Usage:
+    {{< document-metadata 
+        doc_id="IC-CP-001" 
+        version="1.2.0" 
+        effective="2024-04-21"
+        authority="Infection Control Committee"
+        next_review="2025-04-21"
+    >}}
+  
+  Parameters:
+    - doc_id: Document identifier
+    - version: Version number
+    - effective: Effective date (YYYY-MM-DD)
+    - authority: Approving authority
+    - next_review: Next review date (YYYY-MM-DD)
+    - revision: Revision date (YYYY-MM-DD)
+    - supersedes: Previous version reference
+*/ -}}
+
+{{- $doc_id := .Get "doc_id" -}}
+{{- $version := .Get "version" -}}
+{{- $effective := .Get "effective" -}}
+{{- $authority := .Get "authority" -}}
+{{- $next_review := .Get "next_review" -}}
+{{- $revision := .Get "revision" -}}
+{{- $supersedes := .Get "supersedes" -}}
+
+<div class="document-metadata" role="region" aria-label="Document Metadata">
+  <dl class="metadata-grid">
+    {{- with $doc_id -}}
+    <dt>Document ID:</dt>
+    <dd>{{ . }}</dd>
+    {{- end -}}
+    
+    {{- with $version -}}
+    <dt>Version:</dt>
+    <dd>{{ . }}</dd>
+    {{- end -}}
+    
+    {{- with $effective -}}
+    <dt>Effective Date:</dt>
+    <dd><time datetime="{{ . }}">{{ dateFormat "January 2, 2006" (time .) }}</time></dd>
+    {{- end -}}
+    
+    {{- with $revision -}}
+    <dt>Revision Date:</dt>
+    <dd><time datetime="{{ . }}">{{ dateFormat "January 2, 2006" (time .) }}</time></dd>
+    {{- end -}}
+    
+    {{- with $authority -}}
+    <dt>Authority:</dt>
+    <dd>{{ . }}</dd>
+    {{- end -}}
+    
+    {{- with $next_review -}}
+    <dt>Next Review:</dt>
+    <dd><time datetime="{{ . }}">{{ dateFormat "January 2, 2006" (time .) }}</time></dd>
+    {{- end -}}
+    
+    {{- with $supersedes -}}
+    <dt>Supersedes:</dt>
+    <dd>{{ . }}</dd>
+    {{- end -}}
+  </dl>
+</div>

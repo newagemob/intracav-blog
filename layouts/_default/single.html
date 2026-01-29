@@ -1,0 +1,92 @@
+{{- define "main" }}
+<article class="handbook-single-page">
+  <nav class="handbook-breadcrumbs">
+    <a href="/">Home</a>
+    <span class="handbook-breadcrumbs-separator">/</span>
+    {{- if .Section }}
+    <a href="/{{ .Section }}/">{{ .Section | title }}</a>
+    <span class="handbook-breadcrumbs-separator">/</span>
+    {{- end }}
+    <span class="handbook-breadcrumbs-current">{{ .Title }}</span>
+  </nav>
+
+  <header class="handbook-page-header">
+    <h1 class="handbook-page-title">{{ .Title }}</h1>
+    {{- if .Description }}
+    <p class="handbook-page-description">{{ .Description }}</p>
+    {{- end }}
+    <div class="handbook-page-meta-consolidated">
+      {{- $metaItems := slice -}}
+      {{- if .Params.content_type -}}
+        {{- $metaItems = $metaItems | append .Params.content_type -}}
+      {{- end -}}
+      {{- if .Params.status -}}
+        {{- $metaItems = $metaItems | append (printf "Status: %s" (.Params.status | title)) -}}
+      {{- end -}}
+      {{- if .Params.version -}}
+        {{- $metaItems = $metaItems | append (printf "Version %s" .Params.version) -}}
+      {{- end -}}
+      {{- if .Date -}}
+        {{- $metaItems = $metaItems | append (.Date.Format "Jan 2006") -}}
+      {{- end -}}
+      {{- if .Params.category -}}
+        {{- $metaItems = $metaItems | append (index .Params.category 0) -}}
+      {{- end -}}
+      {{- range $index, $item := $metaItems -}}
+        {{- if gt $index 0 }}<span class="meta-separator">•</span>{{- end -}}
+        <span>{{ $item }}</span>
+      {{- end -}}
+    </div>
+  </header>
+
+  <div class="handbook-content-wrapper">
+    <div class="handbook-content">
+      {{ .Content }}
+    </div>
+    {{- partial "conversion-side-rail.html" . -}}
+  </div>
+
+  {{- partial "conversion-end-section.html" . -}}
+
+  {{- /* SEO: Article Schema */ -}}
+  {{- if .IsPage }}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "{{ if eq .Params.content_type "policies" }}MedicalGuideline{{ else }}Article{{ end }}",
+    "headline": "{{ .Title }}",
+    "description": "{{ if .Description }}{{ .Description }}{{ else if .Summary }}{{ .Summary | truncate 200 }}{{ end }}",
+    "url": "{{ .Permalink }}",
+    "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
+    {{- if .Lastmod }}
+    "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
+    {{- end }}
+    "author": {
+      "@type": "{{ if .Params.author }}Person{{ else }}Organization{{ end }}",
+      "name": "{{ if .Params.author }}{{ index .Params.author 0 }}{{ else }}{{ site.Title }}{{ end }}"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "{{ site.Title }}"
+    }
+    {{- if .Params.category }},
+    "keywords": "{{ delimit .Params.category ", " }}"
+    {{- end }}
+  }
+  </script>
+  {{- end }}
+
+  {{- if .Params.category }}
+  <footer class="handbook-page-footer">
+    <div class="handbook-footer-section">
+      <strong class="handbook-footer-label">Categories:</strong>
+      <div class="handbook-footer-badges">
+        {{- range .Params.category }}
+        <a href="{{ "/category/" | relLangURL }}{{ . | urlize }}/" class="handbook-badge handbook-badge-category">{{ . }}</a>
+        {{- end }}
+      </div>
+    </div>
+  </footer>
+  {{- end }}
+</article>
+{{- end }}

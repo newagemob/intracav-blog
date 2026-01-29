@@ -1,0 +1,134 @@
+{{- define "main" }}
+<div class="handbook-list-page">
+  {{- /* Section Hero */ -}}
+  <header class="handbook-section-hero">
+    <h1 class="handbook-section-hero-title">{{ .Title }}</h1>
+    {{- if .Description }}
+    <p class="handbook-section-hero-description">{{ .Description }}</p>
+    {{- end }}
+    
+    {{- /* Meta info (count + last updated) */ -}}
+    <div class="handbook-section-hero-meta">
+      {{- $pageCount := len .Pages }}
+      {{- if gt $pageCount 0 }}
+      <span class="handbook-section-hero-meta-item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+        </svg>
+        {{ $pageCount }} {{ if eq $pageCount 1 }}article{{ else }}articles{{ end }}
+      </span>
+      {{- end }}
+      {{- if .Pages }}
+      {{- $latest := index (.Pages.ByDate.Reverse) 0 }}
+      {{- if $latest }}
+      <span class="meta-separator">•</span>
+      <span class="handbook-section-hero-meta-item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        Updated {{ $latest.Date.Format "Jan 2006" }}
+      </span>
+      {{- end }}
+      {{- end }}
+    </div>
+    
+    {{- /* Contextual conversion CTA */ -}}
+    {{- if eq .Section "policies" }}
+    <a href="https://qpolicy.ai" class="handbook-section-hero-cta" rel="noopener noreferrer">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+        <circle cx="9" cy="7" r="4"></circle>
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+      </svg>
+      <span>Standardize for your team</span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+        <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+    </a>
+    {{- else if or (eq .Section "blog") (in .RelPermalink "/audience/clinician") }}
+    <a href="https://intracav.ai" class="handbook-section-hero-cta" rel="noopener noreferrer">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+        <circle cx="12" cy="7" r="4"></circle>
+      </svg>
+      <span>Get personalized guidance</span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+        <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+    </a>
+    {{- else if in .RelPermalink "/audience/patient" }}
+    <a href="https://intracav.ai" class="handbook-section-hero-cta" rel="noopener noreferrer">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+        <circle cx="12" cy="7" r="4"></circle>
+      </svg>
+      <span>Explore patient resources</span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+        <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+    </a>
+    {{- end }}
+  </header>
+
+  <div class="handbook-article-list">
+    {{- $paginator := .Paginate .Pages.ByDate.Reverse }}
+    {{- if $paginator.Pages }}
+      {{- range $paginator.Pages }}
+      <a href="{{ .RelPermalink }}" class="handbook-article-card" data-searchable data-title="{{ .Title }}" data-url="{{ .RelPermalink }}" data-description="{{ .Description | default .Summary }}">
+        <article class="handbook-article-card-content">
+          <h2 class="handbook-article-card-title">{{ .Title }}</h2>
+          {{- if .Description }}
+          <p class="handbook-article-description">{{ .Description }}</p>
+          {{- else if .Summary }}
+          <p class="handbook-article-description">{{ .Summary | truncate 200 }}</p>
+          {{- end }}
+          <div class="handbook-article-meta">
+            {{- $metaItems := slice -}}
+            {{- if .Params.content_type -}}
+              {{- $metaItems = $metaItems | append .Params.content_type -}}
+            {{- end -}}
+            {{- if .Date -}}
+              {{- $metaItems = $metaItems | append (.Date.Format "Jan 2006") -}}
+            {{- end -}}
+            {{- if .Params.category -}}
+              {{- $metaItems = $metaItems | append (index .Params.category 0) -}}
+            {{- end -}}
+            {{- range $index, $item := $metaItems -}}
+              {{- if gt $index 0 }}<span class="meta-separator">•</span>{{- end -}}
+              <span class="handbook-article-meta-item">{{ $item }}</span>
+            {{- end -}}
+          </div>
+        </article>
+      </a>
+      {{- end }}
+
+      {{- if gt $paginator.TotalPages 1 }}
+      <nav class="handbook-pagination" aria-label="Pagination">
+        {{- if $paginator.HasPrev }}
+        <a href="{{ $paginator.Prev.URL }}" class="handbook-pagination-link" rel="prev">← Previous</a>
+        {{- else }}
+        <span></span>
+        {{- end }}
+        <span class="handbook-pagination-info">Page {{ $paginator.PageNumber }} of {{ $paginator.TotalPages }}</span>
+        {{- if $paginator.HasNext }}
+        <a href="{{ $paginator.Next.URL }}" class="handbook-pagination-link" rel="next">Next →</a>
+        {{- else }}
+        <span></span>
+        {{- end }}
+      </nav>
+      {{- end }}
+    {{- else }}
+    <div class="handbook-empty-state">
+      <h2>No articles found</h2>
+      <p>There are no articles in this section yet.</p>
+    </div>
+    {{- end }}
+  </div>
+</div>
+{{- end }}

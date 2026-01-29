@@ -1,0 +1,29 @@
+{{- /*
+  CLINICAL TABLE WRAPPER SHORTCODE
+  Wrap tables with proper medical-grade styling and responsive wrapper
+  
+  Usage:
+    {{< table-clinical caption="Table 1: Antiseptic Recommendations" >}}
+    | Site | Agent | Contact Time |
+    |------|-------|--------------|
+    | ... | ... | ... |
+    {{< /table-clinical >}}
+  
+  Parameters:
+    - caption: Table caption (optional but recommended)
+*/ -}}
+
+{{- $caption := .Get "caption" -}}
+
+<div class="table-wrapper" role="region" aria-label="Clinical Data Table" tabindex="0">
+  {{- if $caption -}}
+  <table class="table-clinical">
+    <caption class="table-caption">{{ $caption }}</caption>
+    {{ .Inner }}
+  </table>
+  {{- else -}}
+  <table class="table-clinical">
+    {{ .Inner }}
+  </table>
+  {{- end -}}
+</div>

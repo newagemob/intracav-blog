@@ -1,0 +1,29 @@
+{{- define "main" }}
+<div class="handbook-terms-page">
+  <header class="handbook-page-header">
+    <h1 class="handbook-page-title">{{ .Title }}</h1>
+    {{- if .Description }}
+    <p class="handbook-page-description">{{ .Description }}</p>
+    {{- end }}
+  </header>
+
+  {{- if .Data.Terms }}
+  <div class="handbook-terms-grid">
+    {{- range .Data.Terms.ByCount }}
+    <article class="handbook-term-card">
+      <h2><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a></h2>
+      <p class="handbook-term-count">{{ .Count }} {{ if eq .Count 1 }}article{{ else }}articles{{ end }}</p>
+      {{- if .Page.Description }}
+      <p class="handbook-term-description">{{ .Page.Description }}</p>
+      {{- end }}
+    </article>
+    {{- end }}
+  </div>
+  {{- else }}
+  <div class="handbook-empty-state">
+    <h2>No {{ .Data.Singular }} found</h2>
+    <p>There are no {{ .Data.Singular }} terms yet.</p>
+  </div>
+  {{- end }}
+</div>
+{{- end }}

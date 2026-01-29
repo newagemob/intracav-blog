@@ -1,0 +1,88 @@
+{{- /*
+  ENHANCED DOCUMENT HEADER PARTIAL
+  Medical-grade document header with classification, status, and metadata
+  
+  Expects front matter:
+    - document_id: Document identifier
+    - document_type: clinical_policy | clinical_guideline | procedure | standard
+    - version: Version number
+    - effective_date: Effective date
+    - status: active | draft | review | superseded | archived
+    - authority: Approving authority
+    - regulatory_refs: Array of regulatory references
+*/ -}}
+
+<header class="document-header">
+  {{- if or .Params.document_type .Params.status -}}
+  <div class="document-classification">
+    {{- with .Params.document_type -}}
+    <span class="classification-badge classification-{{ . | lower }}">
+      {{- if eq . "clinical_policy" -}}Clinical Policy
+      {{- else if eq . "clinical_guideline" -}}Clinical Guideline
+      {{- else if eq . "procedure" -}}Procedure
+      {{- else if eq . "standard" -}}Standard
+      {{- else -}}{{ . | title }}
+      {{- end -}}
+    </span>
+    {{- end -}}
+    
+    {{- with .Params.status -}}
+    <span class="classification-status status-{{ . | lower }}">
+      {{ . | title }}
+    </span>
+    {{- end -}}
+  </div>
+  {{- end -}}
+  
+  <h1 class="document-title">{{ .Title }}</h1>
+  
+  {{- with .Description -}}
+  <p class="document-subtitle">{{ . }}</p>
+  {{- end -}}
+  
+  {{- if or .Params.document_id .Params.version .Params.effective_date .Params.authority .Params.next_review -}}
+  <div class="document-metadata" role="region" aria-label="Document Metadata">
+    <dl class="metadata-grid">
+      {{- with .Params.document_id -}}
+      <dt>Document ID:</dt>
+      <dd>{{ . }}</dd>
+      {{- end -}}
+      
+      {{- with .Params.version -}}
+      <dt>Version:</dt>
+      <dd>{{ . }}</dd>
+      {{- end -}}
+      
+      {{- with .Params.effective_date -}}
+      <dt>Effective Date:</dt>
+      <dd><time datetime="{{ . }}">{{ dateFormat "January 2, 2006" (time .) }}</time></dd>
+      {{- end -}}
+      
+      {{- with .Params.revision_date -}}
+      <dt>Revision Date:</dt>
+      <dd><time datetime="{{ . }}">{{ dateFormat "January 2, 2006" (time .) }}</time></dd>
+      {{- end -}}
+      
+      {{- with .Params.authority -}}
+      <dt>Authority:</dt>
+      <dd>{{ . }}</dd>
+      {{- end -}}
+      
+      {{- with .Params.approver -}}
+      <dt>Approved By:</dt>
+      <dd>{{ . }}</dd>
+      {{- end -}}
+      
+      {{- with .Params.next_review -}}
+      <dt>Next Review:</dt>
+      <dd><time datetime="{{ . }}">{{ dateFormat "January 2, 2006" (time .) }}</time></dd>
+      {{- end -}}
+      
+      {{- with .Params.supersedes -}}
+      <dt>Supersedes:</dt>
+      <dd>{{ . }}</dd>
+      {{- end -}}
+    </dl>
+  </div>
+  {{- end -}}
+</header>

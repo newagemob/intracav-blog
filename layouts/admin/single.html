@@ -1,0 +1,224 @@
+{{- define "main" }}
+<div class="handbook-admin-page">
+  <header class="handbook-page-header">
+    <h1 class="handbook-page-title">Admin Dashboard</h1>
+    <p class="handbook-page-description">Create and manage wiki content</p>
+  </header>
+
+  <div id="admin-login" class="handbook-admin-section">
+    <h2>Access Admin Dashboard</h2>
+    <p style="color: #6b7280; margin-bottom: 1.5rem;">Enter the admin password to access the content management interface.</p>
+    <form id="login-form" class="handbook-admin-form">
+      <div class="handbook-form-group">
+        <label for="admin-password">Password</label>
+        <input type="password" id="admin-password" name="password" required class="handbook-form-input" placeholder="Enter admin password" autocomplete="off">
+        <small class="handbook-form-help">Contact your administrator if you need the password</small>
+      </div>
+      <button type="submit" class="handbook-btn handbook-btn-primary">Access Dashboard</button>
+    </form>
+  </div>
+
+  <div id="admin-dashboard" class="handbook-admin-section" style="display: none;">
+    <h2>Create New Article</h2>
+    <form id="article-form" class="handbook-admin-form">
+      <div class="handbook-form-group">
+        <label for="article-title">Title *</label>
+        <input type="text" id="article-title" name="title" required class="handbook-form-input" placeholder="Article Title">
+      </div>
+
+      <div class="handbook-form-row">
+        <div class="handbook-form-group">
+          <label for="article-content-type">Content Type *</label>
+          <select id="article-content-type" name="content_type" required class="handbook-form-input">
+            <option value="policies">Policies</option>
+            <option value="blog">Blog</option>
+          </select>
+        </div>
+
+        <div class="handbook-form-group">
+          <label for="article-audience">Audience *</label>
+          <select id="article-audience" name="audience" required class="handbook-form-input">
+            <option value="clinician">Clinician</option>
+            <option value="patient">Patient</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="handbook-form-group">
+        <label for="article-category">Categories (comma-separated)</label>
+        <input type="text" id="article-category" name="category" class="handbook-form-input" placeholder="Infection Control, Clinical Guidelines">
+        <small class="handbook-form-help">Separate multiple categories with commas</small>
+      </div>
+
+      <div class="handbook-form-group">
+        <label for="article-tags">Tags (comma-separated)</label>
+        <input type="text" id="article-tags" name="tags" class="handbook-form-input" placeholder="ANTT, Guidelines, Vascular Access">
+        <small class="handbook-form-help">Separate multiple tags with commas</small>
+      </div>
+
+      <div class="handbook-form-group">
+        <label for="article-author">Author(s) (comma-separated)</label>
+        <input type="text" id="article-author" name="author" class="handbook-form-input" placeholder="I.M. Wright, Intracav-CM01">
+      </div>
+
+      <div class="handbook-form-group">
+        <label for="article-description">Description</label>
+        <textarea id="article-description" name="description" class="handbook-form-input" rows="3" placeholder="Brief description for listings"></textarea>
+      </div>
+
+      <div class="handbook-form-group">
+        <label for="article-content">Content (Markdown) *</label>
+        <textarea id="article-content" name="content" required class="handbook-form-input handbook-form-textarea" rows="20" placeholder="# Article Title
+
+Your article content here in Markdown format..."></textarea>
+        <small class="handbook-form-help">Use Markdown syntax. Images can be uploaded separately.</small>
+      </div>
+
+      <div class="handbook-form-group">
+        <label for="article-images">Upload Images</label>
+        <input type="file" id="article-images" name="images" multiple accept="image/*" class="handbook-form-input">
+        <small class="handbook-form-help">Select one or more images. They will be uploaded to static/images/</small>
+      </div>
+
+      <div class="handbook-form-actions">
+        <button type="submit" class="handbook-btn handbook-btn-primary">Create Article</button>
+        <button type="button" id="preview-btn" class="handbook-btn handbook-btn-secondary">Preview</button>
+      </div>
+    </form>
+
+    <div id="preview-section" class="handbook-preview-section" style="display: none;">
+      <h3>Preview</h3>
+      <div id="preview-content" class="handbook-preview-content"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Admin password-based authentication
+// Expected password hash (set at build time via ADMIN_PASSWORD_HASH env var)
+const EXPECTED_PASSWORD_HASH = '{{ getenv "ADMIN_PASSWORD_HASH" | default "" }}';
+
+// Hash function (SHA-256)
+async function hashPassword(password) {
+  const encoder = new TextEncoder();
+  const data = encoder.encode(password);
+  const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+// Check if password is valid
+async function validatePassword(password) {
+  if (!password || !EXPECTED_PASSWORD_HASH) return false;
+  const passwordHash = await hashPassword(password);
+  return passwordHash === EXPECTED_PASSWORD_HASH;
+}
+
+// Check authentication from sessionStorage
+async function checkAuthentication() {
+  const authStatus = sessionStorage.getItem('admin-authenticated');
+  if (authStatus === 'true') {
+    // Verify the session is still valid (optional: could add expiration)
+    return true;
+  }
+  return false;
+}
+
+// Login form handler
+document.getElementById('login-form')?.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const password = document.getElementById('admin-password').value;
+  
+  if (await validatePassword(password)) {
+    sessionStorage.setItem('admin-authenticated', 'true');
+    document.getElementById('admin-login').style.display = 'none';
+    document.getElementById('admin-dashboard').style.display = 'block';
+  } else {
+    alert('Incorrect password. Please try again.');
+    document.getElementById('admin-password').value = '';
+  }
+});
+
+// Check authentication on page load
+(async () => {
+  if (await checkAuthentication()) {
+    document.getElementById('admin-login').style.display = 'none';
+    document.getElementById('admin-dashboard').style.display = 'block';
+  }
+})();
+
+// Preview functionality
+document.getElementById('preview-btn')?.addEventListener('click', () => {
+  const content = document.getElementById('article-content').value;
+  // Simple markdown preview (you might want to use a library like marked.js)
+  document.getElementById('preview-content').innerHTML = content.replace(/\n/g, '<br>');
+  document.getElementById('preview-section').style.display = 'block';
+});
+
+// Form submission
+document.getElementById('article-form')?.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  
+  // Verify authentication
+  if (sessionStorage.getItem('admin-authenticated') !== 'true') {
+    alert('Session expired. Please log in again.');
+    document.getElementById('admin-login').style.display = 'block';
+    document.getElementById('admin-dashboard').style.display = 'none';
+    return;
+  }
+
+  const formData = new FormData(e.target);
+  const data = {
+    title: formData.get('title'),
+    content_type: formData.get('content_type'),
+    audience: formData.get('audience'),
+    category: formData.get('category')?.split(',').map(c => c.trim()).filter(c => c) || [],
+    tags: formData.get('tags')?.split(',').map(t => t.trim()).filter(t => t) || [],
+    author: formData.get('author')?.split(',').map(a => a.trim()).filter(a => a) || [],
+    description: formData.get('description') || '',
+    content: formData.get('content'),
+    date: new Date().toISOString()
+  };
+
+  // Try to submit via API, fallback to manual creation
+  try {
+    const response = await fetch('/api/create-article', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${EXPECTED_PASSWORD_HASH}` // Send hash for API validation
+      },
+      body: JSON.stringify(data)
+    });
+
+    const result = await response.json();
+    
+    if (response.ok) {
+      alert('Article created successfully!');
+      e.target.reset();
+      // Redirect to the appropriate section based on content_type
+      const redirectPath = data.content_type === 'policies' ? '/policies/' : '/blog/';
+      window.location.href = redirectPath;
+    } else {
+      throw new Error(result.error || 'Failed to create article');
+    }
+  } catch (error) {
+    // Fallback: generate markdown for manual creation
+    const filename = data.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') + '.md';
+    const contentDir = data.content_type === 'policies' ? 'policies' : 'blog';
+    const frontmatter = `+++
+title = "${data.title}"
+date = ${data.date}
+content_type = "${data.content_type}"
+audience = "${data.audience}"
+${data.category.length > 0 ? `category = [${data.category.map(c => `"${c}"`).join(', ')}]\n` : ''}${data.tags.length > 0 ? `tags = [${data.tags.map(t => `"${t}"`).join(', ')}]\n` : ''}${data.author.length > 0 ? `author = [${data.author.map(a => `"${a}"`).join(', ')}]\n` : ''}${data.description ? `description = "${data.description}"\n` : ''}+++
+
+${data.content}`;
+    
+    alert(`API endpoint not configured. Copy this content to content/${contentDir}/${filename}:\n\n${frontmatter}`);
+    console.log('Article data:', data);
+    console.log('Markdown content:', frontmatter);
+  }
+});
+</script>
+{{- end }}

@@ -1,0 +1,91 @@
+{{- /* Handbook-style header with mobile navigation */ -}}
+<header class="handbook-header">
+  <div class="handbook-header-container">
+    <div class="handbook-header-content">
+      <a href="/" class="handbook-logo">
+        <span class="handbook-logo-text">Intracav Wiki</span>
+      </a>
+      
+      {{- /* Desktop Navigation */ -}}
+      <nav class="handbook-header-nav" aria-label="Main navigation">
+        <a href="/policies/" class="handbook-header-link">Policies</a>
+        <a href="/blog/" class="handbook-header-link">Blog</a>
+        <a href="/audience/clinician/" class="handbook-header-link">For Clinicians</a>
+        <a href="/audience/patient/" class="handbook-header-link">For Patients</a>
+        <a href="/category/" class="handbook-header-link">Categories</a>
+        <a href="/about/" class="handbook-header-link">About</a>
+        <button id="theme-toggle" class="handbook-theme-toggle" onclick="window.toggleTheme()" aria-label="Toggle theme">
+          <svg id="sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg id="moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </nav>
+
+      {{- /* Mobile Navigation Controls */ -}}
+      <div class="handbook-mobile-controls">
+        <button id="mobile-search-button" class="handbook-mobile-button" aria-label="Search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.35-4.35"></path>
+          </svg>
+        </button>
+        <button id="mobile-menu-button" class="handbook-mobile-button" aria-label="Open menu" aria-expanded="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+{{- /* Mobile Menu Bottom Sheet */ -}}
+<div id="mobile-menu-overlay" class="mobile-menu-overlay" aria-hidden="true"></div>
+<nav id="mobile-menu-sheet" class="mobile-menu-sheet" aria-label="Mobile navigation">
+  <div class="mobile-menu-header">
+    <h2 class="mobile-menu-title">Navigation</h2>
+    <button class="mobile-menu-close" aria-label="Close menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  <div class="mobile-menu-content">
+    <ul class="mobile-menu-list">
+      <li><a href="/" class="mobile-menu-link {{ if .IsHome }}active{{ end }}">Home</a></li>
+      <li><a href="/policies/" class="mobile-menu-link {{ if eq .Section "policies" }}active{{ end }}">Policies</a></li>
+      <li><a href="/blog/" class="mobile-menu-link {{ if eq .Section "blog" }}active{{ end }}">Blog</a></li>
+      <li><a href="/audience/clinician/" class="mobile-menu-link">For Clinicians</a></li>
+      <li><a href="/audience/patient/" class="mobile-menu-link">For Patients</a></li>
+      <li><a href="/category/" class="mobile-menu-link">Categories</a></li>
+      <li><a href="/about/" class="mobile-menu-link">About</a></li>
+    </ul>
+    
+    {{- /* Quick Access (if emergency content exists) */ -}}
+    {{- $emergencyContent := where site.RegularPages "Params.emergency" true -}}
+    {{- if $emergencyContent -}}
+    <div class="mobile-menu-quick-access">
+      <h3 class="mobile-menu-section-title">Quick Access</h3>
+      <ul class="mobile-menu-list">
+        {{- range first 3 $emergencyContent -}}
+        <li><a href="{{ .RelPermalink }}" class="mobile-menu-link mobile-menu-link-emergency">{{ .Title }}</a></li>
+        {{- end -}}
+      </ul>
+    </div>
+    {{- end -}}
+  </div>
+</nav>

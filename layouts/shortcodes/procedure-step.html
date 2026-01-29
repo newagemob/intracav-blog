@@ -1,0 +1,31 @@
+{{- /*
+  PROCEDURE STEP SHORTCODE
+  Format individual steps in clinical procedures
+  
+  Usage:
+    <ol class="procedure-list">
+    {{< procedure-step number="1" title="Hand Hygiene" >}}
+    Perform hand hygiene...
+    
+    **Duration:** 20 seconds
+    **Rationale:** Reduces transient flora
+    {{< /procedure-step >}}
+    </ol>
+  
+  Parameters:
+    - number: Step number
+    - title: Step title (optional)
+*/ -}}
+
+{{- $number := .Get "number" -}}
+{{- $title := .Get "title" | default "" -}}
+
+<li class="procedure-step" id="step-{{ $number }}">
+  <strong class="step-number" aria-label="Step {{ $number }}">{{ $number }}.</strong>
+  <div class="step-content">
+    {{- if $title -}}
+    <h4 class="step-title">{{ $title }}</h4>
+    {{- end -}}
+    {{ .Inner | markdownify }}
+  </div>
+</li>

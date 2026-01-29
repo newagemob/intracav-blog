@@ -1,18 +1,18 @@
-<!-- nav for articles page, categories page, about page, and contact page -->
+<!-- Wiki navigation with content type filtering -->
 
-<nav>
+<nav class="wiki-nav">
   <ul>
     <li>
-      <a href="{{ .Site.BaseURL }}articles">Articles</a>
+      <a href="{{ .Site.BaseURL }}policies">Policies</a>
     </li>
     <li>
-      <a href="{{ .Site.BaseURL }}tags">Tags</a>
+      <a href="{{ .Site.BaseURL }}blog">Blog</a>
+    </li>
+    <li>
+      <a href="{{ .Site.BaseURL }}category">Categories</a>
     </li>
     <li>
       <a href="{{ .Site.BaseURL }}about">About</a>
-    </li>
-    <li>
-      <a href="{{ .Site.BaseURL }}contact">Contact</a>
     </li>
   </ul>
 </nav>

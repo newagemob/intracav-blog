@@ -1,0 +1,159 @@
+{{- /* Enhanced category listing page with filtering */ -}}
+{{- define "main" }}
+<div class="handbook-taxonomy-page handbook-category-page">
+  <header class="handbook-page-header">
+    <h1 class="handbook-page-title">{{ .Title }}</h1>
+    {{- if .Description }}
+    <p class="handbook-page-description">{{ .Description }}</p>
+    {{- end }}
+  </header>
+
+  {{- if .Data.Terms }}
+  {{- /* Filter controls */ -}}
+  <div class="handbook-filter-controls">
+    <div class="handbook-filter-group">
+      <label for="filter-content-type" class="handbook-filter-label">Content Type:</label>
+      <select id="filter-content-type" class="handbook-filter-select">
+        <option value="">All Types</option>
+        <option value="policies">Policies</option>
+        <option value="blog">Blog</option>
+      </select>
+    </div>
+    <div class="handbook-filter-group">
+      <label for="filter-audience" class="handbook-filter-label">Audience:</label>
+      <select id="filter-audience" class="handbook-filter-select">
+        <option value="">All Audiences</option>
+        <option value="clinician">Clinician</option>
+        <option value="patient">Patient</option>
+      </select>
+    </div>
+    <div class="handbook-filter-group">
+      <label for="filter-sort" class="handbook-filter-label">Sort:</label>
+      <select id="filter-sort" class="handbook-filter-select">
+        <option value="count">Most Articles</option>
+        <option value="name">Alphabetical</option>
+      </select>
+    </div>
+    <button id="clear-filters" class="handbook-filter-clear">Clear Filters</button>
+  </div>
+
+  <div class="handbook-terms-grid" id="category-grid">
+    {{- range .Data.Terms.ByCount }}
+    {{- $contentTypes := slice }}
+    {{- $audiences := slice }}
+    {{- range .Pages }}
+      {{- if .Params.content_type }}
+        {{- $contentTypes = $contentTypes | append .Params.content_type | uniq }}
+      {{- end }}
+      {{- if .Params.audience }}
+        {{- $audiences = $audiences | append .Params.audience | uniq }}
+      {{- end }}
+    {{- end }}
+    <article class="handbook-term-card" 
+             data-content-type="{{ delimit $contentTypes " " }}"
+             data-audience="{{ delimit $audiences " " }}"
+             data-count="{{ .Count }}"
+             data-name="{{ .Page.Title | lower }}">
+      <h2><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a></h2>
+      <p class="handbook-term-count">{{ .Count }} {{ if eq .Count 1 }}article{{ else }}articles{{ end }}</p>
+      {{- if .Page.Description }}
+      <p class="handbook-term-description">{{ .Page.Description }}</p>
+      {{- end }}
+      <div class="handbook-term-meta">
+        {{- if $contentTypes }}
+        <div class="handbook-term-badges">
+          {{- range $contentTypes }}
+          <span class="handbook-badge handbook-badge-{{ . | lower }}">{{ . }}</span>
+          {{- end }}
+        </div>
+        {{- end }}
+        {{- if $audiences }}
+        <div class="handbook-term-badges">
+          {{- range $audiences }}
+          <span class="handbook-badge handbook-badge-audience-{{ . | lower }}">{{ . | title }}</span>
+          {{- end }}
+        </div>
+        {{- end }}
+      </div>
+    </article>
+    {{- end }}
+  </div>
+
+  <div id="no-results" class="handbook-empty-state" style="display: none;">
+    <h2>No categories found</h2>
+    <p>Try adjusting your filters to see more results.</p>
+  </div>
+  {{- else }}
+  <div class="handbook-empty-state">
+    <h2>No categories found</h2>
+    <p>There are no categories yet.</p>
+  </div>
+  {{- end }}
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const contentTypeFilter = document.getElementById('filter-content-type');
+  const audienceFilter = document.getElementById('filter-audience');
+  const sortFilter = document.getElementById('filter-sort');
+  const clearFilters = document.getElementById('clear-filters');
+  const grid = document.getElementById('category-grid');
+  const noResults = document.getElementById('no-results');
+  const cards = Array.from(document.querySelectorAll('.handbook-term-card'));
+
+  function filterAndSort() {
+    const contentType = contentTypeFilter.value;
+    const audience = audienceFilter.value;
+    const sortBy = sortFilter.value;
+
+    let visible = cards.filter(card => {
+      const cardContentType = (card.dataset.contentType || '').trim();
+      const cardAudience = (card.dataset.audience || '').trim();
+      
+      const matchesContentType = !contentType || cardContentType.split(' ').includes(contentType);
+      const matchesAudience = !audience || cardAudience.split(' ').includes(audience);
+      
+      return matchesContentType && matchesAudience;
+    });
+
+    // Sort
+    if (sortBy === 'name') {
+      visible.sort((a, b) => {
+        const aTitle = a.querySelector('h2 a').textContent.trim();
+        const bTitle = b.querySelector('h2 a').textContent.trim();
+        return aTitle.localeCompare(bTitle);
+      });
+    } else {
+      visible.sort((a, b) => {
+        const aCount = parseInt(a.dataset.count) || 0;
+        const bCount = parseInt(b.dataset.count) || 0;
+        return bCount - aCount;
+      });
+    }
+
+    // Hide all, then show filtered
+    cards.forEach(card => card.style.display = 'none');
+    visible.forEach(card => card.style.display = 'block');
+
+    // Show/hide no results message
+    if (visible.length === 0) {
+      noResults.style.display = 'block';
+      grid.style.display = 'none';
+    } else {
+      noResults.style.display = 'none';
+      grid.style.display = 'grid';
+    }
+  }
+
+  contentTypeFilter.addEventListener('change', filterAndSort);
+  audienceFilter.addEventListener('change', filterAndSort);
+  sortFilter.addEventListener('change', filterAndSort);
+  clearFilters.addEventListener('click', () => {
+    contentTypeFilter.value = '';
+    audienceFilter.value = '';
+    sortFilter.value = 'count';
+    filterAndSort();
+  });
+});
+</script>
+{{- end }}

@@ -1,0 +1,18 @@
+{{- /*
+  REGULATORY FOOTER PARTIAL
+  Display regulatory references at document footer
+  
+  Expects front matter:
+    - regulatory_refs: Array of regulatory references
+*/ -}}
+
+{{- with .Params.regulatory_refs -}}
+<footer class="regulatory-footer" role="contentinfo" aria-label="Regulatory References">
+  <h4 class="regulatory-footer-title">Regulatory References</h4>
+  <ul class="regulatory-ref-list">
+    {{- range . -}}
+    <li>{{ . }}</li>
+    {{- end -}}
+  </ul>
+</footer>
+{{- end -}}

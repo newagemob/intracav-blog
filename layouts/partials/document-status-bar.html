@@ -1,0 +1,34 @@
+{{- /*
+  DOCUMENT STATUS BAR PARTIAL
+  Display status, version, and dates in a prominent bar
+  
+  Expects front matter:
+    - status: Document status
+    - version: Version number
+    - effective_date: Effective date
+    - supersedes: Previous version reference
+*/ -}}
+
+{{- if or .Params.status .Params.version .Params.effective_date -}}
+<div class="document-status-bar" role="status" aria-label="Document Status">
+  {{- with .Params.status -}}
+  <span class="status-badge status-{{ . | lower }}">{{ . | title }}</span>
+  {{- end -}}
+  
+  {{- with .Params.version -}}
+  <span class="version-badge">Version {{ . }}</span>
+  {{- end -}}
+  
+  {{- with .Params.effective_date -}}
+  <span class="effective-date">
+    Effective: <time datetime="{{ . }}">{{ dateFormat "Jan 2, 2006" (time .) }}</time>
+  </span>
+  {{- end -}}
+  
+  {{- with .Params.supersedes -}}
+  <span class="supersedes-notice">
+    Supersedes: {{ . }}
+  </span>
+  {{- end -}}
+</div>
+{{- end -}}

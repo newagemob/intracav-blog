@@ -1,0 +1,25 @@
+{{- /*
+  REGULATORY REFERENCE SHORTCODE
+  Display regulatory citations (CMS, FDA, etc.)
+  
+  Usage:
+    {{< regulatory source="cms" citation="CMS § 482.42" url="https://..." >}}
+  
+  Parameters:
+    - source: cms | fda | cdc | osha | jcaho | state (for styling)
+    - citation: The citation text
+    - url: Optional link to regulation
+*/ -}}
+
+{{- $source := .Get "source" | lower -}}
+{{- $citation := .Get "citation" -}}
+{{- $url := .Get "url" | default "" -}}
+
+<span class="regulatory-reference ref-{{ $source }}">
+  <span class="regulatory-symbol" aria-hidden="true">§</span>
+  {{- if $url -}}
+  <a href="{{ $url }}" class="regulatory-link" target="_blank" rel="noopener noreferrer">{{ $citation }}</a>
+  {{- else -}}
+  {{ $citation }}
+  {{- end -}}
+</span>

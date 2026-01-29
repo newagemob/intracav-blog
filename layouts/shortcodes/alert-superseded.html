@@ -1,0 +1,39 @@
+{{- /*
+  SUPERSEDED DOCUMENT ALERT
+  Display notice that document has been superseded
+  
+  Usage:
+    {{< alert-superseded 
+        replacement="New Policy Title" 
+        link="/policies/new-policy" 
+        date="2025-01-15"
+    >}}
+  
+  Parameters:
+    - replacement: Title of replacement document
+    - link: URL to replacement document
+    - date: Supersession date (YYYY-MM-DD)
+*/ -}}
+
+{{- $replacement := .Get "replacement" -}}
+{{- $link := .Get "link" -}}
+{{- $date := .Get "date" -}}
+
+<div class="alert alert-superseded" role="alert">
+  <div class="alert-title">⚠ This Document Has Been Superseded</div>
+  <div class="alert-content">
+    <p>
+      This document was superseded on 
+      {{- with $date -}}
+      <time datetime="{{ . }}">{{ dateFormat "January 2, 2006" (time .) }}</time>
+      {{- end -}}
+      .
+    </p>
+    {{- if and $replacement $link -}}
+    <p>
+      Please refer to the current version: 
+      <a href="{{ $link }}" class="ref-internal">{{ $replacement }}</a>
+    </p>
+    {{- end -}}
+  </div>
+</div>

@@ -1,8 +1,27 @@
 baseURL: https://blog.intracav.ai
 languageCode: en-us
-title: Intracav Blog
-paginate: 5
+title: Intracav Wiki
 theme: PaperMod
+
+# Security configuration
+security:
+  funcs:
+    getenv:
+      - ^HUGO_
+      - ^CI$
+      - ^ADMIN_PASSWORD_HASH$
+
+# Pagination configuration
+pagination:
+  pagerSize: 10
+
+# Taxonomies for wiki categorization
+# Using 'category' as the primary taxonomy
+taxonomies:
+  content_type: content_type
+  category: category
+  audience: audience  # clinician vs patient
+  # tag: tag  # Removed - use category instead
 
 enableRobotsTXT: true
 buildDrafts: false
@@ -13,15 +32,22 @@ minify:
   disableXML: true
   minifyOutput: true
 
+# Markup configuration
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  defaultMarkdownHandler: goldmark
+
 params:
   env: production
-  title: "Intracav Blog"
-  description: "Vascular Access Knowledge Base and Data Science"
+  title: "Intracav Wiki"
+  description: "Living documentation and guidelines for vascular access and clinical practice"
   author: ["I.M. Wright", "Dennis Woo", "Blaine Pantano", "Mike Stern"]
   keywords:
     [
       "Intracav",
-      "Intracav Blog",
+      "Intracav Wiki",
       "Intracav AI",
       "Intracav",
       "Vascular Access",
@@ -149,18 +175,18 @@ params:
 
   ShowReadingTime: true
   ShowShareButtons: false
-  ShowPostNavLinks: false
+  ShowPostNavLinks: true
   ShowBreadCrumbs: true
-  ShowCodeCopyButtons: false
-  ShowWordCount: true
-  ShowRssButtonInSectionTermList: true
+  ShowCodeCopyButtons: true
+  ShowWordCount: false
+  ShowRssButtonInSectionTermList: false
   UseHugoToc: true
-  disableSpecial1stPost: false
+  disableSpecial1stPost: true
   disableScrollToTop: false
   comments: false
   hidemeta: false
-  hideSummary: false
-  showtoc: false
+  hideSummary: true
+  showtoc: true
   tocopen: false
 
   socialIcons:
@@ -174,19 +200,23 @@ params:
   # profile-mode
   profileMode:
     enabled: false # needs to be explicitly set
-    title: Intracav Blog
-    subtitle: "Vascular Access Knowledge Base and Data Science"
+    title: Intracav Wiki
+    subtitle: "Living documentation and guidelines for vascular access and clinical practice"
     imageUrl: "<img location>"
     imageWidth: 120
     imageHeight: 120
     imageTitle: intracav
     buttons:
-      - name: Posts
-        url: posts
-      - name: Tags
-        url: tags
+      - name: All Content
+        url: articles
+      - name: Policies
+        url: content_type/policies
+      - name: Blog
+        url: content_type/blog
+      - name: Categories
+        url: category
 
   # home-info mode
   homeInfoParams:
-    Title: "Intracav \U0001F44B"
-    Content: Vascular Access Knowledge Base and Data Science
+    Title: "Intracav Wiki"
+    Content: Living documentation and evidence-based guidelines for vascular access and clinical practice

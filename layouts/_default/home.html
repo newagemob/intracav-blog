@@ -1,0 +1,184 @@
+{{- define "main" }}
+<div class="handbook-home-page">
+  {{- /* Hero Section */ -}}
+  <section class="handbook-home-hero">
+    <h1 class="handbook-home-hero-title">{{ site.Title }}</h1>
+    <p class="handbook-home-hero-description">
+      {{ .Description | default site.Params.description | default "Evidence-based clinical guidelines and policies for vascular access teams" }}
+    </p>
+    
+    {{- /* Hero Conversion Pathways */ -}}
+    <div class="hero-pathways">
+      <a href="https://intracav.ai" class="hero-pathway" rel="noopener noreferrer">
+        <svg class="hero-pathway-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+        <span>For Clinicians & Patients</span>
+        <svg class="hero-pathway-arrow" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+      <a href="https://qpolicy.ai" class="hero-pathway" rel="noopener noreferrer">
+        <svg class="hero-pathway-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+          <circle cx="9" cy="7" r="4"></circle>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+        </svg>
+        <span>For Teams & Hospitals</span>
+        <svg class="hero-pathway-arrow" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  {{- /* Premium Search Bar */ -}}
+  <div class="search-container">
+    <div class="search-input-wrapper">
+      <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"></circle>
+        <path d="m21 21-4.35-4.35"></path>
+      </svg>
+      <input 
+        type="search" 
+        id="search-input" 
+        class="search-input" 
+        placeholder="Search policies, guidelines, and blog posts..."
+        autocomplete="off"
+        aria-label="Search documentation"
+      />
+      <div id="search-results" class="search-results" role="listbox" aria-label="Search results"></div>
+    </div>
+  </div>
+
+  {{- $policies := where site.RegularPages "Section" "policies" }}
+  {{- $blog := where site.RegularPages "Section" "blog" }}
+  
+  <div class="handbook-home-sections">
+    {{- if $policies }}
+    <section class="handbook-home-section">
+      <div class="handbook-section-header">
+        <h2 class="handbook-section-title">
+          <a href="/policies/">Clinical Policies</a>
+        </h2>
+        <a href="https://qpolicy.ai" class="section-conversion-link" rel="noopener noreferrer">
+          <span>For teams</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+      <p class="handbook-section-description">Evidence-based protocols and standardized procedures</p>
+      <div class="handbook-article-list">
+        {{- range first 6 $policies.ByDate.Reverse }}
+        <a href="{{ .RelPermalink }}" class="handbook-article-card handbook-article-card-policy" data-searchable data-title="{{ .Title }}" data-url="{{ .RelPermalink }}" data-description="{{ .Description | default .Summary }}">
+          <article class="handbook-article-card-content">
+            <h3 class="handbook-article-card-title">{{ .Title }}</h3>
+            {{- if .Description }}
+            <p class="handbook-article-description">{{ .Description }}</p>
+            {{- else if .Summary }}
+            <p class="handbook-article-description">{{ .Summary | truncate 150 }}</p>
+            {{- end }}
+            <div class="handbook-article-meta">
+              {{- $metaItems := slice -}}
+              {{- if .Params.content_type -}}
+                {{- $metaItems = $metaItems | append .Params.content_type -}}
+              {{- end -}}
+              {{- if .Date -}}
+                {{- $metaItems = $metaItems | append (.Date.Format "Jan 2006") -}}
+              {{- end -}}
+              {{- if .Params.category -}}
+                {{- $metaItems = $metaItems | append (index .Params.category 0) -}}
+              {{- end -}}
+              {{- range $index, $item := $metaItems -}}
+                {{- if gt $index 0 }}<span class="meta-separator">•</span>{{- end -}}
+                <span class="handbook-article-meta-item">{{ $item }}</span>
+              {{- end -}}
+            </div>
+          </article>
+        </a>
+        {{- end }}
+        {{- if gt (len $policies) 6 }}
+        <div class="handbook-section-more">
+          <a href="/policies/">View all policies →</a>
+          <a href="https://qpolicy.ai" class="section-more-conversion" rel="noopener noreferrer">
+            <span>For teams</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+        {{- end }}
+      </div>
+    </section>
+    {{- end }}
+
+
+    {{- if $blog }}
+    <section class="handbook-home-section">
+      <div class="handbook-section-header">
+        <h2 class="handbook-section-title">
+          <a href="/blog/">Clinical Insights</a>
+        </h2>
+      </div>
+      <p class="handbook-section-description">Analysis, perspectives, and healthcare innovation</p>
+      <div class="handbook-article-list">
+        {{- range first 6 $blog.ByDate.Reverse }}
+        <a href="{{ .RelPermalink }}" class="handbook-article-card handbook-article-card-blog" data-searchable data-title="{{ .Title }}" data-url="{{ .RelPermalink }}" data-description="{{ .Description | default .Summary }}">
+          <article class="handbook-article-card-content">
+            <h3 class="handbook-article-card-title">{{ .Title }}</h3>
+            {{- if .Description }}
+            <p class="handbook-article-description">{{ .Description }}</p>
+            {{- else if .Summary }}
+            <p class="handbook-article-description">{{ .Summary | truncate 150 }}</p>
+            {{- end }}
+            <div class="handbook-article-meta">
+              {{- $metaItems := slice -}}
+              {{- if .Params.content_type -}}
+                {{- $metaItems = $metaItems | append .Params.content_type -}}
+              {{- end -}}
+              {{- if .Date -}}
+                {{- $metaItems = $metaItems | append (.Date.Format "Jan 2006") -}}
+              {{- end -}}
+              {{- if .Params.category -}}
+                {{- $metaItems = $metaItems | append (index .Params.category 0) -}}
+              {{- end -}}
+              {{- range $index, $item := $metaItems -}}
+                {{- if gt $index 0 }}<span class="meta-separator">•</span>{{- end -}}
+                <span class="handbook-article-meta-item">{{ $item }}</span>
+              {{- end -}}
+            </div>
+          </article>
+        </a>
+        {{- end }}
+        {{- if gt (len $blog) 6 }}
+        <div class="handbook-section-more">
+          <a href="/blog/">View all blog posts →</a>
+        </div>
+        {{- end }}
+      </div>
+    </section>
+    {{- end }}
+  </div>
+</div>
+
+{{- /* Search index for client-side search */ -}}
+<script type="application/json" id="search-index-data">
+{{- $searchIndex := slice -}}
+{{- range site.RegularPages -}}
+  {{- $searchIndex = $searchIndex | append (dict 
+    "title" .Title
+    "url" .RelPermalink
+    "description" (.Description | default .Summary | default "")
+    "content" ((.Plain | default "") | truncate 500)
+  ) -}}
+{{- end -}}
+{{- $searchIndex | jsonify -}}
+</script>
+{{- end }}

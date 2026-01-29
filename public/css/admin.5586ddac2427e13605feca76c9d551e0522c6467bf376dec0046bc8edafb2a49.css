@@ -1,0 +1,166 @@
+/* Admin Interface Styles */
+
+.handbook-admin-page {
+  max-width: 900px;
+}
+
+.handbook-admin-section {
+  margin-bottom: 3rem;
+}
+
+.handbook-admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.handbook-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.handbook-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .handbook-form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.handbook-form-group label {
+  font-weight: 500;
+  color: #374151;
+  font-size: 0.95rem;
+}
+
+.dark .handbook-form-group label {
+  color: #d1d5db;
+}
+
+.handbook-form-input,
+.handbook-form-textarea {
+  padding: 0.75rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+  background-color: #ffffff;
+  color: #111827;
+  transition: all 0.2s;
+}
+
+.dark .handbook-form-input,
+.dark .handbook-form-textarea {
+  border-color: #374151;
+  background-color: #1f2937;
+  color: #f9fafb;
+}
+
+.handbook-form-input:focus,
+.handbook-form-textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.dark .handbook-form-input:focus,
+.dark .handbook-form-textarea:focus {
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.1);
+}
+
+.handbook-form-textarea {
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.handbook-form-help {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-top: 0.25rem;
+}
+
+.dark .handbook-form-help {
+  color: #9ca3af;
+}
+
+.handbook-form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.handbook-btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.handbook-btn-primary {
+  background-color: #1e40af;
+  color: #ffffff;
+}
+
+.dark .handbook-btn-primary {
+  background-color: #3b82f6;
+}
+
+.handbook-btn-primary:hover {
+  background-color: #1e3a8a;
+}
+
+.dark .handbook-btn-primary:hover {
+  background-color: #2563eb;
+}
+
+.handbook-btn-secondary {
+  background-color: #f3f4f6;
+  color: #374151;
+  border: 1px solid #e5e7eb;
+}
+
+.dark .handbook-btn-secondary {
+  background-color: #374151;
+  color: #d1d5db;
+  border-color: #4b5563;
+}
+
+.handbook-btn-secondary:hover {
+  background-color: #e5e7eb;
+}
+
+.dark .handbook-btn-secondary:hover {
+  background-color: #4b5563;
+}
+
+.handbook-preview-section {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background-color: #f9fafb;
+}
+
+.dark .handbook-preview-section {
+  border-color: #374151;
+  background-color: #1f2937;
+}
+
+.handbook-preview-content {
+  color: #374151;
+  line-height: 1.8;
+}
+
+.dark .handbook-preview-content {
+  color: #e5e7eb;
+}

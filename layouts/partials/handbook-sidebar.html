@@ -1,0 +1,51 @@
+{{- /* Handbook-style sidebar navigation */ -}}
+<aside class="handbook-sidebar">
+  <nav class="handbook-nav">
+    <div class="handbook-nav-section">
+      <h3 class="handbook-nav-title">Intracav Wiki</h3>
+      <ul class="handbook-nav-list">
+        <li><a href="/" class="handbook-nav-link {{ if .IsHome }}active{{ end }}">Home</a></li>
+        <li><a href="/policies/" class="handbook-nav-link {{ if eq .Section "policies" }}active{{ end }}">Policies</a></li>
+        <li><a href="/blog/" class="handbook-nav-link {{ if eq .Section "blog" }}active{{ end }}">Blog</a></li>
+      </ul>
+    </div>
+
+    <div class="handbook-nav-section">
+      <h3 class="handbook-nav-title">Content Types</h3>
+      <ul class="handbook-nav-list">
+        <li><a href="/content_type/policies/" class="handbook-nav-link {{ if and (eq .Kind "term") (eq .Data.Singular "content_type") (eq .Title "Policies") }}active{{ end }}">Policies</a></li>
+        <li><a href="/content_type/blog/" class="handbook-nav-link {{ if and (eq .Kind "term") (eq .Data.Singular "content_type") (eq .Title "Blog") }}active{{ end }}">Blog</a></li>
+      </ul>
+    </div>
+
+    <div class="handbook-nav-section">
+      <h3 class="handbook-nav-title">Audience</h3>
+      <ul class="handbook-nav-list">
+        <li><a href="/audience/clinician/" class="handbook-nav-link {{ if and (eq .Kind "term") (eq .Data.Singular "audience") (eq .Title "Clinician") }}active{{ end }}">Clinician</a></li>
+        <li><a href="/audience/patient/" class="handbook-nav-link {{ if and (eq .Kind "term") (eq .Data.Singular "audience") (eq .Title "Patient") }}active{{ end }}">Patient</a></li>
+      </ul>
+    </div>
+
+    <div class="handbook-nav-section">
+      <h3 class="handbook-nav-title">Browse</h3>
+      <ul class="handbook-nav-list">
+        <li><a href="/category/" class="handbook-nav-link {{ if and (eq .Kind "taxonomy") (eq .Data.Singular "category") }}active{{ end }}">Categories</a></li>
+        <li><a href="/about/" class="handbook-nav-link {{ if eq .Section "about" }}active{{ end }}">About</a></li>
+      </ul>
+    </div>
+
+    {{- if or (eq .Section "policies") (eq .Section "blog") }}
+    {{- $categories := site.Taxonomies.category }}
+    {{- if $categories }}
+    <div class="handbook-nav-section">
+      <h3 class="handbook-nav-title">Categories</h3>
+      <ul class="handbook-nav-list">
+        {{- range $categories.ByCount | first 10 }}
+        <li><a href="{{ .Page.RelPermalink }}" class="handbook-nav-link">{{ .Page.Title }} ({{ .Count }})</a></li>
+        {{- end }}
+      </ul>
+    </div>
+    {{- end }}
+    {{- end }}
+  </nav>
+</aside>

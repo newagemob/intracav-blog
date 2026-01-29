@@ -1,0 +1,36 @@
+{{- /*
+  EVIDENCE LEVEL SHORTCODE
+  Display evidence level badges for clinical guidelines
+  
+  Usage:
+    {{< evidence "1a" "Systematic review of RCTs" >}}
+  
+  Parameters:
+    - level (positional 0): Evidence level (1a, 1b, 2a, 2b, 3, 4, 5)
+    - description (positional 1): Hover text description
+*/ -}}
+
+{{- $level := .Get 0 | lower -}}
+{{- $description := .Get 1 | default "" -}}
+
+{{- if not $description -}}
+  {{- if eq $level "1a" -}}
+    {{- $description = "Systematic review of randomized controlled trials" -}}
+  {{- else if eq $level "1b" -}}
+    {{- $description = "Individual randomized controlled trial" -}}
+  {{- else if eq $level "2a" -}}
+    {{- $description = "Systematic review of cohort studies" -}}
+  {{- else if eq $level "2b" -}}
+    {{- $description = "Individual cohort study" -}}
+  {{- else if eq $level "3" -}}
+    {{- $description = "Case-control study" -}}
+  {{- else if eq $level "4" -}}
+    {{- $description = "Case series" -}}
+  {{- else if eq $level "5" -}}
+    {{- $description = "Expert opinion" -}}
+  {{- end -}}
+{{- end -}}
+
+<span class="evidence-level evidence-level-{{ $level }}">
+  <abbr title="{{ $description }}">Level {{ $level | upper }}</abbr>
+</span>

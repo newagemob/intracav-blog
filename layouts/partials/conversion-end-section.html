@@ -1,0 +1,24 @@
+{{- /* Conversion End-of-Section - Natural Language */ -}}
+{{- /* Only show on policy pages, not emergency content */ -}}
+{{- if and .IsPage (eq .Params.content_type "policies") (not .Params.emergency) -}}
+<div class="conversion-end-section">
+  <div class="conversion-end-section-content">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.5; margin-bottom: var(--space-3);">
+      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+      <circle cx="9" cy="7" r="4"></circle>
+      <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+      <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+    </svg>
+    <p>
+      Teams can standardize this procedure with version control and compliance tracking.
+    </p>
+    <a href="https://qpolicy.ai" class="conversion-end-section-link" rel="noopener noreferrer">
+      Learn about qpolicy.ai
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; margin-left: 6px; vertical-align: middle;">
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+        <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+    </a>
+  </div>
+</div>
+{{- end -}}

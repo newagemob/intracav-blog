@@ -1,0 +1,141 @@
+{{- /* Prevent flash of wrong theme - inline script must be first */ -}}
+<script>
+  (function() {
+    const stored = localStorage.getItem('handbook-theme');
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const theme = stored || (prefersDark ? 'dark' : 'light');
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+      document.body.classList.add('dark');
+    }
+  })();
+</script>
+
+{{- /* Custom CSS for Intracav Wiki */ -}}
+{{- $wikiCSS := resources.Get "css/wiki-custom.css" -}}
+{{- if $wikiCSS }}
+  {{- if not site.Params.assets.disableFingerprinting }}
+    {{- $wikiCSS = $wikiCSS | fingerprint }}
+    <link rel="stylesheet" href="{{ $wikiCSS.RelPermalink }}" integrity="{{ $wikiCSS.Data.Integrity }}" crossorigin="anonymous">
+  {{- else }}
+    <link rel="stylesheet" href="{{ $wikiCSS.RelPermalink }}">
+  {{- end }}
+{{- end }}
+
+{{- /* Premium Design System */ -}}
+{{- $designSystem := resources.Get "css/design-system.css" -}}
+{{- $medicalCore := resources.Get "css/medical-core.css" -}}
+{{- $medicalComponents := resources.Get "css/medical-components.css" -}}
+{{- $medicalPrint := resources.Get "css/medical-print.css" -}}
+{{- if and $designSystem $medicalCore $medicalComponents $medicalPrint }}
+  {{- $premiumCSS := slice $designSystem $medicalCore $medicalComponents $medicalPrint | resources.Concat "css/premium-combined.css" | resources.Minify -}}
+  {{- if not site.Params.assets.disableFingerprinting }}
+    {{- $premiumCSS = $premiumCSS | fingerprint }}
+    <link rel="stylesheet" href="{{ $premiumCSS.RelPermalink }}" integrity="{{ $premiumCSS.Data.Integrity }}" crossorigin="anonymous">
+  {{- else }}
+    <link rel="stylesheet" href="{{ $premiumCSS.RelPermalink }}">
+  {{- end }}
+{{- end }}
+
+{{- /* Search Functionality */ -}}
+{{- if .IsHome }}
+{{- $searchJS := resources.Get "js/search.js" -}}
+{{- if $searchJS }}
+  {{- if not site.Params.assets.disableFingerprinting }}
+    {{- $searchJS = $searchJS | fingerprint }}
+    <script src="{{ $searchJS.RelPermalink }}" integrity="{{ $searchJS.Data.Integrity }}" crossorigin="anonymous" defer></script>
+  {{- else }}
+    <script src="{{ $searchJS.RelPermalink }}" defer></script>
+  {{- end }}
+{{- end }}
+{{- end }}
+
+{{- /* Theme Toggle JavaScript */ -}}
+{{- $themeJS := resources.Get "js/theme-toggle.js" -}}
+{{- if $themeJS }}
+  {{- if not site.Params.assets.disableFingerprinting }}
+    {{- $themeJS = $themeJS | fingerprint }}
+    <script src="{{ $themeJS.RelPermalink }}" integrity="{{ $themeJS.Data.Integrity }}" crossorigin="anonymous"></script>
+  {{- else }}
+    <script src="{{ $themeJS.RelPermalink }}"></script>
+  {{- end }}
+{{- end }}
+
+{{- /* Mobile Navigation CSS */ -}}
+{{- $mobileNavCSS := resources.Get "css/mobile-nav.css" -}}
+{{- if $mobileNavCSS }}
+  {{- if not site.Params.assets.disableFingerprinting }}
+    {{- $mobileNavCSS = $mobileNavCSS | fingerprint }}
+    <link rel="stylesheet" href="{{ $mobileNavCSS.RelPermalink }}" integrity="{{ $mobileNavCSS.Data.Integrity }}" crossorigin="anonymous">
+  {{- else }}
+    <link rel="stylesheet" href="{{ $mobileNavCSS.RelPermalink }}">
+  {{- end }}
+{{- end }}
+
+{{- /* UX Refinements CSS */ -}}
+{{- $uxRefinements := resources.Get "css/ux-refinements.css" -}}
+{{- if $uxRefinements }}
+  {{- if not site.Params.assets.disableFingerprinting }}
+    {{- $uxRefinements = $uxRefinements | fingerprint }}
+    <link rel="stylesheet" href="{{ $uxRefinements.RelPermalink }}" integrity="{{ $uxRefinements.Data.Integrity }}" crossorigin="anonymous">
+  {{- else }}
+    <link rel="stylesheet" href="{{ $uxRefinements.RelPermalink }}">
+  {{- end }}
+{{- end }}
+
+{{- /* Premium Landing Pages CSS */ -}}
+{{- $premiumLanding := resources.Get "css/premium-landing.css" -}}
+{{- if $premiumLanding }}
+  {{- if not site.Params.assets.disableFingerprinting }}
+    {{- $premiumLanding = $premiumLanding | fingerprint }}
+    <link rel="stylesheet" href="{{ $premiumLanding.RelPermalink }}" integrity="{{ $premiumLanding.Data.Integrity }}" crossorigin="anonymous">
+  {{- else }}
+    <link rel="stylesheet" href="{{ $premiumLanding.RelPermalink }}">
+  {{- end }}
+{{- end }}
+
+{{- /* Sophisticated Design CSS */ -}}
+{{- $sophisticatedDesign := resources.Get "css/sophisticated-design.css" -}}
+{{- if $sophisticatedDesign }}
+  {{- if not site.Params.assets.disableFingerprinting }}
+    {{- $sophisticatedDesign = $sophisticatedDesign | fingerprint }}
+    <link rel="stylesheet" href="{{ $sophisticatedDesign.RelPermalink }}" integrity="{{ $sophisticatedDesign.Data.Integrity }}" crossorigin="anonymous">
+  {{- else }}
+    <link rel="stylesheet" href="{{ $sophisticatedDesign.RelPermalink }}">
+  {{- end }}
+{{- end }}
+
+{{- /* Section Hero CSS */ -}}
+{{- $sectionHero := resources.Get "css/section-hero.css" -}}
+{{- if $sectionHero }}
+  {{- if not site.Params.assets.disableFingerprinting }}
+    {{- $sectionHero = $sectionHero | fingerprint }}
+    <link rel="stylesheet" href="{{ $sectionHero.RelPermalink }}" integrity="{{ $sectionHero.Data.Integrity }}" crossorigin="anonymous">
+  {{- else }}
+    <link rel="stylesheet" href="{{ $sectionHero.RelPermalink }}">
+  {{- end }}
+{{- end }}
+
+{{- /* Mobile Navigation JavaScript */ -}}
+{{- $mobileNavJS := resources.Get "js/mobile-nav.js" -}}
+{{- if $mobileNavJS }}
+  {{- if not site.Params.assets.disableFingerprinting }}
+    {{- $mobileNavJS = $mobileNavJS | fingerprint }}
+    <script src="{{ $mobileNavJS.RelPermalink }}" integrity="{{ $mobileNavJS.Data.Integrity }}" crossorigin="anonymous" defer></script>
+  {{- else }}
+    <script src="{{ $mobileNavJS.RelPermalink }}" defer></script>
+  {{- end }}
+{{- end }}
+
+{{- /* Admin CSS */ -}}
+{{- if eq .Section "admin" }}
+{{- $adminCSS := resources.Get "css/admin.css" -}}
+{{- if $adminCSS }}
+  {{- if not site.Params.assets.disableFingerprinting }}
+    {{- $adminCSS = $adminCSS | fingerprint }}
+    <link rel="stylesheet" href="{{ $adminCSS.RelPermalink }}" integrity="{{ $adminCSS.Data.Integrity }}" crossorigin="anonymous">
+  {{- else }}
+    <link rel="stylesheet" href="{{ $adminCSS.RelPermalink }}">
+  {{- end }}
+{{- end }}
+{{- end }}
