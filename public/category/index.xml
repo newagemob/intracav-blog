@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Category on Intracav Wiki</title>
-    <link>http://localhost:1313/category/</link>
+    <link>http://localhost:53726/category/</link>
     <description>Recent content in Category on Intracav Wiki</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 16 Oct 2024 13:16:02 -0500</lastBuildDate>
-    <atom:link href="http://localhost:1313/category/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:53726/category/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Clinical Procedures</title>
-      <link>http://localhost:1313/category/clinical-procedures/</link>
+      <link>http://localhost:53726/category/clinical-procedures/</link>
       <pubDate>Wed, 16 Oct 2024 13:16:02 -0500</pubDate>
-      <guid>http://localhost:1313/category/clinical-procedures/</guid>
+      <guid>http://localhost:53726/category/clinical-procedures/</guid>
       <description></description>
     </item>
     <item>
       <title>Vascular Access</title>
-      <link>http://localhost:1313/category/vascular-access/</link>
+      <link>http://localhost:53726/category/vascular-access/</link>
       <pubDate>Wed, 16 Oct 2024 13:16:02 -0500</pubDate>
-      <guid>http://localhost:1313/category/vascular-access/</guid>
+      <guid>http://localhost:53726/category/vascular-access/</guid>
       <description></description>
     </item>
     <item>
       <title>Clinical Guidelines</title>
-      <link>http://localhost:1313/category/clinical-guidelines/</link>
+      <link>http://localhost:53726/category/clinical-guidelines/</link>
       <pubDate>Sun, 21 Apr 2024 13:16:02 -0500</pubDate>
-      <guid>http://localhost:1313/category/clinical-guidelines/</guid>
+      <guid>http://localhost:53726/category/clinical-guidelines/</guid>
       <description></description>
     </item>
     <item>
       <title>Infection Control</title>
-      <link>http://localhost:1313/category/infection-control/</link>
+      <link>http://localhost:53726/category/infection-control/</link>
       <pubDate>Sun, 21 Apr 2024 13:16:02 -0500</pubDate>
-      <guid>http://localhost:1313/category/infection-control/</guid>
+      <guid>http://localhost:53726/category/infection-control/</guid>
       <description></description>
     </item>
   </channel>

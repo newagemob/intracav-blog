@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Clinical Policies &amp; Guidelines on Intracav Wiki</title>
-    <link>http://localhost:1313/policies/</link>
+    <link>http://localhost:53726/policies/</link>
     <description>Recent content in Clinical Policies &amp; Guidelines on Intracav Wiki</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 16 Oct 2024 13:16:02 -0500</lastBuildDate>
-    <atom:link href="http://localhost:1313/policies/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:53726/policies/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Blood Draws and Hemolysis</title>
-      <link>http://localhost:1313/policies/blood-draws-and-hemolysis/</link>
+      <link>http://localhost:53726/policies/blood-draws-and-hemolysis/</link>
       <pubDate>Wed, 16 Oct 2024 13:16:02 -0500</pubDate>
-      <guid>http://localhost:1313/policies/blood-draws-and-hemolysis/</guid>
+      <guid>http://localhost:53726/policies/blood-draws-and-hemolysis/</guid>
       <description>&lt;h1 id=&#34;deep-dive-blood-draws-and-hemolysis&#34;&gt;Deep Dive Blood Draws and Hemolysis&lt;/h1&gt;
 &lt;p&gt;Follow along Intracav Chat and interact with it yourself with &lt;a href=&#34;https://www.intracav.ai/chat?chatId=n934mw6jvnxddlevmiiesrxs&#34;&gt;this link&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;CVR (Catheter to Vein Ratio). The Optimal ratio is &amp;lt;45%.&lt;/p&gt;
@@ -21,9 +21,9 @@
     </item>
     <item>
       <title>Cortisol Levels in Hospital Staff and Work Efficiency: A Critical Clinical Analysis</title>
-      <link>http://localhost:1313/policies/cortisol-levels-in-hospital-staff-and-work-efficiency-a-critical-clinical-analysis/</link>
+      <link>http://localhost:53726/policies/cortisol-levels-in-hospital-staff-and-work-efficiency-a-critical-clinical-analysis/</link>
       <pubDate>Sat, 01 Jun 2024 13:16:02 -0500</pubDate>
-      <guid>http://localhost:1313/policies/cortisol-levels-in-hospital-staff-and-work-efficiency-a-critical-clinical-analysis/</guid>
+      <guid>http://localhost:53726/policies/cortisol-levels-in-hospital-staff-and-work-efficiency-a-critical-clinical-analysis/</guid>
       <description>&lt;h1 id=&#34;cortisol-levels-in-hospital-staff-and-work-efficiency-a-critical-clinical-analysis&#34;&gt;Cortisol Levels in Hospital Staff and Work Efficiency: A Critical Clinical Analysis&lt;/h1&gt;
 &lt;h2 id=&#34;executive-summary-the-hidden-crisis-in-healthcare-excellence&#34;&gt;Executive Summary: The Hidden Crisis in Healthcare Excellence&lt;/h2&gt;
 &lt;p&gt;We&amp;rsquo;re confronting an invisible enemy in our hospitals—one that silently undermines clinical performance, compromises patient safety, and devastates our healthcare workforce. Cortisol dysregulation among hospital staff isn&amp;rsquo;t just a wellness concern; it&amp;rsquo;s a critical threat to medical excellence that demands immediate, evidence-based intervention.&lt;/p&gt;
@@ -31,25 +31,25 @@
     </item>
     <item>
       <title>ASEPTIC NON-TOUCH TECHNIQUE (ANTT®) in Clinical Practice</title>
-      <link>http://localhost:1313/policies/antt/</link>
+      <link>http://localhost:53726/policies/antt/</link>
       <pubDate>Sun, 21 Apr 2024 13:16:02 -0500</pubDate>
-      <guid>http://localhost:1313/policies/antt/</guid>
+      <guid>http://localhost:53726/policies/antt/</guid>
       <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
 &lt;p&gt;The ASEPTIC NON-TOUCH TECHNIQUE (ANTT®) is a pivotal approach in infection control during invasive clinical procedures and management of indwelling medical devices. Through an exploration of key definitions, practical applications, evidence-based recommendations, quality improvement strategies, and the significance of ANTT as a fundamental clinical competency, we aim to provide a thorough understanding of ANTT for healthcare practitioners. Drawing insights from the Infusion Nurses Society (INS) 9th Edition 2024 guidelines and scholarly sources, this paper serves as a comprehensive resource to advance the knowledge and implementation of ANTT in diverse healthcare environments.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Intracav AI Prompting Guidelines</title>
-      <link>http://localhost:1313/policies/prompting-guidelines/</link>
+      <link>http://localhost:53726/policies/prompting-guidelines/</link>
       <pubDate>Thu, 21 Mar 2024 13:16:02 -0500</pubDate>
-      <guid>http://localhost:1313/policies/prompting-guidelines/</guid>
+      <guid>http://localhost:53726/policies/prompting-guidelines/</guid>
       <description>&lt;h1 id=&#34;maximizing-your-experience-with-intracav-ai-a-comprehensive-guide&#34;&gt;Maximizing Your Experience with Intracav AI: A Comprehensive Guide&lt;/h1&gt;
 &lt;p&gt;Welcome to Intracav AI, your dedicated assistant in the field of vascular access. To ensure you derive the maximum benefit from your interactions with me, let&amp;rsquo;s jump into some guidelines and recommendations on how to effectively utilize the capabilities of Intracav AI. By following these comprehensive guidelines, you can optimize your experience and leverage the full potential of this AI assistant to enhance your clinical practice, research initiatives, and overall proficiency in vascular access care.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Exploring the Dynamics of Clinical Decision Making in Vascular Access</title>
-      <link>http://localhost:1313/policies/exploring-the-dynamics-of-clinical-decision-making-in-vascular-access/</link>
+      <link>http://localhost:53726/policies/exploring-the-dynamics-of-clinical-decision-making-in-vascular-access/</link>
       <pubDate>Sat, 16 Mar 2024 13:16:02 -0500</pubDate>
-      <guid>http://localhost:1313/policies/exploring-the-dynamics-of-clinical-decision-making-in-vascular-access/</guid>
+      <guid>http://localhost:53726/policies/exploring-the-dynamics-of-clinical-decision-making-in-vascular-access/</guid>
       <description>&lt;h1 id=&#34;exploring-the-dynamics-of-clinical-decision-making-in-vascular-access-empowering-healthcare-providers&#34;&gt;&lt;strong&gt;Exploring the Dynamics of Clinical Decision Making in Vascular Access: Empowering Healthcare Providers&lt;/strong&gt;&lt;/h1&gt;
 &lt;p&gt;In the intricate tapestry of healthcare, the domain of vascular access serves as a critical juncture where clinical decision-making plays a pivotal role. We aim to explore the nuances of clinical decision-making within vascular access, shedding light on the multifaceted aspects that guide healthcare providers in making informed choices for optimal patient care.&lt;/p&gt;
 &lt;h2 id=&#34;understanding-clinical-decision-making-in-vascular-access&#34;&gt;&lt;strong&gt;Understanding Clinical Decision Making in Vascular Access&lt;/strong&gt;&lt;/h2&gt;
@@ -57,9 +57,9 @@
     </item>
     <item>
       <title>Optimizing Vascular Device Removal</title>
-      <link>http://localhost:1313/policies/optimizing-vascular-device-removal/</link>
+      <link>http://localhost:53726/policies/optimizing-vascular-device-removal/</link>
       <pubDate>Sat, 16 Mar 2024 12:48:59 -0500</pubDate>
-      <guid>http://localhost:1313/policies/optimizing-vascular-device-removal/</guid>
+      <guid>http://localhost:53726/policies/optimizing-vascular-device-removal/</guid>
       <description>&lt;h1 id=&#34;optimizing-vascular-access-device-removal-evidence-based-strategies-and-recommendations&#34;&gt;Optimizing Vascular Access Device Removal: Evidence-Based Strategies and Recommendations&lt;/h1&gt;
 &lt;p&gt;Within vascular access, the removal of devices plays a critical role in patient care, necessitating adherence to evidence-based protocols to mitigate risks and ensure optimal outcomes. Drawing upon reputable guidelines and research findings, let&amp;rsquo;s explore the best practices and recommendations for removing various vascular access devices.&lt;/p&gt;
 &lt;h3 id=&#34;peripheral-intravenous-catheters-pivcs-and-midline-catheters&#34;&gt;Peripheral Intravenous Catheters (PIVCs) and Midline Catheters:&lt;/h3&gt;
@@ -84,9 +84,9 @@
     </item>
     <item>
       <title>PAD</title>
-      <link>http://localhost:1313/policies/pad/</link>
+      <link>http://localhost:53726/policies/pad/</link>
       <pubDate>Sat, 16 Mar 2024 12:47:43 -0500</pubDate>
-      <guid>http://localhost:1313/policies/pad/</guid>
+      <guid>http://localhost:53726/policies/pad/</guid>
       <description>&lt;h1 id=&#34;peripheral-arterial-disease-pad-a-comprehensive-overview&#34;&gt;&lt;strong&gt;Peripheral Arterial Disease (PAD): A Comprehensive Overview&lt;/strong&gt;&lt;/h1&gt;
 &lt;p&gt;Peripheral Arterial Disease (PAD) is a condition that affects the arteries outside the heart and brain, primarily caused by atherosclerosis, leading to reduced blood flow to the limbs. Understanding PAD is crucial for effective management and treatment strategies. Here are some key points extracted from various vascular access guidelines and textbooks, including the Infusion Nurses Society (INS) 9th Edition 2024:&lt;/p&gt;
 &lt;h2 id=&#34;glossary-insights&#34;&gt;&lt;strong&gt;Glossary Insights:&lt;/strong&gt;&lt;/h2&gt;

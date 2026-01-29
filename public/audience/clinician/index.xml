@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>For Clinicians on Intracav Wiki</title>
-    <link>http://localhost:1313/audience/clinician/</link>
+    <link>http://localhost:53726/audience/clinician/</link>
     <description>Recent content in For Clinicians on Intracav Wiki</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 03 May 2025 21:36:02 -0500</lastBuildDate>
-    <atom:link href="http://localhost:1313/audience/clinician/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:53726/audience/clinician/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>APIs Over Guidelines</title>
-      <link>http://localhost:1313/blog/apis-over-guidelines/</link>
+      <link>http://localhost:53726/blog/apis-over-guidelines/</link>
       <pubDate>Sat, 03 May 2025 21:36:02 -0500</pubDate>
-      <guid>http://localhost:1313/blog/apis-over-guidelines/</guid>
+      <guid>http://localhost:53726/blog/apis-over-guidelines/</guid>
       <description>&lt;h1 id=&#34;clinical-guidelines-are-rotting-the-case-for-api-first-medical-knowledge&#34;&gt;Clinical Guidelines Are Rotting: The Case for API-First Medical Knowledge&lt;/h1&gt;
 &lt;p&gt;&lt;em&gt;&amp;ldquo;All the projects I&amp;rsquo;ve had to make, I&amp;rsquo;ve made because I couldn&amp;rsquo;t find anything better. I much prefer other people solving my problems. Me having to come up with a project is actually a failure on the world.&amp;rdquo; - Linus Torvalds&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id=&#34;the-problem-pdfs-arent-healthcare-apis&#34;&gt;The Problem: PDFs Aren&amp;rsquo;t Healthcare APIs&lt;/h2&gt;
@@ -20,34 +20,34 @@
     </item>
     <item>
       <title>IntracavOS: The Beautiful Paranoia of Total Control</title>
-      <link>http://localhost:1313/blog/intracavos-the-beautiful-paranoia-of-total-control/</link>
+      <link>http://localhost:53726/blog/intracavos-the-beautiful-paranoia-of-total-control/</link>
       <pubDate>Fri, 22 Nov 2024 13:16:02 -0500</pubDate>
-      <guid>http://localhost:1313/blog/intracavos-the-beautiful-paranoia-of-total-control/</guid>
+      <guid>http://localhost:53726/blog/intracavos-the-beautiful-paranoia-of-total-control/</guid>
       <description>&lt;h2 id=&#34;intracavos-the-beautiful-paranoia-of-total-control&#34;&gt;&lt;strong&gt;IntracavOS: The Beautiful Paranoia of Total Control&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;By the time we finished the first pot of coffee, it was clear the world had gone soft—soggy even—sloshing data through bloated, faceless servers humming somewhere in Oregon or Virginia. Call it the convenience of APIs. Call it the outsourcing of trust. Call it what it is: a ticking bomb with a cheery user interface. When you’re dealing with healthcare—when you’re swimming in HIPAA compliance and patient data—the stakes aren’t just regulatory. They’re existential. And that’s why IntracavOS exists.&lt;/em&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Healthcare is a Slow Moving Carcass</title>
-      <link>http://localhost:1313/blog/healthcare-is-a-slow-moving-carcass/</link>
+      <link>http://localhost:53726/blog/healthcare-is-a-slow-moving-carcass/</link>
       <pubDate>Thu, 21 Nov 2024 13:16:02 -0500</pubDate>
-      <guid>http://localhost:1313/blog/healthcare-is-a-slow-moving-carcass/</guid>
+      <guid>http://localhost:53726/blog/healthcare-is-a-slow-moving-carcass/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;breaking-the-mold-in-vascular-access-why-healthcare-needs-a-gut-check&#34;&gt;Breaking the Mold in Vascular Access: Why Healthcare Needs a Gut Check&lt;/h2&gt;
 &lt;p&gt;I’m over the “innovation” talk in healthcare. Really. We’re all so busy positioning ourselves as the next big tech company with our “custom AI” projects, yet CLABSIs—central line-associated bloodstream infections—still run rampant across the country. Every professional I’ve met in healthcare has this bizarre inertia: they’re quick to ask but excruciatingly slow to spend, like they’re clinging to the hope that maybe if they wait just long enough, their problems will solve themselves. Spoiler alert: they won’t.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Introducing IntracavOS</title>
-      <link>http://localhost:1313/blog/introducing-intracavos/</link>
+      <link>http://localhost:53726/blog/introducing-intracavos/</link>
       <pubDate>Sat, 09 Nov 2024 13:16:02 -0500</pubDate>
-      <guid>http://localhost:1313/blog/introducing-intracavos/</guid>
+      <guid>http://localhost:53726/blog/introducing-intracavos/</guid>
       <description>&lt;h1 id=&#34;why-were-building-intracavos-real-talk-about-healthcare-ai&#34;&gt;Why We&amp;rsquo;re Building IntracavOS: Real Talk About Healthcare AI&lt;/h1&gt;
 &lt;p&gt;Look, let&amp;rsquo;s cut through the BS - healthcare AI is a mess. Everyone&amp;rsquo;s rushing to slap an LLM onto their product and call it &amp;ldquo;revolutionary,&amp;rdquo; but nobody&amp;rsquo;s talking about the elephant in the room: most of these solutions are held together with duct tape and prayers. At Intracav AI, we&amp;rsquo;re doing something different, and I&amp;rsquo;m going to tell you exactly why our approach is going to eat everyone else&amp;rsquo;s lunch.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Blood Draws and Hemolysis</title>
-      <link>http://localhost:1313/policies/blood-draws-and-hemolysis/</link>
+      <link>http://localhost:53726/policies/blood-draws-and-hemolysis/</link>
       <pubDate>Wed, 16 Oct 2024 13:16:02 -0500</pubDate>
-      <guid>http://localhost:1313/policies/blood-draws-and-hemolysis/</guid>
+      <guid>http://localhost:53726/policies/blood-draws-and-hemolysis/</guid>
       <description>&lt;h1 id=&#34;deep-dive-blood-draws-and-hemolysis&#34;&gt;Deep Dive Blood Draws and Hemolysis&lt;/h1&gt;
 &lt;p&gt;Follow along Intracav Chat and interact with it yourself with &lt;a href=&#34;https://www.intracav.ai/chat?chatId=n934mw6jvnxddlevmiiesrxs&#34;&gt;this link&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;CVR (Catheter to Vein Ratio). The Optimal ratio is &amp;lt;45%.&lt;/p&gt;
@@ -56,9 +56,9 @@
     </item>
     <item>
       <title>Cortisol Levels in Hospital Staff and Work Efficiency: A Critical Clinical Analysis</title>
-      <link>http://localhost:1313/policies/cortisol-levels-in-hospital-staff-and-work-efficiency-a-critical-clinical-analysis/</link>
+      <link>http://localhost:53726/policies/cortisol-levels-in-hospital-staff-and-work-efficiency-a-critical-clinical-analysis/</link>
       <pubDate>Sat, 01 Jun 2024 13:16:02 -0500</pubDate>
-      <guid>http://localhost:1313/policies/cortisol-levels-in-hospital-staff-and-work-efficiency-a-critical-clinical-analysis/</guid>
+      <guid>http://localhost:53726/policies/cortisol-levels-in-hospital-staff-and-work-efficiency-a-critical-clinical-analysis/</guid>
       <description>&lt;h1 id=&#34;cortisol-levels-in-hospital-staff-and-work-efficiency-a-critical-clinical-analysis&#34;&gt;Cortisol Levels in Hospital Staff and Work Efficiency: A Critical Clinical Analysis&lt;/h1&gt;
 &lt;h2 id=&#34;executive-summary-the-hidden-crisis-in-healthcare-excellence&#34;&gt;Executive Summary: The Hidden Crisis in Healthcare Excellence&lt;/h2&gt;
 &lt;p&gt;We&amp;rsquo;re confronting an invisible enemy in our hospitals—one that silently undermines clinical performance, compromises patient safety, and devastates our healthcare workforce. Cortisol dysregulation among hospital staff isn&amp;rsquo;t just a wellness concern; it&amp;rsquo;s a critical threat to medical excellence that demands immediate, evidence-based intervention.&lt;/p&gt;
@@ -66,25 +66,25 @@
     </item>
     <item>
       <title>ASEPTIC NON-TOUCH TECHNIQUE (ANTT®) in Clinical Practice</title>
-      <link>http://localhost:1313/policies/antt/</link>
+      <link>http://localhost:53726/policies/antt/</link>
       <pubDate>Sun, 21 Apr 2024 13:16:02 -0500</pubDate>
-      <guid>http://localhost:1313/policies/antt/</guid>
+      <guid>http://localhost:53726/policies/antt/</guid>
       <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
 &lt;p&gt;The ASEPTIC NON-TOUCH TECHNIQUE (ANTT®) is a pivotal approach in infection control during invasive clinical procedures and management of indwelling medical devices. Through an exploration of key definitions, practical applications, evidence-based recommendations, quality improvement strategies, and the significance of ANTT as a fundamental clinical competency, we aim to provide a thorough understanding of ANTT for healthcare practitioners. Drawing insights from the Infusion Nurses Society (INS) 9th Edition 2024 guidelines and scholarly sources, this paper serves as a comprehensive resource to advance the knowledge and implementation of ANTT in diverse healthcare environments.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Intracav AI Prompting Guidelines</title>
-      <link>http://localhost:1313/policies/prompting-guidelines/</link>
+      <link>http://localhost:53726/policies/prompting-guidelines/</link>
       <pubDate>Thu, 21 Mar 2024 13:16:02 -0500</pubDate>
-      <guid>http://localhost:1313/policies/prompting-guidelines/</guid>
+      <guid>http://localhost:53726/policies/prompting-guidelines/</guid>
       <description>&lt;h1 id=&#34;maximizing-your-experience-with-intracav-ai-a-comprehensive-guide&#34;&gt;Maximizing Your Experience with Intracav AI: A Comprehensive Guide&lt;/h1&gt;
 &lt;p&gt;Welcome to Intracav AI, your dedicated assistant in the field of vascular access. To ensure you derive the maximum benefit from your interactions with me, let&amp;rsquo;s jump into some guidelines and recommendations on how to effectively utilize the capabilities of Intracav AI. By following these comprehensive guidelines, you can optimize your experience and leverage the full potential of this AI assistant to enhance your clinical practice, research initiatives, and overall proficiency in vascular access care.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Exploring the Dynamics of Clinical Decision Making in Vascular Access</title>
-      <link>http://localhost:1313/policies/exploring-the-dynamics-of-clinical-decision-making-in-vascular-access/</link>
+      <link>http://localhost:53726/policies/exploring-the-dynamics-of-clinical-decision-making-in-vascular-access/</link>
       <pubDate>Sat, 16 Mar 2024 13:16:02 -0500</pubDate>
-      <guid>http://localhost:1313/policies/exploring-the-dynamics-of-clinical-decision-making-in-vascular-access/</guid>
+      <guid>http://localhost:53726/policies/exploring-the-dynamics-of-clinical-decision-making-in-vascular-access/</guid>
       <description>&lt;h1 id=&#34;exploring-the-dynamics-of-clinical-decision-making-in-vascular-access-empowering-healthcare-providers&#34;&gt;&lt;strong&gt;Exploring the Dynamics of Clinical Decision Making in Vascular Access: Empowering Healthcare Providers&lt;/strong&gt;&lt;/h1&gt;
 &lt;p&gt;In the intricate tapestry of healthcare, the domain of vascular access serves as a critical juncture where clinical decision-making plays a pivotal role. We aim to explore the nuances of clinical decision-making within vascular access, shedding light on the multifaceted aspects that guide healthcare providers in making informed choices for optimal patient care.&lt;/p&gt;
 &lt;h2 id=&#34;understanding-clinical-decision-making-in-vascular-access&#34;&gt;&lt;strong&gt;Understanding Clinical Decision Making in Vascular Access&lt;/strong&gt;&lt;/h2&gt;
@@ -92,9 +92,9 @@
     </item>
     <item>
       <title>Optimizing Vascular Device Removal</title>
-      <link>http://localhost:1313/policies/optimizing-vascular-device-removal/</link>
+      <link>http://localhost:53726/policies/optimizing-vascular-device-removal/</link>
       <pubDate>Sat, 16 Mar 2024 12:48:59 -0500</pubDate>
-      <guid>http://localhost:1313/policies/optimizing-vascular-device-removal/</guid>
+      <guid>http://localhost:53726/policies/optimizing-vascular-device-removal/</guid>
       <description>&lt;h1 id=&#34;optimizing-vascular-access-device-removal-evidence-based-strategies-and-recommendations&#34;&gt;Optimizing Vascular Access Device Removal: Evidence-Based Strategies and Recommendations&lt;/h1&gt;
 &lt;p&gt;Within vascular access, the removal of devices plays a critical role in patient care, necessitating adherence to evidence-based protocols to mitigate risks and ensure optimal outcomes. Drawing upon reputable guidelines and research findings, let&amp;rsquo;s explore the best practices and recommendations for removing various vascular access devices.&lt;/p&gt;
 &lt;h3 id=&#34;peripheral-intravenous-catheters-pivcs-and-midline-catheters&#34;&gt;Peripheral Intravenous Catheters (PIVCs) and Midline Catheters:&lt;/h3&gt;
@@ -119,9 +119,9 @@
     </item>
     <item>
       <title>PAD</title>
-      <link>http://localhost:1313/policies/pad/</link>
+      <link>http://localhost:53726/policies/pad/</link>
       <pubDate>Sat, 16 Mar 2024 12:47:43 -0500</pubDate>
-      <guid>http://localhost:1313/policies/pad/</guid>
+      <guid>http://localhost:53726/policies/pad/</guid>
       <description>&lt;h1 id=&#34;peripheral-arterial-disease-pad-a-comprehensive-overview&#34;&gt;&lt;strong&gt;Peripheral Arterial Disease (PAD): A Comprehensive Overview&lt;/strong&gt;&lt;/h1&gt;
 &lt;p&gt;Peripheral Arterial Disease (PAD) is a condition that affects the arteries outside the heart and brain, primarily caused by atherosclerosis, leading to reduced blood flow to the limbs. Understanding PAD is crucial for effective management and treatment strategies. Here are some key points extracted from various vascular access guidelines and textbooks, including the Infusion Nurses Society (INS) 9th Edition 2024:&lt;/p&gt;
 &lt;h2 id=&#34;glossary-insights&#34;&gt;&lt;strong&gt;Glossary Insights:&lt;/strong&gt;&lt;/h2&gt;

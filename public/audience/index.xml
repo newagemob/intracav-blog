@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Audience on Intracav Wiki</title>
-    <link>http://localhost:1313/audience/</link>
+    <link>http://localhost:53726/audience/</link>
     <description>Recent content in Audience on Intracav Wiki</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 16 Mar 2024 13:09:51 -0500</lastBuildDate>
-    <atom:link href="http://localhost:1313/audience/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:53726/audience/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>For Clinicians</title>
-      <link>http://localhost:1313/audience/clinician/</link>
+      <link>http://localhost:53726/audience/clinician/</link>
       <pubDate>Sat, 16 Mar 2024 13:09:51 -0500</pubDate>
-      <guid>http://localhost:1313/audience/clinician/</guid>
+      <guid>http://localhost:53726/audience/clinician/</guid>
       <description>Point-of-care protocols and clinical decision support for vascular access professionals. Evidence-based guidance when you need it most.</description>
     </item>
     <item>
       <title>For Patients &amp; Families</title>
-      <link>http://localhost:1313/audience/patient/</link>
+      <link>http://localhost:53726/audience/patient/</link>
       <pubDate>Sat, 16 Mar 2024 13:09:51 -0500</pubDate>
-      <guid>http://localhost:1313/audience/patient/</guid>
+      <guid>http://localhost:53726/audience/patient/</guid>
       <description>Clear, accessible information about vascular access care. Understand your treatment options and what to expect.</description>
     </item>
   </channel>
