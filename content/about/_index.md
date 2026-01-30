@@ -62,8 +62,8 @@ He is passionate about building innovative tools that empower healthcare provide
 
 ## Learn More
 
-- **[Intracav AI](https://intracav.ai)** — Personal clinical intelligence for clinicians and patients
-- **[qpolicy.ai](https://qpolicy.ai)** — Policy enforcement and team standardization platform
+- **<a href="https://intracav.ai" target="_blank" rel="noopener noreferrer">Intracav AI</a>** — Personal clinical intelligence for clinicians and patients
+- **<a href="https://qpolicy.ai" target="_blank" rel="noopener noreferrer">qpolicy.ai</a>** — Policy enforcement and team standardization platform
 
 ---
 

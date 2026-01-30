@@ -3,4 +3,4 @@ Disallow: /admin/
 Disallow: /api/
 Allow: /
 
-Sitemap: http://localhost:1313//sitemap.xml
+Sitemap: https://blog.intracav.ai//sitemap.xml
