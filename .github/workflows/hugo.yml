@@ -48,6 +48,19 @@ jobs:
         uses: actions/configure-pages@v4
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
+      - name: Check secrets configuration
+        run: |
+          echo "Checking environment variables..."
+          echo "INTRACAV_REPO will be set to: ${{ github.repository }}"
+          if [ -z "${{ secrets.INTRACAV_ADMIN_TOKEN }}" ]; then
+            echo "ERROR: INTRACAV_ADMIN_TOKEN secret is NOT set or is empty"
+            echo "Please add it at: https://github.com/${{ github.repository }}/settings/secrets/actions"
+            exit 1
+          else
+            echo "INTRACAV_ADMIN_TOKEN secret is set (length: ${#INTRACAV_ADMIN_TOKEN})"
+          fi
+        env:
+          INTRACAV_ADMIN_TOKEN: ${{ secrets.INTRACAV_ADMIN_TOKEN }}
       - name: Build with Hugo
         env:
           # For maximum backward compatibility with Hugo modules
