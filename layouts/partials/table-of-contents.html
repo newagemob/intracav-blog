@@ -1,0 +1,24 @@
+{{- /* Table of Contents - Right sidebar with scroll-spy */ -}}
+{{- if and .IsPage .TableOfContents (ne .Section "admin") -}}
+{{- $toc := .TableOfContents -}}
+{{- if $toc -}}
+<aside class="toc-sidebar" aria-label="Table of contents">
+  <h2 class="toc-heading">On This Page</h2>
+  <nav class="toc-nav" id="toc-nav">
+    {{ $toc }}
+  </nav>
+
+  {{- /* CTA at bottom of ToC */ -}}
+  {{- if and (eq .Params.content_type "policies") (not .Params.emergency) -}}
+  <div class="toc-cta">
+    <h3 class="toc-cta-title">For Teams</h3>
+    <p class="toc-cta-text">Standardize this policy across your team with version control and compliance tracking.</p>
+    <a href="https://qpolicy.ai" class="toc-cta-link" target="_blank" rel="noopener noreferrer">
+      Learn about qpolicy.ai
+      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+    </a>
+  </div>
+  {{- end -}}
+</aside>
+{{- end -}}
+{{- end -}}

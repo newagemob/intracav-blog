@@ -1,43 +1,57 @@
-{{- /* Handbook-style sidebar navigation */ -}}
+{{- /* Handbook-style sidebar navigation with collapsible sections */ -}}
 <aside class="handbook-sidebar">
-  <nav class="handbook-nav">
-    <div class="handbook-nav-section">
-      <h3 class="handbook-nav-title">Intracav Wiki</h3>
+  <nav class="handbook-nav" aria-label="Sidebar navigation">
+    <details class="handbook-nav-section" open>
+      <summary>
+        <span class="handbook-nav-title">Intracav Wiki</span>
+      </summary>
       <ul class="handbook-nav-list">
         <li><a href="/" class="handbook-nav-link {{ if .IsHome }}active{{ end }}">Home</a></li>
-        <li><a href="/policies/" class="handbook-nav-link {{ if eq .Section "policies" }}active{{ end }}">Policies</a></li>
-        <li><a href="/blog/" class="handbook-nav-link {{ if eq .Section "blog" }}active{{ end }}">Blog</a></li>
       </ul>
-    </div>
+    </details>
 
-    <div class="handbook-nav-section">
-      <h3 class="handbook-nav-title">Audience</h3>
+    <details class="handbook-nav-section" {{ if eq .Section "policies" }}open{{ end }}>
+      <summary>
+        <span class="handbook-nav-title">Policies</span>
+      </summary>
       <ul class="handbook-nav-list">
-        <li><a href="/audience/clinician/" class="handbook-nav-link {{ if and (eq .Kind "term") (eq .Data.Singular "audience") (eq .Title "Clinician") }}active{{ end }}">For Clinicians</a></li>
-        <li><a href="/audience/patient/" class="handbook-nav-link {{ if and (eq .Kind "term") (eq .Data.Singular "audience") (eq .Title "Patient") }}active{{ end }}">For Patients</a></li>
-      </ul>
-    </div>
-
-    <div class="handbook-nav-section">
-      <h3 class="handbook-nav-title">Browse</h3>
-      <ul class="handbook-nav-list">
-        <li><a href="/category/" class="handbook-nav-link {{ if and (eq .Kind "taxonomy") (eq .Data.Singular "category") }}active{{ end }}">Categories</a></li>
-        <li><a href="/about/" class="handbook-nav-link {{ if eq .Section "about" }}active{{ end }}">About</a></li>
-      </ul>
-    </div>
-
-    {{- if or (eq .Section "policies") (eq .Section "blog") }}
-    {{- $categories := site.Taxonomies.category }}
-    {{- if $categories }}
-    <div class="handbook-nav-section">
-      <h3 class="handbook-nav-title">Categories</h3>
-      <ul class="handbook-nav-list">
-        {{- range $categories.ByCount | first 10 }}
-        <li><a href="{{ .Page.RelPermalink }}" class="handbook-nav-link">{{ .Page.Title }} ({{ .Count }})</a></li>
+        <li><a href="/policies/" class="handbook-nav-link {{ if and (eq .Section "policies") (not .IsPage) }}active{{ end }}">All Policies</a></li>
+        {{- range first 10 (where site.RegularPages "Section" "policies").ByDate.Reverse }}
+        <li><a href="{{ .RelPermalink }}" class="handbook-nav-link {{ if eq $.RelPermalink .RelPermalink }}active{{ end }}">{{ .Title | truncate 40 }}</a></li>
         {{- end }}
       </ul>
-    </div>
-    {{- end }}
-    {{- end }}
+    </details>
+
+    <details class="handbook-nav-section" {{ if eq .Section "blog" }}open{{ end }}>
+      <summary>
+        <span class="handbook-nav-title">Blog</span>
+      </summary>
+      <ul class="handbook-nav-list">
+        <li><a href="/blog/" class="handbook-nav-link {{ if and (eq .Section "blog") (not .IsPage) }}active{{ end }}">All Posts</a></li>
+        {{- range first 8 (where site.RegularPages "Section" "blog").ByDate.Reverse }}
+        <li><a href="{{ .RelPermalink }}" class="handbook-nav-link {{ if eq $.RelPermalink .RelPermalink }}active{{ end }}">{{ .Title | truncate 40 }}</a></li>
+        {{- end }}
+      </ul>
+    </details>
+
+    <details class="handbook-nav-section">
+      <summary>
+        <span class="handbook-nav-title">Audience</span>
+      </summary>
+      <ul class="handbook-nav-list">
+        <li><a href="/audience/clinician/" class="handbook-nav-link {{ if and (eq .Kind "term") (eq .Title "Clinician") }}active{{ end }}">For Clinicians</a></li>
+        <li><a href="/audience/patient/" class="handbook-nav-link {{ if and (eq .Kind "term") (eq .Title "Patient") }}active{{ end }}">For Patients</a></li>
+      </ul>
+    </details>
+
+    <details class="handbook-nav-section">
+      <summary>
+        <span class="handbook-nav-title">Browse</span>
+      </summary>
+      <ul class="handbook-nav-list">
+        <li><a href="/category/" class="handbook-nav-link {{ if and (eq .Kind "taxonomy") }}active{{ end }}">Categories</a></li>
+        <li><a href="https://intracav.ai/about" class="handbook-nav-link" target="_blank" rel="noopener noreferrer">About</a></li>
+      </ul>
+    </details>
   </nav>
 </aside>

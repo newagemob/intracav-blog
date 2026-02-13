@@ -1,12 +1,22 @@
 {{- define "main" }}
 <div class="handbook-home-page">
-  {{- /* Hero Section */ -}}
+  {{- /* Hero Section with Gradient */ -}}
   <section class="handbook-home-hero">
     <h1 class="handbook-home-hero-title">{{ site.Title }}</h1>
     <p class="handbook-home-hero-description">
       {{ .Description | default site.Params.description | default "Evidence-based clinical guidelines and policies for vascular access teams" }}
     </p>
-    
+
+    {{- /* Hero Search Trigger (opens command palette) */ -}}
+    <button class="hero-search-trigger" data-search-trigger>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"></circle>
+        <path d="m21 21-4.35-4.35"></path>
+      </svg>
+      <span>Search policies, guidelines, and blog posts...</span>
+      <kbd>⌘K</kbd>
+    </button>
+
     {{- /* Hero Conversion Pathways */ -}}
     <div class="hero-pathways">
       <a href="https://intracav.ai" class="hero-pathway" target="_blank" rel="noopener noreferrer">
@@ -36,28 +46,9 @@
     </div>
   </section>
 
-  {{- /* Premium Search Bar */ -}}
-  <div class="search-container">
-    <div class="search-input-wrapper">
-      <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="11" cy="11" r="8"></circle>
-        <path d="m21 21-4.35-4.35"></path>
-      </svg>
-      <input 
-        type="search" 
-        id="search-input" 
-        class="search-input" 
-        placeholder="Search policies, guidelines, and blog posts..."
-        autocomplete="off"
-        aria-label="Search documentation"
-      />
-      <div id="search-results" class="search-results" role="listbox" aria-label="Search results"></div>
-    </div>
-  </div>
-
   {{- $policies := where site.RegularPages "Section" "policies" }}
   {{- $blog := where site.RegularPages "Section" "blog" }}
-  
+
   <div class="handbook-home-sections">
     {{- if $policies }}
     <section class="handbook-home-section">
@@ -76,7 +67,7 @@
       <p class="handbook-section-description">Evidence-based protocols and standardized procedures</p>
       <div class="handbook-article-list">
         {{- range first 6 $policies.ByDate.Reverse }}
-        <a href="{{ .RelPermalink }}" class="handbook-article-card handbook-article-card-policy" data-searchable data-title="{{ .Title }}" data-url="{{ .RelPermalink }}" data-description="{{ .Description | default .Summary }}">
+        <a href="{{ .RelPermalink }}" class="handbook-article-card handbook-article-card-policy">
           <article class="handbook-article-card-content">
             <h3 class="handbook-article-card-title">{{ .Title }}</h3>
             {{- if .Description }}
@@ -119,7 +110,6 @@
     </section>
     {{- end }}
 
-
     {{- if $blog }}
     <section class="handbook-home-section">
       <div class="handbook-section-header">
@@ -130,7 +120,7 @@
       <p class="handbook-section-description">Analysis, perspectives, and healthcare innovation</p>
       <div class="handbook-article-list">
         {{- range first 6 $blog.ByDate.Reverse }}
-        <a href="{{ .RelPermalink }}" class="handbook-article-card handbook-article-card-blog" data-searchable data-title="{{ .Title }}" data-url="{{ .RelPermalink }}" data-description="{{ .Description | default .Summary }}">
+        <a href="{{ .RelPermalink }}" class="handbook-article-card handbook-article-card-blog">
           <article class="handbook-article-card-content">
             <h3 class="handbook-article-card-title">{{ .Title }}</h3>
             {{- if .Description }}
@@ -168,15 +158,16 @@
   </div>
 </div>
 
-{{- /* Search index for client-side search */ -}}
+{{- /* Search index for client-side search (homepage fast-path) */ -}}
 <script type="application/json" id="search-index-data">
 {{- $searchIndex := slice -}}
 {{- range site.RegularPages -}}
-  {{- $searchIndex = $searchIndex | append (dict 
+  {{- $searchIndex = $searchIndex | append (dict
     "title" .Title
     "url" .RelPermalink
     "description" (.Description | default .Summary | default "")
     "content" ((.Plain | default "") | truncate 500)
+    "section" .Section
   ) -}}
 {{- end -}}
 {{- $searchIndex | jsonify -}}

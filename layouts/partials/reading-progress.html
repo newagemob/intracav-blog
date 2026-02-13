@@ -1,0 +1,26 @@
+{{- /* Reading Progress Bar - Fixed gradient bar at top */ -}}
+{{- if .IsPage -}}
+<div class="reading-progress" id="reading-progress" aria-hidden="true"></div>
+<script>
+(function() {
+  var bar = document.getElementById('reading-progress');
+  if (!bar) return;
+  var ticking = false;
+  function updateProgress() {
+    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    if (docHeight > 0) {
+      bar.style.width = Math.min((scrollTop / docHeight) * 100, 100) + '%';
+    }
+    ticking = false;
+  }
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      requestAnimationFrame(updateProgress);
+      ticking = true;
+    }
+  }, { passive: true });
+  updateProgress();
+})();
+</script>
+{{- end -}}

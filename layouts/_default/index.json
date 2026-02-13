@@ -1,0 +1,11 @@
+{{- $searchIndex := slice -}}
+{{- range site.RegularPages -}}
+  {{- $searchIndex = $searchIndex | append (dict
+    "title" .Title
+    "url" .RelPermalink
+    "description" (.Description | default .Summary | default "")
+    "content" ((.Plain | default "") | truncate 500)
+    "section" .Section
+  ) -}}
+{{- end -}}
+{{- $searchIndex | jsonify -}}

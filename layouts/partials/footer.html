@@ -1,9 +1,47 @@
-{{- /* Minimal handbook footer with conversion */ -}}
+{{- /* Multi-column mega footer */ -}}
 <footer class="handbook-footer">
   <div class="handbook-footer-container">
-    <div class="handbook-footer-content">
+    <div class="handbook-footer-grid">
+      {{- /* Brand Column */ -}}
+      <div class="handbook-footer-column">
+        <p class="handbook-footer-brand-name">Intracav Wiki</p>
+        <p class="handbook-footer-brand-tagline">Evidence-based clinical guidelines and policies for vascular access teams.</p>
+      </div>
+
+      {{- /* Documentation Links */ -}}
+      <div class="handbook-footer-column">
+        <h3 class="handbook-footer-column-title">Documentation</h3>
+        <ul class="handbook-footer-column-list">
+          <li><a href="/policies/">Policies</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/category/">Categories</a></li>
+          <li><a href="https://intracav.ai/about" target="_blank" rel="noopener noreferrer">About</a></li>
+        </ul>
+      </div>
+
+      {{- /* Audience Links */ -}}
+      <div class="handbook-footer-column">
+        <h3 class="handbook-footer-column-title">Audience</h3>
+        <ul class="handbook-footer-column-list">
+          <li><a href="/audience/clinician/">For Clinicians</a></li>
+          <li><a href="/audience/patient/">For Patients</a></li>
+        </ul>
+      </div>
+
+      {{- /* Product Links */ -}}
+      <div class="handbook-footer-column">
+        <h3 class="handbook-footer-column-title">Products</h3>
+        <ul class="handbook-footer-column-list">
+          <li><a href="https://intracav.ai" target="_blank" rel="noopener noreferrer">Intracav AI</a></li>
+          <li><a href="https://qpolicy.ai" target="_blank" rel="noopener noreferrer">qpolicy.ai</a></li>
+        </ul>
+      </div>
+    </div>
+
+    {{- /* Bottom Bar */ -}}
+    <div class="handbook-footer-bottom">
       <p class="handbook-footer-text">
-        © {{ now.Year }} Intracav Wiki
+        &copy; {{ now.Year }} Intracav Wiki
       </p>
       <div class="handbook-footer-links">
         <a href="https://intracav.ai" class="handbook-footer-link" target="_blank" rel="noopener noreferrer">

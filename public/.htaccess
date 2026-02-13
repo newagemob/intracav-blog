@@ -1,0 +1,13 @@
+# Apache .htaccess Redirects
+# Redirect old /articles/ routes to new /blog/ or /policies/ routes
+
+# Enable rewrite engine
+RewriteEngine On
+
+# Redirect old /articles/ routes to /blog/
+RewriteRule ^articles/(.*)$ /blog/$1 [R=301,L]
+RewriteRule ^articles$ /blog [R=301,L]
+
+# Force HTTPS (if not already configured)
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]

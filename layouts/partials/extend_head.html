@@ -1,4 +1,4 @@
-{{- /* Prevent flash of wrong theme - inline script must be first */ -}}
+{{- /* Prevent flash of wrong theme */ -}}
 <script>
   (function() {
     const stored = localStorage.getItem('handbook-theme');
@@ -11,34 +11,34 @@
   })();
 </script>
 
-{{- /* Custom CSS for Intracav Wiki */ -}}
-{{- $wikiCSS := resources.Get "css/wiki-custom.css" -}}
-{{- if $wikiCSS }}
+{{- /* Google Fonts - Inter */ -}}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+{{- /* Consolidated CSS: tokens + main + medical-print */ -}}
+{{- $tokens := resources.Get "css/tokens.css" -}}
+{{- $mainCSS := resources.Get "css/main.css" -}}
+{{- $printCSS := resources.Get "css/medical-print.css" -}}
+{{- if and $tokens $mainCSS $printCSS }}
+  {{- $bundle := slice $tokens $mainCSS $printCSS | resources.Concat "css/intracav.css" | resources.Minify -}}
   {{- if not site.Params.assets.disableFingerprinting }}
-    {{- $wikiCSS = $wikiCSS | fingerprint }}
-    <link rel="stylesheet" href="{{ $wikiCSS.RelPermalink }}" integrity="{{ $wikiCSS.Data.Integrity }}" crossorigin="anonymous">
+    {{- $bundle = $bundle | fingerprint }}
+    <link rel="stylesheet" href="{{ $bundle.RelPermalink }}" integrity="{{ $bundle.Data.Integrity }}" crossorigin="anonymous">
   {{- else }}
-    <link rel="stylesheet" href="{{ $wikiCSS.RelPermalink }}">
+    <link rel="stylesheet" href="{{ $bundle.RelPermalink }}">
+  {{- end }}
+{{- else if and $tokens $mainCSS }}
+  {{- $bundle := slice $tokens $mainCSS | resources.Concat "css/intracav.css" | resources.Minify -}}
+  {{- if not site.Params.assets.disableFingerprinting }}
+    {{- $bundle = $bundle | fingerprint }}
+    <link rel="stylesheet" href="{{ $bundle.RelPermalink }}" integrity="{{ $bundle.Data.Integrity }}" crossorigin="anonymous">
+  {{- else }}
+    <link rel="stylesheet" href="{{ $bundle.RelPermalink }}">
   {{- end }}
 {{- end }}
 
-{{- /* Premium Design System */ -}}
-{{- $designSystem := resources.Get "css/design-system.css" -}}
-{{- $medicalCore := resources.Get "css/medical-core.css" -}}
-{{- $medicalComponents := resources.Get "css/medical-components.css" -}}
-{{- $medicalPrint := resources.Get "css/medical-print.css" -}}
-{{- if and $designSystem $medicalCore $medicalComponents $medicalPrint }}
-  {{- $premiumCSS := slice $designSystem $medicalCore $medicalComponents $medicalPrint | resources.Concat "css/premium-combined.css" | resources.Minify -}}
-  {{- if not site.Params.assets.disableFingerprinting }}
-    {{- $premiumCSS = $premiumCSS | fingerprint }}
-    <link rel="stylesheet" href="{{ $premiumCSS.RelPermalink }}" integrity="{{ $premiumCSS.Data.Integrity }}" crossorigin="anonymous">
-  {{- else }}
-    <link rel="stylesheet" href="{{ $premiumCSS.RelPermalink }}">
-  {{- end }}
-{{- end }}
-
-{{- /* Search Functionality */ -}}
-{{- if .IsHome }}
+{{- /* Search (global - loaded on all pages) */ -}}
 {{- $searchJS := resources.Get "js/search.js" -}}
 {{- if $searchJS }}
   {{- if not site.Params.assets.disableFingerprinting }}
@@ -48,6 +48,16 @@
     <script src="{{ $searchJS.RelPermalink }}" defer></script>
   {{- end }}
 {{- end }}
+
+{{- /* ToC Scroll Spy */ -}}
+{{- $tocJS := resources.Get "js/toc.js" -}}
+{{- if $tocJS }}
+  {{- if not site.Params.assets.disableFingerprinting }}
+    {{- $tocJS = $tocJS | fingerprint }}
+    <script src="{{ $tocJS.RelPermalink }}" integrity="{{ $tocJS.Data.Integrity }}" crossorigin="anonymous" defer></script>
+  {{- else }}
+    <script src="{{ $tocJS.RelPermalink }}" defer></script>
+  {{- end }}
 {{- end }}
 
 {{- /* Theme Toggle JavaScript */ -}}
@@ -58,72 +68,6 @@
     <script src="{{ $themeJS.RelPermalink }}" integrity="{{ $themeJS.Data.Integrity }}" crossorigin="anonymous"></script>
   {{- else }}
     <script src="{{ $themeJS.RelPermalink }}"></script>
-  {{- end }}
-{{- end }}
-
-{{- /* Mobile Navigation CSS */ -}}
-{{- $mobileNavCSS := resources.Get "css/mobile-nav.css" -}}
-{{- if $mobileNavCSS }}
-  {{- if not site.Params.assets.disableFingerprinting }}
-    {{- $mobileNavCSS = $mobileNavCSS | fingerprint }}
-    <link rel="stylesheet" href="{{ $mobileNavCSS.RelPermalink }}" integrity="{{ $mobileNavCSS.Data.Integrity }}" crossorigin="anonymous">
-  {{- else }}
-    <link rel="stylesheet" href="{{ $mobileNavCSS.RelPermalink }}">
-  {{- end }}
-{{- end }}
-
-{{- /* UX Refinements CSS */ -}}
-{{- $uxRefinements := resources.Get "css/ux-refinements.css" -}}
-{{- if $uxRefinements }}
-  {{- if not site.Params.assets.disableFingerprinting }}
-    {{- $uxRefinements = $uxRefinements | fingerprint }}
-    <link rel="stylesheet" href="{{ $uxRefinements.RelPermalink }}" integrity="{{ $uxRefinements.Data.Integrity }}" crossorigin="anonymous">
-  {{- else }}
-    <link rel="stylesheet" href="{{ $uxRefinements.RelPermalink }}">
-  {{- end }}
-{{- end }}
-
-{{- /* Premium Landing Pages CSS */ -}}
-{{- $premiumLanding := resources.Get "css/premium-landing.css" -}}
-{{- if $premiumLanding }}
-  {{- if not site.Params.assets.disableFingerprinting }}
-    {{- $premiumLanding = $premiumLanding | fingerprint }}
-    <link rel="stylesheet" href="{{ $premiumLanding.RelPermalink }}" integrity="{{ $premiumLanding.Data.Integrity }}" crossorigin="anonymous">
-  {{- else }}
-    <link rel="stylesheet" href="{{ $premiumLanding.RelPermalink }}">
-  {{- end }}
-{{- end }}
-
-{{- /* Sophisticated Design CSS */ -}}
-{{- $sophisticatedDesign := resources.Get "css/sophisticated-design.css" -}}
-{{- if $sophisticatedDesign }}
-  {{- if not site.Params.assets.disableFingerprinting }}
-    {{- $sophisticatedDesign = $sophisticatedDesign | fingerprint }}
-    <link rel="stylesheet" href="{{ $sophisticatedDesign.RelPermalink }}" integrity="{{ $sophisticatedDesign.Data.Integrity }}" crossorigin="anonymous">
-  {{- else }}
-    <link rel="stylesheet" href="{{ $sophisticatedDesign.RelPermalink }}">
-  {{- end }}
-{{- end }}
-
-{{- /* Section Hero CSS */ -}}
-{{- $sectionHero := resources.Get "css/section-hero.css" -}}
-{{- if $sectionHero }}
-  {{- if not site.Params.assets.disableFingerprinting }}
-    {{- $sectionHero = $sectionHero | fingerprint }}
-    <link rel="stylesheet" href="{{ $sectionHero.RelPermalink }}" integrity="{{ $sectionHero.Data.Integrity }}" crossorigin="anonymous">
-  {{- else }}
-    <link rel="stylesheet" href="{{ $sectionHero.RelPermalink }}">
-  {{- end }}
-{{- end }}
-
-{{- /* About Page CSS */ -}}
-{{- $aboutPage := resources.Get "css/about-page.css" -}}
-{{- if $aboutPage }}
-  {{- if not site.Params.assets.disableFingerprinting }}
-    {{- $aboutPage = $aboutPage | fingerprint }}
-    <link rel="stylesheet" href="{{ $aboutPage.RelPermalink }}" integrity="{{ $aboutPage.Data.Integrity }}" crossorigin="anonymous">
-  {{- else }}
-    <link rel="stylesheet" href="{{ $aboutPage.RelPermalink }}">
   {{- end }}
 {{- end }}
 
@@ -138,7 +82,7 @@
   {{- end }}
 {{- end }}
 
-{{- /* Admin CSS */ -}}
+{{- /* Admin CSS (conditional) */ -}}
 {{- if eq .Section "admin" }}
 {{- $adminCSS := resources.Get "css/admin.css" -}}
 {{- if $adminCSS }}
