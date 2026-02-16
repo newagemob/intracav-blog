@@ -25,7 +25,10 @@
       try {
         var text = inlineEl.textContent.trim();
         if (text) {
-          searchIndex = JSON.parse(text);
+          var parsed = JSON.parse(text);
+          // Hugo's minifier double-encodes JSON in <script type="application/json"> tags,
+          // so the first parse may return a string that needs a second parse
+          searchIndex = typeof parsed === 'string' ? JSON.parse(parsed) : parsed;
           indexLoaded = true;
           callback();
           return;
