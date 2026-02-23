@@ -191,7 +191,6 @@ Exceptions to the luer-lock connection requirement may be considered only in cir
 - Hazardous Drug Handling and Administration Policy
 - Infusion Pump Safety and Operation Policy
 - CLABSI Prevention Bundle Policy
-- INS Infusion Therapy Standards of Practice (current edition)
 - NIOSH Guidelines for Handling Hazardous Drugs in Healthcare Settings
 
 ## 8. Revision History

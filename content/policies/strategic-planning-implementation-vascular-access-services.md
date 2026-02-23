@@ -102,7 +102,7 @@ This policy applies to:
 
 4.6.1 The vascular access service shall utilize validated quality improvement frameworks—including Failure Mode and Effects Analysis (FMEA), Lean Six Sigma, Plan-Do-Check-Act (PDCA), and Root Cause Analysis (RCA)—to systematically optimize workflows, reduce clinical risks, and improve outcomes.
 
-4.6.2 The organization shall support vascular access team members in pursuing and maintaining board certifications (e.g., CRNI®, VA-BC™) and active membership in professional societies (e.g., INS, AVA) to ensure the service remains aligned with the latest clinical evidence and professional standards.
+4.6.2 The organization shall support vascular access team members in pursuing and maintaining board certifications (e.g., CRNI®, VA-BC™) and active membership in professional societies (e.g., AVA) to ensure the service remains aligned with the latest clinical evidence and professional standards.
 
 ## 5. Compliance
 

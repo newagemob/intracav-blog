@@ -134,7 +134,6 @@ This policy applies to:
 - Organizational Allergy Documentation Policy
 - FDA Regulation: Banned Devices — Powdered Gloves (81 FR 91722)
 - CDC Epidemiology and Prevention of Vaccine-Preventable Diseases: Appendix B (Latex)
-- INS Standards of Practice, Current Edition
 
 ## 8. Revision History
 

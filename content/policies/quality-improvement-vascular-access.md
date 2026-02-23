@@ -139,7 +139,6 @@ This policy applies to:
 - Organizational Safety Event Reporting Policy
 - Organizational Just Culture Policy
 - NHSN CABSI Surveillance Protocol
-- INS Standards of Practice, Current Edition
 - Joint Commission National Patient Safety Goals
 
 ## 8. Revision History

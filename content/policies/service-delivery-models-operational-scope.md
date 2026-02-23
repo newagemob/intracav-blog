@@ -61,7 +61,7 @@ This policy applies to:
 
 **Clinical Rounding.** VAST members shall perform daily clinical rounds on all patients with indwelling CVADs and shall perform scheduled surveillance rounds on patients with peripheral devices. Rounding activities shall include: site assessment, dressing and securement evaluation, line necessity review, staff adherence to maintenance protocols, and identification of devices eligible for downsizing or removal.
 
-**Consultation Services.** The VAST shall be available for consultation to all clinical staff regarding device selection, complex infusion management, complication troubleshooting, and patient-specific vascular access planning. Consultation requests and findings shall be documented in the patient's health record.
+**Consultation Services.** The VAST shall be available for consultation to all clinical staff regarding device selection, complex infusion management, complication troubleshooting, and patient-specific vascular access planning.[^1] Consultation requests and findings shall be documented in the patient's health record.
 
 ### 4.3 Operational Coverage
 
@@ -119,7 +119,6 @@ This policy applies to:
 - POL-006: Interprofessional Safety and Care Transitions
 - VAST After-Hours Coverage Plan
 - EMR Vascular Access Order Set and Documentation Template Specifications
-- INS Standards of Practice, Current Edition
 
 ## 8. Revision History
 
@@ -127,3 +126,9 @@ This policy applies to:
 |---------|------|-----------|----------------------|
 | 1.0 | 2026-02-01 | D. Woo, M. Stern, I.M. Wright | Initial policy creation and approval |
 | — | — | — | Scheduled review date: 2027-02-01 |
+
+---
+
+## References
+
+[^1]: Norris AH, Shrestha NK, Allison GM, et al. 2018 Infectious Diseases Society of America Clinical Practice Guideline for the Management of Outpatient Parenteral Antimicrobial Therapy. *Clin Infect Dis*. 2019;68(1):E1-E35. doi:[10.1093/cid/ciy745](https://doi.org/10.1093/cid/ciy745)

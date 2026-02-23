@@ -204,7 +204,6 @@ This policy applies to:
 - Controlled Substance Diversion Prevention Policy (this collection)
 - Blood and Fluid Warming Policy (this collection)
 - Organizational Drug Library and Pharmacy Policy (Pharmacy Department)
-- INS Infusion Therapy Standards of Practice, 9th Edition
 - Institute for Safe Medication Practices (ISMP) Guidelines on Safe Pump Use
 
 ## 8. Revision History

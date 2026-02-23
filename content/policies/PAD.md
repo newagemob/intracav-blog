@@ -8,15 +8,15 @@ content_type = "policies"
 audience = "clinician"
 author = ["Intracav-CM01"]
 description = "Comprehensive clinical guideline for Peripheral Arterial Disease (PAD) management in vascular access: evidence-based protocols for assessment, prevention, and treatment strategies."
-summary = "Complete PAD clinical overview including diagnostic criteria, risk factors, and vascular access considerations based on INS guidelines and medical literature."
+summary = "Complete PAD clinical overview including diagnostic criteria, risk factors, and vascular access considerations based on current clinical evidence and medical literature."
 slug = "peripheral-arterial-disease-pad"
 keywords = ["Peripheral Arterial Disease", "PAD", "Atherosclerosis", "Vascular Access", "Thrombophlebitis", "Clinical Guidelines"]
-authority = "Infusion Nurses Society (INS)"
+authority = "Vascular Access Governance Committee"
 +++
 
 # **Peripheral Arterial Disease (PAD): A Comprehensive Overview**
 
-Peripheral Arterial Disease (PAD) is a condition that affects the arteries outside the heart and brain, primarily caused by atherosclerosis, leading to reduced blood flow to the limbs. Understanding PAD is crucial for effective management and treatment strategies. Here are some key points extracted from various vascular access guidelines and textbooks, including the Infusion Nurses Society (INS) 9th Edition 2024:
+Peripheral Arterial Disease (PAD) is a condition that affects the arteries outside the heart and brain, primarily caused by atherosclerosis, leading to reduced blood flow to the limbs. Understanding PAD is crucial for effective management and treatment strategies. Here are some key points extracted from current vascular access guidelines and textbooks:
 
 ## **Glossary Insights:**
 - **Thrombophlebitis**: Inflammation of the vein with the formation of a blood clot (thrombus).
@@ -24,7 +24,6 @@ Peripheral Arterial Disease (PAD) is a condition that affects the arteries outsi
 - **Transducer**: Device converting one form of energy to another.
 - **Vascular access device (VAD)**: Device inserted into the vascular system, including veins, arteries, and bone marrow.
 
-(Source: INS 9th Edition 2024, Page 277)
 
 ## **Vascular Access Device Postinsertion Care:**
 - Remove excess hair at the insertion site using single patient-use scissors or disposable-head surgical clippers.
@@ -33,7 +32,6 @@ Peripheral Arterial Disease (PAD) is a condition that affects the arteries outsi
 - Consider the use of tissue adhesive for decreased dressing changes and increased survivability.
 - Choose the appropriate sterile dressing based on factors like VAD type, risk of bleeding/infection, and patient preferences.
 
-(Source: INS 9th Edition 2024, Page 139)
 
 ## **Vascular Access Device-Related Infection Prevention:**
 - Implement care bundles and a culture of safety to reduce VAD-related infections.
@@ -42,7 +40,6 @@ Peripheral Arterial Disease (PAD) is a condition that affects the arteries outsi
 - Perform skin antisepsis at the VAD site prior to placement and routine care.
 - Use chlorhexidine gluconate-containing dressings to prevent CLABSIs in patients with short-term CVADs.
 
-(Source: INS 9th Edition 2024, Page 177)
 
 ## **Vascular Access Device Occlusion Management:**
 - Assess VAD patency by flushing all catheter lumens without resistance.
@@ -50,5 +47,4 @@ Peripheral Arterial Disease (PAD) is a condition that affects the arteries outsi
 - Identify signs of VAD occlusion such as sluggish blood return, resistance to flush, and swelling at the infusion site.
 - Consider alternative actions if catheter patency cannot be confirmed, involving specialists and radiographic studies.
 
-(Source: INS 9th Edition 2024, Page 172)
 

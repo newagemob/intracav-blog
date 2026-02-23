@@ -59,7 +59,7 @@ This policy applies to:
 
 ### 4.2 Ultrasound Technology
 
-4.2.1 Ultrasound shall be used for pre-insertion assessment and, when indicated, real-time guidance during vascular access device placement. Pre-insertion assessment shall evaluate:
+4.2.1 Ultrasound shall be used for pre-insertion assessment and, when indicated, real-time guidance during vascular access device placement.[^1][^2][^3] Pre-insertion assessment shall evaluate:
 
 - Vessel size, caliber (diameter and intravenous path length), depth, flow, and patency
 - Vascular anomalies including occlusion and thrombosis
@@ -72,7 +72,7 @@ This policy applies to:
 
 4.2.4 Ultrasound guidance is indicated for internal jugular vein central venous access. The long axis in-plane approach may be used as an alternative to the short axis out-of-plane technique, with evidence supporting improved first-attempt success and reduced posterior wall puncture across neonatal, pediatric, and adult patients.
 
-4.2.5 For arterial catheter insertion, ultrasound guidance shall be applied when feasible. Evidence supports improved first-attempt success rates, fewer insertion attempts, reduced hematoma formation, and lower failure rates compared to palpation alone for radial, axillary, and femoral arterial lines.
+4.2.5 For arterial catheter insertion, ultrasound guidance shall be applied when feasible. Evidence supports improved first-attempt success rates, fewer insertion attempts, reduced hematoma formation, and lower failure rates compared to palpation alone for radial, axillary, and femoral arterial lines.[^4]
 
 ### 4.3 Visible Light (Transillumination) Devices
 
@@ -112,7 +112,7 @@ This policy applies to:
 
 ### 4.7 Training and Competency
 
-4.7.1 All clinicians using vascular visualization technology shall demonstrate documented competency prior to independent use. Competency programs shall support clinicians across the novice-to-expert continuum.
+4.7.1 All clinicians using vascular visualization technology shall demonstrate documented competency prior to independent use. Competency programs shall support clinicians across the novice-to-expert continuum.[^5][^6][^7][^8]
 
 4.7.2 Competency assessment shall address:
 - Vessel assessment: size, depth, location, and patency
@@ -121,7 +121,7 @@ This policy applies to:
 - Probe handling and aseptic non-touch technique application
 - Recognition of potential complications during visualization-guided insertion
 
-4.7.3 Competency documentation shall be maintained in individual personnel records and reassessed at a frequency consistent with organizational policy and scope of practice requirements.
+4.7.3 Competency documentation shall be maintained in individual personnel records and reassessed at a frequency consistent with organizational policy and scope of practice requirements.[^9]
 
 ## 5. Compliance
 
@@ -155,7 +155,6 @@ This policy applies to:
 - Central Vascular Access Device Tip Location Policy (this collection)
 - Catheter-Associated Thrombosis Prevention Standards
 - SOP-VA-010: PICC Insertion Using Surgical-ANTT
-- INS Infusion Therapy Standards of Practice, 9th Edition
 - Association for Vascular Access (AVA) Ultrasound-Guided Vascular Access Guidelines
 
 ## 8. Revision History
@@ -165,3 +164,25 @@ This policy applies to:
 | 1.0 | 2023-07-11 | Intracav-CM01 | Initial policy creation |
 | 1.1 | 2025-01-14 | D. Woo, M. Stern, I.M. Wright | Updated catheter-to-vessel ratio thresholds and pediatric ultrasound guidance; revised competency framework |
 | — | — | — | Scheduled review date: 2026-07-11 |
+
+---
+
+## References
+
+[^1]: Picard C, O'Dochartaigh D, Burnett C, et al. NENA position statement: ultrasound guidance for peripheral intravenous cannulation. *CJEN Can J Emerg Med*. 2023;46(1). doi:[10.29173/cjen212](https://doi.org/10.29173/cjen212)
+
+[^2]: Spencer TR, Bardin-Spencer A. Ultrasound guidance for vascular access procedures by qualified vascular access specialists or other applicable healthcare clinicians. *J Assoc Vasc Access*. 2019;25(1):18-22. doi:[10.2309/j.java.2019.004.002](https://doi.org/10.2309/j.java.2019.004.002)
+
+[^3]: Spencer TR, Bardin-Spencer A. Central venous access device insertion by qualified vascular access specialists or other applicable healthcare clinicians. *J Assoc Vasc Access*. 2020;25(1):52-55. doi:[10.2309/j.java.2020.01.001](https://doi.org/10.2309/j.java.2020.01.001)
+
+[^4]: Bardin-Spencer A, Spencer TR. Ultrasound-guided peripheral arterial catheter insertion by qualified vascular access specialists or other applicable health care clinicians. *J Assoc Vasc Access*. 2019;25(1):48-50. doi:[10.2309/j.java.2019.003.008](https://doi.org/10.2309/j.java.2019.003.008)
+
+[^5]: Totenhofer R, Luck L, Wilkes L. Point of care ultrasound use by registered nurses and nurse practitioners in clinical practice: an integrative review. *Collegian*. 2021;28(4):456-463. doi:[10.1016/j.colegn.2020.10.002](https://doi.org/10.1016/j.colegn.2020.10.002)
+
+[^6]: Pitman JS, Buscemi M, Funk EM, Weaver S, Thompson JA, Falyar C. Incorporating evidence-based ultrasound-guided vascular access (USGVA) standards into the nurse anesthetist armamentarium: a quality improvement project. *J Perianesth Nurs*. 2023;38(4):564-571. doi:[10.1016/j.jopan.2022.11.014](https://doi.org/10.1016/j.jopan.2022.11.014)
+
+[^7]: Briggs C, Smith-Steinert R, Bakis M. Continuing education for the certified registered nurse anesthetist: ultrasound-guided peripheral intravenous access. *J Contin Educ Nurs*. 2021;52(10):489-492. doi:[10.3928/00220124-20210913-09](https://doi.org/10.3928/00220124-20210913-09)
+
+[^8]: Cormack CJ, Childs J, Kent F. Point-of-care ultrasound educational development in Australasia: a scoping review. *Ultrasound Med Biol*. 2023;49(6):1375-1384. doi:[10.1016/j.ultrasmedbio.2023.02.011](https://doi.org/10.1016/j.ultrasmedbio.2023.02.011)
+
+[^9]: American Society of Radiologic Technologists. ASRT professional practice resources and decision tree for determining scope of practice. Revised January 30, 2018. [https://www.asrt.org/docs/default-source/practice-standards/asrt-practice-resources.pdf](https://www.asrt.org/docs/default-source/practice-standards/asrt-practice-resources.pdf)

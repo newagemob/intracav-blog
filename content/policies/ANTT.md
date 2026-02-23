@@ -134,7 +134,6 @@ When performing Standard-ANTT, non-sterile gloves generally suffice unless direc
 - SOP-VA-020: Peripheral IV Insertion Using Standard-ANTT
 - SOP-VA-030: CVC Dressing Change Using Surgical-ANTT
 - ANTT® Clinical Practice Framework (The Association for Safe Aseptic Practice)
-- INS Infusion Therapy Standards of Practice, 9th Edition
 
 ## 8. Revision History
 

@@ -120,7 +120,7 @@ This hierarchy reflects the superior patency rates, lower infection risks, and i
 
 #### 4.6.2 Elderly Patients
 
-4.6.2.1 For older patients requiring hemodialysis, the decision between AVF/AVG creation versus hemodialysis catheter placement shall involve careful evaluation of life expectancy, surgical risk, patient preferences, and quality-of-life considerations. A hemodialysis catheter may represent the most appropriate choice for patients with limited life expectancy or those for whom surgical intervention poses unacceptable risk. Shared decision-making shall be documented.
+4.6.2.1 For older patients requiring hemodialysis, the decision between AVF/AVG creation versus hemodialysis catheter placement shall involve careful evaluation of life expectancy, surgical risk, patient preferences, and quality-of-life considerations.[^1][^2][^3][^4] A hemodialysis catheter may represent the most appropriate choice for patients with limited life expectancy or those for whom surgical intervention poses unacceptable risk. Shared decision-making shall be documented.
 
 ### 4.7 Infection Prevention and Aseptic Technique
 
@@ -194,7 +194,7 @@ This hierarchy reflects the superior patency rates, lower infection risks, and i
 
 ### 4.11 Quality Improvement and Surveillance
 
-4.11.1 Ongoing surveillance for bloodstream infections and other dialysis-related adverse events shall be maintained. Surveillance outcomes shall be systematically shared with the healthcare team to drive continuous quality improvement and benchmark institutional performance against established standards.
+4.11.1 Ongoing surveillance for bloodstream infections and other dialysis-related adverse events shall be maintained.[^5] Surveillance outcomes shall be systematically shared with the healthcare team to drive continuous quality improvement and benchmark institutional performance against established standards.
 
 ### 4.12 Patient Education and Engagement
 
@@ -251,3 +251,17 @@ Exceptions to this policy, including temporary use of non-tunneled catheters bey
 |---------|------|--------|-------------|
 | 1.0 | 2023-08-22 | Vascular Access Governance Committee | Initial policy release |
 | 1.1 | 2025-06-01 | Vascular Access Governance Committee | Annual review; tPA prophylaxis, mupirocin restriction, and elderly patient guidance updated |
+
+---
+
+## References
+
+[^1]: van Oevelen M, Heggen BDC, Abrahams AC, et al. Central venous catheter-related complications in older haemodialysis patients: a multicentre observational cohort study. *J Vasc Access*. 2022. doi:[10.1177/11297298221085225](https://doi.org/10.1177/11297298221085225)
+
+[^2]: Yan T, Gameiro J, Grilo J, Filipe R, Rocha E. Hemodialysis vascular access in elderly patients: a comprehensive review. *J Vasc Access*. 2022. doi:[10.1177/11297298221097233](https://doi.org/10.1177/11297298221097233)
+
+[^3]: Ko GJ, Rhee CM, Obi Y, et al. Vascular access placement and mortality in elderly incident hemodialysis patients. *Nephrol Dial Transplant*. 2020;35(3):503-511. doi:[10.1093/ndt/gfy254](https://doi.org/10.1093/ndt/gfy254)
+
+[^4]: Woo K, Gascue L, Norris K, Lin E. Patient frailty and functional use of hemodialysis vascular access: a retrospective study of the US Renal Data System. *Am J Kidney Dis*. 2022;80(1):30-45. doi:[10.1053/j.ajkd.2021.10.011](https://doi.org/10.1053/j.ajkd.2021.10.011)
+
+[^5]: Rha B, See I, Dunham L, et al. Vital signs: health disparities in hemodialysis-associated *Staphylococcus aureus* bloodstream infections—United States, 2017-2020. *MMWR Morb Mortal Wkly Rep*. 2023;72(6):153-159. doi:[10.15585/mmwr.mm7206e1](https://doi.org/10.15585/mmwr.mm7206e1)

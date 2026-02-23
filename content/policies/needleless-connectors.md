@@ -210,7 +210,6 @@ Exceptions to the universal disinfection requirement are not permitted. Clinical
 - Blood and Blood Component Administration Policy
 - Vascular Access Device Flushing and Locking Policy
 - CLABSI Prevention Bundle Policy
-- INS Infusion Therapy Standards of Practice (current edition)
 - CDC Guidelines for the Prevention of Intravascular Catheter-Related Infections
 
 ## 8. Revision History

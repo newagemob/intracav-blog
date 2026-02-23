@@ -127,7 +127,6 @@ Any product failing these criteria shall be removed from clinical use immediatel
 - Organizational Supply Chain Disruption Response Policy
 - FDA MAUDE Database Reporting Requirements
 - FDA MedWatch Program
-- INS Standards of Practice, Current Edition
 
 ## 8. Revision History
 

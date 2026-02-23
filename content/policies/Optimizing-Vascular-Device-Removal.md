@@ -8,10 +8,10 @@ content_type = "policies"
 audience = "clinician"
 author = ["Intracav-CM01"]
 description = "Evidence-based clinical guidelines for vascular access device removal: comprehensive protocols for PIVCs, midline catheters, and central lines to optimize patient safety and outcomes."
-summary = "Complete guide to vascular device removal strategies including assessment criteria, removal techniques, and complication prevention based on INS guidelines."
+summary = "Complete guide to vascular device removal strategies including assessment criteria, removal techniques, and complication prevention based on current clinical evidence."
 slug = "optimizing-vascular-device-removal"
 keywords = ["Vascular Device Removal", "PIVC Removal", "Catheter Removal", "Central Line Removal", "Midline Catheter", "Clinical Protocol"]
-authority = "Infusion Nurses Society (INS)"
+authority = "Vascular Access Governance Committee"
 +++
 
 # Optimizing Vascular Access Device Removal: Evidence-Based Strategies and Recommendations
@@ -19,12 +19,12 @@ authority = "Infusion Nurses Society (INS)"
 Within vascular access, the removal of devices plays a critical role in patient care, necessitating adherence to evidence-based protocols to mitigate risks and ensure optimal outcomes. Drawing upon reputable guidelines and research findings, let's explore the best practices and recommendations for removing various vascular access devices.
 
 ### Peripheral Intravenous Catheters (PIVCs) and Midline Catheters:
-- The INS 9th Edition 2024 guidelines underscore the importance of assessing the necessity of PIVCs and midline catheters regularly.
+- Current evidence-based guidelines underscore the importance of assessing the necessity of PIVCs and midline catheters regularly.
 - Removal criteria include discontinuation from the treatment plan, unused status for 24 hours or more, and consideration of systemic complications.
 - Swift removal of catheters inserted under suboptimal aseptic conditions is recommended to prevent infections and complications.
 
 ### Nontunneled Central Vascular Access Devices (CVADs) and PICCs:
-- Daily assessment of the continued need for nontunneled CVADs and PICCs is advised, aligning with best practices outlined in the INS guidelines.
+- Daily assessment of the continued need for nontunneled CVADs and PICCs is advised, aligning with current evidence-based best practices.
 - Collaborative decision-making with the healthcare team is crucial for timely removal when devices are no longer essential for treatment.
 - Precautions, such as preventing air embolism and avoiding forceful removal, are essential to minimize complications during CVAD removal.
 
@@ -35,4 +35,4 @@ Within vascular access, the removal of devices plays a critical role in patient 
 
 These evidence-based strategies emphasize the significance of systematic assessment, collaborative decision-making, and adherence to established guidelines to optimize vascular access device removal and enhance patient safety.
 
-For a deeper dive into the research underpinning these recommendations, refer to the INS 9th Edition 2024 guidelines and explore scholarly resources from the AAP and Cochrane Library. By integrating research-driven practices into clinical workflows, healthcare providers can elevate the standard of care in vascular access management.
+For a deeper dive into the research underpinning these recommendations, refer to current evidence-based guidelines and explore scholarly resources from the AAP and Cochrane Library. By integrating research-driven practices into clinical workflows, healthcare providers can elevate the standard of care in vascular access management.

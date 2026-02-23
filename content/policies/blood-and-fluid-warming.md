@@ -203,7 +203,6 @@ This policy applies to:
 - Organizational Massive Transfusion Protocol (Blood Bank/Transfusion Medicine)
 - AABB Standards for Blood Banks and Transfusion Services
 - AABB Primer on Blood Administration (8th Edition)
-- INS Infusion Therapy Standards of Practice, 9th Edition
 - ACR Manual on Contrast Media
 
 ## 8. Revision History

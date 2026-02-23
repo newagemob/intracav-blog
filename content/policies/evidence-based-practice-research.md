@@ -44,7 +44,7 @@ This policy applies to:
 
 ### 4.1 Professional Responsibility in Knowledge and Evidence
 
-4.1.1 **Continuous Revision of Clinical Documents.** All organizational vascular access policies, standard operating procedures (SOPs), and clinical protocols shall be reviewed on a scheduled basis—at minimum every two (2) years, or sooner if prompted by the publication of major new clinical evidence, updated professional society guidelines (e.g., INS Standards of Practice), regulatory changes, or sentinel event findings. The VAGC shall maintain a master document review schedule that tracks the last review date, next scheduled review date, and assigned reviewer(s) for each document.
+4.1.1 **Continuous Revision of Clinical Documents.** All organizational vascular access policies, standard operating procedures (SOPs), and clinical protocols shall be reviewed on a scheduled basis—at minimum every two (2) years, or sooner if prompted by the publication of major new clinical evidence, updated professional society guidelines, regulatory changes, or sentinel event findings. The VAGC shall maintain a master document review schedule that tracks the last review date, next scheduled review date, and assigned reviewer(s) for each document.
 
 4.1.2 **Evidence Grading.** When revising policies and protocols, the VAGC shall grade the supporting evidence using a recognized hierarchy (e.g., the Johns Hopkins Evidence-Based Practice Model or the GRADE framework). The evidence grade shall be documented within the policy or protocol to allow clinicians to understand the strength of the evidence behind each recommendation.
 
@@ -106,7 +106,6 @@ This policy applies to:
 - Evidence-Based Practice Change Log (maintained by VAGC)
 - Organizational IRB Policies and Procedures
 - CITI Training Requirements
-- INS Standards of Practice, Current Edition
 - Johns Hopkins Evidence-Based Practice Model (or organizational equivalent)
 
 ## 8. Revision History

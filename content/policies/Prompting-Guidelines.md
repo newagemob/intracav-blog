@@ -49,7 +49,7 @@ Share insights from recent studies or inquire about the latest advancements in v
 
 ### 3. Seek Clarification on Protocols
 
-In instances where you encounter conflicting information or guidelines related to vascular access procedures or management, engage in discussions with Intracav AI to gain a comprehensive perspective. Clarifying protocols and best practices can help ensure optimal patient outcomes. For instance, you might ask, "What are the key differences between the latest CDC guidelines and the INS standards for the prevention of catheter-related bloodstream infections, and how should healthcare providers reconcile these differences in their clinical practice?"
+In instances where you encounter conflicting information or guidelines related to vascular access procedures or management, engage in discussions with Intracav AI to gain a comprehensive perspective. Clarifying protocols and best practices can help ensure optimal patient outcomes. For instance, you might ask, "What are the key differences between the latest CDC guidelines and current professional society standards for the prevention of catheter-related bloodstream infections, and how should healthcare providers reconcile these differences in their clinical practice?"
 
 ### 4. Explore Off-label Uses
 

@@ -167,7 +167,6 @@ This policy applies to:
 - Vascular Visualization Technology Policy (this collection)
 - POL-012: Documentation in the Health Record for Vascular Access
 - POL-003: Evidence-Based Selection and Clinical Monitoring Standards
-- INS Infusion Therapy Standards of Practice, 9th Edition
 - KDOQI Clinical Practice Guideline for Vascular Access (2019 Update)
 - SOP-VA-010: PICC Insertion Using Surgical-ANTT
 

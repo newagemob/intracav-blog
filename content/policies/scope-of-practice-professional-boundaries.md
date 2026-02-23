@@ -43,7 +43,7 @@ This policy applies to:
 
 ### 4.1 The Regulatory Hierarchy
 
-4.1.1 Clinicians shall recognize and comply with the following hierarchy of regulatory authority, listed from highest to lowest legal weight:
+4.1.1 Clinicians shall recognize and comply with the following hierarchy of regulatory authority, listed from highest to lowest legal weight:[^1]
 
 **Level 1 — Legislative Authority.** Statutes and laws enacted by the applicable jurisdiction (federal, state, or provincial), including but not limited to Nurse Practice Acts, Medical Practice Acts, and Pharmacy Practice Acts. Legislative authority constitutes the highest level of legal mandate and cannot be overridden by any lower-level authority.
 
@@ -51,7 +51,7 @@ This policy applies to:
 
 **Level 3 — Interpretive Guidelines.** Operational documents, advisory opinions, and position statements issued by regulatory bodies to clarify how regulations should be applied in daily clinical practice.
 
-**Level 4 — Professional Standards.** Evidence-based clinical guidelines and position statements published by recognized professional organizations (e.g., Infusion Nurses Society [INS], Association for Vascular Access [AVA], American Nurses Association [ANA], Society of Interventional Radiology [SIR]).
+**Level 4 — Professional Standards.** Evidence-based clinical guidelines and position statements published by recognized professional organizations (e.g., Association for Vascular Access [AVA], American Nurses Association [ANA], Society of Interventional Radiology [SIR]).[^2][^3][^4][^5][^6]
 
 **Level 5 — Organizational Policy.** Institutional policies, procedures, and protocols that further define the permissible activities of clinicians within the specific practice setting.
 
@@ -63,7 +63,7 @@ This policy applies to:
 
 ### 4.2 Decision-Making Framework for Practice Expansion
 
-4.2.1 As vascular access technology and clinical needs evolve, clinicians may be asked to perform tasks that were not part of their initial training or traditional scope (e.g., an RN inserting a CVAD, a UAP inserting a peripheral IV, an LPN managing a PICC). Before any individual adopts a new vascular access skill, all six of the following criteria must be affirmatively met and documented:
+4.2.1 As vascular access technology and clinical needs evolve, clinicians may be asked to perform tasks that were not part of their initial training or traditional scope (e.g., an RN inserting a CVAD, a UAP inserting a peripheral IV, an LPN managing a PICC). Before any individual adopts a new vascular access skill, all six of the following criteria must be affirmatively met and documented:[^7][^8][^9]
 
 | Criterion | Requirement | Documentation |
 |-----------|-------------|---------------|
@@ -106,17 +106,17 @@ This policy applies to:
 
 ### 4.4 Professional Roles and Responsibilities
 
-4.4.1 **Registered Nurses (RNs).** The RN is the cornerstone of infusion therapy delivery, exercising clinical judgment to integrate assessment data, plan vascular access care, implement evidence-based interventions, and evaluate patient outcomes. RNs shall advocate for "top-of-license" practice, ensuring that organizational barriers do not unnecessarily restrict their evidence-based capabilities. Within this organization, RNs are authorized to perform peripheral IV insertion and removal, administer medications and infusions via all authorized access devices, perform CVAD dressing changes and maintenance, assess vascular access sites, initiate DIVA escalation protocols, and delegate appropriate tasks to qualified subordinate personnel.
+4.4.1 **Registered Nurses (RNs).** The RN is the cornerstone of infusion therapy delivery, exercising clinical judgment to integrate assessment data, plan vascular access care, implement evidence-based interventions, and evaluate patient outcomes. RNs shall advocate for "top-of-license" practice, ensuring that organizational barriers do not unnecessarily restrict their evidence-based capabilities.[^10][^11] Within this organization, RNs are authorized to perform peripheral IV insertion and removal, administer medications and infusions via all authorized access devices, perform CVAD dressing changes and maintenance, assess vascular access sites, initiate DIVA escalation protocols, and delegate appropriate tasks to qualified subordinate personnel.
 
-4.4.2 **Licensed Practical/Vocational Nurses (LPN/LVNs).** The scope for LPN/LVNs varies significantly by jurisdiction. Within this organization, LPN/LVNs are authorized to perform only those vascular access tasks expressly permitted by the applicable State Board of Nursing and further approved by organizational policy. The Clinical Education Department shall maintain a current LPN/LVN Vascular Access Scope Matrix that reflects the most recent regulatory guidance. At minimum, all LPN/LVN vascular access activities shall be performed under the supervision of an RN or physician, as defined by state regulation.
+4.4.2 **Licensed Practical/Vocational Nurses (LPN/LVNs).** The scope for LPN/LVNs varies significantly by jurisdiction. Within this organization, LPN/LVNs are authorized to perform only those vascular access tasks expressly permitted by the applicable State Board of Nursing and further approved by organizational policy. The Clinical Education Department shall maintain a current LPN/LVN Vascular Access Scope Matrix that reflects the most recent regulatory guidance.[^12][^13] At minimum, all LPN/LVN vascular access activities shall be performed under the supervision of an RN or physician, as defined by state regulation.
 
-4.4.3 **Advanced Practice Registered Nurses (APRNs).** APRNs, including Nurse Practitioners (NPs) and Certified Registered Nurse Anesthetists (CRNAs), may hold prescriptive authority and may be authorized to perform advanced vascular access procedures within their legal scope. Within a facility, the APRN's practice is further governed by Credentialing and Privileging—specific permissions granted by the Medical Staff Office and approved by the governing board to perform defined interventions. APRNs shall not perform any vascular access procedure for which they have not been expressly privileged, regardless of their legal scope.
+4.4.3 **Advanced Practice Registered Nurses (APRNs).** APRNs, including Nurse Practitioners (NPs) and Certified Registered Nurse Anesthetists (CRNAs), may hold prescriptive authority and may be authorized to perform advanced vascular access procedures within their legal scope.[^14][^15] Within a facility, the APRN's practice is further governed by Credentialing and Privileging—specific permissions granted by the Medical Staff Office and approved by the governing board to perform defined interventions.[^16][^17][^18] APRNs shall not perform any vascular access procedure for which they have not been expressly privileged, regardless of their legal scope.
 
-4.4.4 **Vascular Access Specialists and Infusion Nurse Specialists.** Clinicians who hold board certification in infusion therapy (e.g., CRNI®, VA-BC™) serve as vital organizational assets. Their organizational role includes: leading quality improvement initiatives to reduce catheter-related bloodstream infections (CRBSIs), providing expert consultation for difficult access cases and complex infusion regimens, drafting and revising the evidence-based protocols and standards that guide institutional practice, serving as clinical preceptors and competency evaluators for vascular access training programs, and participating in product evaluation and technology adoption decisions.
+4.4.4 **Vascular Access Specialists and Infusion Nurse Specialists.** Clinicians who hold board certification in infusion therapy (e.g., CRNI®, VA-BC™) serve as vital organizational assets.[^19] Their organizational role includes: leading quality improvement initiatives to reduce catheter-related bloodstream infections (CRBSIs), providing expert consultation for difficult access cases and complex infusion regimens, drafting and revising the evidence-based protocols and standards that guide institutional practice, serving as clinical preceptors and competency evaluators for vascular access training programs, and participating in product evaluation and technology adoption decisions.[^20][^21][^22]
 
-4.4.5 **Physicians (MDs/DOs) and Physician Assistants (PAs).** Physicians and PAs perform vascular access procedures within the scope of their medical licensure and institutional privileges. They are responsible for prescribing vascular access devices, interpreting diagnostic imaging for catheter tip confirmation, and managing complex procedural complications. Collaborative practice with nursing and vascular access specialist teams is expected.
+4.4.5 **Physicians (MDs/DOs) and Physician Assistants (PAs).** Physicians and PAs perform vascular access procedures within the scope of their medical licensure and institutional privileges.[^23] They are responsible for prescribing vascular access devices, interpreting diagnostic imaging for catheter tip confirmation, and managing complex procedural complications. Collaborative practice with nursing and vascular access specialist teams is expected.
 
-4.4.6 **Unlicensed Assistive Personnel (UAPs) and Medical Assistants (MAs).** UAPs and MAs may perform only those vascular access tasks expressly permitted by the applicable state law and organizational policy. In all cases, their activities are limited to technical tasks with predictable outcomes, performed under the direct or indirect supervision of a licensed clinician. UAPs and MAs bear accountability for the technical completion of the delegated task only; clinical accountability remains with the supervising licensed clinician.
+4.4.6 **Unlicensed Assistive Personnel (UAPs) and Medical Assistants (MAs).** UAPs and MAs may perform only those vascular access tasks expressly permitted by the applicable state law and organizational policy.[^24][^25][^26][^27][^28][^29][^30][^31] In all cases, their activities are limited to technical tasks with predictable outcomes, performed under the direct or indirect supervision of a licensed clinician.[^32] UAPs and MAs bear accountability for the technical completion of the delegated task only; clinical accountability remains with the supervising licensed clinician.
 
 ## 5. Compliance
 
@@ -148,7 +148,6 @@ This policy applies to:
 - Practice Expansion Matrix (maintained by Vascular Access Governance Committee)
 - Applicable State Nurse Practice Act and Board of Nursing Regulations
 - Applicable State Medical Practice Act
-- Infusion Nurses Society (INS) Standards of Practice, Current Edition
 - American Nurses Association (ANA) Principles of Delegation
 - Joint Commission Human Resources Standards (HR.01.02.01 et seq.)
 - Organizational Credentialing and Privileging Policy
@@ -160,3 +159,71 @@ This policy applies to:
 |---------|------|-----------|----------------------|
 | 1.0 | 2026-02-01 | D. Woo, M. Stern, I.M. Wright | Initial policy creation and approval |
 | — | — | — | Scheduled review date: 2027-02-01 or upon change in applicable state regulation, whichever occurs first |
+
+---
+
+## References
+
+[^1]: Federation of State Medical Boards of the United States. Assessing scope of practice in health care delivery: critical questions in assuring public access and safety. 2005. [https://www.fsmb.org/siteassets/advocacy/policies/assessing-scope-of-practice-in-health-care-delivery.pdf](https://www.fsmb.org/siteassets/advocacy/policies/assessing-scope-of-practice-in-health-care-delivery.pdf)
+
+[^2]: American Society of Radiologic Technologists. *The ASRT Practice Standards for Medical Imaging and Radiation Therapy*. 2021. [https://www.asrt.org/main/standards-and-regulations/professional-practice/practice-standards-online](https://www.asrt.org/main/standards-and-regulations/professional-practice/practice-standards-online)
+
+[^3]: American Association for Respiratory Care. Respiratory care scope of practice position statement. 2018. [https://www.aarc.org/wp-content/uploads/2017/03/statement-of-scope-of-practice.pdf](https://www.aarc.org/wp-content/uploads/2017/03/statement-of-scope-of-practice.pdf)
+
+[^4]: National Association of State EMS Officials. *National EMS Scope of Practice Model 2019*. 2019. [https://www.ems.gov/assets/National_EMS_Scope_of_Practice_Model_2019.pdf](https://www.ems.gov/assets/National_EMS_Scope_of_Practice_Model_2019.pdf)
+
+[^5]: Clark JS, Knoer SJ, Waier KA, et al. Maximizing pharmacists' scope of practice. *Am J Health-Syst Pharm*. 2022;79(16):1397-1401. doi:[10.1093/ajhp/zxac053](https://doi.org/10.1093/ajhp/zxac053)
+
+[^6]: Jordan TA, Hennenfent JA, Lewin JJ, Nesbit TW, Weber R. Elevating pharmacists' scope of practice through a health-system clinical privileging process. *Am J Health Syst Pharm*. 2016;73(18):1395-1405. doi:[10.2146/ajhp150820](https://doi.org/10.2146/ajhp150820)
+
+[^7]: American Society of Radiologic Technologists. ASRT professional practice resources and decision tree for determining scope of practice. Revised January 30, 2018. [https://www.asrt.org/docs/default-source/practice-standards/asrt-practice-resources.pdf](https://www.asrt.org/docs/default-source/practice-standards/asrt-practice-resources.pdf)
+
+[^8]: Totenhofer R, Luck L, Wilkes L. Point of care ultrasound use by registered nurses and nurse practitioners in clinical practice: an integrative review. *Collegian*. 2021;28(4):456-463. doi:[10.1016/j.colegn.2020.10.002](https://doi.org/10.1016/j.colegn.2020.10.002)
+
+[^9]: Picard C, O'Dochartaigh D, Burnett C, et al. NENA position statement: ultrasound guidance for peripheral intravenous cannulation. *CJEN Can J Emerg Med*. 2023;46(1). doi:[10.29173/cjen212](https://doi.org/10.29173/cjen212)
+
+[^10]: American Association of Colleges of Nursing. *The Essentials: Core Competencies for Professional Nursing Education*. 2021. [https://www.aacnnursing.org/Portals/0/PDFs/Publications/Essentials-2021.pdf](https://www.aacnnursing.org/Portals/0/PDFs/Publications/Essentials-2021.pdf)
+
+[^11]: Roche MA, Duffield C, Friedman S, Dimitrelis S, Rowbotham S. Regulated and unregulated nurses in the acute hospital setting: tasks performed, delayed or not completed. *J Clin Nurs*. 2016;25(1-2):153-162. doi:[10.1111/jocn.13118](https://doi.org/10.1111/jocn.13118)
+
+[^12]: O'Keefe C. The authority for certain clinical tasks performed by unlicensed patient care technicians and LPNs/LVNs in the hemodialysis setting: a review. *Nephrol Nurs J*. 2014;41(3):247-254. PMID: 25065058.
+
+[^13]: Cahill M, Painter DR, Branch JL. The authority for certain clinical tasks performed by unlicensed patient care technicians and LPNs/LVNs in the hemodialysis setting: an update and invitation to take action. *Nephrol Nurs J*. 2021;48(2):119-129. doi:[10.37526/1526-744X.2021.48.2.119](https://doi.org/10.37526/1526-744X.2021.48.2.119)
+
+[^14]: Pitman JS, Buscemi M, Funk EM, Weaver S, Thompson JA, Falyar C. Incorporating evidence-based ultrasound-guided vascular access (USGVA) standards into the nurse anesthetist armamentarium: a quality improvement project. *J Perianesth Nurs*. 2023;38(4):564-571. doi:[10.1016/j.jopan.2022.11.014](https://doi.org/10.1016/j.jopan.2022.11.014)
+
+[^15]: Briggs C, Smith-Steinert R, Bakis M. Continuing education for the certified registered nurse anesthetist: ultrasound-guided peripheral intravenous access. *J Contin Educ Nurs*. 2021;52(10):489-492. doi:[10.3928/00220124-20210913-09](https://doi.org/10.3928/00220124-20210913-09)
+
+[^16]: Jalloh F, Tadlock MD, Cantwell S, Rausch T, Aksoy H, Frankel H. Credentialing and privileging of acute care nurse practitioners to do invasive procedures: a statewide survey. *Am J Crit Care*. 2016;25(4):357-361. doi:[10.4037/ajcc2016118](https://doi.org/10.4037/ajcc2016118)
+
+[^17]: Pradarelli JC, Campbell DA, Dimick JB. Hospital credentialing and privileging of surgeons: a potential safety blind spot. *JAMA*. 2015;313(13):1313-1314. doi:[10.1001/jama.2015.1943](https://doi.org/10.1001/jama.2015.1943)
+
+[^18]: Patel R, Sharma D. Credentialing. *StatPearls* [Internet]. StatPearls Publishing; 2020. [https://www.ncbi.nlm.nih.gov/books/NBK519504/](https://www.ncbi.nlm.nih.gov/books/NBK519504/)
+
+[^19]: Ullman A, Kleidon T, Rickard C. The role of the vascular access nurse practitioner in developing evidence, promoting evidence-based vascular access practice and improving health services. *Vasc Access*. 2015;1(1):10-20.
+
+[^20]: Spencer TR, Bardin-Spencer A. Central venous access device insertion by qualified vascular access specialists or other applicable healthcare clinicians. *J Assoc Vasc Access*. 2020;25(1):52-55. doi:[10.2309/j.java.2020.01.001](https://doi.org/10.2309/j.java.2020.01.001)
+
+[^21]: Bardin-Spencer A, Spencer TR. Ultrasound-guided peripheral arterial catheter insertion by qualified vascular access specialists or other applicable health care clinicians. *J Assoc Vasc Access*. 2019;25(1):48-50. doi:[10.2309/j.java.2019.003.008](https://doi.org/10.2309/j.java.2019.003.008)
+
+[^22]: Spencer TR, Bardin-Spencer A. Ultrasound guidance for vascular access procedures by qualified vascular access specialists or other applicable healthcare clinicians. *J Assoc Vasc Access*. 2019;25(1):18-22. doi:[10.2309/j.java.2019.004.002](https://doi.org/10.2309/j.java.2019.004.002)
+
+[^23]: Wiler JL, Ginde AA. State laws governing physician assistant practice in the United States and the impact on emergency medicine. *J Emerg Med*. 2015;48(2):e49-58. doi:[10.1016/j.jemermed.2014.09.033](https://doi.org/10.1016/j.jemermed.2014.09.033)
+
+[^24]: McMullen TL, Resnick B, Hansen JC, Miller N, Rubinstein R. Certified nurse aides and scope of practice: clinical outcomes and patient safety. *J Gerontol Nurs*. 2015;41(12):32-39. doi:[10.3928/00989134-20151008-58](https://doi.org/10.3928/00989134-20151008-58)
+
+[^25]: Hewko SJ, Cooper SL, Huynh H, et al. Invisible no more: a scoping review of the health care aide workforce literature. *BMC Nurs*. 2015;14(1):38. doi:[10.1186/s12912-015-0090-x](https://doi.org/10.1186/s12912-015-0090-x)
+
+[^26]: Vizcarra C. The role of unlicensed assistive personnel in the provision of infusion therapy. *J Infus Nurs*. 2016;39(4):196-200. doi:[10.1097/nan.0000000000000172](https://doi.org/10.1097/nan.0000000000000172)
+
+[^27]: Pittman P, Li S, Han X, Lowe T. Clinical nonlicensed personnel in U.S. hospitals: job trends from 2010 to 2015. *Nurs Outlook*. 2018;66(1):35-45. doi:[10.1016/j.outlook.2017.06.014](https://doi.org/10.1016/j.outlook.2017.06.014)
+
+[^28]: Trinkoff AM, Storr CL, Lerner NB, Yang BK, Han K. CNA training requirements and resident care outcomes in nursing homes. *Gerontologist*. 2017;57(3):501-508. doi:[10.1093/geront/gnw049](https://doi.org/10.1093/geront/gnw049)
+
+[^29]: McCarty MN. The lawful scope of practice of medical assistants–2012 update. *AMT Events*. 2012;29(2):110-119.
+
+[^30]: Chapman SA, Marks A, Dower C. Positioning medical assistants for a greater role in the era of health reform. *Acad Med*. 2015;90(10):1347-1352. doi:[10.1097/acm.0000000000000775](https://doi.org/10.1097/acm.0000000000000775)
+
+[^31]: Chapman SA, Blash LK. New roles for medical assistants in innovative primary care practices. *Health Serv Res*. 2017;52(Suppl 1):383-406. doi:[10.1111/1475-6773.12602](https://doi.org/10.1111/1475-6773.12602)
+
+[^32]: Bennett PN, Dewald G. Patient care technicians managing hemodialysis central venous catheter care: pro and con. *Nephrol Nurs J*. 2017;44(5):449-454. PMID: 29160979.

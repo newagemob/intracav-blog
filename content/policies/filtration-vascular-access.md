@@ -185,7 +185,6 @@ Exceptions to mandatory filtration requirements (excluding PN and ILE, for which
 - Add-On Devices for Vascular Access Systems Policy
 - Vascular Access Device Insertion Policy
 - Pharmacy Sterile Compounding and Admixture Standards
-- INS Infusion Therapy Standards of Practice (current edition)
 - ASPEN Parenteral Nutrition Safety Consensus Recommendations
 
 ## 8. Revision History

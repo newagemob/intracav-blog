@@ -140,7 +140,6 @@ This policy applies to:
 - Organizational Bloodborne Pathogen Exposure Control Plan
 - Organizational Postexposure Prophylaxis Protocol
 - Organizational Sharps Injury Log and Reporting System
-- INS Standards of Practice, Current Edition
 
 ## 8. Revision History
 

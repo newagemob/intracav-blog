@@ -144,7 +144,6 @@ This policy applies to:
 - Vascular Access Competency Validation Tool (by role)
 - Vascular Access Competency Matrix (General Nursing vs. VAST)
 - Simulation Scenario Library
-- INS Standards of Practice, Current Edition
 - Joint Commission Human Resources Standards (HR.01.05.03, HR.01.06.01)
 - Organizational Orientation and Onboarding Policy
 - Organizational Agency/Contract Staff Policy

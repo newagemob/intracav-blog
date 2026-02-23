@@ -79,7 +79,7 @@ This policy applies to:
 
 4.2.6 **Standardized Grading Scales.** The organization shall adopt and use validated, standardized grading scales for the assessment of vascular access complications:
 - **Phlebitis:** A validated phlebitis scale (e.g., the Visual Infusion Phlebitis [VIP] score) shall be used at every peripheral IV site assessment.
-- **Infiltration and Extravasation:** A validated infiltration scale (e.g., the INS Infiltration Scale) shall be used when infiltration is suspected or confirmed.
+- **Infiltration and Extravasation:** A validated infiltration scale shall be used when infiltration is suspected or confirmed.
 - Grading results shall be documented in the EHR using discrete data fields to enable aggregate analysis.
 
 ### 4.3 Patient and Caregiver Education
@@ -144,7 +144,6 @@ This policy applies to:
 - POL-009: Patient Education in Infusion Therapy
 - Conflict of Interest Disclosure Form (FORM-PEC-COI-001)
 - Off-Formulary Product Request Form (FORM-PEC-OFR-001)
-- INS Standards of Practice, Current Edition
 - CDC Guidelines for the Prevention of Intravascular Catheter-Related Infections
 - Organizational Infection Prevention and Control Plan
 
