@@ -177,6 +177,7 @@ This is particularly important in emergency situations (ER, urgent care) where p
 - [Chemotherapy Infusion: What to Expect](/patient-education/chemotherapy-infusion-patient-guide/)
 - [Recognizing Complications: When to Call for Help](/patient-education/recognizing-complications-when-to-call/)
 - [Emergency Room Visit When You Have a Catheter](/patient-education/er-visit-with-a-catheter/)
+- [Skin Care Around Your Catheter Site](/patient-education/skin-care-around-catheter-site/)
 
 ---
 

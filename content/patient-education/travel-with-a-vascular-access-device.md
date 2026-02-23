@@ -203,6 +203,8 @@ In any country where you may need emergency care, carry:
 - [Going Home with an Implanted Port](/patient-education/going-home-with-an-implanted-port/)
 - [Going Home with a Tunneled Catheter](/patient-education/going-home-with-a-tunneled-catheter/)
 - [Discharge Planning: Leaving the Hospital with an IV Device](/patient-education/discharge-planning-iv-device/)
+- [Going Home with a Midline Catheter](/patient-education/going-home-with-a-midline-catheter/)
+- [Emergency Room Visit When You Have a Catheter](/patient-education/er-visit-with-a-catheter/)
 
 ---
 

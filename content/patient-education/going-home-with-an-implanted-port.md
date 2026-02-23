@@ -251,6 +251,10 @@ Keep your port ID card and the contact information for the practice that placed 
 - [Recognizing Complications: When to Call for Help](/patient-education/recognizing-complications-when-to-call/)
 - [Allergies and Sensitivities During IV Therapy](/patient-education/allergies-and-sensitivities-iv-therapy/)
 - [Discharge Planning: Leaving the Hospital with an IV Device](/patient-education/discharge-planning-iv-device/)
+- [Preparing for Port Placement](/patient-education/preparing-for-port-placement/)
+- [Port Removal: What to Expect](/patient-education/port-removal-what-to-expect/)
+- [Skin Care Around Your Catheter Site](/patient-education/skin-care-around-catheter-site/)
+- [Emergency Room Visit When You Have a Catheter](/patient-education/er-visit-with-a-catheter/)
 
 ---
 

@@ -189,6 +189,7 @@ Do not stop or skip doses without discussing it with your care team.
 - [Recognizing Complications: When to Call for Help](/patient-education/recognizing-complications-when-to-call/)
 - [Going Home with a PICC Line](/patient-education/going-home-with-a-picc-line/)
 - [Going Home with an Implanted Port](/patient-education/going-home-with-an-implanted-port/)
+- [Skin Care Around Your Catheter Site](/patient-education/skin-care-around-catheter-site/)
 
 ---
 

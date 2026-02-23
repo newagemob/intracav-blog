@@ -168,6 +168,7 @@ If you fall at home:
 - [IV Medications and Infusion Therapy Explained](/patient-education/iv-medications-infusion-therapy-explained/)
 - [Medication Safety: Your Role in Preventing Errors](/patient-education/medication-safety-your-role/)
 - [Discharge Planning: Leaving the Hospital with an IV Device](/patient-education/discharge-planning-iv-device/)
+- [Emergency Room Visit When You Have a Catheter](/patient-education/er-visit-with-a-catheter/)
 
 ---
 

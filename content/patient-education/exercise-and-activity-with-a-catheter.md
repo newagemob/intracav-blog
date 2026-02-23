@@ -217,6 +217,7 @@ If your condition or treatment has significantly reduced your activity level, it
 - [Going Home with an Implanted Port](/patient-education/going-home-with-an-implanted-port/)
 - [Living Well with Long-Term IV Therapy](/patient-education/living-well-with-long-term-iv-therapy/)
 - [Travel with a Vascular Access Device](/patient-education/travel-with-a-vascular-access-device/)
+- [Skin Care Around Your Catheter Site](/patient-education/skin-care-around-catheter-site/)
 
 ---
 

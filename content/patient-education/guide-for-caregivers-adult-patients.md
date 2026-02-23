@@ -171,6 +171,7 @@ It is appropriate to tell the home infusion coordinator or the patient's care te
 - [Recognizing Complications: When to Call for Help](/patient-education/recognizing-complications-when-to-call/)
 - [Discharge Planning: Leaving the Hospital with an IV Device](/patient-education/discharge-planning-iv-device/)
 - [Mental Health and Emotional Adjustment During IV Therapy](/patient-education/mental-health-and-emotional-adjustment/)
+- [Emergency Room Visit When You Have a Catheter](/patient-education/er-visit-with-a-catheter/)
 
 ---
 

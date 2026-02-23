@@ -235,6 +235,7 @@ Call your **home care nurse or vascular access nurse line** (have the number pos
 - [Going Home with a PICC Line](/patient-education/going-home-with-a-picc-line/)
 - [Going Home with an Implanted Port](/patient-education/going-home-with-an-implanted-port/)
 - [Allergies and Sensitivities During IV Therapy](/patient-education/allergies-and-sensitivities-iv-therapy/)
+- [Emergency Room Visit When You Have a Catheter](/patient-education/er-visit-with-a-catheter/)
 
 ---
 

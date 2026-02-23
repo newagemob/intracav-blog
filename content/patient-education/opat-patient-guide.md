@@ -241,6 +241,7 @@ OPAT is temporarily disruptive but manageable. Tips from experienced OPAT patien
 - [Recognizing Complications: When to Call for Help](/patient-education/recognizing-complications-when-to-call/)
 - [Blood Draws and Lab Tests: What to Expect](/patient-education/blood-draws-and-lab-tests/)
 - [Discharge Planning: Leaving the Hospital with an IV Device](/patient-education/discharge-planning-iv-device/)
+- [Emergency Room Visit When You Have a Catheter](/patient-education/er-visit-with-a-catheter/)
 
 ---
 

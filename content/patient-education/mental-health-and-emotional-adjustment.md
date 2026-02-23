@@ -154,6 +154,9 @@ If you are reading this as a caregiver, the emotional content applies to you too
 - [Living Well with Long-Term IV Therapy](/patient-education/living-well-with-long-term-iv-therapy/)
 - [Guide for Caregivers of Adult Patients on IV Therapy](/patient-education/guide-for-caregivers-adult-patients/)
 - [Guide for Parents and Caregivers of Children with IVs](/patient-education/guide-for-parents-and-caregivers-of-children-with-ivs/)
+- [Chemotherapy Infusion: What to Expect](/patient-education/chemotherapy-infusion-patient-guide/)
+- [Home TPN: Your Complete Guide](/patient-education/home-tpn-guide/)
+- [OPAT: Outpatient IV Antibiotics at Home](/patient-education/opat-patient-guide/)
 
 ---
 

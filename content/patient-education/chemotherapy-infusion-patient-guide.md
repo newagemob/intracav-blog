@@ -232,6 +232,10 @@ Common with platinum-based agents (oxaliplatin, cisplatin) and taxanes (paclitax
 - [Recognizing Complications: When to Call for Help](/patient-education/recognizing-complications-when-to-call/)
 - [Allergies and Sensitivities During IV Therapy](/patient-education/allergies-and-sensitivities-iv-therapy/)
 - [Living Well with Long-Term IV Therapy](/patient-education/living-well-with-long-term-iv-therapy/)
+- [Emergency Room Visit When You Have a Catheter](/patient-education/er-visit-with-a-catheter/)
+- [Vascular Access Safety for Immunocompromised Patients](/patient-education/immunocompromised-patient-guide/)
+- [Your First Visit to an Outpatient Infusion Center](/patient-education/outpatient-infusion-center-first-visit/)
+- [Mental Health and Emotional Adjustment During IV Therapy](/patient-education/mental-health-and-emotional-adjustment/)
 
 ---
 

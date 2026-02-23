@@ -159,6 +159,10 @@ Before leaving:
 - [Going Home with a PICC Line](/patient-education/going-home-with-a-picc-line/)
 - [Going Home with an Implanted Port](/patient-education/going-home-with-an-implanted-port/)
 - [Chemotherapy Infusion: What to Expect](/patient-education/chemotherapy-infusion-patient-guide/)
+- [Going Home with a Tunneled Catheter](/patient-education/going-home-with-a-tunneled-catheter/)
+- [Going Home with a Midline Catheter](/patient-education/going-home-with-a-midline-catheter/)
+- [Home TPN: Your Complete Guide](/patient-education/home-tpn-guide/)
+- [OPAT: Outpatient IV Antibiotics at Home](/patient-education/opat-patient-guide/)
 
 ---
 

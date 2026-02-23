@@ -272,6 +272,9 @@ Your physician will determine when your treatment course is complete based on yo
 - [Keeping Your IV Safe: Infection Prevention](/patient-education/keeping-your-iv-safe-infection-prevention/)
 - [Recognizing Complications: When to Call for Help](/patient-education/recognizing-complications-when-to-call/)
 - [Discharge Planning: Leaving the Hospital with an IV Device](/patient-education/discharge-planning-iv-device/)
+- [Preparing for PICC Placement](/patient-education/preparing-for-picc-placement/)
+- [Skin Care Around Your Catheter Site](/patient-education/skin-care-around-catheter-site/)
+- [Emergency Room Visit When You Have a Catheter](/patient-education/er-visit-with-a-catheter/)
 
 ---
 

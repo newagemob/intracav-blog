@@ -184,6 +184,8 @@ Midline removal is quick and simple — no anesthesia, no stitches. The nurse ap
 - [Keeping Your IV Safe: Infection Prevention](/patient-education/keeping-your-iv-safe-infection-prevention/)
 - [Recognizing Complications: When to Call for Help](/patient-education/recognizing-complications-when-to-call/)
 - [Going Home with a PICC Line](/patient-education/going-home-with-a-picc-line/)
+- [Skin Care Around Your Catheter Site](/patient-education/skin-care-around-catheter-site/)
+- [Emergency Room Visit When You Have a Catheter](/patient-education/er-visit-with-a-catheter/)
 
 ---
 

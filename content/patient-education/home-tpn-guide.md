@@ -255,6 +255,8 @@ Managing home TPN while maintaining quality of life is absolutely achievable, th
 - [Going Home with a Tunneled Catheter](/patient-education/going-home-with-a-tunneled-catheter/)
 - [Keeping Your IV Safe: Infection Prevention](/patient-education/keeping-your-iv-safe-infection-prevention/)
 - [Living Well with Long-Term IV Therapy](/patient-education/living-well-with-long-term-iv-therapy/)
+- [Mental Health and Emotional Adjustment During IV Therapy](/patient-education/mental-health-and-emotional-adjustment/)
+- [Emergency Room Visit When You Have a Catheter](/patient-education/er-visit-with-a-catheter/)
 
 ---
 

@@ -209,6 +209,9 @@ Tunneled catheters are designed to last for months to years with proper care. Ov
 - [Keeping Your IV Safe: Infection Prevention](/patient-education/keeping-your-iv-safe-infection-prevention/)
 - [Recognizing Complications: When to Call for Help](/patient-education/recognizing-complications-when-to-call/)
 - [Travel with a Vascular Access Device](/patient-education/travel-with-a-vascular-access-device/)
+- [Your Interventional Radiology Visit](/patient-education/interventional-radiology-visit-guide/)
+- [Skin Care Around Your Catheter Site](/patient-education/skin-care-around-catheter-site/)
+- [Emergency Room Visit When You Have a Catheter](/patient-education/er-visit-with-a-catheter/)
 
 ---
 

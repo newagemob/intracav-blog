@@ -194,6 +194,7 @@ Many patients find that the infusion center becomes a familiar, even supportive 
 - [Chemotherapy Infusion: What to Expect](/patient-education/chemotherapy-infusion-patient-guide/)
 - [Going Home with an Implanted Port](/patient-education/going-home-with-an-implanted-port/)
 - [Allergies and Sensitivities During IV Therapy](/patient-education/allergies-and-sensitivities-iv-therapy/)
+- [OPAT: Outpatient IV Antibiotics at Home](/patient-education/opat-patient-guide/)
 
 ---
 

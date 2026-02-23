@@ -207,6 +207,8 @@ Your nephrologist will have specific dietary and fluid recommendations based on 
 - [Types of IV Lines and Catheters](/patient-education/types-of-iv-lines-and-catheters/)
 - [Keeping Your IV Safe: Infection Prevention](/patient-education/keeping-your-iv-safe-infection-prevention/)
 - [Recognizing Complications: When to Call for Help](/patient-education/recognizing-complications-when-to-call/)
+- [Skin Care Around Your Catheter Site](/patient-education/skin-care-around-catheter-site/)
+- [Emergency Room Visit When You Have a Catheter](/patient-education/er-visit-with-a-catheter/)
 
 ---
 
