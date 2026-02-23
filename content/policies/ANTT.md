@@ -1,78 +1,149 @@
 +++
-title = "ASEPTIC NON-TOUCH TECHNIQUE (ANTT®) in Clinical Practice"
+title = "Aseptic Non-Touch Technique (ANTT®)"
 date = 2024-04-21T13:16:02-05:00
-lastmod = 2024-04-21T13:16:02-05:00
+lastmod = 2024-07-19T00:00:00-05:00
 content_type = "policies"
 audience = "clinician"
-category = ["Infection Control", "Clinical Guidelines"]
-tags = ["ANTT", "Guidelines", "Human Judgement"]
-author = ["Intracav-CM01"]
-description = "Comprehensive clinical guideline for ASEPTIC NON-TOUCH TECHNIQUE (ANTT®) - evidence-based infection control protocols for invasive procedures and medical device management in healthcare settings."
-summary = "Complete ANTT® implementation guide covering Standard-ANTT and Surgical-ANTT protocols, quality improvement strategies, and evidence-based recommendations for infection prevention."
+category = ["Infection Control", "Clinical Guidelines", "Aseptic Technique"]
+tags = ["ANTT", "aseptic technique", "key-site", "key-part", "Standard-ANTT", "Surgical-ANTT", "infection prevention", "vascular access", "aseptic field", "Critical Aseptic Field", "Micro Critical Aseptic Field"]
+author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]
+description = "Establishes standards for the application of Aseptic Non Touch Technique (ANTT®) across all invasive clinical procedures and vascular access device management, including risk assessment framework, aseptic field management, competency requirements, and environmental management."
+summary = "Formal ANTT® policy covering the ANTT Clinical Practice Framework, Standard-ANTT, Surgical-ANTT, risk assessment, competency requirements, and quality assurance for vascular access and infusion therapy."
 slug = "antt-aseptic-non-touch-technique"
-keywords = ["ANTT", "Aseptic Technique", "Infection Control", "Healthcare Associated Infections", "Clinical Guidelines", "Standard Precautions", "Medical Device Safety"]
-authority = "Infusion Nurses Society (INS)"
+keywords = ["ANTT", "Aseptic Non Touch Technique", "key-site", "key-part", "aseptic field", "Standard-ANTT", "Surgical-ANTT", "infection prevention", "vascular access", "ASAP", "clinical competency", "sterile technique", "CLABSI", "healthcare-associated infection"]
+authority = "Vascular Access Governance Committee; Infection Prevention and Control"
 effective_date = "2024-04-21"
 +++
 
-# Introduction
-The ASEPTIC NON-TOUCH TECHNIQUE (ANTT®) is a pivotal approach in infection control during invasive clinical procedures and management of indwelling medical devices. Through an exploration of key definitions, practical applications, evidence-based recommendations, quality improvement strategies, and the significance of ANTT as a fundamental clinical competency, we aim to provide a thorough understanding of ANTT for healthcare practitioners. Drawing insights from the Infusion Nurses Society (INS) 9th Edition 2024 guidelines and scholarly sources, this paper serves as a comprehensive resource to advance the knowledge and implementation of ANTT in diverse healthcare environments.
+# Aseptic Non-Touch Technique (ANTT®) Policy
 
-ASEPTIC NON-TOUCH TECHNIQUE (ANTT®) stands as a cornerstone of aseptic practice, meticulously designed to mitigate the risk of infections stemming from invasive procedures and the management of invasive medical devices. By integrating stringent protocols encompassing Standard Precautions, meticulous hand hygiene, adept aseptic field management, non-touch technique, and utilization of sterilized supplies, ANTT ensures a sterile environment and safeguards patients against nosocomial infections. Central to ANTT's efficacy is the ANTT Clinical Practice Framework, which provides a structured approach and standardized terminology for the consistent application of aseptic principles across healthcare settings.
+## 1. Policy Statement
 
-# Key Definitions and Framework
-- Aseptic Technique: The fundamental practice of preventing infections during invasive procedures by maintaining a sterile environment.
-- ANTT®: A specialized theory-practice framework that emphasizes Key-Part and Key-Site Protection to uphold asepsis.
-- Standard-ANTT: A methodology focusing on safeguarding Key-Parts and Key-Sites individually in straightforward procedures.
-- Surgical-ANTT: An advanced approach concentrating on protecting Key-Parts and Key-Sites collectively in complex procedures requiring heightened vigilance.
+It is the policy of this organization that Aseptic Non Touch Technique (ANTT®) shall be employed as the standardized framework for preventing infection during all invasive procedures and device management. ANTT integrates evidence-based infection control principles with practical clinical application, creating a unified methodology applicable across all care settings and procedure types. The protection of Key-Parts and Key-Sites from microbial contamination through disciplined hand hygiene, appropriate PPE, aseptic field management, and non-touch practice is a non-negotiable clinical standard.
 
-## Aseptic Technique
-The aseptic technique serves as the cornerstone of infection prevention in healthcare settings, particularly during invasive procedures where the risk of introducing pathogens is heightened. It revolves around the meticulous maintenance of a sterile environment to prevent microbial contamination and subsequent infections. Healthcare professionals adhere to stringent protocols involving thorough hand hygiene, sterilization of equipment, and the creation of aseptic fields to minimize the transmission of microorganisms. By implementing the aseptic technique, healthcare providers aim to safeguard patients from healthcare-associated infections, reduce the risk of complications, and promote optimal clinical outcomes.
+## 2. Purpose
 
-## ANTT®
-ASEPTIC NON-TOUCH TECHNIQUE (ANTT®) represents a specialized framework that combines theory and practice to elevate the standard of aseptic care in healthcare settings. At its core, ANTT emphasizes the protection of Key-Parts and Key-Sites, crucial areas vulnerable to contamination during invasive procedures. By focusing on Key-Part and Key-Site Protection, ANTT aims to uphold asepsis and minimize the risk of infections. This comprehensive approach integrates principles of non-touch technique, aseptic field management, and the utilization of sterilized supplies to create a sterile environment conducive to safe patient care. ANTT serves as a guiding principle for healthcare professionals, underpinning the foundation of infection prevention practices.
+This policy exists to:
 
-## Standard-ANTT
-Standard-ANTT represents a methodology tailored for safeguarding Key-Parts and Key-Sites individually in relatively straightforward clinical procedures. This approach involves applying a strict set of aseptic principles to protect specific anatomical sites or critical components from contamination. Healthcare providers adhere to standardized procedures, including meticulous hand hygiene, aseptic field preparation, and the utilization of sterile equipment to maintain the integrity of Key-Parts and Key-Sites. Standard-ANTT is particularly suited for routine procedures where the risk of infection is moderate, emphasizing the importance of precise execution and adherence to aseptic protocols to ensure patient safety and procedural success.
+- Establish ANTT® as the organization's single, standardized aseptic technique framework for all invasive procedures and device management.
+- Define core ANTT terminology and the risk assessment framework guiding selection between Standard-ANTT and Surgical-ANTT.
+- Specify the essential components of effective ANTT practice for consistent, safe implementation.
+- Establish competency requirements and quality assurance expectations for ongoing ANTT compliance.
 
-## Surgical-ANTT
-In contrast to Standard-ANTT, Surgical-ANTT represents an advanced approach tailored for complex clinical procedures necessitating a higher level of vigilance and meticulousness. This methodology focuses on collectively protecting Key-Parts and Key-Sites during intricate and high-risk interventions, such as surgical procedures or invasive interventions with an elevated risk of infection. Healthcare providers implementing Surgical-ANTT employ comprehensive strategies to safeguard multiple critical areas simultaneously, ensuring a holistic approach to asepsis. Surgical-ANTT demands heightened attention to detail, strict adherence to aseptic principles, and advanced infection control measures to mitigate the risks associated with complex procedures and maintain patient safety at the highest level possible.
+## 3. Scope
 
-# Practice Recommendations
-- Advocating for the universal adoption of ANTT in all invasive clinical procedures to standardize aseptic practice.
-- Educating healthcare professionals and patients on the significance of ANTT as a core competency in infection prevention.
-- Implementing ANTT principles through meticulous Key-Part and Key-Site Protection, adherence to Standard Precautions, and effective aseptic field management.
-- Tailoring the selection between Standard-ANTT and Surgical-ANTT based on comprehensive risk assessments for different procedural complexities.
+This policy applies to:
 
-## Advocating for the Universal Adoption of ANTT
-Advocating for the universal adoption of ASEPTIC NON-TOUCH TECHNIQUE (ANTT) across all invasive clinical procedures is paramount in establishing a standardized approach to aseptic practice in healthcare settings. By advocating for the widespread implementation of ANTT, healthcare institutions can ensure consistency, efficiency, and optimal infection prevention outcomes across various departments and specialties. Universal adoption of ANTT fosters a culture of safety and quality within healthcare facilities, emphasizing the critical role of asepsis in mitigating the risk of healthcare-associated infections. By promoting the adoption of ANTT, healthcare leaders and professionals can enhance patient safety, streamline procedural protocols, and elevate the overall standard of care delivery.
+- All clinical personnel performing invasive procedures, managing vascular access devices, preparing or administering infusions, or conducting any procedure with potential to introduce microorganisms into a patient.
+- All care settings, including inpatient, ambulatory, home care, and long-term care.
+- All procedures involving Key-Sites and Key-Parts as defined in this policy.
 
-## Educating Healthcare Professionals and Patients on the Significance of ANTT
-Education regarding the significance of ASEPTIC NON-TOUCH TECHNIQUE (ANTT) as a core competency in infection prevention is essential for fostering a culture of safety and accountability within healthcare settings. Healthcare professionals play a pivotal role in implementing ANTT principles effectively, thereby reducing the risk of infections and promoting positive patient outcomes. By educating healthcare professionals on the importance of ANTT, institutions can enhance clinical practice, ensure adherence to aseptic protocols, and improve patient safety standards. Furthermore, educating patients on ANTT empowers them to actively participate in their care, understand the importance of asepsis, and collaborate with healthcare providers to maintain a sterile environment during procedures. Through comprehensive education initiatives, both healthcare professionals and patients can contribute to a safer healthcare environment and better infection control practices.
+## 4. Policy Requirements
 
-## Implementing ANTT Principles Through Meticulous Protection and Aseptic Field Management
-Implementing ASEPTIC NON-TOUCH TECHNIQUE (ANTT) principles through meticulous Key-Part and Key-Site Protection, adherence to Standard Precautions, and effective aseptic field management is fundamental to ensuring the integrity of aseptic practices during invasive procedures. Key-Part and Key-Site Protection involve targeted strategies to prevent contamination of critical areas, emphasizing the importance of non-touch techniques and sterile practices. Adherence to Standard Precautions, such as proper hand hygiene and personal protective equipment use, further reinforces aseptic principles and reduces the risk of cross-contamination. Effective aseptic field management encompasses the creation and maintenance of sterile environments, including the proper setup of barriers, equipment, and supplies to minimize microbial exposure. By implementing ANTT principles with meticulous care and attention to detail, healthcare providers can uphold asepsis, reduce infection risks, and enhance patient safety outcomes.
+### 4.1 Foundational Concepts and Rationale
 
-## Selection Between Standard-ANTT and Surgical-ANTT
-Tailoring the selection between Standard-ASEPTIC NON-TOUCH TECHNIQUE (ANTT) and Surgical-ANTT based on comprehensive risk assessments for different procedural complexities is essential in optimizing infection prevention strategies and ensuring appropriate levels of aseptic protection. Standard-ANTT is typically suitable for routine and straightforward procedures where the risk of infection is moderate, emphasizing individual protection of Key-Parts and Key-Sites. In contrast, Surgical-ANTT is tailored for complex procedures requiring heightened vigilance and collective protection of critical areas. By conducting comprehensive risk assessments, healthcare providers can determine the most appropriate ANTT approach for each procedure, taking into account factors such as procedural complexity, patient risk factors, and environmental considerations. Tailoring the selection between Standard-ANTT and Surgical-ANTT enables healthcare teams to implement targeted aseptic strategies, enhance infection control measures, and optimize patient safety outcomes based on the specific requirements of each clinical scenario.
+4.1.1 Aseptic Non Touch Technique (ANTT®) addresses historical variability in aseptic practice by providing a standardized, internationally recognized framework for preventing infection during invasive procedures and device management. The approach integrates evidence-based infection control principles with practical clinical application across all care settings.
 
-# Application in Practice and Quality Improvement
-- Integration of ANTT principles in various infusion-related procedures, encompassing vascular access device insertion and ongoing management.
-- Ensuring the aseptic integrity of Key-Parts and Key-Sites through rigorous disinfection practices and meticulous skin antisepsis.
-- Establishing robust ANTT quality improvement initiatives through continuous education, targeted training programs, competency assessments, and regular audits.
-- International oversight of ANTT by the Association for Safe Aseptic Practice (ASAP), facilitating global standardization and continuous enhancement of ANTT practices.
+4.1.2 The fundamental premise of ANTT centers on protecting critical procedural components from microbial contamination. This protection is achieved through the deliberate combination of hand hygiene, personal protective equipment, appropriate surface management, and disciplined non-touch practices. When applied consistently, ANTT has demonstrated measurable reductions in healthcare-associated infections, particularly those related to vascular access devices.
 
-## Integration of ANTT Principles in Various Infusion-Related Procedures
-The integration of ASEPTIC NON-TOUCH TECHNIQUE (ANTT) principles in various infusion-related procedures, including vascular access device insertion and ongoing management, is crucial for maintaining a sterile environment and reducing the risk of infections in clinical settings. When applied to vascular access procedures, ANTT guidelines ensure that healthcare providers follow standardized protocols for hand hygiene, aseptic technique, and the protection of Key-Parts and Key-Sites during device insertion and maintenance. By incorporating ANTT principles into infusion-related procedures, healthcare teams can enhance patient safety, minimize the incidence of catheter-related infections, and promote optimal outcomes for patients requiring vascular access for therapy, monitoring, or diagnostic purposes.
+### 4.2 Core Terminology and Definitions
 
-## Ensuring the Aseptic Integrity of Key-Parts and Key-Sites:**
-Ensuring the aseptic integrity of Key-Parts and Key-Sites through rigorous disinfection practices and meticulous skin antisepsis is essential in preventing the introduction of pathogens and reducing the risk of healthcare-associated infections. Healthcare providers adhere to strict protocols for disinfecting key anatomical sites and critical components before invasive procedures, employing appropriate antiseptic agents and techniques to eliminate microorganisms effectively. Meticulous skin antisepsis plays a pivotal role in preparing the patient's skin for invasive interventions, minimizing the microbial load and creating a sterile field for procedural success. By prioritizing the aseptic integrity of Key-Parts and Key-Sites through comprehensive disinfection practices, healthcare teams can uphold stringent infection control standards, mitigate the risk of complications, and prioritize patient safety throughout the care continuum.
+4.2.1 **Key-Site** refers to any anatomical location that serves as a portal of entry into the patient's body. In vascular access practice, this includes catheter insertion sites, injection ports, and any open wounds that could serve as pathways for microbial transmission. The significance of Key-Sites lies in their vulnerability; contamination at these points creates direct access for pathogens to enter sterile body compartments.
 
-## Establishing Robust ANTT Quality Improvement Initiatives
-Establishing robust ASEPTIC NON-TOUCH TECHNIQUE (ANTT) quality improvement initiatives through continuous education, targeted training programs, competency assessments, and regular audits is instrumental in enhancing aseptic practices, promoting adherence to guidelines, and optimizing patient outcomes. Quality improvement efforts focus on reinforcing ANTT competencies among healthcare professionals, ensuring proficiency in aseptic techniques, and fostering a culture of safety within healthcare organizations. By offering continuous education and targeted training programs on ANTT principles, healthcare institutions can empower their staff with the knowledge and skills necessary to implement best practices in infection prevention. Competency assessments and regular audits further monitor compliance with ANTT standards, identify areas for improvement, and drive ongoing enhancements in aseptic care delivery. Through comprehensive quality improvement initiatives, healthcare providers can elevate the standard of care, reduce infection rates, and enhance patient safety across diverse clinical settings.
+4.2.2 **Key-Part** describes equipment components that, if contaminated, pose a direct risk of introducing microorganisms to the patient. Examples include syringe tips, male Luer connectors, administration set spikes, and needle hubs. These components represent the final barrier between the external environment and the patient's vascular system or tissues.
 
-## International Oversight of ANTT by the Association for Safe Aseptic Practice (ASAP)
-The international oversight of ASEPTIC NON-TOUCH TECHNIQUE (ANTT) by the Association for Safe Aseptic Practice (ASAP) plays a pivotal role in facilitating global standardization and continuous enhancement of ANTT practices across healthcare systems worldwide. ASAP serves as a leading authority in promoting safe aseptic practices, developing guidelines, and advocating for the adoption of ANTT principles on a global scale. By providing oversight and guidance, ASAP ensures that ANTT standards remain current, evidence-based, and aligned with international best practices in infection prevention. Through collaborative efforts with healthcare organizations, regulatory bodies, and industry stakeholders, ASAP fosters a culture of excellence in aseptic care, drives innovation in infection control strategies, and supports ongoing quality improvement initiatives to advance patient safety and outcomes on a global level.
+4.2.3 The relationship between Key-Sites and Key-Parts is central to infection prevention: contaminated Key-Parts that contact Key-Sites create a direct pathway for pathogen transmission. Maintaining the sterility of Key-Parts until their intended contact with Key-Sites represents the essential goal of aseptic practice.
 
-# Conclusion
-In summary, the integration of ANTT as a standardized aseptic technique in healthcare settings is paramount to ensuring patient safety, reducing healthcare-associated infections, and fostering optimal clinical outcomes. By embracing and adhering to the principles of ANTT, healthcare providers can elevate the quality of care delivery, enhance patient safety, and fortify infection prevention measures within their practice environments.
+4.2.4 **General Aseptic Field** describes a surface that has been cleaned and disinfected to reduce microbial contamination. Procedure trays, preparation carts, and single-use procedure kits serve this function. While a General Aseptic Field promotes asepsis, it does not guarantee sterility. Key-Parts placed on this surface require additional protection through Micro Critical Aseptic Fields when not actively in use.
+
+4.2.5 **Critical Aseptic Field** provides a higher level of protection through the use of sterile draping. This approach creates an environment where all procedure equipment can be placed and managed collectively with confidence in maintained sterility.
+
+4.2.6 **Micro Critical Aseptic Field** offers targeted protection for individual Key-Parts. Sterile caps, protective covers, and the interior surfaces of recently opened sterile packaging all function as Micro Critical Aseptic Fields. This concept enables efficient protection of Key-Parts during simpler procedures without requiring full sterile draping.
+
+### 4.3 ANTT Risk Assessment Framework
+
+4.3.1 Clinical procedures vary substantially in complexity, duration, and infection risk. ANTT addresses this variability through a structured risk assessment that guides the selection between Standard-ANTT and Surgical-ANTT.
+
+4.3.2 The assessment process centers on a single question: Can all Key-Parts and Key-Sites be protected individually throughout the procedure? When the answer is yes, Standard-ANTT provides appropriate protection. When individual protection becomes impractical due to the number of components, procedure complexity, or environmental factors, Surgical-ANTT becomes necessary.
+
+4.3.3 Variables informing this determination include: the quantity and size of Key-Parts; procedure duration; the procedure's invasiveness and associated infection risk; environmental factors including workspace limitations and potential interruptions; and the level of personal protective equipment required.
+
+4.3.4 **Standard-ANTT** applies to procedures of shorter duration involving fewer, smaller Key-Parts that can be readily protected through Micro Critical Aseptic Fields and non-touch technique. Typical applications include:
+- Vascular access device flushing and locking
+- Administration set preparation and replacement
+- Intravenous medication administration
+- Routine wound care
+
+When performing Standard-ANTT, non-sterile gloves generally suffice unless direct contact with Key-Parts or Key-Sites becomes necessary, in which case sterile gloves are required.
+
+4.3.5 **Surgical-ANTT** addresses longer, more complex procedures where collective protection through sterile draping proves more practical and reliable than individual Key-Part protection. Central vascular access device insertion and exchange exemplify procedures requiring this approach. Surgical-ANTT incorporates sterile gloving and enhanced barrier precautions while maintaining non-touch technique for Key-Part protection whenever practical.
+
+### 4.4 Essential Components of ANTT Practice
+
+4.4.1 **Hand hygiene** serves as the foundation, performed according to established guidelines at each required opportunity before, during, and after procedures. Refer to the Hand Hygiene Policy for full requirements.
+
+4.4.2 **Personal protective equipment** selection follows standard precautions while adapting to specific procedure requirements and the ANTT risk assessment.
+
+4.4.3 **Aseptic field management** begins with surface decontamination and continues throughout the procedure. For Standard-ANTT, this involves establishing a General Aseptic Field and utilizing Micro Critical Aseptic Fields for Key-Part protection. For Surgical-ANTT, sterile draping creates a Critical Aseptic Field where all equipment maintains collective protection.
+
+4.4.4 **Non-touch technique** represents the behavioral discipline that ultimately protects Key-Parts and Key-Sites from contamination. Even when wearing sterile gloves during Surgical-ANTT, clinicians shall employ non-touch methods whenever practical, recognizing that gloves provide a backup rather than primary protection.
+
+4.4.5 **Skin antisepsis and device disinfection** ensure that Key-Sites are appropriately prepared and that reusable device components receive adequate decontamination. These practices complement Key-Part protection by addressing potential contamination sources at the patient interface.
+
+### 4.5 Competency Requirements and Quality Assurance
+
+4.5.1 ANTT proficiency represents a core clinical competency that extends beyond initial education to require ongoing assessment and periodic reeducation. Organizations shall establish comprehensive training programs utilizing multimodal educational resources aligned with the ANTT Clinical Practice Framework.
+
+4.5.2 Competency documentation shall address all relevant aspects of infusion therapy, including solution and medication preparation and administration, vascular access device insertion and management, and related clinical procedures. Individual clinicians bear ultimate responsibility for ensuring consistent, correct application of ANTT principles in their practice.
+
+4.5.3 Quality assurance through periodic clinical audit serves multiple purposes: validating individual competency, identifying practice gaps, and driving continuous improvement. Audit tools shall evaluate compliance with the ANTT Clinical Practice Framework and applicable organizational procedures, with findings informing targeted education and practice refinement.
+
+### 4.6 Environmental Management
+
+4.6.1 Prior to clinical intervention, purposeful decontamination shall reduce the microbial burden on surfaces that may contact clinical equipment or serve as contamination sources.
+
+4.6.2 Durable medical equipment used during ANTT procedures requires particular attention. Ultrasound devices, infusion pumps, and similar equipment shall undergo appropriate cleaning and disinfection before, during, and after clinical use. This practice prevents equipment from serving as vectors for pathogen transmission between patients or from environment to patient.
+
+## 5. Compliance
+
+5.1 **Monitoring.** Compliance shall be monitored through direct clinical observation audits using ANTT-aligned audit tools, infection surveillance data (particularly CLABSI and catheter-associated infection rates), and competency assessment completion records.
+
+5.2 **Key Performance Indicators.**
+- ANTT audit compliance rate (target: ≥90%).
+- Central Line-Associated Bloodstream Infection (CLABSI) rate (target: zero preventable events).
+- ANTT competency documentation completion rate for applicable roles (target: 100%).
+- Peripheral IV-associated infection rate trended quarterly.
+
+5.3 **Enforcement.** Observed deviations from ANTT standards during invasive procedures shall be addressed through immediate intervention and coaching. Procedure halt may be required if Key-Site or Key-Part contamination occurs. Persistent non-compliance shall be escalated through the organization's performance management and clinical governance processes.
+
+## 6. Exceptions
+
+6.1 In life-threatening emergencies requiring immediate intervention, full ANTT implementation may be temporarily suspended. The minimum aseptic protections feasible shall still be applied, and the deviation shall be documented in the patient record. A formal review shall occur within 24 hours of the emergency procedure.
+
+6.2 No exception shall be granted to the requirement for hand hygiene as the foundation of ANTT practice, regardless of clinical urgency.
+
+## 7. Related Documents
+
+- Hand Hygiene Policy (this collection)
+- Standard Precautions Policy (this collection)
+- Transmission-Based Precautions Policy (this collection)
+- POL-003: Evidence-Based Selection and Clinical Monitoring Standards
+- POL-007: Competency and Competency Validation in Vascular Access
+- POL-012: Documentation in the Health Record for Vascular Access
+- SOP-VA-010: PICC Insertion Using Surgical-ANTT
+- SOP-VA-020: Peripheral IV Insertion Using Standard-ANTT
+- SOP-VA-030: CVC Dressing Change Using Surgical-ANTT
+- ANTT® Clinical Practice Framework (The Association for Safe Aseptic Practice)
+- INS Infusion Therapy Standards of Practice, 9th Edition
+
+## 8. Revision History
+
+| Version | Date | Author(s) | Description of Change |
+|---------|------|-----------|----------------------|
+| 1.0 | 2024-04-21 | Intracav-CM01 | Initial policy creation |
+| 2.0 | 2024-07-19 | D. Woo, M. Stern, I.M. Wright | Full revision to formal policy format aligned with IVAPS standards |
+| — | — | — | Scheduled review date: 2026-04-21 |
+
+---
+
+*ANTT® is a registered trademark of The Association for Safe Aseptic Practice (ASAP).*
