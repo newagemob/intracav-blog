@@ -121,6 +121,7 @@ For detailed information, see the related guides in this series, including *Keep
 - [Recognizing Complications: When to Call for Help](/patient-education/recognizing-complications-when-to-call/)
 - [Your Rights: Informed Consent and Decision-Making](/patient-education/your-rights-informed-consent/)
 - [Questions to Ask Your Vascular Access Team](/patient-education/questions-to-ask-your-vascular-access-team/)
+- [Arterial Lines: A Guide for Patients and Families](/patient-education/arterial-line-patient-guide/)
 
 ---
 

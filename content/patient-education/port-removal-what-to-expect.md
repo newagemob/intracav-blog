@@ -146,6 +146,7 @@ For most patients, port removal marks the end of active treatment. After removal
 - [Going Home with an Implanted Port](/patient-education/going-home-with-an-implanted-port/)
 - [Preparing for Port Placement](/patient-education/preparing-for-port-placement/)
 - [Your Rights: Informed Consent and Decision-Making](/patient-education/your-rights-informed-consent/)
+- [PICC Removal: What to Expect](/patient-education/picc-removal-what-to-expect/)
 
 ---
 

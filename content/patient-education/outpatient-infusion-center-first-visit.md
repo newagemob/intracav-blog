@@ -195,6 +195,7 @@ Many patients find that the infusion center becomes a familiar, even supportive 
 - [Going Home with an Implanted Port](/patient-education/going-home-with-an-implanted-port/)
 - [Allergies and Sensitivities During IV Therapy](/patient-education/allergies-and-sensitivities-iv-therapy/)
 - [OPAT: Outpatient IV Antibiotics at Home](/patient-education/opat-patient-guide/)
+- [Therapeutic Apheresis: What to Expect](/patient-education/therapeutic-apheresis-patient-guide/)
 
 ---
 

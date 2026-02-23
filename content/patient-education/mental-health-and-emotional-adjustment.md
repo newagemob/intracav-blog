@@ -157,6 +157,7 @@ If you are reading this as a caregiver, the emotional content applies to you too
 - [Chemotherapy Infusion: What to Expect](/patient-education/chemotherapy-infusion-patient-guide/)
 - [Home TPN: Your Complete Guide](/patient-education/home-tpn-guide/)
 - [OPAT: Outpatient IV Antibiotics at Home](/patient-education/opat-patient-guide/)
+- [Vascular Access and Goals of Care](/patient-education/vascular-access-goals-of-care/)
 
 ---
 

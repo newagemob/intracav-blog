@@ -173,6 +173,8 @@ Connecting with others who are managing similar situations can provide practical
 - [Exercise and Physical Activity with a Catheter](/patient-education/exercise-and-activity-with-a-catheter/)
 - [Home TPN: Your Complete Guide](/patient-education/home-tpn-guide/)
 - [OPAT: Outpatient IV Antibiotics at Home](/patient-education/opat-patient-guide/)
+- [Vascular Access and Goals of Care](/patient-education/vascular-access-goals-of-care/)
+- [Subcutaneous Infusion (Hypodermoclysis)](/patient-education/subcutaneous-infusion-hypodermoclysis/)
 
 ---
 

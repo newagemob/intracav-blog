@@ -209,6 +209,7 @@ These responses are completely normal. You are not failing if you feel overwhelm
 - [Going Home with an Implanted Port](/patient-education/going-home-with-an-implanted-port/)
 - [Keeping Your IV Safe: Infection Prevention](/patient-education/keeping-your-iv-safe-infection-prevention/)
 - [Mental Health and Emotional Adjustment During IV Therapy](/patient-education/mental-health-and-emotional-adjustment/)
+- [Vascular Access in the NICU: A Parent's Guide](/patient-education/nicu-vascular-access-parent-guide/)
 
 ---
 

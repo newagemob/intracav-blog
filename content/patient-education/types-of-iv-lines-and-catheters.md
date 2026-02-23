@@ -196,6 +196,8 @@ Your vascular access team considers several factors when recommending a device:
 - [Recognizing Complications: When to Call for Help](/patient-education/recognizing-complications-when-to-call/)
 - [Going Home with a PICC Line](/patient-education/going-home-with-a-picc-line/)
 - [Going Home with an Implanted Port](/patient-education/going-home-with-an-implanted-port/)
+- [Arterial Lines: A Guide for Patients and Families](/patient-education/arterial-line-patient-guide/)
+- [Therapeutic Apheresis: What to Expect](/patient-education/therapeutic-apheresis-patient-guide/)
 
 ---
 

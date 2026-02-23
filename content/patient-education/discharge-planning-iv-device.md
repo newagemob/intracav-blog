@@ -280,6 +280,7 @@ SIGNS I SHOULD GO TO THE ER:
 - [Recognizing Complications: When to Call for Help](/patient-education/recognizing-complications-when-to-call/)
 - [IV Medications and Infusion Therapy Explained](/patient-education/iv-medications-infusion-therapy-explained/)
 - [Questions to Ask Your Vascular Access Team](/patient-education/questions-to-ask-your-vascular-access-team/)
+- [Vascular Access and Goals of Care](/patient-education/vascular-access-goals-of-care/)
 
 ---
 

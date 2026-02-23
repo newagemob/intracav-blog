@@ -275,6 +275,7 @@ Your physician will determine when your treatment course is complete based on yo
 - [Preparing for PICC Placement](/patient-education/preparing-for-picc-placement/)
 - [Skin Care Around Your Catheter Site](/patient-education/skin-care-around-catheter-site/)
 - [Emergency Room Visit When You Have a Catheter](/patient-education/er-visit-with-a-catheter/)
+- [PICC Removal: What to Expect](/patient-education/picc-removal-what-to-expect/)
 
 ---
 
