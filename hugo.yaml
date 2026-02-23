@@ -40,6 +40,7 @@ sitemap:
 permalinks:
   blog: /blog/:slug/
   policies: /policies/:slug/
+  patient-education: /patient-education/:slug/
 
 # Output formats
 outputs:
