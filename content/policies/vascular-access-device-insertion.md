@@ -60,9 +60,9 @@ This policy applies to:
 
 #### 4.2.2 Difficult Intravenous Access Assessment
 
-4.2.2.1 When patient assessment reveals no visible or palpable veins, early referral to an infusion or vascular access specialist shall be initiated. Delayed escalation contributes to patient discomfort, treatment delays, and vascular damage from repeated unsuccessful attempts.
+4.2.2.1 When patient assessment reveals no visible or palpable veins, early referral to an infusion or vascular access specialist shall be initiated.[^6] Delayed escalation contributes to patient discomfort, treatment delays, and vascular damage from repeated unsuccessful attempts.
 
-4.2.2.2 Population-specific difficult intravenous access (DIVA) assessment tools shall be utilized to identify patients who may benefit from specialist intervention or visualization technology.
+4.2.2.2 Population-specific difficult intravenous access (DIVA) assessment tools shall be utilized to identify patients who may benefit from specialist intervention or visualization technology.[^5]
 
 #### 4.2.3 Pain Management
 
@@ -122,7 +122,7 @@ This policy applies to:
 
 #### 4.3.1 Central Line Bundle Implementation
 
-4.3.1.1 The central line bundle shall be implemented for all CVAD insertions as an evidence-based approach to reducing catheter-associated bloodstream infections and insertion complications. Core bundle elements include hand hygiene, skin antisepsis with alcohol-based chlorhexidine solution, maximal sterile barrier precautions, and upper body insertion when clinically appropriate.
+4.3.1.1 The central line bundle shall be implemented for all CVAD insertions as an evidence-based approach to reducing catheter-associated bloodstream infections and insertion complications.[^2][^3][^4] Core bundle elements include hand hygiene, skin antisepsis with alcohol-based chlorhexidine solution, maximal sterile barrier precautions, and upper body insertion when clinically appropriate. Registered nurses with appropriate training, competency validation, and organizational credentialing are authorized to insert nontunneled central vascular access devices within their defined scope of practice.[^1]
 
 4.3.1.2 **Standardized Checklists.** A standardized checklist shall be utilized to ensure adherence to mandatory insertion practices. This checklist shall be completed by an educated healthcare clinician who assists with the CVAD procedure, providing real-time verification of protocol compliance.
 
@@ -231,3 +231,19 @@ Exceptions to this policy may arise in emergent clinical situations where strict
 |---------|------|--------|-------------|
 | 1.0 | 2025-01-20 | Vascular Access Governance Committee | Initial policy release |
 | 1.1 | 2025-10-08 | Vascular Access Governance Committee | Periodic review; arterial puncture management for large-bore CVADs clarified |
+
+---
+
+## References
+
+[^1]: Plohal A, Dumont C, Perry C, et al. The role of the registered nurse in the insertion of nontunneled central vascular access devices. *J Infus Nurs*. 2017;40(6):339-345. doi:[10.1097/nan.0000000000000255](https://doi.org/10.1097/nan.0000000000000255)
+
+[^2]: Rupp ME, Majorant D. Prevention of vascular catheter-related bloodstream infections. *Infect Dis Clin North Am*. 2016;30(4):853-868. doi:[10.1016/j.idc.2016.06.001](https://doi.org/10.1016/j.idc.2016.06.001)
+
+[^3]: Buetti N, Marschall J, Drees M, et al. Strategies to prevent central line-associated bloodstream infections in acute-care hospitals: 2022 Update. *Infect Control Hosp Epidemiol*. 2022;43(5):553-569. doi:[10.1017/ice.2022.87](https://doi.org/10.1017/ice.2022.87)
+
+[^4]: Martillo M, Zarbiv S, Gupta R, et al. A comprehensive vascular access service can reduce catheter-associated bloodstream infections and promote the appropriate use of vascular access devices. *Am J Infect Control*. 2020;48(4):460-464. doi:[10.1016/j.ajic.2019.09.021](https://doi.org/10.1016/j.ajic.2019.09.021)
+
+[^5]: Paterson RS, Schults JA, Slaughter E, et al. Peripheral intravenous catheter insertion in adult patients with difficult intravenous access: a systematic review. *Emerg Med Australas*. 2022;34(6):862-870. doi:[10.1111/1742-6723.14069](https://doi.org/10.1111/1742-6723.14069)
+
+[^6]: Krein SL, Harrod M, Weston LE, et al. Vascular access specialist teams and catheter-related bloodstream infection prevention: a multisite qualitative study. *BMJ Qual Saf*. 2021;30(8):628-638. doi:[10.1136/bmjqs-2020-011806](https://doi.org/10.1136/bmjqs-2020-011806)

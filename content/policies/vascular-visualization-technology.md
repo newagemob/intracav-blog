@@ -55,7 +55,7 @@ This policy applies to:
 - Skin alterations from scars, tattoos, or excessive hair at intended sites
 - Fluid volume disturbances—whether overload or deficit—altering vein accessibility
 
-4.1.3 Clinicians shall apply validated DIVA screening criteria appropriate to their patient population when available, and document the clinical rationale for visualization technology use in the patient's health record.
+4.1.3 Clinicians shall apply validated DIVA screening criteria appropriate to their patient population when available, and document the clinical rationale for visualization technology use in the patient's health record.[^10]
 
 ### 4.2 Ultrasound Technology
 
@@ -112,9 +112,9 @@ This policy applies to:
 
 ### 4.7 Training and Competency
 
-4.7.1 All clinicians using vascular visualization technology shall demonstrate documented competency prior to independent use. Competency programs shall support clinicians across the novice-to-expert continuum.[^5][^6][^7][^8]
+4.7.1 All clinicians using vascular visualization technology shall demonstrate documented competency prior to independent use. Competency programs shall support clinicians across the novice-to-expert continuum.[^5][^6][^7][^8][^11][^12][^13][^14][^15]
 
-4.7.2 Competency assessment shall address:
+4.7.2 Competency assessment shall address:[^16]
 - Vessel assessment: size, depth, location, and patency
 - Recognition of vascular anomalies and structures requiring avoidance
 - Appropriate technology selection for patient and procedure
@@ -186,3 +186,17 @@ This policy applies to:
 [^8]: Cormack CJ, Childs J, Kent F. Point-of-care ultrasound educational development in Australasia: a scoping review. *Ultrasound Med Biol*. 2023;49(6):1375-1384. doi:[10.1016/j.ultrasmedbio.2023.02.011](https://doi.org/10.1016/j.ultrasmedbio.2023.02.011)
 
 [^9]: American Society of Radiologic Technologists. ASRT professional practice resources and decision tree for determining scope of practice. Revised January 30, 2018. [https://www.asrt.org/docs/default-source/practice-standards/asrt-practice-resources.pdf](https://www.asrt.org/docs/default-source/practice-standards/asrt-practice-resources.pdf)
+
+[^10]: Paterson RS, Schults JA, Slaughter E, et al. Peripheral intravenous catheter insertion in adult patients with difficult intravenous access: a systematic review. *Emerg Med Australas*. 2022;34(6):862-870. doi:[10.1111/1742-6723.14069](https://doi.org/10.1111/1742-6723.14069)
+
+[^11]: Wong A, Galarza L, Duska F. Critical care ultrasound: a systematic review of international training competencies and program. *Crit Care Med*. 2019;47(3):e256-e262. doi:[10.1097/CCM.0000000000003626](https://doi.org/10.1097/CCM.0000000000003626)
+
+[^12]: Smith C. Should nurses be trained to use ultrasound for intravenous access to patients with difficult veins? *Emerg Nurse*. 2018;26(2):18-24. doi:[10.7748/en.2018.e1733](https://doi.org/10.7748/en.2018.e1733)
+
+[^13]: Jørgensen R, Laursen CB, Konge L, Pietersen PI. Education in the placement of ultrasound-guided peripheral venous catheters: a systematic review. *Scand J Trauma Resusc Emerg Med*. 2021;29(1):83. doi:[10.1186/s13049-021-00897-z](https://doi.org/10.1186/s13049-021-00897-z)
+
+[^14]: Van Loon FH, Scholten H, Korsten HH, Dierick-van Daele AT, Bouwman AR. The learning curve for ultrasound-guided peripheral intravenous cannulation in adults: a multicenter study. *Med Ultrason*. 2022;24(2):188-195. doi:[10.11152/mu-3322](https://doi.org/10.11152/mu-3322)
+
+[^15]: Amick AE, Feinsmith SE, Davis EM, et al. Simulation-based mastery learning improves ultrasound-guided peripheral intravenous catheter insertion skills of practicing nurses. *Simul Healthc*. 2022;17(1):7-14. doi:[10.1097/SIH.0000000000000545](https://doi.org/10.1097/SIH.0000000000000545)
+
+[^16]: Blick C, Vinograd A, Chung J, et al. Procedural competency for ultrasound-guided peripheral intravenous catheter insertion for nurses in a pediatric emergency department. *J Vasc Access*. 2021;22(2):232-237. doi:[10.1177/1129729820937131](https://doi.org/10.1177/1129729820937131)

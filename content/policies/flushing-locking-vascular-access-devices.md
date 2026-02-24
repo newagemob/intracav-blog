@@ -57,7 +57,7 @@ This policy applies to:
 
 #### 4.1.2 Commercially Prefilled Flush Syringes
 
-4.1.2.1 Commercially manufactured prefilled flush syringes are the preferred product for VAD flushing when available. Evidence demonstrates that prefilled syringe use is associated with reduced CABSI rates and reduced catheter failure compared to flush syringes drawn from multi-dose or bulk containers.
+4.1.2.1 Commercially manufactured prefilled flush syringes are the preferred product for VAD flushing when available. Evidence demonstrates that prefilled syringe use is associated with reduced CABSI rates and reduced catheter failure compared to flush syringes drawn from multi-dose or bulk containers.[^1][^2]
 
 4.1.2.2 When administering medications that require pre-flush and post-flush, separate, new, unopened prefilled syringes must be used for each flush event. A syringe used to flush before medication administration must not be retained and reused for the post-flush.
 
@@ -283,7 +283,7 @@ This policy applies to:
 
 - Patients with a history of two or more CABSIs in whom the VAD cannot be removed.
 - High-risk patient populations at the treating provider's or infectious disease specialist's discretion.
-- Healthcare facilities with persistently elevated CLABSI rates despite full implementation of standard prevention measures and infection control bundles.
+- Healthcare facilities with persistently elevated CLABSI rates despite full implementation of standard prevention measures and infection control bundles.[^2][^3]
 
 4.10.1.2 Antimicrobial lock therapy must not be used as a routine prophylactic measure in place of standard CLABSI prevention practices.
 
@@ -389,3 +389,13 @@ Adherence to this policy is a condition of clinical practice within this organiz
 |---------|------|--------|-------------|
 | 1.0 | 2023-11-08 | Vascular Access Governance Committee | Initial policy |
 | 2.0 | 2025-09-15 | Vascular Access Governance Committee | Updated hemodialysis catheter lock recommendation to low-concentration citrate per current evidence; added apheresis HIT precaution for myeloma patients; expanded antimicrobial lock therapy section with citrate concentration and protein precipitation guidance; added lipid administration sequencing for implanted ports; strengthened mandatory aspiration prohibition language; added reference tables for flush volumes, lock solutions, and volume calculations |
+
+---
+
+## References
+
+[^1]: Rupp ME, Majorant D. Prevention of vascular catheter-related bloodstream infections. *Infect Dis Clin North Am*. 2016;30(4):853-868. doi:[10.1016/j.idc.2016.06.001](https://doi.org/10.1016/j.idc.2016.06.001)
+
+[^2]: Buetti N, Marschall J, Drees M, et al. Strategies to prevent central line-associated bloodstream infections in acute-care hospitals: 2022 Update. *Infect Control Hosp Epidemiol*. 2022;43(5):553-569. doi:[10.1017/ice.2022.87](https://doi.org/10.1017/ice.2022.87)
+
+[^3]: Martillo M, Zarbiv S, Gupta R, et al. A comprehensive vascular access service can reduce catheter-associated bloodstream infections and promote the appropriate use of vascular access devices. *Am J Infect Control*. 2020;48(4):460-464. doi:[10.1016/j.ajic.2019.09.021](https://doi.org/10.1016/j.ajic.2019.09.021)

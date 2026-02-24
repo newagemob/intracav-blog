@@ -43,11 +43,11 @@ This policy applies to:
 
 ### 4.1 Evidence-Based Decision Making (EBDM) for Product Selection
 
-4.1.1 **Primary Evidence Standard.** All decisions regarding the adoption, continuation, or discontinuation of vascular access products shall be informed by the highest quality available clinical evidence, prioritized as follows: (a) systematic reviews and meta-analyses, (b) randomized controlled trials (RCTs), (c) multi-center observational studies, (d) single-center studies, (e) expert consensus guidelines from recognized professional organizations. Manufacturer-funded studies shall be evaluated critically and shall not be the sole basis for product adoption.
+4.1.1 **Primary Evidence Standard.** All decisions regarding the adoption, continuation, or discontinuation of vascular access products shall be informed by the highest quality available clinical evidence, prioritized as follows: (a) systematic reviews and meta-analyses, (b) randomized controlled trials (RCTs), (c) multi-center observational studies, (d) single-center studies, (e) expert consensus guidelines from recognized professional organizations. Manufacturer-funded studies shall be evaluated critically and shall not be the sole basis for product adoption.[^1][^2]
 
 4.1.2 **Product Evaluation Committee.** The organization shall maintain a standing Product Evaluation Committee (PEC) charged with reviewing all proposed changes to the vascular access product formulary. The PEC shall include representation from Vascular Access Specialists, Infection Prevention, Pharmacy, Supply Chain, Nursing Education, and at least one physician champion. All PEC decisions shall be documented with the evidence reviewed, the decision rationale, and the dissenting opinions (if any).
 
-4.1.3 **Outcome-Driven Selection.** Product evaluation shall prioritize the reduction of patient complications—including phlebitis, infiltration, extravasation, catheter-associated bloodstream infection (CABSI), catheter occlusion, and venous thromboembolism—while maintaining cost-effectiveness. A product that demonstrates superior clinical outcomes shall be preferred over a less expensive alternative that produces inferior outcomes, unless the clinical difference is not statistically or clinically significant.
+4.1.3 **Outcome-Driven Selection.** Product evaluation shall prioritize the reduction of patient complications—including phlebitis, infiltration, extravasation, catheter-associated bloodstream infection (CABSI), catheter occlusion, and venous thromboembolism—while maintaining cost-effectiveness. A product that demonstrates superior clinical outcomes shall be preferred over a less expensive alternative that produces inferior outcomes, unless the clinical difference is not statistically or clinically significant.[^3][^4]
 
 4.1.4 **Conflict of Interest Management.** All members of the Product Evaluation Committee and all clinicians involved in product evaluation, selection, or clinical trial participation shall complete and submit an annual Conflict of Interest Disclosure Form. The following requirements apply:
 - No clinician shall participate in a product evaluation decision for a product manufactured by a company from which they receive personal compensation, consulting fees, speaker honoraria, research funding, or equity.
@@ -153,3 +153,15 @@ This policy applies to:
 |---------|------|-----------|----------------------|
 | 1.0 | 2026-02-01 | D. Woo, M. Stern, I.M. Wright | Initial policy creation and approval |
 | — | — | — | Scheduled review date: 2027-02-01 |
+
+---
+
+## References
+
+[^1]: Carr PJ, Higgins NS, Cooke ML, Rippey JC, Rickard CM. Tools, clinical prediction rules, and algorithms for the insertion of peripheral intravenous catheters in adult hospital patients: a systematic review and meta-analyses. *Cochrane Database Syst Rev*. 2018;3(3):CD011429. doi:[10.1002/14651858.CD011429.pub2](https://doi.org/10.1002/14651858.CD011429.pub2)
+
+[^2]: Legemaat MM, Carr PJ, van Rens RM, van Dijk M, Poslawsky IE, van den Hoogen A. Peripheral intravenous cannulation: complication rates in the neonatal population: a multicenter observational study. *Int J Nurs Stud*. 2015;52(5):1003-1010. doi:[10.1016/j.ijnurstu.2015.02.009](https://doi.org/10.1016/j.ijnurstu.2015.02.009)
+
+[^3]: Moureau NL, Carr PJ. Vessel Health and Preservation: the right approach for vascular access. *Br J Nurs*. 2018;27(8):S28-S35. doi:[10.12968/bjon.2018.27.8.S28](https://doi.org/10.12968/bjon.2018.27.8.S28)
+
+[^4]: Fiorini J, Venturini G, Cicolini G, et al. Vascular access device selection and vessel health preservation in a group of hospitalised patients: an observational study. *J Clin Nurs*. 2019;28(7-8):1039-1049. doi:[10.1111/jocn.14728](https://doi.org/10.1111/jocn.14728)

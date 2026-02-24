@@ -18,7 +18,7 @@ effective_date = "2026-02-01"
 
 ## 1. Policy Statement
 
-It is the policy of this organization that vascular access expertise shall be formally integrated into all cross-disciplinary institutional safety programs, and that every transition of care involving a patient with an indwelling vascular access device shall be accompanied by standardized, comprehensive transfer documentation designed to ensure continuity of device management and the prevention of device-associated complications, including Central Line-Associated Bloodstream Infection (CLABSI).
+It is the policy of this organization that vascular access expertise shall be formally integrated into all cross-disciplinary institutional safety programs, and that every transition of care involving a patient with an indwelling vascular access device shall be accompanied by standardized, comprehensive transfer documentation designed to ensure continuity of device management and the prevention of device-associated complications, including Central Line-Associated Bloodstream Infection (CLABSI).[^8]
 
 ## 2. Purpose
 
@@ -42,9 +42,9 @@ This policy applies to:
 
 ### 4.1 Cross-Disciplinary Safety Program Integration
 
-4.1.1 **Antimicrobial Stewardship.** The VAST shall hold formal representation on or liaison status with the organization's Antimicrobial Stewardship Program (ASP). The VAST contribution shall include: ensuring that vascular access device selection matches the prescribed therapy's anticipated duration, pH, and osmolarity characteristics; identifying opportunities to de-escalate from central to peripheral access when antibiotic therapy permits; and contributing to surveillance of device-related infection patterns that may influence antimicrobial resistance.
+4.1.1 **Antimicrobial Stewardship.** The VAST shall hold formal representation on or liaison status with the organization's Antimicrobial Stewardship Program (ASP). The VAST contribution shall include: ensuring that vascular access device selection matches the prescribed therapy's anticipated duration, pH, and osmolarity characteristics; identifying opportunities to de-escalate from central to peripheral access when antibiotic therapy permits; and contributing to surveillance of device-related infection patterns that may influence antimicrobial resistance.[^1]
 
-4.1.2 **Medication Error Prevention.** The VAST shall participate in the organization's Medication Safety Committee to collaboratively analyze IV-related medication errors, including wrong-route errors, infusion rate errors, and adverse drug reactions associated with vascular access (e.g., vancomycin flushing syndrome, vesicant extravasation). Analysis findings shall be incorporated into staff education and system redesign initiatives.
+4.1.2 **Medication Error Prevention.** The VAST shall participate in the organization's Medication Safety Committee to collaboratively analyze IV-related medication errors, including wrong-route errors, infusion rate errors, and adverse drug reactions associated with vascular access (e.g., vancomycin flushing syndrome, vesicant extravasation).[^2][^3][^4] Analysis findings shall be incorporated into staff education and system redesign initiatives.
 
 4.1.3 **Pain Management.** The VAST shall coordinate with the Acute Pain Service and Anesthesiology to ensure consistent delivery of Patient-Controlled Analgesia (PCA) through vascular access devices, prevent lapses in analgesia delivery caused by device malfunction, occlusion, or displacement, and contribute to the development of pain management protocols for vascular access procedures.
 
@@ -73,15 +73,15 @@ This policy applies to:
 
 4.3.1 The organization shall actively pursue standardization of vascular access management practices between its acute care operations and its affiliated community care organizations, home health agencies, and skilled nursing facilities. Standardization efforts shall focus on: dressing change protocols, flush and lock procedures, site assessment and documentation standards, and complication recognition and reporting pathways.
 
-4.3.2 **Evidence Base.** Standardization is driven by evidence that aligning vascular access practices between acute and community settings decreases CLABSI rates and other device-associated complications. The VAGC shall track CLABSI rates both within the acute care setting and in post-discharge settings to measure the impact of standardization efforts.
+4.3.2 **Evidence Base.** Standardization is driven by evidence that aligning vascular access practices between acute and community settings decreases CLABSI rates and other device-associated complications.[^5][^6][^7][^8] The VAGC shall track CLABSI rates both within the acute care setting and in post-discharge settings to measure the impact of standardization efforts.
 
-4.3.3 **Community-Based Support.** The VAST shall provide educational support, consultation services, and protocol guidance to affiliated nurse-run infusion centers, home health agencies, and community therapy programs. The scope of this support shall include: initial training for community-based clinicians on organizational vascular access standards, ongoing consultation for complex cases, and periodic competency validation or audit support as defined by partnership agreements.
+4.3.3 **Community-Based Support.** The VAST shall provide educational support, consultation services, and protocol guidance to affiliated nurse-run infusion centers, home health agencies, and community therapy programs. The scope of this support shall include: initial training for community-based clinicians on organizational vascular access standards, ongoing consultation for complex cases, and periodic competency validation or audit support as defined by partnership agreements.[^10]
 
 ### 4.4 Setting-Specific Requirements
 
-4.4.1 **Home Care Transitions.** Patients being discharged to home with an indwelling vascular access device shall have: a completed home readiness assessment (per POL-003, Section 4.3.4), a clear written instruction sheet tailored to the specific device type, 24/7 contact information for emergency vascular access guidance, and confirmation that the home health agency has received and acknowledged the Vascular Access Transfer Communication Form.
+4.4.1 **Home Care Transitions.** Patients being discharged to home with an indwelling vascular access device shall have: a completed home readiness assessment (per POL-003, Section 4.3.4), a clear written instruction sheet tailored to the specific device type, 24/7 contact information for emergency vascular access guidance, and confirmation that the home health agency has received and acknowledged the Vascular Access Transfer Communication Form.[^9]
 
-4.4.2 **Outpatient Infusion Center Transitions.** Patients transitioning to outpatient infusion services shall have their vascular access device information integrated into the outpatient clinic's scheduling and care plan. The VAST shall ensure that outpatient clinic staff have received training in ultrasound-guided PIVC insertion and CVAD maintenance relevant to the patient population they serve.
+4.4.2 **Outpatient Infusion Center Transitions.** Patients transitioning to outpatient infusion services shall have their vascular access device information integrated into the outpatient clinic's scheduling and care plan. The VAST shall ensure that outpatient clinic staff have received training in ultrasound-guided PIVC insertion and CVAD maintenance relevant to the patient population they serve.[^11]
 
 4.4.3 **Skilled Nursing Facility Transitions.** Patients transitioning to skilled nursing shall have their device management plan explicitly communicated, including the anticipated remaining duration of therapy, the scheduled maintenance protocol, and the criteria for device removal. The VAST shall offer remote consultation and educational support to skilled nursing facility staff as defined by the organizational partnership agreement.
 
@@ -123,3 +123,29 @@ This policy applies to:
 |---------|------|-----------|----------------------|
 | 1.0 | 2026-02-01 | D. Woo, M. Stern, I.M. Wright | Initial policy creation and approval |
 | — | — | — | Scheduled review date: 2027-02-01 |
+
+---
+
+## References
+
+[^1]: Carrico R, Wiemken T. Vascular access and antibiotic stewardship: an opportunity for improvement? *J Assoc Vasc Access*. 2016;21(2):83-86. doi:[10.1016/j.java.2016.03.002](https://doi.org/10.1016/j.java.2016.03.002)
+
+[^2]: Wolf ZR. Lessons learned from medication errors. *J Infus Nurs*. 2016;39(4):235-248. doi:[10.1097/NAN.0000000000000175](https://doi.org/10.1097/NAN.0000000000000175)
+
+[^3]: Mohanty M, Suber S, Edwards K, et al. Epidemiology of harmful medication errors in adult inpatients: a prospective study from a teaching hospital in South India. *Ther Adv Drug Saf*. 2018;9(8):389-404. doi:[10.1177/2042098618782109](https://doi.org/10.1177/2042098618782109)
+
+[^4]: Kim JT, Park JY, Lee HJ, Cheon YJ. Guidelines for the management of extravasation. *J Educ Eval Health Prof*. 2020;17:21. doi:[10.3352/jeehp.2020.17.21](https://doi.org/10.3352/jeehp.2020.17.21)
+
+[^5]: Rupp ME, Majorant D. Prevention of vascular catheter-related bloodstream infections. *Infect Dis Clin North Am*. 2016;30(4):853-868. doi:[10.1016/j.idc.2016.06.001](https://doi.org/10.1016/j.idc.2016.06.001)
+
+[^6]: Buetti N, Marschall J, Drees M, et al. Strategies to prevent central line-associated bloodstream infections in acute-care hospitals: 2022 Update. *Infect Control Hosp Epidemiol*. 2022;43(5):553-569. doi:[10.1017/ice.2022.87](https://doi.org/10.1017/ice.2022.87)
+
+[^7]: Martillo M, Zarbiv S, Gupta R, et al. A comprehensive vascular access service can reduce catheter-associated bloodstream infections and promote the appropriate use of vascular access devices. *Am J Infect Control*. 2020;48(4):460-464. doi:[10.1016/j.ajic.2019.09.021](https://doi.org/10.1016/j.ajic.2019.09.021)
+
+[^8]: Krein SL, Harrod M, Weston LE, et al. Vascular access specialist teams and catheter-related bloodstream infection prevention: a multisite qualitative study. *BMJ Qual Saf*. 2021;30(8):628-638. doi:[10.1136/bmjqs-2020-011806](https://doi.org/10.1136/bmjqs-2020-011806)
+
+[^9]: Patton LJ, Hicks FD, Smith K, Hacker D, Mahnke A. Pediatric patients and peripherally inserted central catheter complications in the home care setting. *J Pediatr Nurs*. 2019;49:37-42. doi:[10.1016/j.pedn.2019.08.009](https://doi.org/10.1016/j.pedn.2019.08.009)
+
+[^10]: Hodgkins P. Vascular access in community care: community nurses and vascular access. *Brit J Nurs*. 2021;30(19):S4-S12. doi:[10.12968/bjon.2021.30.19.S4](https://doi.org/10.12968/bjon.2021.30.19.S4)
+
+[^11]: Graham J, Garcia D, Tamminga J, et al. Vascular access in the ambulatory infusion clinic: outcomes from a nurse-led team. *J Infus Nurs*. 2022;45(1):41-48. doi:[10.1097/NAN.0000000000000452](https://doi.org/10.1097/NAN.0000000000000452)

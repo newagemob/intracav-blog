@@ -107,17 +107,17 @@ This policy applies to:
 
 ### 4.4 Smart Pump Dose Error-Reduction Systems
 
-4.4.1 Electronic infusion pumps with dose error-reduction software (smart pumps) are the required standard for intravenous medication and solution administration throughout all acute care settings including ambulatory, perioperative, procedural, radiology, emergency, and infusion center environments.
+4.4.1 Electronic infusion pumps with dose error-reduction software (smart pumps) are the required standard for intravenous medication and solution administration throughout all acute care settings including ambulatory, perioperative, procedural, radiology, emergency, and infusion center environments.[^1]
 
 4.4.2 **Drug library use is mandatory.** Manual programming outside the drug library and override of drug library alerts are prohibited except in documented exceptional circumstances with attending physician authorization. Each exception shall be logged and reviewed by pharmacy.
 
-4.4.3 An interprofessional team including pharmacy and clinical nurse specialists shall monitor smart pump dose error-reduction software compliance monthly. Drug library compliance shall be maintained at 95% or greater. Results shall be reported to the patient safety committee.
+4.4.3 An interprofessional team including pharmacy and clinical nurse specialists shall monitor smart pump dose error-reduction software compliance monthly. Drug library compliance shall be maintained at 95% or greater. Results shall be reported to the patient safety committee.[^2]
 
 4.4.4 When available, smart pumps shall permit separate programming and limits for bolus/loading doses and continuous infusion rates to optimize safe delivery.
 
-4.4.5 Drug libraries shall be updated on a regular schedule to reflect new drugs, revised protocols, drug shortages, and formulary changes. Drug library updates shall minimize unnecessary alert burden. End-user input shall be incorporated into drug library design and revision processes.
+4.4.5 Drug libraries shall be updated on a regular schedule to reflect new drugs, revised protocols, drug shortages, and formulary changes. Drug library updates shall minimize unnecessary alert burden. End-user input shall be incorporated into drug library design and revision processes.[^3][^4]
 
-4.4.6 Smart pumps with electronic health record interoperability shall be configured to reduce manual programming errors, decrease false alarms, improve documentation completeness, and reduce wrong-patient infusion risk. Bidirectional EHR integration shall be a priority in all future device procurement decisions.
+4.4.6 Smart pumps with electronic health record interoperability shall be configured to reduce manual programming errors, decrease false alarms, improve documentation completeness, and reduce wrong-patient infusion risk.[^5][^6][^7] Bidirectional EHR integration shall be a priority in all future device procurement decisions.[^8]
 
 4.4.7 Multichannel infusion pumps shall be used for single patients only. Simultaneous therapies delivered by different routes (e.g., intravenous and epidural) shall never be combined on the same pump channel.
 
@@ -129,7 +129,7 @@ This policy applies to:
 
 4.5.3 Accessory devices including administration sets, syringes, and filters shall be compatible with the selected flow-control device per manufacturer specifications. Syringe pumps delivering small-volume infusions shall use accessory devices with minimal internal volume (microbore tubing, shorter lengths) to minimize residual volume and prevent under-delivery.
 
-4.5.4 Manually regulated infusion sets require regular assessment with flow verification through drop counting and infusion volume monitoring. The frequency of assessment shall conform to organizational policy and patient acuity.
+4.5.4 Manually regulated infusion sets require regular assessment with flow verification through drop counting and infusion volume monitoring. The frequency of assessment shall conform to organizational policy and patient acuity.[^9]
 
 4.5.5 Clinicians shall recognize that electronic infusion pumps cannot detect infiltration or extravasation. Routine vascular access device site assessment shall be performed independently of pump monitoring, at intervals consistent with organizational policy.
 
@@ -206,7 +206,27 @@ This policy applies to:
 - Organizational Drug Library and Pharmacy Policy (Pharmacy Department)
 - Institute for Safe Medication Practices (ISMP) Guidelines on Safe Pump Use
 
-## 8. Revision History
+## 8. References
+
+[^1]: Bacon O, Hoffman L. System-level patient safety practices that aim to reduce medication errors associated with infusion pumps: an evidence review. *J Patient Safety*. 2020;16(3):S42-S47. doi:[10.1097/pts.0000000000000722](https://doi.org/10.1097/pts.0000000000000722)
+
+[^2]: Lehr J, Vitoux RR, Zavotsky KE, Pontieri-Lewis V, Colineri L. Achieving outcomes with innovative smart pump technology: partnership, planning, and quality improvement. *J Nurs Care Qual*. 2019;34(1):9-15. doi:[10.1097/NCQ.0000000000000326](https://doi.org/10.1097/NCQ.0000000000000326)
+
+[^3]: Walroth TA, Smallwood S, Arthur K, et al. Development of a standardized, citywide process for managing smart-pump drug libraries. *Am J Health-Syst Pharm*. 2018;75(12):893-900. doi:[10.2146/ajhp170262](https://doi.org/10.2146/ajhp170262)
+
+[^4]: DeLaurentis P, Walroth TA, Fritschle AC, et al. Stakeholder perceptions of smart infusion pumps and drug library updates: a multisite, interdisciplinary study. *Am J Health-Syst Pharm*. 2019;76(17):1281-1287. doi:[10.1093/ajhp/zxz135](https://doi.org/10.1093/ajhp/zxz135)
+
+[^5]: Joseph R, Lee SW, Anderson SV, Morrisette MJ. Impact of interoperability of smart infusion pumps and an electronic medical record in critical care. *Am J Health-Syst Pharm*. 2020;77(15):1231-1236. doi:[10.1093/ajhp/zxaa164](https://doi.org/10.1093/ajhp/zxaa164)
+
+[^6]: Suess TM, Beard JW, Trohimovich B. Impact of patient-controlled analgesia (PCA) smart pump–electronic health record (EHR) interoperability with auto-documentation on chart completion in a community hospital setting. *Pain Ther*. 2019;8(2):261-269. doi:[10.1007/s40122-019-0132-2](https://doi.org/10.1007/s40122-019-0132-2)
+
+[^7]: Wei W, Coffey W, Adeola M, Abbasi G. Impact of smart pump–electronic health record interoperability on patient safety and finances at a community hospital. *Am J Health Syst Pharm*. 2021;zxab287. doi:[10.1093/ajhp/zxab287](https://doi.org/10.1093/ajhp/zxab287)
+
+[^8]: Catlin AC, Malloy WX, Arthur KJ, et al. Comparative analytics of infusion pump data across multiple hospital systems. *Am J Health-Syst Pharm*. 2015;72(4):317-324. doi:[10.2146/ajhp140424](https://doi.org/10.2146/ajhp140424)
+
+[^9]: Roydhouse SA, Carland JE, Debono DS, et al. Accuracy of documented administration times for intravenous antimicrobial drugs and impact on dosing decisions. *Br J Clin Pharmacol*. 2021;87(11):4273-4282. doi:[10.1111/bcp.14844](https://doi.org/10.1111/bcp.14844)
+
+## 9. Revision History
 
 | Version | Date | Author(s) | Description of Change |
 |---------|------|-----------|----------------------|

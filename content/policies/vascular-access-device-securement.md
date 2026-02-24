@@ -24,7 +24,7 @@ All vascular access devices (VADs) placed or maintained within this organization
 ## 2. Purpose
 
 - To prevent unplanned VAD dislodgement and catheter migration that result in treatment delays, additional venipuncture attempts, and patient harm.
-- To eliminate suture-based securement and its associated risks, including needlestick injury, biofilm growth on suture material, and increased catheter-associated bloodstream infection (CABSI) risk.
+- To eliminate suture-based securement and its associated risks, including needlestick injury, biofilm growth on suture material, and increased catheter-associated bloodstream infection (CABSI) risk.[^1][^2]
 - To standardize the selection, application, maintenance, and assessment of acceptable VAD securement methods across all patient populations and care settings.
 - To reduce catheter-associated skin injury (CASI) resulting from improper securement device selection or technique.
 - To provide device-specific securement guidance that reflects the current evidence base for peripheral intravenous catheters (PIVCs), midline catheters, peripherally inserted central catheters (PICCs), central venous access devices (CVADs), and arterial catheters.
@@ -261,3 +261,11 @@ Exceptions do not exempt clinicians from the requirement to assess and document 
 |---------|------|--------|-------------|
 | 1.0 | 2023-09-12 | Vascular Access Governance Committee | Initial policy |
 | 2.0 | 2025-07-01 | Vascular Access Governance Committee | Updated SASS criteria to align with NICE 15-day threshold; expanded PIVC enhanced securement criteria; added neonatal tissue adhesive precautions; clarified suture prohibition language; added CASI prevention requirements |
+
+---
+
+## References
+
+[^1]: Rupp ME, Majorant D. Prevention of vascular catheter-related bloodstream infections. *Infect Dis Clin North Am*. 2016;30(4):853-868. doi:[10.1016/j.idc.2016.06.001](https://doi.org/10.1016/j.idc.2016.06.001)
+
+[^2]: Buetti N, Marschall J, Drees M, et al. Strategies to prevent central line-associated bloodstream infections in acute-care hospitals: 2022 Update. *Infect Control Hosp Epidemiol*. 2022;43(5):553-569. doi:[10.1017/ice.2022.87](https://doi.org/10.1017/ice.2022.87)

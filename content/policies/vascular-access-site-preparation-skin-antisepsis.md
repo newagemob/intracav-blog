@@ -68,9 +68,9 @@ This policy applies to:
 
 #### 4.3.1 Primary Agent: Alcoholic Chlorhexidine Gluconate
 
-4.3.1.1 The preferred antiseptic for vascular access site preparation shall be alcoholic chlorhexidine gluconate (CHG). This agent is supported by systematic reviews, meta-analyses, and national evidence-based guidelines demonstrating superior efficacy in reducing catheter-related bloodstream infections compared to alternative agents.
+4.3.1.1 The preferred antiseptic for vascular access site preparation shall be alcoholic chlorhexidine gluconate (CHG). This agent is supported by systematic reviews, meta-analyses, and national evidence-based guidelines demonstrating superior efficacy in reducing catheter-related bloodstream infections compared to alternative agents.[^2][^3][^4]
 
-4.3.1.2 The CHG solution shall contain a minimum concentration of 2% chlorhexidine gluconate combined with alcohol. Comparative studies demonstrate that 2% CHG-alcohol solutions provide significantly better protection against catheter-related bloodstream infections and bacterial colonization at insertion sites than povidone-iodine alternatives.
+4.3.1.2 The CHG solution shall contain a minimum concentration of 2% chlorhexidine gluconate combined with alcohol. Comparative studies demonstrate that 2% CHG-alcohol solutions provide significantly better protection against catheter-related bloodstream infections and bacterial colonization at insertion sites than povidone-iodine alternatives.[^2][^3]
 
 #### 4.3.2 Alternative Antiseptic Agents
 
@@ -80,11 +80,11 @@ This policy applies to:
 
 ### 4.4 Special Populations: Neonatal Considerations
 
-4.4.1 Antiseptic selection in preterm neonates, low-birthweight infants, and all neonates within the first 14 days of life shall include careful consideration of the unique physiological characteristics of immature skin.
+4.4.1 Antiseptic selection in preterm neonates, low-birthweight infants, and all neonates within the first 14 days of life shall include careful consideration of the unique physiological characteristics of immature skin.[^1]
 
 #### 4.4.2 Acceptable Agents in Neonatal Populations
 
-4.4.2.1 Povidone-iodine, alcohol-based chlorhexidine, and aqueous chlorhexidine solutions are all used in neonatal practice. Current evidence has not established any single antiseptic as definitively superior for either safety or efficacy in this population. Clinical judgment shall be applied in agent selection for this population.
+4.4.2.1 Povidone-iodine, alcohol-based chlorhexidine, and aqueous chlorhexidine solutions are all used in neonatal practice. Current evidence has not established any single antiseptic as definitively superior for either safety or efficacy in this population.[^1] Clinical judgment shall be applied in agent selection for this population.
 
 #### 4.4.3 Risk-Benefit Analysis
 
@@ -159,3 +159,15 @@ Exceptions to this policy require documented clinical justification recorded in 
 |---------|------|--------|-------------|
 | 1.0 | 2024-10-03 | Vascular Access Governance Committee | Initial policy release |
 | 1.1 | 2025-12-15 | Vascular Access Governance Committee | Periodic review; neonatal post-procedure care requirements clarified |
+
+---
+
+## References
+
+[^1]: Bagheri I, Fallah B, Dadgari A, Farahani A, Salmani N. A literature review of selection of appropriate antiseptics when inserting intravenous catheters in premature infants: the challenge in neonatal intensive care unit. *J Clin Neonatal*. 2020;9(3):162-167. doi:[10.4103/jcn.JCN_135_19](https://doi.org/10.4103/jcn.JCN_135_19)
+
+[^2]: Rupp ME, Majorant D. Prevention of vascular catheter-related bloodstream infections. *Infect Dis Clin North Am*. 2016;30(4):853-868. doi:[10.1016/j.idc.2016.07.001](https://doi.org/10.1016/j.idc.2016.07.001)
+
+[^3]: Buetti N, Marschall J, Drees M, et al. Strategies to prevent central line-associated bloodstream infections in acute-care hospitals: 2022 Update. *Infect Control Hosp Epidemiol*. 2022;43(5):553-569. doi:[10.1017/ice.2022.87](https://doi.org/10.1017/ice.2022.87)
+
+[^4]: Martillo MA, Uddin F, Di Natale L, et al. CLABSI prevention in a medical-surgical ICU: updating a prevention bundle to include emerging evidence and guidelines. *Am J Infect Control*. 2020;48(1):34-38. doi:[10.1016/j.ajic.2019.09.021](https://doi.org/10.1016/j.ajic.2019.09.021)

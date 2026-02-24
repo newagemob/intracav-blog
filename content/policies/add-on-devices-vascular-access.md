@@ -19,7 +19,7 @@ effective_date = "2024-03-05"
 
 ## 1. Policy Statement
 
-All clinicians who configure, assemble, or manage vascular access infusion systems shall use add-on devices only when a clearly defined clinical purpose exists, shall select devices with luer-lock or integrated connection mechanisms, and shall limit device burden to the minimum necessary for safe care delivery. Add-on devices shall be used in strict accordance with manufacturer instructions for use, shall be replaced according to defined triggers and institutional protocols, and shall never be reattached to a vascular access device hub after removal. Hub disinfection shall be performed before every add-on device replacement to protect patient safety and reduce catheter-associated infection risk.
+All clinicians who configure, assemble, or manage vascular access infusion systems shall use add-on devices only when a clearly defined clinical purpose exists, shall select devices with luer-lock or integrated connection mechanisms, and shall limit device burden to the minimum necessary for safe care delivery. Add-on devices shall be used in strict accordance with manufacturer instructions for use, shall be replaced according to defined triggers and institutional protocols, and shall never be reattached to a vascular access device hub after removal. Hub disinfection shall be performed before every add-on device replacement to protect patient safety and reduce catheter-associated infection risk.[^1][^2]
 
 ## 2. Purpose
 
@@ -199,3 +199,11 @@ Exceptions to the luer-lock connection requirement may be considered only in cir
 |---------|------|--------|-------------|
 | 1.0 | 2024-03-05 | Vascular Access Governance Committee | Initial policy |
 | 1.1 | 2025-06-18 | Vascular Access Governance Committee | Expanded CSTD and safety release valve guidance; clarified infusion accuracy consultation requirements; added stopcock-to-needleless-connector conversion requirements; updated related documents |
+
+---
+
+## References
+
+[^1]: Rupp ME, Majorant D. Prevention of vascular catheter-related bloodstream infections. *Infect Dis Clin North Am*. 2016;30(4):853-868. doi:[10.1016/j.idc.2016.06.001](https://doi.org/10.1016/j.idc.2016.06.001)
+
+[^2]: Buetti N, Marschall J, Drees M, et al. Strategies to prevent central line-associated bloodstream infections in acute-care hospitals: 2022 Update. *Infect Control Hosp Epidemiol*. 2022;43(5):553-569. doi:[10.1017/ice.2022.87](https://doi.org/10.1017/ice.2022.87)

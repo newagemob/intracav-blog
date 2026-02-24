@@ -75,7 +75,7 @@ This policy applies to:
 
 ### 4.4 Aseptic Technique Requirements
 
-4.4.1 Adherence to Aseptic Non Touch Technique (ANTT) principles is mandatory during all port access procedures. Clinicians shall employ either Standard-ANTT or Surgical-ANTT based on clinical circumstances and institutional protocols.
+4.4.1 Adherence to Aseptic Non Touch Technique (ANTT) principles is mandatory during all port access procedures to reduce catheter-associated bloodstream infection risk.[^1][^2] Clinicians shall employ either Standard-ANTT or Surgical-ANTT based on clinical circumstances and institutional protocols.
 
 4.4.2 Following completion of skin antisepsis, sterile gloves shall be worn if the port site requires palpation to locate the port body prior to needle insertion. This maintains the sterility of the prepared field and prevents contamination of the access site.
 
@@ -240,3 +240,11 @@ Exceptions to this policy require documented clinical justification recorded in 
 |---------|------|--------|-------------|
 | 1.0 | 2024-01-15 | Vascular Access Governance Committee | Initial policy release |
 | 1.1 | 2026-01-15 | Vascular Access Governance Committee | Annual review; bevel orientation, maintenance flushing intervals, and CHG dressing guidance updated |
+
+---
+
+## References
+
+[^1]: Rupp ME, Majorant D. Prevention of vascular catheter-related bloodstream infections. *Infect Dis Clin North Am*. 2016;30(4):853-868. doi:[10.1016/j.idc.2016.06.001](https://doi.org/10.1016/j.idc.2016.06.001)
+
+[^2]: Buetti N, Marschall J, Drees M, et al. Strategies to prevent central line-associated bloodstream infections in acute-care hospitals: 2022 Update. *Infect Control Hosp Epidemiol*. 2022;43(5):553-569. doi:[10.1017/ice.2022.87](https://doi.org/10.1017/ice.2022.87)

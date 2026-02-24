@@ -56,7 +56,7 @@ This policy applies to:
 
 #### 4.2.1 Collaborative Decision-Making
 
-4.2.1.1 Vascular access planning shall involve a collaborative approach including the healthcare team, the patient, and when appropriate, caregivers. Planning shall consider diagnosis and clinical presentation, available vasculature, appropriate device selection, and a thorough analysis of the risks and benefits of alternative therapeutic routes.
+4.2.1.1 Vascular access planning shall involve a collaborative approach including the healthcare team, the patient, and when appropriate, caregivers. Planning shall consider diagnosis and clinical presentation, available vasculature, appropriate device selection, and a thorough analysis of the risks and benefits of alternative therapeutic routes.[^11]
 
 #### 4.2.2 Device Selection Criteria
 
@@ -73,7 +73,7 @@ This policy applies to:
 
 #### 4.2.3 Principle of Minimal Intervention
 
-4.2.3.1 Clinical practice shall favor the least invasive vascular access device with the smallest outer diameter and fewest lumens necessary to complete the prescribed therapy for its anticipated duration. This principle reduces patient discomfort, minimizes infection risk, and preserves vascular integrity for future access needs.
+4.2.3.1 Clinical practice shall favor the least invasive vascular access device with the smallest outer diameter and fewest lumens necessary to complete the prescribed therapy for its anticipated duration. This principle reduces patient discomfort, minimizes infection risk, and preserves vascular integrity for future access needs.[^7][^8][^13]
 
 #### 4.2.4 Site Selection Philosophy
 
@@ -139,7 +139,7 @@ This policy applies to:
 
 #### 4.4.3 Technology Utilization
 
-4.4.3.1 Vascular visualization technology, including near-infrared devices and ultrasound, shall be employed to increase insertion success rates in patients with difficult intravenous access (DIVA).
+4.4.3.1 Vascular visualization technology, including near-infrared devices and ultrasound, shall be employed to increase insertion success rates in patients with difficult intravenous access (DIVA).[^9][^12]
 
 #### 4.4.4 Infusate Restrictions for Short PIVCs
 
@@ -193,7 +193,7 @@ This policy applies to:
 
 ### 4.7 Neonatal and Pediatric Considerations for Peripheral Catheters
 
-4.7.1 Device selection criteria for neonatal and pediatric patients shall parallel those established for adult patients, with emphasis on removing PIVCs as soon as they are no longer clinically required.
+4.7.1 Device selection criteria for neonatal and pediatric patients shall parallel those established for adult patients, with emphasis on removing PIVCs as soon as they are no longer clinically required.[^1][^2][^3][^10]
 
 4.7.2 **Site options for pediatric patients:** Foot veins may be considered in pediatric patients when the child's activity level will not compromise catheter integrity.
 
@@ -225,7 +225,7 @@ This policy applies to:
 
 #### 4.9.1 Indications for Central Venous Access
 
-4.9.1.1 Evidence-based indications for CVAD insertion shall be implemented to minimize unnecessary central line placement. Appropriate indications include:
+4.9.1.1 Evidence-based indications for CVAD insertion shall be implemented to minimize unnecessary central line placement.[^14][^15] Appropriate indications include:
 
 - Clinical instability (altered vital signs, oxygen saturation)
 - Infusion therapy inappropriate for peripheral administration (vesicants, non-peripherally compatible parenteral nutrition, concentrated electrolytes)
@@ -253,7 +253,7 @@ This policy applies to:
 
 #### 4.9.4 Nontunneled Central Venous Catheters
 
-4.9.4.1 Ultrasound shall be used in adult and pediatric patients for vein identification, assessment, and insertion at all sites to decrease risks of cannulation failure, arterial puncture, hematoma, pneumothorax, and hemothorax.
+4.9.4.1 Ultrasound shall be used in adult and pediatric patients for vein identification, assessment, and insertion at all sites to decrease risks of cannulation failure, arterial puncture, hematoma, pneumothorax, and hemothorax.[^4][^5]
 
 4.9.4.2 **Jugular approach:** Associated with greater first-time insertion success, fewer needle punctures, and lower mechanical complications during insertion. Low internal jugular vein or brachiocephalic approach may improve first-time success and patient comfort.
 
@@ -267,7 +267,7 @@ This policy applies to:
 
 4.9.5.2 Tunneled cuffed CVADs are appropriate for continuous long-term infusion therapy such as antineoplastic agents or parenteral nutrition.
 
-4.9.5.3 Implanted vascular access ports are appropriate for patients requiring infrequent or intermittent vascular access.
+4.9.5.3 Implanted vascular access ports are appropriate for patients requiring infrequent or intermittent vascular access.[^16][^17]
 
 ### 4.10 Arterial Catheter Guidelines
 
@@ -275,7 +275,7 @@ This policy applies to:
 
 4.10.2 The smallest gauge catheter possible shall be used for radial arterial access to minimize complication risk.
 
-4.10.3 Ultrasound guidance shall be employed for arterial catheter insertion.
+4.10.3 Ultrasound guidance shall be employed for arterial catheter insertion.[^6]
 
 4.10.4 Circulation to the hand shall be assessed prior to radial artery puncture through physical examination including assessment of radial and ulnar pulses using the Allen test, pulse oximetry, or Doppler flow study.
 
@@ -328,3 +328,41 @@ Exceptions to this policy may arise in emergency or life-threatening situations 
 |---------|------|--------|-------------|
 | 1.0 | 2023-05-15 | Vascular Access Governance Committee | Initial policy release |
 | 1.1 | 2025-09-01 | Vascular Access Governance Committee | Annual review; renal dysfunction and neonatal site guidance updated |
+
+---
+
+## References
+
+[^1]: Ullman A, Kleidon T. Developmental Stages and Clinical Conditions for Vascular Access in Pediatrics. In: Moureau NL, ed. *Vessel Health and Preservation: The Right Approach for Vascular Access*. Springer International Publishing; 2019:171-179.
+
+[^2]: Ullman AJ, Bernstein SJ, Brown E, et al. The Michigan Appropriateness Guide for Intravenous Catheters in Pediatrics: miniMAGIC. *Pediatrics*. 2020;145(Suppl 3):S269-S284. doi:[10.1542/peds.2019-3474I](https://doi.org/10.1542/peds.2019-3474I)
+
+[^3]: Aiyagari R, Cooper DS, Jacobs JP. Vascular access in children with congenital heart defects. *Pediatrics*. 2020;145:S285-S286. doi:[10.1542/peds.2019-3474N](https://doi.org/10.1542/peds.2019-3474N)
+
+[^4]: Spencer TR, Bardin-Spencer A. Ultrasound guidance for vascular access procedures by qualified vascular access specialists or other applicable healthcare clinicians. *J Assoc Vasc Access*. 2019;25(1):18-22. doi:[10.2309/j.java.2019.004.002](https://doi.org/10.2309/j.java.2019.004.002)
+
+[^5]: Spencer TR, Bardin-Spencer A. Central venous access device insertion by qualified vascular access specialists or other applicable healthcare clinicians. *J Assoc Vasc Access*. 2020;25(1):52-55. doi:[10.2309/j.java.2020.01.001](https://doi.org/10.2309/j.java.2020.01.001)
+
+[^6]: Bardin-Spencer A, Spencer TR. Ultrasound-guided peripheral arterial catheter insertion by qualified vascular access specialists or other applicable health care clinicians. *J Assoc Vasc Access*. 2019;25(1):48-50. doi:[10.2309/j.java.2019.003.008](https://doi.org/10.2309/j.java.2019.003.008)
+
+[^7]: Moureau NL, Carr PJ. Vessel Health and Preservation: the right approach for vascular access. *Br J Nurs*. 2018;27(8):S28-S35. doi:[10.12968/bjon.2018.27.8.S28](https://doi.org/10.12968/bjon.2018.27.8.S28)
+
+[^8]: Fiorini J, Venturini G, Cicolini G, et al. Vascular access device selection and vessel health preservation in a group of hospitalised patients: an observational study. *J Clin Nurs*. 2019;28(7-8):1039-1049. doi:[10.1111/jocn.14728](https://doi.org/10.1111/jocn.14728)
+
+[^9]: Carr PJ, Higgins NS, Cooke ML, Rippey JC, Rickard CM. Tools, clinical prediction rules, and algorithms for the insertion of peripheral intravenous catheters in adult hospital patients: a systematic review and meta-analyses. *Cochrane Database Syst Rev*. 2018;3(3):CD011429. doi:[10.1002/14651858.CD011429.pub2](https://doi.org/10.1002/14651858.CD011429.pub2)
+
+[^10]: Legemaat MM, Carr PJ, van Rens RM, van Dijk M, Poslawsky IE, van den Hoogen A. Peripheral intravenous cannulation: complication rates in the neonatal population: a multicenter observational study. *Int J Nurs Stud*. 2015;52(5):1003-1010. doi:[10.1016/j.ijnurstu.2015.02.009](https://doi.org/10.1016/j.ijnurstu.2015.02.009)
+
+[^11]: Krein SL, Harrod M, Weston LE, et al. Vascular access specialist teams and catheter-related bloodstream infection prevention: a multisite qualitative study. *BMJ Qual Saf*. 2021;30(8):628-638. doi:[10.1136/bmjqs-2020-011806](https://doi.org/10.1136/bmjqs-2020-011806)
+
+[^12]: Paterson RS, Schults JA, Slaughter E, et al. Peripheral intravenous catheter insertion in adult patients with difficult intravenous access: a systematic review. *Emerg Med Australas*. 2022;34(6):862-870. doi:[10.1111/1742-6723.14069](https://doi.org/10.1111/1742-6723.14069)
+
+[^13]: Hallam C, Denton A, Weston V, et al. UK Vessel Health and Preservation (VHP) Framework: a commentary on the updated VHP 2020. *J Infect Prevent*. 2021;22(4):147-155. doi:[10.1177/1757177420976806](https://doi.org/10.1177/1757177420976806)
+
+[^14]: Bechdel BA, Bardman KJ, Machemer C. Developing a nurse-driven vascular access device order set using the electronic medical record. *J Infus Nurs*. 2022;45(1):20-26. doi:[10.1097/nan.0000000000000450](https://doi.org/10.1097/nan.0000000000000450)
+
+[^15]: Xiong Z, Chen H. Interventions to reduce unnecessary central venous catheter use to prevent central-line-associated bloodstream infections in adults: a systematic review. *Infect Control Hosp Epidemiol*. 2018;39(12):1442-1448. doi:[10.1017/ice.2018.250](https://doi.org/10.1017/ice.2018.250)
+
+[^16]: Wu S, Li W, Zhang Q, Li S, Wang L. Comparison of complications between peripheral arm ports and central chest ports: a meta-analysis. *J Adv Nurs*. 2018;74(11):2484-2496. doi:[10.1111/jan.13766](https://doi.org/10.1111/jan.13766)
+
+[^17]: Wang K, Zhou Y, Huang N, Lu Z, Zhang X. Peripherally inserted central catheter versus totally implanted venous port for delivering medium- to long-term chemotherapy: a cost-effectiveness analysis based on propensity score matching. *J Vasc Access*. 2022;23(3):365-374. doi:[10.1177/1129729821991360](https://doi.org/10.1177/1129729821991360)

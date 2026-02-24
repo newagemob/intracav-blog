@@ -178,7 +178,7 @@ This policy applies to:
 
 4.6.3.1 The infusing solution must be paused for 1 to 2 minutes and a waste volume of 1 to 2 mL must be discarded before obtaining the blood sample from a PIVC.
 
-4.6.3.2 When appropriate technique is used, PIVC-drawn samples for complete blood count (CBC), blood chemistry panels, and coagulation studies are not significantly different from direct venipuncture results and are acceptable for clinical decision-making.
+4.6.3.2 When appropriate technique is used, PIVC-drawn samples for complete blood count (CBC), blood chemistry panels, and coagulation studies are not significantly different from direct venipuncture results and are acceptable for clinical decision-making. Comparative studies in pediatric inpatients confirm that blood samples obtained from short peripheral catheters using standardized technique yield results comparable to simultaneous venipuncture samples across common laboratory parameters.[^4]
 
 4.6.3.3 For midline catheter blood sampling, evidence remains limited. Available data suggests a hemolysis rate of approximately 0.69% in midline-drawn samples; further research is needed to establish definitive technique standards for midline sampling.
 
@@ -192,7 +192,7 @@ This policy applies to:
 
 4.6.4.4 Closed-Loop Systems: Closed-loop blood sampling systems return the blood volume withdrawn for catheter lumen clearing back to the patient following specimen collection and are recommended for blood conservation purposes.
 
-4.6.4.5 Blood sampling from CVADs currently infusing parenteral nutrition (PN) must be avoided as a routine practice due to the increased risk of catheter-associated bloodstream infection (CABSI) associated with additional hub manipulation during PN infusion.
+4.6.4.5 Blood sampling from CVADs currently infusing parenteral nutrition (PN) must be avoided as a routine practice due to the increased risk of catheter-associated bloodstream infection (CABSI) associated with additional hub manipulation during PN infusion.[^1][^2][^3]
 
 4.6.4.6 The accuracy of coagulation test results obtained from heparinized CVADs is not definitively established due to confounding variables including collection technique, heparin adherence to catheter materials and biofilm, and variable discard volumes. Results from heparinized CVADs must be interpreted with clinical caution, and direct venipuncture retesting may be required.
 
@@ -267,3 +267,15 @@ This policy applies to:
 |---------|------|--------|-------------|
 | 1.0 | 2024-06-17 | Vascular Access Governance Committee | Initial policy |
 | 1.1 | 2025-12-01 | Vascular Access Governance Committee | Added IO blood sampling cautions for critically ill; clarified push-pull as preferred CVAD sampling method; expanded blood culture CVAD requirements including needleless connector replacement and multilumen draw standards; updated TDM documentation requirements; added specimen rejection risk factor table |
+
+---
+
+## References
+
+[^1]: Rupp ME, Majorant D. Prevention of vascular catheter-related bloodstream infections. *Infect Dis Clin North Am*. 2016;30(4):853-868. doi:[10.1016/j.idc.2016.06.001](https://doi.org/10.1016/j.idc.2016.06.001)
+
+[^2]: Buetti N, Marschall J, Drees M, et al. Strategies to prevent central line-associated bloodstream infections in acute-care hospitals: 2022 Update. *Infect Control Hosp Epidemiol*. 2022;43(5):553-569. doi:[10.1017/ice.2022.87](https://doi.org/10.1017/ice.2022.87)
+
+[^3]: Martillo M, Zarbiv S, Gupta R, et al. A comprehensive vascular access service can reduce catheter-associated bloodstream infections and promote the appropriate use of vascular access devices. *Am J Infect Control*. 2020;48(4):460-464. doi:[10.1016/j.ajic.2019.09.021](https://doi.org/10.1016/j.ajic.2019.09.021)
+
+[^4]: Twibell KR, Hofstetter P, Siela D, Brown D, Jones HM. A comparative study of blood sampling from venipuncture and short peripheral catheters in pediatric inpatients. *J Infus Nurs*. 2019;42(5):237-247. doi:[10.1097/NAN.0000000000000338](https://doi.org/10.1097/NAN.0000000000000338)

@@ -150,7 +150,7 @@ This policy applies to:
 
 #### 4.7.3 Infection Prevention Bundle
 
-4.7.3.1 Implementation of a standardized bundle of care shall be adopted to reduce the incidence of umbilical catheter-associated bloodstream infections.
+4.7.3.1 Implementation of a standardized bundle of care shall be adopted to reduce the incidence of umbilical catheter-associated bloodstream infections.[^1][^2]
 
 ### 4.8 Catheter Removal Guidelines
 
@@ -212,3 +212,11 @@ Exceptions to standard dwell time limits or catheter use criteria may occur in e
 |---------|------|--------|-------------|
 | 1.0 | 2023-11-09 | Vascular Access Governance Committee | Initial policy release |
 | 1.1 | 2025-02-15 | Vascular Access Governance Committee | Annual review; UAC dwell time, antiseptic selection guidance, and infection bundle requirements updated |
+
+---
+
+## References
+
+[^1]: Rupp ME, Majorant D. Prevention of vascular catheter-related bloodstream infections. *Infect Dis Clin North Am*. 2016;30(4):853-868. doi:[10.1016/j.idc.2016.06.001](https://doi.org/10.1016/j.idc.2016.06.001)
+
+[^2]: Buetti N, Marschall J, Drees M, et al. Strategies to prevent central line-associated bloodstream infections in acute-care hospitals: 2022 Update. *Infect Control Hosp Epidemiol*. 2022;43(5):553-569. doi:[10.1017/ice.2022.87](https://doi.org/10.1017/ice.2022.87)

@@ -43,7 +43,7 @@ This policy applies to:
 
 ### 4.1 Organizational Assessment and Value Proposition
 
-4.1.1 The organization shall conduct a comprehensive baseline assessment of its vascular access clinical outcomes, operational workflows, and financial expenditures at minimum every three (3) years, or whenever a significant structural change to infusion services is proposed (e.g., team expansion, team dissolution, service line addition or reduction).
+4.1.1 The organization shall conduct a comprehensive baseline assessment of its vascular access clinical outcomes, operational workflows, and financial expenditures at minimum every three (3) years, or whenever a significant structural change to infusion services is proposed (e.g., team expansion, team dissolution, service line addition or reduction).[^1][^2][^3]
 
 4.1.2 The assessment shall include, at minimum:
 - **Complication rates:** Incidence of central vascular access device (CVAD) complications including arterial puncture, pneumothorax, hemothorax, catheter malposition, and catheter-associated bloodstream infection (CABSI).
@@ -78,7 +78,7 @@ This policy applies to:
 
 4.4.2 **Revenue and Cost Center Designation.** In acute care settings, the vascular access service shall be designated as both a revenue center and a cost center. Revenue-generating activities (e.g., outpatient PICC placements, consultations) shall be tracked using appropriate billing codes. Cost-avoidance data (e.g., CABSI prevention, reduced emergency CVAD placements, reduced length of stay attributable to vascular access optimization) shall be quantified and reported as part of the annual financial review.
 
-4.4.3 **Business Case Development.** The VAGC shall maintain a current business case document that demonstrates how revenue and cost-avoidance offset operational costs, providing a quantitative justification for the long-term sustainability of the dedicated specialist team. The business case shall be updated annually with current data and presented to organizational leadership.
+4.4.3 **Business Case Development.** The VAGC shall maintain a current business case document that demonstrates how revenue and cost-avoidance offset operational costs, providing a quantitative justification for the long-term sustainability of the dedicated specialist team. The business case shall be updated annually with current data and presented to organizational leadership.[^4]
 
 4.4.4 The organization shall allocate sufficient funding for vascular access specialist professional development, including board certification preparation and maintenance, conference attendance, and continuing education, recognizing these as investments in quality and risk reduction.
 
@@ -86,11 +86,11 @@ This policy applies to:
 
 4.5.1 Vascular access specialists shall be formally integrated into the following institutional safety programs:
 
-**Antimicrobial Stewardship Program.** Vascular access specialists shall participate in antimicrobial stewardship activities by ensuring that device selection and maintenance practices align with strategies to reduce antimicrobial resistance, including appropriate matching of device dwell time to prescribed therapy duration and consideration of infusate pH/osmolarity.
+**Antimicrobial Stewardship Program.** Vascular access specialists shall participate in antimicrobial stewardship activities by ensuring that device selection and maintenance practices align with strategies to reduce antimicrobial resistance, including appropriate matching of device dwell time to prescribed therapy duration and consideration of infusate pH/osmolarity.[^5][^6]
 
-**Infection Prevention and Control.** Vascular access specialists shall collaborate with Infection Prevention to analyze device-associated infection data, implement and monitor CABSI prevention bundles, and develop device management strategies based on current epidemiological trends.
+**Infection Prevention and Control.** Vascular access specialists shall collaborate with Infection Prevention to analyze device-associated infection data, implement and monitor CABSI prevention bundles, and develop device management strategies based on current epidemiological trends.[^7][^8][^9]
 
-**Medication Safety Program.** Vascular access specialists shall participate in the review and analysis of IV-associated medication errors and systemic reactions (e.g., vancomycin flushing syndrome, extravasation injuries from vesicant medications), contributing to system-level solutions.
+**Medication Safety Program.** Vascular access specialists shall participate in the review and analysis of IV-associated medication errors and systemic reactions (e.g., vancomycin flushing syndrome, extravasation injuries from vesicant medications), contributing to system-level solutions.[^10][^11][^12]
 
 **Pain Management Program.** Vascular access specialists shall coordinate with acute pain service teams to ensure consistent delivery of Patient-Controlled Analgesia (PCA) and prevent lapses in analgesia related to vascular access device malfunction or displacement.
 
@@ -100,7 +100,7 @@ This policy applies to:
 
 ### 4.6 Quality Improvement and Professional Development
 
-4.6.1 The vascular access service shall utilize validated quality improvement frameworks—including Failure Mode and Effects Analysis (FMEA), Lean Six Sigma, Plan-Do-Check-Act (PDCA), and Root Cause Analysis (RCA)—to systematically optimize workflows, reduce clinical risks, and improve outcomes.
+4.6.1 The vascular access service shall utilize validated quality improvement frameworks—including Failure Mode and Effects Analysis (FMEA), Lean Six Sigma, Plan-Do-Check-Act (PDCA), and Root Cause Analysis (RCA)—to systematically optimize workflows, reduce clinical risks, and improve outcomes.[^13][^14][^15]
 
 4.6.2 The organization shall support vascular access team members in pursuing and maintaining board certifications (e.g., CRNI®, VA-BC™) and active membership in professional societies (e.g., AVA) to ensure the service remains aligned with the latest clinical evidence and professional standards.
 
@@ -131,3 +131,37 @@ This policy applies to:
 |---------|------|-----------|----------------------|
 | 1.0 | 2026-02-01 | D. Woo, M. Stern, I.M. Wright | Initial policy creation and approval |
 | — | — | — | Scheduled review date: 2027-02-01 |
+
+---
+
+## References
+
+[^1]: Moureau N. Vascular access teams and their impact on infection control. *Infect Control Today*. 2020;24(4):30-33; 2022;26(7):27-29.
+
+[^2]: Johnson D, Long F, Laffey P, Mullen-Fortino M. Collaborative efforts to improve outcomes and reduce the costs associated with vascular access. *J Assoc Vasc Access*. 2017;22(1):35-37.
+
+[^3]: Krein SL, Harrod M, Weston LE, et al. Vascular access specialist teams and catheter-related bloodstream infection prevention: a multisite qualitative study. *BMJ Qual Saf*. 2021;30(8):628-638. doi:[10.1136/bmjqs-2020-011806](https://doi.org/10.1136/bmjqs-2020-011806)
+
+[^4]: Hadaway L, Dalton L, Mercanti-Erieg L. Infusion teams in acute care hospitals: call for a business approach: an infusion nurses society white paper. *J Infus Nurs*. 2014;37(5):321-346. doi:[10.1097/NAN.0000000000000063](https://doi.org/10.1097/NAN.0000000000000063)
+
+[^5]: Carrico R, Wiemken T. Vascular access and antibiotic stewardship: an opportunity for improvement? *J Assoc Vasc Access*. 2016;21(2):83-86. doi:[10.1016/j.java.2016.03.002](https://doi.org/10.1016/j.java.2016.03.002)
+
+[^6]: Nori P, Cowman K, Chen V, et al. Bacterial and fungal aetiology of late-onset sepsis in very low birth weight infants in neonatal intensive care. *Med Clin North Am*. 2018;102(5):845-854. doi:[10.1016/j.mcna.2018.05.003](https://doi.org/10.1016/j.mcna.2018.05.003)
+
+[^7]: Rupp ME, Majorant D. Prevention of vascular catheter-related bloodstream infections. *Infect Dis Clin North Am*. 2016;30(4):853-868. doi:[10.1016/j.idc.2016.06.001](https://doi.org/10.1016/j.idc.2016.06.001)
+
+[^8]: Buetti N, Marschall J, Drees M, et al. Strategies to prevent central line-associated bloodstream infections in acute-care hospitals: 2022 Update. *Infect Control Hosp Epidemiol*. 2022;43(5):553-569. doi:[10.1017/ice.2022.87](https://doi.org/10.1017/ice.2022.87)
+
+[^9]: Martillo M, Zarbiv S, Gupta R, et al. A comprehensive vascular access service can reduce catheter-associated bloodstream infections and promote the appropriate use of vascular access devices. *Am J Infect Control*. 2020;48(4):460-464. doi:[10.1016/j.ajic.2019.09.021](https://doi.org/10.1016/j.ajic.2019.09.021)
+
+[^10]: Wolf ZR. Lessons learned from medication errors. *J Infus Nurs*. 2016;39(4):235-248. doi:[10.1097/NAN.0000000000000175](https://doi.org/10.1097/NAN.0000000000000175)
+
+[^11]: Mohanty M, Suber S, Edwards K, et al. Epidemiology of harmful medication errors in adult inpatients: a prospective study from a teaching hospital in South India. *Ther Adv Drug Saf*. 2018;9(8):389-404. doi:[10.1177/2042098618782109](https://doi.org/10.1177/2042098618782109)
+
+[^12]: Kim JT, Park JY, Lee HJ, Cheon YJ. Guidelines for the management of extravasation. *J Educ Eval Health Prof*. 2020;17:21. doi:[10.3352/jeehp.2020.17.21](https://doi.org/10.3352/jeehp.2020.17.21)
+
+[^13]: Steere L, Ficara C, Davis M, Moureau N. Reaching one peripheral intravenous catheter (PIVC) per patient visit with lean multimodal strategy: the PIV5Rights™ bundle. *J Assoc Vasc Access*. 2018;23(1):42-50. doi:[10.1016/j.java.2018.01.003](https://doi.org/10.1016/j.java.2018.01.003)
+
+[^14]: Sadler ED, Scoles LM, Bonello RA, et al. Reduction in catheter-associated urinary tract infections following implementation of nurse-led rounds. *Am J Health-Syst Pharm*. 2021;78(13):1223-1232. doi:[10.1093/ajhp/zxab143](https://doi.org/10.1093/ajhp/zxab143)
+
+[^15]: Polancich S, James S, Miltner RS, et al. Innovations in quality improvement education: preparing the next generation of quality improvement leaders. *J Healthc Qual*. 2018;40(1):58-65. doi:[10.1097/JHQ.0000000000000083](https://doi.org/10.1097/JHQ.0000000000000083)

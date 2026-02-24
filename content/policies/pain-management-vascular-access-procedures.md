@@ -49,7 +49,7 @@ This policy applies to:
 
 4.1.2 Patients and caregivers shall be actively engaged in shared decision-making to identify and implement pain reduction strategies.
 
-4.1.3 Clinicians shall employ interventions that increase first-attempt success with vascular access device insertion. Research demonstrates that patient experience with vascular access management directly influences satisfaction with overall hospitalization, and that structured vascular access team approaches are associated with improved pain perception compared to placement by bedside nurses alone.
+4.1.3 Clinicians shall employ interventions that increase first-attempt success with vascular access device insertion. Research demonstrates that patient experience with vascular access management directly influences satisfaction with overall hospitalization, and that structured vascular access team approaches are associated with improved pain perception compared to placement by bedside nurses alone.[^1]
 
 ### 4.2 Barriers to Pain Management
 
@@ -65,11 +65,11 @@ This policy applies to:
 
 ### 4.3 Developmental Considerations and Long-Term Impact
 
-4.3.1 Clinicians shall understand the neurobiological impact of procedural pain across developmental stages when selecting and implementing pain management strategies.
+4.3.1 Clinicians shall understand the neurobiological impact of procedural pain across developmental stages when selecting and implementing pain management strategies.[^2]
 
 4.3.2 **Preterm and Neonatal Populations.** Preterm infants possess sensitive, developing nervous systems. Research has identified long-term changes in response to pain and stress during preterm hospitalizations, including reduced white matter microstructure, altered subcortical gray matter development, and dorsal horn central desensitization. Pain management for all procedures in this population is a clinical imperative.
 
-4.3.3 **Early and Middle Childhood.** Repeated needle-related procedures during early to middle childhood significantly increase the risk of long-term consequences, including procedural anxiety and subsequent hospital avoidance behaviors. Pain management shall be routinely implemented to reduce these risks.
+4.3.3 **Early and Middle Childhood.** Repeated needle-related procedures during early to middle childhood significantly increase the risk of long-term consequences, including procedural anxiety and subsequent hospital avoidance behaviors.[^3] Pain management shall be routinely implemented to reduce these risks.
 
 4.3.4 **Adolescent Populations.** Adolescents experience comparable levels of pain and distress during peripheral intravenous catheter insertion as younger children, yet consistently receive fewer pain relief interventions. Clinicians shall provide equivalent pain assessment and management for adolescent patients.
 
@@ -204,7 +204,7 @@ This policy applies to:
 
 #### 4.7.1 Needle Phobia Recognition
 
-4.7.1.1 Clinicians shall recognize that some patients experience significant fear of needles (needle phobia) and that appropriate pain management strategies may reduce this fear response. Needle phobia shall be documented and addressed proactively.
+4.7.1.1 Clinicians shall recognize that some patients experience significant fear of needles (needle phobia) and that appropriate pain management strategies may reduce this fear response.[^3] Needle phobia shall be documented and addressed proactively.
 
 #### 4.7.2 Nonpharmacologic Interventions for Adults
 
@@ -267,3 +267,13 @@ Exceptions to pain management requirements may occur in emergent clinical situat
 |---------|------|--------|-------------|
 | 1.0 | 2024-07-18 | Vascular Access Governance Committee | Initial policy release |
 | 1.1 | 2025-11-01 | Vascular Access Governance Committee | Annual review; adult nonpharmacologic interventions and adolescent pain equity language updated |
+
+---
+
+## References
+
+[^1]: Kleidon TM, Cattanach P, Mihala G, Ullman AJ. Implementation of a paediatric peripheral intravenous catheter care bundle: a quality improvement initiative. *J Paediatr Child Health*. 2019;55(10):1214-1223. doi:[10.1111/jpc.14384](https://doi.org/10.1111/jpc.14384)
+
+[^2]: Ullman A, Kleidon T. Developmental Stages and Clinical Conditions for Vascular Access in Pediatrics. In: Moureau NL, ed. *Vessel Health and Preservation: The Right Approach for Vascular Access*. Springer International Publishing; 2019:171-179.
+
+[^3]: McMurtry CM, Pillai Riddell R, Taddio A, et al. Far from "just a poke": common painful needle procedures and the development of needle fear. *Clin J Pain*. 2015;31(10 Suppl):S3-S11. doi:[10.1097/AJP.0000000000000272](https://doi.org/10.1097/AJP.0000000000000272)

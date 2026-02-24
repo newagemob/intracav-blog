@@ -47,7 +47,7 @@ This policy applies to:
 
 4.1.2 **Organizational Standards Compliance.** Every clinical action related to vascular access shall be traceable to a formal institutional policy, standardized protocol, approved clinical pathway, or a written provider order. No clinician shall perform a vascular access procedure without verifying that an active, authorized order exists in the patient's health record.
 
-4.1.3 **Ethical Advocacy.** Clinicians are the primary defenders of patient autonomy and dignity throughout all vascular access encounters. Clinical decisions shall prioritize patient safety over procedural efficiency, departmental throughput, or institutional convenience. All decisions regarding device selection and product utilization shall remain free from commercial influence, undisclosed conflicts of interest, or manufacturer preference that lacks supporting clinical evidence.
+4.1.3 **Ethical Advocacy.** Clinicians are the primary defenders of patient autonomy and dignity throughout all vascular access encounters. Clinical decisions shall prioritize patient safety over procedural efficiency, departmental throughput, or institutional convenience. All decisions regarding device selection and product utilization shall remain free from commercial influence, undisclosed conflicts of interest, or manufacturer preference that lacks supporting clinical evidence. Clinicians shall demonstrate cultural humility and apply culturally competent communication strategies to all patient and family interactions, recognizing that health literacy, language, cultural beliefs, and health disparities meaningfully influence clinical outcomes.[^29]
 
 4.1.4 **Hierarchy of Safety.** In all clinical decision-making, the following hierarchy shall be observed: (a) patient safety, (b) evidence-based clinical effectiveness, (c) patient preference and comfort, (d) operational efficiency, (e) cost-effectiveness. No lower-priority consideration shall override a higher-priority one.
 
@@ -208,3 +208,5 @@ This policy applies to:
 [^27]: Ko GJ, Rhee CM, Obi Y, et al. Vascular access placement and mortality in elderly incident hemodialysis patients. *Nephrol Dial Transplant*. 2020;35(3):503-511. doi:[10.1093/ndt/gfy254](https://doi.org/10.1093/ndt/gfy254)
 
 [^28]: Woo K, Gascue L, Norris K, Lin E. Patient frailty and functional use of hemodialysis vascular access: a retrospective study of the US Renal Data System. *Am J Kidney Dis*. 2022;80(1):30-45. doi:[10.1053/j.ajkd.2021.10.011](https://doi.org/10.1053/j.ajkd.2021.10.011)
+
+[^29]: Jongen C, McCalman J, Bainbridge R, Clifford A. *Cultural Competence in Health: a Review of the Evidence*. Springer Briefs in Public Health. 2017.

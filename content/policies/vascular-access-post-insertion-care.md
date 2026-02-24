@@ -66,7 +66,7 @@ This policy applies to:
 ### 4.2 Care Bundle Implementation
 
 #### 4.2.1 Post-Insertion Care Bundle
-4.2.1.1 All facilities must implement a comprehensive post-insertion VAD care bundle as part of an organizational safety culture framework. Consistently applied bundled approaches have demonstrated significant reductions in catheter-related infections and must not be selectively applied.
+4.2.1.1 All facilities must implement a comprehensive post-insertion VAD care bundle as part of an organizational safety culture framework. Consistently applied bundled approaches have demonstrated significant reductions in catheter-related infections and must not be selectively applied.[^1][^2]
 
 ### 4.3 Assessment Protocols
 
@@ -193,7 +193,7 @@ This policy applies to:
 4.7.3.1 Gauze or sterile absorbent dressings are indicated in the presence of active drainage from the catheter exit site (unless a hemostatic agent has been applied) or when diaphoresis precludes reliable adherence of TSM dressings.
 
 #### 4.7.4 CHG-Containing Dressings
-4.7.4.1 Chlorhexidine gluconate (CHG)-containing dressings are required for all short-term CVADs in patients older than 2 months unless contraindicated by known sensitivity or allergy to chlorhexidine. Any documented sensitivity or allergy to CHG must be recorded prior to dressing selection.
+4.7.4.1 Chlorhexidine gluconate (CHG)-containing dressings are required for all short-term CVADs in patients older than 2 months unless contraindicated by known sensitivity or allergy to chlorhexidine.[^2][^3] Any documented sensitivity or allergy to CHG must be recorded prior to dressing selection.
 
 #### 4.7.5 Tunneled Cuffed CVADs
 4.7.5.1 Once the subcutaneous tunnel of a tunneled cuffed CVAD has fully healed, a covering dressing may no longer be required. Tunnel healing typically occurs within approximately 3 weeks post-insertion. The determination that a dressing is no longer required must be made by the responsible clinical team and documented.
@@ -233,10 +233,10 @@ This policy applies to:
 ### 4.10 Infection Prevention
 
 #### 4.10.1 Chlorhexidine Bathing
-4.10.1.1 Chlorhexidine gluconate (CHG) bathing must be incorporated into care protocols for patients with CVADs to minimize the risk of central line-associated bloodstream infection (CLABSI). Manufacturer instructions must be consulted regarding potential effects of CHG bath products on dressing integrity.
+4.10.1.1 Chlorhexidine gluconate (CHG) bathing must be incorporated into care protocols for patients with CVADs to minimize the risk of central line-associated bloodstream infection (CLABSI).[^1][^2][^3] Manufacturer instructions must be consulted regarding potential effects of CHG bath products on dressing integrity.
 
 #### 4.10.2 Dressing Integrity
-4.10.2.1 Maintaining dressing integrity is a critical infection prevention measure. Dressing disruption—from any cause, including patient activity, moisture accumulation, or incomplete adhesion—is a major modifiable risk factor for catheter-related infections. Immediate dressing change is required whenever integrity is compromised.
+4.10.2.1 Maintaining dressing integrity is a critical infection prevention measure. Dressing disruption—from any cause, including patient activity, moisture accumulation, or incomplete adhesion—is a major modifiable risk factor for catheter-related infections.[^1][^2] Immediate dressing change is required whenever integrity is compromised.
 
 ### 4.11 Special Population Considerations
 
@@ -357,3 +357,13 @@ This policy applies to:
 |---------|------|--------|-------------|
 | 1.0 | 2024-08-01 | Vascular Access Governance Committee | Initial policy |
 | 1.1 | 2025-11-30 | Vascular Access Governance Committee | Added structured assessment frequency tables; clarified CHG dressing requirement threshold (patients >2 months); expanded special population requirements for critically ill and cognitively impaired; added enhanced adhesive and tissue adhesive guidance; updated documentation requirements |
+
+---
+
+## References
+
+[^1]: Rupp ME, Majorant D. Prevention of vascular catheter-related bloodstream infections. *Infect Dis Clin North Am*. 2016;30(4):853-868. doi:[10.1016/j.idc.2016.06.001](https://doi.org/10.1016/j.idc.2016.06.001)
+
+[^2]: Buetti N, Marschall J, Drees M, et al. Strategies to prevent central line-associated bloodstream infections in acute-care hospitals: 2022 Update. *Infect Control Hosp Epidemiol*. 2022;43(5):553-569. doi:[10.1017/ice.2022.87](https://doi.org/10.1017/ice.2022.87)
+
+[^3]: Martillo M, Zarbiv S, Gupta R, et al. A comprehensive vascular access service can reduce catheter-associated bloodstream infections and promote the appropriate use of vascular access devices. *Am J Infect Control*. 2020;48(4):460-464. doi:[10.1016/j.ajic.2019.09.021](https://doi.org/10.1016/j.ajic.2019.09.021)

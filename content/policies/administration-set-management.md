@@ -19,7 +19,7 @@ effective_date = "2024-05-20"
 
 ## 1. Policy Statement
 
-All administration sets used for intravenous, intra-arterial, and other parenteral infusions at this institution must be selected, configured, used, labeled, and replaced in accordance with evidence-based standards that minimize the risk of infection, medication error, material incompatibility, and patient harm. Replacement frequency is determined by infusion type, patient condition, solution characteristics, and product integrity, and must be performed using Aseptic Non-Touch Technique (ANTT) at all times.
+All administration sets used for intravenous, intra-arterial, and other parenteral infusions at this institution must be selected, configured, used, labeled, and replaced in accordance with evidence-based standards that minimize the risk of infection, medication error, material incompatibility, and patient harm.[^1][^2] Replacement frequency is determined by infusion type, patient condition, solution characteristics, and product integrity, and must be performed using Aseptic Non-Touch Technique (ANTT) at all times.
 
 ## 2. Purpose
 
@@ -95,7 +95,7 @@ This policy applies to:
 4.3.2.1 Education programs for all personnel managing infusion therapy must address the following: factors affecting drug dose delivery; proper use and limitations of flow-control devices; flow rate variability and its clinical implications; residual and dead space volume in administration sets and add-on devices; administration set compliance and its effect on infusion accuracy; and appropriate selection and use of add-on devices.
 
 #### 4.3.3 Integrated Add-On Devices
-4.3.3.1 Administration sets with integrated add-on devices (e.g., in-line filters) are preferred over assemblies requiring multiple separate connections, as each additional connection point introduces contamination risk.
+4.3.3.1 Administration sets with integrated add-on devices (e.g., in-line filters) are preferred over assemblies requiring multiple separate connections, as each additional connection point introduces contamination risk.[^1][^2]
 
 #### 4.3.4 Back-Check Valves
 4.3.4.1 Primary continuous administration sets must contain a back-check valve, or the pump set must incorporate integrated mechanisms that prevent retrograde flow of secondary medications into the primary infusate container.
@@ -261,3 +261,11 @@ This policy applies to:
 |---------|------|--------|-------------|
 | 1.0 | 2024-05-20 | Vascular Access Governance Committee | Initial policy |
 | 1.1 | 2025-10-14 | Vascular Access Governance Committee | Updated replacement intervals for peripheral arterial monitoring to reflect 7-day noninferior evidence; clarified DEHP-free requirements for TNA and lipid emulsions; added quality improvement monitoring requirements |
+
+---
+
+## References
+
+[^1]: Rupp ME, Majorant D. Prevention of vascular catheter-related bloodstream infections. *Infect Dis Clin North Am*. 2016;30(4):853-868. doi:[10.1016/j.idc.2016.06.001](https://doi.org/10.1016/j.idc.2016.06.001)
+
+[^2]: Buetti N, Marschall J, Drees M, et al. Strategies to prevent central line-associated bloodstream infections in acute-care hospitals: 2022 Update. *Infect Control Hosp Epidemiol*. 2022;43(5):553-569. doi:[10.1017/ice.2022.87](https://doi.org/10.1017/ice.2022.87)

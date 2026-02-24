@@ -19,7 +19,7 @@ effective_date = "2023-06-20"
 
 ## 1. Policy Statement
 
-All clinicians managing peripheral and central vascular access devices shall use needleless connectors in a manner that maintains a closed infusion system, minimizes intraluminal contamination, and reduces the risk of catheter-associated bloodstream infection (CABSI). Connector selection, fluid displacement management, disinfection method, replacement intervals, and manifold configuration shall comply with evidence-based standards and manufacturer instructions for use. Disinfection of the connector access surface and sides is mandatory before every access, using either active or passive disinfection technique as specified in this policy.
+All clinicians managing peripheral and central vascular access devices shall use needleless connectors in a manner that maintains a closed infusion system, minimizes intraluminal contamination, and reduces the risk of catheter-associated bloodstream infection (CABSI).[^1][^2] Connector selection, fluid displacement management, disinfection method, replacement intervals, and manifold configuration shall comply with evidence-based standards and manufacturer instructions for use. Disinfection of the connector access surface and sides is mandatory before every access, using either active or passive disinfection technique as specified in this policy.
 
 ## 2. Purpose
 
@@ -74,7 +74,7 @@ All clinicians managing peripheral and central vascular access devices shall use
 
 #### 4.2.4 Antireflux Connectors
 
-4.2.4.1 Antireflux connectors incorporate internal valves designed to minimize retrograde flow.
+4.2.4.1 Antireflux connectors incorporate internal valves designed to minimize retrograde flow. Clinical quality improvement data demonstrate that adoption of antireflux connectors in home infusion settings is associated with reductions in catheter occlusion rates, emergency department utilization related to access complications, and alteplase rescue therapy costs.[^4]
 
 4.2.4.2 No specific flushing sequence is mandated for antireflux connectors; however, clamping after flush and before disconnection is advisable.
 
@@ -123,7 +123,7 @@ All clinicians managing peripheral and central vascular access devices shall use
 
 4.3.3.3 Once removed, passive disinfection caps shall be discarded and shall not be reattached to the connector.
 
-4.3.3.4 Systematic reviews demonstrate that passive disinfection caps reduce CLABSI rates and improve staff compliance with disinfection requirements. Passive disinfection is an acceptable and evidence-supported method when performed correctly and consistently.
+4.3.3.4 Systematic reviews demonstrate that passive disinfection caps reduce CLABSI rates and improve staff compliance with disinfection requirements.[^1][^2][^3] Passive disinfection is an acceptable and evidence-supported method when performed correctly and consistently.
 
 #### 4.3.4 Antimicrobial Connectors
 
@@ -218,3 +218,15 @@ Exceptions to the universal disinfection requirement are not permitted. Clinical
 |---------|------|--------|-------------|
 | 1.0 | 2023-06-20 | Vascular Access Governance Committee | Initial policy |
 | 1.1 | 2025-05-12 | Vascular Access Governance Committee | Added passive disinfection cap evidence summary; expanded flushing sequence guidance with reflux volume data; updated manifold and stopcock requirements; revised product selection criteria |
+
+---
+
+## References
+
+[^1]: Rupp ME, Majorant D. Prevention of vascular catheter-related bloodstream infections. *Infect Dis Clin North Am*. 2016;30(4):853-868. doi:[10.1016/j.idc.2016.06.001](https://doi.org/10.1016/j.idc.2016.06.001)
+
+[^2]: Buetti N, Marschall J, Drees M, et al. Strategies to prevent central line-associated bloodstream infections in acute-care hospitals: 2022 Update. *Infect Control Hosp Epidemiol*. 2022;43(5):553-569. doi:[10.1017/ice.2022.87](https://doi.org/10.1017/ice.2022.87)
+
+[^3]: Martillo M, Zarbiv S, Gupta R, et al. A comprehensive vascular access service can reduce catheter-associated bloodstream infections and promote the appropriate use of vascular access devices. *Am J Infect Control*. 2020;48(4):460-464. doi:[10.1016/j.ajic.2019.09.021](https://doi.org/10.1016/j.ajic.2019.09.021)
+
+[^4]: Buzas B, Smith J, Gilbert GE, Moureau N. Home infusion pharmacy quality improvement for central venous access devices using anti-reflux needleless connectors to reduce occlusions, emergency room visits, and alteplase costs. *Am J Health Syst Pharm*. 2022;79(13):1079-1085. doi:[10.1093/ajhp/zxac083](https://doi.org/10.1093/ajhp/zxac083)

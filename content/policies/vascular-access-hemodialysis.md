@@ -66,7 +66,7 @@ This policy applies to:
 
 #### 4.4.1 Foundational Principles
 
-4.4.1.1 Vessel health and preservation principles shall apply to both peripheral and central vasculature in all patients currently receiving hemodialysis or those likely to require hemodialysis in the future.
+4.4.1.1 Vessel health and preservation principles shall apply to both peripheral and central vasculature in all patients currently receiving hemodialysis or those likely to require hemodialysis in the future.[^6][^7]
 
 #### 4.4.2 Early Planning
 
@@ -265,3 +265,7 @@ Exceptions to this policy, including temporary use of non-tunneled catheters bey
 [^4]: Woo K, Gascue L, Norris K, Lin E. Patient frailty and functional use of hemodialysis vascular access: a retrospective study of the US Renal Data System. *Am J Kidney Dis*. 2022;80(1):30-45. doi:[10.1053/j.ajkd.2021.10.011](https://doi.org/10.1053/j.ajkd.2021.10.011)
 
 [^5]: Rha B, See I, Dunham L, et al. Vital signs: health disparities in hemodialysis-associated *Staphylococcus aureus* bloodstream infections—United States, 2017-2020. *MMWR Morb Mortal Wkly Rep*. 2023;72(6):153-159. doi:[10.15585/mmwr.mm7206e1](https://doi.org/10.15585/mmwr.mm7206e1)
+
+[^6]: Moureau NL, Carr PJ. Vessel Health and Preservation: the right approach for vascular access. *Br J Nurs*. 2018;27(8):S28-S35. doi:[10.12968/bjon.2018.27.8.S28](https://doi.org/10.12968/bjon.2018.27.8.S28)
+
+[^7]: Fiorini J, Venturini G, Cicolini G, et al. Vascular access device selection and vessel health preservation: practice recommendations from a systematic review. *J Clin Nurs*. 2019;28(7-8):1039-1049. doi:[10.1111/jocn.14728](https://doi.org/10.1111/jocn.14728)

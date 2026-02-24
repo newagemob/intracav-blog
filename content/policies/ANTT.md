@@ -44,7 +44,7 @@ This policy applies to:
 
 4.1.1 Aseptic Non Touch Technique (ANTT®) addresses historical variability in aseptic practice by providing a standardized, internationally recognized framework for preventing infection during invasive procedures and device management. The approach integrates evidence-based infection control principles with practical clinical application across all care settings.
 
-4.1.2 The fundamental premise of ANTT centers on protecting critical procedural components from microbial contamination. This protection is achieved through the deliberate combination of hand hygiene, personal protective equipment, appropriate surface management, and disciplined non-touch practices. When applied consistently, ANTT has demonstrated measurable reductions in healthcare-associated infections, particularly those related to vascular access devices.
+4.1.2 The fundamental premise of ANTT centers on protecting critical procedural components from microbial contamination. This protection is achieved through the deliberate combination of hand hygiene, personal protective equipment, appropriate surface management, and disciplined non-touch practices. When applied consistently, ANTT has demonstrated measurable reductions in healthcare-associated infections, particularly those related to vascular access devices.[^1][^2][^3]
 
 ### 4.2 Core Terminology and Definitions
 
@@ -92,11 +92,11 @@ When performing Standard-ANTT, non-sterile gloves generally suffice unless direc
 
 ### 4.5 Competency Requirements and Quality Assurance
 
-4.5.1 ANTT proficiency represents a core clinical competency that extends beyond initial education to require ongoing assessment and periodic reeducation. Organizations shall establish comprehensive training programs utilizing multimodal educational resources aligned with the ANTT Clinical Practice Framework.
+4.5.1 ANTT proficiency represents a core clinical competency that extends beyond initial education to require ongoing assessment and periodic reeducation. Organizations shall establish comprehensive training programs utilizing multimodal educational resources aligned with the ANTT Clinical Practice Framework. Application of ANTT in home healthcare settings presents unique logistical and environmental challenges that require tailored educational approaches and environmental adaptation strategies distinct from those used in inpatient practice.[^4]
 
 4.5.2 Competency documentation shall address all relevant aspects of infusion therapy, including solution and medication preparation and administration, vascular access device insertion and management, and related clinical procedures. Individual clinicians bear ultimate responsibility for ensuring consistent, correct application of ANTT principles in their practice.
 
-4.5.3 Quality assurance through periodic clinical audit serves multiple purposes: validating individual competency, identifying practice gaps, and driving continuous improvement. Audit tools shall evaluate compliance with the ANTT Clinical Practice Framework and applicable organizational procedures, with findings informing targeted education and practice refinement.
+4.5.3 Quality assurance through periodic clinical audit serves multiple purposes: validating individual competency, identifying practice gaps, and driving continuous improvement. Audit tools shall evaluate compliance with the ANTT Clinical Practice Framework and applicable organizational procedures, with findings informing targeted education and practice refinement. Systematic quality improvement initiatives targeting ANTT compliance in intravenous line maintenance have demonstrated measurable reductions in healthcare-associated infection rates, underscoring the direct patient safety impact of sustained ANTT adherence.[^5]
 
 ### 4.6 Environmental Management
 
@@ -146,3 +146,17 @@ When performing Standard-ANTT, non-sterile gloves generally suffice unless direc
 ---
 
 *ANTT® is a registered trademark of The Association for Safe Aseptic Practice (ASAP).*
+
+---
+
+## References
+
+[^1]: Rupp ME, Majorant D. Prevention of vascular catheter-related bloodstream infections. *Infect Dis Clin North Am*. 2016;30(4):853-868. doi:[10.1016/j.idc.2016.06.001](https://doi.org/10.1016/j.idc.2016.06.001)
+
+[^2]: Buetti N, Marschall J, Drees M, et al. Strategies to prevent central line-associated bloodstream infections in acute-care hospitals: 2022 Update. *Infect Control Hosp Epidemiol*. 2022;43(5):553-569. doi:[10.1017/ice.2022.87](https://doi.org/10.1017/ice.2022.87)
+
+[^3]: Martillo M, Zarbiv S, Gupta R, et al. A comprehensive vascular access service can reduce catheter-associated bloodstream infections and promote the appropriate use of vascular access devices. *Am J Infect Control*. 2020;48(4):460-464. doi:[10.1016/j.ajic.2019.09.021](https://doi.org/10.1016/j.ajic.2019.09.021)
+
+[^4]: Rowley S, Clare S. Is ANTT achievable in the home healthcare setting? *Home Healthc Now*. 2022;40(2):92-99. doi:[10.1097/NHH.0000000000001051](https://doi.org/10.1097/NHH.0000000000001051)
+
+[^5]: Shettigar S, Somasekhara Aradhya A, Ramappa S, Reddy V, Venkatagiri P. Reducing healthcare-associated infections by improving compliance to aseptic non-touch technique in intravenous line maintenance: a quality improvement approach. *BMJ Open Qual*. 2021;10(Suppl 1):e001394. doi:[10.1136/bmjoq-2021-001394](https://doi.org/10.1136/bmjoq-2021-001394)

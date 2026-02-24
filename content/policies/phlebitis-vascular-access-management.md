@@ -24,7 +24,7 @@ Phlebitis is an inflammation of a vein that can occur during or after intravenou
 
 Chemical phlebitis results from endothelial inflammation or injury caused by the infusion of irritating substances. Contributing factors include:
 
-**Irritating Infusates:** Certain medications and solutions are known to cause endothelial irritation. These include amiodarone, nicardipine, norepinephrine, levetiracetam, dextrose concentrations exceeding 10%, cancer chemotherapy agents, antibiotics (notably flucloxacillin and vancomycin), dobutamine, potassium chloride, and iron sucrose (Lv & Zhang, 2020; Simin et al., 2019; Van Boxtel et al., 2022).
+**Irritating Infusates:** Certain medications and solutions are known to cause endothelial irritation. These include amiodarone, nicardipine, norepinephrine, levetiracetam, dextrose concentrations exceeding 10%, cancer chemotherapy agents, antibiotics (notably flucloxacillin and vancomycin), dobutamine, potassium chloride, and iron sucrose (Lv & Zhang, 2020; Simin et al., 2019; Van Boxtel et al., 2022). Evidence-based practice initiatives have successfully reduced the incidence of amiodarone-related phlebitis through protocol standardization, including peripheral site rotation schedules and dilution optimization (Murphy et al., 2020).
 
 **Infusate Characteristics:** Solutions with extreme pH levels or high osmolarity pose increased risk. Particulate matter within infusates may also contribute to vessel irritation (Van Boxtel et al., 2022).
 
@@ -279,6 +279,8 @@ Marsh, N., Webster, J., Larson, E., Cooke, M., Mihala, G., & Rickard, C. M. (201
 Marsh, N., Webster, J., Ullman, A. J., et al. (2020). Peripheral intravenous catheter non-infectious complications in adults: A systematic review and meta-analysis. *Journal of Advanced Nursing, 76*(12), 3346-3362.
 
 Mielke, N., Johnson, S., Karabon, P., & Bahl, A. (2022). A prospective sonographic evaluation of peripheral intravenous catheter associated thrombophlebitis. *Journal of Vascular Access, 23*(5), 754-763.
+
+Murphy, K., Murphy, J., & Fischer-Cartlidge, E. (2020). Reducing the incidence of amiodarone-related phlebitis through utilization of evidence-based practice. *Worldviews on Evidence-Based Nursing, 17*(5), 385-392. doi:[10.1111/wvn.12470](https://doi.org/10.1111/wvn.12470)
 
 Mihala, G., Ray-Barruel, G., Chopra, V., et al. (2018). Phlebitis signs and symptoms with peripheral intravenous catheters: Incidence and correlation study. *Journal of Infusion Nursing, 41*(4), 260-263.
 
