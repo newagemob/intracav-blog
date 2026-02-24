@@ -283,7 +283,7 @@ This policy applies to:
 
 - Patients with a history of two or more CABSIs in whom the VAD cannot be removed.
 - High-risk patient populations at the treating provider's or infectious disease specialist's discretion.
-- Healthcare facilities with persistently elevated CLABSI rates despite full implementation of standard prevention measures and infection control bundles.[^2][^3]
+- Healthcare facilities with persistently elevated CLABSI rates despite full implementation of standard prevention measures and infection control bundles.[^2][^3][^4]
 
 4.10.1.2 Antimicrobial lock therapy must not be used as a routine prophylactic measure in place of standard CLABSI prevention practices.
 
@@ -399,3 +399,5 @@ Adherence to this policy is a condition of clinical practice within this organiz
 [^2]: Buetti N, Marschall J, Drees M, et al. Strategies to prevent central line-associated bloodstream infections in acute-care hospitals: 2022 Update. *Infect Control Hosp Epidemiol*. 2022;43(5):553-569. doi:[10.1017/ice.2022.87](https://doi.org/10.1017/ice.2022.87)
 
 [^3]: Martillo M, Zarbiv S, Gupta R, et al. A comprehensive vascular access service can reduce catheter-associated bloodstream infections and promote the appropriate use of vascular access devices. *Am J Infect Control*. 2020;48(4):460-464. doi:[10.1016/j.ajic.2019.09.021](https://doi.org/10.1016/j.ajic.2019.09.021)
+
+[^4]: O'Grady NP, Alexander M, Burns LA, et al. Guidelines for the prevention of intravascular catheter-related infections. *Am J Infect Control*. 2011;39(4 Suppl.):S1-S34. doi:[10.1016/j.ajic.2011.01.003](https://doi.org/10.1016/j.ajic.2011.01.003)

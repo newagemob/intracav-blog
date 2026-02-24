@@ -154,7 +154,7 @@ This policy applies to:
 ### 4.10 Replacement Intervals by Infusion Type
 
 #### 4.10.1 Primary and Secondary Continuous Sets — Standard Solutions
-4.10.1.1 Primary and secondary continuous administration sets used for standard intravenous solutions must be replaced at minimum every 7 days unless the manufacturer specifies a shorter interval, or sooner when clinically indicated by suspected contamination, visible dysfunction, or compromise of system integrity.
+4.10.1.1 Primary and secondary continuous administration sets used for standard intravenous solutions must be replaced at minimum every 7 days unless the manufacturer specifies a shorter interval, or sooner when clinically indicated by suspected contamination, visible dysfunction, or compromise of system integrity.[^3]
 
 4.10.1.2 Administration set changes should be coordinated with VAD changes (e.g., transition from peripheral intravenous catheter to central venous access device) or with the initiation of a new solution container whenever feasible.
 
@@ -269,3 +269,5 @@ This policy applies to:
 [^1]: Rupp ME, Majorant D. Prevention of vascular catheter-related bloodstream infections. *Infect Dis Clin North Am*. 2016;30(4):853-868. doi:[10.1016/j.idc.2016.06.001](https://doi.org/10.1016/j.idc.2016.06.001)
 
 [^2]: Buetti N, Marschall J, Drees M, et al. Strategies to prevent central line-associated bloodstream infections in acute-care hospitals: 2022 Update. *Infect Control Hosp Epidemiol*. 2022;43(5):553-569. doi:[10.1017/ice.2022.87](https://doi.org/10.1017/ice.2022.87)
+
+[^3]: O'Grady NP, Alexander M, Burns LA, et al. Guidelines for the prevention of intravascular catheter-related infections. *Am J Infect Control*. 2011;39(4 Suppl.):S1-S34. doi:[10.1016/j.ajic.2011.01.003](https://doi.org/10.1016/j.ajic.2011.01.003)

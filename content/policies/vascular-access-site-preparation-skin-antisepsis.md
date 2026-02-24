@@ -68,9 +68,9 @@ This policy applies to:
 
 #### 4.3.1 Primary Agent: Alcoholic Chlorhexidine Gluconate
 
-4.3.1.1 The preferred antiseptic for vascular access site preparation shall be alcoholic chlorhexidine gluconate (CHG). This agent is supported by systematic reviews, meta-analyses, and national evidence-based guidelines demonstrating superior efficacy in reducing catheter-related bloodstream infections compared to alternative agents.[^2][^3][^4]
+4.3.1.1 The preferred antiseptic for vascular access site preparation shall be alcoholic chlorhexidine gluconate (CHG). This agent is supported by systematic reviews, meta-analyses, and national evidence-based guidelines demonstrating superior efficacy in reducing catheter-related bloodstream infections compared to alternative agents.[^2][^3][^4][^5]
 
-4.3.1.2 The CHG solution shall contain a minimum concentration of 2% chlorhexidine gluconate combined with alcohol. Comparative studies demonstrate that 2% CHG-alcohol solutions provide significantly better protection against catheter-related bloodstream infections and bacterial colonization at insertion sites than povidone-iodine alternatives.[^2][^3]
+4.3.1.2 The CHG solution shall contain a minimum concentration of 2% chlorhexidine gluconate combined with alcohol. Comparative studies demonstrate that 2% CHG-alcohol solutions provide significantly better protection against catheter-related bloodstream infections and bacterial colonization at insertion sites than povidone-iodine alternatives.[^2][^3][^6]
 
 #### 4.3.2 Alternative Antiseptic Agents
 
@@ -171,3 +171,7 @@ Exceptions to this policy require documented clinical justification recorded in 
 [^3]: Buetti N, Marschall J, Drees M, et al. Strategies to prevent central line-associated bloodstream infections in acute-care hospitals: 2022 Update. *Infect Control Hosp Epidemiol*. 2022;43(5):553-569. doi:[10.1017/ice.2022.87](https://doi.org/10.1017/ice.2022.87)
 
 [^4]: Martillo MA, Uddin F, Di Natale L, et al. CLABSI prevention in a medical-surgical ICU: updating a prevention bundle to include emerging evidence and guidelines. *Am J Infect Control*. 2020;48(1):34-38. doi:[10.1016/j.ajic.2019.09.021](https://doi.org/10.1016/j.ajic.2019.09.021)
+
+[^5]: O'Grady NP, Alexander M, Burns LA, et al. Guidelines for the prevention of intravascular catheter-related infections. *Am J Infect Control*. 2011;39(4 Suppl.):S1-S34. doi:[10.1016/j.ajic.2011.01.003](https://doi.org/10.1016/j.ajic.2011.01.003)
+
+[^6]: Gorski LA. *Phillips's Manual of IV Therapeutics: Evidence-Based Practice for Infusion Therapy*. 8th ed. FA Davis; 2023.

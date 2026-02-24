@@ -126,7 +126,7 @@ All clinicians who configure, assemble, or manage vascular access infusion syste
 
 #### 4.8.1 Hub and Connection Point Disinfection
 
-4.8.1.1 The hub or connection point of any add-on device shall be properly disinfected using active or passive disinfection technique per institutional protocols and manufacturer recommendations before any access through or replacement of the device.
+4.8.1.1 The hub or connection point of any add-on device shall be properly disinfected using active or passive disinfection technique per institutional protocols and manufacturer recommendations before any access through or replacement of the device.[^3]
 
 4.8.1.2 Disinfection method, agent, contact time, and drying time requirements are specified in the Needleless Connectors for Vascular Access Devices Policy and shall apply to all connection points within the add-on device configuration.
 
@@ -207,3 +207,5 @@ Exceptions to the luer-lock connection requirement may be considered only in cir
 [^1]: Rupp ME, Majorant D. Prevention of vascular catheter-related bloodstream infections. *Infect Dis Clin North Am*. 2016;30(4):853-868. doi:[10.1016/j.idc.2016.06.001](https://doi.org/10.1016/j.idc.2016.06.001)
 
 [^2]: Buetti N, Marschall J, Drees M, et al. Strategies to prevent central line-associated bloodstream infections in acute-care hospitals: 2022 Update. *Infect Control Hosp Epidemiol*. 2022;43(5):553-569. doi:[10.1017/ice.2022.87](https://doi.org/10.1017/ice.2022.87)
+
+[^3]: O'Grady NP, Alexander M, Burns LA, et al. Guidelines for the prevention of intravascular catheter-related infections. *Am J Infect Control*. 2011;39(4 Suppl.):S1-S34. doi:[10.1016/j.ajic.2011.01.003](https://doi.org/10.1016/j.ajic.2011.01.003)

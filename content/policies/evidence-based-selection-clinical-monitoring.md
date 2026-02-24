@@ -43,11 +43,11 @@ This policy applies to:
 
 ### 4.1 Evidence-Based Decision Making (EBDM) for Product Selection
 
-4.1.1 **Primary Evidence Standard.** All decisions regarding the adoption, continuation, or discontinuation of vascular access products shall be informed by the highest quality available clinical evidence, prioritized as follows: (a) systematic reviews and meta-analyses, (b) randomized controlled trials (RCTs), (c) multi-center observational studies, (d) single-center studies, (e) expert consensus guidelines from recognized professional organizations. Manufacturer-funded studies shall be evaluated critically and shall not be the sole basis for product adoption.[^1][^2]
+4.1.1 **Primary Evidence Standard.** All decisions regarding the adoption, continuation, or discontinuation of vascular access products shall be informed by the highest quality available clinical evidence, prioritized as follows: (a) systematic reviews and meta-analyses, (b) randomized controlled trials (RCTs), (c) multi-center observational studies, (d) single-center studies, (e) expert consensus guidelines from recognized professional organizations. Manufacturer-funded studies shall be evaluated critically and shall not be the sole basis for product adoption.[^1][^2][^5]
 
-4.1.2 **Product Evaluation Committee.** The organization shall maintain a standing Product Evaluation Committee (PEC) charged with reviewing all proposed changes to the vascular access product formulary. The PEC shall include representation from Vascular Access Specialists, Infection Prevention, Pharmacy, Supply Chain, Nursing Education, and at least one physician champion. All PEC decisions shall be documented with the evidence reviewed, the decision rationale, and the dissenting opinions (if any).
+4.1.2 **Product Evaluation Committee.** The organization shall maintain a standing Product Evaluation Committee (PEC) charged with reviewing all proposed changes to the vascular access product formulary. The PEC shall include representation from Vascular Access Specialists, Infection Prevention, Pharmacy, Supply Chain, Nursing Education, and at least one physician champion. All PEC decisions shall be documented with the evidence reviewed, the decision rationale, and the dissenting opinions (if any).[^10]
 
-4.1.3 **Outcome-Driven Selection.** Product evaluation shall prioritize the reduction of patient complications—including phlebitis, infiltration, extravasation, catheter-associated bloodstream infection (CABSI), catheter occlusion, and venous thromboembolism—while maintaining cost-effectiveness. A product that demonstrates superior clinical outcomes shall be preferred over a less expensive alternative that produces inferior outcomes, unless the clinical difference is not statistically or clinically significant.[^3][^4]
+4.1.3 **Outcome-Driven Selection.** Product evaluation shall prioritize the reduction of patient complications—including phlebitis, infiltration, extravasation, catheter-associated bloodstream infection (CABSI), catheter occlusion, and venous thromboembolism—while maintaining cost-effectiveness. A product that demonstrates superior clinical outcomes shall be preferred over a less expensive alternative that produces inferior outcomes, unless the clinical difference is not statistically or clinically significant.[^3][^4][^6]
 
 4.1.4 **Conflict of Interest Management.** All members of the Product Evaluation Committee and all clinicians involved in product evaluation, selection, or clinical trial participation shall complete and submit an annual Conflict of Interest Disclosure Form. The following requirements apply:
 - No clinician shall participate in a product evaluation decision for a product manufactured by a company from which they receive personal compensation, consulting fees, speaker honoraria, research funding, or equity.
@@ -60,7 +60,7 @@ This policy applies to:
 
 4.2.1 **Monitoring Obligation.** Every vascular access device in active use shall be subject to systematic clinical monitoring from the time of insertion through removal and post-removal assessment. The clinician responsible for the patient shall ensure that monitoring is performed, documented, and acted upon at the intervals defined in this policy.
 
-4.2.2 **Site Integrity Assessment.** Visual inspection and palpation of the vascular access insertion site shall be performed at the following minimum intervals:
+4.2.2 **Site Integrity Assessment.** Visual inspection and palpation of the vascular access insertion site shall be performed at the following minimum intervals:[^8]
 - **Peripheral IV catheters:** Every four (4) hours during continuous infusion; before and after each intermittent infusion; and immediately upon patient report of pain, swelling, or discomfort at the site.
 - **Midline catheters:** Every four (4) hours during continuous infusion; every twelve (12) hours for devices accessed intermittently.
 - **Central venous access devices (CVADs), including PICCs:** At minimum once per nursing shift (every eight to twelve hours) for stable inpatients; daily for patients in home care or long-term care; and immediately upon any clinical concern.
@@ -77,7 +77,7 @@ This policy applies to:
 
 4.2.5 **Patient Response Monitoring.** Clinicians shall evaluate the systemic effect of the infusate at each assessment, including monitoring for allergic or anaphylactic reactions, fluid volume overload or deficit, electrolyte imbalances, infusion-related fever or rigors, and medication-specific adverse effects.
 
-4.2.6 **Standardized Grading Scales.** The organization shall adopt and use validated, standardized grading scales for the assessment of vascular access complications:
+4.2.6 **Standardized Grading Scales.** The organization shall adopt and use validated, standardized grading scales for the assessment of vascular access complications:[^7]
 - **Phlebitis:** A validated phlebitis scale (e.g., the Visual Infusion Phlebitis [VIP] score) shall be used at every peripheral IV site assessment.
 - **Infiltration and Extravasation:** A validated infiltration scale shall be used when infiltration is suspected or confirmed.
 - Grading results shall be documented in the EHR using discrete data fields to enable aggregate analysis.
@@ -110,7 +110,7 @@ This policy applies to:
 
 4.5.2 Each documentation entry shall include, at minimum: the date and time of assessment, the identity and credentials of the assessing clinician, findings for each required assessment parameter (site integrity, patency, patient response), the grading scale score (where applicable), any interventions performed, and the plan of care.
 
-4.5.3 **Line Necessity Review.** For all CVADs, the responsible clinician shall document daily whether the central line continues to be clinically necessary. If the line is no longer necessary, the clinician shall initiate a removal order or escalate to the prescribing provider.
+4.5.3 **Line Necessity Review.** For all CVADs, the responsible clinician shall document daily whether the central line continues to be clinically necessary. If the line is no longer necessary, the clinician shall initiate a removal order or escalate to the prescribing provider.[^9]
 
 ## 5. Compliance
 
@@ -165,3 +165,15 @@ This policy applies to:
 [^3]: Moureau NL, Carr PJ. Vessel Health and Preservation: the right approach for vascular access. *Br J Nurs*. 2018;27(8):S28-S35. doi:[10.12968/bjon.2018.27.8.S28](https://doi.org/10.12968/bjon.2018.27.8.S28)
 
 [^4]: Fiorini J, Venturini G, Cicolini G, et al. Vascular access device selection and vessel health preservation in a group of hospitalised patients: an observational study. *J Clin Nurs*. 2019;28(7-8):1039-1049. doi:[10.1111/jocn.14728](https://doi.org/10.1111/jocn.14728)
+
+[^5]: O'Grady NP, Alexander M, Burns LA, et al. Guidelines for the prevention of intravascular catheter-related infections. *Am J Infect Control*. 2011;39(4 Suppl.):S1-S34. doi:[10.1016/j.ajic.2011.01.003](https://doi.org/10.1016/j.ajic.2011.01.003)
+
+[^6]: Buetti N, Marschall J, Drees M, et al. Strategies to prevent central line-associated bloodstream infections in acute-care hospitals: 2022 update. *Infect Control Hosp Epidemiol*. 2022;43(5):553-569. doi:[10.1017/ice.2022.87](https://doi.org/10.1017/ice.2022.87)
+
+[^7]: Ray-Barruel G, Cooke M, Chopra V, et al. The I-DECIDED clinical decision-making tool for peripheral intravenous catheter assessment and safe removal: a clinician-focused validity study. *BMJ Open*. 2020;10(1):e035239. doi:[10.1136/bmjopen-2019-035239](https://doi.org/10.1136/bmjopen-2019-035239)
+
+[^8]: Gorski LA, Hallock D, Kuehn SC, et al. Recommendations for frequency of assessment of the short peripheral catheter site. *J Infus Nurs*. 2012;35(5):290-292. doi:[10.1097/NAN.0b013e318267f636](https://doi.org/10.1097/NAN.0b013e318267f636)
+
+[^9]: DeVries M, Strimbu K. Short peripheral catheter performance following adoption of clinical indication removal. *J Infus Nurs*. 2019;42(2):81-90. doi:[10.1097/NAN.0000000000000318](https://doi.org/10.1097/NAN.0000000000000318)
+
+[^10]: Kelly L. Right evaluation of products and compliance measures. In: Moureau NL, ed. *Vessel Health and Preservation: The Right Approach for Vascular Access*. Springer Open; 2019:285-292.

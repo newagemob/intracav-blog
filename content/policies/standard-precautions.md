@@ -43,7 +43,7 @@ This policy applies to:
 
 ### 4.1 Foundational Standards
 
-4.1.1 Standard precautions apply during all patient care procedures and in all clinical settings where potential exists for exposure to blood, body fluids, secretions, excretions (excluding sweat), nonintact skin, and mucous membranes. These precautions provide baseline protection regardless of known or suspected infection status.
+4.1.1 Standard precautions apply during all patient care procedures and in all clinical settings where potential exists for exposure to blood, body fluids, secretions, excretions (excluding sweat), nonintact skin, and mucous membranes.[^13][^2] These precautions provide baseline protection regardless of known or suspected infection status.
 
 4.1.2 Personal protective equipment selection and use must be guided by the nature of the anticipated patient interaction, the potential for exposure to blood, body fluids, or infectious agents, and any transmission-based precautions in effect for specific communicable diseases or immunocompromised patient populations.
 
@@ -63,7 +63,7 @@ This policy applies to:
 
 #### 4.3.1 General Principles
 
-Sufficient quantities of appropriate PPE must be available and readily accessible at the point of care. When any type of PPE is worn, removal must occur at the end of the specific task and before leaving the patient care space, following established doffing sequences to prevent self-contamination (CDC HICPAC, 2017; WHO, 2009; Occupational Safety and Health Administration, 2019).
+Sufficient quantities of appropriate PPE must be available and readily accessible at the point of care. When any type of PPE is worn, removal must occur at the end of the specific task and before leaving the patient care space, following established doffing sequences to prevent self-contamination.[^2][^12][^8]
 
 #### 4.3.2 Gloves
 
@@ -71,7 +71,7 @@ Gloves providing appropriate fit and extending to cover the wrist (or the cuff o
 
 Gloves must be changed during patient care when torn or punctured, when heavily contaminated, and when moving from a contaminated body site to a clean body site within the same patient.
 
-Clinicians must understand that gloves do not substitute for hand hygiene. Research demonstrates a potential inverse relationship between glove use and hand hygiene compliance, and touch contamination risk remains present even when gloves are worn (King et al., 2020; Li et al., 2022). Hand hygiene must occur before donning and after removing gloves.
+Clinicians must understand that gloves do not substitute for hand hygiene. Research demonstrates a potential inverse relationship between glove use and hand hygiene compliance, and touch contamination risk remains present even when gloves are worn.[^4][^5] Hand hygiene must occur before donning and after removing gloves.
 
 Gloves are single-use items and must never be reused or worn for care of more than one patient.
 
@@ -89,7 +89,7 @@ Reusable eye protection requires appropriate decontamination between uses and wh
 
 #### 4.3.5 Universal PPE During High Transmission Periods
 
-During periods of high community transmission of communicable diseases, universal PPE may be indicated for all patient encounters. Specific requirements vary based on the pathogen and its transmission characteristics but may include universal respiratory protection (surgical masks or respirators as indicated) and universal eye protection (CDC, 2021).
+During periods of high community transmission of communicable diseases, universal PPE may be indicated for all patient encounters. Specific requirements vary based on the pathogen and its transmission characteristics but may include universal respiratory protection (surgical masks or respirators as indicated) and universal eye protection.[^3]
 
 ### 4.4 Respiratory Hygiene and Cough Etiquette
 
@@ -101,7 +101,7 @@ During periods of high community transmission of communicable diseases, universa
 
 ### 4.5 Equipment Cleaning and Disinfection
 
-4.5.1 Durable medical equipment including intravenous poles, infusion pumps, flow-control devices, and vascular visualization equipment must be cleaned and disinfected using appropriate products (such as EPA-registered disinfectants) after each patient use (Rutala & Weber, 2019; Scott et al., 2017).
+4.5.1 Durable medical equipment including intravenous poles, infusion pumps, flow-control devices, and vascular visualization equipment must be cleaned and disinfected using appropriate products (such as EPA-registered disinfectants) after each patient use.[^9][^11]
 
 4.5.2 Organizational procedures for equipment cleaning and disinfection must align with manufacturers' instructions for use. Clear separation between clean and soiled equipment must be maintained to prevent cross-contamination.
 
@@ -111,11 +111,11 @@ During periods of high community transmission of communicable diseases, universa
 
 4.6.2 Clinical bags transported between homes or patient care settings require routine cleaning of both interior and exterior surfaces at intervals defined by organizational policy.
 
-4.6.3 Hand hygiene must be performed before opening the clinical bag to retrieve supplies, after removing supplies and before direct patient contact, after contact with the patient's intact skin, and after contact with inanimate objects in the patient's environment (Bakunas-Kenneley & Madigan, 2009; McGoldrick, 2017).
+4.6.3 Hand hygiene must be performed before opening the clinical bag to retrieve supplies, after removing supplies and before direct patient contact, after contact with the patient's intact skin, and after contact with inanimate objects in the patient's environment.[^1][^6]
 
 ### 4.7 Education and Training
 
-4.7.1 A multimodal approach to standard precautions education and training benefits all clinical disciplines and has demonstrated effectiveness in improving adherence (Moralejo et al., 2018; Xiong et al., 2017; Sadeghi et al., 2018).
+4.7.1 A multimodal approach to standard precautions education and training benefits all clinical disciplines and has demonstrated effectiveness in improving adherence.[^7][^14][^10]
 
 4.7.2 Training shall address rationale for precautions, proper technique for all components, recognition of situations requiring enhanced precautions, and methods for self-monitoring compliance. Regular competency assessment and refresher education sustain practice standards over time.
 
@@ -154,4 +154,37 @@ During periods of high community transmission of communicable diseases, universa
 | Version | Date | Author(s) | Description of Change |
 |---------|------|-----------|----------------------|
 | 1.0 | 2023-09-07 | D. Woo, M. Stern, I.M. Wright | Initial policy creation based on IVAPS standards |
+| 2.0 | 2026-02-24 | D. Woo, M. Stern, I.M. Wright | Added comprehensive academic references with inline footnote citations |
 | — | — | — | Scheduled review date: 2025-09-07 |
+
+---
+
+## References
+
+[^1]: Bakunas-Kenneley I, Madigan EA. Infection prevention and control in home health care: The nurse's bag. *Am J Infect Control*. 2009;37(8):687-688.
+
+[^2]: Centers for Disease Control and Prevention, Healthcare Infection Control Practices Advisory Committee. Core infection prevention and control practices for safe healthcare delivery in all settings. Updated March 15, 2017. Available at: [https://www.cdc.gov/infectioncontrol/guidelines/core-practices/index.html](https://www.cdc.gov/infectioncontrol/guidelines/core-practices/index.html)
+
+[^3]: Centers for Disease Control and Prevention. Interim Infection Prevention and Control Recommendations for Healthcare Personnel During the Coronavirus Disease 2019 (COVID-19) Pandemic. 2021. Available at: [https://www.cdc.gov/coronavirus/2019-ncov/hcp/infection-control-recommendations.html](https://www.cdc.gov/coronavirus/2019-ncov/hcp/infection-control-recommendations.html)
+
+[^4]: King MF, López-García M, Atedoghu KP, et al. Bacterial transfer to fingertips during sequential surface contacts with and without gloves. *Indoor Air*. 2020;30(5):993-1004.
+
+[^5]: Li L, Ni K, Du X, et al. Assessment of the invisible blood contamination on nurses' gloved hands during vascular access procedures in a hemodialysis unit. *Am J Infect Control*. 2022;50(6):712-713.
+
+[^6]: McGoldrick M. Best practices for home care "bag technique" and the use of surface barriers. *Home Healthc Now*. 2017;35(9):478-484.
+
+[^7]: Moralejo D, El Dib R, Prata RA, Barretti P, Corrêa I. Improving adherence to standard precautions for the control of health care-associated infections. *Cochrane Database Syst Rev*. 2018;2018(2):CD010768.
+
+[^8]: Occupational Safety and Health Administration. Bloodborne pathogens; Standard 29 CFR 1910.1030. 2019. Available at: [https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.1030](https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.1030)
+
+[^9]: Rutala W, Weber D. Healthcare Infection Control Practices Advisory Committee. Guideline for disinfection and sterilization in healthcare facilities. 2008; Updated May 2019. Available at: [https://www.cdc.gov/infectioncontrol/pdf/guidelines/disinfection-guidelines-H.pdf](https://www.cdc.gov/infectioncontrol/pdf/guidelines/disinfection-guidelines-H.pdf)
+
+[^10]: Sadeghi R, Hashemi M, Khanjani N. The impact of educational intervention based on the health belief model on observing standard precautions among emergency center nurses in Sirjan, Iran. *Health Educ Res*. 2018;33(4):327-335.
+
+[^11]: Scott D, Kane H, Rankin A. 'Time to clean': a systematic review and observational study on the time required to clean items of reusable communal patient care equipment. *J Infect Prevent*. 2017;18(6):289-294.
+
+[^12]: World Health Organization. *WHO Guidelines on Hand Hygiene in Health Care*. 2009. Available at: [https://www.who.int/publications/i/item/9789241597906](https://www.who.int/publications/i/item/9789241597906)
+
+[^13]: World Health Organization. Standard precautions in health care. Epidemic and Pandemic Alert and Response Aide-Memoire. October 2007. Available at: [https://www.who.int/docs/default-source/documents/health-topics/standard-precautions-in-health-care.pdf](https://www.who.int/docs/default-source/documents/health-topics/standard-precautions-in-health-care.pdf)
+
+[^14]: Xiong P, Zhang J, Wang X, Wu TL, Hall BJ. Effects of a mixed media education intervention program on increasing knowledge, attitude, and compliance with standard precautions among nursing students: a randomized controlled trial. *Am J Infect Control*. 2017;45(4):389-395.

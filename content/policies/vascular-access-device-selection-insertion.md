@@ -60,7 +60,7 @@ This policy applies to:
 
 #### 4.2.2 Device Selection Criteria
 
-4.2.2.1 Selection of a vascular access device shall be based on the following clinical factors:
+4.2.2.1 Selection of a vascular access device shall be based on the following clinical factors:[^20]
 
 - Prescribed therapy or treatment regimen (primary consideration)
 - Anticipated duration of treatment
@@ -193,7 +193,7 @@ This policy applies to:
 
 ### 4.7 Neonatal and Pediatric Considerations for Peripheral Catheters
 
-4.7.1 Device selection criteria for neonatal and pediatric patients shall parallel those established for adult patients, with emphasis on removing PIVCs as soon as they are no longer clinically required.[^1][^2][^3][^10]
+4.7.1 Device selection criteria for neonatal and pediatric patients shall parallel those established for adult patients, with emphasis on removing PIVCs as soon as they are no longer clinically required.[^1][^2][^3][^10][^19]
 
 4.7.2 **Site options for pediatric patients:** Foot veins may be considered in pediatric patients when the child's activity level will not compromise catheter integrity.
 
@@ -225,7 +225,7 @@ This policy applies to:
 
 #### 4.9.1 Indications for Central Venous Access
 
-4.9.1.1 Evidence-based indications for CVAD insertion shall be implemented to minimize unnecessary central line placement.[^14][^15] Appropriate indications include:
+4.9.1.1 Evidence-based indications for CVAD insertion shall be implemented to minimize unnecessary central line placement.[^14][^15][^18] Appropriate indications include:
 
 - Clinical instability (altered vital signs, oxygen saturation)
 - Infusion therapy inappropriate for peripheral administration (vesicants, non-peripherally compatible parenteral nutrition, concentrated electrolytes)
@@ -366,3 +366,9 @@ Exceptions to this policy may arise in emergency or life-threatening situations 
 [^16]: Wu S, Li W, Zhang Q, Li S, Wang L. Comparison of complications between peripheral arm ports and central chest ports: a meta-analysis. *J Adv Nurs*. 2018;74(11):2484-2496. doi:[10.1111/jan.13766](https://doi.org/10.1111/jan.13766)
 
 [^17]: Wang K, Zhou Y, Huang N, Lu Z, Zhang X. Peripherally inserted central catheter versus totally implanted venous port for delivering medium- to long-term chemotherapy: a cost-effectiveness analysis based on propensity score matching. *J Vasc Access*. 2022;23(3):365-374. doi:[10.1177/1129729821991360](https://doi.org/10.1177/1129729821991360)
+
+[^18]: O'Grady NP, Alexander M, Burns LA, et al. Guidelines for the prevention of intravascular catheter-related infections. *Am J Infect Control*. 2011;39(4 Suppl.):S1-S34. doi:[10.1016/j.ajic.2011.01.003](https://doi.org/10.1016/j.ajic.2011.01.003)
+
+[^19]: DeVries M, Strimbu K. Short peripheral catheter performance following adoption of clinical indication removal. *J Infus Nurs*. 2019;42(2):81-90. doi:[10.1097/NAN.0000000000000318](https://doi.org/10.1097/NAN.0000000000000318)
+
+[^20]: Kelly L. Right evaluation of products and compliance measures. In: Moureau NL, ed. *Vessel Health and Preservation: The Right Approach for Vascular Access*. Springer Open; 2019:285-292.

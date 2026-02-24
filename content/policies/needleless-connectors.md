@@ -92,7 +92,7 @@ All clinicians managing peripheral and central vascular access devices shall use
 
 #### 4.3.1 Universal Disinfection Before Every Access
 
-4.3.1.1 Thorough disinfection of the connection surface and all sides of the needleless connector is required before every access, without exception.
+4.3.1.1 Thorough disinfection of the connection surface and all sides of the needleless connector is required before every access, without exception.[^5]
 
 4.3.1.2 Disinfection shall also be performed whenever contamination occurs or is suspected, including any instance in which a syringe tip or connector contacts a non-sterile surface.
 
@@ -230,3 +230,5 @@ Exceptions to the universal disinfection requirement are not permitted. Clinical
 [^3]: Martillo M, Zarbiv S, Gupta R, et al. A comprehensive vascular access service can reduce catheter-associated bloodstream infections and promote the appropriate use of vascular access devices. *Am J Infect Control*. 2020;48(4):460-464. doi:[10.1016/j.ajic.2019.09.021](https://doi.org/10.1016/j.ajic.2019.09.021)
 
 [^4]: Buzas B, Smith J, Gilbert GE, Moureau N. Home infusion pharmacy quality improvement for central venous access devices using anti-reflux needleless connectors to reduce occlusions, emergency room visits, and alteplase costs. *Am J Health Syst Pharm*. 2022;79(13):1079-1085. doi:[10.1093/ajhp/zxac083](https://doi.org/10.1093/ajhp/zxac083)
+
+[^5]: O'Grady NP, Alexander M, Burns LA, et al. Guidelines for the prevention of intravascular catheter-related infections. *Am J Infect Control*. 2011;39(4 Suppl.):S1-S34. doi:[10.1016/j.ajic.2011.01.003](https://doi.org/10.1016/j.ajic.2011.01.003)

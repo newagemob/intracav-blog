@@ -18,19 +18,19 @@ effective_date = "2026-02-23"
 
 ## 1. Policy Statement
 
-It is the policy of this organization that safe handling and disposal of regulated medical waste shall protect healthcare workers, patients, waste handlers, and the broader community from exposure to potentially infectious materials and sharps injuries. Waste management practices shall be based on all applicable federal, state, and local laws and regulations and implemented through organizational policies, procedures, and practice guidelines. The organization shall incorporate risk reduction for exposure to potentially infectious materials and needlestick injuries into its comprehensive quality improvement program and shall ensure that all personnel—including patients and caregivers receiving home infusion therapy—receive appropriate education and resources.
+It is the policy of this organization that safe handling and disposal of regulated medical waste shall protect healthcare workers, patients, waste handlers, and the broader community from exposure to potentially infectious materials and sharps injuries.[^1][^11] Waste management practices shall be based on all applicable federal, state, and local laws and regulations and implemented through organizational policies, procedures, and practice guidelines.[^2] The organization shall incorporate risk reduction for exposure to potentially infectious materials and needlestick injuries into its comprehensive quality improvement program and shall ensure that all personnel—including patients and caregivers receiving home infusion therapy—receive appropriate education and resources.[^1][^10]
 
 ## 2. Purpose
 
 This policy exists to:
 
-- Mandate the use of safety-engineered devices to prevent needlestick and sharps injuries in all settings where vascular access and infusion procedures are performed.
-- Define sharps container requirements, placement standards, and safe disposal practices.
+- Mandate the use of safety-engineered devices to prevent needlestick and sharps injuries in all settings where vascular access and infusion procedures are performed.[^1]
+- Define sharps container requirements, placement standards, and safe disposal practices.[^2]
 - Prohibit unsafe sharps handling practices including recapping, breaking, and bending.
-- Establish comprehensive education requirements for clinical staff, patients, and caregivers.
-- Define injury reporting and follow-up processes that support appropriate postexposure prophylaxis and generate data for quality improvement.
-- Standardize medical waste segregation and disposal in compliance with applicable regulatory requirements.
-- Promote waste minimization strategies where clinically appropriate.
+- Establish comprehensive education requirements for clinical staff, patients, and caregivers.[^10]
+- Define injury reporting and follow-up processes that support appropriate postexposure prophylaxis and generate data for quality improvement.[^1]
+- Standardize medical waste segregation and disposal in compliance with applicable regulatory requirements.[^2][^11]
+- Promote waste minimization strategies where clinically appropriate.[^3][^4]
 
 ## 3. Scope
 
@@ -45,15 +45,15 @@ This policy applies to:
 
 ### 4.1 Foundational Principles
 
-4.1.1 Medical waste management shall be based on applicable laws, rules, and regulations established in each jurisdiction—including federal, state, and local requirements—and implemented through organizational policies and practice guidelines.
+4.1.1 Medical waste management shall be based on applicable laws, rules, and regulations established in each jurisdiction—including federal, state, and local requirements—and implemented through organizational policies and practice guidelines.[^11][^2]
 
-4.1.2 The organization shall systematically track and analyze exposure incidents, waste handling practices, and sharps injuries to identify trends and implement targeted risk-reduction interventions through its quality improvement program.
+4.1.2 The organization shall systematically track and analyze exposure incidents, waste handling practices, and sharps injuries to identify trends and implement targeted risk-reduction interventions through its quality improvement program.[^1]
 
 ### 4.2 Sharps Container Requirements and Placement
 
-4.2.1 **Container Standards.** Contaminated sharps shall be discarded only in containers that are: closable, non-permeable, puncture-resistant, tamperproof, and clearly labeled with biohazard markings.
+4.2.1 **Container Standards.** Contaminated sharps shall be discarded only in containers that are: closable, non-permeable, puncture-resistant, tamperproof, and clearly labeled with biohazard markings.[^2][^11]
 
-4.2.2 **Point-of-Use Placement.** Sharps containers shall be: (a) easily accessible and located in the immediate area where sharps are used to encourage immediate disposal after use, and (b) never positioned so that healthcare workers must walk more than a few steps to discard a used sharp. Transport of used sharps from the point of use to a distant disposal container is prohibited.
+4.2.2 **Point-of-Use Placement.** Sharps containers shall be: (a) easily accessible and located in the immediate area where sharps are used to encourage immediate disposal after use, and (b) never positioned so that healthcare workers must walk more than a few steps to discard a used sharp. Transport of used sharps from the point of use to a distant disposal container is prohibited.[^1]
 
 4.2.3 **Container Sizing.** Sharps containers shall be large enough to accommodate disposal of entire blood collection assemblies—including the holder and needle—without requiring disassembly. Attempting to separate blood collection device components increases needlestick injury risk and is prohibited.
 
@@ -61,7 +61,7 @@ This policy applies to:
 
 ### 4.3 Needlestick Injury Prevention
 
-4.3.1 **Safety-Engineered Devices (SEDs).** Healthcare workers shall use safety-engineered devices for all parenteral medication preparation, vascular access device insertion, blood sampling, and related procedures. Safety-engineered devices that isolate or remove the bloodborne pathogen hazard shall be available in the workplace and used in accordance with manufacturer's directions.
+4.3.1 **Safety-Engineered Devices (SEDs).** Healthcare workers shall use safety-engineered devices for all parenteral medication preparation, vascular access device insertion, blood sampling, and related procedures.[^1] Safety-engineered devices that isolate or remove the bloodborne pathogen hazard shall be available in the workplace and used in accordance with manufacturer's directions. Surveillance data from the EXPO-S.T.O.P. national blood exposure surveys reveal an alarming rise in blood exposure rates, underscoring the critical need for universal SED adoption.[^1]
 
 4.3.2 **Passive Safety Devices.** Passive safety-engineered devices—which activate automatically without requiring a deliberate activation step—shall be used whenever possible. Passive devices provide superior protection compared to active devices because they do not depend on healthcare worker compliance with activation procedures. Studies demonstrate that passive safety devices achieve higher activation rates and lower injury rates than active devices.
 
@@ -73,7 +73,7 @@ This policy applies to:
 
 ### 4.4 Education and Training
 
-4.4.1 **Comprehensive Staff Education.** The organization shall educate all clinical staff in: safe sharps handling practices, proper use and activation of safety-engineered devices per manufacturer's directions, medical waste segregation and disposal procedures, and the importance of reporting needlestick injuries and bloodborne pathogen exposures. Research demonstrates that education combined with implementation of sharps safety products synergistically reduces needlestick injury risk.
+4.4.1 **Comprehensive Staff Education.** The organization shall educate all clinical staff in: safe sharps handling practices, proper use and activation of safety-engineered devices per manufacturer's directions, medical waste segregation and disposal procedures, and the importance of reporting needlestick injuries and bloodborne pathogen exposures.[^10] Research demonstrates that education combined with implementation of sharps safety products synergistically reduces needlestick injury risk. Formal training interventions significantly improve medical waste handling knowledge and practical skills among healthcare workers.[^10]
 
 4.4.2 **Hands-On Training.** Training shall include hands-on practice with assigned safety-engineered devices and demonstrated competency assessment before independent clinical use. Competency shall be reassessed when new devices are adopted.
 
@@ -83,7 +83,7 @@ This policy applies to:
 
 ### 4.5 Injury Reporting and Follow-up
 
-4.5.1 **Mandatory Reporting.** All exposures to potentially infectious materials or injuries from sharps shall be reported immediately to the occupational health or employee health department and documented according to organizational protocols. Immediate reporting enables appropriate postexposure prophylaxis, establishes workers' compensation eligibility, generates data for quality improvement, and demonstrates organizational commitment to worker protection.
+4.5.1 **Mandatory Reporting.** All exposures to potentially infectious materials or injuries from sharps shall be reported immediately to the occupational health or employee health department and documented according to organizational protocols.[^1] Immediate reporting enables appropriate postexposure prophylaxis, establishes workers' compensation eligibility, generates data for quality improvement, and demonstrates organizational commitment to worker protection.
 
 4.5.2 **Documentation Requirements.** Documentation of sharps injuries shall include: the type and brand of device involved, the procedure being performed, the area of the body affected, whether the safety feature was activated and if not, why not, and relevant patient information for bloodborne pathogen exposure risk assessment.
 
@@ -93,13 +93,13 @@ This policy applies to:
 
 ### 4.6 Medical Waste Segregation and Disposal
 
-4.6.1 **Waste Segregation.** The organization shall sort and segregate medical waste according to applicable federal, state, and local guidelines. Proper segregation ensures appropriate processing and disposal and may reduce costs associated with unnecessary classification of non-hazardous waste as regulated medical waste.
+4.6.1 **Waste Segregation.** The organization shall sort and segregate medical waste according to applicable federal, state, and local guidelines.[^11][^2] Proper segregation ensures appropriate processing and disposal and may reduce costs associated with unnecessary classification of non-hazardous waste as regulated medical waste.
 
-4.6.2 **Segregation Categories.** At minimum, medical waste shall be segregated into: regulated medical waste (potentially infectious materials), hazardous waste (including hazardous drug waste, as governed by the Hazardous Drug Management Policy), sharps waste, pharmaceutical waste, and non-regulated waste. Each category has specific containment, labeling, and disposal requirements.
+4.6.2 **Segregation Categories.** At minimum, medical waste shall be segregated into: regulated medical waste (potentially infectious materials), hazardous waste (including hazardous drug waste, as governed by the Hazardous Drug Management Policy), sharps waste, pharmaceutical waste, and non-regulated waste.[^11] Each category has specific containment, labeling, and disposal requirements.
 
-4.6.3 **Waste Minimization.** The organization shall implement strategies to reduce unnecessary waste generation where clinically appropriate. This includes: using standardized checklists for waste handling procedures to reduce errors and improve compliance, evaluating whether procedures requiring Surgical-ANTT could safely use Standard-ANTT where the infection risk does not require full surgical asepsis (per the ANTT Risk Assessment framework), and reducing unnecessary sterile packaging.
+4.6.3 **Waste Minimization.** The organization shall implement strategies to reduce unnecessary waste generation where clinically appropriate.[^3][^4] This includes: using standardized checklists for waste handling procedures to reduce errors and improve compliance, evaluating whether procedures requiring Surgical-ANTT could safely use Standard-ANTT where the infection risk does not require full surgical asepsis (per the ANTT Risk Assessment framework)[^6][^7][^8][^9], and reducing unnecessary sterile packaging. The substantial environmental burden of medical waste—amplified during mass casualty and pandemic surges—underscores the ethical imperative of waste minimization.[^5]
 
-4.6.4 **Environmental Responsibility.** The organization recognizes the substantial environmental burden of medical waste and shall pursue waste minimization as a strategic and ethical priority without compromising patient or worker safety.
+4.6.4 **Environmental Responsibility.** The organization recognizes the substantial environmental burden of medical waste and shall pursue waste minimization as a strategic and ethical priority without compromising patient or worker safety.[^3][^4][^5]
 
 ### 4.7 Patient and Caregiver Education for Home Waste Disposal
 
@@ -137,6 +137,7 @@ This policy applies to:
 - OSHA Needlestick Safety and Prevention Act
 - EPA Medical Waste Regulations
 - Applicable State Medical Waste Disposal Regulations
+- CDC Regulated Medical Waste Background[^11]
 - Organizational Bloodborne Pathogen Exposure Control Plan
 - Organizational Postexposure Prophylaxis Protocol
 - Organizational Sharps Injury Log and Reporting System
@@ -147,3 +148,29 @@ This policy applies to:
 |---------|------|-----------|----------------------|
 | 1.0 | 2026-02-23 | D. Woo, M. Stern, I.M. Wright | Initial policy creation based on IVAPS standards |
 | — | — | — | Scheduled review date: 2027-02-23 or upon regulatory change, whichever occurs first |
+
+---
+
+## References
+
+[^1]: Grimmond T, Good L. EXPO-S.T.O.P. 2016 and 2017 blood exposure surveys: an alarming rise. *Am J Infect Control*. 2019;47(12):1465–1470. doi:[10.1016/j.ajic.2019.07.004](https://doi.org/10.1016/j.ajic.2019.07.004)
+
+[^2]: Centers for Disease Control and Prevention. Regulated medical waste — self inspection checklist. National Institute for Occupational Safety and Health; October 2003. Updated June 6, 2014. DHHS (NIOSH) Publication No. 2004-101. [https://www.cdc.gov/niosh/docs/2004-101/chklsts/r1n79m~1.htm](https://www.cdc.gov/niosh/docs/2004-101/chklsts/r1n79m~1.htm)
+
+[^3]: Wohlford S, Ferren Carter K, Esteves-Fuentes N. Reducing waste in the clinical setting. *Am J Nurs*. 2020;120(6):48–55. doi:[10.1097/01.naj.0000668744.36106.24](https://doi.org/10.1097/01.naj.0000668744.36106.24)
+
+[^4]: Kleber J, Cohen B. Reducing waste and increasing sustainability in health care settings: changing the way plastic medical waste is used and disposed of. *Am J Nurs*. 2020;120(4):45–48. doi:[10.1097/01.naj.0000660032.02514.ec](https://doi.org/10.1097/01.naj.0000660032.02514.ec)
+
+[^5]: Andeobu L, Wibowo S, Grandhi S. Medical waste from COVID-19 pandemic: a systematic review of management and environmental impacts in Australia. *Int J Environ Res Public Health*. 2022;19(3). doi:[10.3390/ijerph19031381](https://doi.org/10.3390/ijerph19031381)
+
+[^6]: Rowley S, Clare S. Right asepsis with ANTT® for infection prevention. In: Moureau NL, ed. *Vessel Health and Preservation: The Right Approach for Vascular Access*. Springer; 2019.
+
+[^7]: Clare S, Rowley S. Implementing the Aseptic Non Touch Technique (ANTT®) clinical practice framework for aseptic technique: a pragmatic evaluation using a mixed methods approach in two London hospitals. *J Infect Prevent*. 2018;19(1):6–15. doi:[10.1177/1757177417720996](https://doi.org/10.1177/1757177417720996)
+
+[^8]: Barton AB, Bitmead J, Clare S, et al. How to improve aseptic technique to reduce bloodstream infection during vascular access procedures. *Br J Nurs*. 2022;31(17):880–885.
+
+[^9]: Rowley S, Clare S. ANTT® standardization facilitates new efficiencies with a novel partially sterile Standard-ANTT PIVC pack. *Br J Nurs*. 2023;32(7):S4–S10. doi:[10.12968/bjon.2023.32.7.S4](https://doi.org/10.12968/bjon.2023.32.7.S4)
+
+[^10]: Hosny G, Samir S, El-Sharkawy R. An intervention significantly improve medical waste handling and management: a consequence of raising knowledge and practical skills of health care workers. *Int J Health Sci (Qassim)*. 2018;12(4):56–66. [https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6040849/](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6040849/)
+
+[^11]: Centers for Disease Control and Prevention. Background I. Regulated medical waste. 2015. [https://www.cdc.gov/infectioncontrol/guidelines/environmental/background/medical-waste.html](https://www.cdc.gov/infectioncontrol/guidelines/environmental/background/medical-waste.html)

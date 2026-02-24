@@ -32,7 +32,7 @@ When occlusion occurs, catheter salvage should be prioritized over removal whene
 
 ## **Occlusion Prevention**
 
-Effective prevention requires attention to multiple domains of VAD management. Clinicians should adhere to evidence-based flushing and locking protocols, as inadequate maintenance remains a primary contributor to occlusive complications.
+Effective prevention requires attention to multiple domains of VAD management. Clinicians should adhere to evidence-based flushing and locking protocols, as inadequate maintenance remains a primary contributor to occlusive complications (Gorski, 2023).
 
 ### **2.1 Mechanical Prevention**
 
@@ -249,6 +249,8 @@ Giordano, P., Saracco, P., Grassi, M., et al. (2015). Recommendations for the us
 Gnannt, R., Chamlati, R., Waespe, N., et al. (2019). Clinical impact of chronic venous changes induced by central lines in children: A cohort with abnormal venograms. *Journal of Vascular and Interventional Radiology, 30*(5), 715-723. https://doi.org/10.1016/j.jvir.2018.08.034
 
 Gorski, L. A. (2018). *Phillips's manual of IV therapeutics: Evidence-based practice for infusion therapy* (7th ed.). F.A. Davis.
+
+Gorski, L. A. (2023). *Phillips's manual of IV therapeutics: Evidence-based practice for infusion therapy* (8th ed.). FA Davis.
 
 Hawes, M. L. (2020). Assessing and restoring patency in midline catheters. *Journal of Infusion Nursing, 43*(4), 213-221. https://doi.org/10.1097/NAN.0000000000000376
 

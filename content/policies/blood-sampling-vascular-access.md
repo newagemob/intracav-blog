@@ -114,7 +114,7 @@ This policy applies to:
 4.5.1.1 Blood cultures must be obtained prior to the administration of antibiotics whenever clinically feasible. When multiple blood specimens are to be collected in a single encounter, blood cultures must be drawn prior to other specimen types whenever possible.
 
 #### 4.5.2 Standardized Collection Methods
-4.5.2.1 Standardized blood culture collection methods must be implemented, including the use of dedicated phlebotomy teams and standardized sterile collection kits, to reduce contamination rates.
+4.5.2.1 Standardized blood culture collection methods must be implemented, including the use of dedicated phlebotomy teams and standardized sterile collection kits, to reduce contamination rates.[^5]
 
 4.5.2.2 Blood culture contamination rates must be monitored on an ongoing basis and used to inform process improvement initiatives.
 
@@ -176,7 +176,7 @@ This policy applies to:
 
 #### 4.6.3 Blood Sampling via Indwelling PIVC
 
-4.6.3.1 The infusing solution must be paused for 1 to 2 minutes and a waste volume of 1 to 2 mL must be discarded before obtaining the blood sample from a PIVC.
+4.6.3.1 Before using a PIVC for blood sampling, the clinician must confirm that the device is patent, free of signs of complication, and appropriate for continued use. Structured clinical decision-making tools, such as the I-DECIDED framework, support assessment of PIVC suitability prior to access.[^6] The infusing solution must then be paused for 1 to 2 minutes and a waste volume of 1 to 2 mL must be discarded before obtaining the blood sample from a PIVC.
 
 4.6.3.2 When appropriate technique is used, PIVC-drawn samples for complete blood count (CBC), blood chemistry panels, and coagulation studies are not significantly different from direct venipuncture results and are acceptable for clinical decision-making. Comparative studies in pediatric inpatients confirm that blood samples obtained from short peripheral catheters using standardized technique yield results comparable to simultaneous venipuncture samples across common laboratory parameters.[^4]
 
@@ -279,3 +279,7 @@ This policy applies to:
 [^3]: Martillo M, Zarbiv S, Gupta R, et al. A comprehensive vascular access service can reduce catheter-associated bloodstream infections and promote the appropriate use of vascular access devices. *Am J Infect Control*. 2020;48(4):460-464. doi:[10.1016/j.ajic.2019.09.021](https://doi.org/10.1016/j.ajic.2019.09.021)
 
 [^4]: Twibell KR, Hofstetter P, Siela D, Brown D, Jones HM. A comparative study of blood sampling from venipuncture and short peripheral catheters in pediatric inpatients. *J Infus Nurs*. 2019;42(5):237-247. doi:[10.1097/NAN.0000000000000338](https://doi.org/10.1097/NAN.0000000000000338)
+
+[^5]: O'Grady NP, Alexander M, Burns LA, et al. Guidelines for the prevention of intravascular catheter-related infections. *Am J Infect Control*. 2011;39(4 Suppl.):S1-S34. doi:[10.1016/j.ajic.2011.01.003](https://doi.org/10.1016/j.ajic.2011.01.003)
+
+[^6]: Ray-Barruel G, Cooke M, Chopra V, et al. The I-DECIDED clinical decision-making tool for peripheral intravenous catheter assessment and safe removal: a clinician-focused validity study. *BMJ Open*. 2020;10(1):e035239. doi:[10.1136/bmjopen-2019-035239](https://doi.org/10.1136/bmjopen-2019-035239)

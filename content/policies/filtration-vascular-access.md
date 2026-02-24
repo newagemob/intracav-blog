@@ -79,7 +79,7 @@ All clinicians responsible for the preparation and administration of parenteral 
 
 #### 4.2.1 Risk-Benefit Evaluation
 
-4.2.1.1 Filtration decisions shall require evaluation of the benefits and risks for each clinical situation. The evaluation shall consider: medication and solution characteristics, patient clinical status, and manufacturer specifications.
+4.2.1.1 Filtration decisions shall require evaluation of the benefits and risks for each clinical situation. The evaluation shall consider: medication and solution characteristics, patient clinical status, and manufacturer specifications.[^1]
 
 4.2.1.2 Documented filter risks include: sorption of active pharmaceutical ingredients, leaching or extraction of filter components, shedding of particulate matter, elevated line pressures capable of masking infiltration or extravasation, shearing of liposomal structures, and hypersensitivity reactions.
 
@@ -193,3 +193,9 @@ Exceptions to mandatory filtration requirements (excluding PN and ILE, for which
 |---------|------|--------|-------------|
 | 1.0 | 2024-01-15 | Vascular Access Governance Committee | Initial policy |
 | 1.1 | 2025-04-10 | Vascular Access Governance Committee | Updated population-specific evidence ratings; added quick reference table; clarified glass ampoule filter needle prohibition |
+
+---
+
+## References
+
+[^1]: Gorski LA. *Phillips's Manual of IV Therapeutics: Evidence-Based Practice for Infusion Therapy*. 8th ed. FA Davis; 2023.

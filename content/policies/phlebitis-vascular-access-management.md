@@ -132,7 +132,7 @@ Catheters inserted emergently under suboptimal aseptic conditions should be repl
 
 ### **4.1 Clinical Assessment**
 
-Regular assessment of vascular access sites is fundamental to early detection and intervention. Assessment frequency should be determined based on patient population, therapy type, and individual risk factors.
+Regular assessment of vascular access sites is fundamental to early detection and intervention. Assessment frequency should be determined based on patient population, therapy type, and individual risk factors (Gorski et al., 2012).
 
 **Signs and Symptoms:** Clinicians should assess for swelling, erythema, leakage, palpable venous cord, purulent discharge, warmth, and pain or tenderness at the access site.
 
@@ -247,6 +247,8 @@ Gauttam, V., & Vati, D. (2016). A study to assess and compare the effectiveness 
 Goel, D., Smitthimedhin, A., Yadav, B., et al. (2020). Ultrasound-detected venous changes associated with peripheral intravenous placement in children. *British Journal of Nursing, 29*(8), S44-S49.
 
 Göransson, K., Förberg, U., Johansson, E., & Unbeck, M. (2017). Measurement of peripheral venous catheter-related phlebitis: A cross-sectional study. *Lancet Haematology, 4*(9), e424-e430.
+
+Gorski, L. A., Hallock, D., Kuehn, S. C., et al. (2012). Recommendations for frequency of assessment of the short peripheral catheter site. *Journal of Infusion Nursing, 35*(5), 290-292. doi:[10.1097/NAN.0b013e318267f636](https://doi.org/10.1097/NAN.0b013e318267f636)
 
 Goulart, C. B., Custódio, C. S., Vasques, C. I., Ferreira, E. B., & Diniz Dos Reis, P. E. (2020). Effectiveness of topical interventions to prevent or treat intravenous therapy-related phlebitis: A systematic review. *Journal of Clinical Nursing, 29*(13-14), 2138-2149.
 

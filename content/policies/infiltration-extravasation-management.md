@@ -284,6 +284,8 @@ Infiltration and extravasation incidents causing harm or injury should be review
 
 Organizations should consider performing an investigation of each significant extravasation event (such as root cause analysis) to identify and implement needed quality improvement strategies.
 
+Structured IV infiltration management programs—incorporating standardized nursing assessment protocols, targeted staff education, and protocol-driven intervention—have demonstrated effectiveness in reducing infiltration rates in hospitalized pediatric populations (Park et al., 2016).
+
 ---
 
 ## **Appendix A: Quick Reference Tables**
@@ -489,6 +491,8 @@ Pacheco Compaña FJ, Midón Míguez J, de Toro Santos FJ, et al. The use of anti
 Papatheodorou N, Keskinis A, Georgoulas P, et al. Hand compartment syndrome due to extravasation of contrast medium. A technical error. A report of a case and review of the literature. J Surg Case Rep. 2022;2022(3):rjac054.
 
 Park C, Kim H. Acute compartment syndrome due to extravasation of peripheral intravenous blood transfusion. Saudi J Anaesth. 2020;14(2):221-223.
+
+Park SM, Jeong IS, Kim KL, et al. The effect of intravenous infiltration management program for hospitalized children. J Pediatr Nurs. 2016;31(2):172-178. [doi:10.1016/j.pedn.2015.10.013](https://doi.org/10.1016/j.pedn.2015.10.013)
 
 Rajendran G, Sinha AK. Umbilical venous catheter extravasation diagnosed by point-of-care ultrasound. Arch Dis Child Fetal Neonatal Ed. 2021;106(5):549.
 

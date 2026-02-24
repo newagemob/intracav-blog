@@ -43,7 +43,7 @@ This policy applies to:
 
 ### 4.1 Overview and Clinical Application
 
-4.1.1 While Standard Precautions apply universally to all patient interactions, certain clinical situations require additional measures to interrupt transmission of specific infectious agents. Transmission-Based Precautions provide these supplementary safeguards, stratified according to the transmission characteristics of relevant pathogens.
+4.1.1 While Standard Precautions apply universally to all patient interactions, certain clinical situations require additional measures to interrupt transmission of specific infectious agents. Transmission-Based Precautions provide these supplementary safeguards, stratified according to the transmission characteristics of relevant pathogens.[^3][^13]
 
 4.1.2 The three categories of Transmission-Based Precautions address distinct transmission routes:
 - **Contact Precautions** prevent transmission through direct or indirect physical contact with the patient or contaminated environment.
@@ -54,7 +54,7 @@ This policy applies to:
 
 ### 4.2 Personal Protective Equipment Selection
 
-4.2.1 PPE selection for Transmission-Based Precautions builds upon Standard Precautions requirements based on the nature of patient interaction and the relevant transmission route. Effective implementation requires that clinicians receive adequate training in proper donning and doffing sequences, as improper PPE removal represents a significant contamination risk.
+4.2.1 PPE selection for Transmission-Based Precautions builds upon Standard Precautions requirements based on the nature of patient interaction and the relevant transmission route. Effective implementation requires that clinicians receive adequate training in proper donning and doffing sequences, as improper PPE removal represents a significant contamination risk.[^1][^10]
 
 4.2.2 Planning tasks to allow sufficient time for safe PPE handling supports compliance and reduces contamination events. Clinicians shall, where possible, consolidate necessary interventions to minimize repeated donning and doffing while maintaining therapeutic relationships with isolated patients.
 
@@ -70,7 +70,7 @@ This policy applies to:
 
 4.3.2 Implementation involves donning gown and gloves before entering the patient's clinical environment when contact may occur. All PPE must be removed and hand hygiene performed before leaving the patient environment.
 
-4.3.3 The evidence regarding Contact Precautions for endemic multidrug-resistant organisms continues to evolve, with some studies questioning their effectiveness compared to enhanced Standard Precautions with universal gloving and gowning. Clinicians shall remain current with organizational policies that reflect evolving evidence and institutional infection prevention guidance.
+4.3.3 The evidence regarding Contact Precautions for endemic multidrug-resistant organisms continues to evolve, with some studies questioning their effectiveness compared to enhanced Standard Precautions with universal gloving and gowning.[^2][^8][^9] Clinicians shall remain current with organizational policies that reflect evolving evidence and institutional infection prevention guidance.
 
 ### 4.4 Droplet Precautions
 
@@ -84,9 +84,9 @@ This policy applies to:
 
 4.5.2 Implementation requires fit-tested, certified N95-or-higher respirators. Initial fit testing shall occur before first use of a respirator model, with annual retesting and additional testing if facial characteristics change significantly. Clinicians must perform a seal check with each use, adjusting the respirator as needed to achieve proper fit.
 
-4.5.3 Organizations may elect to utilize reusable elastomeric respirators, which offer protection against supply chain disruptions. These devices require maintenance programs ensuring proper cleaning and filter replacement according to manufacturer specifications. When elastomeric respirators include exhalation valves, additional measures become necessary if source control is simultaneously indicated.
+4.5.3 Organizations may elect to utilize reusable elastomeric respirators, which offer protection against supply chain disruptions.[^6][^7] These devices require maintenance programs ensuring proper cleaning and filter replacement according to manufacturer specifications. When elastomeric respirators include exhalation valves, additional measures become necessary if source control is simultaneously indicated.
 
-4.5.4 Healthcare facilities shall maintain formal Respiratory Protection Programs addressing all aspects of respiratory protection including device selection, fit testing, seal checking, maintenance, and staff training.
+4.5.4 Healthcare facilities shall maintain formal Respiratory Protection Programs addressing all aspects of respiratory protection including device selection, fit testing, seal checking, maintenance, and staff training.[^4]
 
 4.5.5 For aerosol-generating procedures when airborne-transmitted disease is not suspected, staff shall minimally wear one of the following: a face shield providing full frontal and lateral coverage, a mask with attached shield, or a mask combined with goggles.
 
@@ -94,7 +94,7 @@ This policy applies to:
 
 4.6.1 Skilled nursing facilities face particular challenges with multidrug-resistant organism transmission due to resident proximity, shared caregiving, and the extended duration of resident stays. Enhanced barrier precautions represent a specific containment strategy for these settings when novel or targeted multidrug-resistant organisms are identified.
 
-4.6.2 Under enhanced barrier precautions, clinicians shall don gloves and gown when performing high-contact care activities. These activities include care involving wounds or indwelling medical devices such as central vascular access devices, urinary catheters, feeding tubes, or tracheostomies. This requirement applies when the resident resides on a unit or wing where a resident known to be infected or colonized with a targeted organism also resides.
+4.6.2 Under enhanced barrier precautions, clinicians shall don gloves and gown when performing high-contact care activities.[^5][^11] These activities include care involving wounds or indwelling medical devices such as central vascular access devices, urinary catheters, feeding tubes, or tracheostomies. This requirement applies when the resident resides on a unit or wing where a resident known to be infected or colonized with a targeted organism also resides.
 
 ### 4.7 Equipment Management and Patient Transfer
 
@@ -110,7 +110,7 @@ This policy applies to:
 
 4.8.2 Crisis standards of care emerge through collaboration among healthcare organizations, clinical professionals, policy makers, and affected communities. PPE conservation strategies may become necessary based on local supply circumstances, with compliance requirements adjusted according to current authoritative recommendations that may evolve rapidly.
 
-4.8.3 Clinicians practicing during crises shall maintain awareness of current guidance from relevant authorities including national and international public health organizations, recognizing that recommendations may change as understanding of the pathogen and available resources evolve.
+4.8.3 Clinicians practicing during crises shall maintain awareness of current guidance from relevant authorities including national and international public health organizations,[^3] recognizing that recommendations may change as understanding of the pathogen and available resources evolve.
 
 ## 5. Compliance
 
@@ -149,4 +149,35 @@ This policy applies to:
 | Version | Date | Author(s) | Description of Change |
 |---------|------|-----------|----------------------|
 | 1.0 | 2024-11-28 | D. Woo, M. Stern, I.M. Wright | Initial policy creation based on IVAPS standards |
+| 2.0 | 2026-02-24 | D. Woo, M. Stern, I.M. Wright | Added comprehensive academic references with inline footnote citations |
 | — | — | — | Scheduled review date: 2026-11-28 |
+
+---
+
+## References
+
+[^1]: Baloh J, Reisinger HS, Dukes K, et al. Healthcare workers' strategies for doffing personal protective equipment. *Clin Infect Dis*. 2019;69(Suppl 3):S192-S198. doi:[10.1093/cid/ciz613](https://doi.org/10.1093/cid/ciz613)
+
+[^2]: Banach DB, Bearman G, Barnden M, et al. Duration of contact precautions for acute-care settings. *Infect Control Hosp Epidemiol*. 2018;39(2):127-144. doi:[10.1017/ice.2017.245](https://doi.org/10.1017/ice.2017.245)
+
+[^3]: Centers for Disease Control and Prevention. Guideline for Isolation Precautions: Preventing Transmission of Infectious Agents in Healthcare Settings (2007, updated July 2023). Available at: [https://www.cdc.gov/infectioncontrol/guidelines/isolation/index.html](https://www.cdc.gov/infectioncontrol/guidelines/isolation/index.html)
+
+[^4]: Centers for Disease Control and Prevention. Hospital respiratory protection program toolkit: resources for respirator program administrators. National Institute for Occupational Safety and Health. Revised April 2022. Available at: [https://www.cdc.gov/niosh/docs/2015-117/default.html](https://www.cdc.gov/niosh/docs/2015-117/default.html)
+
+[^5]: Centers for Disease Control and Prevention. Implementation of personal protective equipment (PPE) in nursing homes to prevent spread of novel or targeted multidrug-resistant organisms (MDROs). Updated July 12, 2022. Available at: [https://www.cdc.gov/hai/pdfs/containment/PPE-Nursing-Homes-H.pdf](https://www.cdc.gov/hai/pdfs/containment/PPE-Nursing-Homes-H.pdf)
+
+[^6]: Chalikonda S, Waltenbaugh H, Angelilli S, et al. Implementation of an elastomeric mask program as a strategy to eliminate disposable N95 mask use and resterilization: results from a large academic medical center. *J Am Coll Surg*. 2020;231(3):333-338. doi:[10.1016/j.jamcollsurg.2020.05.022](https://doi.org/10.1016/j.jamcollsurg.2020.05.022)
+
+[^7]: Hines SE, Brown C, Oliver M, et al. User acceptance of reusable respirators in health care. *Am J Infect Control*. 2019;47(6):648-655. doi:[10.1016/j.ajic.2018.11.021](https://doi.org/10.1016/j.ajic.2018.11.021)
+
+[^8]: Johnstone J, Shing E, Saedi A, et al. Discontinuing contact precautions for vancomycin-resistant enterococcus (VRE) is associated with rising VRE bloodstream infection rates in Ontario hospitals, 2009-2018: a quasi-experimental study. *Clin Infect Dis*. 2020;71(7):1756-1759. doi:[10.1093/cid/ciaa009](https://doi.org/10.1093/cid/ciaa009)
+
+[^9]: Khader K, Thomas A, Stevens V, et al. Association between contact precautions and transmission of methicillin-resistant staphylococcus aureus in veterans affairs hospitals. *JAMA Netw Open*. 2021;4(3):e210971. doi:[10.1001/jamanetworkopen.2021.0971](https://doi.org/10.1001/jamanetworkopen.2021.0971)
+
+[^10]: Kwon JH, Burnham CD, Reske KA, et al. Assessment of healthcare worker protocol deviations and self-contamination during personal protective equipment donning and doffing. *Infect Control Hosp Epidemiol*. 2017;38(9):1077-1083. doi:[10.1017/ice.2017.121](https://doi.org/10.1017/ice.2017.121)
+
+[^11]: Mody L, Krein SL, Saint S, et al. A targeted infection prevention intervention in nursing home residents with indwelling devices: a randomized clinical trial. *JAMA Intern Med*. 2015;175(5):714-723. doi:[10.1001/jamainternmed.2015.132](https://doi.org/10.1001/jamainternmed.2015.132)
+
+[^12]: Occupational Safety and Health Administration. Bloodborne pathogens; Standard 29 CFR 1910.1030. 2019. Available at: [https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.1030](https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.1030)
+
+[^13]: Public Health Agency of Canada. Routine practices and additional precautions for preventing the transmission of infection in health care. 2016.

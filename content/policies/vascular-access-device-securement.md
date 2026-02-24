@@ -78,7 +78,7 @@ This policy applies to:
 
 #### 4.2.2 Prohibition of Sutures
 
-4.2.2.1 Sutures must not be used as a VAD securement method for any device type. Sutures are not an effective alternative to dedicated securement devices and carry the following documented risks:
+4.2.2.1 Sutures must not be used as a VAD securement method for any device type. Sutures are not an effective alternative to dedicated securement devices and carry the following documented risks:[^3]
 
 - Needlestick injury to healthcare workers during placement and removal.
 - Biofilm growth on suture material contributing to CABSI.
@@ -269,3 +269,5 @@ Exceptions do not exempt clinicians from the requirement to assess and document 
 [^1]: Rupp ME, Majorant D. Prevention of vascular catheter-related bloodstream infections. *Infect Dis Clin North Am*. 2016;30(4):853-868. doi:[10.1016/j.idc.2016.06.001](https://doi.org/10.1016/j.idc.2016.06.001)
 
 [^2]: Buetti N, Marschall J, Drees M, et al. Strategies to prevent central line-associated bloodstream infections in acute-care hospitals: 2022 Update. *Infect Control Hosp Epidemiol*. 2022;43(5):553-569. doi:[10.1017/ice.2022.87](https://doi.org/10.1017/ice.2022.87)
+
+[^3]: O'Grady NP, Alexander M, Burns LA, et al. Guidelines for the prevention of intravascular catheter-related infections. *Am J Infect Control*. 2011;39(4 Suppl.):S1-S34. doi:[10.1016/j.ajic.2011.01.003](https://doi.org/10.1016/j.ajic.2011.01.003)

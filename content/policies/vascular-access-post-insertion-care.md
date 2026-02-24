@@ -55,7 +55,7 @@ This policy applies to:
 4.1.1.1 The complete infusion system—from the VAD insertion site through all connections and administration set components to the solution container—requires routine assessment. This assessment must include verification of system integrity, confirmation of infusion accuracy, identification of early complications, and monitoring of expiration dates for all infusates, dressings, and administration sets.
 
 #### 4.1.2 VAD Necessity Review
-4.1.2.1 The continuing need for each VAD must be discussed with the healthcare team on a daily basis. Devices must be promptly removed when complications arise that cannot be resolved, when the clinical indication has resolved, or when the VAD is no longer required for the patient's plan of care.
+4.1.2.1 The continuing need for each VAD must be discussed with the healthcare team on a daily basis. Devices must be promptly removed when complications arise that cannot be resolved, when the clinical indication has resolved, or when the VAD is no longer required for the patient's plan of care.[^6]
 
 #### 4.1.3 Sterile Dressing Requirement
 4.1.3.1 All peripheral and central VADs must be covered by a sterile dressing at all times. The dressing may be combined with or integrated into a securement device. Dressings serve three functions: site protection, microbial barrier maintenance, and promotion of skin health in conjunction with catheter securement.
@@ -80,7 +80,7 @@ This policy applies to:
 4.3.3.1 VAD patency must be verified through appropriate flushing protocols at defined assessment intervals and before and after each infusion, medication administration, or blood sampling procedure.
 
 #### 4.3.4 Site and Surrounding Tissue Evaluation
-4.3.4.1 Assessment of the VAD site and surrounding tissue must include palpation and visual inspection of the insertion site, surrounding skin, and catheter pathway. The following must be evaluated and documented: skin integrity; dressing condition; securement device function; evidence of catheter malposition or migration; erythema; tenderness; swelling; infiltration or extravasation; induration; elevated local skin temperature; and presence or character of drainage.
+4.3.4.1 Assessment of the VAD site and surrounding tissue must include palpation and visual inspection of the insertion site, surrounding skin, and catheter pathway. The following must be evaluated and documented: skin integrity; dressing condition; securement device function; evidence of catheter malposition or migration; erythema; tenderness; swelling; infiltration or extravasation; induration; elevated local skin temperature; and presence or character of drainage.[^4] Validated structured assessment tools, such as the I-DECIDED framework, support consistent clinical decision-making regarding catheter continuation versus removal.[^4]
 
 4.3.4.2 Patient-reported symptoms including pain, paresthesia, numbness, and tingling are critical subjective assessment data and must be solicited at each assessment encounter.
 
@@ -95,11 +95,11 @@ This policy applies to:
 ### 4.4 Assessment Frequency
 
 #### 4.4.1 Central Venous Access Devices — Inpatient and Nursing Facility
-4.4.1.1 CVADs must be assessed with each infusion intervention and at a minimum of once per shift (or once daily per facility policy), whichever is more frequent.
+4.4.1.1 CVADs must be assessed with each infusion intervention and at a minimum of once per shift (or once daily per facility policy), whichever is more frequent.[^5]
 
 #### 4.4.2 Peripheral Intravenous Catheters — Inpatient and Nursing Facility
 
-**Table 1: PIVC Assessment Frequency — Inpatient and Nursing Facility**
+**Table 1: PIVC Assessment Frequency — Inpatient and Nursing Facility**[^5]
 
 | Patient Population | Minimum Assessment Frequency |
 |---|---|
@@ -233,10 +233,10 @@ This policy applies to:
 ### 4.10 Infection Prevention
 
 #### 4.10.1 Chlorhexidine Bathing
-4.10.1.1 Chlorhexidine gluconate (CHG) bathing must be incorporated into care protocols for patients with CVADs to minimize the risk of central line-associated bloodstream infection (CLABSI).[^1][^2][^3] Manufacturer instructions must be consulted regarding potential effects of CHG bath products on dressing integrity.
+4.10.1.1 Chlorhexidine gluconate (CHG) bathing must be incorporated into care protocols for patients with CVADs to minimize the risk of central line-associated bloodstream infection (CLABSI).[^1][^2][^3][^7] Manufacturer instructions must be consulted regarding potential effects of CHG bath products on dressing integrity.
 
 #### 4.10.2 Dressing Integrity
-4.10.2.1 Maintaining dressing integrity is a critical infection prevention measure. Dressing disruption—from any cause, including patient activity, moisture accumulation, or incomplete adhesion—is a major modifiable risk factor for catheter-related infections.[^1][^2] Immediate dressing change is required whenever integrity is compromised.
+4.10.2.1 Maintaining dressing integrity is a critical infection prevention measure. Dressing disruption—from any cause, including patient activity, moisture accumulation, or incomplete adhesion—is a major modifiable risk factor for catheter-related infections.[^1][^2][^7] Immediate dressing change is required whenever integrity is compromised.
 
 ### 4.11 Special Population Considerations
 
@@ -367,3 +367,11 @@ This policy applies to:
 [^2]: Buetti N, Marschall J, Drees M, et al. Strategies to prevent central line-associated bloodstream infections in acute-care hospitals: 2022 Update. *Infect Control Hosp Epidemiol*. 2022;43(5):553-569. doi:[10.1017/ice.2022.87](https://doi.org/10.1017/ice.2022.87)
 
 [^3]: Martillo M, Zarbiv S, Gupta R, et al. A comprehensive vascular access service can reduce catheter-associated bloodstream infections and promote the appropriate use of vascular access devices. *Am J Infect Control*. 2020;48(4):460-464. doi:[10.1016/j.ajic.2019.09.021](https://doi.org/10.1016/j.ajic.2019.09.021)
+
+[^4]: Ray-Barruel G, Cooke M, Chopra V, et al. The I-DECIDED clinical decision-making tool for peripheral intravenous catheter assessment and safe removal: a clinician-focused validity study. *BMJ Open*. 2020;10(1):e035239. doi:[10.1136/bmjopen-2019-035239](https://doi.org/10.1136/bmjopen-2019-035239)
+
+[^5]: Gorski LA, Hallock D, Kuehn SC, et al. Recommendations for frequency of assessment of the short peripheral catheter site. *J Infus Nurs*. 2012;35(5):290-292. doi:[10.1097/NAN.0b013e318267f636](https://doi.org/10.1097/NAN.0b013e318267f636)
+
+[^6]: DeVries M, Strimbu K. Short peripheral catheter performance following adoption of clinical indication removal. *J Infus Nurs*. 2019;42(2):81-90. doi:[10.1097/NAN.0000000000000318](https://doi.org/10.1097/NAN.0000000000000318)
+
+[^7]: O'Grady NP, Alexander M, Burns LA, et al. Guidelines for the prevention of intravascular catheter-related infections. *Am J Infect Control*. 2011;39(4 Suppl.):S1-S34. doi:[10.1016/j.ajic.2011.01.003](https://doi.org/10.1016/j.ajic.2011.01.003)
