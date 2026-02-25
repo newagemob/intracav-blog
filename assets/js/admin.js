@@ -1,4 +1,4 @@
-// Admin Interface for Intracav Wiki
+// Admin Interface for MedWiki
 (function() {
   'use strict';
 

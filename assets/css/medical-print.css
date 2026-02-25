@@ -1,5 +1,5 @@
 /* ==========================================================================
-   INTRACAV WIKI - MEDICAL PRINT STYLES
+   MEDWIKI - MEDICAL PRINT STYLES
    Audit-Ready Print Formatting
    
    Authority Level: CMS / FDA / Epic Systems
@@ -30,7 +30,7 @@
     }
     
     @bottom-left {
-      content: "Intracav Wiki - Confidential";
+      content: "MedWiki - Confidential";
       font-family: Charter, Georgia, serif;
       font-size: 9pt;
       color: #4B5563;

@@ -216,7 +216,7 @@ Present the business case to nursing administration, CMO, and CFO. Align with cu
 - **Catheter tracking systems**: EHR-based dashboards tracking active catheter census, catheter-days, and due dates for dressing/tubing changes
 - **Clinical decision support**: Alerts for PICCs exceeding expected dwell time, prompts for daily necessity review, DIVA score triggers for US guidance referral
 - **Competency management systems**: Track VAT staff certifications, competency expiration dates, and procedure volumes
-- **Intracav knowledge platform**: Clinical policy reference, evidence-based guides, and competency tools supporting VAT program operations — see [Intracav Vascular Access Knowledge Center](/guides/)
+- **MedWiki**: Clinical policy reference, evidence-based guides, and competency tools supporting VAT program operations — see [MedWiki Vascular Access Knowledge Center](/guides/)
 
 ---
 

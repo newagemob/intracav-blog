@@ -1,5 +1,5 @@
 /**
- * Intracav Wiki - Table of Contents Scroll Spy
+ * MedWiki - Table of Contents Scroll Spy
  * Highlights current section heading in ToC as user scrolls
  */
 (function() {

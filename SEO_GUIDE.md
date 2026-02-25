@@ -1,4 +1,4 @@
-# SEO Optimization Guide - Intracav Wiki
+# SEO Optimization Guide - MedWiki
 
 ## Overview
 Your Hugo blog has been fully optimized for search engines and social media sharing. This guide explains what was implemented and how to maintain optimal SEO for future content.
@@ -205,7 +205,7 @@ When updating content:
 ## 🔗 Social Sharing Preview
 
 When you share links, they will display:
-- **Icon:** Intracav Wiki app icon
+- **Icon:** MedWiki app icon
 - **Title:** Article title
 - **Description:** Your meta description or summary
 - **Image:** Featured image or default og-image.png
@@ -331,6 +331,6 @@ Your site should score well on:
 ---
 
 **Last Updated:** January 29, 2026
-**Maintained By:** Intracav AI Team
+**Maintained By:** MedWiki Team
 
 For questions or issues, refer to this guide or consult the Hugo documentation.

@@ -163,7 +163,7 @@ Training nurses in ultrasound-guided peripheral catheter insertion has also been
 
 | Version | Date | Author(s) | Description of Change |
 |---------|------|-----------|----------------------|
-| 1.0 | 2023-07-11 | Intracav-CM01 | Initial policy creation |
+| 1.0 | 2023-07-11 | MedWiki-CM01 | Initial policy creation |
 | 1.1 | 2025-01-14 | D. Woo, M. Stern, I.M. Wright | Updated catheter-to-vessel ratio thresholds and pediatric ultrasound guidance; revised competency framework |
 | — | — | — | Scheduled review date: 2026-07-11 |
 

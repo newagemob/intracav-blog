@@ -48,11 +48,11 @@ A data-driven benchmarking report synthesizing current NHSN surveillance data, p
 Each resource is a standalone clinical document. They can be:
 
 - **Downloaded and printed** for bedside use, skills fairs, or orientation packets
-- **Adapted for institutional policy** — cite Intracav and add your facility header
+- **Adapted for institutional policy** — cite MedWiki and add your facility header
 - **Used as training materials** for annual competency days, preceptor programs, or new hire orientation
 - **Referenced in QI projects** — all data points include citations to primary sources
 
-If you adapt a resource for institutional use, please credit: *Intracav Vascular Access Knowledge Platform, blog.intracav.ai.*
+If you adapt a resource for institutional use, please credit: *MedWiki Vascular Access Knowledge Platform, blog.intracav.ai.*
 
 ---
 

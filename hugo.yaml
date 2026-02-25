@@ -1,6 +1,6 @@
 baseURL: https://blog.intracav.ai
 languageCode: en-us
-title: Intracav Vascular Access Knowledge Base
+title: MedWiki Vascular Access Knowledge Base
 theme: PaperMod
 
 # Security configuration
@@ -68,16 +68,16 @@ markup:
 
 params:
   env: production
-  title: "Intracav Vascular Access Knowledge Base"
+  title: "MedWiki Vascular Access Knowledge Base"
   description: "The most comprehensive evidence-based vascular access knowledge base for clinicians: PICC lines, central venous catheters, CLABSI prevention, infusion therapy safety, ultrasound guidance, credentialing, and special populations."
   author: ["I.M. Wright", "Dennis Woo", "Blaine Pantano", "Mike Stern"]
   images: ["/og-image.png"]
   keywords:
     [
-      "Intracav",
-      "Intracav Wiki",
+      "MedWiki",
+      "MedWiki Vascular Access",
       "Intracav AI",
-      "Intracav",
+      "MedWiki",
       "Vascular Access",
       "Data Science",
       "Machine Learning",
@@ -228,12 +228,12 @@ params:
   # profile-mode
   profileMode:
     enabled: false # needs to be explicitly set
-    title: Intracav Wiki
+    title: MedWiki
     subtitle: "Living documentation and guidelines for vascular access and clinical practice"
     imageUrl: "<img location>"
     imageWidth: 120
     imageHeight: 120
-    imageTitle: intracav
+    imageTitle: medwiki
     buttons:
       - name: All Content
         url: articles
@@ -246,5 +246,5 @@ params:
 
   # home-info mode
   homeInfoParams:
-    Title: "Intracav Vascular Access Knowledge Base"
+    Title: "MedWiki Vascular Access Knowledge Base"
     Content: Evidence-based clinical guides, policies, and patient education for vascular access — PICC lines, central venous catheters, CLABSI prevention, infusion therapy safety, and more.

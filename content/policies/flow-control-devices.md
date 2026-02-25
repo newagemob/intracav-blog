@@ -308,6 +308,6 @@ This policy applies to:
 
 | Version | Date | Author(s) | Description of Change |
 |---------|------|-----------|----------------------|
-| 1.0 | 2024-02-08 | Intracav-CM01 | Initial policy creation |
+| 1.0 | 2024-02-08 | MedWiki-CM01 | Initial policy creation |
 | 1.1 | 2025-04-19 | D. Woo, M. Stern, I.M. Wright | Added EHR interoperability requirements; updated drug library compliance threshold; expanded alarm fatigue management section; added home care education requirements |
 | — | — | — | Scheduled review date: 2026-04-08 |

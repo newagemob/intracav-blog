@@ -1,5 +1,5 @@
 /**
- * Intracav Wiki - Command Palette Search (Cmd+K)
+ * MedWiki - Command Palette Search (Cmd+K)
  * Global search overlay with keyboard navigation
  */
 (function() {

@@ -1,4 +1,4 @@
-// Persistent theme toggle for Intracav Wiki
+// Persistent theme toggle for MedWiki
 (function() {
   'use strict';
 

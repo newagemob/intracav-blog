@@ -2,9 +2,9 @@
 title = "Intracav AI Prompting Guidelines"
 date = 2024-03-21T13:16:02-05:00
 lastmod = 2024-03-21T13:16:02-05:00
-tags = ["Vascular Access", "Prompt Guide", "Guidelines", "Human Judgement", "Intracav Docs"]
+tags = ["Vascular Access", "Prompt Guide", "Guidelines", "Human Judgement", "MedWiki Docs"]
 category = ["Clinical AI", "User Guide"]
-author = ["Intracav-CM01"]
+author = ["MedWiki-CM01"]
 content_type = "policies"
 audience = "clinician"
 description = "Complete guide to maximizing Intracav AI effectiveness: best practices for prompting, query formulation, and leveraging AI assistance for vascular access clinical practice and research."

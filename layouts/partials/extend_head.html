@@ -21,7 +21,7 @@
 {{- $mainCSS := resources.Get "css/main.css" -}}
 {{- $printCSS := resources.Get "css/medical-print.css" -}}
 {{- if and $tokens $mainCSS $printCSS }}
-  {{- $bundle := slice $tokens $mainCSS $printCSS | resources.Concat "css/intracav.css" | resources.Minify -}}
+  {{- $bundle := slice $tokens $mainCSS $printCSS | resources.Concat "css/medwiki.css" | resources.Minify -}}
   {{- if not site.Params.assets.disableFingerprinting }}
     {{- $bundle = $bundle | fingerprint }}
     <link rel="stylesheet" href="{{ $bundle.RelPermalink }}" integrity="{{ $bundle.Data.Integrity }}" crossorigin="anonymous">
@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="{{ $bundle.RelPermalink }}">
   {{- end }}
 {{- else if and $tokens $mainCSS }}
-  {{- $bundle := slice $tokens $mainCSS | resources.Concat "css/intracav.css" | resources.Minify -}}
+  {{- $bundle := slice $tokens $mainCSS | resources.Concat "css/medwiki.css" | resources.Minify -}}
   {{- if not site.Params.assets.disableFingerprinting }}
     {{- $bundle = $bundle | fingerprint }}
     <link rel="stylesheet" href="{{ $bundle.RelPermalink }}" integrity="{{ $bundle.Data.Integrity }}" crossorigin="anonymous">
