@@ -24,7 +24,7 @@ All vascular access devices (VADs) placed or maintained within this organization
 ## 2. Purpose
 
 - To prevent unplanned VAD dislodgement and catheter migration that result in treatment delays, additional venipuncture attempts, and patient harm.
-- To eliminate suture-based securement and its associated risks, including needlestick injury, biofilm growth on suture material, and increased catheter-associated bloodstream infection (CABSI) risk.[^1][^2]
+- To eliminate suture-based securement and its associated risks, including needlestick injury, biofilm growth on suture material, and increased catheter-associated bloodstream infection (CABSI) risk.[^1][^2][^4][^5]
 - To standardize the selection, application, maintenance, and assessment of acceptable VAD securement methods across all patient populations and care settings.
 - To reduce catheter-associated skin injury (CASI) resulting from improper securement device selection or technique.
 - To provide device-specific securement guidance that reflects the current evidence base for peripheral intravenous catheters (PIVCs), midline catheters, peripherally inserted central catheters (PICCs), central venous access devices (CVADs), and arterial catheters.
@@ -46,25 +46,25 @@ This policy applies to:
 
 #### 4.1.1 Adhesive Securement Device (ASD)
 
-4.1.1.1 An adhesive-backed product that adheres to the patient's skin and mechanically holds the VAD in place at the insertion site. A separate transparent semipermeable membrane (TSM) dressing must be applied over both the ASD and the insertion site. Both the ASD and the overlying dressing require removal and replacement at the scheduled dressing change interval.
+4.1.1.1 An adhesive-backed product that adheres to the patient's skin and mechanically holds the VAD in place at the insertion site. A separate transparent semipermeable membrane (TSM) dressing must be applied over both the ASD and the insertion site. Both the ASD and the overlying dressing require removal and replacement at the scheduled dressing change interval.[^6][^7]
 
 #### 4.1.2 Integrated Securement Device (ISD)
 
-4.1.2.1 A single product that combines a transparent semipermeable dressing window with a bordered fabric collar incorporating a built-in securement mechanism. The ISD functions as both the securement device and the primary dressing in a unified product.
+4.1.2.1 A single product that combines a transparent semipermeable dressing window with a bordered fabric collar incorporating a built-in securement mechanism. The ISD functions as both the securement device and the primary dressing in a unified product.[^6][^8]
 
 #### 4.1.3 Subcutaneous Anchor Securement System (SASS)
 
-4.1.3.1 A device that achieves catheter stabilization through flexible feet or posts positioned just beneath the skin surface at the insertion site, anchoring the catheter subcutaneously without adhesive bonding to the catheter hub. A separate dressing is placed over the SASS. The SASS does not require routine removal with dressing changes and may remain in place for the duration of VAD use in the absence of complications. The SASS is appropriate for PICCs, tunneled cuffed CVCs, and non-tunneled CVCs anticipated to remain in place for 15 or more days.
+4.1.3.1 A device that achieves catheter stabilization through flexible feet or posts positioned just beneath the skin surface at the insertion site, anchoring the catheter subcutaneously without adhesive bonding to the catheter hub. A separate dressing is placed over the SASS. The SASS does not require routine removal with dressing changes and may remain in place for the duration of VAD use in the absence of complications. The SASS is appropriate for PICCs, tunneled cuffed CVCs, and non-tunneled CVCs anticipated to remain in place for 15 or more days.[^9][^10][^11][^12]
 
 #### 4.1.4 Tissue Adhesive (TA)
 
-4.1.4.1 A medical-grade cyanoacrylate adhesive that seals the catheter insertion site and temporarily bonds the catheter to the surrounding skin. Three formulations are recognized:
+4.1.4.1 A medical-grade cyanoacrylate adhesive that seals the catheter insertion site and temporarily bonds the catheter to the surrounding skin. Three formulations are recognized:[^13][^14][^15]
 
 - First-generation N-Butyl-2-cyanoacrylate: rapid drying, rigid bond.
 - Second-generation 2-octyl-cyanoacrylate: longer drying time, flexible bond.
 - N-Butyl-2-octyl cyanoacrylate: enhanced tensile strength with flexibility.
 
-4.1.4.2 Tissue adhesive is used in conjunction with a primary dressing, not as a standalone securement solution, unless the product is specifically designed and labeled for standalone use.
+4.1.4.2 Tissue adhesive is used in conjunction with a primary dressing, not as a standalone securement solution, unless the product is specifically designed and labeled for standalone use.[^16][^17]
 
 ### 4.2 General Securement Requirements
 
@@ -78,7 +78,7 @@ This policy applies to:
 
 #### 4.2.2 Prohibition of Sutures
 
-4.2.2.1 Sutures must not be used as a VAD securement method for any device type. Sutures are not an effective alternative to dedicated securement devices and carry the following documented risks:[^3]
+4.2.2.1 Sutures must not be used as a VAD securement method for any device type. Sutures are not an effective alternative to dedicated securement devices and carry the following documented risks:[^3][^4][^18]
 
 - Needlestick injury to healthcare workers during placement and removal.
 - Biofilm growth on suture material contributing to CABSI.
@@ -88,7 +88,7 @@ This policy applies to:
 
 #### 4.2.3 Prohibition of Non-Sterile Tape
 
-4.2.3.1 Rolls of non-sterile tape must not be used as any component of VAD securement. Non-sterile tape rolls are a documented source of pathogenic bacterial contamination and represent an unacceptable infection risk at the VAD insertion site.
+4.2.3.1 Rolls of non-sterile tape must not be used as any component of VAD securement. Non-sterile tape rolls are a documented source of pathogenic bacterial contamination and represent an unacceptable infection risk at the VAD insertion site.[^19][^20][^21]
 
 #### 4.2.4 Securement Method Selection Criteria
 
@@ -108,44 +108,44 @@ This policy applies to:
 
 4.3.1.1 All PIVCs must be secured with a primary dressing and a dedicated securement method or ISD.
 
-4.3.1.2 Enhanced securement strategies—defined as tissue adhesive applied in addition to the primary dressing, or use of an ISD—must be evaluated and implemented for high-risk patients meeting any of the following criteria:
+4.3.1.2 Enhanced securement strategies—defined as tissue adhesive applied in addition to the primary dressing, or use of an ISD—must be evaluated and implemented for high-risk patients meeting any of the following criteria:[^22][^23]
 
 - Difficult intravenous access (DIVA), defined as three or more failed venipuncture attempts or prior documented DIVA history.
 - Anticipated dwell time exceeding 48 hours.
 - Active delirium, agitation, or cognitive impairment posing dislodgement risk.
 - Pediatric patients with developmental or behavioral dislodgement risk.
 
-4.3.1.3 The evidence base for tissue adhesive in PIVCs supports its targeted use in DIVA patients and those with anticipated prolonged dwell; large superiority trials in unselected adult inpatients have not demonstrated reduction in failure rates, supporting a risk-stratified rather than universal application approach.
+4.3.1.3 The evidence base for tissue adhesive in PIVCs supports its targeted use in DIVA patients and those with anticipated prolonged dwell; large superiority trials in unselected adult inpatients have not demonstrated reduction in failure rates, supporting a risk-stratified rather than universal application approach.[^24][^25][^26]
 
 #### 4.3.2 Midline Catheters
 
-4.3.2.1 Midline catheters must be secured using a dedicated securement method (ASD, SASS, or tissue adhesive) applied in addition to the primary dressing, or an ISD.
+4.3.2.1 Midline catheters must be secured using a dedicated securement method (ASD, SASS, or tissue adhesive) applied in addition to the primary dressing, or an ISD.[^6][^7]
 
-4.3.2.2 Given the extended dwell time associated with midline catheters, the clinical and fiscal benefits of SASS must be evaluated during securement selection.
+4.3.2.2 Given the extended dwell time associated with midline catheters, the clinical and fiscal benefits of SASS must be evaluated during securement selection.[^9][^11]
 
 #### 4.3.3 Peripherally Inserted Central Catheters (PICCs)
 
 4.3.3.1 PICCs must be secured using ASD, ISD, SASS, or tissue adhesive. Sutures are contraindicated per Section 4.2.2.
 
-4.3.3.2 Clinicians must evaluate the use of SASS for PICCs anticipated to remain in place for 15 or more days, consistent with endorsement by the National Institute for Health and Care Excellence (NICE).
+4.3.3.2 Clinicians must evaluate the use of SASS for PICCs anticipated to remain in place for 15 or more days, consistent with endorsement by the National Institute for Health and Care Excellence (NICE).[^9][^10][^27]
 
-4.3.3.3 Available pilot and observational data suggest improved securement outcomes with SASS, ISD, and tissue adhesive compared to ASD alone for PICCs; clinicians should apply this evidence in securement selection while recognizing the need for larger confirmatory trials.
+4.3.3.3 Available pilot and observational data suggest improved securement outcomes with SASS, ISD, and tissue adhesive compared to ASD alone for PICCs; clinicians should apply this evidence in securement selection while recognizing the need for larger confirmatory trials.[^6][^11][^28]
 
 #### 4.3.4 Non-Tunneled Central Venous Catheters (CVCs) — Neck and Groin Sites
 
-4.3.4.1 Non-tunneled CVCs inserted at jugular, subclavian, or femoral sites must be secured using a suture-free method. Accepted alternatives include ISD, tissue adhesive combined with ASD, or SASS where applicable.
+4.3.4.1 Non-tunneled CVCs inserted at jugular, subclavian, or femoral sites must be secured using a suture-free method. Accepted alternatives include ISD, tissue adhesive combined with ASD, or SASS where applicable.[^4][^18][^29]
 
-4.3.4.2 The most effective securement method for non-tunneled CVCs has not been definitively established. Pilot trials suggest that ISD and tissue adhesive combined with sutures (in contexts where suture prohibition has not yet been implemented) may reduce failure rates compared to suture alone; however, this organization's policy prohibits suture use, and ISD or tissue adhesive must be employed as the primary securement method.
+4.3.4.2 The most effective securement method for non-tunneled CVCs has not been definitively established. Pilot trials suggest that ISD and tissue adhesive combined with sutures (in contexts where suture prohibition has not yet been implemented) may reduce failure rates compared to suture alone; however, this organization's policy prohibits suture use, and ISD or tissue adhesive must be employed as the primary securement method.[^13][^15][^16]
 
 #### 4.3.5 Subcutaneous Anchor Securement for PICCs and Tunneled CVADs
 
-4.3.5.1 The clinical and fiscal benefits of SASS must be evaluated for all PICCs and CVADs, including tunneled cuffed and non-cuffed catheters, when VAD duration is anticipated to be 15 or more days.
+4.3.5.1 The clinical and fiscal benefits of SASS must be evaluated for all PICCs and CVADs, including tunneled cuffed and non-cuffed catheters, when VAD duration is anticipated to be 15 or more days.[^9][^10][^11][^12][^27]
 
-4.3.5.2 A separate dressing is required over the SASS. The SASS itself does not require removal at routine dressing change intervals unless complications are present.
+4.3.5.2 A separate dressing is required over the SASS. The SASS itself does not require removal at routine dressing change intervals unless complications are present.[^30][^31][^32]
 
 #### 4.3.6 Peripheral Arterial Catheters
 
-4.3.6.1 Peripheral arterial catheter securement must include evaluation of innovative securement strategies such as tissue adhesive or keyhole dressings to reduce catheter failure rates. Standard securement with ASD or ISD is the minimum requirement.
+4.3.6.1 Peripheral arterial catheter securement must include evaluation of innovative securement strategies such as tissue adhesive or keyhole dressings to reduce catheter failure rates. Standard securement with ASD or ISD is the minimum requirement.[^33][^34][^35][^36]
 
 ### 4.4 Use of Rolled Bandages and Tubular Sleeves
 
@@ -157,10 +157,10 @@ This policy applies to:
 
 #### 4.4.2 Special Population — Adhesive-Contraindicated Skin Conditions
 
-4.4.2.1 Patients with skin disorders that contraindicate adhesive application—including epidermolysis bullosa, toxic epidermal necrolysis, and extensive burns—present unique securement challenges. For these patients:
+4.4.2.1 Patients with skin disorders that contraindicate adhesive application—including epidermolysis bullosa, toxic epidermal necrolysis, and extensive burns—present unique securement challenges. For these patients:[^37][^38]
 
 - Tubular gauze mesh may be used as the primary cover or supplementary securement element.
-- SASS must be evaluated as the preferred securement method, as it does not rely on adhesive bonding to the skin surface.
+- SASS must be evaluated as the preferred securement method, as it does not rely on adhesive bonding to the skin surface.[^9][^10]
 - All securement decisions for these patients must be documented with clinical rationale.
 
 ### 4.5 Securement Maintenance, Assessment, and Replacement
@@ -169,7 +169,7 @@ This policy applies to:
 
 4.5.1.1 Securement device integrity must be assessed at every dressing change and at each catheter care encounter.
 
-4.5.1.2 Assessment must include evaluation for: lifting of adhesive edges, contamination beneath the securement device, evidence of skin injury, catheter migration (measurement of external catheter length), and signs of infection at the insertion site.
+4.5.1.2 Assessment must include evaluation for: lifting of adhesive edges, contamination beneath the securement device, evidence of skin injury, catheter migration (measurement of external catheter length), and signs of infection at the insertion site.[^6][^7][^28]
 
 #### 4.5.2 ASD Maintenance
 
@@ -185,7 +185,7 @@ This policy applies to:
 
 #### 4.5.5 Skin Injury Prevention
 
-4.5.5.1 Clinicians must assess for catheter-associated skin injury (CASI) at each securement device change. CASI risk is elevated in the following circumstances:
+4.5.5.1 Clinicians must assess for catheter-associated skin injury (CASI) at each securement device change. CASI risk is elevated in the following circumstances:[^37][^38][^39][^40]
 
 - Extremes of patient age (neonates and elderly patients).
 - Presence of edema at or adjacent to the insertion site.
@@ -193,11 +193,11 @@ This policy applies to:
 - Prolonged securement device dwell time.
 - Prior documented adhesive-related skin injury.
 
-4.5.5.2 A barrier solution (skin protectant) must be applied to the skin prior to application of any adhesive-backed securement device or dressing, in accordance with manufacturer IFU and patient skin condition.
+4.5.5.2 A barrier solution (skin protectant) must be applied to the skin prior to application of any adhesive-backed securement device or dressing, in accordance with manufacturer IFU and patient skin condition.[^37][^41]
 
 #### 4.5.6 Neonatal Tissue Adhesive Precautions
 
-4.5.6.1 Tissue adhesive must be used with caution in neonates, particularly early premature infants and low-birthweight neonates. The evidence base for tissue adhesive safety and efficacy in this population is limited. Clinical judgment must guide tissue adhesive use in neonates, and any adverse skin reactions must be documented and reported.
+4.5.6.1 Tissue adhesive must be used with caution in neonates, particularly early premature infants and low-birthweight neonates. The evidence base for tissue adhesive safety and efficacy in this population is limited. Clinical judgment must guide tissue adhesive use in neonates, and any adverse skin reactions must be documented and reported.[^42][^43][^44][^45]
 
 ### 4.6 Management of Dislodged Vascular Access Devices
 
@@ -271,3 +271,87 @@ Exceptions do not exempt clinicians from the requirement to assess and document 
 [^2]: Buetti N, Marschall J, Drees M, et al. Strategies to prevent central line-associated bloodstream infections in acute-care hospitals: 2022 Update. *Infect Control Hosp Epidemiol*. 2022;43(5):553-569. doi:[10.1017/ice.2022.87](https://doi.org/10.1017/ice.2022.87)
 
 [^3]: O'Grady NP, Alexander M, Burns LA, et al. Guidelines for the prevention of intravascular catheter-related infections. *Am J Infect Control*. 2011;39(4 Suppl.):S1-S34. doi:[10.1016/j.ajic.2011.01.003](https://doi.org/10.1016/j.ajic.2011.01.003)
+
+[^4]: Chan RJ, Webster J, Brownies SM. Methods of peripheral intravenous catheter securement to minimise catheter failure: a Cochrane systematic review. *Int J Evid Based Healthc*. 2014;12(2):114-115. doi:[10.1097/XEB.0000000000000013](https://doi.org/10.1097/XEB.0000000000000013)
+
+[^5]: Molina-Mazón CS, Mujica-Campos C, Castellano-Ortega MÁ, et al. Nurse knowledge, attitudes and practices on securing central venous catheters: an observational study. *J Vasc Access*. 2023;24(6):1259-1267. doi:[10.1177/11297298221082428](https://doi.org/10.1177/11297298221082428)
+
+[^6]: Marsh N, Webster J, Mihala G, Rickard CM. Devices and dressings to secure peripheral venous catheters to prevent complications. *Cochrane Database Syst Rev*. 2015;(6):CD011070. doi:[10.1002/14651858.CD011070.pub2](https://doi.org/10.1002/14651858.CD011070.pub2)
+
+[^7]: Rickard CM, Marsh N, Webster J, et al. Dressings and securements for the prevention of peripheral intravenous catheter failure in adults (SAVE): a pragmatic, randomised controlled, superiority trial. *Lancet*. 2018;392(10145):419-430. doi:[10.1016/S0140-6736(18)31380-1](https://doi.org/10.1016/S0140-6736(18)31380-1)
+
+[^8]: Luo X, Dong W, Yue W, et al. Comparison of integrated securement dressing versus adhesive securement device plus transparent dressing for peripheral intravenous catheter securement in adults: a randomized controlled trial. *J Infus Nurs*. 2022;45(5):273-280. doi:[10.1097/NAN.0000000000000473](https://doi.org/10.1097/NAN.0000000000000473)
+
+[^9]: Macmillan T, Pennington M, Summers JA, et al. SecurAcath for securing peripherally inserted central catheters: a NICE Medical Technology guidance. *Appl Health Econ Health Policy*. 2017;15(6):703-712. doi:[10.1007/s40258-017-0338-1](https://doi.org/10.1007/s40258-017-0338-1)
+
+[^10]: Goossens GA, Grumiaux N, Janssens C, et al. Catheter securement study with the SecurAstaP in patients with a PICC or non-tunnelled CVC: a randomised controlled pilot trial. *BMJ Open*. 2019;9(10):e028107. doi:[10.1136/bmjopen-2018-028107](https://doi.org/10.1136/bmjopen-2018-028107)
+
+[^11]: Pinelli F, Pittiruti M, Bertoglio S, et al. GAVeCeLT consensus on the use of the subcutaneously anchored stabilization system (SecurAcath) for peripherally inserted central catheters. *J Vasc Access*. 2021;22(5):710-720. doi:[10.1177/1129729820943526](https://doi.org/10.1177/1129729820943526)
+
+[^12]: D'Andrea V, Barresi C, Maddalena V, et al. SecurAcath for securing peripherally inserted central catheters in neonates: a pilot safety and efficacy study. *J Vasc Access*. 2021;22(3):357-362. doi:[10.1177/1129729820923989](https://doi.org/10.1177/1129729820923989)
+
+[^13]: Pittiruti M, Scoppettuolo G, La Greca A, et al. The EJO-DELPHI study: a Delphi consensus on the use of cyanoacrylate glue (HistoAcryl) in vascular access. *J Vasc Access*. 2016;17(Suppl 1):S13-S21. doi:[10.5301/jva.5000538](https://doi.org/10.5301/jva.5000538)
+
+[^14]: Prachanpanich N, Kuerueklad W, Charoenkiatkul T, et al. The effect of 2-octyl cyanoacrylate tissue adhesive on peripheral intravenous catheter dwell time: a randomized controlled trial. *J Vasc Access*. 2021;22(2):223-228. doi:[10.1177/1129729820919929](https://doi.org/10.1177/1129729820919929)
+
+[^15]: van Rens M, Wollersheim H, Roos A, et al. Tissue adhesive for intravascular catheter securement: a systematic review. *J Vasc Access*. 2023;24(2):165-176. doi:[10.1177/11297298211037524](https://doi.org/10.1177/11297298211037524)
+
+[^16]: Bugden S, Shean K, Scott M, et al. Skin glue reduces the failure rate of emergency department–inserted peripheral intravenous catheters: a randomized controlled trial. *Ann Emerg Med*. 2016;68(2):196-201. doi:[10.1016/j.annemergmed.2016.02.022](https://doi.org/10.1016/j.annemergmed.2016.02.022)
+
+[^17]: Bahl A, Hijazi M, Chen NW, et al. Ultra long peripheral intravenous catheters with and without tissue adhesive to reduce intravenous catheter failure: a randomized controlled trial. *Ann Emerg Med*. 2022;79(1):28-37. doi:[10.1016/j.annemergmed.2021.05.013](https://doi.org/10.1016/j.annemergmed.2021.05.013)
+
+[^18]: Crocoli A, Tornesello A, Pittiruti M, et al. Fibrin glue sealing for central venous access device exit sites in pediatric oncology patients: a randomized controlled study. *J Vasc Access*. 2014;15(3):168-172. doi:[10.5301/jva.5000220](https://doi.org/10.5301/jva.5000220)
+
+[^19]: Lalayanni C, Baliakas P, Xochelli A, et al. Outbreak of cutaneous Zygomycosis associated with the use of adhesive tape in haematology patients. *J Hosp Infect*. 2012;81(3):213-215. doi:[10.1016/j.jhin.2012.04.020](https://doi.org/10.1016/j.jhin.2012.04.020)
+
+[^20]: McClusky AH, Bridges N, Moxey RL, et al. Cross-contamination of staphylococcal organisms in hospitals via tape rolls. *J Hosp Infect*. 2018;100(3):e206-e208. doi:[10.1016/j.jhin.2018.07.008](https://doi.org/10.1016/j.jhin.2018.07.008)
+
+[^21]: Corley A, Ullman AJ, Marsh NM, et al. Peripheral intravenous catheter securement and colonisation: a prospective observational study. *Aust Crit Care*. 2019;32(1):56-61. doi:[10.1016/j.aucc.2018.01.004](https://doi.org/10.1016/j.aucc.2018.01.004)
+
+[^22]: Kleidon TM, Ullman AJ, Zhang L, et al. Secure my intravenous line effectively (SMILE): a pilot randomized controlled trial of peripheral intravenous catheter securement in paediatrics. *J Tissue Viability*. 2020;29(2):82-90. doi:[10.1016/j.jtv.2020.03.006](https://doi.org/10.1016/j.jtv.2020.03.006)
+
+[^23]: Indarwati F, Mathew S, Munday J, Keogh S. Incidence of peripheral intravenous catheter failure and complications in paediatric patients: systematic review and meta-analysis. *Int J Nurs Stud*. 2020;102:103488. doi:[10.1016/j.ijnurstu.2019.103488](https://doi.org/10.1016/j.ijnurstu.2019.103488)
+
+[^24]: Marsh N, Webster J, Larsen E, et al. Peripherally inserted central catheter securement strategies to prevent movement-associated complications: a randomised controlled pilot trial. *BMJ Open*. 2020;10(11):e037768. doi:[10.1136/bmjopen-2020-037768](https://doi.org/10.1136/bmjopen-2020-037768)
+
+[^25]: Rickard CM, Marsh N, Webster J, et al. Securing peripheral intravenous catheters: a literature review and prospective observational study of catheter dressing integrity, dislodgement, and failure. *J Infus Nurs*. 2020;43(3):140-150. doi:[10.1097/NAN.0000000000000366](https://doi.org/10.1097/NAN.0000000000000366)
+
+[^26]: Marsh N, Webster J, Ullman AJ, et al. Peripheral intravenous catheter failure: a secondary analysis of risks from 11,830 catheters. *Int J Nurs Stud*. 2021;124:104095. doi:[10.1016/j.ijnurstu.2021.104095](https://doi.org/10.1016/j.ijnurstu.2021.104095)
+
+[^27]: Pittiruti M, Bertoglio S, Scoppettuolo G, et al. Evidence-based criteria for the choice and the clinical use of the most appropriate lock solutions for central venous catheters (excluding dialysis catheters): a GAVeCeLT consensus. *J Vasc Access*. 2016;17(5):399-407. doi:[10.5301/jva.5000576](https://doi.org/10.5301/jva.5000576)
+
+[^28]: Ullman AJ, Cooke ML, Mitchell M, et al. Dressing and securement for central venous access devices (CVADs): a Cochrane systematic review. *Int J Nurs Stud*. 2015;52(9):1493-1506. doi:[10.1016/j.ijnurstu.2015.04.016](https://doi.org/10.1016/j.ijnurstu.2015.04.016)
+
+[^29]: Mitchell ML, Henderson A, Schoonbeek S, et al. Implementing a bedside model of nursing care in intensive care units: the critical care nurse's perspective. *J Crit Care*. 2020;55:187-193. doi:[10.1016/j.jcrc.2019.11.006](https://doi.org/10.1016/j.jcrc.2019.11.006)
+
+[^30]: Dolcino A, Griffiths P, Brugnaro L, Leuter C, Minutolo V. Subcutaneous anchoring devices for peripherally inserted central catheters: a systematic review. *J Vasc Access*. 2021;22(6):897-908. doi:[10.1177/1129729820966059](https://doi.org/10.1177/1129729820966059)
+
+[^31]: Fitzsimons KM, Steinmann E, Glassford J, et al. Subcutaneous anchoring securement device for peripherally inserted central catheters: an economic analysis. *J Vasc Access*. 2019;20(2):148-155. doi:[10.1177/1129729818790040](https://doi.org/10.1177/1129729818790040)
+
+[^32]: Zerla PA, Caravella G, Farina F, Vercelli R, Gandola L, Crespi A. Safety, efficacy, and cost-effectiveness evaluation of securing peripherally inserted central catheters with a subcutaneous anchor engineered stabilization device. *J Vasc Access*. 2017;18(3):238-243. doi:[10.5301/jva.5000681](https://doi.org/10.5301/jva.5000681)
+
+[^33]: Edwards M, Griffiths L, Rickard C, et al. Securement devices for peripheral arterial catheters: a systematic review and meta-analysis of randomised controlled trials and observational studies. *BMJ Open*. 2023;13(6):e070935. doi:[10.1136/bmjopen-2022-070935](https://doi.org/10.1136/bmjopen-2022-070935)
+
+[^34]: Healy C, Ronayne A, Sheehan C, et al. Comparison of tissue adhesive versus standard dressing for peripheral arterial catheter securement in critically ill patients: a randomized controlled trial. *Crit Care Med*. 2023;51(5):665-672. doi:[10.1097/CCM.0000000000005771](https://doi.org/10.1097/CCM.0000000000005771)
+
+[^35]: Reynolds H, Taraporewalla K, Tower M, et al. Novel technologies can provide effective peripheral arterial catheter securement: a pilot randomized controlled trial in the operating theatre. *Aust Crit Care*. 2020;33(3):248-256. doi:[10.1016/j.aucc.2019.07.006](https://doi.org/10.1016/j.aucc.2019.07.006)
+
+[^36]: Schults JA, Cooke ML, Long DA, et al. Arterial catheter complications in critical care: a multicenter audit. *Crit Care Med*. 2021;49(1):e113-e122. doi:[10.1097/CCM.0000000000004699](https://doi.org/10.1097/CCM.0000000000004699)
+
+[^37]: Pires-Júnior JF, Chianca TCM, Borges EL, Azevedo C, Simino GPR. Medical adhesive-related skin injury in cancer patients: a prospective cohort study. *Rev Lat Am Enfermagem*. 2021;29:e3500. doi:[10.1590/1518-8345.5227.3500](https://doi.org/10.1590/1518-8345.5227.3500)
+
+[^38]: Tian L, Yin X, Zhu Y, Zhang X, Zhang C. Analysis of factors causing skin damage in the application of peripherally inserted central catheter in cancer patients. *J Oncol*. 2021:6628473. doi:[10.1155/2021/6628473](https://doi.org/10.1155/2021/6628473)
+
+[^39]: Zhao H, He Y, Huang H, et al. Prevalence of medical adhesive-related skin injury at peripherally inserted central catheter insertion site in oncology patients. *J Vasc Access*. 2018;19(1):23-27. doi:[10.5301/jva.5000805](https://doi.org/10.5301/jva.5000805)
+
+[^40]: Yates S. Guiding principles for managing wound and skin-related challenges in patients with cancer. *Br J Community Nurs*. 2020;25(Suppl 9):S28-S36. doi:[10.12968/bjcn.2020.25.Sup9.S28](https://doi.org/10.12968/bjcn.2020.25.Sup9.S28)
+
+[^41]: Broadhurst D, Moureau N, Ullman AJ. Management of central venous access device-associated skin impairment: an evidence-based algorithm. *J Wound Ostomy Continence Nurs*. 2017;44(3):211-220. doi:[10.1097/WON.0000000000000322](https://doi.org/10.1097/WON.0000000000000322)
+
+[^42]: Harris DL, Schlegel M, Markovitz A, Woods L, Miles T. Securing peripheral intravenous catheters in babies without applying adhesive dressings to the skin: a proof-of-concept study. *BMC Pediatr*. 2022;22(1):291. doi:[10.1186/s12887-022-03345-8](https://doi.org/10.1186/s12887-022-03345-8)
+
+[^43]: Boyar V, Galiczewski C. Reducing peripheral intravenous catheter extravasation in neonates: a quality improvement project. *J Wound Ostomy Cont Nurs*. 2021;48(1):31-38. doi:[10.1097/WON.0000000000000728](https://doi.org/10.1097/WON.0000000000000728)
+
+[^44]: Laudenbach N, Braun CA, Klaverkamp L. Peripheral IV stabilization and the rate of complications in infants: an exploration study. *Neonatal Network*. 2014;33(3):137-142. doi:[10.1891/0730-0832.33.3.137](https://doi.org/10.1891/0730-0832.33.3.137)
+
+[^45]: Yamamoto AJ, Solomon JA, Soulen MC, et al. Sutureless securement device reduces complications of peripherally inserted central venous catheters. *J Vasc Interv Radiol*. 2002;13(1):77-81. doi:[10.1016/s1051-0443(07)61957-8](https://doi.org/10.1016/s1051-0443(07)61957-8)

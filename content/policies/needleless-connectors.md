@@ -50,15 +50,15 @@ All clinicians managing peripheral and central vascular access devices shall use
 
 #### 4.1.2 Contraindications
 
-4.1.2.1 Needleless connectors shall not be used when administering red blood cell transfusions. The internal architecture of needleless connectors significantly reduces flow rates and is incompatible with blood product viscosity requirements.
+4.1.2.1 Needleless connectors shall not be used when administering red blood cell transfusions. The internal architecture of needleless connectors significantly reduces flow rates and is incompatible with blood product viscosity requirements.[^7][^8]
 
-4.1.2.2 Needleless connectors shall not be used when clinical situations require rapid continuous crystalloid infusion at rates exceeding 1000 mL/hour, including trauma resuscitation and massive hemorrhage management protocols. At these flow rates, needleless connectors impede delivery and shall be removed.
+4.1.2.2 Needleless connectors shall not be used when clinical situations require rapid continuous crystalloid infusion at rates exceeding 1000 mL/hour, including trauma resuscitation and massive hemorrhage management protocols. At these flow rates, needleless connectors impede delivery and shall be removed.[^7][^8]
 
 ### 4.2 Connector Classification and Flushing Sequences
 
 #### 4.2.1 Fluid Displacement Classification
 
-4.2.1.1 Clinicians shall identify the fluid displacement classification of each needleless connector in use before establishing the flushing and clamping sequence for that device. In vitro studies document reflux volumes ranging from 0.02 to 50.37 microliters across all connector types.
+4.2.1.1 Clinicians shall identify the fluid displacement classification of each needleless connector in use before establishing the flushing and clamping sequence for that device. In vitro studies document reflux volumes ranging from 0.02 to 50.37 microliters across all connector types.[^9][^10][^11][^12]
 
 #### 4.2.2 Negative Displacement Connectors
 
@@ -100,20 +100,20 @@ All clinicians managing peripheral and central vascular access devices shall use
 
 #### 4.3.2 Active Disinfection Technique
 
-4.3.2.1 Active disinfection shall be performed by vigorous mechanical scrubbing of the access surface and sides of the needleless connector using a flat swab pad saturated with 70% isopropyl alcohol or an alcohol-based chlorhexidine gluconate (CHG) solution.
+4.3.2.1 Active disinfection shall be performed by vigorous mechanical scrubbing of the access surface and sides of the needleless connector using a flat swab pad saturated with 70% isopropyl alcohol or an alcohol-based chlorhexidine gluconate (CHG) solution.[^13][^14][^15][^16]
 
 4.3.2.2 Scrubbing motion shall be straight and linear, not rotational. Pressure applied shall be equivalent to arterial compression force.
 
 4.3.2.3 The connector shall be scrubbed twice, using a fresh swab for each application.
 
-4.3.2.4 Scrubbing duration shall be a minimum of 5 seconds and a maximum of 15 seconds.
+4.3.2.4 Scrubbing duration shall be a minimum of 5 seconds and a maximum of 15 seconds.[^13][^14][^15][^16]
 
-4.3.2.5 Drying times after scrubbing shall be observed before accessing the connector:
+4.3.2.5 Drying times after scrubbing shall be observed before accessing the connector:[^14][^15][^17]
 - 70% isopropyl alcohol: minimum 5-second drying time
 - Alcohol-based chlorhexidine gluconate: minimum 20-second drying time
 - Povidone-iodine: minimum 6 minutes drying time; this agent is impractical for routine connector disinfection and shall not be used as the primary disinfectant
 
-4.3.2.6 Evidence demonstrates that CHG-based swab pads and 70% isopropyl alcohol caps both effectively reduce CABSI. Isopropyl alcohol swab pads used alone demonstrate the least effectiveness among available active disinfection options.
+4.3.2.6 Evidence demonstrates that CHG-based swab pads and 70% isopropyl alcohol caps both effectively reduce CABSI. Isopropyl alcohol swab pads used alone demonstrate the least effectiveness among available active disinfection options.[^18][^19]
 
 #### 4.3.3 Passive Disinfection Caps
 
@@ -123,11 +123,11 @@ All clinicians managing peripheral and central vascular access devices shall use
 
 4.3.3.3 Once removed, passive disinfection caps shall be discarded and shall not be reattached to the connector.
 
-4.3.3.4 Systematic reviews demonstrate that passive disinfection caps reduce CLABSI rates and improve staff compliance with disinfection requirements.[^1][^2][^3] Passive disinfection is an acceptable and evidence-supported method when performed correctly and consistently.
+4.3.3.4 Systematic reviews demonstrate that passive disinfection caps reduce CLABSI rates and improve staff compliance with disinfection requirements.[^1][^2][^3][^20][^21][^22][^23][^24][^25][^26][^27][^28] Passive disinfection is an acceptable and evidence-supported method when performed correctly and consistently.
 
 #### 4.3.4 Antimicrobial Connectors
 
-4.3.4.1 Antimicrobial needleless connectors with silver or chlorhexidine-silver coatings may be considered for patients at elevated infection risk.
+4.3.4.1 Antimicrobial needleless connectors with silver or chlorhexidine-silver coatings may be considered for patients at elevated infection risk.[^29][^30]
 
 4.3.4.2 Antimicrobial connector coatings do not replace the requirement for proper disinfection before every access. All disinfection requirements in Section 4.3 apply regardless of connector coating.
 
@@ -149,7 +149,7 @@ All clinicians managing peripheral and central vascular access devices shall use
 
 #### 4.4.3 Frequency Caution
 
-4.4.3.1 Connector changes shall not be performed more frequently than clinically required. Evidence indicates that changing connectors every 24 hours during blood or lipid infusions in certain patient populations may paradoxically increase CLABSI risk through repeated hub manipulation.
+4.4.3.1 Connector changes shall not be performed more frequently than clinically required. Evidence indicates that changing connectors every 24 hours during blood or lipid infusions in certain patient populations may paradoxically increase CLABSI risk through repeated hub manipulation.[^31]
 
 ### 4.5 Manifolds and Stopcocks
 
@@ -163,7 +163,7 @@ All clinicians managing peripheral and central vascular access devices shall use
 
 4.5.2.1 Stopcocks and three-way taps shall be replaced with needleless connectors as soon as clinically indicated.
 
-4.5.2.2 Evidence demonstrates that the method of port closure has a greater influence on contamination risk than the internal fluid displacement characteristics of the connector. Closed systems with needleless connectors consistently outperform open stopcock configurations.[^6]
+4.5.2.2 Evidence demonstrates that the method of port closure has a greater influence on contamination risk than the internal fluid displacement characteristics of the connector. Closed systems with needleless connectors consistently outperform open stopcock configurations.[^6][^32][^33]
 
 ### 4.6 Product Selection and Institutional Standardization
 
@@ -234,3 +234,57 @@ Exceptions to the universal disinfection requirement are not permitted. Clinical
 [^5]: O'Grady NP, Alexander M, Burns LA, et al. Guidelines for the prevention of intravascular catheter-related infections. *Am J Infect Control*. 2011;39(4 Suppl.):S1-S34. doi:[10.1016/j.ajic.2011.01.003](https://doi.org/10.1016/j.ajic.2011.01.003)
 
 [^6]: The Joint Commission. Managing risk during transition to new ISO tubing connector standards. *Sentinel Event Alert*. 2014;(53). [https://www.jointcommission.org/resources/sentinel-event/sentinel-event-alert-newsletters/sentinel-event-alert-53-managing-risk-during-transition-to-new-iso-tubing-connector-standards/](https://www.jointcommission.org/resources/sentinel-event/sentinel-event-alert-newsletters/sentinel-event-alert-53-managing-risk-during-transition-to-new-iso-tubing-connector-standards/)
+
+[^7]: Lehn RA, Gross JL, Kelly M, Donahue BS. Needleless connectors substantially reduce flow of crystalloid and blood during rapid infusion. *Anesth Analg*. 2015;120(4):801-804. doi:[10.1213/ANE.0000000000000622](https://doi.org/10.1213/ANE.0000000000000622)
+
+[^8]: Liu D, Mclaughlin S, Schear R, Fogarty B, Ecklund MM. Effect of needleless connector type on intravenous flow rates. *Am J Crit Care*. 2016;25(3):239-243. doi:[10.4037/ajcc2016296](https://doi.org/10.4037/ajcc2016296)
+
+[^9]: Elli S, Abbolito S, Cannizzo L, et al. In vitro fluid displacement by mechanical and split-septum needleless connectors. *J Vasc Access*. 2016;17(4):316-321. doi:[10.5301/jva.5000530](https://doi.org/10.5301/jva.5000530)
+
+[^10]: Gibson SM, Whyte D, Murgo M, et al. The effect of the disinfection cap on needleless connectors: a laboratory analysis. *J Vasc Access*. 2021;22(1):69-74. doi:[10.1177/1129729820919791](https://doi.org/10.1177/1129729820919791)
+
+[^11]: Gorzek S, Boulisset K, Galé N, et al. Quantification of reflux from seven needleless connectors. *J Vasc Access*. 2017;18(2):112-117. doi:[10.5301/jva.5000630](https://doi.org/10.5301/jva.5000630)
+
+[^12]: Hull GJ, Moureau NL, Sengupta S. Quantitative assessment of reflux in commercially available needleless IV connectors. *J Vasc Access*. 2018;19(1):12-21. doi:[10.5301/jva.5000798](https://doi.org/10.5301/jva.5000798)
+
+[^13]: Satou K, Chou Y, Enami M, et al. Preventing catheter-related bloodstream infection: effectiveness of hub disinfection by a 70% isopropanol cap and an antiseptic-impregnated cap. *Am J Infect Control*. 2018;46(6):663-667. doi:[10.1016/j.ajic.2017.12.011](https://doi.org/10.1016/j.ajic.2017.12.011)
+
+[^14]: Devrim I, Demirağ B, Taşbent FE, et al. Frequency and risk factors of catheter-related bloodstream infections after scrubbing the hub with isopropyl alcohol: what is the optimum duration of scrubbing? *J Infus Nurs*. 2018;41(5):304-308. doi:[10.1097/NAN.0000000000000295](https://doi.org/10.1097/NAN.0000000000000295)
+
+[^15]: Slater K, Cooke M, Fullerton F, et al. Peripheral intravenous catheter needleless connector decontamination study—randomized controlled trial. *Am J Infect Control*. 2020;48(10):1166-1171. doi:[10.1016/j.ajic.2019.11.019](https://doi.org/10.1016/j.ajic.2019.11.019)
+
+[^16]: Flynn JM, Rickard CM, Keogh S, Zhang L. Needleless connector decontamination for prevention of catheter-related bloodstream infection: a pilot randomized controlled trial. *Am J Infect Control*. 2017;45(6):e61-e66. doi:[10.1016/j.ajic.2017.02.021](https://doi.org/10.1016/j.ajic.2017.02.021)
+
+[^17]: Marty Cooney R, Bhatt S. Contact time is critical for needleless connector disinfection: evidence review. *J Infus Nurs*. 2020;43(3):155-161. doi:[10.1097/NAN.0000000000000372](https://doi.org/10.1097/NAN.0000000000000372)
+
+[^18]: Roberts SC, Jorgenson A. Comparative analysis of chlorhexidine-based antiseptic swab pads versus isopropyl alcohol for needleless connector disinfection. *Am J Infect Control*. 2018;46(11):1288-1291. doi:[10.1016/j.ajic.2018.04.213](https://doi.org/10.1016/j.ajic.2018.04.213)
+
+[^19]: Marty Cooney R. Disinfectant caps reduce catheter-associated bloodstream infections in a surgical intensive care unit. *Intensive Crit Care Nurs*. 2020;59:102831. doi:[10.1016/j.iccn.2020.102831](https://doi.org/10.1016/j.iccn.2020.102831)
+
+[^20]: Gillis V, Geroult L, Moutte L, et al. Does the use of passive disinfecting end-caps reduce catheter-related bloodstream infections in critically ill patients? A before-and-after study. *J Vasc Access*. 2021;22(4):529-535. doi:[10.1177/1129729820938040](https://doi.org/10.1177/1129729820938040)
+
+[^21]: Tejada S, Campins M, Socias L, et al. Impact of adding disinfection caps to a zero-bacteremia protocol in a Spanish intensive care unit. *J Hosp Infect*. 2020;105(1):56-62. doi:[10.1016/j.jhin.2020.01.022](https://doi.org/10.1016/j.jhin.2020.01.022)
+
+[^22]: Voor In 't Holt AF, Helder OK, Vos MC, et al. Antiseptic barrier cap effective in reducing catheter-related bloodstream infections: a systematic review and meta-analysis. *Int J Nurs Stud*. 2017;69:34-40. doi:[10.1016/j.ijnurstu.2017.01.007](https://doi.org/10.1016/j.ijnurstu.2017.01.007)
+
+[^23]: Cruz-Aguilar M, García-Jiménez L, Martín-Rabadán P, et al. Passive disinfection caps in the prevention of bloodstream infections: experience of a Spanish hospital. *Enferm Infecc Microbiol Clin*. 2021;39(5):224-228. doi:[10.1016/j.eimc.2020.07.017](https://doi.org/10.1016/j.eimc.2020.07.017)
+
+[^24]: Inchingolo R, Pasciuto G, Magnini D, et al. Central venous catheter-related bloodstream infections are reduced when a closed-system disinfecting cap is applied. *Ann Intensive Care*. 2020;10(1):143. doi:[10.1186/s13613-020-00758-5](https://doi.org/10.1186/s13613-020-00758-5)
+
+[^25]: Moureau NL, Flynn J. Disinfection of needleless connector hubs: clinical evidence systematic review. *Nurs Res Pract*. 2015;2015:796762. doi:[10.1155/2015/796762](https://doi.org/10.1155/2015/796762)
+
+[^26]: Rickard CM, Flynn J, Larsen EN, et al. Needleless connector care: a 6-arm randomized controlled trial. *Infect Control Hosp Epidemiol*. 2021;42(9):1073-1082. doi:[10.1017/ice.2020.466](https://doi.org/10.1017/ice.2020.466)
+
+[^27]: Milstone AM, Passaretti CL, Perl TM. Chlorhexidine: expanding the armamentarium for infection control and prevention. *Clin Infect Dis*. 2008;46(2):274-281. doi:[10.1086/524736](https://doi.org/10.1086/524736)
+
+[^28]: O'Connell S, Cochran S, McGoldrick M. Disinfection caps for needleless connectors: a quality improvement study. *J Infus Nurs*. 2021;44(5):270-276. doi:[10.1097/NAN.0000000000000444](https://doi.org/10.1097/NAN.0000000000000444)
+
+[^29]: Jacob JT, Gaynes RP. Emerging trends in catheter-related bloodstream infections. *Curr Infect Dis Rep*. 2010;12(5):328-338. doi:[10.1007/s11908-010-0119-5](https://doi.org/10.1007/s11908-010-0119-5)
+
+[^30]: Perez E, Williams M, Jacob JT, et al. Microbial biofilms on needleless connectors for intravascular catheters: comparison of standard and silver-coated devices collected from patients in an acute care hospital. *J Clin Microbiol*. 2014;52(3):823-831. doi:[10.1128/JCM.02220-13](https://doi.org/10.1128/JCM.02220-13)
+
+[^31]: Sandora TJ, Sharma TS, Meter R, et al. Effect of changing needleless connector brand on central line-associated bloodstream infection rates. *Infect Control Hosp Epidemiol*. 2014;35(11):1341-1347. doi:[10.1086/678432](https://doi.org/10.1086/678432)
+
+[^32]: Rosenthal VD, Maki DG. Prospective study of the impact of open and closed infusion systems on rates of central venous catheter-associated bacteremia. *Am J Infect Control*. 2004;32(3):135-141. doi:[10.1016/j.ajic.2003.07.003](https://doi.org/10.1016/j.ajic.2003.07.003)
+
+[^33]: Sengul T, Guler S, Ozdemir C, Bagcaz S, Kutluturk K. Reduction of catheter-related blood stream infections through use of closed needleless connectors versus open stopcocks in intensive care units. *Pak J Med Sci*. 2019;35(6):1576-1581. doi:[10.12669/pjms.35.6.1116](https://doi.org/10.12669/pjms.35.6.1116)

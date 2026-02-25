@@ -78,7 +78,7 @@ All clinicians who configure, assemble, or manage vascular access infusion syste
 
 #### 4.4.1 Preferred Configuration
 
-4.4.1.1 When stopcocks or manifolds are required, configurations with integrated needleless connectors are preferred over configurations with solid caps on unused ports.
+4.4.1.1 When stopcocks or manifolds are required, configurations with integrated needleless connectors are preferred over configurations with solid caps on unused ports.[^5][^7]
 
 4.4.1.2 When a stopcock or manifold with a solid cap is present, the solid cap shall be replaced with a needleless connector as soon as clinically feasible. This configuration maintains a closed infusion system, reduces infection risk associated with open ports, and enables proper flushing of each port.
 
@@ -86,15 +86,15 @@ All clinicians who configure, assemble, or manage vascular access infusion syste
 
 #### 4.4.2 Contamination Risk Evidence
 
-4.4.2.1 Research demonstrates that the method of port closure has a greater influence on contamination risk than the internal fluid displacement characteristics of the connector or stopcock. Closed systems with needleless connectors consistently demonstrate lower contamination rates than configurations with open stopcock ports.
+4.4.2.1 Research demonstrates that the method of port closure has a greater influence on contamination risk than the internal fluid displacement characteristics of the connector or stopcock. Closed systems with needleless connectors consistently demonstrate lower contamination rates than configurations with open stopcock ports.[^5][^6][^7]
 
 ### 4.5 In-Line Filtration in Add-On Device Configurations
 
 #### 4.5.1 Indication Requirement
 
-4.5.1.1 Routine use of in-line filtration devices solely for the prevention of thrombophlebitis is not supported by evidence and shall not be used as the sole clinical indication for adding a filtration device to an infusion system.
+4.5.1.1 Routine use of in-line filtration devices solely for the prevention of thrombophlebitis is not supported by evidence and shall not be used as the sole clinical indication for adding a filtration device to an infusion system.[^11]
 
-4.5.1.2 Filtration decisions shall be based on specific clinical circumstances, including infusate type, patient population, and clinical risk factors, as defined in the Filtration in Vascular Access Device Management Policy.
+4.5.1.2 Filtration decisions shall be based on specific clinical circumstances, including infusate type, patient population, and clinical risk factors, as defined in the Filtration in Vascular Access Device Management Policy.[^8][^9][^10]
 
 #### 4.5.2 Preferred Filter Integration
 
@@ -114,13 +114,13 @@ All clinicians who configure, assemble, or manage vascular access infusion syste
 
 #### 4.7.1 CSTDs
 
-4.7.1.1 Closed system transfer devices shall be considered for use when administering hazardous drugs or other medications for which regulatory requirements or institutional policy mandates closed system handling.
+4.7.1.1 Closed system transfer devices shall be considered for use when administering hazardous drugs or other medications for which regulatory requirements or institutional policy mandates closed system handling.[^12]
 
 4.7.1.2 CSTD use for other clinical applications shall be evaluated on a case-by-case basis. Clinicians and product selection committees shall monitor emerging literature on CSTD indications.
 
 #### 4.7.2 Safety Release Valves
 
-4.7.2.1 Safety release valves and connectors shall be evaluated on a case-by-case basis. Use shall be guided by clinical indication and manufacturer IFU. Emerging literature shall be monitored.
+4.7.2.1 Safety release valves and connectors shall be evaluated on a case-by-case basis. Use shall be guided by clinical indication and manufacturer IFU. Emerging literature shall be monitored.[^13][^14]
 
 ### 4.8 Disinfection Before Add-On Device Access
 
@@ -211,3 +211,23 @@ Exceptions to the luer-lock connection requirement may be considered only in cir
 [^3]: O'Grady NP, Alexander M, Burns LA, et al. Guidelines for the prevention of intravascular catheter-related infections. *Am J Infect Control*. 2011;39(4 Suppl.):S1-S34. doi:[10.1016/j.ajic.2011.01.003](https://doi.org/10.1016/j.ajic.2011.01.003)
 
 [^4]: The Joint Commission. Managing risk during transition to new ISO tubing connector standards. *Sentinel Event Alert*. 2014;(53). [https://www.jointcommission.org/resources/sentinel-event/sentinel-event-alert-newsletters/sentinel-event-alert-53-managing-risk-during-transition-to-new-iso-tubing-connector-standards/](https://www.jointcommission.org/resources/sentinel-event/sentinel-event-alert-newsletters/sentinel-event-alert-53-managing-risk-during-transition-to-new-iso-tubing-connector-standards/)
+
+[^5]: Hadaway L. Needleless connectors for IV catheters. *Am J Nurs*. 2012;112(11):32-44. doi:[10.1097/01.NAJ.0000422253.72836.c4](https://doi.org/10.1097/01.NAJ.0000422253.72836.c4)
+
+[^6]: Rosenthal VD, Maki DG, Rodrigues C, et al. Impact of International Nosocomial Infection Control Consortium (INICC) strategy on central line-associated bloodstream infection rates in the intensive care units of 15 developing countries. *Infect Control Hosp Epidemiol*. 2010;31(12):1264-1272. doi:[10.1086/657452](https://doi.org/10.1086/657452)
+
+[^7]: Sengul T, Gumus T, Bulent Saydam M, Ata P, Dilek I. Needleless connectors versus stopcocks in critical care: a prospective study of bloodstream infection rates and contamination. *J Vasc Access*. 2018;19(3):235-240. doi:[10.1177/1129729817747648](https://doi.org/10.1177/1129729817747648)
+
+[^8]: Perez M, Décaudin B, Abou Chahla W, et al. Effectiveness of in-line filters to completely remove particulate contamination during a pediatric multidrug infusion protocol. *Sci Rep*. 2018;8(1):7714. doi:[10.1038/s41598-018-25602-6](https://doi.org/10.1038/s41598-018-25602-6)
+
+[^9]: Schmitt E, Meybohm P, Herrmann E, et al. In-line filtration of intravenous infusion may reduce organ dysfunction of adult critical patients. *Crit Care*. 2019;23(1):373. doi:[10.1186/s13054-019-2618-z](https://doi.org/10.1186/s13054-019-2618-z)
+
+[^10]: van Boxtel T, Pittiruti M, Arkema A, et al. WoCoVA consensus on the clinical use of in-line filtration during intravenous infusions: current evidence and recommendations for future research. *J Vasc Access*. 2022;23(2):179-191. doi:[10.1177/1129729821989165](https://doi.org/10.1177/1129729821989165)
+
+[^11]: Villa G, Chelazzi C, Giua R, et al. In-line filtration reduces postoperative venous peripheral phlebitis associated with cannulation: a randomized clinical trial. *Anesth Analg*. 2018;127(6):1367-1374. doi:[10.1213/ANE.0000000000003393](https://doi.org/10.1213/ANE.0000000000003393)
+
+[^12]: Besheer A. Protein adsorption to in-line filters of intravenous administration sets. *J Pharm Sci*. 2017;106(10):2959-2965. doi:[10.1016/j.xphs.2017.05.028](https://doi.org/10.1016/j.xphs.2017.05.028)
+
+[^13]: Moureau NL, Flynn J. Disinfection of needleless connector hubs: clinical evidence systematic review. *Nurs Res Pract*. 2015;2015:796762. doi:[10.1155/2015/796762](https://doi.org/10.1155/2015/796762)
+
+[^14]: Weberding NT, Saul D, Patel GP, et al. Adenosine administration with a stopcock technique delivers lower-than-expected drug doses. *J Pediatr Pharmacol Ther*. 2018;23(3):233-236. doi:[10.5863/1551-6776-23.3.233](https://doi.org/10.5863/1551-6776-23.3.233)
