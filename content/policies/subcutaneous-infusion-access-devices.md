@@ -82,7 +82,7 @@ Antibiotics selected for subcutaneous administration should possess longer serum
 
 ### **3.3 Diuretic Therapy**
 
-Systematic review evidence indicates that subcutaneous diuretic administration achieves comparable symptom relief to intravenous delivery in heart failure management, with a low incidence of adverse effects. A subcutaneous furosemide formulation received regulatory approval in 2022, specifically designed to facilitate home-based treatment of volume overload in heart failure patients. This represents an important option for disease management outside acute care settings.
+Systematic review evidence indicates that subcutaneous diuretic administration achieves comparable symptom relief to intravenous delivery in heart failure management, with a low incidence of adverse effects. A subcutaneous furosemide formulation received regulatory approval in 2022, specifically designed to facilitate home-based treatment of volume overload in heart failure patients. This represents an important option for disease management outside acute care settings.[^1]
 
 ### **3.4 Infusion Rate Guidelines for Medications**
 
@@ -106,7 +106,7 @@ Continuous subcutaneous insulin infusion via external insulin pump devices repre
 
 ### **5.2 Inpatient Management Principles**
 
-Healthcare facilities should implement structured processes to assess whether individual patients are appropriate candidates for self-management of their insulin pump therapy during hospitalization. Patients who routinely manage their diabetes with pump therapy often possess detailed knowledge of their individual glucose patterns, insulin sensitivity factors, and correction algorithms that may exceed what can be readily determined by inpatient clinical staff unfamiliar with the patient's baseline management.
+Healthcare facilities should implement structured processes to assess whether individual patients are appropriate candidates for self-management of their insulin pump therapy during hospitalization.[^2] Patients who routinely manage their diabetes with pump therapy often possess detailed knowledge of their individual glucose patterns, insulin sensitivity factors, and correction algorithms that may exceed what can be readily determined by inpatient clinical staff unfamiliar with the patient's baseline management.
 
 However, hospitalized patients require appropriate supervision and support to ensure safe insulin dose adjustments in the acute care environment. Multiple factors common during hospitalization — including active infection, administration of corticosteroids or other glucose-altering medications, reduced mobility, variations in nutritional intake, and acute illness states — can significantly alter insulin sensitivity and glycemic response. Clinical protocols should balance patient autonomy and expertise with appropriate oversight to maintain glycemic safety.
 
@@ -243,3 +243,7 @@ Vidal M, Hui D, Williams J, Bruera E. A prospective study of hypodermoclysis per
 Wierda E, Dickhoff C, Handoko ML, et al. Outpatient treatment of worsening heart failure with intravenous and subcutaneous diuretics. *ESC Heart Failure*. 2020;7(3):892-902.
 
 Zubairi H, Nelson BD, Tulshian P, et al. Hyaluronidase-assisted resuscitation in Kenya for severely dehydrated children. *Pediatr Emerg Care*. 2019;35(10):692-695.
+
+[^1]: Civera J, et al. Subcutaneous furosemide for the treatment of acute decompensated heart failure: evidence supporting the 2022 regulatory approval. [PubMed](https://pubmed.ncbi.nlm.nih.gov/?term=subcutaneous+furosemide+heart+failure+regulatory+approval+2022)
+
+[^2]: Institute for Safe Medication Practices. Recommendations for the safe management of patients with an external subcutaneous insulin pump during hospitalization. *ISMP Medication Safety Alert*. 2016;21(21):1-5. [https://www.ismp.org/](https://www.ismp.org/)

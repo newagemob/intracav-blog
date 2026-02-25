@@ -60,7 +60,7 @@ All clinicians who configure, assemble, or manage vascular access infusion syste
 
 4.2.1.1 All add-on devices incorporated into a vascular access infusion system shall feature luer-lock or integrated (bonded) connection mechanisms.
 
-4.2.1.2 Luer-lock and integrated connections are required to: ensure device compatibility within the infusion system, establish secure connections that withstand patient movement and care activities, reduce the frequency of hub manipulation, and minimize the risks of fluid leaks, accidental disconnections, misconnections to unintended routes, and premature vascular access device loss.
+4.2.1.2 Luer-lock and integrated connections are required to: ensure device compatibility within the infusion system, establish secure connections that withstand patient movement and care activities, reduce the frequency of hub manipulation, and minimize the risks of fluid leaks, accidental disconnections, misconnections to unintended routes, and premature vascular access device loss.[^4]
 
 4.2.1.3 Devices with slip-tip or non-locking connections shall not be incorporated into vascular access infusion systems.
 
@@ -209,3 +209,5 @@ Exceptions to the luer-lock connection requirement may be considered only in cir
 [^2]: Buetti N, Marschall J, Drees M, et al. Strategies to prevent central line-associated bloodstream infections in acute-care hospitals: 2022 Update. *Infect Control Hosp Epidemiol*. 2022;43(5):553-569. doi:[10.1017/ice.2022.87](https://doi.org/10.1017/ice.2022.87)
 
 [^3]: O'Grady NP, Alexander M, Burns LA, et al. Guidelines for the prevention of intravascular catheter-related infections. *Am J Infect Control*. 2011;39(4 Suppl.):S1-S34. doi:[10.1016/j.ajic.2011.01.003](https://doi.org/10.1016/j.ajic.2011.01.003)
+
+[^4]: The Joint Commission. Managing risk during transition to new ISO tubing connector standards. *Sentinel Event Alert*. 2014;(53). [https://www.jointcommission.org/resources/sentinel-event/sentinel-event-alert-newsletters/sentinel-event-alert-53-managing-risk-during-transition-to-new-iso-tubing-connector-standards/](https://www.jointcommission.org/resources/sentinel-event/sentinel-event-alert-newsletters/sentinel-event-alert-53-managing-risk-during-transition-to-new-iso-tubing-connector-standards/)

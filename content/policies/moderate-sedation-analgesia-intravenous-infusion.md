@@ -26,7 +26,7 @@ This guideline establishes evidence-based standards and recommendations for the 
 
 ### **1.1 Regulatory Compliance**
 
-The provision of intravenous moderate sedation and analgesia must conform to all applicable laws, rules, and regulations established by regulatory and accrediting bodies within each jurisdiction. Organizational policies should reflect these requirements and be reviewed periodically to ensure continued compliance.
+The provision of intravenous moderate sedation and analgesia must conform to all applicable laws, rules, and regulations established by regulatory and accrediting bodies within each jurisdiction (The Joint Commission, 2022). Organizational policies should reflect these requirements and be reviewed periodically to ensure continued compliance.
 
 ### **1.2 Individualized Sedation Planning**
 
@@ -305,6 +305,8 @@ Wall BF, Magee K, Campbell SG, Zed PJ. Capnography versus standard monitoring fo
 Ward DS, Williams MR, Berkenbosch JW, et al. Evaluating patient-centered outcomes in clinical trials of procedural sedation, Part 2 safety: sedation consortium on endpoints and procedures for treatment, education, and research recommendations. *Anesth Analg*. 2018;127(5):1146-1154. doi:10.1213/ANE.0000000000003409
 
 Whyte A, Gibson D. Adult obstructive sleep apnoea: pathogenesis, importance, diagnosis and imaging. *J Med Imaging Radiat Oncol*. 2020;64(1):52-66. doi:10.1111/1754-9485.12978
+
+The Joint Commission. National Patient Safety Goals effective January 2022. [https://www.jointcommission.org/standards/national-patient-safety-goals/](https://www.jointcommission.org/standards/national-patient-safety-goals/)
 
 Wollner E, Nourian MM, Booth W, et al. Impact of capnography on patient safety in high- and low-income settings: a scoping review. *Br J Anaesth*. 2020;125(1):e88-e103. doi:10.1016/j.bja.2020.04.057
 

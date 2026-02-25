@@ -112,7 +112,7 @@ This policy applies to:
 
 ### 4.9 Administration Procedures
 
-4.9.1 Protective devices—including needleless connectors and CSTDs—shall be used for administration of all hazardous drugs when the dosage form allows.[^11][^26] CSTD selection shall be based on independent, peer-reviewed evidence of containment performance.
+4.9.1 Protective devices—including needleless connectors and CSTDs—shall be used for administration of all hazardous drugs when the dosage form allows.[^11][^26][^27] CSTD selection shall be based on independent, peer-reviewed evidence of containment performance.
 
 4.9.2 **Priming.** Spiking the administration set and priming shall be performed within the containment primary engineering control (C-PEC) whenever possible to minimize aerosolization risk.[^21] If priming must occur outside the C-PEC, back-priming using a CSTD with proven dry-connection capability shall be employed.
 
@@ -255,3 +255,5 @@ This policy applies to:
 [^25]: Morandini S. Patient safety. Chemotherapy safety in the perioperative environment. *Nursing*. 2018;48(4):11–13. doi:[10.1097/01.NURSE.0000531004.17471.34](https://doi.org/10.1097/01.NURSE.0000531004.17471.34)
 
 [^26]: ISOPP. ISOPP Standards for the safe handling of cytotoxics. *J Oncol Pharm Pract*. 2022;28:S1–S126. doi:[10.1177/10781552211070933](https://doi.org/10.1177/10781552211070933)
+
+[^27]: Goldspiel B, Hoffman JM, Griffith NL, et al. ASHP guidelines on preventing medication errors with chemotherapy and biotherapy. *Am J Health Syst Pharm*. 2015;72(8):e6-e35. doi:[10.2146/sp150001](https://doi.org/10.2146/sp150001)

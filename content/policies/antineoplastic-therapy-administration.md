@@ -254,7 +254,7 @@ Crickman R, Finnell D. Systematic review of control measures to reduce hazardous
 
 Ehmke N. Chemotherapy extravasation: incidence of and factors associated with events in a community cancer center. *Clin J Oncol Nurs*. 2021;25(6):680-686.
 
-Goldspiel B, Hoffman JM, Griffith NL, et al. ASHP guidelines on preventing medication errors with chemotherapy and biotherapy. *Am J Health Syst Pharm*. 2015;72(8):e6-e35.
+Goldspiel B, Hoffman JM, Griffith NL, et al. ASHP guidelines on preventing medication errors with chemotherapy and biotherapy. *Am J Health Syst Pharm*. 2015;72(8):e6-e35. doi:[10.2146/sp150001](https://doi.org/10.2146/sp150001)
 
 Huff C. Hazardous drug residues in the home setting: worker safety concerns. *J Infus Nurs*. 2020;43(1):15-18.
 

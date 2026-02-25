@@ -178,17 +178,17 @@ The following represent typical transfusion durations: red blood cells are admin
 
 ### **8.3 Infusion Pump Use**
 
-Only electronic infusion pumps with a labeled indication for blood transfusion should be used. These devices can deliver blood or blood components without significant risk of RBC hemolysis or platelet damage. Syringe infusion pumps may be used for small-volume transfusions in neonatal and pediatric patients. All use must follow manufacturer directions.
+Only electronic infusion pumps with a labeled indication for blood transfusion should be used. These devices can deliver blood or blood components without significant risk of RBC hemolysis or platelet damage.[^30][^31][^32] Syringe infusion pumps may be used for small-volume transfusions in neonatal and pediatric patients.[^33][^34] All use must follow manufacturer directions.
 
 ### **8.4 Rapid Transfusion**
 
-Manual pressure cuffs may be used to increase RBC flow rate when rapid transfusion is required. External compression devices should be equipped with a pressure gauge, completely encase the blood bag, and apply uniform pressure against all parts of the container. Pressure must not exceed 300 mm Hg. A standard sphygmomanometer must never be used for this purpose. For rapid infusion, a large-gauge catheter may prove more effective than a pressure device.
+Manual pressure cuffs may be used to increase RBC flow rate when rapid transfusion is required.[^35] External compression devices should be equipped with a pressure gauge, completely encase the blood bag, and apply uniform pressure against all parts of the container. Pressure must not exceed 300 mm Hg. A standard sphygmomanometer must never be used for this purpose. For rapid infusion, a large-gauge catheter may prove more effective than a pressure device.
 
 ---
 
 ## **9. Blood and Fluid Warming**
 
-Blood and fluid warmers should be used when indicated by patient history, clinical condition, and prescribed therapy. Indications include prevention or treatment of intraoperative hypothermia, plasma exchange for therapeutic apheresis, patients with clinically significant cold agglutinins, neonate exchange transfusions, replacement of large blood volumes, vaso-occlusive episodes, and treatment of trauma, hypothermia, or cold exposure.
+Blood and fluid warmers should be used when indicated by patient history, clinical condition, and prescribed therapy. Indications include prevention or treatment of intraoperative hypothermia, plasma exchange for therapeutic apheresis, patients with clinically significant cold agglutinins, neonate exchange transfusions, replacement of large blood volumes, vaso-occlusive episodes, and treatment of trauma, hypothermia, or cold exposure.[^31][^36][^37][^38]
 
 ---
 
@@ -319,3 +319,21 @@ Home transfusion requires documentation showing no identified adverse events dur
 28. Boureau AS, de Decker L. Blood transfusion in older patients. *Transfus Clin Biol.* 2019;26(3):160-163. doi:10.1016/j.tracli.2019.06.190
 
 29. Moncharmont P, Barday G, Odent-Malaure H, Benamara H. Adverse transfusion reactions in recipients transfused in out-of-hospital. *Transfus Clin Biol.* 2018;25(2):105-108. doi:10.1016/j.tracli.2018.02.003
+
+[^30]: Centrella-Nigro AM. Using an electronic infusion device for blood component therapy. *J Intraven Nurs*. 1997;20(2):77-81. [PubMed](https://pubmed.ncbi.nlm.nih.gov/?term=Centrella-Nigro+electronic+infusion+device+blood+component+therapy)
+
+[^31]: Poder TG, Thibault L, Dembele B, et al. The effect of blood warming and infusion pump on hemolysis of packed red blood cells in vitro. *Transfusion*. 2016;56(9):2385-2392. doi:[10.1111/trf.13649](https://doi.org/10.1111/trf.13649)
+
+[^32]: Meess A. The effect of infusion pump systems in administering platelets. *J Intraven Nurs*. 1991;14(6):390-395. [PubMed](https://pubmed.ncbi.nlm.nih.gov/?term=Meess+infusion+pump+platelets+1991)
+
+[^33]: De Villiers WL, Loubser N. Red blood cell hemolysis as a consequence of syringing and pump administration. *Transfusion*. 2022. [PubMed](https://pubmed.ncbi.nlm.nih.gov/?term=De+Villiers+red+blood+cell+hemolysis+syringing+pump+2022)
+
+[^34]: Pardo PL, Ferrer FH, Calderón L, et al. Effect of syringe pump infusion on red blood cell quality in pediatric population: in vitro study. *Transfusion*. 2019;59(2):622-627. [PubMed](https://pubmed.ncbi.nlm.nih.gov/?term=Pardo+syringe+pump+red+blood+cell+pediatric+2019)
+
+[^35]: Zaza M, Pavesi M, Scichilone G, et al. Rapid infuser and platelet function after massive transfusion protocol. *Transfusion*. 2020;60(4):820-824. doi:[10.1111/trf.15679](https://doi.org/10.1111/trf.15679)
+
+[^36]: Poder TG, Thibault L, Blais N. Effectiveness and safety of a new generation blood/solution warmer in trauma patients: a prospective study. *Transfusion*. 2015;55(10):2455-2463. doi:[10.1111/trf.13138](https://doi.org/10.1111/trf.13138)
+
+[^37]: Pires MPO, Figueiredo AJ, Rodrigues-Santos P, et al. Effects of blood warming on quality parameters of red blood cell concentrates. *Transfusion*. 2021;61(12):3480-3487. doi:[10.1111/trf.16744](https://doi.org/10.1111/trf.16744)
+
+[^38]: Louw LD, Bode P, Du Plooy IC, et al. Evaluation of a countercurrent heat exchanger for the warming of red blood cell concentrates: a pilot study. *Perfusion*. 2022;37(4):418-424. doi:[10.1177/0267659121998682](https://doi.org/10.1177/0267659121998682)

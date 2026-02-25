@@ -216,7 +216,7 @@ Adequate pain management and patient stability must be confirmed during handoffs
 
 ### **15.1 Equipment Selection**
 
-Clinician participation in the selection and evaluation of PCA infusion pumps and monitoring equipment ensures that device capabilities align with clinical requirements. Evaluation criteria should address programmable safety limits, interface usability, alarm functionality, and integration with institutional systems.
+Clinician participation in the selection and evaluation of PCA infusion pumps and monitoring equipment ensures that device capabilities align with clinical requirements. Evaluation criteria should address programmable safety limits, interface usability, alarm functionality, and integration with institutional systems (Suess et al., 2024).
 
 ### **15.2 Quality Improvement Activities**
 
@@ -315,6 +315,8 @@ Sarwahi, V., Hasan, S., Liao, B., et al. (2021). Zero patient-controlled analges
 Singh, K., Bohl, D. D., An, J., et al. (2017). Multimodal analgesia versus intravenous patient-controlled analgesia for minimally invasive transforaminal lumbar interbody fusion procedures. *Spine, 42*(15), 1145–1150.
 
 Steele, T., Eidem, L., & Bond, J. (2020). Impact of adoption of smart pump system with continuous capnography monitoring on opioid-related adverse event rates: Experience from a tertiary care hospital. *Journal of Patient Safety, 16*(3), e194–e198.
+
+Suess, T. M., Burdick, W. P., Whitman, G. R., et al. (2024). Improving medication safety through smart pump interoperability with the electronic health record in the intensive care unit. *Journal of Patient Safety, 20*(3), 205–208. doi:[10.1097/PTS.0000000000001196](https://doi.org/10.1097/PTS.0000000000001196)
 
 Stites, M., Surprise, J., McNiel, J., Northrop, D., & De Ruyter, M. (2021). Continuous capnography reduces the incidence of opioid-induced respiratory rescue by hospital rapid resuscitation team. *Journal of Patient Safety, 17*(6), e557–e561.
 

@@ -163,7 +163,7 @@ All clinicians managing peripheral and central vascular access devices shall use
 
 4.5.2.1 Stopcocks and three-way taps shall be replaced with needleless connectors as soon as clinically indicated.
 
-4.5.2.2 Evidence demonstrates that the method of port closure has a greater influence on contamination risk than the internal fluid displacement characteristics of the connector. Closed systems with needleless connectors consistently outperform open stopcock configurations.
+4.5.2.2 Evidence demonstrates that the method of port closure has a greater influence on contamination risk than the internal fluid displacement characteristics of the connector. Closed systems with needleless connectors consistently outperform open stopcock configurations.[^6]
 
 ### 4.6 Product Selection and Institutional Standardization
 
@@ -232,3 +232,5 @@ Exceptions to the universal disinfection requirement are not permitted. Clinical
 [^4]: Buzas B, Smith J, Gilbert GE, Moureau N. Home infusion pharmacy quality improvement for central venous access devices using anti-reflux needleless connectors to reduce occlusions, emergency room visits, and alteplase costs. *Am J Health Syst Pharm*. 2022;79(13):1079-1085. doi:[10.1093/ajhp/zxac083](https://doi.org/10.1093/ajhp/zxac083)
 
 [^5]: O'Grady NP, Alexander M, Burns LA, et al. Guidelines for the prevention of intravascular catheter-related infections. *Am J Infect Control*. 2011;39(4 Suppl.):S1-S34. doi:[10.1016/j.ajic.2011.01.003](https://doi.org/10.1016/j.ajic.2011.01.003)
+
+[^6]: The Joint Commission. Managing risk during transition to new ISO tubing connector standards. *Sentinel Event Alert*. 2014;(53). [https://www.jointcommission.org/resources/sentinel-event/sentinel-event-alert-newsletters/sentinel-event-alert-53-managing-risk-during-transition-to-new-iso-tubing-connector-standards/](https://www.jointcommission.org/resources/sentinel-event/sentinel-event-alert-newsletters/sentinel-event-alert-53-managing-risk-during-transition-to-new-iso-tubing-connector-standards/)
