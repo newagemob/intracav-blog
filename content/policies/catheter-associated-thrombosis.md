@@ -98,7 +98,7 @@ For nontunneled central venous catheters in adult intensive care patients, the s
 
 ### **3.3 Peripherally Inserted Central Catheters**
 
-PICCs have been associated with higher DVT rates than other central venous access devices, primarily due to reduced blood velocity in upper extremity vessels. This risk is particularly elevated in critically ill patients (Chopra et al., 2013; Kleidon et al., 2021; Schears et al., 2021).
+PICCs have been associated with higher DVT rates than other central venous access devices, primarily due to reduced blood velocity in upper extremity vessels. This risk is particularly elevated in critically ill patients (Chopra et al., 2013; Kleidon et al., 2021; Schears et al., 2021; Govindan et al., 2018; Campagna et al., 2019).
 
 However, meta-analytic data indicate that when optimal insertion techniques are employed and single-lumen, smaller diameter devices are selected, PICC-related DVT rates become comparable to other central venous access options (Schears et al., 2021).
 
@@ -120,7 +120,7 @@ In children with cancer diagnoses, implanted ports are the preferred vascular ac
 
 ### **3.6 Midline Catheters**
 
-Utilization of midline catheters has expanded substantially, creating an urgent need for high-quality comparative research. Systematic review and meta-analysis including over 40,000 adult patients found that VTE prevalence with midline catheters was significantly higher than with PICCs (Lu et al., 2022). Pediatric data on midline-associated thrombotic risk remain limited.
+Utilization of midline catheters has expanded substantially, creating an urgent need for high-quality comparative research. Systematic review and meta-analysis including over 40,000 adult patients found that VTE prevalence with midline catheters was significantly higher than with PICCs (Lu et al., 2022; Bahl et al., 2019; Chopra et al., 2019; Seo et al., 2020). Pediatric data on midline-associated thrombotic risk remain limited.
 
 ### **3.7 Thromboresistant Catheter Technologies**
 
@@ -128,7 +128,7 @@ Catheter surface modifications and material innovations including hydrogel coati
 
 ### **3.8 Arterial Catheter Considerations**
 
-Thrombotic risk with arterial catheters can be minimized through ultrasound-guided insertion, optimization of catheter entry angle and intraluminal length, secure stabilization, and frequent monitoring of distal circulatory status (Ying et al., 2022; Imbrìaco et al., 2022).
+Thrombotic risk with arterial catheters can be minimized through ultrasound-guided insertion, optimization of catheter entry angle and intraluminal length, secure stabilization, and frequent monitoring of distal circulatory status (Ying et al., 2022; Imbrìaco et al., 2022; Hebal et al., 2018).
 
 ---
 
@@ -186,7 +186,7 @@ In adult patients with PICCs, an increase in mid-arm circumference of 3 centimet
 
 ### **5.3 Pulmonary Embolism**
 
-Pulmonary embolism secondary to catheter-associated thrombosis is uncommon but has been reported in association with both central venous catheters and midline catheters (Chopra et al., 2013; Bahl et al., 2021; Houghton et al., 2021).
+Pulmonary embolism secondary to catheter-associated thrombosis is uncommon but has been reported in association with both central venous catheters and midline catheters (Chopra et al., 2013; Bahl et al., 2021; Houghton et al., 2021; Wasan et al., 2017).
 
 ### **5.4 Post-Thrombotic Syndrome**
 
@@ -272,6 +272,8 @@ Bahl A, Alsbrooks K, Gala S, Hoerauf K. Symptomatic deep vein thrombosis associa
 
 Bahl A, Diloreto E, Jankowski D, Hijazi M, Chen NW. Comparison of 2 midline catheter devices with differing antithrombogenic mechanisms for catheter-related thrombosis: a randomized clinical trial. JAMA Netw Open. 2021;4(10):e2127836. doi:10.1001/jamanetworkopen.2021.27836
 
+Bahl A, Karabon P, Chu D. Comparison of venous thrombosis complications in midlines versus peripherally inserted central catheters: are midlines the safer option? *Clin Appl Thromb Hemost*. 2019;25:1076029619839150. doi:[10.1177/1076029619839150](https://doi.org/10.1177/1076029619839150)
+
 Balsorano P, Virgili G, Villa G, et al. Peripherally inserted central catheter-related thrombosis rate in modern vascular access era—when insertion technique matters: a systematic review and meta-analysis. J Vasc Access. 2020;21(1):45-54. doi:10.1177/1129729819852203
 
 Baskin K, Mermel LA, Saad TF, et al. Evidence-based strategies and recommendations for preservation of central venous access in children. JPEN J Parenter Enteral Nutr. 2019;43(5):591-614. doi:10.1002/jpen.1591
@@ -279,6 +281,8 @@ Baskin K, Mermel LA, Saad TF, et al. Evidence-based strategies and recommendatio
 Bersani I, Piersigilli F, Iacona G, et al. Incidence of umbilical vein catheter-associated thrombosis of the portal system: a systematic review and meta-analysis. World J Hepatol. 2021;13(11):1802-1815. doi:10.4254/wjh.v13.i11.1802
 
 Bunch J. A retrospective assessment of midline catheter failures focusing on catheter composition. J Infus Nurs. 2022;45(5):270-278. doi:10.1097/NAN.0000000000000484
+
+Campagna S, Gonella S, Berchialla P, et al. A retrospective study of the safety of over 100,000 peripherally-inserted central catheters days for parenteral supportive treatments. *Res Nurs Health*. 2019;42(3):198-204. doi:[10.1002/nur.21939](https://doi.org/10.1002/nur.21939)
 
 Capozzi VA, Monfardini L, Sozzi G, et al. Peripherally inserted central venous catheters versus totally implantable venous access device for chemotherapy administration: a meta-analysis on gynecological cancer patients. Acta Biomedica. 2021;92(5):e2021257. doi:10.23750/abm.v92i5.11844
 
@@ -291,6 +295,8 @@ Chopra V, Anand S, Hickner A, et al. Risk of venous thromboembolism associated w
 Chopra V, Kaatz S, Conlon A, et al. The Michigan Risk Score to predict peripherally inserted central catheter-associated thrombosis. J Thromb Haemost. 2017;15(10):1951-1962. doi:10.1111/jth.13794
 
 Chopra V, Kaatz S, Grant P, et al. Risk of venous thromboembolism following peripherally inserted central catheter exchange: an analysis of 23,000 hospitalized patients. Am J Med. 2018;131(6):651-660. doi:10.1016/j.amjmed.2018.01.017
+
+Chopra V, Kaatz S, Swaminathan L, et al. Variation in use and outcomes related to midline catheters: results from a multicentre pilot study. *BMJ Qual Saf*. 2019;28(9):714-720. doi:[10.1136/bmjqs-2018-008554](https://doi.org/10.1136/bmjqs-2018-008554)
 
 Cotogni P, Mussa B, Degiorgis C, De Francesco A, Pittiruti M. Comparative complication rates of 854 central venous access devices for home parenteral nutrition in cancer patients: a prospective study. JPEN J Parenter Enteral Nutr. 2021;45(4):768-776. doi:10.1002/jpen.1939
 
@@ -310,7 +316,13 @@ Gavin NC, Kleidon TM, Larsen E, et al. A comparison of hydrophobic polyurethane 
 
 Gnannt R, Waespe N, Temple M, et al. Increased risk of symptomatic upper-extremity venous thrombosis with multiple peripherally inserted central catheter insertions in pediatric patients. Pediatr Radiol. 2018;48(7):1013-1020. doi:10.1007/s00247-018-4096-x
 
+Govindan S, Snyder A, Flanders SA, Chopra V. Peripherally inserted central catheters in the ICU: a retrospective study of adult medical patients in 52 hospitals. *Crit Care Med*. 2018;46(12):e1136-e1144. doi:[10.1097/CCM.0000000000003423](https://doi.org/10.1097/CCM.0000000000003423)
+
 Hansen RS, Nybo M, Hvas AM. Venous thromboembolism in pediatric cancer patients with central venous catheter—a systematic review and meta-analysis. Semin Thromb Hemost. 2021;47(8):920-930. doi:10.1055/s-0041-1729886
+
+Hebal F, Sparks HT, Rychlik KL, Bone M, Tran S, Barsness KA. Pediatric arterial catheters: complications and associated risk factors. *J Pediatr Surg*. 2018;53(4):794-797. doi:[10.1016/j.jpedsurg.2017.08.057](https://doi.org/10.1016/j.jpedsurg.2017.08.057)
+
+Heffner AC, Androes MP. Overview of central venous access in adults. UpToDate. Updated March 19, 2020. Available at: https://www.uptodate.com/contents/overview-of-central-venous-access-in-adults
 
 Houghton DE, Billett HH, Gaddh M, et al. Risk of pulmonary emboli after removal of an upper extremity central catheter associated with a deep vein thrombosis. Blood Adv. 2021;5(14):2807-2812. doi:10.1182/bloodadvances.2021004698
 
@@ -374,6 +386,8 @@ Schears GJ, Ferko N, Syed I, Arpino JM, Alsbrooks K. Peripherally inserted centr
 
 Sebolt J, Buchinger J, Govindan S, Zhang Q, O'Malley M, Chopra V. Patterns of vascular access device use and thrombosis outcomes in patients with COVID-19: a pilot multi-site study. J Thromb Thrombolysis. 2022;53(2):257-263. doi:10.1007/s11239-021-02559-4
 
+Seo H, Altshuler D, Dubrovskaya Y, et al. The safety of midline catheters for intravenous therapy at a large academic medical center. *Ann Pharmacother*. 2020;54(3):232-238. doi:[10.1177/1060028019878794](https://doi.org/10.1177/1060028019878794)
+
 Sharathkumar AA, Biss T, Kulkarni K, et al. Epidemiology and outcomes of clinically unsuspected venous thromboembolism in children: a systematic review. J Thromb Haemost. 2020;18(5):1100-1112. doi:10.1111/jth.14739
 
 Simonetti G, Bersani A, Tramacere I, Lusignani M, Gaviani P, Silvani A. The role of body mass index in the development of thromboembolic events among cancer patients with PICCs: a systematic review. J Vasc Nurs. 2022;40(1):11-16. doi:10.1016/j.jvn.2021.10.001
@@ -399,6 +413,8 @@ Ullman A. Do antimicrobial and antithrombogenic peripherally inserted central ca
 Wang G, Li Y, Wu C, et al. The clinical features and related factors of PICC-related upper extremity asymptomatic venous thrombosis in cancer patients: a prospective study. Medicine (Baltimore). 2020;99(12):e19409. doi:10.1097/MD.0000000000019409
 
 Wang GD, Wang HZ, Shen YF, et al. The influence of venous characteristics on peripherally inserted central catheter-related symptomatic venous thrombosis in cancer patients. Cancer Manag Res. 2020;12:11909-11920. doi:10.2147/CMAR.S282370
+
+Wasan S, Esponda O, Feland N, Mathew J, Smith W. The incidence of peripherally inserted central catheter symptomatic pulmonary embolism after line removal: a retrospective analysis. *J Vasc Med Surg*. 2017;5(5):345. doi:[10.4172/2329-6925.1000345](https://doi.org/10.4172/2329-6925.1000345)
 
 Winkler MA, Spencer TR, Siddiqi N, et al. Clinical experience with a chlorhexidine-coated PICC: a prospective, multicenter, observational study. J Vasc Access. 2021. doi:10.1177/11297298211049648
 

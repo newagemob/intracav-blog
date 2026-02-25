@@ -26,7 +26,7 @@ Certain anatomical locations carry elevated risk for nerve damage during periphe
 
 ### **Peripheral Arterial Access Sites**
 
-Arterial catheterization carries its own set of neurological risks. The brachial artery lies in close anatomical relationship with the median nerve, making this site particularly hazardous. Radial artery access may result in injury to either the median nerve or the radial nerve (Imbrìaco, 2022; Wang, 2020).
+Arterial catheterization carries its own set of neurological risks. The brachial artery lies in close anatomical relationship with the median nerve, making this site particularly hazardous. Radial artery access may result in injury to either the median nerve or the radial nerve (Imbrìaco, 2022; Wang, 2020; Khalifeh et al., 2018).
 
 ### **Central Vascular Access Devices**
 
@@ -135,6 +135,8 @@ Gozubuyuk, E., Buget, M. I., Akgul, T., Altun, D., & Kuçukay, S. (2017). Brachi
 Imbrìaco, G. G. (2022). Preventing radial arterial catheter failure in critical care—Factoring updated clinical strategies and techniques. *Anaesthesia Critical Care & Pain Medicine, 41*(4), 101096. https://doi.org/10.1016/j.accpm.2022.101096
 
 Janakos, M., Haustein, D., & Panchang, P. (2017). Musculocutaneous neuropathy due to PICC line insertion: A case report. *PM&R, 9*(9), S202. https://doi.org/10.1016/j.pmrj.2017.08.159
+
+Khalifeh A, Khashab T, Huffner M, Rezvani ZN, Kwan J, Toursavadkohi S. Radial neuropathy following arterial line removal: a rare complication from a routine ICU procedure. *SAGE Open Med Case Rep*. 2018;6. doi:[10.1177/2050313X18760740](https://doi.org/10.1177/2050313X18760740)
 
 Kim, K. H., Byun, E. J., & Oh, E. H. (2014). Ultrasonographic findings of superficial radial nerve and cephalic vein. *Annals of Rehabilitation Medicine, 38*(1), 52-56. https://doi.org/10.5535/arm.2014.38.1.52
 

@@ -78,7 +78,7 @@ Separation at any of these sites may result in infiltration of infusates, bleedi
 
 ### **2.3 Assessment Following Difficult Removal**
 
-When VAD removal proves difficult or in the presence of catheter dysfunction, comprehensive patient assessment must be performed to evaluate for catheter damage and potential catheter, air, or thrombotic embolism. This assessment should be documented and appropriate interventions initiated as indicated (Kassar et al., 2017).
+When VAD removal proves difficult or in the presence of catheter dysfunction, comprehensive patient assessment must be performed to evaluate for catheter damage and potential catheter, air, or thrombotic embolism. This assessment should be documented and appropriate interventions initiated as indicated (Kassar et al., 2017; Christ & Trappe, 2018; Shen et al., 2020; Van Mechelen & Mahieu, 2021; Xu et al., 2018).
 
 ### **2.4 Recognition of Pinch-Off Syndrome**
 
@@ -106,7 +106,7 @@ Three primary management strategies exist for damaged catheters, each with disti
 
 **Catheter Repair.** Repair procedures may extend catheter longevity, preserve limited vascular access sites, and potentially reduce infection risk compared to catheter exchanges. This option is particularly valuable in patients with challenging vascular anatomy or limited access options (Salonen et al., 2019; Chan et al., 2019).
 
-**Catheter Exchange.** Exchange over a guidewire is associated with reduced risk of technical insertion complications such as pneumothorax, hemothorax, and arterial puncture compared to de novo insertion. However, catheter exchange may carry higher thrombosis rates. Exchange should not be performed when infection is suspected in patients meeting criteria for catheter removal, specifically those with sepsis, hemodynamic instability, or persistent bacteremia beyond 72 hours of appropriate antimicrobial therapy. Of particular note, PICC exchanges have been associated with a two-fold increased risk of thrombosis compared to non-exchanged catheters (Gnannt et al., 2017; Park et al., 2018; Chopra et al., 2018; Calderwood, 2023).
+**Catheter Exchange.** Exchange over a guidewire is associated with reduced risk of technical insertion complications such as pneumothorax, hemothorax, and arterial puncture compared to de novo insertion. However, catheter exchange may carry higher thrombosis rates. Exchange should not be performed when infection is suspected in patients meeting criteria for catheter removal, specifically those with sepsis, hemodynamic instability, or persistent bacteremia beyond 72 hours of appropriate antimicrobial therapy. Of particular note, PICC exchanges have been associated with a two-fold increased risk of thrombosis compared to non-exchanged catheters (Gnannt et al., 2017; Park et al., 2018; Chopra et al., 2018; Calderwood, 2023; Bahl et al., 2019).
 
 **Catheter Removal and Replacement.** Complete removal with subsequent new catheter placement at a different site may be indicated based on clinical circumstances (Kridis et al., 2019; Gnannt et al., 2017; Li et al., 2017; Zens et al., 2019; Chan et al., 2019; Chopra et al., 2018; Pabon-Ramos et al., 2019; Rus et al., 2017).
 
@@ -120,11 +120,11 @@ Therapy-related considerations include the remaining duration of required infusi
 
 Catheter-related considerations include the current catheter location (particularly femoral placement), patency status, external catheter length, catheter material composition, extent of potential microbial exposure due to damage, anticipated changes in tip position following repair, proximity of damage to the exit site (repairs are generally contraindicated when damage occurs within 3.0 cm of the exit site or when less than 2.5-5.0 cm of undamaged catheter remains proximal to the bifurcation), persistent leakage following repair attempts, and history of previous repairs or exchanges.
 
-Certain clinical situations generally contraindicate repair or exchange in favor of removal, including sepsis, endocarditis, and suppurative thrombophlebitis (Wouters et al., 2019; Gnannt et al., 2017; Salonen et al., 2019; Zens et al., 2019; Chan et al., 2019; Chopra et al., 2018).
+Certain clinical situations generally contraindicate repair or exchange in favor of removal, including sepsis, endocarditis, and suppurative thrombophlebitis (Wouters et al., 2019; Gnannt et al., 2017; Salonen et al., 2019; Zens et al., 2019; Chan et al., 2019; Chopra et al., 2018; Yu et al., 2018).
 
 ### **3.4 Post-Procedure Requirements**
 
-Following catheter repair (if the CVAD was withdrawn during the damage event or repair procedure) or catheter exchange, tip location must be confirmed radiographically or through other appropriate imaging technology before initiating or resuming prescribed therapies (Canadian Vascular Access Association, 2019).
+Following catheter repair (if the CVAD was withdrawn during the damage event or repair procedure) or catheter exchange, tip location must be confirmed radiographically or through other appropriate imaging technology before initiating or resuming prescribed therapies (Canadian Vascular Access Association, 2019; Heffner & Androes, 2020; Dulong & Frey, 2019).
 
 When repair or exchange proves unsuccessful or inappropriate, collaboration with the healthcare team is required to arrange catheter replacement or removal as clinically indicated.
 
@@ -158,7 +158,7 @@ When catheter or guidewire embolism is confirmed or strongly suspected, immediat
 
 **Fragment Migration Prevention.** Applying pressure over the target vein at the involved limb may reduce the likelihood of fragment migration. When embolization is directly observed, immediate tourniquet application proximal to the site should be considered.
 
-**Definitive Management.** The healthcare team must be notified promptly. Percutaneous interventional or surgical procedures are typically required for fragment retrieval to prevent further complications (Alizade et al., 2019; Canadian Vascular Access Association, 2019; Li et al., 2017; Salonen et al., 2019; Chopra et al., 2018).
+**Definitive Management.** The healthcare team must be notified promptly. Percutaneous interventional or surgical procedures are typically required for fragment retrieval to prevent further complications (Alizade et al., 2019; Canadian Vascular Access Association, 2019; Li et al., 2017; Salonen et al., 2019; Chopra et al., 2018; Wasan et al., 2017).
 
 ---
 
@@ -228,9 +228,13 @@ Chan AP, Baldivia PS, Reyen LE, et al. Central venous catheter repair is highly 
 
 Chopra V, Kaatz S, Grant P, et al. Risk of venous thromboembolism following peripherally inserted central catheter exchange: an analysis of 23,000 hospitalized patients. *Am J Med*. 2018;131(6):651-660. doi:10.1016/j.amjmed.2018.01.017
 
+Dulong C, Frey N. Peripherally inserted central catheter removal: Clinical effectiveness and guidelines. Canadian Agency for Drugs and Technologies in Health (CADTH); 2019. Available at: https://www.cadth.ca/sites/default/files/pdf/htis/2019/RA1016%20PICC%20Removal%20Final.pdf
+
 Gnannt R, Patel P, Temple M, et al. Peripherally inserted central catheters in pediatric patients: to repair or not repair. *Cardiovasc Intervent Radiol*. 2017;40(6):845-851. doi:10.1007/s00270-017-1580-x
 
 Hsu M, Trerotola SO. Air embolism during insertion and replacement of tunneled dialysis catheters: a retrospective investigation of the effect of aerostatic sheaths and over-the-wire exchange. *J Vasc Intervent Radiol*. 2015;26(3):366-371. doi:10.1016/j.jvir.2014.11.035
+
+Heffner AC, Androes MP. Overview of central venous access in adults. UpToDate. Updated March 19, 2020. Available at: https://www.uptodate.com/contents/overview-of-central-venous-access-in-adults
 
 Kassar O, Hammami R, Ben Dhaou M, Kammoun S, Elloumi M. Spontaneous fracture and migration of a totally implanted port device to pulmonary artery in acute leukemia child. *J Pediatr Hematol Oncol*. 2017;39(2):e103-e105. doi:10.1097/mph.0000000000000734
 
@@ -259,6 +263,20 @@ Syltern J, Jørgensen G, Norstein J, Augestad KM. Fracture and embolization of a
 Wouters Y, Vissers RK, Groenewoud H, Kievit W, Wanten GJA. Repair of damaged central venous catheters is safe and doubles catheter survival: a home parenteral nutrition patient cohort study. *Clin Nutr*. 2019;38(4):1692-1699. doi:10.1016/j.clnu.2018.08.005
 
 Zens T, Nichol P, Leys C, Haines K, Brinkman A. Fractured pediatric central venous catheters—repair or replace? *J Pediatr Surg*. 2019;54(1):165-169. doi:10.1016/j.jpedsurg.2018.10.023
+
+Bahl A, Karabon P, Chu D. Comparison of venous thrombosis complications in midlines versus peripherally inserted central catheters: are midlines the safer option? *Clin Appl Thromb Hemost*. 2019;25:1076029619839150. doi:[10.1177/1076029619839150](https://doi.org/10.1177/1076029619839150)
+
+Christ M, Trappe H. Difficult removal of a central venous port catheter. *Dtsch Arztebl Int*. 2018;115(35):570-570. doi:[10.3238/arztebl.2018.0570](https://doi.org/10.3238/arztebl.2018.0570)
+
+Shen J, Ma L, Huang H. Difficult removal: a Swan-Ganz catheter coiled on the central venous catheter. *J Cardiothorac Surg*. 2020;15(1):1-4. doi:[10.1186/s13019-020-01149-4](https://doi.org/10.1186/s13019-020-01149-4)
+
+Van Mechelen K, Mahieu L. A new technique for difficult removal of a peripherally inserted central venous catheter (PICC) in a neonate. *Eur J Pediatr*. 2021;180(3):973-976. doi:[10.1007/s00431-020-03797-z](https://doi.org/10.1007/s00431-020-03797-z)
+
+Wasan S, Esponda O, Feland N, Mathew J, Smith W. The incidence of peripherally inserted central catheter symptomatic pulmonary embolism after line removal: a retrospective analysis. *J Vasc Med Surg*. 2017;5(5):345. doi:[10.4172/2329-6925.1000345](https://doi.org/10.4172/2329-6925.1000345)
+
+Xu L, Qi F, Chen L, Chen D, Liu M. Removal of a Stuck Tunneled Central Venous Catheter with the Assistance of Endoluminal Double Balloon Dilatation. Springer Nature; 2018:360-362.
+
+Yu X, Yue S, Wang M, et al. Risk factors related to peripherally inserted central venous catheter nonselective removal in neonates. *BioMed Res Int*. 2018:3769376. doi:[10.1155/2018/3769376](https://doi.org/10.1155/2018/3769376)
 
 ---
 

@@ -78,7 +78,7 @@ Although air embolism specifically attributed to peripherally inserted central c
 
 ### **4.2 Valsalva Maneuver**
 
-Instruct the patient to perform a Valsalva maneuver (bearing down against a closed glottis) during catheter withdrawal. This action increases intrathoracic pressure, creating a positive pressure gradient that opposes air entry into the venous system.
+Instruct the patient to perform a Valsalva maneuver (bearing down against a closed glottis) during catheter withdrawal. This action increases intrathoracic pressure, creating a positive pressure gradient that opposes air entry into the venous system.<sup>44,45</sup>
 
 The Valsalva maneuver is contraindicated in patients with supraventricular tachycardia, acute myocardial infarction, hemodynamic instability, aortic stenosis, carotid artery stenosis, glaucoma, or retinopathy. The maneuver produces significant increases in intra-abdominal and intrathoracic pressure that reduce cardiac output and alter blood pressure, making it potentially dangerous in these populations.
 
@@ -86,11 +86,11 @@ The Valsalva maneuver is contraindicated in patients with supraventricular tachy
 
 ### **4.3 Site Management After Removal**
 
-Immediately upon catheter withdrawal, apply firm digital pressure using sterile dry gauze until complete hemostasis is achieved. Following hemostasis, apply petroleum-based ointment covered with gauze, then seal with a transparent semipermeable membrane dressing. This air-occlusive dressing should remain in place for a minimum of 24 hours to occlude the skin-to-vein tract and minimize risk of retrograde air embolism through the healing exit site.
+Immediately upon catheter withdrawal, apply firm digital pressure using sterile dry gauze until complete hemostasis is achieved. Following hemostasis, apply petroleum-based ointment covered with gauze, then seal with a transparent semipermeable membrane dressing. This air-occlusive dressing should remain in place for a minimum of 24 hours to occlude the skin-to-vein tract and minimize risk of retrograde air embolism through the healing exit site.<sup>44,45</sup>
 
 ### **4.4 Post-Removal Activity Restriction**
 
-Encourage patients to remain in a flat or reclining position for 30 minutes following catheter removal when feasible. This recommendation acknowledges that the exit site may be at or near heart level in certain positions, and the intact skin-to-vein tract may require time to seal sufficiently to prevent air entry.
+Encourage patients to remain in a flat or reclining position for 30 minutes following catheter removal when feasible. This recommendation acknowledges that the exit site may be at or near heart level in certain positions, and the intact skin-to-vein tract may require time to seal sufficiently to prevent air entry.<sup>44,45</sup>
 
 ---
 
@@ -239,6 +239,10 @@ When air embolism is suspected based on clinical presentation, diagnostic confir
 42. Ahmed J, Balasubramanian H, Ansari V, Kabra N. Neonatal cerebral air embolism. *Indian Pediatr*. 2018;55(12):1089-1090. doi:10.1007/s13312-018-1448-4
 
 43. Claire SS. Venous Air Embolism (Adult). In: *Pediatric and Adult Anesthesiology Simulation Education*. Springer Nature; 2022.
+
+44. Bernard L, Katzman A, Mathew DK, Oller KL. Prevention of central venous catheter removal-associated air embolization. *Am J Med*. 2018;131:e123-e123. doi:[10.1016/j.amjmed.2017.10.023](https://doi.org/10.1016/j.amjmed.2017.10.023)
+
+45. Seong GH, Lee J, Kim M, Choi J, Kim S. Massive air embolism while removing a central venous catheter. *Int J Crit Illn Inj Sci*. 2018;8(3):176. doi:[10.4103/IJCIIS.IJCIIS_14_18](https://doi.org/10.4103/IJCIIS.IJCIIS_14_18)
 
 ---
 

@@ -38,7 +38,7 @@ This surveillance definition identifies a primary bloodstream infection occurrin
 
 ### **3.1 Care Bundle Implementation**
 
-Effective prevention of vascular access device infections requires implementation of comprehensive care bundles combined with an institutional culture that prioritizes safety and quality. These bundles address critical elements during both device insertion and ongoing maintenance phases. Essential components include verification that clinicians performing insertions possess documented competency through appropriate training and assessment programs. Institutions should consider consultation with vascular access specialty teams when basic prevention measures have failed to achieve acceptable infection rates, as these specialized services have demonstrated effectiveness in reducing catheter-associated infections (Rupp & Majorant, 2016; Martillo et al., 2020; Buetti et al., 2022).
+Effective prevention of vascular access device infections requires implementation of comprehensive care bundles combined with an institutional culture that prioritizes safety and quality. These bundles address critical elements during both device insertion and ongoing maintenance phases. Essential components include verification that clinicians performing insertions possess documented competency through appropriate training and assessment programs. Institutions should consider consultation with vascular access specialty teams when basic prevention measures have failed to achieve acceptable infection rates, as these specialized services have demonstrated effectiveness in reducing catheter-associated infections (Rupp & Majorant, 2016; Martillo et al., 2020; Buetti et al., 2022; Lutwick et al., 2019; Patel et al., 2018; Ray-Barruel et al., 2019).
 
 Optimization of catheter lumen utilization helps minimize infection risk by reducing the number of access points requiring manipulation. Interdisciplinary coordination of medication scheduling can facilitate safe care delivery while using the minimum number of lumens necessary. Documentation systems should capture key aspects of insertion and post-insertion care in readily retrievable formats that support infection prevention surveillance and quality improvement efforts.
 
@@ -48,7 +48,7 @@ Multidisciplinary rounds and systematic audits serve as effective strategies for
 
 ### **3.3 Site Selection Considerations**
 
-Anatomical site selection for vascular access device placement significantly influences infection risk. Clinicians should evaluate patient-specific factors, anticipated duration of therapy, and intended uses when determining optimal insertion sites. Site selection decisions should balance infection risk against other considerations including thrombosis risk, patient comfort, and technical feasibility of device placement and maintenance.
+Anatomical site selection for vascular access device placement significantly influences infection risk. Clinicians should evaluate patient-specific factors, anticipated duration of therapy, and intended uses when determining optimal insertion sites. Site selection decisions should balance infection risk against other considerations including thrombosis risk, patient comfort, and technical feasibility of device placement and maintenance (Cawcutt et al., 2019).
 
 ---
 
@@ -58,7 +58,7 @@ Anatomical site selection for vascular access device placement significantly inf
 
 ### **4.1 Pre-Insertion and Maintenance Antisepsis**
 
-Appropriate skin antisepsis at the vascular access site prior to insertion and during routine care represents a cornerstone of infection prevention. Standardized protocols should specify antiseptic agents, application technique, and required drying time before device insertion or dressing application.
+Appropriate skin antisepsis at the vascular access site prior to insertion and during routine care represents a cornerstone of infection prevention. Standardized protocols should specify antiseptic agents, application technique, and required drying time before device insertion or dressing application (Choudhury et al., 2019).
 
 ### **4.2 Chlorhexidine-Containing Dressings**
 
@@ -86,7 +86,7 @@ Antimicrobial-impregnated or coated catheters offer an additional preventive str
 
 ### **5.2 Needleless Connector Management**
 
-Proper disinfection of needleless connectors before each access represents an essential element of intraluminal contamination prevention. Standardized protocols should specify the antiseptic agent, technique, and duration of friction application required to achieve adequate disinfection prior to connector use. Quality improvement initiatives targeting consistent application of aseptic non-touch technique in IV line maintenance have demonstrated significant reductions in healthcare-associated infections (Shettigar et al., 2021). Implementation of passive disinfection caps (port protectors) has demonstrated effectiveness in reducing CLABSI rates when deployed as part of a structured improvement initiative (Beeler et al., 2019).
+Proper disinfection of needleless connectors before each access represents an essential element of intraluminal contamination prevention. Standardized protocols should specify the antiseptic agent, technique, and duration of friction application required to achieve adequate disinfection prior to connector use (Cawcutt et al., 2019; Pathak et al., 2018). Quality improvement initiatives targeting consistent application of aseptic non-touch technique in IV line maintenance have demonstrated significant reductions in healthcare-associated infections (Shettigar et al., 2021). Implementation of passive disinfection caps (port protectors) has demonstrated effectiveness in reducing CLABSI rates when deployed as part of a structured improvement initiative (Beeler et al., 2019).
 
 ### **5.3 Antimicrobial Barrier Caps for Hemodialysis**
 
@@ -94,7 +94,7 @@ For patients receiving outpatient hemodialysis through central venous catheters,
 
 ### **5.4 Prophylactic Antimicrobial Lock Solutions**
 
-Antimicrobial catheter lock solutions warrant consideration for high-risk patients and for individuals with long-term central venous access who have experienced multiple catheter-associated infections despite optimal adherence to aseptic technique. Selection of lock solution formulation should consider the target pathogens, catheter compatibility, and potential for promoting antimicrobial resistance.
+Antimicrobial catheter lock solutions warrant consideration for high-risk patients and for individuals with long-term central venous access who have experienced multiple catheter-associated infections despite optimal adherence to aseptic technique (Chiba et al., 2020). Selection of lock solution formulation should consider the target pathogens, catheter compatibility, and potential for promoting antimicrobial resistance.
 
 ---
 
@@ -104,7 +104,7 @@ Antimicrobial catheter lock solutions warrant consideration for high-risk patien
 
 ### **6.1 Signs and Symptoms of Infection**
 
-Systematic assessment of vascular access device insertion and exit sites for infection indicators forms an essential component of ongoing device surveillance. Clinical manifestations requiring evaluation include erythema, edema, pain, tenderness, purulent drainage, and induration at the exit site. For totally implanted devices and tunneled catheters, assessment extends to evaluation for fluid accumulation in the subcutaneous pocket, tunnel tenderness or induration, drainage, and skin breakdown overlying the device. Systemic manifestations including fever should prompt consideration of device-related infection (Nickel, 2020; Lladó Maura et al., 2023).
+Systematic assessment of vascular access device insertion and exit sites for infection indicators forms an essential component of ongoing device surveillance. Clinical manifestations requiring evaluation include erythema, edema, pain, tenderness, purulent drainage, and induration at the exit site. For totally implanted devices and tunneled catheters, assessment extends to evaluation for fluid accumulation in the subcutaneous pocket, tunnel tenderness or induration, drainage, and skin breakdown overlying the device. Systemic manifestations including fever should prompt consideration of device-related infection (Nickel, 2020; Lladó Maura et al., 2023; Buetti et al., 2020; Marsh et al., 2022).
 
 Clinicians should recognize that not all microorganisms produce local site symptoms and that absence of exit site abnormalities does not exclude the possibility of catheter-related infection. When signs or symptoms suggestive of vascular access device-related infection are identified, immediate notification of the responsible provider and initiation of appropriate diagnostic and therapeutic interventions is warranted.
 
@@ -120,9 +120,9 @@ Patients with vascular access devices should receive education regarding infecti
 
 ### **7.1 Peripheral Intravenous Catheters**
 
-Peripheral intravenous catheters should be removed when patients develop signs of complication or failure including infection-related findings such as erythema extending at least one centimeter from the insertion site, induration, purulent exudate, or fever without another identifiable source. Patient reports of pain or tenderness associated with the catheter warrant prompt removal and evaluation (Chopra et al., 2015; Pearse et al., 2022).
+Peripheral intravenous catheters should be removed when patients develop signs of complication or failure including infection-related findings such as erythema extending at least one centimeter from the insertion site, induration, purulent exudate, or fever without another identifiable source. Patient reports of pain or tenderness associated with the catheter warrant prompt removal and evaluation (Chopra et al., 2015; Pearse et al., 2022; Ray-Barruel et al., 2018; Kleidon et al., 2019; Ruegg et al., 2018).
 
-Catheters inserted under emergent conditions without full adherence to aseptic non-touch technique should be replaced at the earliest clinically appropriate opportunity to minimize infection risk.
+Catheters inserted under emergent conditions without full adherence to aseptic non-touch technique should be replaced at the earliest clinically appropriate opportunity to minimize infection risk (Ruegg et al., 2018; Dulong & Frey, 2019).
 
 ### **7.2 Central Vascular Access Devices**
 
@@ -130,7 +130,7 @@ Management decisions for central venous access devices suspected of infection re
 
 When catheter-related infection is suspected, clinicians should assess the risks and benefits of device removal versus attempted catheter salvage. Relevant considerations include whether the device is a short-term or long-term catheter, the identity of the infecting organism, the severity of clinical illness, the availability of alternative vascular access sites, and the technical feasibility of inserting a replacement device. Infectious disease consultation can provide valuable guidance in complex cases (Corkum et al., 2017; Raad et al., 2016; Secco et al., 2021; Chaftari et al., 2018).
 
-Indications for prompt catheter removal include clinical deterioration, persistent bacteremia despite appropriate antimicrobial therapy, and relapsing bloodstream infection. When central access remains necessary, timing of new catheter insertion at an alternative site should reflect collaborative decision-making that weighs patient-specific risks, benefits, and ongoing vascular access requirements (Chopra et al., 2015; Buetti et al., 2022). Systematic efforts to reduce unnecessary central venous catheter use represent a high-leverage prevention strategy, as eliminating unneeded devices eliminates exposure risk (Xiong et al., 2018).
+Indications for prompt catheter removal include clinical deterioration, persistent bacteremia despite appropriate antimicrobial therapy, and relapsing bloodstream infection. When central access remains necessary, timing of new catheter insertion at an alternative site should reflect collaborative decision-making that weighs patient-specific risks, benefits, and ongoing vascular access requirements (Chopra et al., 2015; Buetti et al., 2022; Guenezan et al., 2018; Burnham et al., 2018; Lee et al., 2019; Takashima et al., 2018; Campagna et al., 2019; Govindan et al., 2018). Systematic efforts to reduce unnecessary central venous catheter use represent a high-leverage prevention strategy, as eliminating unneeded devices eliminates exposure risk (Xiong et al., 2018).
 
 ### **7.3 Guidewire Exchange Considerations**
 
@@ -178,11 +178,11 @@ Though uncommon, contamination of infusate solutions should be considered as a p
 
 ### **9.1 Pediatric Patients**
 
-Prevention and management of vascular access device infections in pediatric populations requires attention to developmental considerations, differences in skin integrity, and age-appropriate care practices. Chlorhexidine-containing products should be used with appropriate caution in neonates and infants, particularly those who are premature or low birthweight, given increased risk of cutaneous toxicity. Quality improvement initiatives targeting pediatric populations have demonstrated that central line-associated bloodstream infection rates can be significantly reduced through standardized bundle implementation (Bierlaire et al., 2021; Khieosanuk et al., 2022; Ardura et al., 2021; Campbell et al., 2019). Hospital-wide reviews of pediatric bloodstream infections identify modifiable system-level risk factors and provide actionable lessons for prevention program design (Campbell et al., 2019). Registry-based approaches and standardized outcome datasets support benchmarking and continuous improvement in pediatric vascular access care (Schults et al., 2019). Understanding the temporal patterns of CLABSI onset in pediatric oncology populations—including periods of highest risk during catheter dwell time—can guide targeted prevention interventions (Han et al., 2021).
+Prevention and management of vascular access device infections in pediatric populations requires attention to developmental considerations, differences in skin integrity, and age-appropriate care practices. Chlorhexidine-containing products should be used with appropriate caution in neonates and infants, particularly those who are premature or low birthweight, given increased risk of cutaneous toxicity. Quality improvement initiatives targeting pediatric populations have demonstrated that central line-associated bloodstream infection rates can be significantly reduced through standardized bundle implementation (Bierlaire et al., 2021; Khieosanuk et al., 2022; Ardura et al., 2021; Campbell et al., 2019). Hospital-wide reviews of pediatric bloodstream infections identify modifiable system-level risk factors and provide actionable lessons for prevention program design (Campbell et al., 2019; Walker et al., 2021; Boussamet et al., 2019). Registry-based approaches and standardized outcome datasets support benchmarking and continuous improvement in pediatric vascular access care (Schults et al., 2019). Understanding the temporal patterns of CLABSI onset in pediatric oncology populations—including periods of highest risk during catheter dwell time—can guide targeted prevention interventions (Han et al., 2021).
 
 ### **9.2 Oncology and Immunocompromised Patients**
 
-Patients with hematologic malignancies, those receiving chemotherapy, and immunocompromised individuals face elevated risks for catheter-associated infections and may experience more severe consequences. Prevention bundle implementation adapted to ambulatory oncology settings has demonstrated effectiveness in these populations. Decisions regarding catheter salvage versus removal in the setting of infection require careful consideration of the patient's underlying condition, treatment requirements, and vascular access limitations (Ardura et al., 2021).
+Patients with hematologic malignancies, those receiving chemotherapy, and immunocompromised individuals face elevated risks for catheter-associated infections and may experience more severe consequences. Prevention bundle implementation adapted to ambulatory oncology settings has demonstrated effectiveness in these populations. Decisions regarding catheter salvage versus removal in the setting of infection require careful consideration of the patient's underlying condition, treatment requirements, and vascular access limitations (Ardura et al., 2021; Schiffer et al., 2013; Awadh et al., 2021; Tribler et al., 2018).
 
 ### **9.3 Hemodialysis Patients**
 
@@ -216,29 +216,47 @@ Apata IW, Hanfelt J, Bailey JL, Niyyar VD. Chlorhexidine-impregnated transparent
 
 Ardura MI, Bibart MJ, Mayer LC, et al. Impact of a best practice prevention bundle on central line-associated bloodstream infection (CLABSI) rates and outcomes in pediatric hematology, oncology, and hematopoietic cell transplantation patients in inpatient and ambulatory settings. J Pediatr Hematol Oncol. 2021;43(1):e64-e72.
 
+Awadh H, Chaftari AM, Khalil M, et al. Management of enterococcal central line-associated bloodstream infections in patients with cancer. *BMC Infect Dis*. 2021;21(1):1-7. doi:[10.1186/s12879-021-06328-9](https://doi.org/10.1186/s12879-021-06328-9)
+
 Beeler C, Kerley D, Davis C, et al. Strategies for the successful implementation of disinfecting port protectors to reduce CLABSI in a large tertiary care teaching hospital. Am J Infect Control. 2019;47(12):1505-1507. doi:[10.1016/j.ajic.2019.05.016](https://doi.org/10.1016/j.ajic.2019.05.016)
 
 Bierlaire S, Danhaive O, Carkeek K, Piersigilli F. How to minimize central line-associated bloodstream infections in a neonatal intensive care unit: a quality improvement intervention based on a retrospective analysis and the adoption of an evidence-based bundle. Eur J Pediatr. 2021;180(2):449-460.
 
+Boussamet L, Launay E, Thomas E, Leguen CG, Lepelletier D. Should central venous catheters be rapidly removed to treat Staphylococcus aureus related-catheter bloodstream infection (CR-BSI) in neonates and children? An 8-year period (2010-2017) retrospective analysis in a French university hospital. *J Hosp Infect*. 2019;103(1):97-100. doi:[10.1016/j.jhin.2019.03.015](https://doi.org/10.1016/j.jhin.2019.03.015)
+
 Brunelli SM, Van Wyck DB, Njord L, Ziebol RJ, Lynch LE, Killion DP. Cluster-randomized trial of devices to prevent catheter-related bloodstream infection. J Am Soc Nephrol. 2018;29(4):1336-1343.
+
+Buetti N, Ruckly S, Lucet JC, et al. Local signs at insertion site and catheter-related bloodstream infections: an observational post hoc analysis using individual data of four RCTs. *Crit Care*. 2020;24(1):694. doi:[10.1186/s13054-020-03425-0](https://doi.org/10.1186/s13054-020-03425-0)
 
 Buetti N, Marschall J, Drees M, et al. Strategies to prevent central line-associated bloodstream infections in acute-care hospitals: 2022 Update. Infect Control Hosp Epidemiol. 2022;43(5):553-569. doi:[10.1017/ice.2022.87](https://doi.org/10.1017/ice.2022.87)
 
+Burnham JP, Rojek RP, Kollef MH. Catheter removal and outcomes of multidrug-resistant central-line-associated bloodstream infection. *Medicine (Baltimore)*. 2018;97(42):e12782. doi:[10.1097/MD.0000000000012782](https://doi.org/10.1097/MD.0000000000012782)
+
 Campbell AJ, Chen YP, Gough L, et al. Lessons learned from a hospital-wide review of blood stream infections for paediatric central line-associated blood stream infection prevention. J Paediatr Child Health. 2019;55(6):690-694. doi:[10.1111/jpc.14276](https://doi.org/10.1111/jpc.14276)
+
+Campagna S, Gonella S, Berchialla P, et al. A retrospective study of the safety of over 100,000 peripherally-inserted central catheters days for parenteral supportive treatments. *Res Nurs Health*. 2019;42(3):198-204. doi:[10.1002/nur.21939](https://doi.org/10.1002/nur.21939)
+
+Cawcutt KA, Hankins RJ, Micheels TA, Rupp ME. Optimizing vascular-access device decision-making in the era of midline catheters. *Infect Control Hosp Epidemiol*. 2019;40(6):674-680. doi:[10.1017/ice.2019.49](https://doi.org/10.1017/ice.2019.49)
 
 Chaftari AM, Hachem R, Raad S, et al. Unnecessary removal of central venous catheters in cancer patients with bloodstream infections. Infect Control Hosp Epidemiol. 2018;39(2):222-225.
 
 Chapman L, Hargett L, Anderson T, Galluzzo J, Zimand P. Chlorhexidine gluconate bathing program to reduce health care-associated infections in both critically ill and non-critically ill patients. Crit Care Nurs. 2021;41(5):e1-e8.
 
+Chiba M, Yonekura T, Kaji T, et al. Ethanol lock therapy in pediatric patients: a multicenter prospective study. *Pediatr Int*. 2020;62(3):379-385. doi:[10.1111/ped.14096](https://doi.org/10.1111/ped.14096)
+
 Choi EY, Park DA, Kim HJ, Park J. Efficacy of chlorhexidine bathing for reducing healthcare associated bloodstream infections: a meta-analysis. Ann Intensive Care. 2015;5(1):31.
 
 Chopra V, Flanders SA, Saint S, et al. The Michigan appropriateness guide for intravenous catheters (MAGIC): results from a multispecialty panel using the RAND/UCLA Appropriateness Method. Ann Intern Med. 2015;163(6):S1-S39.
+
+Choudhury MA, Sidjabat HE, Zowawi HM, et al. Skin colonization at peripheral intravenous catheter insertion sites increases the risk of catheter colonization and infection. *Am J Infect Control*. 2019;47(12):1484-1488. doi:[10.1016/j.ajic.2019.06.002](https://doi.org/10.1016/j.ajic.2019.06.002)
 
 Conwell P, Aniskiewicz M, Ghidini J, DeVaux L, Perazella M, Giullian J. A hospital-based program to reduce central line-associated bloodstream infections among hospitalized patients receiving hemodialysis using a central venous catheter for vascular access. Nephrol Nurs J. 2019;46(6):587-590.
 
 Corkum KS, Jones RE, Reuter CH, Kociolek LK, Morgan E, Lautz TB. Central venous catheter salvage in children with Staphylococcus aureus central line-associated bloodstream infection. Pediatr Surg Int. 2017;33(11):1201-1207.
 
 Düzkaya DS, Sahiner NC, Uysal G, Yakut T, Çitak A. Chlorhexidine-impregnated dressings and prevention of catheter-associated bloodstream infections in a pediatric intensive care unit. Crit Care Nurs. 2016;36(6):e1-e7.
+
+Dulong C, Frey N. Peripherally inserted central catheter removal: Clinical effectiveness and guidelines. Canadian Agency for Drugs and Technologies in Health (CADTH); 2019. Available at: https://www.cadth.ca/sites/default/files/pdf/htis/2019/RA1016%20PICC%20Removal%20Final.pdf
 
 Flodgren G, Conterno LO, Mayhew A, Omar O, Pereira CR, Shepperd S. Interventions to improve professional adherence to guidelines for prevention of device-related infections. Cochrane Database Syst Rev. 2013;2013(3):CD006559. doi:[10.1002/14651858.CD006559.pub2](https://doi.org/10.1002/14651858.CD006559.pub2)
 
@@ -247,6 +265,10 @@ Garcia RA, Spitzer ED, Beaudry J, et al. Multidisciplinary team review of best p
 Gilbert R, Brown M, Faria R, et al. Antimicrobial-impregnated central venous catheters for preventing neonatal bloodstream infection: the prevail RCT. Health Technol Assess. 2020;24(57):a-190.
 
 Gork I, Gross I, Cohen MJ, et al. Access-related infections in two haemodialysis units: results of a nine-year intervention and surveillance program. Antimicrob Resist Infect Control. 2019;8:105.
+
+Govindan S, Snyder A, Flanders SA, Chopra V. Peripherally inserted central catheters in the ICU: a retrospective study of adult medical patients in 52 hospitals. *Crit Care Med*. 2018;46(12):e1136-e1144. doi:[10.1097/CCM.0000000000003423](https://doi.org/10.1097/CCM.0000000000003423)
+
+Guenezan J, Drugeon B, Marjanovic N, Mimoz O. Treatment of central line-associated bloodstream infections. *Crit Care*. 2018;22(1):303. doi:[10.1186/s13054-018-2249-9](https://doi.org/10.1186/s13054-018-2249-9)
 
 Hallam C, Jackson T, Rajgopal A, Russell B. Establishing catheter-related bloodstream infection surveillance to drive improvement. J Infect Prevent. 2018;19(4):160-166. doi:[10.1177/1757177418767759](https://doi.org/10.1177/1757177418767759)
 
@@ -266,11 +288,19 @@ Karnatak R, Rupp ME, Cawcutt K. Innovations in quality improvement of intravascu
 
 Khieosanuk K, Fupinwong S, Tosilakul A, Sricharoen N, Sudjaritruk T. Incidence rate and risk factors of central line-associated bloodstream infections among neonates and children admitted to a tertiary care university hospital. Am J Infect Control. 2022;50(1):105-107.
 
+Kleidon TM, Cattanach P, Mihala G, Ullman AJ. Implementation of a paediatric peripheral intravenous catheter care bundle: a quality improvement initiative. *J Pediatr Child Health*. 2019;55(10):1214-1223. doi:[10.1111/jpc.14384](https://doi.org/10.1111/jpc.14384)
+
 Lai NM, Chaiyakunapruk N, Lai NA, O'Riordan E, Pau WS, Saint S. Catheter impregnation, coating or bonding for reducing central venous catheter-related infections in adults. Cochrane Database Syst Rev. 2016;3(3):CD007878.
+
+Lee YM, Kim DY, Kim YJ, Park KH, Lee MS. Clinical impacts of delayed central venous catheter removal according to the severity of comorbidities in patients with candidaemia. *J Hosp Infect*. 2019;103(4):420-427. doi:[10.1016/j.jhin.2019.08.018](https://doi.org/10.1016/j.jhin.2019.08.018)
 
 Levy I, Katz J, Solter E, et al. Chlorhexidine-impregnated dressing for prevention of colonization of central venous catheters in infants and children: a randomized controlled study. Pediatr Infect Dis J. 2005;24(8):676-679.
 
 Lladó Maura Y, Berga Figuerola ML, Rodriguez Moreno MJ, et al. Care bundle for the prevention of peripheral venous catheter blood stream infections at a secondary care university hospital: implementation and results. Infect Dis Health. 2023;28(3):159-167.
+
+Lutwick L, Al-Maani AS, Mehtar S, et al. Managing and preventing vascular catheter infections: a position paper of the International Society for Infectious Diseases. *Int J Infect Dis*. 2019;84:22-29. doi:[10.1016/j.ijid.2019.04.014](https://doi.org/10.1016/j.ijid.2019.04.014)
+
+Marsh N, Ray-Barruel G, Adzemovic T, et al. Awareness of peripheral intravenous catheters among nurses, physicians, and students. *J Patient Saf*. 2022;18(7):e1041-e1046. doi:[10.1097/PTS.0000000000001020](https://doi.org/10.1097/PTS.0000000000001020)
 
 Martillo M, Zarbiv S, Gupta R, et al. A comprehensive vascular access service can reduce catheter-associated bloodstream infections and promote the appropriate use of vascular access devices. Am J Infect Control. 2020;48(4):460-464. doi:[10.1016/j.ajic.2019.09.021](https://doi.org/10.1016/j.ajic.2019.09.021)
 
@@ -288,17 +318,27 @@ Owings A, Graves J, Johnson S, Gilliam C, Gipson M, Hakim H. Leadership line car
 
 Pate K, Brelewski K, Rutledge SR, Rankin V, Layell J. CLABSI rounding team: a collaborative approach to prevention. J Nurs Care Qual. 2022;37(3):275-281.
 
+Patel PK, Gupta A, Vaughn VM, Mann JD, Ameling JM, Meddings J. Review of strategies to reduce central line-associated bloodstream infection (CLABSI) and catheter-associated urinary tract infection (CAUTI) in adult ICUs. *J Hosp Med*. 2018;13(2):105-116. doi:[10.12788/jhm.2856](https://doi.org/10.12788/jhm.2856)
+
+Pathak R, Gangina S, Jairam F, Hinton K. A vascular access and midlines program can decrease hospital-acquired central line-associated bloodstream infections and cost to a community-based hospital. *Ther Clin Risk Manag*. 2018;14:1453-1456. doi:[10.2147/TCRM.S171748](https://doi.org/10.2147/TCRM.S171748)
+
 Pearse I, Corley A, Rickard CM, Marsh N. Unnecessary removal of vascular access devices due to suspected infection in Australian intensive care units. Aust Crit Care. 2022;35(6):644-650.
 
 Puig-Asensio M, Marra AR, Childs CA, Kukla ME, Perencevich EN, Schweizer ML. Effectiveness of chlorhexidine dressings to prevent catheter-related bloodstream infections. Does one size fit all? A systematic literature review and meta-analysis. Infect Control Hosp Epidemiol. 2020;41(12):1388-1395.
 
 Raad I, Chaftari AM, Zakhour R, et al. Successful salvage of central venous catheters in patients with catheter-related or central line-associated bloodstream infections by using a catheter lock solution consisting of minocycline, EDTA, and 25% ethanol. Antimicrob Agents Chemother. 2016;60(6):3426-3432.
 
+Ray-Barruel G, Cooke M, Mitchell M, Chopra V, Rickard CM. Implementing the I-DECIDED clinical decision-making tool for peripheral intravenous catheter assessment and safe removal: protocol for an interrupted time-series study. *BMJ Open*. 2018;8(6):e021290. doi:[10.1136/bmjopen-2017-021290](https://doi.org/10.1136/bmjopen-2017-021290)
+
+Ray-Barruel G, Xu H, Marsh N, Cooke M, Rickard CM. Effectiveness of insertion and maintenance bundles in preventing peripheral intravenous catheter-related complications and bloodstream infection in hospital patients: a systematic review. *Infect Dis Health*. 2019;24(3):152-168. doi:[10.1016/j.idh.2019.03.001](https://doi.org/10.1016/j.idh.2019.03.001)
+
 Reynolds SS, Sova C, McNalty B, Lambert S, Granger B. Implementation strategies to improve evidence-based bathing practices in a neuro ICU. J Nurs Care Qual. 2019;34(2):133-138. doi:[10.1097/NCQ.0000000000000347](https://doi.org/10.1097/NCQ.0000000000000347)
 
 Reynolds SS, Woltz P, Keating E, et al. Results of the CHlorhexidine Gluconate Bathing implementation intervention to improve evidence-based nursing practices for prevention of central line associated bloodstream infections study (CHanGing BathS): a stepped wedge cluster randomized trial. Implement Sci. 2021;16(1):45. doi:[10.1186/s13012-021-01112-4](https://doi.org/10.1186/s13012-021-01112-4)
 
 Rha B, See I, Dunham L, et al. Vital signs: health disparities in hemodialysis-associated Staphylococcus aureus bloodstream infections—United States, 2017-2020. MMWR Morb Mortal Wkly Rep. 2023;72(6):153-159. doi:[10.15585/mmwr.mm7206e1](https://doi.org/10.15585/mmwr.mm7206e1)
+
+Ruegg L, Faucett M, Choong K. Emergency inserted peripheral intravenous catheters: a quality improvement project. *Br J Nurs*. 2018;27(14):S28-S30. doi:[10.12968/bjon.2018.27.14.S28](https://doi.org/10.12968/bjon.2018.27.14.S28)
 
 Safdar N, O'Horo JC, Ghufran A, et al. Chlorhexidine-impregnated dressing for prevention of catheter-related bloodstream infection: a meta-analysis. Crit Care Med. 2014;42(7):1703-1713.
 
@@ -307,6 +347,8 @@ Samuelson C, Kaur H, Kritsotakis EI, Goode SD, Nield A, Partridge D. A daily top
 Santos KMB, Husain SS, Torres V, Huang C-C, Jacob E. Multi-level intervention program – a quality improvement initiative to decrease central line-associated bloodstream infections in the pediatric acute and hematology/oncology units. J Pediatr Nurs. 2019;48:106-113.
 
 Scheier T, Saleschus D, Dunic M, et al. Implementation of daily chlorhexidine bathing in intensive care units for reduction of central line-associated bloodstream infections. J Hosp Infect. 2021;110:26-32.
+
+Schiffer CA, Mangu PB, Wade JC, et al. Central venous catheter care for the patient with cancer: American Society of Clinical Oncology clinical practice guideline. *J Clin Oncol*. 2013;31(10):1357-1370. doi:[10.1200/JCO.2012.45.5733](https://doi.org/10.1200/JCO.2012.45.5733)
 
 Schults J, Kleidon T, Chopra V, et al. International recommendations for a vascular access minimum dataset: a Delphi consensus-building study. BMJ Qual Saf. 2021;30(9):722-730. doi:[10.1136/bmjqs-2020-011274](https://doi.org/10.1136/bmjqs-2020-011274)
 
@@ -320,9 +362,15 @@ Shettigar S, Somasekhara Aradhya A, Ramappa S, Reddy V, Venkatagiri P. Reducing 
 
 Stewart JD, Runnegar N. Early use of peripherally inserted central catheters is safe in Staphylococcus aureus bacteraemia. Intern Med J. 2018;48(1):44-49.
 
+Takashima M, Schults J, Mihala G, Corley A, Ullman A. Complication and failures of central vascular access device in adult critical care settings. *Crit Care Med*. 2018;46(12):1998-2009. doi:[10.1097/CCM.0000000000003370](https://doi.org/10.1097/CCM.0000000000003370)
+
 Thate J, Rossetti SC, McDermott-Levy R, Moriarty H. Identifying best practices in electronic health record documentation to support interprofessional communication for the prevention of central line-associated bloodstream infections. Am J Infect Control. 2020;48(2):124-131.
 
 Timsit JF, Rupp M, Bouza E, et al. A state of the art review on optimal practices to prevent, recognize, and manage complications associated with intravascular devices in the critically ill. Intensive Care Med. 2018;44(6):742-759.
+
+Tribler S, Brandt CF, Fuglsang KA, et al. Catheter-related bloodstream infections in patients with intestinal failure receiving home parenteral support: risks related to a catheter-salvage strategy. *Am J Clin Nutr*. 2018;107(5):743-753. doi:[10.1093/ajcn/nqy010](https://doi.org/10.1093/ajcn/nqy010)
+
+Walker LW, Nowalk AJ, Visweswaran S. Predicting outcomes in central venous catheter salvage in pediatric central line-associated bloodstream infection. *J Am Med Inform Assoc*. 2021;28(4):862-867. doi:[10.1093/jamia/ocaa328](https://doi.org/10.1093/jamia/ocaa328)
 
 Wei L, Li Y, Li X, Bian L, Wen Z, Li M. Chlorhexidine-impregnated dressing for the prophylaxis of central venous catheter-related complications: a systematic review and meta-analysis. BMC Infect Dis. 2019;19(1):1-12.
 

@@ -75,10 +75,10 @@ This policy applies to:
 ### 4.2 Administration Set Design Requirements
 
 #### 4.2.1 Anti-Free-Flow Mechanism
-4.2.1.1 All administration sets used with electronic infusion devices must incorporate an anti-free-flow mechanism to prevent uncontrolled gravity infusion when the set is removed from the pump.
+4.2.1.1 All administration sets used with electronic infusion devices must incorporate an anti-free-flow mechanism to prevent uncontrolled gravity infusion when the set is removed from the pump.[^6][^8]
 
 #### 4.2.2 Luer-Lock Design
-4.2.2.1 All administration sets must utilize luer-lock connections at all junctions to prevent inadvertent disconnection and to minimize the risk of tubing misconnections.
+4.2.2.1 All administration sets must utilize luer-lock connections at all junctions to prevent inadvertent disconnection and to minimize the risk of tubing misconnections.[^11]
 
 #### 4.2.3 Single-Patient Use
 4.2.3.1 Administration sets are designated for single-patient use only. Administration sets must never be reused between patients regardless of apparent condition, cleaning, or disinfection.
@@ -89,16 +89,16 @@ This policy applies to:
 ### 4.3 General Practice Standards
 
 #### 4.3.1 Standardization
-4.3.1.1 Flow-control devices, administration sets, and drug concentrations must be standardized across the organization wherever clinically feasible to reduce variability and medication error risk.
+4.3.1.1 Flow-control devices, administration sets, and drug concentrations must be standardized across the organization wherever clinically feasible to reduce variability and medication error risk.[^4][^29][^33]
 
 #### 4.3.2 Education Requirements
-4.3.2.1 Education programs for all personnel managing infusion therapy must address the following: factors affecting drug dose delivery; proper use and limitations of flow-control devices; flow rate variability and its clinical implications; residual and dead space volume in administration sets and add-on devices; administration set compliance and its effect on infusion accuracy; and appropriate selection and use of add-on devices.
+4.3.2.1 Education programs for all personnel managing infusion therapy must address the following: factors affecting drug dose delivery; proper use and limitations of flow-control devices; flow rate variability and its clinical implications; residual and dead space volume in administration sets and add-on devices; administration set compliance and its effect on infusion accuracy; and appropriate selection and use of add-on devices.[^4][^5][^7][^9]
 
 #### 4.3.3 Integrated Add-On Devices
-4.3.3.1 Administration sets with integrated add-on devices (e.g., in-line filters) are preferred over assemblies requiring multiple separate connections, as each additional connection point introduces contamination risk.[^1][^2]
+4.3.3.1 Administration sets with integrated add-on devices (e.g., in-line filters) are preferred over assemblies requiring multiple separate connections, as each additional connection point introduces contamination risk.[^1][^2][^13]
 
 #### 4.3.4 Back-Check Valves
-4.3.4.1 Primary continuous administration sets must contain a back-check valve, or the pump set must incorporate integrated mechanisms that prevent retrograde flow of secondary medications into the primary infusate container.
+4.3.4.1 Primary continuous administration sets must contain a back-check valve, or the pump set must incorporate integrated mechanisms that prevent retrograde flow of secondary medications into the primary infusate container.[^34]
 
 ### 4.4 Aseptic Non-Touch Technique
 
@@ -110,9 +110,9 @@ This policy applies to:
 ### 4.5 Material Compatibility: Sorption
 
 #### 4.5.1 Susceptible Medications
-4.5.1.1 Medications with known or suspected susceptibility to sorption include, but are not limited to: nitroglycerin, diazepam, insulin, propofol, therapeutic proteins, granulocyte colony-stimulating factor (G-CSF), certain antibiotics, and amiodarone.
+4.5.1.1 Medications with known or suspected susceptibility to sorption include, but are not limited to: nitroglycerin, diazepam, insulin, propofol, therapeutic proteins, granulocyte colony-stimulating factor (G-CSF), certain antibiotics, and amiodarone.[^14][^15][^16][^17][^18][^19][^20][^21]
 
-4.5.1.2 Administration sets constructed from composite materials recommended by the manufacturer for the specific drug must be used for medications identified as sorption-susceptible.
+4.5.1.2 Administration sets constructed from composite materials recommended by the manufacturer for the specific drug must be used for medications identified as sorption-susceptible.[^15][^18]
 
 4.5.1.3 Clinical response must be monitored when administering sorption-susceptible medications, particularly at the initiation of therapy and with any set or container change.
 
@@ -121,7 +121,7 @@ This policy applies to:
 #### 4.6.1 Risk Evaluation
 4.6.1.1 The risk of leaching and shedding must be evaluated before initiating infusion therapy and monitored throughout the duration of administration.
 
-4.6.1.2 Risk factors for leaching and shedding include: infusate type (lipid-based, solvent-containing), compressive or shear forces applied to tubing, duration of patient contact with set materials, storage temperature of prepared solutions, and agitation during transport.
+4.6.1.2 Risk factors for leaching and shedding include: infusate type (lipid-based, solvent-containing), compressive or shear forces applied to tubing, duration of patient contact with set materials, storage temperature of prepared solutions, and agitation during transport.[^22][^23][^24][^26][^27][^28][^32]
 
 ### 4.7 DEHP Avoidance
 
@@ -129,7 +129,7 @@ This policy applies to:
 4.7.1.1 DEHP-free administration sets must be used for all lipid injectable emulsions (LIE) and total nutrient admixtures (TNA, 3-in-1). This requirement is of particular importance for neonatal, pediatric, and patients receiving long-term home infusion therapy.
 
 #### 4.7.2 Therapeutic Proteins
-4.7.2.1 PVC infusion bags or containers known to contain di(2-ethylhexyl)phthalate (DEHP) must not be used for the dilution or administration of therapeutic proteins.
+4.7.2.1 PVC infusion bags or containers known to contain di(2-ethylhexyl)phthalate (DEHP) must not be used for the dilution or administration of therapeutic proteins.[^25][^20]
 
 ### 4.8 Labeling Requirements
 
@@ -139,12 +139,12 @@ This policy applies to:
 #### 4.8.2 Multi-Site and Multi-Container Configurations
 4.8.2.1 When a patient has multiple vascular access sites (e.g., peripheral, central, epidural, intraosseous, subcutaneous), all administration set tubing must be clearly labeled with the route of administration and the name of the medication or solution.
 
-4.8.2.2 When multiple fluid containers are connected to a single VAD, tubing labels must be affixed near both the solution container connection point and near the patient's access site.
+4.8.2.2 When multiple fluid containers are connected to a single VAD, tubing labels must be affixed near both the solution container connection point and near the patient's access site.[^4][^29]
 
 ### 4.9 System Tracing and Safety Verification
 
 #### 4.9.1 Pre-Connection Tracing
-4.9.1.1 Before connecting or reconnecting any infusion system component, the clinician must trace all catheters, administration sets, and add-on devices from the patient's access site to the solution container to confirm correct routing and configuration.
+4.9.1.1 Before connecting or reconnecting any infusion system component, the clinician must trace all catheters, administration sets, and add-on devices from the patient's access site to the solution container to confirm correct routing and configuration.[^4][^11][^29]
 
 4.9.1.2 System tracing must be performed at each care transition to a new care setting or service and as a formal component of the handoff communication process.
 
@@ -154,7 +154,7 @@ This policy applies to:
 ### 4.10 Replacement Intervals by Infusion Type
 
 #### 4.10.1 Primary and Secondary Continuous Sets — Standard Solutions
-4.10.1.1 Primary and secondary continuous administration sets used for standard intravenous solutions must be replaced at minimum every 7 days unless the manufacturer specifies a shorter interval, or sooner when clinically indicated by suspected contamination, visible dysfunction, or compromise of system integrity.[^3]
+4.10.1.1 Primary and secondary continuous administration sets used for standard intravenous solutions must be replaced at minimum every 7 days unless the manufacturer specifies a shorter interval, or sooner when clinically indicated by suspected contamination, visible dysfunction, or compromise of system integrity.[^3][^30][^31]
 
 4.10.1.2 Administration set changes should be coordinated with VAD changes (e.g., transition from peripheral intravenous catheter to central venous access device) or with the initiation of a new solution container whenever feasible.
 
@@ -163,7 +163,7 @@ This policy applies to:
 4.10.1.4 If any disconnection of a continuous or intermittent set occurs outside of a scheduled change, a new sterile compatible covering must be aseptically attached to the male luer end, and all connections must be re-verified before resuming infusion.
 
 #### 4.10.2 Primary and Secondary Intermittent Sets
-4.10.2.1 All primary and secondary administration sets used for intermittent infusions must be changed every 24 hours. The repeated disconnection and reconnection inherent in intermittent use creates substantially elevated contamination risk compared to continuous-use sets.
+4.10.2.1 All primary and secondary administration sets used for intermittent infusions must be changed every 24 hours. The repeated disconnection and reconnection inherent in intermittent use creates substantially elevated contamination risk compared to continuous-use sets.[^10][^35]
 
 #### 4.10.3 Parenteral Nutrition, Total Nutrient Admixture, and Amino Acid-Dextrose Solutions
 4.10.3.1 Solution containers and administration sets for parenteral nutrition (PN), total nutrient admixture (TNA), and amino acid-dextrose formulations must be replaced every 24 hours. Maximum hang time for any PN or TNA container must not exceed 24 hours.
@@ -181,19 +181,19 @@ This policy applies to:
 4.10.5.2 DEHP-free administration sets are required for all TNA infusions (see Section 4.7).
 
 #### 4.10.6 Propofol
-4.10.6.1 Administration sets and all add-on devices (including stopcocks) used for propofol infusions must be replaced at a minimum every 6 to 12 hours in accordance with the manufacturer's instructions for use (IFU).
+4.10.6.1 Administration sets and all add-on devices (including stopcocks) used for propofol infusions must be replaced at a minimum every 6 to 12 hours in accordance with the manufacturer's instructions for use (IFU).[^14][^36][^12]
 
 #### 4.10.7 Blood and Blood Components
 4.10.7.1 Blood administration sets must be changed in accordance with the manufacturer's IFU. Standard blood filters have a maximum capacity of 4 units; manufacturer IFU must be followed for all filter and set replacements.
 
 4.10.7.2 If the first unit of a blood transfusion requires 4 hours or longer for administration, the administration set and filter must not be reused for subsequent units.
 
-4.10.7.3 When rapid blood resuscitation is required, the clinical team must evaluate whether add-on devices (stopcocks, needleless connectors) are limiting infusion flow rates and remove or reconfigure them accordingly.
+4.10.7.3 When rapid blood resuscitation is required, the clinical team must evaluate whether add-on devices (stopcocks, needleless connectors) are limiting infusion flow rates and remove or reconfigure them accordingly.[^38][^37][^12]
 
 #### 4.10.8 Hemodynamic and Arterial Pressure Monitoring Systems
-4.10.8.1 Disposable pressure transducers, continuous flush devices, flush solutions, and all associated administration set components used for hemodynamic and arterial pressure monitoring must be replaced every 96 hours, immediately upon suspected contamination, or when product or system integrity is compromised.
+4.10.8.1 Disposable pressure transducers, continuous flush devices, flush solutions, and all associated administration set components used for hemodynamic and arterial pressure monitoring must be replaced every 96 hours, immediately upon suspected contamination, or when product or system integrity is compromised.[^39][^8]
 
-4.10.8.2 Evidence supports that 7-day replacement intervals for peripheral arterial line sets are noninferior to 4-day intervals with respect to infection outcomes. Institutions may adopt extended intervals for peripheral arterial monitoring systems in accordance with this evidence and local infection prevention review.
+4.10.8.2 Evidence supports that 7-day replacement intervals for peripheral arterial line sets are noninferior to 4-day intervals with respect to infection outcomes. Institutions may adopt extended intervals for peripheral arterial monitoring systems in accordance with this evidence and local infection prevention review.[^30][^40]
 
 ### 4.11 Quality Improvement
 
@@ -271,3 +271,77 @@ This policy applies to:
 [^2]: Buetti N, Marschall J, Drees M, et al. Strategies to prevent central line-associated bloodstream infections in acute-care hospitals: 2022 Update. *Infect Control Hosp Epidemiol*. 2022;43(5):553-569. doi:[10.1017/ice.2022.87](https://doi.org/10.1017/ice.2022.87)
 
 [^3]: O'Grady NP, Alexander M, Burns LA, et al. Guidelines for the prevention of intravascular catheter-related infections. *Am J Infect Control*. 2011;39(4 Suppl.):S1-S34. doi:[10.1016/j.ajic.2011.01.003](https://doi.org/10.1016/j.ajic.2011.01.003)
+
+[^4]: AAMI Foundation. Quick guide: improving the safe use of multiple IV infusions. 2016. Available at: [https://www.aami.org/docs/default-source/foundation/infusion/infusion_therapy_quick_guide2.pdf](https://www.aami.org/docs/default-source/foundation/infusion/infusion_therapy_quick_guide2.pdf)
+
+[^5]: Simonetti V, Comparcini D, Miniscalco D, et al. Assessing nursing students' knowledge of evidence-based guidelines on the management of peripheral venous catheters: a multicentre cross-sectional study. *Nurse Educ Today*. 2019;73:77-82. doi:[10.1016/j.nedt.2018.11.023](https://doi.org/10.1016/j.nedt.2018.11.023)
+
+[^6]: Umemura M, Maegawa K, Arai D, et al. Influence of technique used to attach the infusion set to peristaltic finger smartpumps on dispensing time: an experimental study. *J Pharm Health Care Sci*. 2018;4:8. doi:[10.1186/s40780-018-0104-4](https://doi.org/10.1186/s40780-018-0104-4)
+
+[^7]: Konings MK, Snijder RA, Radermacher JH, Timmerman AM. Analytical method for calculation of deviations from intended dosages during multi-infusion. *Biomed Eng Online*. 2017;16(1):18. doi:[10.1186/s12938-016-0309-4](https://doi.org/10.1186/s12938-016-0309-4)
+
+[^8]: Maiguy-Foinard A, Genay S, Lannoy D, et al. Criteria for choosing an intravenous infusion line intended for multidrug infusion in anaesthesia and intensive care units. *Anaesth Crit Care Pain Med*. 2017;36(1):53-63. doi:[10.1016/j.accpm.2016.02.007](https://doi.org/10.1016/j.accpm.2016.02.007)
+
+[^9]: Etafa W, Wakuma B, Tsegaye R, Takele T. Nursing students' knowledge on the management of peripheral venous catheters at Wollega University. *PLoS One*. 2020;15(9):e0238881. doi:[10.1371/journal.pone.0238881](https://doi.org/10.1371/journal.pone.0238881)
+
+[^10]: Institute for Safe Medication Practices. Hidden medication loss when using a primary administration set for small-volume intermittent infusions. 2020. Available at: [https://www.ismp.org/resources/hidden-medication-loss-when-using-primary-administration-set-small-volume-intermittent](https://www.ismp.org/resources/hidden-medication-loss-when-using-primary-administration-set-small-volume-intermittent)
+
+[^11]: The Joint Commission. Managing risk during transition to new ISO tubing connector standards. *Sentinel Event Alert*. Issue 53. August 20, 2014. Available at: [https://www.jointcommission.org](https://www.jointcommission.org)
+
+[^12]: Hadaway L. Stopcocks for infusion therapy: evidence and experience. *J Infus Nurs*. 2018;41(1):24-34. doi:[10.1097/NAN.0000000000000258](https://doi.org/10.1097/NAN.0000000000000258)
+
+[^13]: van Rens MFPT, Hugill K, Francia ALV, et al. Closed intravenous systems for central vascular access: a difference maker for CLABSI rates in neonates? *J Vasc Access*. 2022;11297298221085480. doi:[10.1177/11297298221085480](https://doi.org/10.1177/11297298221085480)
+
+[^14]: Maurer F, Lorenz DJ, Pielsticker G, et al. Adherence of volatile propofol to various types of plastic tubing. *J Breath Res*. 2017;11(1):016009. doi:[10.1088/1752-7163/aa567e](https://doi.org/10.1088/1752-7163/aa567e)
+
+[^15]: Tokhadze N, Chennell P, Bernard L, et al. Impact of alternative materials to plasticized PVC infusion tubings on drug sorption and plasticizer release. *Sci Rep*. 2019;9(1):18917. doi:[10.1038/s41598-019-55113-x](https://doi.org/10.1038/s41598-019-55113-x)
+
+[^16]: Kim CO, Song J, Min JY, et al. A comparison of the pharmacokinetic and pharmacodynamic properties of nitroglycerin according to the composition of the administration set: a preliminary study. *Medicine (Baltimore)*. 2018;97(9):e9829. doi:[10.1097/md.0000000000009829](https://doi.org/10.1097/md.0000000000009829)
+
+[^17]: Woodward Z, Brooks P, Morris-Smith B, et al. Adsorption and leachable contamination of flucloxacillin, cyclosporin and amiodarone following delivery through an intravenous administration set. *Pharm Res*. 2018;35(6):121. doi:[10.1007/s11095-018-2409-2](https://doi.org/10.1007/s11095-018-2409-2)
+
+[^18]: Jin SE, You S, Jeon S, et al. Evaluation of drug sorption to PVC- and non-PVC-based tubes in administration sets using a pump. *J Vis Exp*. 2017;(121):55086. doi:[10.3791/55086](https://doi.org/10.3791/55086)
+
+[^19]: Sürmelioğlu N, Nenni M, Fırat A, et al. Evaluation of regular insulin adsorption to polypropylene bag and polyvinyl chloride infusion set. *Int J Clin Pract*. 2021;75(4):e13895. doi:[10.1111/ijcp.13895](https://doi.org/10.1111/ijcp.13895)
+
+[^20]: Besheer A. Protein adsorption to in-line filters of intravenous administration sets. *J Pharm Sci*. 2017;106(10):2959-2965. doi:[10.1016/j.xphs.2017.05.028](https://doi.org/10.1016/j.xphs.2017.05.028)
+
+[^21]: Saelue P, Sripakdee W, Suknuntha K. Effects of drug concentration, rate of infusion, and flush volume on G-CSF drug loss when administered intravenously. *Hosp Pharm*. 2019;54(6):393-397. doi:[10.1177/0018578718811156](https://doi.org/10.1177/0018578718811156)
+
+[^22]: Al Salloum H, Saunier J, Dazzi A, et al. Characterization of the surface physico-chemistry of plasticized PVC used in blood bag and infusion tubing. *Mater Sci Eng C Mater Biol Appl*. 2017;75:317-334. doi:[10.1016/j.msec.2017.02.057](https://doi.org/10.1016/j.msec.2017.02.057)
+
+[^23]: Schröter A, Mahler HC, Sayed NB, et al. 4-Hydroxynonenal – a toxic leachable from clinically used administration materials. *J Pharm Sci*. 2021;110(9):3268-3275. doi:[10.1016/j.xphs.2021.05.014](https://doi.org/10.1016/j.xphs.2021.05.014)
+
+[^24]: Pardeshi NN, Qi W, Dahl K, et al. Microparticles and nanoparticles delivered in intravenous saline and in an intravenous solution of a therapeutic antibody product. *J Pharm Sci*. 2017;106(2):511-520. doi:[10.1016/j.xphs.2016.09.028](https://doi.org/10.1016/j.xphs.2016.09.028)
+
+[^25]: Snell JR, Monticello CR, Her C, et al. DEHP nanodroplets leached from polyvinyl chloride IV bags promote aggregation of IVIG and activate complement in human serum. *J Pharm Sci*. 2020;109(1):429-442. doi:[10.1016/j.xphs.2019.06.015](https://doi.org/10.1016/j.xphs.2019.06.015)
+
+[^26]: Zdravkovic SA. Assessment of patient exposure to leachables from lyophilized drug formulations following reconstitution, storage, and administration via polymeric packaging/delivery systems. *J Pharm Sci*. 2018;107(11):2837-2846. doi:[10.1016/j.xphs.2018.06.028](https://doi.org/10.1016/j.xphs.2018.06.028)
+
+[^27]: Mattiazzi P, Bohrer D, Viana C, et al. Extraction/leaching of metal-containing additives from polyvinyl chloride, ethyl vinyl acetate, and polypropylene bags and infusion sets into infusion solutions. *PDA J Pharm Sci Technol*. 2019;73(1):60-69. doi:[10.5731/pdajpst.2018.009019](https://doi.org/10.5731/pdajpst.2018.009019)
+
+[^28]: Saunier J, Khzam A, Yagoubi N. Impact of mechanical stress on flexible tubing used for biomedical applications: characterization of the damages and impact on the patient's health. *J Mech Behav Biomed Mater*. 2022;136:105477. doi:[10.1016/j.jmbbm.2022.105477](https://doi.org/10.1016/j.jmbbm.2022.105477)
+
+[^29]: Institute for Safe Medication Practices, Canada. Critical incident learning: multiple IV infusions: risks and recommendations. 2014. Available at: [https://www.ismp-canada.org/download/ocil/ISMPCONCIL2014-11_MultipleIV-Infusions.pdf](https://www.ismp-canada.org/download/ocil/ISMPCONCIL2014-11_MultipleIV-Infusions.pdf)
+
+[^30]: Rickard CM, Marsh NM, Larsen EN, et al. Effect of infusion set replacement intervals on catheter-related bloodstream infections (RSVP): a randomised, controlled, equivalence (central venous access device)–non-inferiority (peripheral arterial catheter) trial. *Lancet*. 2021;397(10283):1447-1458. doi:[10.1016/S0140-6736(21)00351-2](https://doi.org/10.1016/S0140-6736(21)00351-2)
+
+[^31]: Ray-Barruel G, Woods C, Larsen EN, et al. Nurses' decision-making about intravenous administration set replacement: a qualitative study. *J Clin Nurs*. 2019;28(21/22):3786-3795. doi:[10.1111/jocn.14979](https://doi.org/10.1111/jocn.14979)
+
+[^32]: Saunier J, Yagoubi N. Investigating the static or dynamic flexural and compressive stresses on flexible tubing: comparison of clamp and peristaltic pump impact on surface damages and particles leaching during infusion acts. *J Mech Behav Biomed Mater*. 2021;123:104737. doi:[10.1016/j.jmbbm.2021.104737](https://doi.org/10.1016/j.jmbbm.2021.104737)
+
+[^33]: Stedman JL, Yarmush JM, Joshi MC, et al. How long is too long? The prespiked intravenous debate. *Anesth Analg*. 2017;124(5):1564-1568. doi:[10.1213/ANE.0000000000001951](https://doi.org/10.1213/ANE.0000000000001951)
+
+[^34]: Konings MK, Gevers R, Mejri S, Timmerman AM. Effect of non-return valves on the time-of-arrival of new medication in a patient after syringe exchange in an infusion set-up. *Biomed Tech (Berl)*. 2022;68(1):91-96. doi:[10.1515/bmt-2022-0054](https://doi.org/10.1515/bmt-2022-0054)
+
+[^35]: Thoele K, Piddoubny M, Ednalino R, Terry CL. Optimizing drug delivery of small-volume infusions. *J Infus Nurs*. 2018;41(2):113-117. doi:[10.1097/NAN.0000000000000268](https://doi.org/10.1097/NAN.0000000000000268)
+
+[^36]: Fresenius Kabi USA, LLC. DIPRIVAN — propofol injection, emulsion. 2020. Available at: [https://www.fresenius-kabi.com/us/news/diprivan-propofol-injectable-emulsion-usp-is-first-product](https://www.fresenius-kabi.com/us/news/diprivan-propofol-injectable-emulsion-usp-is-first-product)
+
+[^37]: Eyzaguirre Pellon MT, Walsh AM, Willis J, et al. Inappropriate intravenous infusion set occluded by cryoprecipitate. *Transfusion*. 2022;62(9):1697-1698. doi:[10.1111/trf.17046](https://doi.org/10.1111/trf.17046)
+
+[^38]: Berman DJ, Schiavi A, Frank SM, et al. Factors that influence flow through intravascular catheters: the clinical relevance of Poiseuille's law. *Transfusion*. 2020;60(7):1410-1417. doi:[10.1111/trf.15898](https://doi.org/10.1111/trf.15898)
+
+[^39]: Timsit J-F, Baleine J, Bernard L, et al. Expert consensus-based clinical practice guidelines management of intravascular catheters in the intensive care unit. *Ann Intensive Care*. 2020;10(1):118. doi:[10.1186/s13613-020-00713-4](https://doi.org/10.1186/s13613-020-00713-4)
+
+[^40]: Wang Y, Han L, Xiao Y, et al. Appraising the quality of guidelines for peripheral arterial catheters care: a systematic review of reviews. *Aust Crit Care*. 2023;36(4):669-675. doi:[10.1016/j.aucc.2022.03.014](https://doi.org/10.1016/j.aucc.2022.03.014)

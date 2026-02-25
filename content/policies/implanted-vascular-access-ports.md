@@ -169,7 +169,7 @@ This policy applies to:
 
 ### 4.9 Ongoing Device Surveillance
 
-4.9.1 Annual chest radiograph imaging shall be considered for assessment of port position and catheter integrity.[^5][^6][^7][^19][^21][^22][^24] This surveillance can identify complications including catheter migration, fracture, or other positional abnormalities — including complications specific to forearm and upper-arm implant sites — before they become clinically significant.[^20][^23][^28][^29][^30]
+4.9.1 Annual chest radiograph imaging shall be considered for assessment of port position and catheter integrity.[^5][^6][^7][^19][^21][^22][^24][^34][^35] This surveillance can identify complications including catheter migration, fracture, or other positional abnormalities — including complications specific to forearm and upper-arm implant sites — before they become clinically significant.[^20][^23][^28][^29][^30]
 
 ### 4.10 Patient and Caregiver Education
 
@@ -197,7 +197,7 @@ This policy applies to:
 
 #### 4.10.3 Post-Treatment Considerations
 
-4.10.3.1 For patients whose treatment has concluded, education regarding device disposition shall be provided. This includes discussion of port removal versus continued maintenance and potential complications associated with prolonged dwell time, including infection, thrombosis, catheter tip migration, and catheter fracture or retained fragment.[^26][^27][^31][^32]
+4.10.3.1 For patients whose treatment has concluded, education regarding device disposition shall be provided. This includes discussion of port removal versus continued maintenance and potential complications associated with prolonged dwell time, including infection, thrombosis, catheter tip migration, and catheter fracture or retained fragment.[^26][^27][^31][^32][^33][^34][^35]
 
 4.10.3.2 Patients shall be equipped to make informed decisions about device management in consultation with their healthcare team.
 
@@ -308,3 +308,9 @@ Exceptions to this policy require documented clinical justification recorded in 
 [^31]: Dogdus M, Dindas F, Turkyilmaz E, Dindar B, Tuncer B, Candan O. Successful percutaneous transvenous removal of a fractured port catheter via novel technique: balloon-supported retrieval. *Anatol J Cardiol*. 2021;25(9):671-672. doi:[10.5152/AnatolJCardiol.2021.62186](https://doi.org/10.5152/AnatolJCardiol.2021.62186)
 
 [^32]: Aworanti O, Linnane N, Tareen F, Mortell A, Aworanti OM. Incidence and outcome of retained Port-A-Cath fragments during removal. *Pediatr Surg Int*. 2017;33(7):777-781. doi:[10.1007/s00383-017-4103-6](https://doi.org/10.1007/s00383-017-4103-6)
+
+[^33]: Christ M, Trappe H. Difficult removal of a central venous port catheter. *Dtsch Arztebl Int*. 2018;115(35):570-570. doi:[10.3238/arztebl.2018.0570](https://doi.org/10.3238/arztebl.2018.0570)
+
+[^34]: Voog E, Campion L, du Rusquec P, et al. Totally implantable venous access ports: a prospective long-term study of early and late complications in adult patients with cancer. *Support Care Cancer*. 2018;26(1):81-89. doi:[10.1007/s00520-017-3816-3](https://doi.org/10.1007/s00520-017-3816-3)
+
+[^35]: Wang YC, Lin PL, Chou WH, Lin CP, Huang CH. Long-term outcomes of totally implantable venous access devices. *Support Care Cancer*. 2017;25(7):2049-2054. doi:[10.1007/s00520-017-3592-0](https://doi.org/10.1007/s00520-017-3592-0)
