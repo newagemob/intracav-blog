@@ -1,0 +1,33 @@
+{{- /* FAQPage schema — rendered when page frontmatter contains a `faqs` array */ -}}
+{{- /* Frontmatter format:
+  [[faqs]]
+  question = "What is a PICC line?"
+  answer = "A PICC (peripherally inserted central catheter) is..."
+
+  [[faqs]]
+  question = "How long can a PICC stay in?"
+  answer = "PICCs can dwell for weeks to months..."
+*/ -}}
+{{- if and .IsPage .Params.faqs -}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "name": {{ .Title | plainify | jsonify }},
+  "url": {{ .Permalink | safeHTML | jsonify }},
+  "mainEntity": [
+    {{- range $i, $faq := .Params.faqs -}}
+    {{- if $i }},{{ end }}
+    {
+      "@type": "Question",
+      "name": {{ $faq.question | jsonify }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ $faq.answer | jsonify }}
+      }
+    }
+    {{- end }}
+  ]
+}
+</script>
+{{- end -}}

@@ -1,0 +1,55 @@
+{{- /* HowTo schema — rendered when page frontmatter sets schema_type = "HowTo" */ -}}
+{{- /* Frontmatter format:
+  schema_type = "HowTo"
+  howto_name = "How to Insert a PICC Line Using Ultrasound Guidance"
+  howto_description = "Step-by-step guide for ultrasound-guided PICC insertion using MST."
+  howto_total_time = "PT45M"   # ISO 8601 duration
+
+  [[howto_steps]]
+  name = "Hand hygiene and sterile gown"
+  text = "Perform WHO-compliant hand hygiene before donning sterile gown and gloves."
+  image = "/images/step-1.jpg"   # optional
+
+  [[howto_steps]]
+  name = "Skin antisepsis"
+  text = "Apply 2% CHG in 70% IPA to insertion site using back-and-forth friction for 30 seconds. Allow to fully dry."
+*/ -}}
+{{- if and .IsPage (eq .Params.schema_type "HowTo") -}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": {{ with .Params.howto_name }}{{ . | jsonify }}{{ else }}{{ .Title | plainify | jsonify }}{{ end }},
+  "description": {{ with .Params.howto_description }}{{ . | jsonify }}{{ else }}{{ with .Description | plainify }}{{ . | jsonify }}{{ else }}{{ .Summary | plainify | jsonify }}{{ end }}{{ end }},
+  "url": {{ .Permalink | safeHTML | jsonify }},
+  {{- with .Params.howto_total_time }}
+  "totalTime": {{ . | jsonify }},
+  {{- end }}
+  {{- with .Params.howto_estimated_cost }}
+  "estimatedCost": {
+    "@type": "MonetaryAmount",
+    "currency": "USD",
+    "value": {{ . | jsonify }}
+  },
+  {{- end }}
+  "step": [
+    {{- range $i, $step := .Params.howto_steps -}}
+    {{- if $i }},{{ end }}
+    {
+      "@type": "HowToStep",
+      "name": {{ $step.name | jsonify }},
+      "text": {{ $step.text | jsonify }}
+      {{- with $step.image }},
+      "image": {{ . | absURL | jsonify }}
+      {{- end }}
+    }
+    {{- end }}
+  ],
+  "publisher": {
+    "@type": "Organization",
+    "name": {{ site.Title | jsonify }},
+    "url": {{ site.Home.Permalink | jsonify }}
+  }
+}
+</script>
+{{- end -}}

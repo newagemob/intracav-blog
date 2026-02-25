@@ -82,6 +82,15 @@
   {{- end }}
 {{- end }}
 
+{{- /* Structured Data: MedicalWebPage schema for guide and resource pages */ -}}
+{{- partial "templates/schema-medical-guide.html" . -}}
+
+{{- /* Structured Data: FAQPage schema (triggered by faqs frontmatter param) */ -}}
+{{- partial "templates/schema-faq.html" . -}}
+
+{{- /* Structured Data: HowTo schema (triggered by schema_type = "HowTo" frontmatter) */ -}}
+{{- partial "templates/schema-howto.html" . -}}
+
 {{- /* Admin CSS (conditional) */ -}}
 {{- if eq .Section "admin" }}
 {{- $adminCSS := resources.Get "css/admin.css" -}}

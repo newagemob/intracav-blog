@@ -1,0 +1,58 @@
+{{- /* MedicalWebPage schema for content_type = "guide" and content_type = "resource" pages */ -}}
+{{- if and .IsPage (or (eq .Params.content_type "guide") (eq .Params.content_type "resource")) -}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "name": {{ .Title | plainify | jsonify }},
+  "headline": {{ .Title | plainify | jsonify }},
+  "description": {{ with .Description | plainify }}{{ . | jsonify }}{{ else }}{{ .Summary | plainify | jsonify }}{{ end }},
+  "url": {{ .Permalink | safeHTML | jsonify }},
+  "datePublished": {{ .PublishDate.Format "2006-01-02" | jsonify }},
+  "dateModified": {{ .Lastmod.Format "2006-01-02" | jsonify }},
+  "inLanguage": "en-US",
+  "audience": {
+    "@type": "MedicalAudience",
+    "audienceType": {{ with .Params.audience }}{{ . | title | jsonify }}{{ else }}"Clinician"{{ end }}
+  },
+  "about": {
+    "@type": "MedicalCondition",
+    "name": {{ with .Params.category }}{{ index . 0 | jsonify }}{{ else }}"Vascular Access"{{ end }}
+  },
+  {{- with (.Params.author | default site.Params.author) }}
+  "author": [
+    {{- if (or (eq (printf "%T" .) "[]string") (eq (printf "%T" .) "[]interface {}")) -}}
+    {{- range $i, $v := . -}}
+    {{- if $i }}, {{ end -}}
+    {
+      "@type": "Person",
+      "name": {{ $v | jsonify }}
+    }
+    {{- end }}
+    {{- else -}}
+    {
+      "@type": "Person",
+      "name": {{ . | jsonify }}
+    }
+    {{- end }}
+  ],
+  {{- end }}
+  "publisher": {
+    "@type": "Organization",
+    "name": {{ site.Title | jsonify }},
+    "url": {{ site.Home.Permalink | jsonify }},
+    "logo": {
+      "@type": "ImageObject",
+      "url": {{ site.Params.assets.favicon | default "favicon.ico" | absURL | jsonify }}
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": {{ .Permalink | safeHTML | jsonify }}
+  },
+  "keywords": {{ with .Params.keywords }}{{ . | jsonify }}{{ else }}{{ with .Params.tags }}{{ . | jsonify }}{{ else }}[]{{ end }}{{ end }},
+  "medicalSpecialty": "Nursing",
+  "lastReviewed": {{ .Lastmod.Format "2006-01-02" | jsonify }}
+}
+</script>
+{{- end -}}
