@@ -164,10 +164,10 @@
   --color-bg-overlay: rgba(0, 0, 0, 0.85);
 
   /* Discord dark theme text */
-  --color-text-primary: #dbdee1;
-  --color-text-secondary: #949ba4;
-  --color-text-tertiary: #5c6068;
-  --color-text-disabled: #4e5058;
+  --color-text-primary: #f2f3f5;
+  --color-text-secondary: #b5bac1;
+  --color-text-tertiary: #80848e;
+  --color-text-disabled: #6d6f78;
   --color-text-inverse: #1e1f22;
 
   /* Discord dark theme borders */
