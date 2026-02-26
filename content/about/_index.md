@@ -1,5 +1,5 @@
 +++
-title = 'About MedWiki'
+title = 'About The Clinical Database'
 description = 'Healthcare technologies for vascular access professionals. Meet the team behind Intracav AI and the clinical knowledge platform.'
 date = 2024-03-16T12:23:18-05:00
 +++
@@ -67,4 +67,4 @@ He is passionate about building innovative tools that empower healthcare provide
 
 ---
 
-**The MedWiki** is a living knowledge base maintained by our team and the vascular access community. All content is evidence-based and regularly updated to reflect current best practices.
+**The Clinical Database** is a living knowledge base maintained by our team and the vascular access community. All content is evidence-based and regularly updated to reflect current best practices.

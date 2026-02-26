@@ -211,7 +211,7 @@ Device performance and safety across approved warming systems varies; selection 
 
 | Version | Date | Author(s) | Description of Change |
 |---------|------|-----------|----------------------|
-| 1.0 | 2023-10-17 | MedWiki-CM01 | Initial policy creation |
+| 1.0 | 2023-10-17 | TCD-CM01 | Initial policy creation |
 | 1.1 | 2024-08-30 | D. Woo, M. Stern, I.M. Wright | Added contrast media warming section; expanded neonatal and prehospital provisions; revised competency requirements; added temperature log documentation standard |
 | — | — | — | Scheduled review date: 2025-10-17 |
 

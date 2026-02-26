@@ -139,7 +139,7 @@ When performing Standard-ANTT, non-sterile gloves generally suffice unless direc
 
 | Version | Date | Author(s) | Description of Change |
 |---------|------|-----------|----------------------|
-| 1.0 | 2024-04-21 | MedWiki-CM01 | Initial policy creation |
+| 1.0 | 2024-04-21 | TCD-CM01 | Initial policy creation |
 | 2.0 | 2024-07-19 | D. Woo, M. Stern, I.M. Wright | Full revision to formal policy format aligned with IVAPS standards |
 | 2.1 | 2026-02-24 | D. Woo, M. Stern, I.M. Wright | Added comprehensive academic references with inline footnote citations |
 | — | — | — | Scheduled review date: 2026-04-21 |

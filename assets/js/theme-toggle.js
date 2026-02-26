@@ -1,4 +1,4 @@
-// Persistent theme toggle for MedWiki
+// Persistent theme toggle for The Clinical Database
 (function() {
   'use strict';
 

@@ -1,5 +1,5 @@
 /**
- * MedWiki - Table of Contents Scroll Spy
+ * The Clinical Database - Table of Contents Scroll Spy
  * Highlights current section heading in ToC as user scrolls
  */
 (function() {

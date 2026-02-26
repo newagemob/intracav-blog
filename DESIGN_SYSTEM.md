@@ -1,5 +1,5 @@
 # Medical-Grade Design System
-## MedWiki Documentation Portal
+## The Clinical Database Documentation Portal
 
 **Design Authority Level:** CMS / FDA / Epic Systems Internal Documentation  
 **Revision:** 1.0.0  
@@ -10,7 +10,7 @@
 
 ## I. Executive Summary
 
-This design system elevates the MedWiki from a functional documentation site to a medical-grade knowledge portal suitable for healthcare institutions, regulatory bodies, and clinical decision-making environments.
+This design system elevates The Clinical Database from a functional documentation site to a medical-grade knowledge portal suitable for healthcare institutions, regulatory bodies, and clinical decision-making environments.
 
 **Design Philosophy:** Institutional restraint. Clinical precision. Regulatory confidence.
 
@@ -1166,7 +1166,7 @@ Deprecated patterns:
 
 ## XIV. Conclusion
 
-This design system transforms the MedWiki from a functional documentation site into a medical-grade knowledge portal worthy of Epic Systems, CMS, FDA, and healthcare institutions.
+This design system transforms The Clinical Database from a functional documentation site into a medical-grade knowledge portal worthy of Epic Systems, CMS, FDA, and healthcare institutions.
 
 **Key Principles:**
 - Boring is a feature

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   MEDWIKI - MEDICAL PRINT STYLES
+   THE CLINICAL DATABASE - MEDICAL PRINT STYLES
    Audit-Ready Print Formatting
    
    Authority Level: CMS / FDA / Epic Systems
@@ -30,7 +30,7 @@
     }
     
     @bottom-left {
-      content: "MedWiki - Confidential";
+      content: "The Clinical Database - Confidential";
       font-family: Charter, Georgia, serif;
       font-size: 9pt;
       color: #4B5563;

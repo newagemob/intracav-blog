@@ -1,4 +1,4 @@
-// Admin Interface for MedWiki
+// Admin Interface for The Clinical Database
 (function() {
   'use strict';
 

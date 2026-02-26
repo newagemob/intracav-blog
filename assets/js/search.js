@@ -1,5 +1,5 @@
 /**
- * MedWiki - Command Palette Search (Cmd+K)
+ * The Clinical Database - Command Palette Search (Cmd+K)
  * Global search overlay with keyboard navigation
  */
 (function() {

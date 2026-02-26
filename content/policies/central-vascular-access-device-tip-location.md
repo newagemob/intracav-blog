@@ -174,7 +174,7 @@ This policy applies to:
 
 | Version | Date | Author(s) | Description of Change |
 |---------|------|-----------|----------------------|
-| 1.0 | 2023-03-22 | MedWiki-CM01 | Initial policy creation |
+| 1.0 | 2023-03-22 | TCD-CM01 | Initial policy creation |
 | 1.1 | 2024-11-07 | D. Woo, M. Stern, I.M. Wright | Updated ECG guidance contraindications; added transfer patient criteria and neonatal section; revised documentation requirements |
 | — | — | — | Scheduled review date: 2025-11-07 |
 

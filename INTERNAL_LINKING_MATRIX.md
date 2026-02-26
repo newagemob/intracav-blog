@@ -1,7 +1,7 @@
-# MedWiki — Internal Linking Matrix
+# The Clinical Database — Internal Linking Matrix
 **Version 1.0 | 2026-02-25**
 
-This matrix defines the internal linking architecture for the MedWiki knowledge base. Every page must participate in the topical ecosystem. No orphan pages.
+This matrix defines the internal linking architecture for The Clinical Database knowledge base. Every page must participate in the topical ecosystem. No orphan pages.
 
 ---
 
@@ -254,4 +254,4 @@ Phase 4 (ongoing): Resource links from new guide content
 ---
 
 *Last updated: 2026-02-25*
-*Maintained by: MedWiki Editorial Team*
+*Maintained by: The Clinical Database Editorial Team*

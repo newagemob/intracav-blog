@@ -125,7 +125,7 @@ The **Association for Vascular Access (AVAR)** publishes vascular access-specifi
 
 ## Applying Standards at the Bedside
 
-Standards translate to practice through the institutional **policy and procedure** layer. Clinical policies (like those in the MedWiki Policies library) cite these primary standards as their authority base, adapting them to local practice context.
+Standards translate to practice through the institutional **policy and procedure** layer. Clinical policies (like those in The Clinical Database Policies library) cite these primary standards as their authority base, adapting them to local practice context.
 
 **For clinicians:** When questioning a practice requirement, trace the policy to its underlying standard. INS 2021, CDC, IDSA, and SHEA/IDSA recommendations are the authoritative sources. When a policy conflicts with current evidence, raise it through the quality improvement process.
 
