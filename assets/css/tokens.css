@@ -61,73 +61,74 @@
   --rhythm-subsection: 2.5rem;
   --rhythm-section: 4rem;
 
-  /* Colors - Light Mode */
-  --color-bg-primary: #FFFFFF;
-  --color-bg-secondary: #F9FAFB;
-  --color-bg-tertiary: #F3F4F6;
-  --color-bg-overlay: rgba(0, 0, 0, 0.5);
+  /* Colors - Light Mode (Discord light palette) */
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f2f3f5;
+  --color-bg-tertiary: #e3e5e8;
+  --color-bg-overlay: rgba(0, 0, 0, 0.7);
 
-  --color-text-primary: #111827;
-  --color-text-secondary: #4B5563;
-  --color-text-tertiary: #6B7280;
-  --color-text-disabled: #9CA3AF;
-  --color-text-inverse: #FFFFFF;
+  --color-text-primary: #060607;
+  --color-text-secondary: #4e5058;
+  --color-text-tertiary: #80848e;
+  --color-text-disabled: #9ea3ab;
+  --color-text-inverse: #ffffff;
 
-  --color-border: #E5E7EB;
-  --color-border-subtle: #F3F4F6;
-  --color-border-strong: #D1D5DB;
+  --color-border: #e3e5e8;
+  --color-border-subtle: #f2f3f5;
+  --color-border-strong: #c4c9d4;
 
-  --color-accent: #635BFF;
-  --color-accent-hover: #7A73FF;
-  --color-accent-active: #4F46E5;
-  --color-accent-secondary: #0A84FF;
+  /* Discord blurple accent */
+  --color-accent: #5865f2;
+  --color-accent-hover: #4752c4;
+  --color-accent-active: #3c45a5;
+  --color-accent-secondary: #0068e0;
 
-  --color-success: #16A34A;
-  --color-warning: #F59E0B;
-  --color-error: #DC2626;
+  --color-success: #1e8b4c;
+  --color-warning: #c47a00;
+  --color-error: #d93025;
 
   /* Semantic Colors */
-  --color-info-bg: #EFF6FF;
-  --color-info-border: #BFDBFE;
-  --color-info-text: #1E3A8A;
-  --color-info-accent: #3B82F6;
+  --color-info-bg: #e8f0fe;
+  --color-info-border: #aec7f5;
+  --color-info-text: #0068e0;
+  --color-info-accent: #0068e0;
 
-  --color-success-bg: #F0FDF4;
-  --color-success-border: #BBF7D0;
-  --color-success-text: #14532D;
-  --color-success-accent: #16A34A;
+  --color-success-bg: #e8f7ef;
+  --color-success-border: #9ad5b9;
+  --color-success-text: #1e8b4c;
+  --color-success-accent: #1e8b4c;
 
-  --color-warning-bg: #FFFBEB;
-  --color-warning-border: #FDE68A;
-  --color-warning-text: #78350F;
-  --color-warning-accent: #F59E0B;
+  --color-warning-bg: #fef7e0;
+  --color-warning-border: #fcd68a;
+  --color-warning-text: #c47a00;
+  --color-warning-accent: #c47a00;
 
-  --color-critical-bg: #FEF2F2;
-  --color-critical-border: #FECACA;
-  --color-critical-text: #7F1D1D;
-  --color-critical-accent: #DC2626;
+  --color-critical-bg: #fce8e6;
+  --color-critical-border: #f5a9a4;
+  --color-critical-text: #d93025;
+  --color-critical-accent: #d93025;
 
-  --color-regulatory-bg: #F5F3FF;
-  --color-regulatory-border: #DDD6FE;
-  --color-regulatory-text: #4C1D95;
-  --color-regulatory-accent: #7C3AED;
+  --color-regulatory-bg: #ede8fc;
+  --color-regulatory-border: #c4b5f7;
+  --color-regulatory-text: #4752c4;
+  --color-regulatory-accent: #5865f2;
 
   /* Neutral Palette */
-  --color-neutral-50: #F9FAFB;
-  --color-neutral-100: #F3F4F6;
-  --color-neutral-200: #E5E7EB;
-  --color-neutral-300: #D1D5DB;
-  --color-neutral-400: #9CA3AF;
-  --color-neutral-500: #6B7280;
-  --color-neutral-600: #4B5563;
-  --color-neutral-700: #374151;
-  --color-neutral-800: #1F2937;
-  --color-neutral-900: #111827;
+  --color-neutral-50: #f2f3f5;
+  --color-neutral-100: #e3e5e8;
+  --color-neutral-200: #c4c9d4;
+  --color-neutral-300: #b5bac1;
+  --color-neutral-400: #9ea3ab;
+  --color-neutral-500: #80848e;
+  --color-neutral-600: #4e5058;
+  --color-neutral-700: #2e3035;
+  --color-neutral-800: #1e1f22;
+  --color-neutral-900: #060607;
 
   /* Gradients */
-  --gradient-accent: linear-gradient(135deg, #635BFF 0%, #0A84FF 100%);
-  --gradient-border: linear-gradient(135deg, #635BFF 0%, #0A84FF 50%, #00D4AA 100%);
-  --gradient-hero: radial-gradient(ellipse at 50% 0%, rgba(99, 91, 255, 0.08) 0%, transparent 70%);
+  --gradient-accent: linear-gradient(135deg, #5865f2 0%, #0068e0 100%);
+  --gradient-border: linear-gradient(135deg, #5865f2 0%, #0068e0 50%, #1e8b4c 100%);
+  --gradient-hero: radial-gradient(ellipse at 50% 0%, rgba(88, 101, 242, 0.06) 0%, transparent 70%);
 
   /* Shadows */
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);

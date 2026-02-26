@@ -34,7 +34,7 @@
 
 .handbook-form-group label {
   font-weight: 500;
-  color: #374151;
+  color: #4e5058;
   font-size: 0.95rem;
 }
 
@@ -45,12 +45,12 @@
 .handbook-form-input,
 .handbook-form-textarea {
   padding: 0.75rem;
-  border: 1px solid #e5e7eb;
+  border: 1px solid #e3e5e8;
   border-radius: 6px;
   font-size: 1rem;
   font-family: inherit;
   background-color: #ffffff;
-  color: #111827;
+  color: #060607;
   transition: all 0.2s;
 }
 
@@ -64,8 +64,8 @@
 .handbook-form-input:focus,
 .handbook-form-textarea:focus {
   outline: none;
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  border-color: #5865f2;
+  box-shadow: 0 0 0 3px rgba(88, 101, 242, 0.15);
 }
 
 .dark .handbook-form-input:focus,
@@ -82,7 +82,7 @@
 
 .handbook-form-help {
   font-size: 0.875rem;
-  color: #6b7280;
+  color: #80848e;
   margin-top: 0.25rem;
 }
 
@@ -107,7 +107,7 @@
 }
 
 .handbook-btn-primary {
-  background-color: #1e40af;
+  background-color: #5865f2;
   color: #ffffff;
 }
 
@@ -116,7 +116,7 @@
 }
 
 .handbook-btn-primary:hover {
-  background-color: #1e3a8a;
+  background-color: #4752c4;
 }
 
 .dark .handbook-btn-primary:hover {
@@ -124,9 +124,9 @@
 }
 
 .handbook-btn-secondary {
-  background-color: #f3f4f6;
-  color: #374151;
-  border: 1px solid #e5e7eb;
+  background-color: #f2f3f5;
+  color: #4e5058;
+  border: 1px solid #e3e5e8;
 }
 
 .dark .handbook-btn-secondary {
@@ -136,7 +136,7 @@
 }
 
 .handbook-btn-secondary:hover {
-  background-color: #e5e7eb;
+  background-color: #e3e5e8;
 }
 
 .dark .handbook-btn-secondary:hover {
@@ -146,9 +146,9 @@
 .handbook-preview-section {
   margin-top: 2rem;
   padding: 1.5rem;
-  border: 1px solid #e5e7eb;
+  border: 1px solid #e3e5e8;
   border-radius: 8px;
-  background-color: #f9fafb;
+  background-color: #f2f3f5;
 }
 
 .dark .handbook-preview-section {
@@ -157,7 +157,7 @@
 }
 
 .handbook-preview-content {
-  color: #374151;
+  color: #4e5058;
   line-height: 1.8;
 }
 
