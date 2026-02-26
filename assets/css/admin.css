@@ -39,7 +39,7 @@
 }
 
 .dark .handbook-form-group label {
-  color: #d1d5db;
+  color: #dbdee1;
 }
 
 .handbook-form-input,
@@ -56,9 +56,9 @@
 
 .dark .handbook-form-input,
 .dark .handbook-form-textarea {
-  border-color: #374151;
-  background-color: #1f2937;
-  color: #f9fafb;
+  border-color: #3f4147;
+  background-color: #383a40;
+  color: #dbdee1;
 }
 
 .handbook-form-input:focus,
@@ -70,8 +70,8 @@
 
 .dark .handbook-form-input:focus,
 .dark .handbook-form-textarea:focus {
-  border-color: #60a5fa;
-  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.1);
+  border-color: #5865f2;
+  box-shadow: 0 0 0 3px rgba(88, 101, 242, 0.15);
 }
 
 .handbook-form-textarea {
@@ -87,7 +87,7 @@
 }
 
 .dark .handbook-form-help {
-  color: #9ca3af;
+  color: #949ba4;
 }
 
 .handbook-form-actions {
@@ -112,7 +112,7 @@
 }
 
 .dark .handbook-btn-primary {
-  background-color: #3b82f6;
+  background-color: #5865f2;
 }
 
 .handbook-btn-primary:hover {
@@ -120,7 +120,7 @@
 }
 
 .dark .handbook-btn-primary:hover {
-  background-color: #2563eb;
+  background-color: #4752c4;
 }
 
 .handbook-btn-secondary {
@@ -130,9 +130,9 @@
 }
 
 .dark .handbook-btn-secondary {
-  background-color: #374151;
-  color: #d1d5db;
-  border-color: #4b5563;
+  background-color: #2b2d31;
+  color: #dbdee1;
+  border-color: #3f4147;
 }
 
 .handbook-btn-secondary:hover {
@@ -140,7 +140,7 @@
 }
 
 .dark .handbook-btn-secondary:hover {
-  background-color: #4b5563;
+  background-color: #383a40;
 }
 
 .handbook-preview-section {
@@ -152,8 +152,8 @@
 }
 
 .dark .handbook-preview-section {
-  border-color: #374151;
-  background-color: #1f2937;
+  border-color: #3f4147;
+  background-color: #2b2d31;
 }
 
 .handbook-preview-content {
@@ -162,5 +162,5 @@
 }
 
 .dark .handbook-preview-content {
-  color: #e5e7eb;
+  color: #dbdee1;
 }

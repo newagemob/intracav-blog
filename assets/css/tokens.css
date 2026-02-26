@@ -157,51 +157,55 @@
 }
 
 .dark {
-  --color-bg-primary: #0A0A0B;
-  --color-bg-secondary: #17181A;
-  --color-bg-tertiary: #25262B;
-  --color-bg-overlay: rgba(0, 0, 0, 0.7);
+  /* Discord dark theme backgrounds */
+  --color-bg-primary: #313338;
+  --color-bg-secondary: #2b2d31;
+  --color-bg-tertiary: #1e1f22;
+  --color-bg-overlay: rgba(0, 0, 0, 0.85);
 
-  --color-text-primary: #E0E0E3;
-  --color-text-secondary: #A0A0A8;
-  --color-text-tertiary: #707078;
-  --color-text-disabled: #505058;
-  --color-text-inverse: #0A0A0B;
+  /* Discord dark theme text */
+  --color-text-primary: #dbdee1;
+  --color-text-secondary: #949ba4;
+  --color-text-tertiary: #5c6068;
+  --color-text-disabled: #4e5058;
+  --color-text-inverse: #1e1f22;
 
-  --color-border: #2C2E33;
-  --color-border-subtle: #25262B;
-  --color-border-strong: #3C3E43;
+  /* Discord dark theme borders */
+  --color-border: #3f4147;
+  --color-border-subtle: #2e3035;
+  --color-border-strong: #4e5058;
 
-  --color-accent: #7A73FF;
-  --color-accent-hover: #9590FF;
-  --color-accent-active: #635BFF;
-  --color-accent-secondary: #409CFF;
+  /* Discord blurple accent */
+  --color-accent: #5865f2;
+  --color-accent-hover: #4752c4;
+  --color-accent-active: #3c45a5;
+  --color-accent-secondary: #00a8fc;
 
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
-  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.6);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.6);
+  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.7);
 
-  --gradient-hero: radial-gradient(ellipse at 50% 0%, rgba(99, 91, 255, 0.12) 0%, transparent 70%);
+  --gradient-hero: radial-gradient(ellipse at 50% 0%, rgba(88, 101, 242, 0.15) 0%, transparent 70%);
 
   /* Semantic colors - dark mode */
-  --color-info-bg: rgba(59, 130, 246, 0.1);
-  --color-info-border: rgba(59, 130, 246, 0.3);
-  --color-info-text: #93C5FD;
+  --color-info-bg: rgba(0, 168, 252, 0.1);
+  --color-info-border: rgba(0, 168, 252, 0.3);
+  --color-info-text: #00a8fc;
 
-  --color-success-bg: rgba(22, 163, 74, 0.1);
-  --color-success-border: rgba(22, 163, 74, 0.3);
-  --color-success-text: #86EFAC;
+  --color-success-bg: rgba(35, 165, 89, 0.1);
+  --color-success-border: rgba(35, 165, 89, 0.3);
+  --color-success-text: #23a559;
 
-  --color-warning-bg: rgba(245, 158, 11, 0.1);
-  --color-warning-border: rgba(245, 158, 11, 0.3);
-  --color-warning-text: #FCD34D;
+  --color-warning-bg: rgba(240, 178, 50, 0.1);
+  --color-warning-border: rgba(240, 178, 50, 0.3);
+  --color-warning-text: #f0b232;
 
-  --color-critical-bg: rgba(220, 38, 38, 0.1);
-  --color-critical-border: rgba(220, 38, 38, 0.3);
-  --color-critical-text: #FCA5A5;
+  --color-critical-bg: rgba(242, 63, 66, 0.1);
+  --color-critical-border: rgba(242, 63, 66, 0.3);
+  --color-critical-text: #f23f42;
 
-  --color-regulatory-bg: rgba(124, 58, 237, 0.1);
-  --color-regulatory-border: rgba(124, 58, 237, 0.3);
-  --color-regulatory-text: #C4B5FD;
+  --color-regulatory-bg: rgba(88, 101, 242, 0.1);
+  --color-regulatory-border: rgba(88, 101, 242, 0.3);
+  --color-regulatory-text: #949cf7;
 }

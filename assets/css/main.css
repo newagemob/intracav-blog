@@ -150,8 +150,8 @@ pre code {
 }
 
 .dark pre {
-  background-color: #0F172A;
-  border-color: #1E293B;
+  background-color: #1e1f22;
+  border-color: #2b2d31;
 }
 
 blockquote {
@@ -248,7 +248,7 @@ time {
 }
 
 .dark .handbook-header {
-  background-color: rgba(10, 10, 11, 0.8);
+  background-color: rgba(43, 45, 49, 0.92);
 }
 
 .handbook-header-container {
