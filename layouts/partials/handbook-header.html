@@ -13,7 +13,7 @@
         <a href="/audience/clinician/" class="handbook-header-link">For Clinicians</a>
         <a href="/audience/patient/" class="handbook-header-link">For Patients</a>
         <a href="/category/" class="handbook-header-link">Categories</a>
-        <a href="https://intracav.ai/about" class="handbook-header-link" target="_blank" rel="noopener noreferrer">About</a>
+        <a href="/about/" class="handbook-header-link {{ if eq .Section "about" }}active{{ end }}">About</a>
         <button class="handbook-search-trigger" data-search-trigger aria-label="Search documentation">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="11" cy="11" r="8"></circle>
@@ -80,7 +80,7 @@
       <li><a href="/audience/clinician/" class="mobile-menu-link">For Clinicians</a></li>
       <li><a href="/audience/patient/" class="mobile-menu-link">For Patients</a></li>
       <li><a href="/category/" class="mobile-menu-link">Categories</a></li>
-      <li><a href="https://intracav.ai/about" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">About</a></li>
+      <li><a href="/about/" class="mobile-menu-link {{ if eq .Section "about" }}active{{ end }}">About</a></li>
     </ul>
 
     {{- /* Quick Access (if emergency content exists) */ -}}
