@@ -14,7 +14,7 @@ keywords = ["PICC insertion technique", "ultrasound guided PICC insertion", "mod
 
 # PICC Line Insertion Technique: Step-by-Step Ultrasound-Guided Procedure
 
-Ultrasound-guided PICC insertion using the modified Seldinger technique (MST) is the current standard of practice per INS 2021. When performed with maximal sterile barrier precautions and proper tip position verification, PICC insertion is safe, effective, and associated with low procedural complication rates.
+Ultrasound-guided PICC insertion using the modified Seldinger technique (MST) is the current standard of practice. When performed with maximal sterile barrier precautions and proper tip position verification, PICC insertion is safe, effective, and associated with low procedural complication rates.
 
 This guide covers the complete insertion procedure from patient preparation through tip confirmation.
 
@@ -186,7 +186,7 @@ If ECG guidance is not available or inconclusive:
 
 ## Insertion Note Documentation
 
-Required elements per INS 2021 and institutional policy:
+Required elements and institutional policy:
 
 - Date and time
 - Indication for central access
@@ -236,7 +236,6 @@ Required elements per INS 2021 and institutional policy:
 
 ## References
 
-1. Gorski LA, et al. (2021). INS Infusion Therapy Standards of Practice (Standards 26–36). *J Infus Nurs*, 44(Suppl 1).
 2. Moureau NL, et al. (2013). Evidence-based consensus on the insertion of CVADs. *Br J Nurs*, 22(Sup8):S4–S10.
 3. Chopra V, et al. (2015). The Michigan Appropriateness Guide for Intravenous Catheters (MAGIC). *Ann Intern Med*, 163(6 Suppl):S1–S40.
 4. Egan G, et al. (2012). Catheter tip position for PICC. *J Vasc Access*, 13(2):163–167.

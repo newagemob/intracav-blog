@@ -175,6 +175,5 @@ Rare but serious: bilateral arm swelling, facial edema, distended neck veins, he
 
 1. Chopra V, et al. (2013). Risk of venous thromboembolism associated with PICCs. *Lancet*, 382(9889):311–325.
 2. Kearon C, et al. (2016). Antithrombotic therapy for VTE disease: CHEST guideline. *Chest*, 149(2):315–352.
-3. Gorski LA, et al. (2021). INS Infusion Therapy Standards of Practice. *J Infus Nurs*, 44(Suppl 1).
 4. Joffe HV, et al. (2002). Upper-extremity deep vein thrombosis. *Circulation*, 106(14):1874–1880.
 5. Vleggaar FP, et al. (2009). PICC-related thrombosis: incidence and contributing risk factors. *Eur J Gastroenterol Hepatol*, 21(4):427–432.

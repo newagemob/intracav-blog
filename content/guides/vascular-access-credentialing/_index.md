@@ -5,7 +5,7 @@ lastmod = 2026-02-25T00:00:00-05:00
 content_type = "guide"
 audience = "clinician"
 category = ["Credentialing", "Certification", "Professional Development", "Vascular Access Teams"]
-tags = ["VA-BC certification", "CRNI certification", "PICC credentialing", "vascular access competency", "ultrasound credentialing", "institutional privileging", "AVAR", "INS certification", "vascular access training"]
+tags = ["VA-BC certification", "CRNI certification", "PICC credentialing", "vascular access competency", "ultrasound credentialing", "institutional privileging", "AVAR", "vascular access training"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]
 description = "Complete guide to vascular access credentialing and certification: VA-BC, CRNI, PICC insertion competency, ultrasound credentialing, institutional privileging, and building a credentialing program."
 slug = "vascular-access-credentialing"
@@ -27,7 +27,7 @@ This guide covers the full credentialing and certification landscape for vascula
 
 **Patient safety:** Credentialing ensures that clinicians who perform PICC insertions, port accesses, and ultrasound-guided procedures have demonstrated the knowledge and skills required to do so safely. Uncredentialed or inadequately trained inserters are associated with higher complication rates.
 
-**Regulatory requirements:** The Joint Commission's credentialing and privileging standards require hospitals to verify practitioner competency before granting procedure privileges. INS 2021 Standard 13 (Competency and Competency Validation) requires documented initial and ongoing competency for all vascular access procedures.
+**Regulatory requirements:** The Joint Commission's credentialing and privileging standards require hospitals to verify practitioner competency before granting procedure privileges. current clinical standard (Competency and Competency Validation) requires documented initial and ongoing competency for all vascular access procedures.
 
 **Scope of practice:** State nurse practice acts define the scope within which RNs may perform vascular access procedures. Hospital policy further defines specific credentialing requirements. Clinicians operating outside their credentialed scope carry personal and institutional liability.
 
@@ -41,9 +41,9 @@ This guide covers the full credentialing and certification landscape for vascula
 
 The **Association for Vascular Access (AVAR)** is the primary professional organization for vascular access specialists in the United States. AVAR administers the **VA-BC (Vascular Access Board Certified)** credential through its certification board (**CBVN — Certification Board for Vascular Nursing**). AVAR sets vascular access practice standards, provides continuing education, and advocates for the vascular access specialty at the national level.
 
-### INS — Infusion Nurses Society
+### CVAA
 
-The **Infusion Nurses Society (INS)** is the professional organization for infusion therapy nurses. INS publishes the **Infusion Therapy Standards of Practice** (the primary clinical practice standard for the specialty) and administers the **CRNI (Certified Registered Nurse Infusion)** credential through the INS Certification Corporation (INCC). INS provides continuing education, an annual conference, and supports evidence-based practice in infusion therapy and vascular access.
+**CVAA** is the professional organization for infusion therapy nurses and administers the **CRNI (Certified Registered Nurse Infusion)** credential. CVAA provides continuing education, an annual conference, and supports evidence-based practice in infusion therapy and vascular access.
 
 ---
 
@@ -89,7 +89,7 @@ The VA-BC credential is valid for **3 years** from the date of certification. Re
 
 ## CRNI Certification
 
-The **Certified Registered Nurse Infusion (CRNI)** credential is administered by the INCC (INS Certification Corporation) and is the specialty certification for infusion therapy nursing, with significant overlap with vascular access practice.
+The **Certified Registered Nurse Infusion (CRNI)** credential is administered by CVAA and is the specialty certification for infusion therapy nursing, with significant overlap with vascular access practice.
 
 ### Eligibility Requirements
 
@@ -110,7 +110,7 @@ The CRNI exam covers:
 | Feature | VA-BC | CRNI |
 |---|---|---|
 | Focus | Vascular access specialty | Infusion therapy + vascular access |
-| Certifying body | CBVN/AVAR | INCC/INS |
+| Certifying body | CBVN/AVAR | CVAA |
 | Exam emphasis | Device-specific, procedural | Broader infusion therapy scope |
 | Best for | VAT clinicians, PICC nurses, IV team specialists | Infusion therapy nurses with broad practice scope |
 
@@ -164,7 +164,7 @@ See [Institutional Privileging for Vascular Access](/guides/vascular-access-cred
 
 ## Competency Validation Methods
 
-INS 2021 and AVAR recognize several competency validation approaches:
+AVAR recognize several competency validation approaches:
 
 | Method | Description | Best Used For |
 |---|---|---|
@@ -188,7 +188,7 @@ Simulation allows skill development without patient risk and is an essential com
 
 **State nurse practice acts (NPAs)**: RN scope of practice varies by state. In most states, PICC insertion is within RN scope of practice when the nurse has received appropriate training and is practicing under institutional policy and physician order. Some states require specific designation or standing orders for PICC insertion by RNs.
 
-**INS position on PICC insertion**: INS supports PICC insertion by RNs with documented competency, appropriate training, and institutional authorization. INS does not support PICC insertion as an advanced practice-only function.
+**Professional standards on PICC insertion**: Professional standards support PICC insertion by RNs with documented competency, appropriate training, and institutional authorization. Professional standards do not support PICC insertion as an advanced practice-only function.
 
 **Advanced practice roles**: NPs and PAs with appropriate training and privileges may insert PICCs, non-tunneled CVCs, and perform other advanced vascular access procedures within their scope.
 
@@ -199,9 +199,9 @@ Simulation allows skill development without patient risk and is an essential com
 **Step-by-step:**
 
 1. **Needs assessment**: Identify which vascular access procedures are performed by which clinician roles; identify current credentialing gaps
-2. **Policy development**: Develop or update the vascular access credentialing policy aligned with INS 2021, AVAR, and TJC standards
+2. **Policy development**: Develop or update the vascular access credentialing policy aligned with , AVAR, and TJC standards
 3. **Competency tools**: Select or develop written exam, skills checklist, and case log template for each procedure module
-4. **Training program**: Identify didactic resources (INS courses, AVAR modules, institutional content), simulation resources, and preceptor/proctor pool
+4. **Training program**: Identify didactic resources (CVAA courses, AVAR modules, institutional content), simulation resources, and preceptor/proctor pool
 5. **Documentation system**: Implement credentialing records in a competency management platform or personnel file system
 6. **Launch and orientation integration**: Integrate vascular access credentialing into new hire orientation and annual competency programs
 7. **Ongoing monitoring**: Track competency completion rates, procedure volumes, and quality outcomes; review annually
@@ -229,8 +229,7 @@ Simulation allows skill development without patient risk and is an essential com
 
 ## References
 
-1. Gorski LA, et al. (2021). INS Infusion Therapy Standards of Practice (Standard 13: Competency). *J Infus Nurs*, 44(Suppl 1).
 2. AVAR. (2021). Vascular Access Standards and Practice Guidelines. Association for Vascular Access.
 3. The Joint Commission. (2024). Credentialing and Privileging Standards. Comprehensive Accreditation Manual for Hospitals.
-4. INS. (2021). Position paper: PICC insertion by registered nurses. Infusion Nurses Society.
+4. CVAA. (2021). Position paper: PICC insertion by registered nurses. CVAA.
 5. Moureau NL & Gorski LA. (2021). Central venous access device tip position. *J Infus Nurs*, 44(5):261–268.

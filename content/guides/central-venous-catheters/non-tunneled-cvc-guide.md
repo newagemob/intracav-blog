@@ -61,7 +61,7 @@ Site selection is the most important decision in non-tunneled CVC placement. It 
 | **Patient tolerance** | Generally well tolerated | Generally well tolerated | Restriction of hip movement |
 | **Contraindications** | Ipsilateral carotid disease; neck surgery | Rib/clavicle deformity; chest surgery | Obesity; groin infection; thrombosis |
 
-### CDC/INS Site Preference
+### CDC Site Preference
 
 Per CDC 2011 guidelines:
 - **Subclavian preferred** over IJ or femoral for CVCs in adults when technically feasible (lowest CLABSI rate)
@@ -171,7 +171,7 @@ See [CLABSI Prevention](/guides/clabsi-prevention/) for complete bundle informat
 Non-tunneled CVCs should not be used as indefinite long-term access devices.
 
 **Recommended maximum dwell:**
-- **Non-tunneled CVC:** Remove or exchange as soon as clinically possible; no absolute maximum by INS standards, but evidence supports increased CLABSI risk with prolonged dwell. Most institutional policies recommend transition planning at 7–10 days.
+- **Non-tunneled CVC:** Remove or exchange as soon as clinically possible; no absolute maximum by current clinical standards, but evidence supports increased CLABSI risk with prolonged dwell. Most institutional policies recommend transition planning at 7–10 days.
 - **Femoral CVC:** Maximum 72–96 hours strongly preferred (high DVT and CLABSI risk); transition to IJ or subclavian access as soon as clinically feasible.
 
 **Transition to PICC:** Once a patient is hemodynamically stable and central access is expected to continue >7–10 days, consider converting from CVC to PICC to reduce CLABSI risk from the IJ or femoral access site.
@@ -195,7 +195,6 @@ Non-tunneled CVCs should not be used as indefinite long-term access devices.
 
 ## References
 
-1. Gorski LA, et al. (2021). INS Infusion Therapy Standards of Practice. *J Infus Nurs*, 44(Suppl 1).
 2. Parienti JJ, et al. (2015). Intravascular complications of CVC by insertion site. *N Engl J Med*, 373(13):1220–1229.
 3. O'Grady NP, et al. (2011). CDC Guidelines for Prevention of Intravascular Catheter-Related Infections. *MMWR*, 60(RR-1).
 4. Brass P, et al. (2015). Ultrasound guidance versus anatomical landmarks for subclavian or femoral vein catheterization. *Cochrane Database Syst Rev*, (1):CD011447.

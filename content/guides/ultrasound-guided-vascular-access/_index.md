@@ -34,7 +34,7 @@ This guide covers the complete clinical scope of ultrasound-guided vascular acce
 
 ### Ultrasound for PICC Insertion
 
-- All major clinical guidelines (INS 2021, AVAR, SHEA/IDSA) require or strongly recommend real-time ultrasound guidance for PICC insertion
+- All major clinical guidelines (, AVAR, SHEA/IDSA) require or strongly recommend real-time ultrasound guidance for PICC insertion
 - Ultrasound guidance for PICC insertion allows: optimal vein selection (size, depth, absence of thrombosis), real-time needle visualization, micropuncture technique facilitation, reduction of nerve injury risk
 - Without ultrasound, PICC insertion failure and complication rates are substantially higher
 
@@ -182,7 +182,7 @@ Ultrasound of the heart (subxiphoid view) can also demonstrate guidewire or cath
 
 ## Training, Competency, and Credentialing
 
-All clinicians using ultrasound for vascular access procedures require documented training and competency validation. Per INS 2021 Standard 13 and AVAR standards:
+All clinicians using ultrasound for vascular access procedures require documented training and competency validation. and AVAR standards:
 
 **PICC inserters:**
 - Minimum training: didactic education on US physics, anatomy, technique + supervised procedures with ultrasound
@@ -220,5 +220,4 @@ See [Ultrasound Credentialing Requirements](/guides/ultrasound-guided-vascular-a
 1. NICE. (2002). Technology Appraisal 49: Guidance on the use of ultrasound locating devices for placing central venous catheters. National Institute for Health and Care Excellence.
 2. Brass P, et al. (2015). Ultrasound guidance versus anatomical landmarks for internal jugular vein cannulation. *Cochrane Database Syst Rev*, 1:CD006962.
 3. Parienti JJ, et al. (2015). Intravascular complications of central venous catheterization by insertion site. *N Engl J Med*, 373(13):1220–1229.
-4. Gorski LA, et al. (2021). INS Infusion Therapy Standards of Practice. *J Infus Nurs*, 44(Suppl 1).
 5. Dawson RB. (2011). DIVA trial: Ultrasound guidance for difficult IV access. *Ann Emerg Med*, 58(4):309–315.

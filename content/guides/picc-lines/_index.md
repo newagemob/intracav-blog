@@ -76,7 +76,7 @@ The **Michigan Appropriateness Guide for Intravenous Catheters (MAGIC)** — a c
 
 ### Single vs. Multi-Lumen
 
-INS 2021 Standards recommend using the **minimum number of lumens necessary** to meet the clinical care plan. Each lumen represents an additional infection and thrombosis risk. Single-lumen PICCs are preferred for most single-therapy indications. Multi-lumen (double or triple) PICCs are appropriate for patients requiring simultaneous incompatible infusions or frequent blood draws alongside infusion therapy.
+Current clinical standards recommend using the **minimum number of lumens necessary** to meet the clinical care plan. Each lumen represents an additional infection and thrombosis risk. Single-lumen PICCs are preferred for most single-therapy indications. Multi-lumen (double or triple) PICCs are appropriate for patients requiring simultaneous incompatible infusions or frequent blood draws alongside infusion therapy.
 
 ### Power-Injectable vs. Standard
 
@@ -172,7 +172,7 @@ At every catheter access event: scrub the needleless connector hub with **70% is
 
 ### Administration Set Changes
 
-Per INS 2021:
+Per :
 - Continuous infusion sets: change no more frequently than every 96 hours (every 4 days), unless clinically indicated
 - Lipid-containing infusions (including 3-in-1 PN with lipids): change every 24 hours
 - Blood and blood product sets: change after each unit, within 4 hours

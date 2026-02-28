@@ -7,16 +7,15 @@ audience = "clinician"
 category = ["Ultrasound-Guided Access", "Credentialing", "Competency"]
 tags = ["ultrasound credentialing vascular access", "US guided IV credentialing", "PICC ultrasound competency", "US PIV credentialing", "vascular access ultrasound certification", "ultrasound scope of practice", "ultrasound training requirements", "bedside ultrasound credentialing"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]
-description = "Framework for ultrasound credentialing in vascular access: didactic requirements, simulation, proctored case minimums, competency assessment, scope of practice definitions, and maintenance of competency requirements per INS and AVAR."
+description = "Framework for ultrasound credentialing in vascular access: didactic requirements, simulation, proctored case minimums, competency assessment, scope of practice definitions, and maintenance of competency requirements per AVAR."
 slug = "ultrasound-credentialing-requirements"
-keywords = ["ultrasound credentialing vascular access", "US guided vascular access competency", "PICC ultrasound training requirements", "US PIV credentialing framework", "vascular access ultrasound scope of practice", "ultrasound proctored cases requirement", "INS ultrasound competency", "bedside ultrasound credentialing nurses"]
 +++
 
 # Ultrasound Credentialing for Vascular Access: Competency Framework and Requirements
 
 Ultrasound guidance for vascular access is a distinct clinical skill requiring training, supervised practice, and ongoing competency assessment. Unlike some clinical skills that can be informally adopted, ultrasound-guided vascular access involves interpretation of real-time imaging, precise psychomotor coordination, and recognition of anatomic pitfalls — all of which require structured competency validation before independent practice.
 
-This guide outlines the standard credentialing framework for ultrasound-guided vascular access based on INS 2021, AVAR standards, and institutional accreditation requirements.
+This guide outlines the standard credentialing framework for ultrasound-guided vascular access based on , AVAR standards, and institutional accreditation requirements.
 
 **Parent guide:** [Ultrasound-Guided Vascular Access: Complete Reference](/guides/ultrasound-guided-vascular-access/)
 
@@ -104,7 +103,7 @@ Under direct supervision of a credentialed proctor:
 - Proctor observes and documents performance on competency checklist
 - Minimum 10–15 proctored cases with ≥90% checklist compliance to proceed to independent practice
 
-**Minimum case requirements vary by institution** — AVAR and INS do not prescribe a single number, but 10–15 is a commonly cited minimum based on published learning curves for US-guided PICC insertion.
+**Minimum case requirements vary by institution** — AVAR does not prescribe a single number, but 10–15 is a commonly cited minimum based on published learning curves for US-guided PICC insertion.
 
 ### Component 4: Written Competency Assessment
 
@@ -194,7 +193,6 @@ Credentialing is not a one-time event. Ongoing competency maintenance requiremen
 
 ## References
 
-1. Gorski LA, et al. (2021). INS Infusion Therapy Standards of Practice (Standards 13, 24). *J Infus Nurs*, 44(Suppl 1).
 2. NICE Technology Appraisal No. 49. (2002). Guidance on the use of ultrasound locating devices for placing CVC catheters.
 3. Lamperti M, et al. (2012). International evidence-based recommendations on US-guided vascular access. *Intensive Care Med*, 38(7):1105–1117.
 4. ASE/SCA Guidelines. (2011). Guidelines for performing US-guided vascular cannulation. *J Am Soc Echocardiogr*, 24(12):1291–1318.

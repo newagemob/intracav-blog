@@ -72,7 +72,7 @@ As of the most recent CBVN published criteria:
 The CBVN publishes a content outline (blueprint) for the VA-BC exam. The exam tests knowledge across the full vascular access scope of practice. Major content domains (approximate weightings vary by exam version — verify with current CBVN blueprint):
 
 ### Domain 1: Device Selection and Insertion
-- Evidence-based device selection (INS 2021, MAGIC criteria)
+- Evidence-based device selection (, MAGIC criteria)
 - Vessel health and preservation
 - Patient assessment for vascular access
 - Insertion techniques (PIV, midline, PICC)
@@ -98,7 +98,7 @@ The CBVN publishes a content outline (blueprint) for the VA-BC exam. The exam te
 - DVT and thrombosis
 - Occlusion and alteplase
 - Phlebitis (VIP scale)
-- Infiltration and extravasation (INS staging, vesicant antidotes)
+- Infiltration and extravasation (graded staging, vesicant antidotes)
 - Air embolism
 - Catheter malposition
 - MARSI
@@ -121,7 +121,7 @@ The CBVN publishes a content outline (blueprint) for the VA-BC exam. The exam te
 - Documentation requirements
 - Quality improvement
 - Evidence-based practice
-- Regulatory framework (INS, CDC, TJC, CMS)
+- Regulatory framework (CDC, TJC, CMS)
 
 ---
 
@@ -153,9 +153,7 @@ The CBVN publishes a content outline (blueprint) for the VA-BC exam. The exam te
 
 ### Review Resources
 
-**INS Infusion Therapy Standards of Practice (2021):** The VA-BC exam is heavily grounded in INS Standards — this is the primary study reference. If you have not read the INS Standards cover-to-cover, do so.
-
-**INS Core Curriculum for Infusion Nursing:** Published by INS; companion textbook to the Standards. Extensive reference text for exam preparation.
+**Core Curriculum for Infusion Nursing:** Published by CVAA; extensive reference text for exam preparation covering all domains.
 
 **AVAR VA-BC Study Guide:** Available through AVAR; specifically aligned with CBVN content blueprint.
 
@@ -164,8 +162,8 @@ The CBVN publishes a content outline (blueprint) for the VA-BC exam. The exam te
 ### Study Approach
 
 - Study from the CBVN content outline — ensure you have studied material in every domain
-- Focus on INS Standards citation numbers (e.g., Standard 22: Tip Location; Standard 40: Dressing; Standard 42: Flushing) — questions frequently reference specific standards
-- Memorize key clinical numbers: osmolarity thresholds (600, 900 mOsm/L), dressing change intervals, alteplase dose (2 mg/2 mL), DIVA score criteria, INS phlebitis VIP scale grades
+- Know key clinical standards categories: tip location, dressing protocols, flushing intervals — questions test application of these standards
+- Memorize key clinical numbers: osmolarity thresholds (600, 900 mOsm/L), dressing change intervals, alteplase dose (2 mg/2 mL), DIVA score criteria, phlebitis VIP scale grades
 - Practice applying clinical scenarios to decision frameworks (VHP, MAGIC, osmolarity algorithm)
 
 ---
@@ -198,5 +196,4 @@ To recertify:
 ## References
 
 1. CBVN. (2024). VA-BC Certification Candidate Handbook. Retrieved from cbvn.net.
-2. Gorski LA, et al. (2021). INS Infusion Therapy Standards of Practice (Standard 13: Competency). *J Infus Nurs*, 44(Suppl 1).
 3. AVAR. (2023). Vascular Access Position Statements. Retrieved from avar.org.

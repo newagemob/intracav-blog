@@ -15,7 +15,7 @@ keywords = ["IntracavOS", "NixOS", "Healthcare AI Infrastructure", "Medical AI D
 
 # Why We're Building IntracavOS: Real Talk About Healthcare AI
 
-Look, let's cut through the BS - healthcare AI is a mess. Everyone's rushing to slap an LLM onto their product and call it "revolutionary," but nobody's talking about the elephant in the room: most of these solutions are held together with duct tape and prayers. At Intracav AI, we're doing something different, and I'm going to tell you exactly why our approach is going to eat everyone else's lunch.
+Look, let's cut through the BS - healthcare AI is a mess. Everyone's rushing to slap an LLM onto their product and call it "revolutionary," but nobody's talking about the elephant in the room: most of these solutions are held together with duct tape and prayers. At Lumen, we're doing something different, and I'm going to tell you exactly why our approach is going to eat everyone else's lunch.
 
 ## The Problem with Healthcare AI
 

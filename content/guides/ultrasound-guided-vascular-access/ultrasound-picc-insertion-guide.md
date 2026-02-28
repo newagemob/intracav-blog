@@ -14,7 +14,7 @@ keywords = ["ultrasound guided PICC insertion", "US PICC technique", "basilic ve
 
 # Ultrasound-Guided PICC Insertion: Complete Procedural Guide
 
-Ultrasound guidance for PICC insertion is the standard of care per INS 2021 and virtually universal in professional PICC practice. It dramatically reduces complications: first-attempt insertion success rates increase from approximately 70% (landmark) to >95% (US-guided), inadvertent arterial puncture rates drop from ~5% to <1%, and catheter-to-vein ratio can be accurately assessed before catheter selection.
+Ultrasound guidance for PICC insertion is the standard of care and virtually universal in professional PICC practice. It dramatically reduces complications: first-attempt insertion success rates increase from approximately 70% (landmark) to >95% (US-guided), inadvertent arterial puncture rates drop from ~5% to <1%, and catheter-to-vein ratio can be accurately assessed before catheter selection.
 
 This guide focuses specifically on the ultrasound components of PICC insertion — vein survey, basilic vein cannulation technique (long-axis preferred), guidewire confirmation, and integration with ECG tip guidance.
 
@@ -187,7 +187,6 @@ After the catheter is advanced to pre-measured length:
 
 ## References
 
-1. Gorski LA, et al. (2021). INS Infusion Therapy Standards of Practice (Standards 24, 26). *J Infus Nurs*, 44(Suppl 1).
 2. Lamperti M, et al. (2012). International evidence-based recommendations on US-guided vascular access. *Intensive Care Med*, 38(7):1105–1117.
 3. Oliver G, et al. (2016). Electrocardiographic guidance for PICC placement. *Clin Nurse Spec*, 30(1):E1–E12.
 4. Moureau NL, et al. (2013). Evidence-based consensus on the insertion of CVADs. *Br J Nurs*, 22(Sup8).

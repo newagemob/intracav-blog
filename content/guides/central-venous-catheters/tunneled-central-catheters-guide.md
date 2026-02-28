@@ -182,7 +182,6 @@ Tunneled CVC removal is a surgical procedure because the Dacron cuff must be fre
 
 ## References
 
-1. Gorski LA, et al. (2021). INS Infusion Therapy Standards of Practice. *J Infus Nurs*, 44(Suppl 1).
 2. Bishop L, et al. (2007). Guidelines on the insertion and management of CVCs in adults. *Int J Lab Hematol*, 29(4):261–278.
 3. O'Grady NP, et al. (2011). CDC Guidelines for Prevention of Intravascular Catheter-Related Infections. *MMWR*, 60(RR-1).
 4. Vescia S, et al. (2008). Management of venous port systems in oncology. *Ann Oncol*, 19(1):9–15.

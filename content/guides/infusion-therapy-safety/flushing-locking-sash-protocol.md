@@ -9,7 +9,6 @@ tags = ["SASH protocol", "catheter flushing protocol", "heparin lock", "saline l
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]
 description = "Evidence-based guide to vascular access device flushing and locking: SASH protocol (Saline-Administer-Saline-Heparin), pulsatile flush technique, positive pressure locking, heparin vs saline evidence, flush volumes, and device-specific protocols."
 slug = "flushing-locking-sash-protocol"
-keywords = ["SASH protocol flushing", "catheter flushing locking protocol", "heparin vs saline lock", "pulsatile flushing technique", "positive pressure catheter", "CVAD flush volume", "INS flushing standards 2021", "catheter patency maintenance"]
 +++
 
 # Flushing and Locking Vascular Access Devices: SASH Protocol and Evidence
@@ -91,7 +90,6 @@ Continuous, steady flushing produces laminar flow (smooth, non-turbulent) in the
 
 ## Flush Volumes by Device Type
 
-Per INS 2021 Standard 42:
 
 | Device | Pre-Use Flush | Post-Medication Flush | Lock Solution |
 |---|---|---|---|
@@ -117,9 +115,9 @@ For open-ended CVADs (Hickman, non-tunneled CVC, PICC), is heparin lock superior
 
 The evidence is nuanced:
 
-**For short-term CVADs (PICC, non-tunneled CVC):** Multiple RCTs and meta-analyses comparing heparin 10–100 units/mL lock vs. saline lock have found **no statistically significant difference in occlusion rates** for most CVADs in adults, when proper pulsatile flushing technique is used. INS 2021 states that evidence supports saline-only flushing as acceptable for PICCs and short-term CVCs.
+**For short-term CVADs (PICC, non-tunneled CVC):** Multiple RCTs and meta-analyses comparing heparin 10–100 units/mL lock vs. saline lock have found **no statistically significant difference in occlusion rates** for most CVADs in adults, when proper pulsatile flushing technique is used.  states that evidence supports saline-only flushing as acceptable for PICCs and short-term CVCs.
 
-**For long-term CVADs (tunneled catheters, ports):** Evidence is less definitive; heparin lock (100 units/mL for tunneled catheters; 100 or 500 units/mL for ports) is the prevailing institutional practice and is recommended by INS for long-dwell devices.
+**For long-term CVADs (tunneled catheters, ports):** Evidence is less definitive; heparin lock (100 units/mL for tunneled catheters; 100 or 500 units/mL for ports) is the prevailing institutional practice and is recommended for long-dwell devices.
 
 **For pediatric PICCs and hemodialysis catheters:** Heparin lock remains standard; the evidence base is less developed for alternatives in these populations.
 
@@ -167,7 +165,6 @@ Follow institutional policy. Where institutional policy permits saline-only lock
 
 ## References
 
-1. Gorski LA, et al. (2021). INS Infusion Therapy Standards of Practice (Standard 42). *J Infus Nurs*, 44(Suppl 1).
 2. López-Briz E, et al. (2014). Heparin versus 0.9% sodium chloride locking for prevention of occlusion in CVCs: Cochrane review. *Cochrane Database Syst Rev*, (9):CD008462.
 3. Bertoglio S, et al. (2012). Efficacy of normal saline versus heparinized saline solution for locking catheters: a multicentre randomized study. *J Clin Oncol*, 30(9):e35–e38.
 4. Muñoz-Mozas G, et al. (2018). Saline vs heparin in maintaining PICC patency. *J Vasc Access*, 19(1):14–18.

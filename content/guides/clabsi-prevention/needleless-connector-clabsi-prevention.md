@@ -9,7 +9,6 @@ tags = ["needleless connector CLABSI", "needleless connector management", "scrub
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]
 description = "Evidence-based guide to needleless connectors and CLABSI prevention: connector types (split-septum, mechanical valve), scrub-the-hub technique, change intervals, passive disinfection caps, and selecting connectors to minimize CLABSI risk."
 slug = "needleless-connector-clabsi-prevention"
-keywords = ["needleless connector CLABSI prevention", "scrub the hub needleless connector", "needleless connector change interval", "positive pressure connector CLABSI", "split septum connector", "neutral displacement needleless connector", "passive disinfection cap", "needleless connector management INS"]
 +++
 
 # Needleless Connectors and CLABSI Prevention: Selection, Management, and Evidence
@@ -91,7 +90,7 @@ A 15-second scrub with friction achieves ≥3-log reduction in surface contamina
 
 ## Connector Change Intervals
 
-### INS 2021 Standard 37
+### current clinical standard
 
 - Change needleless connector **with each administration set change** (every 96 hours for continuous non-lipid infusions)
 - Do not change connectors more frequently than every 72–96 hours without clinical indication
@@ -173,7 +172,6 @@ Some connector designs incorporate anti-reflux mechanisms to prevent blood from 
 
 ## References
 
-1. Gorski LA, et al. (2021). INS Infusion Therapy Standards of Practice (Standards 34–42). *J Infus Nurs*, 44(Suppl 1).
 2. Buetti N, et al. (2022). Strategies to prevent CLABSI in acute care hospitals: 2022 update. *Infect Control Hosp Epidemiol*, 43(5):553–569.
 3. Menyhay SZ & Maki DG. (2006). Disinfection of needleless catheter connectors and access ports. *Ann Intern Med*, 144(12):927–929.
 4. Flynn JM, et al. (2012). Scrubbing the hub: an integrative review of safety, cost-effectiveness, clinical effectiveness. *Nurs Clin North Am*, 47(2):233–254.

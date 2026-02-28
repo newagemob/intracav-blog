@@ -1,22 +1,22 @@
 +++
-title = "Evidence-Based Vascular Access Device Selection: INS Standards and Clinical Decision Framework"
+title = "Evidence-Based Vascular Access Device Selection: Clinical Decision Framework"
 date = 2026-02-25T00:00:00-05:00
 lastmod = 2026-02-25T00:00:00-05:00
 content_type = "guide"
 audience = "clinician"
-category = ["Device Selection", "Clinical Practice", "INS Standards"]
-tags = ["evidence based device selection", "INS vascular access standards", "vessel health preservation", "DIVA score", "vascular access decision", "appropriate device selection", "MAGIC criteria", "osmolarity threshold"]
+category = ["Device Selection", "Clinical Practice"]
+tags = ["evidence based device selection", "vessel health preservation", "DIVA score", "vascular access decision", "appropriate device selection", "MAGIC criteria", "osmolarity threshold"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]
-description = "Evidence-based vascular access device selection using INS 2021 standards, the Vessel Health and Preservation (VHP) framework, DIVA score, osmolarity thresholds, and the MAGIC appropriateness criteria."
+description = "Evidence-based vascular access device selection using  standards, the Vessel Health and Preservation (VHP) framework, DIVA score, osmolarity thresholds, and the MAGIC appropriateness criteria."
 slug = "evidence-based-device-selection"
-keywords = ["evidence based device selection vascular access", "INS 2021 device selection", "vessel health preservation", "DIVA score vascular access", "MAGIC criteria PICC", "vascular access decision algorithm", "osmolarity threshold IV", "appropriate PICC indication"]
+keywords = ["evidence based device selection vascular access", " device selection", "vessel health preservation", "DIVA score vascular access", "MAGIC criteria PICC", "vascular access decision algorithm", "osmolarity threshold IV", "appropriate PICC indication"]
 +++
 
-# Evidence-Based Vascular Access Device Selection: INS Standards and Clinical Decision Framework
+# Evidence-Based Vascular Access Device Selection: Clinical Decision Framework
 
 The choice of vascular access device is not a trivial clinical decision. Inappropriate device selection — using a central device when a peripheral approach would suffice, or using a peripheral device for therapy requiring central access — carries real patient harm risks. Vascular access device selection requires systematic clinical reasoning grounded in evidence-based standards.
 
-This guide covers the key frameworks and decision tools for evidence-based VAD selection: INS 2021 Standards, the Vessel Health and Preservation (VHP) approach, the DIVA score, osmolarity and pH thresholds, and the MAGIC appropriateness criteria.
+This guide covers the key frameworks and decision tools for evidence-based VAD selection: the Vessel Health and Preservation (VHP) approach, the DIVA score, osmolarity and pH thresholds, and the MAGIC appropriateness criteria.
 
 ---
 
@@ -35,9 +35,9 @@ This kind of structured assessment is what evidence-based device selection deman
 
 ---
 
-## INS 2021 Core Principle
+##  Core Principle
 
-The foundational device selection principle in INS 2021 Standards of Practice:
+The foundational device selection principle in current clinical standards:
 
 > **"Use the least invasive vascular access device that meets the full clinical needs of the patient for the prescribed duration of therapy."**
 
@@ -47,7 +47,7 @@ This principle establishes a hierarchy of invasiveness: peripheral (PIV) < midli
 
 ## The Vessel Health and Preservation (VHP) Framework
 
-The **Vessel Health and Preservation (VHP)** framework — developed and promoted by INS, AVAR, and vascular access researchers — is a systematic approach to device selection that prioritizes long-term venous capital alongside immediate clinical needs.
+The **Vessel Health and Preservation (VHP)** framework — developed and promoted by CVAA, AVAR, and vascular access researchers — is a systematic approach to device selection that prioritizes long-term venous capital alongside immediate clinical needs.
 
 **The VHP concept:** Every patient has a finite supply of functional veins. Repeated peripheral IV failures, phlebitis events, and inappropriate PICC placements in the arms of patients with CKD consume this resource and may ultimately compromise future dialysis access creation. VHP takes a patient lifetime perspective.
 
@@ -85,7 +85,7 @@ The **DIVA (Difficult Intravenous Access)** score is a validated clinical tool t
 
 Infusate osmolarity and pH are the primary pharmacologic drivers of device selection for medication-related access needs.
 
-**Osmolarity thresholds (INS 2021):**
+**Osmolarity thresholds :**
 - <600 mOsm/L: peripheral IV acceptable for standard dwell
 - 600–900 mOsm/L: central access strongly preferred; peripheral midline may be acceptable for short duration with close monitoring
 - >900 mOsm/L: central access required
@@ -165,7 +165,6 @@ STEP 4: What is the patient's DIVA score?
 
 ## References
 
-1. Gorski LA, et al. (2021). INS Infusion Therapy Standards of Practice. *J Infus Nurs*, 44(Suppl 1).
 2. Chopra V, et al. (2015). The Michigan Appropriateness Guide for Intravenous Catheters (MAGIC). *Ann Intern Med*, 163(6 Suppl):S1–S40.
 3. Egan G, et al. (2012). A prospective postmarket study to evaluate the DIVA score. *J Vasc Access*, 13(2):163–167.
 4. Moureau NL & Carr PJ. (2018). Vessel health and preservation. *Br J Nurs*, 27(8):S28–S35.

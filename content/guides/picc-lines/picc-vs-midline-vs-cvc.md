@@ -7,9 +7,8 @@ audience = "clinician"
 category = ["PICC Line", "Device Selection", "Central Venous Catheters"]
 tags = ["PICC vs midline", "PICC vs CVC", "midline vs PICC comparison", "central line decision", "vascular access device selection", "PICC decision tool", "midline catheter indications", "CVC vs PICC"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]
-description = "Clinical decision guide comparing PICC, midline catheter, and non-tunneled CVC: indications, contraindications, osmolarity limits, dwell time, CLABSI risk, and evidence-based selection criteria per INS 2021 and MAGIC."
+description = "Clinical decision guide comparing PICC, midline catheter, and non-tunneled CVC: indications, contraindications, osmolarity limits, dwell time, CLABSI risk, and evidence-based selection criteria and MAGIC."
 slug = "picc-vs-midline-vs-cvc"
-keywords = ["PICC vs midline catheter", "PICC vs CVC comparison", "midline vs PICC decision", "when to use PICC vs midline", "CVC vs PICC ICU", "vascular access device selection guide", "INS PICC midline comparison", "MAGIC criteria PICC"]
 +++
 
 # PICC vs Midline vs CVC: Clinical Decision Guide
@@ -216,7 +215,6 @@ For children, device selection applies similar principles with age-specific anat
 
 ## References
 
-1. Gorski LA, et al. (2021). INS Infusion Therapy Standards of Practice. *J Infus Nurs*, 44(Suppl 1).
 2. Chopra V, et al. (2015). The Michigan Appropriateness Guide for Intravenous Catheters (MAGIC). *Ann Intern Med*, 163(6 Suppl):S1–S40.
 3. Chopra V, et al. (2013). Risk of venous thromboembolism associated with PICCs: A systematic review and meta-analysis. *Lancet*, 382(9889):311–325.
 4. Parienti JJ, et al. (2015). Intravascular complications of central venous catheterization by insertion site. *N Engl J Med*, 373(13):1220–1229.

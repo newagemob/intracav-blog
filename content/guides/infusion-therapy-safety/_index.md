@@ -9,7 +9,7 @@ tags = ["infusion therapy safety", "IV medication safety", "filtration standards
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]
 description = "Complete clinical reference on infusion therapy safety: filtration standards, flushing and locking, vesicant administration, high-alert medications, PN access requirements, administration set management, and smart pump safety."
 slug = "infusion-therapy-safety"
-keywords = ["infusion therapy safety", "IV medication safety", "filtration standards infusion", "SASH flushing protocol", "vesicant administration safety", "high alert medications IV", "parenteral nutrition access", "smart pump drug library", "infusion standards INS 2021"]
+keywords = ["infusion therapy safety", "IV medication safety", "filtration standards infusion", "SASH flushing protocol", "vesicant administration safety", "high alert medications IV", "parenteral nutrition access", "smart pump drug library", "infusion standards "]
 schema_type = "MedicalWebPage"
 pillar = true
 pillar_cluster = "infusion-therapy-safety"
@@ -34,7 +34,7 @@ Every infusion reaches a patient through a connected system of components:
 5. **Infusion pump** — dose delivery; drug library compliance is critical for high-alert medications
 6. **Infusate container and medication** — preparation errors, compounding errors, and compatibility issues
 
-The INS 2021 Standards address each component. The principle: **minimize add-on devices to the minimum clinically required; every additional component adds infection risk, flow resistance, and potential failure.**
+The current clinical standards address each component. The principle: **minimize add-on devices to the minimum clinically required; every additional component adds infection risk, flow resistance, and potential failure.**
 
 ---
 
@@ -42,7 +42,7 @@ The INS 2021 Standards address each component. The principle: **minimize add-on 
 
 Device selection for infusion therapy must consider the osmolarity, pH, vesicant potential, volume requirements, and duration of the planned therapy.
 
-### Osmolarity Thresholds (INS 2021)
+### Osmolarity Thresholds 
 
 | Osmolarity | Route |
 |---|---|
@@ -89,7 +89,7 @@ The **Institute for Safe Medication Practices (ISMP)** maintains a list of high-
 
 ## Filtration Standards
 
-In-line filtration during IV infusion removes particulate matter, microorganisms, and air. INS 2021 provides specific filtration guidance:
+In-line filtration during IV infusion removes particulate matter, microorganisms, and air.  provides specific filtration guidance:
 
 | Filter Size | Use Cases |
 |---|---|
@@ -104,7 +104,7 @@ In-line filtration during IV infusion removes particulate matter, microorganisms
 
 **Neonatal filtration:** 0.2 micron filtration is particularly important in neonatal PN to reduce phlebitis risk in small, fragile veins and to filter potential particulate from compounded admixtures.
 
-**Filter change frequency:** INS 2021 — change filters with the administration set per the set change schedule (maximum 96 hours for continuous infusion); more frequently for lipid-containing solutions (24 hours).
+**Filter change frequency:**  — change filters with the administration set per the set change schedule (maximum 96 hours for continuous infusion); more frequently for lipid-containing solutions (24 hours).
 
 See [Infusion Filtration Standards](/guides/infusion-therapy-safety/infusion-filtration-guide/).
 
@@ -135,11 +135,11 @@ Consistent flushing and locking of vascular access devices prevents occlusion an
 - Whether heparin or saline is superior for locking CVADs remains debated; meta-analyses show similar efficacy for both for patency maintenance in most CVAD types
 - Saline lock is now recommended or preferred by many institutions (especially for short-term CVCs and PICCs) to reduce heparin exposure and HIT risk
 - Heparin lock remains standard for implanted ports (per most manufacturer and institutional protocols) and for some tunneled catheter types
-- Per INS 2021: the type and frequency of flushing/locking should be based on catheter manufacturer instructions, institutional protocol, and individual patient factors
+- the type and frequency of flushing/locking should be based on catheter manufacturer instructions, institutional protocol, and individual patient factors
 
 ---
 
-## Administration Set Change Frequency (INS 2021)
+## Administration Set Change Frequency 
 
 | Infusion Type | Maximum Set Change Interval |
 |---|---|
@@ -223,7 +223,6 @@ See [Parenteral Nutrition Vascular Access Requirements](/guides/infusion-therapy
 
 ## References
 
-1. Gorski LA, et al. (2021). INS Infusion Therapy Standards of Practice (8th ed.). *J Infus Nurs*, 44(Suppl 1).
 2. ISMP. (2023). High-Alert Medications in Acute Care Settings. Institute for Safe Medication Practices.
 3. Keränen U, et al. (2010). Improving adherence to filtration recommendations for peripheral parenteral nutrition. *JPEN*, 34(4):420–425.
 4. Phillips LD & Gorski LA. (2014). *Manual of I.V. Therapeutics* (6th ed.). F.A. Davis.

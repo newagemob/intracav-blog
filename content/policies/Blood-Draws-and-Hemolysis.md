@@ -15,7 +15,7 @@ keywords = ["Hemolysis Prevention", "Blood Draw Technique", "Catheter to Vein Ra
 
 # Deep Dive Blood Draws and Hemolysis
 
-Follow along Intracav Chat and interact with it yourself with <a href="https://www.intracav.ai/chat?chatId=n934mw6jvnxddlevmiiesrxs" target="_blank" rel="noopener noreferrer">this link</a>
+Follow along with Lumen and interact with it yourself with <a href="https://www.intracav.ai/chat?chatId=n934mw6jvnxddlevmiiesrxs" target="_blank" rel="noopener noreferrer">this link</a>
 
 CVR (Catheter to Vein Ratio). The Optimal ratio is \<45%.
 

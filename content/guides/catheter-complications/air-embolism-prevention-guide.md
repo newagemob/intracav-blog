@@ -203,7 +203,6 @@ Report as a safety event per institutional incident reporting protocol.
 
 ## References
 
-1. Gorski LA, et al. (2021). INS Infusion Therapy Standards of Practice (Standard 58: Air Embolism). *J Infus Nurs*, 44(Suppl 1).
 2. Mirski MA, et al. (2007). Diagnosis and treatment of vascular air embolism. *Anesthesiology*, 106(1):164–177.
 3. Durant TM, et al. (1947). Pulmonary (venous) air embolism. *Am Heart J*, 33(2):269–281. [Historical Durant's maneuver description]
 4. Heckmann JG, et al. (2000). Neurological manifestations of cerebral air embolism. *J Neurol*, 247(3):229–233.

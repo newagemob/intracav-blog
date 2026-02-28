@@ -110,7 +110,7 @@ Full-time VAT with around-the-clock coverage for PICC insertion, difficult IV, a
 VAT RN scope of practice is governed by:
 - State nurse practice act (NPA)
 - Hospital policy and credentialing requirements
-- INS position statements
+- professional position statements
 - Physician order requirements (for PICC insertion, midline placement)
 
 **Standard VAT RN scope (most states):**
@@ -163,7 +163,7 @@ Present the business case to nursing administration, CMO, and CFO. Align with cu
 ### Step 4: Hiring and Training
 
 - Recruit experienced RNs with interest in vascular access; prior PICC experience a plus but not required
-- Provide structured onboarding: INS Standards education, anatomy and US technique training, simulation lab time, proctored clinical insertions (minimum per competency framework)
+- Provide structured onboarding: current clinical standards education, anatomy and US technique training, simulation lab time, proctored clinical insertions (minimum per competency framework)
 - Pursue VA-BC or CRNI certification for VAT staff (within first 12–18 months)
 - Maintain continuing education budget
 
@@ -241,7 +241,6 @@ Present the business case to nursing administration, CMO, and CFO. Align with cu
 
 ## References
 
-1. Gorski LA, et al. (2021). INS Infusion Therapy Standards of Practice. *J Infus Nurs*, 44(Suppl 1).
 2. O'Brien J, et al. (2013). Effective implementation of a PICC team. *J Infus Nurs*, 36(3):199–204.
 3. Chopra V, et al. (2015). MAGIC criteria for PICC use. *Ann Intern Med*, 163(6 Suppl).
 4. Moureau NL & Carr PJ. (2018). Vessel health and preservation: the right approach for long-term vascular access. *Br J Nurs*, 27(8):S28–S35.

@@ -167,5 +167,4 @@ The most important contribution a non-dialysis vascular access clinician can mak
 
 1. KDOQI Clinical Practice Guidelines for Vascular Access. (2006). *Am J Kidney Dis*, 48(Suppl 1):S176–S247.
 2. Lok CE, et al. (2020). KDOQI Clinical Practice Guideline for Vascular Access: 2019 Update. *Am J Kidney Dis*, 75(4 Suppl 2):S1–S164.
-3. Gorski LA, et al. (2021). INS Infusion Therapy Standards of Practice. *J Infus Nurs*, 44(Suppl 1).
 4. Moist LM, et al. (2012). Optimal hemodialysis vascular access in the elderly patient. *Semin Dial*, 25(6):640–648.

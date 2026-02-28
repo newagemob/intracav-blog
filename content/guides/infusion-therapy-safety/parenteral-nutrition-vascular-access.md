@@ -77,7 +77,7 @@ PPN formulations are specifically diluted to peripheral tolerance — typically 
 
 ## Dedicated Lumen for PN
 
-**Standard recommendation (INS 2021, ASPEN):** PN should be administered through a dedicated lumen of a multi-lumen catheter whenever possible. Do not use the PN lumen for blood draws, medication administration, or other infusions while PN is running.
+**Standard recommendation (ASPEN):** PN should be administered through a dedicated lumen of a multi-lumen catheter whenever possible. Do not use the PN lumen for blood draws, medication administration, or other infusions while PN is running.
 
 **Rationale:** PN is a high-risk medium for microbial growth. Every break in the PN line — for blood draws or medication co-administration — is a CLABSI risk event. A dedicated lumen protects the PN line integrity and reduces contamination events.
 
@@ -109,7 +109,7 @@ PPN formulations are specifically diluted to peripheral tolerance — typically 
 - Inspect PN bag on receipt: check for turbidity (opalescent is normal for 3-in-1 TNA; cloudy with particulate or color change = do not use)
 - Confirm label matches patient, formulation, and rate
 
-**Set change intervals (INS 2021):**
+**Set change intervals :**
 - 2-in-1 PN: change bag and tubing every 24 hours
 - 3-in-1 TNA: change bag and tubing every 24 hours
 - Lipid emulsion alone: change every 12 hours
@@ -133,7 +133,7 @@ Vitamins A (retinol) and the amino acid tryptophan in PN admixtures are sensitiv
 - Foil wrapping of PN bag
 - Amber-colored or foil-wrapped tubing
 
-**INS Standard 39 recommendation:** Use light-protective bags/coverings for PN containing vitamins, particularly when infusion duration >12 hours or in neonatal patients.
+**Clinical standard recommendation:** Use light-protective bags/coverings for PN containing vitamins, particularly when infusion duration >12 hours or in neonatal patients.
 
 ---
 
@@ -169,7 +169,6 @@ PN patients carry significantly elevated CLABSI risk compared to non-PN CVAD pat
 
 ## References
 
-1. Gorski LA, et al. (2021). INS Infusion Therapy Standards of Practice (Standards 30, 37, 39). *J Infus Nurs*, 44(Suppl 1).
 2. ASPEN. (2012). Safe practices for parenteral nutrition. *JPEN*, 36(Suppl 2):S1–S94.
 3. Ayers P, et al. (2014). A.S.P.E.N. parenteral nutrition safety consensus recommendations. *JPEN*, 38(3):296–333.
 4. O'Grady NP, et al. (2011). CDC Guidelines for Prevention of Intravascular Catheter-Related Infections. *MMWR*, 60(RR-1).

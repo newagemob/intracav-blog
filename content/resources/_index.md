@@ -11,7 +11,7 @@ keywords = ["vascular access resources", "CLABSI prevention checklist", "VAD com
 
 # Vascular Access Clinical Resources
 
-Free, evidence-based clinical resources designed for hospital educators, vascular access team (VAT) leaders, infection preventionists, and frontline clinicians. Every resource is grounded in current guidelines — INS 2021 Standards, CDC/MMWR recommendations, SHEA/IDSA practice guidance, and peer-reviewed literature — and is formatted for real-world clinical use.
+Free, evidence-based clinical resources designed for hospital educators, vascular access team (VAT) leaders, infection preventionists, and frontline clinicians. Every resource is grounded in current guidelines — current clinical standards, CDC/MMWR recommendations, SHEA/IDSA practice guidance, and peer-reviewed literature — and is formatted for real-world clinical use.
 
 These resources are free to use and share with attribution. They are designed to be adapted for institutional policy, staff education, competency programs, and quality improvement initiatives.
 
@@ -29,7 +29,7 @@ The flagship infection prevention resource. A comprehensive implementation guide
 
 ### [VAD Competency and Credentialing Checklist](/resources/vad-competency-credentialing-checklist/)
 
-A hospital-ready credentialing framework covering peripheral IV, ultrasound-guided PIV, PICC insertion, and implanted port access. Includes written knowledge assessment criteria, skills demonstration checklists, completion thresholds, and an annual re-verification structure aligned with INS 2021 and AVAR standards.
+A hospital-ready credentialing framework covering peripheral IV, ultrasound-guided PIV, PICC insertion, and implanted port access. Includes written knowledge assessment criteria, skills demonstration checklists, completion thresholds, and an annual re-verification structure aligned with AVAR standards.
 
 **Best for:** Hospital educators, VAT program directors, nursing professional development specialists, credentialing committees.
 

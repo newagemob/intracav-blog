@@ -11,7 +11,7 @@ keywords = ["vascular access guide", "PICC line clinical guide", "CLABSI prevent
 
 # Vascular Access Knowledge Center
 
-Evidence-based clinical guides for vascular access professionals. Written by credentialed clinicians, grounded in peer-reviewed evidence, and aligned with INS 2021 Standards of Practice, CDC guidelines, and IDSA recommendations.
+Evidence-based clinical guides for vascular access professionals. Written by credentialed clinicians, grounded in peer-reviewed evidence, and aligned with current clinical standards, CDC guidelines, and IDSA recommendations.
 
 This section is organized into **10 topic clusters**, each built around a pillar guide that covers the full clinical scope, supported by focused satellite articles on specific subtopics.
 
@@ -44,4 +44,4 @@ Free, citable tools for vascular access educators and program leaders:
 
 ---
 
-*Content maintained by the Intracav editorial team. Authors: Dennis Woo RN, Dr. Mike Stern MD, I.M. Wright. All guides are reviewed against current INS Standards of Practice and CDC/IDSA guidelines.*
+*Content maintained by The Clinical Database editorial team. All guides are reviewed against current CDC/IDSA guidelines.*

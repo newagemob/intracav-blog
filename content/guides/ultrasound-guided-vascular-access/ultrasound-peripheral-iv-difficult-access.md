@@ -187,4 +187,3 @@ See [PICC vs Midline vs CVC Decision Guide](/guides/picc-lines/picc-vs-midline-v
 1. Egan G, et al. (2012). Prospective postmarket study to evaluate the DIVA score. *J Vasc Access*, 13(2):163–167.
 2. Costantino TG, et al. (2005). Prospective experiment of US-assisted peripheral IV cannulation versus the standard technique. *J Emerg Med*, 29(3):299–302.
 3. Stein J, et al. (2009). The ultrasound-guided insertion of midline catheters vs PICCs in the ED. *J Emerg Med*, 37(3):349–357.
-4. Gorski LA, et al. (2021). INS Infusion Therapy Standards of Practice. *J Infus Nurs*, 44(Suppl 1).

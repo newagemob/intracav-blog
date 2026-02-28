@@ -430,7 +430,7 @@ Adherence to this policy is a condition of clinical practice within this organiz
 
 [^18]: Royer T. A case for reengineering intravenous line maintenance processes. *J Infus Nurs*. 2003;26(1):22-28.
 
-[^19]: Infusion Nurses Society. Policies and procedures for infusion therapy, 5th ed. Infusion Nurses Society; 2016.
+[^19]: CVAA. Policies and procedures for infusion therapy, 5th ed. CVAA; 2016.
 
 [^20]: Peterson FY, Kirchhoff KT. Analysis of the research about heparinized versus nonheparinized intravascular lines. *Heart Lung*. 1991;20(6):631-640.
 

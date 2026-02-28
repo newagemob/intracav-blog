@@ -5,11 +5,10 @@ lastmod = 2026-02-25T00:00:00-05:00
 content_type = "guide"
 audience = "clinician"
 category = ["Infusion Therapy Safety", "Filtration", "Clinical Practice"]
-tags = ["infusion filtration", "0.2 micron filter", "1.2 micron filter", "IV filter requirements", "in-line filter", "air eliminating filter", "TPN filter", "IV filtration INS"]
+tags = ["infusion filtration", "0.2 micron filter", "1.2 micron filter", "IV filter requirements", "in-line filter", "air eliminating filter", "TPN filter", "IV filtration CVAA"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]
-description = "Complete guide to infusion filtration requirements: 0.2 micron vs 1.2 micron filter selection, medications requiring filtration, medications that cannot be filtered, TPN filtration requirements, and air-eliminating filter standards per INS 2021."
+description = "Complete guide to infusion filtration requirements: 0.2 micron vs 1.2 micron filter selection, medications requiring filtration, medications that cannot be filtered, TPN filtration requirements, and air-eliminating filter standards."
 slug = "infusion-filtration-guide"
-keywords = ["infusion filtration requirements", "0.2 micron IV filter", "1.2 micron lipid filter", "IV filter selection guide", "medications requiring in-line filter", "TPN filtration standard", "air eliminating filter IV", "INS filtration standards 2021"]
 +++
 
 # Infusion Filtration: Clinical Guide to Filter Selection and Requirements
@@ -52,7 +51,7 @@ In-line filtration is an evidence-based safety intervention for intravenous infu
 
 **Standard indications:** Most IV medications, IV solutions without lipids, standard antibiotic infusions.
 
-**Change interval per INS 2021:** Change 0.2 μm filter every 96 hours (with administration set change).
+**Change interval:** Change 0.2 μm filter every 96 hours (with administration set change).
 
 ### 1.2 Micron Filters (Lipid-Compatible Filter)
 
@@ -67,13 +66,12 @@ In-line filtration is an evidence-based safety intervention for intravenous infu
 
 **Standard indications:** Lipid emulsions (Intralipid, Clinolipid), 3-in-1 (TNA/TNA) parenteral nutrition admixtures containing lipids.
 
-**Change interval per INS 2021:** Change 1.2 μm filter every 24 hours (with lipid administration set change interval).
+**Change interval:** Change 1.2 μm filter every 24 hours (with lipid administration set change interval).
 
 ---
 
 ## Medications and Solutions Requiring Filtration
 
-Per INS 2021 Standard 30 (Filtration):
 
 **Always filter:**
 - All parenteral nutrition (TPN/PN): 0.22 μm for 2-in-1 (amino acids + dextrose), 1.2 μm for 3-in-1 (all-in-one with lipids)
@@ -81,7 +79,7 @@ Per INS 2021 Standard 30 (Filtration):
 - Medications with known particulate risk (etoposide, teniposide, fat-soluble vitamins in PN)
 
 **Filter routinely for CVADs:**
-- INS 2021 recommends in-line filtration for all infusions administered via CVAD
+- Current evidence recommends in-line filtration for all infusions administered via CVAD
 - 0.22 μm air-eliminating filter for most infusions
 - 1.2 μm for lipid-containing infusions
 
@@ -113,7 +111,7 @@ Critical: These medications will be adsorbed onto or blocked by the filter membr
 
 ## TPN/PN Filtration Standards
 
-Per INS 2021 and ASPEN guidelines:
+and ASPEN guidelines:
 
 **2-in-1 PN (amino acids + dextrose, no lipids):** 0.22 μm air-eliminating filter required. The 0.22 μm filter provides maximum particulate and microbial removal from the PN admixture.
 
@@ -147,7 +145,6 @@ Per INS 2021 and ASPEN guidelines:
 
 ## References
 
-1. Gorski LA, et al. (2021). INS Infusion Therapy Standards of Practice (Standard 30: Filtration). *J Infus Nurs*, 44(Suppl 1).
 2. ASPEN. (2012). Safe practices for parenteral nutrition. *JPEN*, 36(Suppl 2):S1–S94.
 3. Ball PA. (2003). Intravenous in-line filters: filtering the evidence. *Curr Opin Clin Nutr Metab Care*, 6(3):319–325.
 4. Lehr HA, et al. (2015). In-line filtration reduces systemic inflammatory response syndrome after major cardiac surgery. *J Surg Res*, 198(1):165–172.

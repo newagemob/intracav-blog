@@ -117,7 +117,7 @@ Phlebitis — inflammation of the vein wall — is the most common complication 
 - **Bacterial phlebitis**: infectious contamination of the catheter or infusate
 - **Post-infusion phlebitis**: develops 24–96 hours after catheter removal; often underdiagnosed
 
-**Grading (Visual Infusion Phlebitis Scale / INS Phlebitis Scale):**
+**Grading (Visual Infusion Phlebitis Scale / Phlebitis Scale):**
 
 | Grade | Signs | Action |
 |---|---|---|
@@ -141,7 +141,7 @@ Infiltration and extravasation represent the unintended delivery of infusate int
 - **Infiltration**: non-vesicant fluid leaks into surrounding tissue — typically manageable conservatively
 - **Extravasation**: vesicant or irritant fluid leaks into tissue — carries risk of tissue necrosis, blistering, and long-term injury
 
-**INS Infiltration/Extravasation Staging (0–4):**
+**Infiltration/Extravasation Staging (0–4):**
 
 | Stage | Clinical Findings |
 |---|---|
@@ -295,7 +295,6 @@ Nerve injury during vascular access procedures is uncommon but can cause lasting
 
 ## References
 
-1. Gorski LA, et al. (2021). INS Infusion Therapy Standards of Practice. *J Infus Nurs*, 44(Suppl 1).
 2. Chopra V, et al. (2013). Risk of venous thromboembolism with PICCs. *The Lancet*, 382(9889):311–325.
 3. Deitcher SR, et al. (2002). Safety and efficacy of alteplase for occluded central venous catheters. *J Clin Oncol*, 20(1):317–324.
 4. Mermel LA, et al. (2009). Clinical practice guidelines for CVC-related infection. *Clin Infect Dis*, 49(1):1–45.

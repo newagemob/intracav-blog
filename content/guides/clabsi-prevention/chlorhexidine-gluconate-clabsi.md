@@ -46,7 +46,7 @@ CHG has several pharmacologic properties that make it uniquely suited for vascul
 
 ### Evidence
 
-Chaiyakunapruk et al. (2002, *Ann Intern Med*) meta-analysis: CHG-based antisepsis was significantly superior to povidone-iodine (relative risk 0.49; NNT = 44 to prevent one CLABSI). This study formed the basis for the CDC and INS CHG recommendations.
+Chaiyakunapruk et al. (2002, *Ann Intern Med*) meta-analysis: CHG-based antisepsis was significantly superior to povidone-iodine (relative risk 0.49; NNT = 44 to prevent one CLABSI). This study formed the basis for the CDC CHG recommendations.
 
 Subsequent meta-analyses (Mimoz et al., Lancet, 2015) confirmed CHG-IPA superiority over povidone-iodine-IPA as well — confirming that CHG (not just the alcohol component) provides the additive benefit.
 
@@ -80,7 +80,7 @@ During audit of insertion bundle compliance, dry time verification is frequently
 
 Timsit et al. (2009, *Lancet*): RCT of 1,636 patients — CHG-impregnated dressings reduced catheter colonization (HR 0.41) and CLABSI (incidence rate ratio 0.39). These results were replicated in subsequent trials and meta-analyses.
 
-CDC 2011 guidelines: Category IB recommendation for CHG-impregnated sponge dressings for CVADs in adults. INS 2021: recommended for all CVAD patients (Standard 40).
+CDC 2011 guidelines: Category IB recommendation for CHG-impregnated sponge dressings for CVADs in adults. : recommended for all CVAD patients (Standard 40).
 
 ### Application
 

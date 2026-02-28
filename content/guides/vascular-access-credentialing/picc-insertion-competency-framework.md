@@ -14,7 +14,7 @@ keywords = ["PICC insertion competency framework", "PICC training program design
 
 # PICC Insertion Competency Framework: From Novice to Independent Practice
 
-PICC insertion is a complex vascular access procedure with a defined learning curve. Establishing a structured, defensible competency framework — from initial didactic training through independent practice — protects patients, reduces institutional liability, and produces consistently safe outcomes. This guide provides a complete framework for designing or implementing a PICC insertion competency program based on INS 2021 Standards, AVAR guidance, and published evidence on PICC procedure outcomes.
+PICC insertion is a complex vascular access procedure with a defined learning curve. Establishing a structured, defensible competency framework — from initial didactic training through independent practice — protects patients, reduces institutional liability, and produces consistently safe outcomes. This guide provides a complete framework for designing or implementing a PICC insertion competency program based on current clinical standards, AVAR guidance, and published evidence on PICC procedure outcomes.
 
 **Parent guide:** [Vascular Access Credentialing: Complete Reference](/guides/vascular-access-credentialing/)
 
@@ -47,7 +47,7 @@ A training program minimum of 10–15 proctored cases (with target ≥25 within 
 
 **Module 2: Device Selection and Indications (2 hours)**
 - MAGIC appropriateness criteria
-- INS 2021 device selection principles
+-  device selection principles
 - PICC vs. midline vs. CVC decision algorithm
 - Catheter types (power-injectable, valved, single/multi-lumen)
 - Catheter-to-vein ratio and vein selection
@@ -91,7 +91,7 @@ A training program minimum of 10–15 proctored cases (with target ≥25 within 
 - MARSI and CLABSI prevention
 
 **Module 8: Documentation and Compliance (1 hour)**
-- INS 2021 documentation requirements
+-  documentation requirements
 - Insertion note mandatory elements
 - TJC bundle documentation
 
@@ -137,7 +137,7 @@ After completing the minimum proctored cases with satisfactory performance:
 ## PICC Insertion Competency Checklist
 
 ### Pre-Insertion
-- [ ] Verified PICC indication meets MAGIC/INS criteria; documented in chart
+- [ ] Verified PICC indication meets MAGIC criteria; documented in chart
 - [ ] Reviewed contraindications (ESRD, DVT, AV fistula, ESRD vessels)
 - [ ] Obtained and documented informed consent
 - [ ] Performed bilateral US vein survey; documented findings
@@ -224,7 +224,6 @@ Clinicians with outcome metrics below benchmark should receive individualized fe
 
 ## References
 
-1. Gorski LA, et al. (2021). INS Infusion Therapy Standards of Practice (Standards 13, 26). *J Infus Nurs*, 44(Suppl 1).
 2. Sharp R, et al. (2014). The PICC5 Randomised Controlled Trial — PICC vs midline catheter. *BMC Nurs*, 13(1):1.
 3. Chopra V, et al. (2015). MAGIC criteria for PICC appropriateness. *Ann Intern Med*, 163(6 Suppl):S1–S40.
 4. Moureau NL, et al. (2013). Evidence-based consensus on CVAD insertion. *Br J Nurs*, 22(Sup8):S4–S10.

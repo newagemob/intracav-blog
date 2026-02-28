@@ -215,7 +215,6 @@ Maintain thumb pressure on syringe plunger as the catheter clamp is closed or th
 
 ## References
 
-1. Gorski LA, et al. (2021). INS Infusion Therapy Standards of Practice (Standard 55: Occlusion). *J Infus Nurs*, 44(Suppl 1).
 2. Baskin JL, et al. (2009). Thrombolytic therapy for central venous catheter occlusion. *Haematologica*, 94(2):273–281.
 3. Deitcher SR, et al. (2002). Safety and efficacy of alteplase for restoring function in occluded CVCs: 2-year follow-up. *J Thromb Haemost*, 1(7):1499–1504.
 4. Stephens LC & Haire WD. (1995). Normal saline versus heparin flush. *Crit Care Nurs*, 15(5):77–80.

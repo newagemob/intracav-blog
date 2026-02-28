@@ -170,7 +170,7 @@ The maintenance bundle protects the CVAD from intraluminal and hub-origin contam
 - Change connectors every 96 hours with administration set changes; change immediately if visibly contaminated or compromised
 - Avoid positive-pressure mechanical valve connectors (PPMCs) — associated with CLABSI outbreaks in multiple investigations
 
-**Passive disinfection caps:** Alcohol-impregnated passive disinfection caps (Curos, SwabCap) placed on connector between access events provide ongoing 70% IPA disinfection. INS 2021 Category IB recommendation for reducing intraluminal CLABSI risk.
+**Passive disinfection caps:** Alcohol-impregnated passive disinfection caps (Curos, SwabCap) placed on connector between access events provide ongoing 70% IPA disinfection.  Category IB recommendation for reducing intraluminal CLABSI risk.
 
 ### Element 5: Administration Set Change Intervals
 
@@ -262,7 +262,6 @@ This daily habit keeps CLABSI prevention active rather than episodic.
 
 1. Pronovost P, et al. (2006). An intervention to decrease catheter-related bloodstream infections in the ICU. *N Engl J Med*, 355(26):2725–2732.
 2. O'Grady NP, et al. (2011). CDC Guidelines for Prevention of Intravascular Catheter-Related Infections. *MMWR*, 60(RR-1).
-3. Gorski LA, et al. (2021). INS Infusion Therapy Standards of Practice. *J Infus Nurs*, 44(Suppl 1).
 4. Timsit JF, et al. (2009). Chlorhexidine-impregnated sponges and less frequent dressing changes for prevention of catheter-related infections in critically ill adults. *Lancet*, 373(9665):694–702.
 5. Climo MW, et al. (2013). Effect of daily chlorhexidine bathing on hospital-acquired infection. *N Engl J Med*, 368(6):533–542.
 6. Chaiyakunapruk N, et al. (2002). Chlorhexidine compared with povidone-iodine solution for vascular catheter-site care: a meta-analysis. *Ann Intern Med*, 136(11):792–801.

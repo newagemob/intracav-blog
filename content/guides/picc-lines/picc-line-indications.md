@@ -7,9 +7,8 @@ audience = "clinician"
 category = ["PICC Line", "Device Selection", "Clinical Practice"]
 tags = ["PICC line indications", "when is a PICC needed", "PICC criteria", "MAGIC PICC", "PICC appropriateness", "PICC contraindications", "IV antibiotics PICC", "chemotherapy PICC"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]
-description = "Clinical indications for PICC line placement — appropriate and inappropriate criteria per INS 2021 and MAGIC, PICC for IV antibiotics, chemotherapy, TPN, and vesicants, and absolute contraindications."
+description = "Clinical indications for PICC line placement — appropriate and inappropriate criteria and MAGIC, PICC for IV antibiotics, chemotherapy, TPN, and vesicants, and absolute contraindications."
 slug = "picc-line-indications"
-keywords = ["PICC line indications", "when is PICC needed", "PICC indications antibiotics", "PICC inappropriate use", "MAGIC criteria PICC", "PICC contraindications", "PICC for TPN", "PICC for chemotherapy", "INS PICC criteria"]
 +++
 
 # PICC Line Indications: Who Needs a PICC and When
@@ -22,7 +21,7 @@ Understanding PICC indications — and when a PICC is not the right choice — i
 
 ## When Is a PICC Indicated?
 
-The INS 2021 Standards and the **Michigan Appropriateness Guide for Intravenous Catheters (MAGIC)** (Chopra et al., 2015) provide the most authoritative guidance on PICC appropriateness.
+The current clinical standards and the **Michigan Appropriateness Guide for Intravenous Catheters (MAGIC)** (Chopra et al., 2015) provide the most authoritative guidance on PICC appropriateness.
 
 ### Appropriate PICC Indications
 
@@ -138,6 +137,5 @@ Institutional PICC appropriateness review — whether via VAT consultation, phys
 ## References
 
 1. Chopra V, et al. (2015). The Michigan Appropriateness Guide for Intravenous Catheters (MAGIC). *Ann Intern Med*, 163(6 Suppl):S1–S40.
-2. Gorski LA, et al. (2021). INS Infusion Therapy Standards of Practice. *J Infus Nurs*, 44(Suppl 1).
 3. Chopra V, et al. (2013). Risk of venous thromboembolism associated with peripherally inserted central catheters. *The Lancet*, 382(9889):311–325.
 4. Ling ML, et al. (2016). APSIC guidelines for prevention of CLABSI. *Antimicrob Resist Infect Control*, 5:15.

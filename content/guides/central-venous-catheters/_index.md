@@ -233,6 +233,5 @@ See [CVAD Tip Location Standards](/guides/central-venous-catheters/cvad-tip-loca
 
 1. O'Grady NP, et al. (2011). Guidelines for Prevention of Intravascular Catheter-Related Infections. *MMWR*, 60(RR-1).
 2. Pittiruti M, et al. (2019). The CEVAD position statement: Optimal tip location for central venous access devices. *JAVA*, 24(1).
-3. Gorski LA, et al. (2021). INS Infusion Therapy Standards of Practice. *J Infus Nurs*, 44(Suppl 1).
 4. Parienti JJ, et al. (2015). Intravascular complications of central venous catheterization by insertion site. *N Engl J Med*, 373(13):1220–1229.
 5. Mermel LA, et al. (2009). Clinical practice guidelines for CVC-related infection. *Clin Infect Dis*, 49(1):1–45.

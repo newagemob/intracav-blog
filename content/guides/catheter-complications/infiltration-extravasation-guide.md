@@ -5,11 +5,9 @@ lastmod = 2026-02-25T00:00:00-05:00
 content_type = "guide"
 audience = "clinician"
 category = ["Catheter Complications", "Infiltration", "Extravasation"]
-tags = ["infiltration extravasation", "vesicant extravasation", "INS infiltration staging", "vesicant antidote", "doxorubicin extravasation", "extravasation treatment", "IV infiltration management", "infiltration scale"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]
-description = "Complete guide to IV infiltration and extravasation: INS infiltration staging scale (0–4), vesicant vs. non-vesicant injury, antidote table (dexrazoxane, hyaluronidase, phentolamine), emergency response, and prevention."
+description = "Complete guide to IV infiltration and extravasation: infiltration staging scale (0–4), vesicant vs. non-vesicant injury, antidote table (dexrazoxane, hyaluronidase, phentolamine), emergency response, and prevention."
 slug = "infiltration-extravasation-guide"
-keywords = ["infiltration extravasation vascular access", "vesicant extravasation treatment", "INS infiltration scale", "extravasation antidote", "doxorubicin extravasation dexrazoxane", "hyaluronidase vinca alkaloid extravasation", "phentolamine vasopressor extravasation", "IV infiltration staging management"]
 +++
 
 # Infiltration and Extravasation: Clinical Guide to Recognition, Staging, and Treatment
@@ -30,9 +28,9 @@ Infiltration and extravasation represent the unintended delivery of infusate int
 
 ---
 
-## INS Infiltration Staging Scale
+## Infiltration Staging Scale
 
-The INS staging scale (2021) provides a standardized framework for documenting the severity of infiltration.
+The standardized staging scale provides a standardized framework for documenting the severity of infiltration.
 
 | Grade | Description | Signs | Action |
 |---|---|---|---|
@@ -117,7 +115,6 @@ The INS staging scale (2021) provides a standardized framework for documenting t
 
 ### Assessment Frequency for Vesicant Infusions
 
-Per INS 2021 Standard 27 (Vesicant Therapy):
 - Assess infusion site and distal circulation **at least every 1–2 hours** during vesicant infusion via peripheral IV
 - Confirm **blood return before vesicant administration** and periodically during infusion
 - For peripheral vesicant infusion (when unavoidably necessary): have antidote immediately available; do not leave patient unattended during infusion
@@ -230,7 +227,6 @@ Required at the time of recognition and in follow-up:
 
 ## References
 
-1. Gorski LA, et al. (2021). INS Infusion Therapy Standards of Practice (Standards 27, 56, 57). *J Infus Nurs*, 44(Suppl 1).
 2. Pérez Fidalgo JA, et al. (2012). Management of chemotherapy extravasation: ESMO-EONS Clinical Practice Guidelines. *Ann Oncol*, 23(Suppl 7):vii167–vii173.
 3. Dougherty L. (2010). IV therapy: recognising the differences between infiltration and extravasation. *Br J Nurs*, 17(14):896–901.
 4. Schulmeister L. (2011). Management of cancer therapy-associated extravasation. *Semin Oncol Nurs*, 27(4):355–369.

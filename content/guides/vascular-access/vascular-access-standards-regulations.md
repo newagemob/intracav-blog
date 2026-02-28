@@ -1,18 +1,18 @@
 +++
-title = "Vascular Access Standards and Regulatory Framework: INS, CDC, Joint Commission"
+title = "Vascular Access Standards and Regulatory Framework: CDC, Joint Commission, IDSA"
 date = 2026-02-25T00:00:00-05:00
 lastmod = 2026-02-25T00:00:00-05:00
 content_type = "guide"
 audience = "clinician"
 category = ["Clinical Standards", "Regulatory Compliance"]
-tags = ["vascular access standards", "INS standards of practice", "CLABSI NPSG", "Joint Commission vascular access", "CDC catheter guidelines", "CMS vascular access", "IDSA guidelines"]
+tags = ["vascular access standards", "current clinical standards of practice", "CLABSI NPSG", "Joint Commission vascular access", "CDC catheter guidelines", "CMS vascular access", "IDSA guidelines"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]
-description = "Overview of vascular access clinical standards and regulatory framework: INS 2021 Standards of Practice, IDSA guidelines, CDC catheter guidelines, Joint Commission NPSG 07.04.01, CMS requirements."
+description = "Overview of vascular access clinical standards and regulatory framework: current clinical standards, IDSA guidelines, CDC catheter guidelines, Joint Commission NPSG 07.04.01, CMS requirements."
 slug = "vascular-access-standards-regulations"
-keywords = ["vascular access standards", "INS 2021 standards of practice", "CLABSI NPSG Joint Commission", "CDC catheter guidelines", "IDSA CVC infection guidelines", "CMS vascular access requirements", "regulatory compliance vascular access"]
+keywords = ["vascular access standards", " standards of practice", "CLABSI NPSG Joint Commission", "CDC catheter guidelines", "IDSA CVC infection guidelines", "CMS vascular access requirements", "regulatory compliance vascular access"]
 +++
 
-# Vascular Access Standards and Regulatory Framework: INS, CDC, Joint Commission
+# Vascular Access Standards and Regulatory Framework: CDC, Joint Commission, IDSA
 
 Clinical practice in vascular access is governed by a layered framework of professional standards, clinical guidelines, and regulatory requirements. Understanding this landscape is essential for clinicians, educators, and program leaders building or maintaining compliant vascular access programs.
 
@@ -25,24 +25,6 @@ Clinical practice in vascular access is governed by a layered framework of profe
 Vascular access standards exist because the consequences of non-standardized practice are measurable and severe: CLABSI events, preventable thrombosis, medication errors, and patient harm from improper device selection or maintenance. Standards translate evidence into actionable practice requirements, creating a consistent floor of safe care across diverse care settings.
 
 For clinicians, standards provide the "why" behind institutional policies. For program leaders, they provide the framework for defensible policy and practice decisions.
-
----
-
-## INS Infusion Therapy Standards of Practice (2021)
-
-The **Infusion Nurses Society (INS) Infusion Therapy Standards of Practice** is the primary professional practice standard for infusion therapy and vascular access in the United States. Published every 5 years, the 2021 edition (8th edition) is the current reference standard.
-
-**What it covers:** The INS Standards address the full scope of infusion therapy practice, including:
-- Patient assessment and device selection (Standards 1–17)
-- Insertion and post-insertion practices (Standards 18–36)
-- Device maintenance (Standards 37–45)
-- Complication prevention and management (Standards 46–63)
-- Special populations (Standards 64–70)
-- Competency and documentation (Standards 13, 71)
-
-**Authority:** INS Standards are not legally binding federal regulations, but they are recognized by TJC, CMS, and courts as the standard of care for infusion nursing practice. Deviation from INS Standards without documented clinical rationale creates liability risk.
-
-**Access:** INS Standards are published in the *Journal of Infusion Nursing* (Vol 44, Supplement 1, 2021). INS membership provides access; the document is also available for individual purchase.
 
 ---
 
@@ -127,7 +109,7 @@ The **Association for Vascular Access (AVAR)** publishes vascular access-specifi
 
 Standards translate to practice through the institutional **policy and procedure** layer. Clinical policies (like those in The Clinical Database Policies library) cite these primary standards as their authority base, adapting them to local practice context.
 
-**For clinicians:** When questioning a practice requirement, trace the policy to its underlying standard. INS 2021, CDC, IDSA, and SHEA/IDSA recommendations are the authoritative sources. When a policy conflicts with current evidence, raise it through the quality improvement process.
+**For clinicians:** When questioning a practice requirement, trace the policy to its underlying standard. , CDC, IDSA, and SHEA/IDSA recommendations are the authoritative sources. When a policy conflicts with current evidence, raise it through the quality improvement process.
 
 ---
 
@@ -141,7 +123,6 @@ Standards translate to practice through the institutional **policy and procedure
 
 ## References
 
-1. Gorski LA, et al. (2021). INS Infusion Therapy Standards. *J Infus Nurs*, 44(Suppl 1).
 2. O'Grady NP, et al. (2011). CDC Guidelines for Prevention of Intravascular Catheter-Related Infections. *MMWR*, 60(RR-1).
 3. Mermel LA, et al. (2009). IDSA guidelines for CVC-related infection. *Clin Infect Dis*, 49(1):1–45.
 4. Marschall J, et al. (2014). SHEA/IDSA CLABSI prevention. *Infect Control Hosp Epidemiol*, 35(7):753–771.

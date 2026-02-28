@@ -149,9 +149,9 @@ Beyond individual credentialing, track program-level US outcomes:
 
 | Metric | Target | Benchmark Source |
 |---|---|---|
-| US-guided first-attempt success rate (PICC) | ≥95% | INS/AVAR literature |
+| US-guided first-attempt success rate (PICC) | ≥95% | CVAA/AVAR literature |
 | US-guided first-attempt success rate (PIV) | ≥80% | Published US-PIV studies |
-| Inadvertent arterial cannulation rate | <1% | INS quality metrics |
+| Inadvertent arterial cannulation rate | <1% | published quality metrics |
 | PICC insertion malposition rate | <5% | Published VAT benchmarks |
 | Proctored case completion rate | 100% before independent | Program requirement |
 | Annual volume compliance | ≥90% of credentialed staff | Program standard |
@@ -197,7 +197,6 @@ Define triggers and response:
 
 ## References
 
-1. Gorski LA, et al. (2021). INS Infusion Therapy Standards of Practice (Standard 13, 24). *J Infus Nurs*, 44(Suppl 1).
 2. NICE Technology Appraisal No. 49. (2002). Guidance on the use of ultrasound locating devices for CVC placement.
 3. Lamperti M, et al. (2012). International evidence-based recommendations on US-guided vascular access. *Intensive Care Med*, 38(7):1105–1117.
 4. Moureau NL, et al. (2013). Evidence-based consensus on the insertion of CVADs. *Br J Nurs*, 22(Sup8):S4–S10.

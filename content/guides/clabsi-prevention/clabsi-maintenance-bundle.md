@@ -7,7 +7,7 @@ audience = "clinician"
 category = ["CLABSI Prevention", "Maintenance Bundle", "Catheter Maintenance"]
 tags = ["CLABSI maintenance bundle", "scrub the hub", "CHG dressing CLABSI", "CHG bathing CLABSI", "needleless connector CLABSI", "central line maintenance", "CVAD dressing change", "CLABSI post-insertion prevention"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]
-description = "Complete guide to the CLABSI maintenance bundle: scrub-the-hub technique, CHG-impregnated dressings, CHG daily bathing, needleless connector management, administration set change intervals, and daily necessity review per INS 2021 and CDC guidelines."
+description = "Complete guide to the CLABSI maintenance bundle: scrub-the-hub technique, CHG-impregnated dressings, CHG daily bathing, needleless connector management, administration set change intervals, and daily necessity review and CDC guidelines."
 slug = "clabsi-maintenance-bundle"
 keywords = ["CLABSI maintenance bundle", "scrub the hub technique", "CHG dressing CVAD", "CHG bathing CLABSI prevention", "needleless connector management", "central line dressing change", "administration set change interval", "CLABSI post-insertion prevention"]
 +++
@@ -43,7 +43,7 @@ Every nurse caring for a patient with a central line is a CLABSI prevention prac
 
 **Standard:** Apply a CHG-impregnated gel patch (Biopatch equivalent) or CHG-impregnated sponge at the CVAD insertion site, covered by a transparent semi-permeable membrane (TSM) dressing.
 
-**Evidence:** Multiple RCTs and meta-analyses support CHG-impregnated dressings as a significant CLABSI reduction intervention. Timsit et al. (2009, *Lancet*) found that CHG dressings reduced catheter-related infections by 60% compared to standard TSM alone. Current CDC 2011 guidelines and INS 2021 recommend CHG dressings for CVADs in adults (Category IB recommendation).
+**Evidence:** Multiple RCTs and meta-analyses support CHG-impregnated dressings as a significant CLABSI reduction intervention. Timsit et al. (2009, *Lancet*) found that CHG dressings reduced catheter-related infections by 60% compared to standard TSM alone. Current CDC 2011 guidelines and Current standards recommend CHG dressings for CVADs in adults (Category IB recommendation).
 
 **Mechanism:** CHG binds to skin proteins and provides sustained bactericidal activity for 7+ days. The CHG concentration at the insertion site — the primary entry point for extraluminal infection — remains sufficient to prevent skin organism migration along the catheter throughout the dressing change interval.
 
@@ -66,7 +66,7 @@ Every nurse caring for a patient with a central line is a CLABSI prevention prac
 
 **Application:** 2% CHG-impregnated cloths used in place of standard soap-and-water bathing. Allow CHG to air dry on skin after application; do not rinse (rinsing removes the protective CHG residual). Avoid mucous membranes, eyes, and genitalia. Apply to body, including arms bearing CVADs.
 
-**Current status:** CDC 2011 guidelines did not explicitly recommend daily CHG bathing (evidence was not yet available at publication). The 2023 CDC update acknowledges stronger evidence supporting CHG bathing for ICU patients with CVADs. INS 2021 recommends CHG bathing for adult patients with CVADs (Standard 43).
+**Current status:** CDC 2011 guidelines did not explicitly recommend daily CHG bathing (evidence was not yet available at publication). The 2023 CDC update acknowledges stronger evidence supporting CHG bathing for ICU patients with CVADs. Current evidence recommends CHG bathing for adult patients with CVADs (Standard 43).
 
 ### 4. Needleless Connector Management
 
@@ -74,7 +74,7 @@ Every nurse caring for a patient with a central line is a CLABSI prevention prac
 
 **Evidence:** The type of needleless connector influences CLABSI risk. Positive-pressure mechanical valve connectors (PPMC) were associated with CLABSI outbreaks in several studies due to their complex internal mechanisms that are difficult to disinfect. Neutral displacement or simple connectors are generally preferred. Current guidance (Buetti et al., SHEA/IDSA 2022) recommends using connectors that have been independently tested for clinical performance and that have simple internal mechanisms.
 
-**Change schedule:** Per INS 2021 Standard 37:
+**Change schedule:** Standard 37:
 - Change with each administration set change (every 96 hours for continuous infusions)
 - Do NOT change connectors more frequently than every 72–96 hours without clinical indication — excessive changes increase manipulation events and infection risk
 - Change immediately if: blood is visible in the connector, connector is cracked or damaged, contamination is suspected
@@ -83,7 +83,7 @@ Every nurse caring for a patient with a central line is a CLABSI prevention prac
 
 ### 5. Administration Set Change Intervals
 
-**Standard per INS 2021 Standard 37:**
+**Standard Standard 37:**
 
 | Infusate | Change Interval |
 |---|---|
@@ -161,4 +161,3 @@ Maintenance bundle compliance requires ongoing audit:
 2. Buetti N, et al. (2022). Strategies to prevent CLABSI in acute care hospitals: 2022 update. *Infect Control Hosp Epidemiol*, 43(5):553–569.
 3. Timsit JF, et al. (2009). CHG-impregnated sponge and risk of central venous catheter infection. *Lancet*, 373(9677):1709–1718.
 4. Climo MW, et al. (2013). Effect of daily CHG bathing on hospital-acquired infection. *N Engl J Med*, 368(6):533–542.
-5. Gorski LA, et al. (2021). INS Infusion Therapy Standards of Practice. *J Infus Nurs*, 44(Suppl 1).

@@ -76,7 +76,7 @@ Cancer patients undergo serial CT imaging for staging and treatment response ass
 
 **Continuous-access protocols (chemo pumps):** Patients receiving continuous 5-FU infusions via ambulatory pump (FOLFOX, FOLFIRI protocols) will have a Huber needle dwelling in the port for the entire infusion cycle (typically 46–96 hours). The needle dwell increases CLABSI risk slightly versus intermittent access.
 
-**Huber needle dwell time:** INS 2021 recommends Huber needles for continuous infusions be changed every 7 days. Some institutions change every access cycle for chemotherapy patients.
+**Huber needle dwell time:** Current evidence recommends Huber needles for continuous infusions be changed every 7 days. Some institutions change every access cycle for chemotherapy patients.
 
 ---
 
@@ -149,7 +149,7 @@ Cancer patients have multiple CLABSI risk factors that compound standard cathete
 
 Standard CLABSI maintenance bundle (scrub-the-hub, CHG dressings, daily bathing) is the baseline. For neutropenic oncology patients, additional measures are warranted:
 
-**Antimicrobial lock therapy (ALT):** INS 2021 and IDSA guidelines support ALT for salvage of infected CVADs in select cases and for prophylaxis in selected high-risk patients (long-term home TPN, pediatric oncology). Common ALT solutions: ethanol 70%, taurolidine-citrate, vancomycin (for gram-positive prophylaxis).
+**Antimicrobial lock therapy (ALT):** IDSA guidelines support ALT for salvage of infected CVADs in select cases and for prophylaxis in selected high-risk patients (long-term home TPN, pediatric oncology). Common ALT solutions: ethanol 70%, taurolidine-citrate, vancomycin (for gram-positive prophylaxis).
 
 **Minimum access principle:** Minimize the number of catheter manipulations per day. Consolidate blood draws and medication administration to reduce hub access events.
 
@@ -209,7 +209,6 @@ Chemotherapy-induced thrombocytopenia (platelet count <100,000/μL) is common in
 
 ## References
 
-1. Gorski LA, et al. (2021). INS Infusion Therapy Standards of Practice (Standards 26–27, 34, 42). *J Infus Nurs*, 44(Suppl 1).
 2. Chopra V, et al. (2013). Risk of venous thromboembolism associated with peripherally inserted central catheters: a systematic review. *Lancet*, 382(9889):311–325.
 3. Lim MY, et al. (2022). American Society of Hematology guidelines on venous thromboembolism: treatment of cancer-associated VTE. *Blood Adv*, 6(6):1929–1951.
 4. Pérez Fidalgo JA, et al. (2012). Management of chemotherapy extravasation: ESMO-EONS Guidelines. *Ann Oncol*, 23(Suppl 7):vii167–vii173.

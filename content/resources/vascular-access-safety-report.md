@@ -77,9 +77,9 @@ Vascular access devices are used in an estimated 80–90% of hospitalized patien
 
 ### Phlebitis
 
-**INS benchmark:** <5% phlebitis rate for peripheral IV therapy (INS 2021).
+**Benchmark:** <5% phlebitis rate for peripheral IV therapy .
 
-**Actual reported rates in published studies:** 9–20% (range across multiple international prevalence and incidence studies). Most facilities do not achieve the <5% INS benchmark consistently.
+**Actual reported rates in published studies:** 9–20% (range across multiple international prevalence and incidence studies). Most facilities do not achieve the <5% clinical benchmark consistently.
 
 **Economic impact of phlebitis:** Each phlebitis event requiring treatment (antibiotic therapy, extended hospital stay, repeat IV placement) adds an estimated $800–$2,500 to direct costs. With millions of PIVs placed annually in US hospitals, phlebitis represents a significant and underappreciated cost driver.
 
@@ -87,14 +87,14 @@ Vascular access devices are used in an estimated 80–90% of hospitalized patien
 - Appropriate gauge selection (smallest gauge that meets clinical needs)
 - Appropriate site selection (forearm veins preferred; avoid wrist flexion points)
 - Adequate medication dilution (particularly antibiotics — vancomycin, potassium, amiodarone)
-- Replacing catheter when phlebitis signs appear (Grade 2 or higher on INS VIP scale)
+- Replacing catheter when phlebitis signs appear (Grade 2 or higher on VIP scale)
 - Infusion of irritant medications through appropriate-size veins (avoid small hand veins for concentrated infusions)
 
 ### Peripheral IV Infiltration
 
 **Reported incidence:** 12–23% of PIVs across published studies. Most infiltrations are Grade 1–2 (mild swelling, no tissue damage). Grade 3–4 infiltrations requiring intervention are less common but represent significant patient harm.
 
-**Grade 3–4 infiltration (INS scale):** Characterized by very pale skin, translucency, skin coolness, >6 inches of edema, deep pitting edema, circulatory impairment, or moderate-to-severe pain. These events require immediate catheter removal, arm elevation, warm or cool compress depending on infusate, and provider notification.
+**Grade 3–4 infiltration (staging scale):** Characterized by very pale skin, translucency, skin coolness, >6 inches of edema, deep pitting edema, circulatory impairment, or moderate-to-severe pain. These events require immediate catheter removal, arm elevation, warm or cool compress depending on infusate, and provider notification.
 
 **Vesicant extravasation:** A subcategory of infiltration in which a vesicant medication enters the surrounding tissue. See [Infiltration and Extravasation Guide](/guides/catheter-complications/infiltration-extravasation-guide/) for complete management protocol. Vesicant extravasation requires immediate antidote therapy and surgical consultation in severe cases.
 
@@ -247,5 +247,4 @@ Based on current national data, facilities should prioritize the following for 2
 4. Chopra V, et al. (2013). Risk of venous thromboembolism associated with peripherally inserted central catheters. *Lancet*, 382(9889):311–325.
 5. Alexandrou E, et al. (2015). International prevalence of the use of peripheral intravenous catheters. *J Hosp Med*, 10(8):530–533.
 6. Wallis MC, et al. (2014). Risk factors for peripheral intravenous catheter failure: a multivariate analysis. *Infect Control Hosp Epidemiol*, 35(1):63–68.
-7. Gorski LA, et al. (2021). INS Infusion Therapy Standards of Practice. *J Infus Nurs*, 44(Suppl 1).
 8. Maki DG, et al. (2006). The risk of bloodstream infection in adults with different intravascular devices: a systematic review. *Mayo Clin Proc*, 81(9):1159–1171.

@@ -30,7 +30,7 @@ A vascular access team is a dedicated group of clinicians with specialized train
 - **Vascular Access Specialist (VAS) embedded model:** Specialists co-located within specific units (ICU, oncology, NICU) rather than centralized
 - **IV therapy team:** Historical model focused on peripheral IV maintenance and medication administration; now largely replaced by device-focused VATs at most large institutions
 
-**VAT staff credentials:** VA-BC (Vascular Access Board Certified) through CBVN/AVAR is the specialty credential; CRNI (Certified Registered Nurse Infusion) through INCC/INS is the broader infusion therapy credential. Most VAT members are RNs, often with advanced certifications in ultrasound-guided access.
+**VAT staff credentials:** VA-BC (Vascular Access Board Certified) through CBVN/AVAR is the specialty credential; CRNI (Certified Registered Nurse Infusion) through CVAA is the broader infusion therapy credential. Most VAT members are RNs, often with advanced certifications in ultrasound-guided access.
 
 ---
 
@@ -102,7 +102,7 @@ PICC lines have become the default central access device at many US hospitals, i
 
 **PICC dwell time reduction:** VATs that systematically review CVAD necessity (daily necessity review as part of CLABSI maintenance bundle) reduce catheter dwell time. Every unnecessary catheter-day eliminated reduces the cumulative CLABSI risk.
 
-**Phlebitis reduction:** Studies at institutions with IV teams managing peripheral IV placement and rotation demonstrate peripheral phlebitis rates of 3–5% — within or below INS benchmarks. Facilities without IV teams typically report rates of 10–20% in practice-level assessments.
+**Phlebitis reduction:** Studies at institutions with IV teams managing peripheral IV placement and rotation demonstrate peripheral phlebitis rates of 3–5% — within or below clinical benchmarks. Facilities without IV teams typically report rates of 10–20% in practice-level assessments.
 
 **Infiltration and extravasation rates:** VAT-managed peripheral access programs have lower infiltration rates due to appropriate site selection, catheter gauge selection, and earlier recognition of early-infiltration signs during assessment rounds.
 

@@ -127,14 +127,14 @@ Cancer patients represent one of the most complex vascular access populations, w
 | Maintenance between accesses | Monthly flush (inactive periods) | Weekly dressing + flush |
 | Access | Requires Huber needle (ANTT, some discomfort) | External hub; easier access |
 | Best for | Long-term/intermittent chemotherapy, long-term PN, repeated IV access | Short- to medium-term infusion, OPAT, bridge access |
-| INS/AVAR preference | Port preferred for >3 months intermittent therapy | PICC appropriate for continuous or short-term therapy |
+| CVAA/AVAR preference | Port preferred for >3 months intermittent therapy | PICC appropriate for continuous or short-term therapy |
 
 **ONS/ASCO recommendations:** Implanted ports are preferred for most long-term and intermittent chemotherapy protocols. PICCs are appropriate for continuous infusions (e.g., continuous 5-FU), OPAT, and patients who are not candidates for port placement.
 
 ### Port Access in the Oncology Setting
 
 - Use non-coring Huber needle only
-- Dwell time of a single Huber needle access: typically 7 days per INS 2021 (change if longer therapy course or if dressing becomes compromised)
+- Dwell time of a single Huber needle access: typically 7 days (change if longer therapy course or if dressing becomes compromised)
 - CHG-impregnated dressing or TSM during active port access
 - ANTT strict for every port access in immunocompromised patients
 - Confirm blood return before initiating vesicant or vesicant-adjacent agents
@@ -244,7 +244,6 @@ Patients with neutropenia (ANC <500/μL), active immunosuppression, or functiona
 
 ## References
 
-1. Gorski LA, et al. (2021). INS Infusion Therapy Standards of Practice. *J Infus Nurs*, 44(Suppl 1).
 2. KDOQI. (2019). KDOQI Clinical Practice Guideline for Vascular Access: 2019 Update. *Am J Kidney Dis*, 75(4 Suppl 2):S1–S164.
 3. Chopra V, et al. (2015). MAGIC criteria for PICC use. *Ann Intern Med*, 163(6 Suppl).
 4. Alexandrou E, et al. (2018). International prevalence of the use of peripheral intravenous catheters. *J Hosp Med*, 13(8):530–533.

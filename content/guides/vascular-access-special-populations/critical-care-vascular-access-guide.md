@@ -127,10 +127,10 @@ Documentation: Most institutions require daily documentation that CVAD necessity
 **Complications:**
 - **Thrombosis/occlusion:** Most common; managed with removal; thrombolysis is not appropriate for arterial catheters
 - **Distal ischemia:** Absence of pulse distal to arterial line, blanching, pain — emergent catheter removal required
-- **Infection:** Arterial catheters have lower CLABSI rates than CVCs; change arterial line tubing per institutional policy (typically 96 hours per INS)
+- **Infection:** Arterial catheters have lower CLABSI rates than CVCs; change arterial line tubing per institutional policy (typically 96 hours per current standards)
 - **Hemorrhage:** Accidental disconnection of arterial line can result in rapid, large blood loss; all connections must be Luer-locked
 
-**Arterial line dwell:** Change site if any evidence of infection, occlusion, or distal ischemia. INS recommends against routine replacement at fixed intervals without clinical indication (same principle as CVC).
+**Arterial line dwell:** Change site if any evidence of infection, occlusion, or distal ischemia. Current clinical guidance recommends against routine replacement at fixed intervals without clinical indication (same principle as CVC).
 
 ---
 
@@ -226,7 +226,6 @@ The ICU is where CLABSI prevention bundles originated (the Keystone ICU project 
 
 ## References
 
-1. Gorski LA, et al. (2021). INS Infusion Therapy Standards of Practice (Standards 26–27, 34, 40). *J Infus Nurs*, 44(Suppl 1).
 2. O'Grady NP, et al. (2011). CDC Guidelines for Prevention of Intravascular Catheter-Related Infections. *MMWR*, 60(RR-1).
 3. Pronovost P, et al. (2006). An intervention to decrease catheter-related bloodstream infections in the ICU. *N Engl J Med*, 355(26):2725–2732.
 4. Climo MW, et al. (2013). Effect of daily chlorhexidine bathing on hospital-acquired infection. *N Engl J Med*, 368(6):533–542.

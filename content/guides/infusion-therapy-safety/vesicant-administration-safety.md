@@ -9,7 +9,6 @@ tags = ["vesicant administration", "vesicant classification", "chemotherapy vesi
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]
 description = "Complete guide to vesicant administration safety: vesicant and irritant classification, mandatory central access requirements, peripheral vesicant administration protocols, pre-infusion assessment, monitoring requirements, and immediate response to suspected extravasation."
 slug = "vesicant-administration-safety"
-keywords = ["vesicant administration safety", "vesicant classification IV", "vesicant central access requirement", "chemotherapy vesicant list", "vesicant peripheral administration protocol", "vesicant monitoring during infusion", "vesicant extravasation response", "INS vesicant standards 2021"]
 +++
 
 # Vesicant Administration Safety: Classification, Central Access Requirements, and Protocols
@@ -101,7 +100,6 @@ Vesicant medications are intravenous agents capable of causing tissue destructio
 
 ### Central Access: When Required
 
-Per INS 2021 Standard 27 (Vesicant Therapy):
 
 **Central access is required for:**
 - All vesicant chemotherapy (anthracyclines, vinca alkaloids, taxanes, and others listed above)
@@ -125,7 +123,7 @@ Some vesicants may be administered peripherally in specific circumstances:
 5. Patient is able to report pain or burning immediately
 6. Nurse will remain at bedside or check every 15 minutes for duration
 
-**Absolute requirements per INS 2021:**
+**Absolute requirements:**
 - Pre-administration blood return confirmation from target vein
 - Monitoring frequency: every 30–60 minutes for peripheral vesicant bolus
 - Written plan in nursing notes for response to suspected extravasation
@@ -238,7 +236,6 @@ Vasopressors (norepinephrine, dopamine, vasopressin) are vesicants primarily thr
 
 ## References
 
-1. Gorski LA, et al. (2021). INS Infusion Therapy Standards of Practice (Standard 27). *J Infus Nurs*, 44(Suppl 1).
 2. Pérez Fidalgo JA, et al. (2012). Management of chemotherapy extravasation: ESMO-EONS Guidelines. *Ann Oncol*, 23(Suppl 7):vii167–vii173.
 3. Schulmeister L. (2011). Management of cancer therapy-associated extravasation. *Semin Oncol Nurs*, 27(4):355–369.
 4. Reynolds PM, et al. (2014). Norepinephrine extravasation: a review. *Ann Pharmacother*, 48(5):625–631.

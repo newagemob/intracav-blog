@@ -24,7 +24,7 @@ This checklist compiles the competency verification elements required for each l
 - Design or audit institutional credentialing programs
 - Verify individual practitioner competencies during initial training and annual review
 - Document training and supervised procedure completion for privileging files
-- Benchmark your institutional credentialing program against INS and professional standards
+- Benchmark your institutional credentialing program against AVAR and professional standards
 
 **Scoring:** For proctored competency observations, use a pass/fail or 1–4 scale for each element. Minimum passing threshold should be defined by institutional policy (typically ≥85–90% on observed competency).
 
@@ -39,9 +39,9 @@ This checklist compiles the competency verification elements required for each l
 - [ ] Peripheral venous anatomy: forearm, antecubital, hand, foot
 - [ ] Gauge and catheter selection by indication and patient age
 - [ ] Infection prevention: hand hygiene, aseptic technique, skin antisepsis
-- [ ] Assessment: phlebitis (INS VIP scale), infiltration (INS staging scale)
+- [ ] Assessment: phlebitis (VIP scale), infiltration (staging scale)
 - [ ] Indications, contraindications, and limitations of peripheral access
-- [ ] INS standards for dwell time, dressing, and device removal
+- [ ] current clinical standards for dwell time, dressing, and device removal
 
 ### Simulation
 
@@ -312,7 +312,6 @@ Complete for each privilege level maintained:
 
 ## References
 
-1. Gorski LA, et al. (2021). INS Infusion Therapy Standards of Practice. *J Infus Nurs*, 44(Suppl 1).
 2. Association for Vascular Access (AVA/AVAR). (2022). Competency and credentialing standards for vascular access. CBVN/AVAR.
 3. The Joint Commission. (2024). Nursing care standards: competency verification requirements. TJC Comprehensive Accreditation Manual.
 4. Moureau NL & Trick N. (2009). Building a PICC competency and credentialing program. *J Assoc Vasc Access*, 14(3):164–171.

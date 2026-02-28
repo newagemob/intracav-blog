@@ -115,7 +115,7 @@ VADs exist on a continuum from minimally invasive short-term peripheral devices 
 
 ## Clinical Indications for Vascular Access
 
-Device selection should be driven by the clinical indication. The INS 2021 principle: use the **least invasive device that meets the full clinical need** for the planned duration of therapy.
+Device selection should be driven by the clinical indication. The  principle: use the **least invasive device that meets the full clinical need** for the planned duration of therapy.
 
 | Indication | Appropriate Device(s) |
 |---|---|
@@ -167,6 +167,5 @@ Specialized **vascular access teams (VATs)** perform PICC insertion, difficult P
 
 ## References
 
-1. Gorski LA, et al. (2021). INS Infusion Therapy Standards of Practice. *J Infus Nurs*, 44(Suppl 1).
 2. Alexandrou E, et al. (2018). International prevalence of the use of peripheral intravenous catheters. *J Hosp Med*, 13(8):530–533.
 3. Chopra V, et al. (2015). The Michigan Appropriateness Guide for Intravenous Catheters (MAGIC). *Ann Intern Med*, 163(6 Suppl).

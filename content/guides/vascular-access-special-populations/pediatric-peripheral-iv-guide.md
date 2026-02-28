@@ -173,7 +173,6 @@ Accessible veins (median cephalic, median basilic) in older infants and children
 
 ## References
 
-1. Gorski LA, et al. (2021). INS Infusion Therapy Standards of Practice (Standards 64–67). *J Infus Nurs*, 44(Suppl 1).
 2. Stevens B, et al. (2016). Sucrose for analgesia in newborn infants. *Cochrane Database Syst Rev*, (7):CD001069.
 3. Taddio A, et al. (2015). Reducing pain during vaccine injections in children. *CMAJ*, 187(13):975–982.
 4. Fein JA & Zempsky WT. (2012). Topical anesthetics for painful procedures in children. *Pediatr Emerg Care*, 28(8):842–847.

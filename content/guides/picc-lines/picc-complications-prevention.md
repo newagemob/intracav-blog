@@ -24,7 +24,7 @@ PICC lines carry a distinct complication profile that differs from other vascula
 
 | Complication | Incidence | Prevention Priority | Urgency |
 |---|---|---|---|
-| PICC-associated UEDVT | 1–5% symptomatic; up to 38% subclinical | Catheter-to-vein ratio optimization, INS tip position | Urgent anticoagulation workup |
+| PICC-associated UEDVT | 1–5% symptomatic; up to 38% subclinical | Catheter-to-vein ratio optimization, tip position standards | Urgent anticoagulation workup |
 | CLABSI | 0.5–2.0 per 1,000 catheter-days | Insertion + maintenance bundles | Emergent — remove line, blood cultures, antibiotics |
 | Catheter occlusion | 15–25% during dwell | SASH flushing, compatible medications | Urgent (alteplase within 30-min dwelling) |
 | Phlebitis | 10–20% | Proper site selection, osmolarity compliance | Urgent removal if grade ≥2 |
@@ -93,7 +93,7 @@ CLABSI rates for PICCs average 0.5–2.0 per 1,000 catheter-days in surveillance
 
 ### Prevention: Insertion Bundle
 
-The 5-element PICC insertion bundle per CDC/INS:
+The 5-element PICC insertion bundle per CDC/CVAA:
 1. Hand hygiene before insertion
 2. Maximal sterile barrier (gown, gloves, drape, mask, cap)
 3. CHG-based skin antisepsis with adequate dry time
@@ -106,7 +106,7 @@ The 5-element PICC insertion bundle per CDC/INS:
 2. **CHG-impregnated dressings:** CHG gel patch (Biopatch equivalent) at insertion site under TSM dressing; change weekly with standard dressing change interval (or sooner if wet/soiled/lifting).
 3. **CHG bathing:** Daily chlorhexidine gluconate bathing of the arm bearing the PICC reduces skin bioburden at insertion site.
 4. **Needleless connector management:** Change per institutional policy; no routine change schedule (change with tubing change or per schedule). Do not submerge connectors in antiseptic solution.
-5. **Administration set changes:** Per INS 2021 — continuous infusions every 96 hours (non-lipid, non-blood); lipid emulsions and blood products every 24 hours; blood products within 4 hours of transfusion.
+5. **Administration set changes:** — continuous infusions every 96 hours (non-lipid, non-blood); lipid emulsions and blood products every 24 hours; blood products within 4 hours of transfusion.
 6. **Remove when no longer needed:** Daily necessity documentation is required; PICC removal on the day clinical indication ends reduces CLABSI risk.
 
 ### Recognition and Response
@@ -166,7 +166,7 @@ Phlebitis in PICC patients may be mechanical (catheter movement causing vein irr
 
 **Delayed mechanical phlebitis:** Occurs after prolonged dwell; related to catheter movement and friction on the vessel endothelium.
 
-### Assessment: INS Phlebitis Scale
+### Assessment: Phlebitis Scale
 
 | Grade | Signs | Action |
 |---|---|---|
@@ -231,7 +231,6 @@ PICC removal carries a specific air embolism risk if Valsalva maneuver precautio
 ## References
 
 1. Chopra V, et al. (2013). Risk of venous thromboembolism associated with PICCs. *Lancet*, 382(9889):311–325.
-2. Gorski LA, et al. (2021). INS Infusion Therapy Standards of Practice. *J Infus Nurs*, 44(Suppl 1).
 3. Kearon C, et al. (2016). Antithrombotic therapy for VTE disease: CHEST guideline. *Chest*, 149(2):315–352.
 4. Baskin JL, et al. (2009). Thrombolytic therapy for CVAD occlusion. *Haematologica*, 94(2):273–281.
 5. Moureau NL & Trick N. (2012). Catheter-related infection. *J Vasc Access*, 13(2).

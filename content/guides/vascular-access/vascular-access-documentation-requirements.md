@@ -7,16 +7,15 @@ audience = "clinician"
 category = ["Documentation", "Compliance", "Clinical Practice"]
 tags = ["vascular access documentation", "PICC insertion note", "IV documentation requirements", "EHR vascular access", "catheter documentation", "daily assessment documentation"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]
-description = "Complete guide to vascular access documentation requirements: insertion notes, daily assessment, infusion therapy documentation, complication recording, device removal, and EHR best practices per INS 2021."
+description = "Complete guide to vascular access documentation requirements: insertion notes, daily assessment, infusion therapy documentation, complication recording, device removal, and EHR best practices."
 slug = "vascular-access-documentation-requirements"
-keywords = ["vascular access documentation requirements", "PICC insertion note elements", "central line documentation", "IV assessment documentation", "catheter removal documentation", "EHR vascular access documentation", "INS documentation standards"]
 +++
 
 # Vascular Access Documentation: What to Record and When
 
 Vascular access documentation serves clinical, regulatory, legal, and quality purposes. It communicates device status to the care team, demonstrates compliance with insertion and maintenance bundles, enables epidemiologic surveillance (catheter-days for CLABSI reporting), and provides a defensible record in adverse event review.
 
-INS 2021 Standard 71 (Documentation) specifies minimum documentation requirements for vascular access devices across the device lifecycle.
+current clinical standard (Documentation) specifies minimum documentation requirements for vascular access devices across the device lifecycle.
 
 **Parent guide:** [Vascular Access: Complete Clinical Reference](/guides/vascular-access/)
 
@@ -26,7 +25,7 @@ INS 2021 Standard 71 (Documentation) specifies minimum documentation requirement
 
 **Clinical communication:** The next nurse, physician, or provider caring for the patient needs to know: what device is present, where is it, when was it placed, is it functioning, and when is the next dressing due?
 
-**Regulatory compliance:** TJC surveyors review catheter insertion documentation for bundle compliance evidence. CMS requires catheter-days tracking for NHSN CLABSI reporting. INS Standards require documentation of specific insertion elements.
+**Regulatory compliance:** TJC surveyors review catheter insertion documentation for bundle compliance evidence. CMS requires catheter-days tracking for NHSN CLABSI reporting. current clinical standards require documentation of specific insertion elements.
 
 **Legal defensibility:** In the event of a CLABSI event, catheter-associated DVT, or extravasation injury, the medical record is the primary evidence of what was done, when, and by whom.
 
@@ -36,7 +35,7 @@ INS 2021 Standard 71 (Documentation) specifies minimum documentation requirement
 
 ## Insertion Documentation
 
-The insertion note must be completed at the time of device placement (or as soon as possible after). Required elements per INS 2021:
+The insertion note must be completed at the time of device placement (or as soon as possible after). Required elements:
 
 ### Peripheral IV Insertion Note
 
@@ -79,7 +78,7 @@ All PICC elements, plus:
 
 **Required frequency:** At minimum every shift (or per institutional policy, but no less frequently than every 8–12 hours for inpatients with CVADs).
 
-**Required elements (INS 2021):**
+**Required elements :**
 
 - Date and time of assessment
 - Site appearance: erythema (redness), swelling/edema, drainage (type, amount, color), tenderness at insertion site
@@ -109,7 +108,7 @@ At each administration of medications or fluids via a vascular access device, do
 
 When a vascular access complication is identified, documentation must capture:
 - Date and time of identification
-- Complication type and severity (use validated scales where available: INS phlebitis scale, infiltration staging scale)
+- Complication type and severity (use validated scales where available: phlebitis scale, infiltration staging scale)
 - Clinical findings (symptoms, objective signs)
 - Interventions performed (device removal, warm/cold compress, antidote administered, provider notification)
 - Provider notification: name, time, and response
@@ -162,5 +161,4 @@ TJC surveyors specifically look for:
 
 ## References
 
-1. Gorski LA, et al. (2021). INS Infusion Therapy Standards (Standard 71: Documentation). *J Infus Nurs*, 44(Suppl 1).
 2. The Joint Commission. (2024). NPSG 07.04.01 and documentation requirements.

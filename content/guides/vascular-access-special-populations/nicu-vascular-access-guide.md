@@ -65,7 +65,7 @@ The umbilical vein provides unique immediate central access in the first days of
 
 ### UVC Dwell and Transition
 
-**INS standard:** UVC dwell should not exceed **14 days** (risk increases for hepatic vessel injury, hepatic portal hypertension, and line-associated infection). Most NICUs aim for transition to neonatal PICC within the first 7–10 days when possible.
+**current clinical standard:** UVC dwell should not exceed **14 days** (risk increases for hepatic vessel injury, hepatic portal hypertension, and line-associated infection). Most NICUs aim for transition to neonatal PICC within the first 7–10 days when possible.
 
 **Do not leave a malpositioned UVC in use.** A UVC with tip in the portal circulation, hepatic veins, or heart is associated with serious complications. Reposition (pull back to safe position if feasible) or remove and replace.
 
@@ -139,7 +139,7 @@ Neonatal PICC insertion requires specialized training beyond adult PICC insertio
 
 ### Neonatal PICC Tip Position: Cavoatrial Junction Standard
 
-Per INS 2021 and CEVAD 2020 consensus: neonatal PICCs tip position targets the **SVC-RA junction (cavoatrial junction)** for upper extremity lines, and the **IVC-RA junction** for lower extremity lines. Tip placement in the mid-SVC is associated with higher rates of thrombosis and pericardial effusion in neonates.
+and CEVAD 2020 consensus: neonatal PICCs tip position targets the **SVC-RA junction (cavoatrial junction)** for upper extremity lines, and the **IVC-RA junction** for lower extremity lines. Tip placement in the mid-SVC is associated with higher rates of thrombosis and pericardial effusion in neonates.
 
 **Pericardial effusion / cardiac tamponade:** A recognized life-threatening complication of neonatal PICCs, particularly with tips malpositioned in the atrium or pericardium. In neonatal PICC tamponade, the clinical presentation may be subtle — sudden deterioration, tachycardia, muffled heart tones, hypotension. Emergent pericardiocentesis is required.
 
@@ -187,7 +187,7 @@ Neonatal skin — especially in preterm infants <28 weeks — is extremely thin,
 
 ## Filtration in the NICU
 
-**Standard NICU practice:** All IV infusions in neonates should be administered through a **0.22 μm in-line filter** (INS 2021, NICU practice standards). Neonatal patients are uniquely vulnerable to particulate matter — their small circulating volumes mean even minor particulate loads have larger relative impact.
+**Standard NICU practice:** All IV infusions in neonates should be administered through a **0.22 μm in-line filter** (, NICU practice standards). Neonatal patients are uniquely vulnerable to particulate matter — their small circulating volumes mean even minor particulate loads have larger relative impact.
 
 **Exception:** Lipid emulsion and 3-in-1 TNA → **1.2 μm filter** (same as adults). Blood products are never filtered through 0.22 μm.
 
@@ -200,7 +200,7 @@ Heparin exposure in neonates carries risks not present in adults:
 - Cumulative heparin exposure from multiple heparin flushes is significant relative to neonatal circulating volume
 - Heparin-induced thrombocytopenia (HIT), while rare, can occur in neonates
 
-**Trend:** Many NICUs have moved toward heparin-free or minimized-heparin protocols for peripheral IVs and PICCs. Saline-only locking is acceptable for neonatal PICCs per INS 2021 when institutional protocols support it.
+**Trend:** Many NICUs have moved toward heparin-free or minimized-heparin protocols for peripheral IVs and PICCs. Saline-only locking is acceptable for neonatal PICCs when institutional protocols support it.
 
 **Exception:** UAC infusion fluids (see above) and hemodialysis circuits use heparin.
 
@@ -232,7 +232,6 @@ Vitamins A (retinol) and tryptophan in parenteral nutrition formulations degrade
 
 ## References
 
-1. Gorski LA, et al. (2021). INS Infusion Therapy Standards of Practice (Standards 17, 30, 42, 64). *J Infus Nurs*, 44(Suppl 1).
 2. Wyckoff MH, et al. (2022). 2022 International Consensus on Cardiopulmonary Resuscitation (neonatal resuscitation). *Circulation*, 146(25):e450–e495.
 3. Sharpe E, et al. (2017). Neonatal peripherally inserted central catheter practices and providers. *Adv Neonatal Care*, 17(3):209–221.
 4. Ades A & McCurnin D. (2019). The National Association of Neonatal Nurses (NANN) neonatal skin care practice guideline. *Adv Neonatal Care*, 19(6):S1–S18.

@@ -214,4 +214,3 @@ When an AVF or AVG matures, the transition from TDC to native/prosthetic access 
 2. Lok CE, et al. (2020). KDOQI Clinical Practice Guideline for Vascular Access: 2019 Update. *Am J Kidney Dis*, 75(4 Suppl 2):S1–S164.
 3. Murea M, et al. (2019). Hemodialysis vascular access in the elderly. *Semin Dial*, 32(1):29–38.
 4. Biuk-Aghai E, et al. (2014). Taurolidine-citrate catheter locks for the prevention of catheter-related bacteremia in hemodialysis patients: Cochrane review. *Cochrane Database Syst Rev*.
-5. Gorski LA, et al. (2021). INS Infusion Therapy Standards of Practice. *J Infus Nurs*, 44(Suppl 1).

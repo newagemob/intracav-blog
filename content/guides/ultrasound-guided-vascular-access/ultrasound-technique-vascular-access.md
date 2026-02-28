@@ -112,7 +112,7 @@ Most vascular access clinicians use **short-axis/out-of-plane for initial vessel
 
 **Static technique:** Ultrasound is used before needle insertion to mark the vessel location on the skin, then the probe is removed and the needle is advanced to the marked location without real-time guidance.
 
-**Evidence:** Dynamic (real-time) guidance is superior to static technique for first-attempt success and complication reduction. All current guidelines (NICE TA49, INS 2021) recommend dynamic real-time ultrasound guidance for CVC insertion and challenging peripheral access.
+**Evidence:** Dynamic (real-time) guidance is superior to static technique for first-attempt success and complication reduction. All current guidelines (NICE TA49, ) recommend dynamic real-time ultrasound guidance for CVC insertion and challenging peripheral access.
 
 **When static technique is used:** Occasionally used when a second operator is unavailable and the clinician cannot hold the probe and advance the needle simultaneously. A sterile probe cover and additional operator are standard for PICC insertion.
 

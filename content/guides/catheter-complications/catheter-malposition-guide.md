@@ -166,7 +166,6 @@ Tip position variability with arm position is normal and documented — PICC tip
 
 ## References
 
-1. Gorski LA, et al. (2021). INS Infusion Therapy Standards of Practice (Standard 22, 62). *J Infus Nurs*, 44(Suppl 1).
 2. Pittiruti M, et al. (2020). CEVAD consensus on optimal CVAD tip location. *J Vasc Access*, 21(4):381–393.
 3. Gibson F & Bodenham A. (2013). Misplaced central venous catheters. *Br J Anaesth*, 110(3):333–346.
 4. Roldan CJ & Paniagua L. (2015). Central venous catheter intravascular malpositioning. *J Emerg Med*, 48(6):722–729.

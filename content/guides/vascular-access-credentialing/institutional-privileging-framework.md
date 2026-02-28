@@ -197,6 +197,5 @@ A mature privileging program connects individual clinician privileges to outcome
 
 ## References
 
-1. Gorski LA, et al. (2021). INS Infusion Therapy Standards of Practice (Standard 13). *J Infus Nurs*, 44(Suppl 1).
 2. The Joint Commission. (2024). Hospital Accreditation Standards: MS Chapter (Medical Staff); HR Chapter (Human Resources). Oakbrook Terrace, IL: TJC.
 3. AVAR. (2023). Vascular Access Position Statements on scope of practice and credentialing. Retrieved from avar.org.

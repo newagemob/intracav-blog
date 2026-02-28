@@ -35,7 +35,7 @@ This guide covers the evidence base for tip location standards, intraprocedural 
 ## The Target: Cavoatrial Junction (CAJ)
 
 The **cavoatrial junction** is the accepted international tip position standard, endorsed by:
-- INS 2021 Standards of Practice (Standard 22: Tip Location)
+- current clinical standards (Standard 22: Tip Location)
 - CEVAD (Consensus Document on the Optimal Tip Location for CVADs, 2020)
 - AVA (Association for Vascular Access) Position Statement
 - NICE guidelines (UK)
@@ -196,7 +196,6 @@ PICC tips can migrate after placement due to arm position changes, respiratory v
 
 ## References
 
-1. Gorski LA, et al. (2021). INS Infusion Therapy Standards of Practice (Standard 22: Tip Location). *J Infus Nurs*, 44(Suppl 1).
 2. Pittiruti M, et al. (2020). CEVAD: Consensus Document on the Optimal Tip Location of CVADs. *J Vasc Access*, 21(4):381–393.
 3. Gibson F & Bodenham A. (2013). Misplaced central venous catheters. *Br J Anaesth*, 110(3):333–346.
 4. Oliver G, et al. (2016). Electrocardiographic guidance for PICC placement. *Clin Nurse Spec*, 30(1):E1–E12.

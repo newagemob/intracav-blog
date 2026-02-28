@@ -5,11 +5,9 @@ lastmod = 2026-02-25T00:00:00-05:00
 content_type = "guide"
 audience = "clinician"
 category = ["Central Venous Catheters", "Tip Location", "Clinical Standards"]
-tags = ["CVAD tip location", "cavoatrial junction", "CEVAD consensus", "PICC tip position", "CVC tip position", "SVC tip location", "tip confirmation standards", "INS tip location"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]
 description = "CVAD tip location standards per CEVAD 2020 consensus: cavoatrial junction target, radiographic landmarks, device-specific tip positions, tip confirmation methods (ECG, CXR, fluoroscopy), and malposition classification."
 slug = "cvad-tip-location-standards"
-keywords = ["CVAD tip location standard", "cavoatrial junction standard", "CEVAD 2020 consensus", "PICC tip position standard", "CVC acceptable tip location", "INS tip location CVADs", "radiographic tip confirmation", "SVC tip location guidelines"]
 +++
 
 # CVAD Tip Location Standards: CEVAD Consensus and Clinical Application
@@ -147,7 +145,7 @@ Emerging technology; catheter-based US visualizes tip in real time. Not yet stan
 
 ## Malposition Classification
 
-Per CEVAD and INS 2021:
+Per CEVAD:
 
 | Type | Description | Action |
 |---|---|---|
@@ -179,6 +177,5 @@ Per CEVAD and INS 2021:
 ## References
 
 1. Pittiruti M, et al. (2020). CEVAD: Consensus document on the optimal tip location of CVADs. *J Vasc Access*, 21(4):381–393.
-2. Gorski LA, et al. (2021). INS Infusion Therapy Standards of Practice (Standard 22). *J Infus Nurs*, 44(Suppl 1).
 3. Gibson F & Bodenham A. (2013). Misplaced central venous catheters. *Br J Anaesth*, 110(3):333–346.
 4. Roldan CJ & Paniagua L. (2015). Central venous catheter intravascular malpositioning. *J Emerg Med*, 48(6):722–729.

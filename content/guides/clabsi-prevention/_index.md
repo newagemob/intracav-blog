@@ -161,7 +161,7 @@ At every catheter access event:
 
 CHG-impregnated dressings (disc, gel, or sponge configurations) are applied at the insertion site beneath or incorporated into the transparent dressing. Meta-analyses demonstrate a **65–80% reduction in CLABSI** rates with CHG-impregnated dressings compared to standard TSM dressings (Ullman et al., 2016 Cochrane review).
 
-INS 2021 Standard recommends CHG-impregnated dressings for all CVADs in patients ≥2 months of age unless contraindicated (CHG allergy, skin integrity compromised at site).
+current clinical standard recommends CHG-impregnated dressings for all CVADs in patients ≥2 months of age unless contraindicated (CHG allergy, skin integrity compromised at site).
 
 ### CHG Bathing
 
@@ -252,4 +252,3 @@ See the [CLABSI Prevention Implementation Framework](/resources/clabsi-preventio
 3. Marschall J, et al. (2014). SHEA/IDSA Practice Recommendation: Strategies to Prevent CLABSI. *Infect Control Hosp Epidemiol*, 35(7):753–771.
 4. Climo MW, et al. (2013). Effect of daily chlorhexidine bathing on hospital-acquired infection. *N Engl J Med*, 368(6):533–542.
 5. Raad II, et al. (1994). Ultrasonically guided placement of central venous catheters using maximal sterile barrier precautions. *Eur J Clin Microbiol Infect Dis*, 13(9):773–776.
-6. Gorski LA, et al. (2021). INS Infusion Therapy Standards of Practice (8th ed.). *J Infus Nurs*, 44(Suppl 1).

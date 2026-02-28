@@ -7,9 +7,8 @@ audience = "clinician"
 category = ["Vascular Access", "Clinical Practice", "Patient Safety"]
 tags = ["vascular access", "vascular access device", "VAD", "infusion therapy", "central line", "peripheral IV", "CVAD", "catheter", "intravenous access", "clinical decision"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]
-description = "The definitive clinical reference on vascular access — device spectrum, evidence-based selection, INS standards, complication overview, documentation, and quality metrics for clinicians."
+description = "The definitive clinical reference on vascular access — device spectrum, evidence-based selection, current clinical standards, complication overview, documentation, and quality metrics for clinicians."
 slug = "vascular-access"
-keywords = ["vascular access", "vascular access device", "VAD", "what is vascular access", "types of vascular access", "vascular access standards", "INS vascular access", "central line", "peripheral IV", "CVAD", "infusion therapy"]
 schema_type = "MedicalWebPage"
 pillar = true
 pillar_cluster = "vascular-access"
@@ -40,7 +39,7 @@ The term **vascular access device (VAD)** refers to any catheter, cannula, or ne
 
 ## The Vascular Access Device Spectrum
 
-Choosing the right VAD for the right patient and therapy is among the most consequential clinical decisions in infusion therapy. The INS 2021 Standards of Practice establish the guiding principle: **use the least invasive device that meets the full clinical need for the prescribed duration of therapy.**
+Choosing the right VAD for the right patient and therapy is among the most consequential clinical decisions in infusion therapy. The current clinical standards establish the guiding principle: **use the least invasive device that meets the full clinical need for the prescribed duration of therapy.**
 
 | Device | Insertion Site | Tip Location | Typical Dwell | Primary Use |
 |---|---|---|---|---|
@@ -59,7 +58,7 @@ Choosing the right VAD for the right patient and therapy is among the most conse
 
 ## Evidence-Based Device Selection Principles
 
-The **Vessel Health and Preservation (VHP)** framework, endorsed by INS and supported by multiple health system studies, establishes a systematic approach to device selection that protects venous capital while meeting therapeutic goals.
+The **Vessel Health and Preservation (VHP)** framework, supported by supported by multiple health system studies, establishes a systematic approach to device selection that protects venous capital while meeting therapeutic goals.
 
 ### The Four VHP Questions
 
@@ -70,7 +69,7 @@ The **Vessel Health and Preservation (VHP)** framework, endorsed by INS and supp
 
 ### Osmolarity and pH Thresholds
 
-INS 2021 provides the following guidance on osmolarity:
+ provides the following guidance on osmolarity:
 - **<600 mOsm/L**: may be administered peripherally
 - **≥600 mOsm/L**: strongly consider central access
 - **>900 mOsm/L** (e.g., TPN, >10% dextrose, highly concentrated potassium): central access required
@@ -90,10 +89,6 @@ Key DIVA risk factors: history of difficult access, no visible veins, no palpabl
 ---
 
 ## Clinical Standards and Guidelines
-
-### INS Infusion Therapy Standards of Practice (2021)
-
-The **Infusion Nurses Society (INS) Standards of Practice** — published every 5 years — is the primary practice standard for vascular access and infusion therapy in the United States. The 2021 edition covers: device selection, insertion practices, site preparation, maintenance, complication management, and documentation. All INS Standards are referenced throughout this knowledge base.
 
 ### IDSA Guidelines (2009, updated)
 
@@ -126,7 +121,7 @@ Vascular access devices carry measurable risk. Understanding complication incide
 - Intraluminal thrombosis and fibrin sheath: contributes to occlusion in 10–35% of CVADs
 
 **Mechanical:**
-- Phlebitis (chemical, mechanical, bacterial): most common complication of peripheral IV; INS VIP scale grades 0–5
+- Phlebitis (chemical, mechanical, bacterial): most common complication of peripheral IV; VIP scale grades 0–5
 - Infiltration/extravasation: PIV infiltration in 20–70% of peripheral lines; vesicant extravasation rare but severe
 - Air embolism: prevention is paramount during CVAD insertion and removal
 - Catheter malposition: primary (at insertion) or secondary (migration during dwell)
@@ -140,7 +135,7 @@ See [Catheter Complications: Recognition and Management](/guides/catheter-compli
 
 ## Documentation Requirements
 
-Vascular access documentation is a regulatory requirement and a key defense in adverse event review. INS 2021 specifies minimum documentation elements:
+Vascular access documentation is a regulatory requirement and a key defense in adverse event review.  specifies minimum documentation elements:
 
 **Insertion documentation** must include:
 - Date, time, and clinical indication

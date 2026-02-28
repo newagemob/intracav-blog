@@ -181,9 +181,9 @@ High device escalation rates may indicate:
 
 **Definition:** Number of peripheral phlebitis events per 1,000 peripheral IV catheter-days.
 
-**INS benchmark:** <5% phlebitis rate for peripheral IV therapy; more precisely, INS 2021 recommends reporting as rate per 1,000 PIV-days to allow meaningful comparison.
+**Benchmark:** <5% phlebitis rate for peripheral IV therapy; more precisely, Current evidence recommends reporting as rate per 1,000 PIV-days to allow meaningful comparison.
 
-**Phlebitis grading:** Use the INS VIP Scale (Grades 0–5) to standardize documentation. Only Grade 2+ events should be counted in the reported phlebitis rate (Grade 1 is pain at site only — below clinical threshold for intervention at most institutions).
+**Phlebitis grading:** Use the VIP Scale (Grades 0–5) to standardize documentation. Only Grade 2+ events should be counted in the reported phlebitis rate (Grade 1 is pain at site only — below clinical threshold for intervention at most institutions).
 
 **High phlebitis rate investigation:** Examine by medication (which infusates are associated with most phlebitis events?), by gauge (is 18G being used where 20G would suffice?), by site (antecubital phlebitis from positional irritation?), and by inserter (one clinician's insertions producing disproportionate phlebitis?).
 
@@ -191,7 +191,7 @@ High device escalation rates may indicate:
 
 **Definition:** Number of confirmed infiltration/extravasation events per 1,000 PIV-catheter-days.
 
-**Grade tracking:** Document severity using the INS infiltration staging scale (Grades 0–4). Report Grade 3–4 events separately as sentinel events requiring individual case review.
+**Grade tracking:** Document severity using the infiltration staging scale (Grades 0–4). Report Grade 3–4 events separately as sentinel events requiring individual case review.
 
 **Extravasation of vesicant:** Any extravasation of a vesicant agent (Grade 2 or higher) should trigger an incident report and root-cause review regardless of outcome. Even if tissue injury does not occur, the near-miss represents a system failure.
 
@@ -288,9 +288,8 @@ A complete quality program measures both:
 
 ## References
 
-1. Gorski LA, et al. (2021). INS Infusion Therapy Standards of Practice (Standard 8). *J Infus Nurs*, 44(Suppl 1).
 2. Dudeck MA, et al. (2015). National Healthcare Safety Network report, data summary for 2013. *Am J Infect Control*, 43(3):206–221.
 3. Chopra V, et al. (2015). The Michigan Appropriateness Guide for Intravenous Catheters (MAGIC). *Ann Intern Med*, 163(6 Suppl):S1–S40.
 4. Alexandrou E, et al. (2015). International prevalence of the use of peripheral intravenous catheters. *J Hosp Med*, 10(8):530–533.
 5. Maki DG, et al. (2006). The risk of bloodstream infection in adults with different intravascular devices: a systematic review of 200 published prospective studies. *Mayo Clin Proc*, 81(9):1159–1171.
-6. INS. (2021). Quality Indicators for Infusion Therapy. Supplement to *J Infus Nurs*, 44(Suppl 1).
+6. CVAA. (2021). Quality Indicators for Infusion Therapy. Supplement to *J Infus Nurs*, 44(Suppl 1).

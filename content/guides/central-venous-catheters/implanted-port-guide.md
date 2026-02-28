@@ -149,7 +149,7 @@ SASH protocol:
 
 ### When Deaccessing / Monthly Maintenance Flush
 
-When a port is not actively in use, it requires a maintenance flush to maintain patency. Per INS 2021 Standard 42:
+When a port is not actively in use, it requires a maintenance flush to maintain patency. Standard 42:
 - Minimum every **4–6 weeks** between uses: flush with 10 mL NS pulsatile, then heparin 100 units/mL (5 mL) positive pressure lock
 
 Many ports tolerate longer intervals without flushing (particularly Groshong-valved ports), but monthly flushing is the standard of care. Patients should have a scheduled monthly flush visit documented in their care plan.
@@ -201,7 +201,6 @@ Compression of the catheter between the clavicle and first rib (at the costoclav
 
 ## References
 
-1. Gorski LA, et al. (2021). INS Infusion Therapy Standards of Practice. *J Infus Nurs*, 44(Suppl 1).
 2. Vescia S, et al. (2008). Management of venous port systems in oncology. *Ann Oncol*, 19(1):9–15.
 3. Biffi R, et al. (2009). Implantable subcutaneous access systems for CVAD in cancer patients. *Ann Oncol*, 20(8):1341–1347.
 4. Marcy PY, et al. (2002). Venous port systems for totally implantable vascular devices in cancer patients. *Ann Oncol*, 13(1):139–142.

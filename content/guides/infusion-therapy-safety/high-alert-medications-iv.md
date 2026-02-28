@@ -143,6 +143,5 @@ ISMP publishes two high-alert medication lists: one for hospital settings, one f
 ## References
 
 1. ISMP. (2023). List of High-Alert Medications in Acute Care Settings. Institute for Safe Medication Practices.
-2. Gorski LA, et al. (2021). INS Infusion Therapy Standards of Practice. *J Infus Nurs*, 44(Suppl 1).
 3. Cohen MR (Ed.). (2020). Medication Errors (2nd ed.). Washington, DC: American Pharmacists Association.
 4. The Joint Commission. (2024). National Patient Safety Goals NPSG 03.05.01: Anticoagulation safety.

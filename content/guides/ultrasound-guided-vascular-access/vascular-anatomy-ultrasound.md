@@ -175,7 +175,6 @@ The single most reliable bedside test for distinguishing vein from artery:
 
 ## References
 
-1. Gorski LA, et al. (2021). INS Infusion Therapy Standards of Practice (Standards 22–25). *J Infus Nurs*, 44(Suppl 1).
 2. Troianos CA, et al. (2011). Special articles: guidelines for performing ultrasound guided vascular cannulation. *Anesth Analg*, 114(1):46–72.
 3. Brass P, et al. (2015). Ultrasound guidance versus anatomical landmarks for subclavian or femoral vein catheterization. *Cochrane Database Syst Rev*, (1):CD011447.
 4. Egan G, et al. (2012). Sonographic assessment of the basilic vein for PICC. *J Ultrasound Med*, 31(11):1713–1718.

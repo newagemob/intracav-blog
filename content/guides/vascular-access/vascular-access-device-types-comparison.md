@@ -205,5 +205,4 @@ Choosing the right vascular access device requires understanding the clinical ch
 
 ## References
 
-1. Gorski LA, et al. (2021). INS Infusion Therapy Standards of Practice. *J Infus Nurs*, 44(Suppl 1).
 2. Chopra V, et al. (2015). MAGIC criteria. *Ann Intern Med*, 163(6 Suppl).

@@ -7,9 +7,9 @@ audience = "clinician"
 category = ["Catheter Complications", "Phlebitis", "Infusion Safety"]
 tags = ["phlebitis vascular access", "phlebitis grading scale", "VIP scale phlebitis", "mechanical phlebitis", "chemical phlebitis", "IV phlebitis management", "peripheral IV phlebitis", "phlebitis assessment"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]
-description = "Complete guide to phlebitis in vascular access: types (mechanical, chemical, bacterial, post-infusion), INS VIP phlebitis scale, grading criteria, site-specific management, and prevention strategies per INS 2021."
+description = "Complete guide to phlebitis in vascular access: types (mechanical, chemical, bacterial, post-infusion), VIP phlebitis scale, grading criteria, site-specific management, and prevention strategies."
 slug = "phlebitis-recognition-management"
-keywords = ["phlebitis vascular access", "VIP phlebitis scale", "phlebitis grading 0-5", "mechanical phlebitis IV", "chemical phlebitis catheter", "INS phlebitis management", "IV phlebitis treatment", "phlebitis vs thrombophlebitis"]
+keywords = ["phlebitis vascular access", "VIP phlebitis scale", "phlebitis grading 0-5", "mechanical phlebitis IV", "chemical phlebitis catheter", "phlebitis management", "IV phlebitis treatment", "phlebitis vs thrombophlebitis"]
 +++
 
 # Phlebitis: Recognition, Grading, and Management in Vascular Access
@@ -62,9 +62,9 @@ Phlebitis — inflammation of the vein at or near a vascular access device — i
 
 ---
 
-## The INS Visual Infusion Phlebitis (VIP) Scale
+## The Visual Infusion Phlebitis (VIP) Scale
 
-The **VIP Scale** (Jackson 1998) is the most widely used validated phlebitis grading tool in clinical practice, endorsed by INS 2021 as the standard assessment scale.
+The **VIP Scale** (Jackson 1998) is the most widely used validated phlebitis grading tool in clinical practice, endorsed by  as the standard assessment scale.
 
 | Grade | Description | Signs | Action |
 |---|---|---|---|
@@ -162,7 +162,7 @@ PICC phlebitis — occurring along the upper arm cannulated vein — is evaluate
 
 **When to report:** Most institutions require incident report or quality event documentation for phlebitis grade ≥2. This data feeds complication rate tracking for quality improvement.
 
-**Phlebitis rate calculation:** Phlebitis rate = (Number of phlebitis events / Number of peripheral IVs × 100%). INS recommends tracking phlebitis rates as a quality indicator; INS benchmark is <5% phlebitis rate for PIV therapy.
+**Phlebitis rate calculation:** Phlebitis rate = (Number of phlebitis events / Number of peripheral IVs × 100%). Current clinical guidance recommends tracking phlebitis rates as a quality indicator; clinical benchmark is <5% phlebitis rate for PIV therapy.
 
 ---
 
@@ -179,7 +179,6 @@ PICC phlebitis — occurring along the upper arm cannulated vein — is evaluate
 
 ## References
 
-1. Gorski LA, et al. (2021). INS Infusion Therapy Standards of Practice (Standards 46–47). *J Infus Nurs*, 44(Suppl 1).
 2. Jackson A. (1998). Infection control: a battle in vein — infusion phlebitis. *Nursing Times*, 94(4):68–71.
 3. Wallis MC, et al. (2014). Risk factors for peripheral intravenous device failure. *J Clin Nurs*, 23(9–10):1373–1381.
 4. Nassaji-Zavareh M & Ghorbani R. (2007). Peripheral IV catheter-related phlebitis and related risk factors. *Singapore Med J*, 48(8):733–736.

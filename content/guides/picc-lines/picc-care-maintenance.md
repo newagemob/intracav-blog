@@ -9,14 +9,13 @@ tags = ["PICC care maintenance", "PICC dressing change", "PICC flushing protocol
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]
 description = "Complete PICC care and maintenance guide: dressing change technique (CHG dressing, TSM, step-by-step), SASH flushing protocol, daily assessment requirements, patient education, and safe PICC removal procedure."
 slug = "picc-care-maintenance"
-keywords = ["PICC care maintenance", "PICC dressing change technique", "PICC flushing protocol SASH", "PICC removal procedure", "CHG dressing change PICC", "PICC daily assessment", "PICC line home care", "INS PICC maintenance standards"]
 +++
 
 # PICC Line Care and Maintenance: Dressing Changes, Flushing, and Removal
 
 Once a PICC is placed, maintenance is where infection prevention happens. Studies consistently show that CLABSI events are driven more by maintenance practice failures than by insertion technique failures. Every dressing change, every hub access, and every flush is an opportunity to either maintain sterility or introduce pathogens.
 
-This guide covers INS 2021-compliant PICC maintenance protocols: dressing changes, flushing and locking, daily assessment, patient education, and safe removal.
+This guide covers -compliant PICC maintenance protocols: dressing changes, flushing and locking, daily assessment, patient education, and safe removal.
 
 **Parent guide:** [PICC Lines: Complete Clinical Reference](/guides/picc-lines/)
 
@@ -24,7 +23,7 @@ This guide covers INS 2021-compliant PICC maintenance protocols: dressing change
 
 ## Daily Assessment Requirements
 
-Every nursing shift must include PICC assessment. Required documentation elements per INS 2021 (Standard 44: Assessment and Monitoring):
+Every nursing shift must include PICC assessment. Required documentation elements (Standard 44: Assessment and Monitoring):
 
 **Site assessment:**
 - Insertion site: erythema, swelling, tenderness, drainage (type, amount, color)
@@ -48,7 +47,6 @@ Every nursing shift must include PICC assessment. Required documentation element
 
 ### Frequency
 
-Per INS 2021 Standard 40:
 - **Gauze dressing:** Change every 2 days (gauze dressings are not occlusive and require more frequent change)
 - **TSM (transparent semi-permeable membrane) dressing:** Change every 5–7 days or per institutional policy
 - **CHG-impregnated dressing (gel patch):** Change with TSM dressing change, or per product instructions (typically 7 days)
@@ -142,7 +140,7 @@ Before every needleless connector access:
 
 ### Needle-Free Connector Management
 
-Per INS 2021:
+Per :
 - Change needleless connectors with tubing change (typically every 96 hours for continuous infusions) or per institutional policy
 - Do not change routinely before this interval without clinical indication (excessive changes increase manipulation and infection risk)
 - Replace immediately if blood is visible in connector, if damaged, or if integrity is compromised
@@ -152,7 +150,6 @@ Per INS 2021:
 
 ## Administration Set Management
 
-Per INS 2021 Standard 37:
 - **Continuous infusions (non-lipid, non-blood):** Change administration set every 96 hours
 - **Lipid-containing PN (3-in-1 admixture):** Change every 24 hours
 - **Lipid emulsion alone:** Change every 12 hours
@@ -271,7 +268,6 @@ If catheter does not withdraw smoothly:
 
 ## References
 
-1. Gorski LA, et al. (2021). INS Infusion Therapy Standards of Practice (Standards 34–45). *J Infus Nurs*, 44(Suppl 1).
 2. O'Grady NP, et al. (2011). CDC Guidelines for Prevention of Intravascular Catheter-Related Infections. *MMWR*, 60(RR-1).
 3. Buetti N, et al. (2022). Strategies to prevent CLABSI in acute care hospitals: 2022 update. *Infect Control Hosp Epidemiol*, 43(5):553–569.
 4. Moureau NL & Trick N. (2012). Evidence-based assessment and care of CVAD patients. *J Infus Nurs*, 35(3).
