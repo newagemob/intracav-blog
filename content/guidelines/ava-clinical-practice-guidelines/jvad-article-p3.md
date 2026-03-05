@@ -7,8 +7,8 @@ weight: 3
 source_org: "ava"
 guideline_set: "ava_cpg_2026"
 category: ["guidelines", "vascular-access", "device-selection", "insertion"]
-audience: ["clinician"]
-content_type: ["guidelines"]
+audience: clinician
+content_type: guidelines
 ---
 
 # 2026 | Supplemental Issue | JAVA

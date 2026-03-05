@@ -7,8 +7,8 @@ weight: 4
 source_org: "ava"
 guideline_set: "ava_cpg_2026"
 category: ["guidelines", "vascular-access", "complications", "maintenance"]
-audience: ["clinician"]
-content_type: ["guidelines"]
+audience: clinician
+content_type: guidelines
 ---
 
 # JAVA | 2026 | Supplemental Issue

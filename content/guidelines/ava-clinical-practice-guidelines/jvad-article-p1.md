@@ -7,8 +7,8 @@ weight: 1
 source_org: "ava"
 guideline_set: "ava_cpg_2026"
 category: ["guidelines", "vascular-access", "clinical-practice"]
-audience: ["clinician"]
-content_type: ["guidelines"]
+audience: clinician
+content_type: guidelines
 ---
 
 # Clinical Practice Guidelines for Adults

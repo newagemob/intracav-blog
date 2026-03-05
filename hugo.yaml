@@ -42,7 +42,7 @@ permalinks:
   policies: /policies/:slug/
   patient-education: /patient-education/:slug/
   resources: /resources/:slug/
-  AVA Clinical Practice Guidelines: /ava-clinical-practice-guidelines/:slug/
+  guidelines: /guidelines/:sections/:slug/
 
 # Output formats
 outputs:
