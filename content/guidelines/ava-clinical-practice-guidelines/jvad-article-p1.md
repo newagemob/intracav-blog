@@ -525,19 +525,19 @@ This inclusive, practice-aware approach is a defining characteristic of the AVA 
 
 The AVA CPGs were developed through a rigorous, multiphase process informed by recognized standards for trustworthy guideline development, including those established by the Institute of Medicine, the Conference on Guideline Standardization, and the Council of Medical Specialty Societies (CMSS). This process was designed to promote transparency, mitigate bias, and ensure the development of practical, evidence-based recommendations relevant to a broad range of healthcare professionals.
 
-Development of the guidelines was led by the AVA Guideline Governance Group (GGG) and supported by multiple Guideline Development Teams (GDTs), composed of multidisciplinary volunteers with expertise in vascular access. The work was organized into 6 sections, later consolidated into 5 thematic content areas to reflect the full life cycle of vascular access devices, from administrative and infrastructure considerations, device planning and insertion through care, maintenance, complication management, and removal. For more information on the protocol, see PROSPERO or Sochor et al. (2024).^1,2^
+Development of the guidelines was led by the AVA Guideline Governance Group (GGG) and supported by multiple Guideline Development Teams (GDTs), composed of multidisciplinary volunteers with expertise in vascular access. The work was organized into 6 sections, later consolidated into 5 thematic content areas to reflect the full life cycle of vascular access devices, from administrative and infrastructure considerations, device planning and insertion through care, maintenance, complication management, and removal. For more information on the protocol, see PROSPERO or Sochor et al. (2024).<sup><a href="#s1-ref-1">1</a>,<a href="#s1-ref-2">2</a></sup>
 
 #### Dual Systematic Reviews
 
-Two separate systematic reviews were conducted to support a robust evidence base. The first was initiated early in the project and informed the development of foundational topics. The second review became necessary to include the most up-to-date evidence available. Both systematic reviews were guided by structured population, intervention, comparison, outcome (PICO) questions and search strategies built collaboratively by each GDT. A contracted research librarian conducted a structured search strategy and retrieved titles and abstracts that were uploaded to AVA's collaborative research platform Rayyan.^3^ Once the articles for inclusion were established, the full texts were obtained for GDT appraisal.
+Two separate systematic reviews were conducted to support a robust evidence base. The first was initiated early in the project and informed the development of foundational topics. The second review became necessary to include the most up-to-date evidence available. Both systematic reviews were guided by structured population, intervention, comparison, outcome (PICO) questions and search strategies built collaboratively by each GDT. A contracted research librarian conducted a structured search strategy and retrieved titles and abstracts that were uploaded to AVA's collaborative research platform Rayyan.<sup><a href="#s1-ref-3">3</a></sup> Once the articles for inclusion were established, the full texts were obtained for GDT appraisal.
 
-Each article was appraised independently by 2 reviewers using the Johns Hopkins Evidence-Based Practice model.^4^ Scores for both level of evidence (I–V) and quality of evidence (A–C) were recorded, and discrepancies were resolved through expert analysis. A standardized Excel-based scoring system aggregated results to support transparent documentation. A PRISMA flow diagram summarizing identification, screening, and inclusion is provided (Figure 1).
+Each article was appraised independently by 2 reviewers using the Johns Hopkins Evidence-Based Practice model.<sup><a href="#s1-ref-4">4</a></sup> Scores for both level of evidence (I–V) and quality of evidence (A–C) were recorded, and discrepancies were resolved through expert analysis. A standardized Excel-based scoring system aggregated results to support transparent documentation. A PRISMA flow diagram summarizing identification, screening, and inclusion is provided (Figure 1).
 
 In areas where evidence was limited or inconclusive, AVA elected not to issue consensus-based recommendations without sufficient justification. These topics have been deferred for potential inclusion in a future edition, following structured consensus methods to ensure integrity.
 
 #### Stakeholder Involvement
 
-Recommendations were drafted by the GDTs by sections, supported by evidence summaries and structured rationales. These were reviewed internally by the GGG, with extensive feedback. After the consolidation of overlapping information across sections, the final division developed 5 themes. The recommendations were built from the GDT information, GGG feedback, and the included full-text articles. The document was then sent to an AVA internal review by the Clinical Review Team and revised and externally reviewed by independent reviewers and representatives from stakeholder organizations. The review process included advisory committee feedback, a public comment period, and final approval by the AVA Board of Directors before publication. Conflict of interest disclosures were collected and managed throughout the process in accordance with CMSS guidance.^5^
+Recommendations were drafted by the GDTs by sections, supported by evidence summaries and structured rationales. These were reviewed internally by the GGG, with extensive feedback. After the consolidation of overlapping information across sections, the final division developed 5 themes. The recommendations were built from the GDT information, GGG feedback, and the included full-text articles. The document was then sent to an AVA internal review by the Clinical Review Team and revised and externally reviewed by independent reviewers and representatives from stakeholder organizations. The review process included advisory committee feedback, a public comment period, and final approval by the AVA Board of Directors before publication. Conflict of interest disclosures were collected and managed throughout the process in accordance with CMSS guidance.<sup><a href="#s1-ref-5">5</a></sup>
 
 As part of AVA's commitment to transparency and continuous improvement, this inaugural guideline edition reflects both the depth of current evidence and the limitations inherent in real-world implementation. Recommendations requiring further consensus development or newly emerging evidence are being tracked for inclusion in a future update or supplemental publication.
 
@@ -670,7 +670,7 @@ Health care organizations may consider establishing dedicated VATs to reduce com
 
 **Summary of Evidence**
 
-Dedicated VATs have been shown to significantly reduce central line use, CLABSI rates, and peripheral IV failure when compared with care provided by general staff.^1,2(IIb, IIIb)^ Implementation of these teams is associated with measurable cost savings and alignment with infection prevention standards.^3,4(IIIb, IIIb)^ In 1 cost-benefit analysis of a tertiary hospital's VAT, substantial financial benefits were reported.^3(IIIb)^ Authors of 1 study found expert inserters had better insertion outcomes than generalists, while authors of observational studies noted reduced reattempts and complications.^2,4(IIIb, IIIb)^
+Dedicated VATs have been shown to significantly reduce central line use, CLABSI rates, and peripheral IV failure when compared with care provided by general staff.<sup><a href="#s1-ref-1">1(IIb)</a>,<a href="#s1-ref-2">2(IIIb)</a></sup> Implementation of these teams is associated with measurable cost savings and alignment with infection prevention standards.<sup><a href="#s1-ref-3">3(IIIb)</a>,<a href="#s1-ref-4">4(IIIb)</a></sup> In 1 cost-benefit analysis of a tertiary hospital's VAT, substantial financial benefits were reported.<sup><a href="#s1-ref-3">3(IIIb)</a></sup> Authors of 1 study found expert inserters had better insertion outcomes than generalists, while authors of observational studies noted reduced reattempts and complications.<sup><a href="#s1-ref-2">2(IIIb)</a>,<a href="#s1-ref-4">4(IIIb)</a></sup>
 
 #### Recommendation 2: High-Demand VAT Coverage
 
@@ -678,39 +678,39 @@ It is likely beneficial to prioritize VAT coverage in high-demand departments wh
 
 **Summary of Evidence**
 
-In high-volume or resource-constrained environments, dedicated VATs have been shown to reduce procedure time, minimize repeat attempts, and improve clinical workflow.^5–8(IIIa, IIIb, IIa, IIIb)^ In 1 emergency department study, VAT implementation reduced IV diagnostic wait times by over 100 minutes.^5(IIIa)^ In middle-resource countries, VATs decreased repeated procedures, improving efficiency.^6(IIIb)^ Ultrasound-trained VATs were also more successful under challenging insertions, minimizing patient discomfort and delays.^7(IIa)^ Authors of a recent US study confirmed these findings and highlighted the workflow optimization VATs provide in large institutions.^8(IIIb)^
+In high-volume or resource-constrained environments, dedicated VATs have been shown to reduce procedure time, minimize repeat attempts, and improve clinical workflow.<sup><a href="#s1-ref-5">5(IIIa)</a>,<a href="#s1-ref-6">6(IIIb)</a>,<a href="#s1-ref-7">7(IIa)</a>,<a href="#s1-ref-8">8(IIIb)</a></sup> In 1 emergency department study, VAT implementation reduced IV diagnostic wait times by over 100 minutes.<sup><a href="#s1-ref-5">5(IIIa)</a></sup> In middle-resource countries, VATs decreased repeated procedures, improving efficiency.<sup><a href="#s1-ref-6">6(IIIb)</a></sup> Ultrasound-trained VATs were also more successful under challenging insertions, minimizing patient discomfort and delays.<sup><a href="#s1-ref-7">7(IIa)</a></sup> Authors of a recent US study confirmed these findings and highlighted the workflow optimization VATs provide in large institutions.<sup><a href="#s1-ref-8">8(IIIb)</a></sup>
 
 #### Clinical Considerations
 
 The following points summarize potential benefits, risks, and implementation factors identified in the literature and practice experience. They are intended to guide clinical reflection and local adaptation rather than serve as prescriptive recommendations.
 
 **Benefits**
-- **Patient safety**, reduction in infection rates, and other complications due to VAT expertise.^1,8^
-- **Financial savings**, decreased costs from fewer complications and reduced hospital stay durations.^5^
-- **Operational efficiency**, improved resource allocation and patient throughput, particularly in high-demand settings.^7,8^
+- **Patient safety**, reduction in infection rates, and other complications due to VAT expertise.<sup><a href="#s1-ref-1">1</a>,<a href="#s1-ref-8">8</a></sup>
+- **Financial savings**, decreased costs from fewer complications and reduced hospital stay durations.<sup><a href="#s1-ref-5">5</a></sup>
+- **Operational efficiency**, improved resource allocation and patient throughput, particularly in high-demand settings.<sup><a href="#s1-ref-7">7</a>,<a href="#s1-ref-8">8</a></sup>
 
 **Risks**
-- **Initial costs**, upfront costs for establishing and training VATs, though long-term savings offset these.^2,5,6^
-- **Integration challenges**, potential resistance to incorporating VATs within existing workflows.^8^
+- **Initial costs**, upfront costs for establishing and training VATs, though long-term savings offset these.<sup><a href="#s1-ref-2">2</a>,<a href="#s1-ref-5">5</a>,<a href="#s1-ref-6">6</a></sup>
+- **Integration challenges**, potential resistance to incorporating VATs within existing workflows.<sup><a href="#s1-ref-8">8</a></sup>
 
 **Implementation Considerations**
-- **Strategic departmental deployment**, prioritize VAT implementation in high-demand departments, such as emergency and ICU, where procedural efficiency and patient throughput are crucial.^2,3,5^
-- **Performance monitoring and quality improvement**, regularly track VAT performance, including infection rates, cost savings, and procedural success, to demonstrate return on investment and continuously improve VAT services.^4,8^
+- **Strategic departmental deployment**, prioritize VAT implementation in high-demand departments, such as emergency and ICU, where procedural efficiency and patient throughput are crucial.<sup><a href="#s1-ref-2">2</a>,<a href="#s1-ref-3">3</a>,<a href="#s1-ref-5">5</a></sup>
+- **Performance monitoring and quality improvement**, regularly track VAT performance, including infection rates, cost savings, and procedural success, to demonstrate return on investment and continuously improve VAT services.<sup><a href="#s1-ref-4">4</a>,<a href="#s1-ref-8">8</a></sup>
 
 **Barriers to Implementation**
-- **Financial barriers**, initial training and equipment costs may pose challenges for some institutions, but long-term cost savings outweigh these.^2,6^
-- **Resistance to workflow adjustments**, integrating VATs into existing workflows may face initial resistance, requiring consistent communication of their value to patient safety and operational efficiency.^4,7^
+- **Financial barriers**, initial training and equipment costs may pose challenges for some institutions, but long-term cost savings outweigh these.<sup><a href="#s1-ref-2">2</a>,<a href="#s1-ref-6">6</a></sup>
+- **Resistance to workflow adjustments**, integrating VATs into existing workflows may face initial resistance, requiring consistent communication of their value to patient safety and operational efficiency.<sup><a href="#s1-ref-4">4</a>,<a href="#s1-ref-7">7</a></sup>
 
 #### References
 
-1. Marsh N, Webster J, Larsen E, et al. Expert versus generalist inserters for peripheral intravenous catheter insertion: a pilot randomised controlled trial. *Trials*. 2018;19(1):564. doi:10.1186/s13063-018-2946-3.
-2. Savage TJ, Lynch AD, Oddera SE. Implementation of a vascular access team to reduce central line usage and prevent central line–associated bloodstream infections. *J Infus Nurs*. 2019;42(4):193–196.
-3. Ricou Ríos L, Esposito Català C, Pons Calsapeu A, et al. Implementation of a vascular access specialist team in a tertiary hospital: a cost-benefit analysis. *Cost Eff Resour Alloc*. 2023;21(1):67. doi:10.1186/s12962-023-00464-6.
-4. Chopra V, Kuhn L, Ratz D, et al. Vascular access specialist training, experience, and practice in the United States: results from the national PICC1 survey. *J Infus Nurs*. 2017;40(1):15–25.
-5. Whalen M, Maliszewski B, Baptiste DL. Establishing a dedicated difficult vascular access team in the emergency department: a needs assessment. *J Infus Nurs*. 2017;40(3):149–154.
-6. Federica B, Nizar Yahya B, Hevan Al-Atroushy A, et al. It is possible to create a vascular access team in a middle resource country? Experience of Hevi Paediatric Teaching Hospital at DUHOK—IRAQ. *J Vasc Access*. 2021;24(5):994–999. doi:10.1177/11297298211055402.
-7. Stolz LA, Cappa AR, Minckler MR, et al. Prospective evaluation of the learning curve for ultrasound-guided peripheral intravenous catheter placement. *J Vasc Access*. 2016;17(4):366–370. doi:10.5301/jva.5000574.
-8. Quinn M, Horowitz JK, Krein SL, Gaston A, Ullman A, Chopra V. The role of hospital-based vascular access teams and implications for patient safety: a multi-methods study. *J Hosp Med*. 2024;19(1):13–23. doi:10.1002/jhm.13253.
+1. <a id="s1-ref-1"></a>Marsh N, Webster J, Larsen E, et al. Expert versus generalist inserters for peripheral intravenous catheter insertion: a pilot randomised controlled trial. *Trials*. 2018;19(1):564. doi:10.1186/s13063-018-2946-3.
+2. <a id="s1-ref-2"></a>Savage TJ, Lynch AD, Oddera SE. Implementation of a vascular access team to reduce central line usage and prevent central line–associated bloodstream infections. *J Infus Nurs*. 2019;42(4):193–196.
+3. <a id="s1-ref-3"></a>Ricou Ríos L, Esposito Català C, Pons Calsapeu A, et al. Implementation of a vascular access specialist team in a tertiary hospital: a cost-benefit analysis. *Cost Eff Resour Alloc*. 2023;21(1):67. doi:10.1186/s12962-023-00464-6.
+4. <a id="s1-ref-4"></a>Chopra V, Kuhn L, Ratz D, et al. Vascular access specialist training, experience, and practice in the United States: results from the national PICC1 survey. *J Infus Nurs*. 2017;40(1):15–25.
+5. <a id="s1-ref-5"></a>Whalen M, Maliszewski B, Baptiste DL. Establishing a dedicated difficult vascular access team in the emergency department: a needs assessment. *J Infus Nurs*. 2017;40(3):149–154.
+6. <a id="s1-ref-6"></a>Federica B, Nizar Yahya B, Hevan Al-Atroushy A, et al. It is possible to create a vascular access team in a middle resource country? Experience of Hevi Paediatric Teaching Hospital at DUHOK—IRAQ. *J Vasc Access*. 2021;24(5):994–999. doi:10.1177/11297298211055402.
+7. <a id="s1-ref-7"></a>Stolz LA, Cappa AR, Minckler MR, et al. Prospective evaluation of the learning curve for ultrasound-guided peripheral intravenous catheter placement. *J Vasc Access*. 2016;17(4):366–370. doi:10.5301/jva.5000574.
+8. <a id="s1-ref-8"></a>Quinn M, Horowitz JK, Krein SL, Gaston A, Ullman A, Chopra V. The role of hospital-based vascular access teams and implications for patient safety: a multi-methods study. *J Hosp Med*. 2024;19(1):13–23. doi:10.1002/jhm.13253.
 
 ---
 
@@ -728,7 +728,7 @@ Organizations should implement interprofessional rounding teams that include vas
 
 **Summary of Evidence**
 
-Collaborative rounding structures support better vascular access outcomes through team-based review of device necessity, site integrity, and maintenance compliance. A systematic review found that central line–associated bloodstream infection (CLABSI) rates are often underreported due to inconsistent surveillance, emphasizing the value of team audits and collaborative oversight.^1(IIb)^ Similarly, a Spanish hospital's infection prevention initiative, combining staff education, team-based surveillance, and creation of a catheter infection team, achieved a multiyear decline in peripheral intravenous catheter (PIVC) bloodstream infection (BSI) rates, particularly for Gram-negative infections.^2(IIb)^
+Collaborative rounding structures support better vascular access outcomes through team-based review of device necessity, site integrity, and maintenance compliance. A systematic review found that central line–associated bloodstream infection (CLABSI) rates are often underreported due to inconsistent surveillance, emphasizing the value of team audits and collaborative oversight.<sup><a href="#s2-ref-1">1(IIb)</a></sup> Similarly, a Spanish hospital's infection prevention initiative, combining staff education, team-based surveillance, and creation of a catheter infection team, achieved a multiyear decline in peripheral intravenous catheter (PIVC) bloodstream infection (BSI) rates, particularly for Gram-negative infections.<sup><a href="#s2-ref-2">2(IIb)</a></sup>
 
 #### Recommendation 2: Rounding Functions and Quality Improvement
 
@@ -736,34 +736,34 @@ Interprofessional rounding teams may use structured tools, audit data, and real-
 
 **Summary of Evidence**
 
-Rounding teams that incorporate structured assessment tools and direct observation have demonstrated improved adherence to best practices. A quality improvement project used collaborative rounds and audit-informed education to identify and address unit-specific deficiencies.^3(Vb)^ In intensive care unit settings, Buetti et al. showed that local signs of inflammation at the insertion site during early catheter maintenance were strongly associated with catheter-related BSI (CRBSI), highlighting the importance of routine, structured evaluation to catch early warning signs.^4(IIIa)^
+Rounding teams that incorporate structured assessment tools and direct observation have demonstrated improved adherence to best practices. A quality improvement project used collaborative rounds and audit-informed education to identify and address unit-specific deficiencies.<sup><a href="#s2-ref-3">3(Vb)</a></sup> In intensive care unit settings, Buetti et al. showed that local signs of inflammation at the insertion site during early catheter maintenance were strongly associated with catheter-related BSI (CRBSI), highlighting the importance of routine, structured evaluation to catch early warning signs.<sup><a href="#s2-ref-4">4(IIIa)</a></sup>
 
 #### Clinical Considerations
 
 **Benefits**
-- **Improved infection outcomes:** Multidisciplinary rounds and active surveillance programs significantly reduced peripheral venous catheter-associated BSIs rates over time, particularly for Gram-negative infections.^2^
-- **Better data accuracy and benchmarking:** Collaborative audits and targeted education improve the accuracy of CRBSI surveillance data, making it more valid for benchmarking and quality improvement.^1^
+- **Improved infection outcomes:** Multidisciplinary rounds and active surveillance programs significantly reduced peripheral venous catheter-associated BSIs rates over time, particularly for Gram-negative infections.<sup><a href="#s2-ref-2">2</a></sup>
+- **Better data accuracy and benchmarking:** Collaborative audits and targeted education improve the accuracy of CRBSI surveillance data, making it more valid for benchmarking and quality improvement.<sup><a href="#s2-ref-1">1</a></sup>
 
 **Risks**
-- **Underreporting of CRBSI cases:** Nationally reported rates may underestimate the true CRBSI incidence, potentially delaying recognition of systemic issues.^1^
-- **Overreliance on visual cues:** CRBSI risk may be underestimated if clinical decisions are based solely on absence of local signs, despite their established association with early infection.^4,5^
+- **Underreporting of CRBSI cases:** Nationally reported rates may underestimate the true CRBSI incidence, potentially delaying recognition of systemic issues.<sup><a href="#s2-ref-1">1</a></sup>
+- **Overreliance on visual cues:** CRBSI risk may be underestimated if clinical decisions are based solely on absence of local signs, despite their established association with early infection.<sup><a href="#s2-ref-4">4</a>,<a href="#s2-ref-5">5</a></sup>
 
 **Implementation Considerations**
-- **Use of standardized tools:** Incorporating tools like I-DECIDED facilitates structured decision-making for catheter assessments and supports consistent practice across teams.^6^
-- **Nursing leadership roles:** Embedding specialty nursing roles in collaborative rounds enhances consistency in audit feedback and enables unit-specific education.^3^
+- **Use of standardized tools:** Incorporating tools like I-DECIDED facilitates structured decision-making for catheter assessments and supports consistent practice across teams.<sup><a href="#s2-ref-6">6</a></sup>
+- **Nursing leadership roles:** Embedding specialty nursing roles in collaborative rounds enhances consistency in audit feedback and enables unit-specific education.<sup><a href="#s2-ref-3">3</a></sup>
 
 **Barriers to Implementation**
-- **Resource limitations for audits and rounds:** Conducting regular interdisciplinary rounds requires time and personnel, which may not be available in under-resourced settings.^6^
-- **Variability in adherence across units:** Differences in engagement levels or training across departments may limit the consistency and impact of multi-disciplinary rounds.^3^
+- **Resource limitations for audits and rounds:** Conducting regular interdisciplinary rounds requires time and personnel, which may not be available in under-resourced settings.<sup><a href="#s2-ref-6">6</a></sup>
+- **Variability in adherence across units:** Differences in engagement levels or training across departments may limit the consistency and impact of multi-disciplinary rounds.<sup><a href="#s2-ref-3">3</a></sup>
 
 #### References
 
-1. Larsen EN, Gavin N, Marsh N, Rickard CM, Runnegar N, Webster J. A systematic review of central-line-associated bloodstream infection (CLABSI) diagnostic reliability and error. *Infect Control Hosp Epidemiol*. 2019;40(10):1100–1106. doi:10.1017/ice.2019.205.
-2. Garcia-Gasalla M, Arrizabalaga-Asenjo M, Collado-Giner C, et al. Results of a multi-faceted educational intervention to prevent peripheral venous catheter-associated bloodstream infections. *J Hosp Infect*. 2019;102(4):449–453. doi:10.1016/j.jhin.2019.02.004.
-3. Wilder KA, Wall B, Haggard D, Epperson T. CLABSI reduction strategy: a systematic central line quality improvement initiative integrating line-rounding principles and a team approach. *Adv Neonatal Care*. 2016;16(3):170–177. doi:10.1097/ANC.0000000000000259.
-4. Buetti N, Ruckly S, Lucet JC, et al. Local signs at insertion site and catheter-related bloodstream infections: an observational post hoc analysis using individual data of four RCTs. *Crit Care*. 2020;24(1):694. doi:10.1186/s13054-020-03425-0.
-5. Pate K, Brelewski K, Rutledge SR, Rankin V, Layell J. CLABSI rounding team: a collaborative approach to prevention. *J Nurs Care Qual*. 2022;37(3):275–281. doi:10.1097/ncq.0000000000000625.
-6. Ray-Barruel G. I-DECIDED(®)—a decision tool for assessment and management of invasive devices in the hospital setting. *Br J Nurs*. 2022;31(8):S37–S43. doi:10.12968/bjon.2022.31.8.S37.
+1. <a id="s2-ref-1"></a>Larsen EN, Gavin N, Marsh N, Rickard CM, Runnegar N, Webster J. A systematic review of central-line-associated bloodstream infection (CLABSI) diagnostic reliability and error. *Infect Control Hosp Epidemiol*. 2019;40(10):1100–1106. doi:10.1017/ice.2019.205.
+2. <a id="s2-ref-2"></a>Garcia-Gasalla M, Arrizabalaga-Asenjo M, Collado-Giner C, et al. Results of a multi-faceted educational intervention to prevent peripheral venous catheter-associated bloodstream infections. *J Hosp Infect*. 2019;102(4):449–453. doi:10.1016/j.jhin.2019.02.004.
+3. <a id="s2-ref-3"></a>Wilder KA, Wall B, Haggard D, Epperson T. CLABSI reduction strategy: a systematic central line quality improvement initiative integrating line-rounding principles and a team approach. *Adv Neonatal Care*. 2016;16(3):170–177. doi:10.1097/ANC.0000000000000259.
+4. <a id="s2-ref-4"></a>Buetti N, Ruckly S, Lucet JC, et al. Local signs at insertion site and catheter-related bloodstream infections: an observational post hoc analysis using individual data of four RCTs. *Crit Care*. 2020;24(1):694. doi:10.1186/s13054-020-03425-0.
+5. <a id="s2-ref-5"></a>Pate K, Brelewski K, Rutledge SR, Rankin V, Layell J. CLABSI rounding team: a collaborative approach to prevention. *J Nurs Care Qual*. 2022;37(3):275–281. doi:10.1097/ncq.0000000000000625.
+6. <a id="s2-ref-6"></a>Ray-Barruel G. I-DECIDED(®)—a decision tool for assessment and management of invasive devices in the hospital setting. *Br J Nurs*. 2022;31(8):S37–S43. doi:10.12968/bjon.2022.31.8.S37.
 
 ---
 
@@ -781,7 +781,7 @@ Administrators may consider implementing a vascular access specialist team as pa
 
 **Summary of Evidence**
 
-Implementing a vascular access team (VAT) using evidence-based insertion and maintenance protocols has significantly reduced CLABSI. In 1 quality improvement initiative, creating a VAT resulted in a 45.2% reduction in central line use and a 90% reduction in CLABSI incidence.^1(IIIb)^ A second hospital-based retrospective analysis showed that, after launching a dedicated vascular access service, CLABSI rates fell from 1.75 to 1.037 infections per 1000 catheter days, a 58% reduction. These findings suggest that VAD specialist teams contribute to decreased device overuse and lower infection risk through protocol adherence and improved insertion and maintenance practices.^2(IIIa)^
+Implementing a vascular access team (VAT) using evidence-based insertion and maintenance protocols has significantly reduced CLABSI. In 1 quality improvement initiative, creating a VAT resulted in a 45.2% reduction in central line use and a 90% reduction in CLABSI incidence.<sup><a href="#s3-ref-1">1(IIIb)</a></sup> A second hospital-based retrospective analysis showed that, after launching a dedicated vascular access service, CLABSI rates fell from 1.75 to 1.037 infections per 1000 catheter days, a 58% reduction. These findings suggest that VAD specialist teams contribute to decreased device overuse and lower infection risk through protocol adherence and improved insertion and maintenance practices.<sup><a href="#s3-ref-2">2(IIIa)</a></sup>
 
 #### Recommendation 2: Targeted Infection Prevention
 
@@ -789,11 +789,11 @@ Health care organizations may consider implementing vascular access–specific i
 
 **Summary of Evidence**
 
-Targeted surveillance and predictive modeling are essential tools for improving vascular access outcomes. In a large cohort study, researchers found a 3.7% incidence of CRBSI following emergency department insertions, with CRBSI independently associated with in-hospital mortality.^3(IIIb)^ Risk increased with total parenteral nutrition and multiple insertion attempts, supporting the need for early identification of high-risk patients.^3(IIIb)^
+Targeted surveillance and predictive modeling are essential tools for improving vascular access outcomes. In a large cohort study, researchers found a 3.7% incidence of CRBSI following emergency department insertions, with CRBSI independently associated with in-hospital mortality.<sup><a href="#s3-ref-3">3(IIIb)</a></sup> Risk increased with total parenteral nutrition and multiple insertion attempts, supporting the need for early identification of high-risk patients.<sup><a href="#s3-ref-3">3(IIIb)</a></sup>
 
-Zhu et al. developed a validated predictive model for peripherally inserted central catheter occlusion in critical care patients, identifying factors such as age ≥65, obesity, malignancy, blood transfusion, and parenteral nutrition as independent risks.^4(IIIa)^ Frequent catheter flushing was protective. The model demonstrated strong predictive accuracy, enabling proactive risk stratification at the time of line placement.^4(IIIa)^
+Zhu et al. developed a validated predictive model for peripherally inserted central catheter occlusion in critical care patients, identifying factors such as age ≥65, obesity, malignancy, blood transfusion, and parenteral nutrition as independent risks.<sup><a href="#s3-ref-4">4(IIIa)</a></sup> Frequent catheter flushing was protective. The model demonstrated strong predictive accuracy, enabling proactive risk stratification at the time of line placement.<sup><a href="#s3-ref-4">4(IIIa)</a></sup>
 
-Additionally, Yu et al. showed that expanding surveillance from CLABSI to hospital-onset bacteremia and fungemia (HOB) more effectively captured bloodstream infections that are associated with significantly longer hospital stays, increased costs, and higher mortality.^5(IIIb)^ These findings support broader, risk-adjusted electronic surveillance strategies.
+Additionally, Yu et al. showed that expanding surveillance from CLABSI to hospital-onset bacteremia and fungemia (HOB) more effectively captured bloodstream infections that are associated with significantly longer hospital stays, increased costs, and higher mortality.<sup><a href="#s3-ref-5">5(IIIb)</a></sup> These findings support broader, risk-adjusted electronic surveillance strategies.
 
 Together, the results of these studies reinforce the value of infection surveillance programs and predictive tools in identifying high-risk patients, guiding preventive interventions, and reducing complications and costs.
 
@@ -803,9 +803,9 @@ Clinicians must perform hand hygiene immediately before, as required during, and
 
 **Summary of Evidence**
 
-Hand hygiene immediately before VAD procedures is essential to reducing extraluminal contamination and subsequent bloodstream infections. The most common mechanism of CLABSI involves microbial transfer from the inserter's hands or the patient's skin at the time of insertion.^6(Vb)^
+Hand hygiene immediately before VAD procedures is essential to reducing extraluminal contamination and subsequent bloodstream infections. The most common mechanism of CLABSI involves microbial transfer from the inserter's hands or the patient's skin at the time of insertion.<sup><a href="#s3-ref-6">6(Vb)</a></sup>
 
-Alcohol-based hand rubs are preferred for hand decontamination unless hands are visibly soiled, in which case antimicrobial soap and water are recommended.^7(IVa)^ Authors of multiple implementation studies have shown that improved hand hygiene adherence is consistently associated with reduced CLABSI incidence.^6(Vb)^ As part of a broader insertion protocol, hand hygiene remains a nonnegotiable, evidence-based practice to reduce vascular access complications.
+Alcohol-based hand rubs are preferred for hand decontamination unless hands are visibly soiled, in which case antimicrobial soap and water are recommended.<sup><a href="#s3-ref-7">7(IVa)</a></sup> Authors of multiple implementation studies have shown that improved hand hygiene adherence is consistently associated with reduced CLABSI incidence.<sup><a href="#s3-ref-6">6(Vb)</a></sup> As part of a broader insertion protocol, hand hygiene remains a nonnegotiable, evidence-based practice to reduce vascular access complications.
 
 #### Recommendation 4: Integrate Hand Hygiene into Personal Protective Equipment (PPE) Workflow
 
@@ -820,9 +820,9 @@ Hand hygiene should be explicitly integrated into all vascular access insertion 
 
 **Summary of Evidence**
 
-Hand hygiene is a cornerstone of infection prevention and must be embedded within vascular access workflows to minimize transmission of pathogenic organisms. Authors of observational studies and infection surveillance data have consistently shown that missed or improperly timed hand hygiene contributes to contamination and increases the risk of vascular access-related infections.^6,8(Vb, IIIb)^
+Hand hygiene is a cornerstone of infection prevention and must be embedded within vascular access workflows to minimize transmission of pathogenic organisms. Authors of observational studies and infection surveillance data have consistently shown that missed or improperly timed hand hygiene contributes to contamination and increases the risk of vascular access-related infections.<sup><a href="#s3-ref-6">6(Vb)</a>,<a href="#s3-ref-8">8(IIIb)</a></sup>
 
-Guidelines recommend hand hygiene before donning PPE, when hands are contaminated during PPE removal, immediately after removal, and before exiting the patient care area. These steps are particularly critical during invasive procedures like VAD insertion. Integration into insertion bundles, staff education, and audit-feedback mechanisms has improved compliance and reduced infection rates in intensive care unit (ICU) and non-ICU settings.^6–8(Vb, IVa, IIIb)^
+Guidelines recommend hand hygiene before donning PPE, when hands are contaminated during PPE removal, immediately after removal, and before exiting the patient care area. These steps are particularly critical during invasive procedures like VAD insertion. Integration into insertion bundles, staff education, and audit-feedback mechanisms has improved compliance and reduced infection rates in intensive care unit (ICU) and non-ICU settings.<sup><a href="#s3-ref-6">6(Vb)</a>,<a href="#s3-ref-7">7(IVa)</a>,<a href="#s3-ref-8">8(IIIb)</a></sup>
 
 #### Recommendation 5: Aseptic Technique with Totally Implanted VADs
 
@@ -830,69 +830,69 @@ Health care providers must follow strict aseptic technique during all needle ins
 
 **Summary of Evidence**
 
-Aseptic technique, including proper hand hygiene, sterile field setup, skin antisepsis with alcohol-based chlorhexidine gluconate (CHG) solution, and noncoring needles, is foundational to infection prevention. Evidence has supported dressing and needle changes at 7-day intervals when TIVADs are accessed continuously, aligning with best practices to minimize infection risk.^9(IIIb)^ Implementation of structured care bundles has led to significant improvements in maintenance practices and measurable reductions in port-related infections. For example, in a quality improvement project, the introduction of a TIVAD care bundle reduced CLABSI events from 3 to 0 in the study population, while increasing staff compliance with aseptic steps such as dual verification, nontouch technique, and site monitoring.^10(IIIb)^
+Aseptic technique, including proper hand hygiene, sterile field setup, skin antisepsis with alcohol-based chlorhexidine gluconate (CHG) solution, and noncoring needles, is foundational to infection prevention. Evidence has supported dressing and needle changes at 7-day intervals when TIVADs are accessed continuously, aligning with best practices to minimize infection risk.<sup><a href="#s3-ref-9">9(IIIb)</a></sup> Implementation of structured care bundles has led to significant improvements in maintenance practices and measurable reductions in port-related infections. For example, in a quality improvement project, the introduction of a TIVAD care bundle reduced CLABSI events from 3 to 0 in the study population, while increasing staff compliance with aseptic steps such as dual verification, nontouch technique, and site monitoring.<sup><a href="#s3-ref-10">10(IIIb)</a></sup>
 
-Additional practice guidance from the Oncology Nursing Society (ONS) has emphasized CHG skin prep, appropriate dressing materials, and clinical judgment regarding mask and glove use, while affirming that weekly needle and dressing changes are safe and evidence aligned.^11(Vb)^
+Additional practice guidance from the Oncology Nursing Society (ONS) has emphasized CHG skin prep, appropriate dressing materials, and clinical judgment regarding mask and glove use, while affirming that weekly needle and dressing changes are safe and evidence aligned.<sup><a href="#s3-ref-11">11(Vb)</a></sup>
 
 #### Clinical Considerations
 
 **Benefits**
-- **Reduction in CRBSIs:** Using standardized checklists, procedural bundles, and sterile procedural packs, organizations can reduce contamination and the risk of CRBSIs while promoting consistent adherence to evidence-based practices.^12–15^
-- **Improved workflow and clinician adherence:** Procedural packs enhance efficiency and adherence to infection control protocols.^16^
-- **Institutional cost savings:** Standardized packs reduce complications and unnecessary material use, thereby reducing length of stay and need for additional care.^12,13,16–21^
+- **Reduction in CRBSIs:** Using standardized checklists, procedural bundles, and sterile procedural packs, organizations can reduce contamination and the risk of CRBSIs while promoting consistent adherence to evidence-based practices.<sup><a href="#s3-ref-12">12</a>,<a href="#s3-ref-13">13</a>,<a href="#s3-ref-14">14</a>,<a href="#s3-ref-15">15</a></sup>
+- **Improved workflow and clinician adherence:** Procedural packs enhance efficiency and adherence to infection control protocols.<sup><a href="#s3-ref-16">16</a></sup>
+- **Institutional cost savings:** Standardized packs reduce complications and unnecessary material use, thereby reducing length of stay and need for additional care.<sup><a href="#s3-ref-12">12</a>,<a href="#s3-ref-13">13</a>,<a href="#s3-ref-16">16</a>,<a href="#s3-ref-17">17</a>,<a href="#s3-ref-18">18</a>,<a href="#s3-ref-19">19</a>,<a href="#s3-ref-20">20</a>,<a href="#s3-ref-21">21</a></sup>
 
 **Risks**
-- **Initial implementation costs:** Implementation of procedural kits and training requires upfront investment.^22^
-- **Resistance to change:** Staff may resist changing familiar workflows, while clinician habits may hinder adherence to new infection control practices; the integration of predictive tools and staff training can increase the initial workload, potentially impacting implementation efforts.^4,6,17,22–24^
-- **Overdependence on kits:** May reduce clinical flexibility in unique cases.^16^
+- **Initial implementation costs:** Implementation of procedural kits and training requires upfront investment.<sup><a href="#s3-ref-22">22</a></sup>
+- **Resistance to change:** Staff may resist changing familiar workflows, while clinician habits may hinder adherence to new infection control practices; the integration of predictive tools and staff training can increase the initial workload, potentially impacting implementation efforts.<sup><a href="#s3-ref-4">4</a>,<a href="#s3-ref-6">6</a>,<a href="#s3-ref-17">17</a>,<a href="#s3-ref-22">22</a>,<a href="#s3-ref-23">23</a>,<a href="#s3-ref-24">24</a></sup>
+- **Overdependence on kits:** May reduce clinical flexibility in unique cases.<sup><a href="#s3-ref-16">16</a></sup>
 
 **Implementation Considerations**
-- **Training and competency validation:** Hands-on training, competency assessments with periodic refreshers, and aseptic nontouch technique (ANTT®) education are essential.^12,13,16^
-- **Policy development and institutional support:** Institutional policies should mandate the use of standardized procedural packs to reduce infection risk, with strong leadership support playing a critical role in ensuring successful implementation, while collaboration across departments ensures consistency and success.^12,13,16,17,20,24–27^
-- **Electronic health record integration and surveillance tools:** Tracking catheter dwell times, infections, and flush reminders, alongside the use of risk assessment tools for catheter selection and infection risk mitigation, supports data-driven decision-making and enhances patient safety.^28–34^
+- **Training and competency validation:** Hands-on training, competency assessments with periodic refreshers, and aseptic nontouch technique (ANTT®) education are essential.<sup><a href="#s3-ref-12">12</a>,<a href="#s3-ref-13">13</a>,<a href="#s3-ref-16">16</a></sup>
+- **Policy development and institutional support:** Institutional policies should mandate the use of standardized procedural packs to reduce infection risk, with strong leadership support playing a critical role in ensuring successful implementation, while collaboration across departments ensures consistency and success.<sup><a href="#s3-ref-12">12</a>,<a href="#s3-ref-13">13</a>,<a href="#s3-ref-16">16</a>,<a href="#s3-ref-17">17</a>,<a href="#s3-ref-20">20</a>,<a href="#s3-ref-24">24</a>,<a href="#s3-ref-25">25</a>,<a href="#s3-ref-26">26</a>,<a href="#s3-ref-27">27</a></sup>
+- **Electronic health record integration and surveillance tools:** Tracking catheter dwell times, infections, and flush reminders, alongside the use of risk assessment tools for catheter selection and infection risk mitigation, supports data-driven decision-making and enhances patient safety.<sup><a href="#s3-ref-28">28</a>,<a href="#s3-ref-29">29</a>,<a href="#s3-ref-30">30</a>,<a href="#s3-ref-31">31</a>,<a href="#s3-ref-32">32</a>,<a href="#s3-ref-33">33</a>,<a href="#s3-ref-34">34</a></sup>
 
 **Barriers to Implementation**
-- **Limited budget allocation:** Institutions may struggle to secure upfront funds for purchasing standardized kits, antimicrobial products, or supporting information technology infrastructure for checklist integration.^12^
-- Variability in adherence across different hospital units.^18,25^
-- Resistance to practice change among health care providers.^18,25,26,35^
+- **Limited budget allocation:** Institutions may struggle to secure upfront funds for purchasing standardized kits, antimicrobial products, or supporting information technology infrastructure for checklist integration.<sup><a href="#s3-ref-12">12</a></sup>
+- Variability in adherence across different hospital units.<sup><a href="#s3-ref-18">18</a>,<a href="#s3-ref-25">25</a></sup>
+- Resistance to practice change among health care providers.<sup><a href="#s3-ref-18">18</a>,<a href="#s3-ref-25">25</a>,<a href="#s3-ref-26">26</a>,<a href="#s3-ref-35">35</a></sup>
 
 #### References
 
-1. Savage TJ, Lynch AD, Oddera SE. Implementation of a vascular access team to reduce central line usage and prevent central line–associated bloodstream infections. *J Infus Nurs*. 2019;42(4):193–196. doi:10.1097/NAN.0000000000000328.
-2. Martillo M, Zarbiv S, Gupta R, Brito A, Shittu A, Kohli-Seth R. A comprehensive vascular access service can reduce catheter-associated bloodstream infections and promote the appropriate use of vascular access devices. *Am J Infect Control*. 2020;48(4):460–464. doi:10.1016/j.ajic.2019.08.019.
-3. Ahn HM, Kim JS, Park MG, Hwang J, Kim WY, Seo DW. Incidence and short-term outcomes of central line-related bloodstream infection in patients admitted to the emergency department: a single-center retrospective study. *Sci Rep*. 2023;13(1):3867. doi:10.1038/s41598-023-31100-1.
-4. Zhu Y, Li D, Li Y, Cai W. Predictive model for PICC occlusion risk for patients in intensive care units: a retrospective clinical study. *Altern Ther Health Med*. 2023;29(8):278–285.
-5. Yu KC, Jung M, Ai C. Characteristics, costs, and outcomes associated with central-line–associated bloodstream infection and hospital-onset bacteremia and fungemia in US hospitals. *Infect Control Hosp Epidemiol*. 2023;44(12):1920–1926. doi:10.1017/ice.2023.132.
-6. Patel PK. Prevention of central line–associated bloodstream infections. *J Clin Outcomes Manage*. 2018;25(6):273–277.
-7. Gorski LA, Lynn Hadaway F, Hagle ME, et al. Infusion therapy standards of practice. *J Infus Nurs*. 2021;44(Suppl 1):S1–S224. doi:10.1097/NAN.0000000000000396.
-8. Crowell J, O'Neil K, Drager L. Project HANDS: a bundled approach to increase short peripheral catheter dwell time. *J Infus Nurs*. 2017;40(5):274–280.
-9. Johal J. Implantable venous ports: accessing. *JBI EBP Database*. 2023;JBI-ES-323-6.
-10. Tom A, Acharya AR, Kamath A, Venugopal A, Lashakri HP. Improvement in care and maintenance of Port-A-Cath following the introduction of care bundle. *J Indian Assoc Pediatr Surg*. 2022;27(5):600–604.
-11. Wiley K. Evidence-based standards guide the use and maintenance of venous implanted ports. *ONS Voice*. 2017;32(8):39–39.
-12. Rowley S, Clare S. ANTT® standardisation facilitates new efficiencies with a novel partially-sterile standard-ANTT PIVC pack. *Br J Nurs*. 2023;32(7):S4–S10. doi:10.12968/bjon.2023.32.7.S4.
-13. Rowley S, Clare S. Aseptic non touch technique (ANTT®): a critical competency in infection control. *Infusion*. 2020;26(1):22–27.
-14. Munoz-Mozas G. Preventing intravenous catheter-related bloodstream infections (CRBSIs). *Br J Nurs*. 2023;32:S4–S10. doi:10.12968/bjon.2023.32.Sup7.S4.
-15. Lafuente Cabrero E, Terradas Robledo R, Civit Cuñado A, et al. Risk factors of catheter-associated bloodstream infection: systematic review and meta-analysis. *PLoS One*. 2023;18(3):e0282290. doi:10.1371/journal.pone.0282290.
-16. Santos-Costa P, Alves M, Sousa C, et al. Nurses' involvement in the development and usability assessment of an innovative peripheral intravenous catheterisation pack: a mix-method study. *Int J Environ Res Public Health*. 2022;19(17):11130. doi:10.3390/ijerph191711130.
-17. Corley A, Marsh N, Ullman AJ, Rickard CM. Peripheral intravenous catheter securement: an integrative review of contemporary literature around medical adhesive tapes and supplementary securement products. *J Clin Nurs*. 2023;32(9):1841–1857. doi:10.1111/jocn.16237.
-18. Hawes ML. Vascular access device securement for oncology patients and those with chronic diseases. *Br J Nurs*. 2021;30(8):S20–S25. doi:10.12968/bjon.2021.30.8.S20.
-19. Menger J, Kaase M, Schulze MH, et al. Central venous catheter contamination rate in suspected sepsis patients: an observational clinical study. *J Hosp Infect*. 2023;135:98–105. doi:10.1016/j.jhin.2023.02.015.
-20. Paje D, Heath M, Heung M, et al. Midline catheters in patients with advanced chronic kidney disease. *J Hosp Med*. 2023;18(11):969–977. doi:10.1002/jhm.13209.
-21. Lima Zandonadi MG, Bolorino N, Tiroli CF, Guassú Nogueira DN, Pieri FM. Peripherally inserted central catheter and costs associated with nursing care: an integrative review. *Ciencia, Cuidado e Saude*. 2023;22:1–9.
-22. van der Kooi TII, Smid EA, Koek MBG, et al. The effect of an intervention bundle to prevent central venous catheter-related bloodstream infection in a national programme in the Netherlands. *J Hosp Infect*. 2023;131:194–202. doi:10.1016/j.jhin.2022.11.006.
-23. Ricou Ríos L, Esposito Català C, Pons Calsapeu A, et al. Implementation of a vascular access specialist team in a tertiary hospital: a cost-benefit analysis. *Cost Eff Resour Allocation*. 2023;21(1):1–8.
-24. Picardi M, Giordano C, Della Pepa R, et al. Intravascular complications of central venous catheterization by insertion site in acute leukemia during remission induction chemotherapy phase: lower risk with peripherally inserted catheters in a single-center retrospective study. *Cancers (Basel)*. 2023;15(7):2147. doi:10.3390/cancers15072147.
-25. Stewart AG, Laupland KB, Tabah A. Central line associated and primary bloodstream infections. *Curr Opin Crit Care*. 2023;29(5):423–429. doi:10.1097/mcc.0000000000001082.
-26. Schora D, Patel P, Barza R, et al. Positive and neutral needleless connectors: a comparative study of central-line associated bloodstream infection, occlusion, and bacterial contamination of the connector lumen. *J Infus Nurs*. 2023;46(3):157–161. doi:10.1097/nan.0000000000000506.
-27. Wang P, He Q, Yuan J, Lu Q, Ji A, Peng A. Risk factors for peripherally inserted central catheter-related venous thrombosis in adult patients with cancer. *Thromb J*. 2024;22(1):1–9.
-28. Yuki I, Cammack I, Takeshi Y. Management of a malpositioned central venous catheter in the accessory hemiazygos vein. *BMJ Case Rep*. 2021;14(12):1–3. doi:10.1136/bcr-2021-245654.
-29. Ostroff MD, Moureau N, Pittiruti M. Rapid assessment of vascular exit site and tunneling options (RAVESTO): a new decision tool in the management of the complex vascular access patients. *J Vasc Access*. 2023;24(2):311–317. doi:10.1177/11297298211034306.
-30. Spencer TR, Bardin-Spencer A. Ultrasound guidance for vascular access procedures by qualified vascular access specialists or other applicable healthcare clinicians. *J Assoc Vasc Access*. 2019;24(4):18–22. doi:10.2309/j.java.2019.004.002.
-31. Kamalipour H, Ahmadi S, Kamali K, Moaref A, Shafa M, Kamalipour P. Ultrasound for localization of central venous catheter: a good alternative to chest x-ray? *Anesth Pain Med*. 2016;6(5):e38834. doi:10.5812/aapm.38834.
-32. Glauser F, Breault S, Rigamonti F, Sotiriadis C, Jouannic AM, Qanadli SD. Tip malposition of peripherally inserted central catheters: a prospective randomized controlled trial to compare bedside insertion to fluoroscopically guided placement. *Eur Radiol*. 2017;27(7):2843–2849. doi:10.1007/s00330-016-4666-y.
-33. Yu Y, Yuan L. The electrocardiographic method for positioning the tip of central venous access device. *J Vasc Access*. 2020;21(5):589–595. doi:10.1177/1129729819874986.
-34. Wang L, Liu ZS, Wang CA. Malposition of central venous catheter: presentation and management. *Chin Med J (Engl)*. 2016;129(2):227–234. doi:10.4103/0366-6999.173525.
-35. Rowe MS, Arnold K, Spencer TR. Catheter securement impact on PICC-related CLABSI: a university hospital perspective. *Am J Infect Control*. 2020;48(12):1497–1500. doi:10.1016/j.ajic.2020.06.178.
+1. <a id="s3-ref-1"></a>Savage TJ, Lynch AD, Oddera SE. Implementation of a vascular access team to reduce central line usage and prevent central line–associated bloodstream infections. *J Infus Nurs*. 2019;42(4):193–196. doi:10.1097/NAN.0000000000000328.
+2. <a id="s3-ref-2"></a>Martillo M, Zarbiv S, Gupta R, Brito A, Shittu A, Kohli-Seth R. A comprehensive vascular access service can reduce catheter-associated bloodstream infections and promote the appropriate use of vascular access devices. *Am J Infect Control*. 2020;48(4):460–464. doi:10.1016/j.ajic.2019.08.019.
+3. <a id="s3-ref-3"></a>Ahn HM, Kim JS, Park MG, Hwang J, Kim WY, Seo DW. Incidence and short-term outcomes of central line-related bloodstream infection in patients admitted to the emergency department: a single-center retrospective study. *Sci Rep*. 2023;13(1):3867. doi:10.1038/s41598-023-31100-1.
+4. <a id="s3-ref-4"></a>Zhu Y, Li D, Li Y, Cai W. Predictive model for PICC occlusion risk for patients in intensive care units: a retrospective clinical study. *Altern Ther Health Med*. 2023;29(8):278–285.
+5. <a id="s3-ref-5"></a>Yu KC, Jung M, Ai C. Characteristics, costs, and outcomes associated with central-line–associated bloodstream infection and hospital-onset bacteremia and fungemia in US hospitals. *Infect Control Hosp Epidemiol*. 2023;44(12):1920–1926. doi:10.1017/ice.2023.132.
+6. <a id="s3-ref-6"></a>Patel PK. Prevention of central line–associated bloodstream infections. *J Clin Outcomes Manage*. 2018;25(6):273–277.
+7. <a id="s3-ref-7"></a>Gorski LA, Lynn Hadaway F, Hagle ME, et al. Infusion therapy standards of practice. *J Infus Nurs*. 2021;44(Suppl 1):S1–S224. doi:10.1097/NAN.0000000000000396.
+8. <a id="s3-ref-8"></a>Crowell J, O'Neil K, Drager L. Project HANDS: a bundled approach to increase short peripheral catheter dwell time. *J Infus Nurs*. 2017;40(5):274–280.
+9. <a id="s3-ref-9"></a>Johal J. Implantable venous ports: accessing. *JBI EBP Database*. 2023;JBI-ES-323-6.
+10. <a id="s3-ref-10"></a>Tom A, Acharya AR, Kamath A, Venugopal A, Lashakri HP. Improvement in care and maintenance of Port-A-Cath following the introduction of care bundle. *J Indian Assoc Pediatr Surg*. 2022;27(5):600–604.
+11. <a id="s3-ref-11"></a>Wiley K. Evidence-based standards guide the use and maintenance of venous implanted ports. *ONS Voice*. 2017;32(8):39–39.
+12. <a id="s3-ref-12"></a>Rowley S, Clare S. ANTT® standardisation facilitates new efficiencies with a novel partially-sterile standard-ANTT PIVC pack. *Br J Nurs*. 2023;32(7):S4–S10. doi:10.12968/bjon.2023.32.7.S4.
+13. <a id="s3-ref-13"></a>Rowley S, Clare S. Aseptic non touch technique (ANTT®): a critical competency in infection control. *Infusion*. 2020;26(1):22–27.
+14. <a id="s3-ref-14"></a>Munoz-Mozas G. Preventing intravenous catheter-related bloodstream infections (CRBSIs). *Br J Nurs*. 2023;32:S4–S10. doi:10.12968/bjon.2023.32.Sup7.S4.
+15. <a id="s3-ref-15"></a>Lafuente Cabrero E, Terradas Robledo R, Civit Cuñado A, et al. Risk factors of catheter-associated bloodstream infection: systematic review and meta-analysis. *PLoS One*. 2023;18(3):e0282290. doi:10.1371/journal.pone.0282290.
+16. <a id="s3-ref-16"></a>Santos-Costa P, Alves M, Sousa C, et al. Nurses' involvement in the development and usability assessment of an innovative peripheral intravenous catheterisation pack: a mix-method study. *Int J Environ Res Public Health*. 2022;19(17):11130. doi:10.3390/ijerph191711130.
+17. <a id="s3-ref-17"></a>Corley A, Marsh N, Ullman AJ, Rickard CM. Peripheral intravenous catheter securement: an integrative review of contemporary literature around medical adhesive tapes and supplementary securement products. *J Clin Nurs*. 2023;32(9):1841–1857. doi:10.1111/jocn.16237.
+18. <a id="s3-ref-18"></a>Hawes ML. Vascular access device securement for oncology patients and those with chronic diseases. *Br J Nurs*. 2021;30(8):S20–S25. doi:10.12968/bjon.2021.30.8.S20.
+19. <a id="s3-ref-19"></a>Menger J, Kaase M, Schulze MH, et al. Central venous catheter contamination rate in suspected sepsis patients: an observational clinical study. *J Hosp Infect*. 2023;135:98–105. doi:10.1016/j.jhin.2023.02.015.
+20. <a id="s3-ref-20"></a>Paje D, Heath M, Heung M, et al. Midline catheters in patients with advanced chronic kidney disease. *J Hosp Med*. 2023;18(11):969–977. doi:10.1002/jhm.13209.
+21. <a id="s3-ref-21"></a>Lima Zandonadi MG, Bolorino N, Tiroli CF, Guassú Nogueira DN, Pieri FM. Peripherally inserted central catheter and costs associated with nursing care: an integrative review. *Ciencia, Cuidado e Saude*. 2023;22:1–9.
+22. <a id="s3-ref-22"></a>van der Kooi TII, Smid EA, Koek MBG, et al. The effect of an intervention bundle to prevent central venous catheter-related bloodstream infection in a national programme in the Netherlands. *J Hosp Infect*. 2023;131:194–202. doi:10.1016/j.jhin.2022.11.006.
+23. <a id="s3-ref-23"></a>Ricou Ríos L, Esposito Català C, Pons Calsapeu A, et al. Implementation of a vascular access specialist team in a tertiary hospital: a cost-benefit analysis. *Cost Eff Resour Allocation*. 2023;21(1):1–8.
+24. <a id="s3-ref-24"></a>Picardi M, Giordano C, Della Pepa R, et al. Intravascular complications of central venous catheterization by insertion site in acute leukemia during remission induction chemotherapy phase: lower risk with peripherally inserted catheters in a single-center retrospective study. *Cancers (Basel)*. 2023;15(7):2147. doi:10.3390/cancers15072147.
+25. <a id="s3-ref-25"></a>Stewart AG, Laupland KB, Tabah A. Central line associated and primary bloodstream infections. *Curr Opin Crit Care*. 2023;29(5):423–429. doi:10.1097/mcc.0000000000001082.
+26. <a id="s3-ref-26"></a>Schora D, Patel P, Barza R, et al. Positive and neutral needleless connectors: a comparative study of central-line associated bloodstream infection, occlusion, and bacterial contamination of the connector lumen. *J Infus Nurs*. 2023;46(3):157–161. doi:10.1097/nan.0000000000000506.
+27. <a id="s3-ref-27"></a>Wang P, He Q, Yuan J, Lu Q, Ji A, Peng A. Risk factors for peripherally inserted central catheter-related venous thrombosis in adult patients with cancer. *Thromb J*. 2024;22(1):1–9.
+28. <a id="s3-ref-28"></a>Yuki I, Cammack I, Takeshi Y. Management of a malpositioned central venous catheter in the accessory hemiazygos vein. *BMJ Case Rep*. 2021;14(12):1–3. doi:10.1136/bcr-2021-245654.
+29. <a id="s3-ref-29"></a>Ostroff MD, Moureau N, Pittiruti M. Rapid assessment of vascular exit site and tunneling options (RAVESTO): a new decision tool in the management of the complex vascular access patients. *J Vasc Access*. 2023;24(2):311–317. doi:10.1177/11297298211034306.
+30. <a id="s3-ref-30"></a>Spencer TR, Bardin-Spencer A. Ultrasound guidance for vascular access procedures by qualified vascular access specialists or other applicable healthcare clinicians. *J Assoc Vasc Access*. 2019;24(4):18–22. doi:10.2309/j.java.2019.004.002.
+31. <a id="s3-ref-31"></a>Kamalipour H, Ahmadi S, Kamali K, Moaref A, Shafa M, Kamalipour P. Ultrasound for localization of central venous catheter: a good alternative to chest x-ray? *Anesth Pain Med*. 2016;6(5):e38834. doi:10.5812/aapm.38834.
+32. <a id="s3-ref-32"></a>Glauser F, Breault S, Rigamonti F, Sotiriadis C, Jouannic AM, Qanadli SD. Tip malposition of peripherally inserted central catheters: a prospective randomized controlled trial to compare bedside insertion to fluoroscopically guided placement. *Eur Radiol*. 2017;27(7):2843–2849. doi:10.1007/s00330-016-4666-y.
+33. <a id="s3-ref-33"></a>Yu Y, Yuan L. The electrocardiographic method for positioning the tip of central venous access device. *J Vasc Access*. 2020;21(5):589–595. doi:10.1177/1129729819874986.
+34. <a id="s3-ref-34"></a>Wang L, Liu ZS, Wang CA. Malposition of central venous catheter: presentation and management. *Chin Med J (Engl)*. 2016;129(2):227–234. doi:10.4103/0366-6999.173525.
+35. <a id="s3-ref-35"></a>Rowe MS, Arnold K, Spencer TR. Catheter securement impact on PICC-related CLABSI: a university hospital perspective. *Am J Infect Control*. 2020;48(12):1497–1500. doi:10.1016/j.ajic.2020.06.178.
 
 ---
 
@@ -910,7 +910,7 @@ Health care institutions should establish and enforce policies directing the use
 
 **Summary of Evidence**
 
-Standardized kits and procedure trays reduce infection risk and improve adherence to aseptic technique by ensuring essential supplies are consistently available and used correctly. Authors of a quality improvement (QI) study showed that implementing a tailored peripheral cannulation pack aligned with aseptic nontouch technique (ANTT) significantly improved equipment handling, reduced contamination, and enhanced technique compliance.^1(IIa)^ Similarly, in a mixed-method randomized controlled trial and usability study, Santos-Costa et al. found that implementing a preassembled peripheral intravenous catheter (PIVC) kit significantly reduced procedural time and material omissions while promoting uniformity in practice. When the kit was used, nurses reported increased satisfaction, improved infection control, and greater ease in managing supplies.^2(Ib)^
+Standardized kits and procedure trays reduce infection risk and improve adherence to aseptic technique by ensuring essential supplies are consistently available and used correctly. Authors of a quality improvement (QI) study showed that implementing a tailored peripheral cannulation pack aligned with aseptic nontouch technique (ANTT) significantly improved equipment handling, reduced contamination, and enhanced technique compliance.<sup><a href="#s4-ref-1">1(IIa)</a></sup> Similarly, in a mixed-method randomized controlled trial and usability study, Santos-Costa et al. found that implementing a preassembled peripheral intravenous catheter (PIVC) kit significantly reduced procedural time and material omissions while promoting uniformity in practice. When the kit was used, nurses reported increased satisfaction, improved infection control, and greater ease in managing supplies.<sup><a href="#s4-ref-2">2(Ib)</a></sup>
 
 **Recommendation 2: Clinical Governance for VADs**
 
@@ -918,7 +918,7 @@ Health care organizations should develop evidence-based vascular access clinical
 
 **Summary of Evidence**
 
-Evidence has supported the development of multidisciplinary, evidence-based vascular access policies to improve clinical consistency and patient outcomes. Clinical governance aligned with national guidelines and built with input from vascular access specialists and infection preventionists improve documentation, standardize procedures, and support competency-based credentialing.^3-8(Ib, IVb, IIb, IIIb, IIIb, Vb, Ia)^ Authors of studies have shown that such operational management will reduce complications, enhance surveillance, and bridge the gap between best practice and clinical behavior.
+Evidence has supported the development of multidisciplinary, evidence-based vascular access policies to improve clinical consistency and patient outcomes. Clinical governance aligned with national guidelines and built with input from vascular access specialists and infection preventionists improve documentation, standardize procedures, and support competency-based credentialing.<sup><a href="#s4-ref-3">3(Ib)</a>,<a href="#s4-ref-4">4(IVb)</a>,<a href="#s4-ref-5">5(IIb)</a>,<a href="#s4-ref-6">6(IIIb)</a>,<a href="#s4-ref-7">7(IIIb)</a>,<a href="#s4-ref-8">8(Vb)</a>(Ib,IVb,IIb,IIIb,IIIb,Vb,Ia)</sup> Authors of studies have shown that such operational management will reduce complications, enhance surveillance, and bridge the gap between best practice and clinical behavior.
 
 **Recommendation 3: Structured Audits**
 
@@ -926,7 +926,7 @@ It is recommended that health care organizations consider implementing structure
 
 **Summary of Evidence**
 
-Routine evaluation strategies such as audits, checklists, and feedback loops have been shown to improve compliance with vascular access protocols and support safer practices. A prospective audit using the Plastic-in-Patient tool improved documentation and early removal of nonindicated PIVCs.^5(IIIb)^ Audit-driven feedback and education significantly increased adherence to peripherally inserted central catheter best practices in a unit specific implementation project.^9(IIIb)^ Similarly, a multidisciplinary QI initiative linked clinician feedback with protocol adherence to support safer peripheral administration of 3% sodium chloride.^6(IIIb)^
+Routine evaluation strategies such as audits, checklists, and feedback loops have been shown to improve compliance with vascular access protocols and support safer practices. A prospective audit using the Plastic-in-Patient tool improved documentation and early removal of nonindicated PIVCs.<sup><a href="#s4-ref-5">5(IIIb)</a></sup> Audit-driven feedback and education significantly increased adherence to peripherally inserted central catheter best practices in a unit specific implementation project.<sup><a href="#s4-ref-9">9(IIIb)</a></sup> Similarly, a multidisciplinary QI initiative linked clinician feedback with protocol adherence to support safer peripheral administration of 3% sodium chloride.<sup><a href="#s4-ref-6">6(IIIb)</a></sup>
 
 **Recommendation 4: Clinical Governance Updating**
 
@@ -934,7 +934,7 @@ It is recommended that health care institutions regularly review and update vasc
 
 **Summary of Evidence**
 
-Ongoing operational management evaluation is essential to ensure alignment with current standards and technologies. A QI project by Hade et al. demonstrated that updating central venous access device insertion checklists improved documentation and reduced malposition rates.^10(Vb)^ Barsuk et al. emphasized that simulation-based mastery standards evolve over time and should inform institutional guidelines and competency policies.^11(IIa)^ Spina et al. underscored the importance of national alignment with international vascular access standards and recommended incorporating innovations like electrocardiogram navigation and simulation training into policy frameworks.^12(IVb)^
+Ongoing operational management evaluation is essential to ensure alignment with current standards and technologies. A QI project by Hade et al. demonstrated that updating central venous access device insertion checklists improved documentation and reduced malposition rates.<sup><a href="#s4-ref-10">10(Vb)</a></sup> Barsuk et al. emphasized that simulation-based mastery standards evolve over time and should inform institutional guidelines and competency policies.<sup><a href="#s4-ref-11">11(IIa)</a></sup> Spina et al. underscored the importance of national alignment with international vascular access standards and recommended incorporating innovations like electrocardiogram navigation and simulation training into policy frameworks.<sup><a href="#s4-ref-12">12(IVb)</a></sup>
 
 #### Clinical Considerations
 
@@ -943,72 +943,72 @@ The following points summarize potential benefits, risks, and implementation fac
 **Benefits**
 
 - **Reduced Infection Risks:**
-  - Standardized procedural packs support adherence to ANTT, helping reduce catheter-related bloodstream infections and contamination.^1,13^
-  - Evidence-based procedural enhancements, including standardized protocols and accurate documentation practices, help decrease infection rates.^7,14,15^
+  - Standardized procedural packs support adherence to ANTT, helping reduce catheter-related bloodstream infections and contamination.<sup><a href="#s4-ref-1">1</a>,<a href="#s4-ref-13">13</a></sup>
+  - Evidence-based procedural enhancements, including standardized protocols and accurate documentation practices, help decrease infection rates.<sup><a href="#s4-ref-7">7</a>,<a href="#s4-ref-14">14</a>,<a href="#s4-ref-15">15</a></sup>
 - **Improved Workflow and Standardization:**
-  - Prepackaged sterile materials eliminate the need to gather individual components, streamline setup, and reduce variability and procedural errors.^1,13^
-  - Protocol-driven site selection, catheter sizing, and documentation reduce variability and improve care consistency.^5,8^
+  - Prepackaged sterile materials eliminate the need to gather individual components, streamline setup, and reduce variability and procedural errors.<sup><a href="#s4-ref-1">1</a>,<a href="#s4-ref-13">13</a></sup>
+  - Protocol-driven site selection, catheter sizing, and documentation reduce variability and improve care consistency.<sup><a href="#s4-ref-5">5</a>,<a href="#s4-ref-8">8</a></sup>
 - **Increased Clinician Confidence and Patient Satisfaction:**
-  - Nurses report greater confidence and ease of use with standardized packs, while patients benefit from shorter procedures and fewer complications.^2^
-  - Standardized procedural guidelines enhance adherence to best practices and improve patient outcomes.^10^
+  - Nurses report greater confidence and ease of use with standardized packs, while patients benefit from shorter procedures and fewer complications.<sup><a href="#s4-ref-2">2</a></sup>
+  - Standardized procedural guidelines enhance adherence to best practices and improve patient outcomes.<sup><a href="#s4-ref-10">10</a></sup>
 - **Cost Savings and Resource Optimization:**
-  - Standardized packs use only necessary materials, prevent overuse, and reduce complications, resulting in institutional cost savings.^1,2,13^
-  - Fewer complications reduce the need for catheter replacements and readmissions, translating to lower overall health care costs.^8,10^
+  - Standardized packs use only necessary materials, prevent overuse, and reduce complications, resulting in institutional cost savings.<sup><a href="#s4-ref-1">1</a>,<a href="#s4-ref-2">2</a>,<a href="#s4-ref-13">13</a></sup>
+  - Fewer complications reduce the need for catheter replacements and readmissions, translating to lower overall health care costs.<sup><a href="#s4-ref-8">8</a>,<a href="#s4-ref-10">10</a></sup>
 
 **Risks**
 
 - **Upfront Costs and Training Requirements:**
-  - Transitioning to standardized procedural packs requires initial investment in supplies and clinician training.^3^
-  - Increased documentation and the need for procedural training can raise initial implementation costs.^5^
+  - Transitioning to standardized procedural packs requires initial investment in supplies and clinician training.<sup><a href="#s4-ref-3">3</a></sup>
+  - Increased documentation and the need for procedural training can raise initial implementation costs.<sup><a href="#s4-ref-5">5</a></sup>
 - **Resistance to Change:**
-  - Staff accustomed to previous workflows may resist adopting procedural packs.^1,13^
-  - Clinicians may push back on added administrative tasks or alterations to familiar workflows.^5,8^
+  - Staff accustomed to previous workflows may resist adopting procedural packs.<sup><a href="#s4-ref-1">1</a>,<a href="#s4-ref-13">13</a></sup>
+  - Clinicians may push back on added administrative tasks or alterations to familiar workflows.<sup><a href="#s4-ref-5">5</a>,<a href="#s4-ref-8">8</a></sup>
 - **Limited Flexibility in Complex Cases:**
-  - Overdependence on kits may reduce adaptability; some kits may not suit every clinical scenario.^1,2^
+  - Overdependence on kits may reduce adaptability; some kits may not suit every clinical scenario.<sup><a href="#s4-ref-1">1</a>,<a href="#s4-ref-2">2</a></sup>
 - **Environmental and Supply Chain Concerns:**
-  - Increased use of single-use items contributes to medical waste. Supply chain disruptions could impact kit availability.^1,2^
+  - Increased use of single-use items contributes to medical waste. Supply chain disruptions could impact kit availability.<sup><a href="#s4-ref-1">1</a>,<a href="#s4-ref-2">2</a></sup>
 
 **Implementation Considerations**
 
 - **Staff Education and Competency Validation:**
-  - Conduct hands-on training sessions on procedural packs and ANTT principles, with competency assessments to reinforce best practices.^1,13^
-  - Conduct mandatory training on ultrasound-guided vascular access, site selection, and risk-based practices.^7^
+  - Conduct hands-on training sessions on procedural packs and ANTT principles, with competency assessments to reinforce best practices.<sup><a href="#s4-ref-1">1</a>,<a href="#s4-ref-13">13</a></sup>
+  - Conduct mandatory training on ultrasound-guided vascular access, site selection, and risk-based practices.<sup><a href="#s4-ref-7">7</a></sup>
 - **Institutional Policy Alignment and Leadership Support:**
-  - Develop policies mandating procedural packs aligned with infection control standards. Secure leadership and stakeholder support.^1,2^
-  - Establish policies supporting structured documentation and imaging to guide vascular access.^8,11^
+  - Develop policies mandating procedural packs aligned with infection control standards. Secure leadership and stakeholder support.<sup><a href="#s4-ref-1">1</a>,<a href="#s4-ref-2">2</a></sup>
+  - Establish policies supporting structured documentation and imaging to guide vascular access.<sup><a href="#s4-ref-8">8</a>,<a href="#s4-ref-11">11</a></sup>
 - **Customization and Flexibility:**
-  - Ensure packs are adaptable for different patient needs and care settings, such as emergency departments or difficult intravenous access cases.^2,16^
-  - Tailor implementation to unit needs with support from interdisciplinary teams, ensuring flexibility in integration.^5,17^
+  - Ensure packs are adaptable for different patient needs and care settings, such as emergency departments or difficult intravenous access cases.<sup><a href="#s4-ref-2">2</a>,<a href="#s4-ref-16">16</a></sup>
+  - Tailor implementation to unit needs with support from interdisciplinary teams, ensuring flexibility in integration.<sup><a href="#s4-ref-5">5</a>,<a href="#s4-ref-17">17</a></sup>
 - **Continuous QI:**
-  - Monitor adherence and outcomes, gather clinician feedback to refine pack contents, and conduct periodic audits to sustain compliance.^1,13,16^
-  - Leverage electronic health records (EHRs) to track complications, document outcomes, and monitor adherence.^10^
+  - Monitor adherence and outcomes, gather clinician feedback to refine pack contents, and conduct periodic audits to sustain compliance.<sup><a href="#s4-ref-1">1</a>,<a href="#s4-ref-13">13</a>,<a href="#s4-ref-16">16</a></sup>
+  - Leverage electronic health records (EHRs) to track complications, document outcomes, and monitor adherence.<sup><a href="#s4-ref-10">10</a></sup>
 
 **Barriers to Implementation**
 
-- **Lack of Policy Visibility:** Staff may be unaware of updated protocols or may not know where to access them.^1,2^
-- **Resistance to Standardization:** Clinicians may prefer personalized practices over rigid protocols, especially in complex or high-pressure environments.^7^
-- **Variable Enforcement:** Without consistent auditing or leadership oversight, protocol adherence may vary across shifts or units.^7^
-- **EHR Integration Gaps:** Policies not embedded into clinical documentation or decision-making tools may be bypassed during care delivery.^10^
+- **Lack of Policy Visibility:** Staff may be unaware of updated protocols or may not know where to access them.<sup><a href="#s4-ref-1">1</a>,<a href="#s4-ref-2">2</a></sup>
+- **Resistance to Standardization:** Clinicians may prefer personalized practices over rigid protocols, especially in complex or high-pressure environments.<sup><a href="#s4-ref-7">7</a></sup>
+- **Variable Enforcement:** Without consistent auditing or leadership oversight, protocol adherence may vary across shifts or units.<sup><a href="#s4-ref-7">7</a></sup>
+- **EHR Integration Gaps:** Policies not embedded into clinical documentation or decision-making tools may be bypassed during care delivery.<sup><a href="#s4-ref-10">10</a></sup>
 
 **References**
 
-1. Rowley S, Clare S. ANTT standardisation facilitates new efficiencies with a novel partially-sterile standard-ANTT PIVC pack. *Br J Nurs*. 2023;32(7):S4-S10. doi:10.12968/bjon.2023.32.7.S4.
-2. Santos-Costa P, Paiva-Santos F, Sousa LB, et al. Nurses' practices in the peripheral intravenous catheterization of adult oncology patients: a mix-method study. *J Pers Med*. 2022;12(2):151. doi:10.3390/jpm12020151.
-3. Park YS, Pruinelli L. Developing information model of central line-associated bloodstream infection (CLABSI) prevention. *Stud Health Technol Inform*. 2021;284:408-413. doi:10.3233/SHTI210760.
-4. Stolz LA, Cappa AR, Minckler MR, et al. Prospective evaluation of the learning curve for ultrasound-guided peripheral intravenous catheter placement. *J Vasc Access*. 2016;17(4):366-370. doi:10.5301/jva.5000574.
-5. Yagnik L, Graves A, Thong K. Plastic in patient study: prospective audit of adherence to peripheral intravenous cannula monitoring and documentation guidelines, with the aim of reducing future rates of intravenous cannula-related complications. *Am J Infect Control*. 2017;45(1):34-38. doi:10.1016/j.ajic.2016.09.008.
-6. Jannotta GE, Gulek BG, Dempsey JS, et al. Administration of 3% sodium chloride through peripheral intravenous access: development and implementation of a protocol for clinical practice. *Worldviews Evid Based Nurs*. 2021;18(2):147-153. doi:10.1111/wvn.12501.
-7. Spencer TR, Bardin-Spencer A. Central venous access device insertion by qualified vascular access specialists or other applicable healthcare clinicians. *J Assoc Vasc Access*. 2020;25(1):52-55.
-8. Keogh S, Shelverton C, Flynn J, et al. Implementation and evaluation of short peripheral intravenous catheter flushing guidelines: a stepped wedge cluster randomised trial. *BMC Med*. 2020;18(1):252.
-9. Oliveira LB de, Fava YR, Rodrigues ARB, Franulovic AC, Ferreira NT, de Araujo Puschel VA. Management of peripherally inserted central catheter use in an intensive care unit of a teaching hospital in Brazil: a best practice implementation project. *JBI Database System Rev Implement Rep*. 2018;16(9):1874-1886. doi:10.11124/JBISRIR-2017-003577.
-10. Hade AD, Beckmann LA, Basappa BK. A checklist to improve the quality of central venous catheter tip positioning. *Anaesthesia*. 2019;74(7):896-903. doi:10.1111/anae.14679.
-11. Barsuk JH, Cohen ER, Wayne DB, McGaghie WC, Yudkowsky R. A comparison of approaches for mastery learning standard setting. *Acad Med*. 2018;93(7):1079-1084.
-12. Spina R, Mussa B, Tollapi L, Conti F, Cortesi E, Verna R. Adoption and application in Italy of the principal guidelines and international recommendations on venous access. *Minerva Med*. 2018;109(3):153-202.
-13. Rowley S, Clare S. Aseptic non touch technique (ANTT): a critical competency in infection control. *Infusion*. 2020;26(1):22-27.
-14. Corvetto MA, Pedemonte JC, Varas D, Fuentes C, Altermatt FR. Simulation-based training program with deliberate practice for ultrasound-guided jugular central venous catheter placement. *Acta Anaesthesiol Scand*. 2017;61(9):1184-1191.
-15. Phillips AW, Matthan J, Bookless LR, et al. Individualised expert feedback is not essential for improving basic clinical skills performance in novice learners: a randomized trial. *J Surg Educ*. 2017;74(4):612-620.
-16. Ruegg L, Faucett M, Clawson A, Subedi S. Reducing the prevalence of antecubital fossa peripheral intravenous cannulation. *Br J Nurs*. 2022;31(2):S8-S14. doi:10.12968/bjon.2022.31.2.S8.
-17. Hulse A, Cochrane J. Impact of educational leadership and interprofessional learning on vascular access training. *Br J Nurs*. 2018;27(19):S4-S18.
+1. <a id="s4-ref-1"></a>Rowley S, Clare S. ANTT standardisation facilitates new efficiencies with a novel partially-sterile standard-ANTT PIVC pack. *Br J Nurs*. 2023;32(7):S4-S10. doi:10.12968/bjon.2023.32.7.S4.
+2. <a id="s4-ref-2"></a>Santos-Costa P, Paiva-Santos F, Sousa LB, et al. Nurses' practices in the peripheral intravenous catheterization of adult oncology patients: a mix-method study. *J Pers Med*. 2022;12(2):151. doi:10.3390/jpm12020151.
+3. <a id="s4-ref-3"></a>Park YS, Pruinelli L. Developing information model of central line-associated bloodstream infection (CLABSI) prevention. *Stud Health Technol Inform*. 2021;284:408-413. doi:10.3233/SHTI210760.
+4. <a id="s4-ref-4"></a>Stolz LA, Cappa AR, Minckler MR, et al. Prospective evaluation of the learning curve for ultrasound-guided peripheral intravenous catheter placement. *J Vasc Access*. 2016;17(4):366-370. doi:10.5301/jva.5000574.
+5. <a id="s4-ref-5"></a>Yagnik L, Graves A, Thong K. Plastic in patient study: prospective audit of adherence to peripheral intravenous cannula monitoring and documentation guidelines, with the aim of reducing future rates of intravenous cannula-related complications. *Am J Infect Control*. 2017;45(1):34-38. doi:10.1016/j.ajic.2016.09.008.
+6. <a id="s4-ref-6"></a>Jannotta GE, Gulek BG, Dempsey JS, et al. Administration of 3% sodium chloride through peripheral intravenous access: development and implementation of a protocol for clinical practice. *Worldviews Evid Based Nurs*. 2021;18(2):147-153. doi:10.1111/wvn.12501.
+7. <a id="s4-ref-7"></a>Spencer TR, Bardin-Spencer A. Central venous access device insertion by qualified vascular access specialists or other applicable healthcare clinicians. *J Assoc Vasc Access*. 2020;25(1):52-55.
+8. <a id="s4-ref-8"></a>Keogh S, Shelverton C, Flynn J, et al. Implementation and evaluation of short peripheral intravenous catheter flushing guidelines: a stepped wedge cluster randomised trial. *BMC Med*. 2020;18(1):252.
+9. <a id="s4-ref-9"></a>Oliveira LB de, Fava YR, Rodrigues ARB, Franulovic AC, Ferreira NT, de Araujo Puschel VA. Management of peripherally inserted central catheter use in an intensive care unit of a teaching hospital in Brazil: a best practice implementation project. *JBI Database System Rev Implement Rep*. 2018;16(9):1874-1886. doi:10.11124/JBISRIR-2017-003577.
+10. <a id="s4-ref-10"></a>Hade AD, Beckmann LA, Basappa BK. A checklist to improve the quality of central venous catheter tip positioning. *Anaesthesia*. 2019;74(7):896-903. doi:10.1111/anae.14679.
+11. <a id="s4-ref-11"></a>Barsuk JH, Cohen ER, Wayne DB, McGaghie WC, Yudkowsky R. A comparison of approaches for mastery learning standard setting. *Acad Med*. 2018;93(7):1079-1084.
+12. <a id="s4-ref-12"></a>Spina R, Mussa B, Tollapi L, Conti F, Cortesi E, Verna R. Adoption and application in Italy of the principal guidelines and international recommendations on venous access. *Minerva Med*. 2018;109(3):153-202.
+13. <a id="s4-ref-13"></a>Rowley S, Clare S. Aseptic non touch technique (ANTT): a critical competency in infection control. *Infusion*. 2020;26(1):22-27.
+14. <a id="s4-ref-14"></a>Corvetto MA, Pedemonte JC, Varas D, Fuentes C, Altermatt FR. Simulation-based training program with deliberate practice for ultrasound-guided jugular central venous catheter placement. *Acta Anaesthesiol Scand*. 2017;61(9):1184-1191.
+15. <a id="s4-ref-15"></a>Phillips AW, Matthan J, Bookless LR, et al. Individualised expert feedback is not essential for improving basic clinical skills performance in novice learners: a randomized trial. *J Surg Educ*. 2017;74(4):612-620.
+16. <a id="s4-ref-16"></a>Ruegg L, Faucett M, Clawson A, Subedi S. Reducing the prevalence of antecubital fossa peripheral intravenous cannulation. *Br J Nurs*. 2022;31(2):S8-S14. doi:10.12968/bjon.2022.31.2.S8.
+17. <a id="s4-ref-17"></a>Hulse A, Cochrane J. Impact of educational leadership and interprofessional learning on vascular access training. *Br J Nurs*. 2018;27(19):S4-S18.
 
 ---
 
@@ -1026,7 +1026,7 @@ It is recommended that vascular access clinicians complete initial and ongoing c
 
 **Summary of Evidence**
 
-Ongoing competency training that includes patient-specific considerations is associated with improved catheter outcomes. In a large cohort study, structured ultrasound-guided internal jugular catheter insertion training yielded a 99.3% first-attempt success rate and a low complication rate (3.4%), reinforcing the value of hands-on procedural competency.^1(IIIb)^ Authors of another study reported that adverse event rates were significantly lower with totally implanted vascular access devices (TIVADs) than with peripherally inserted central catheters (PICCs), particularly when clinicians factored in patient comorbidities and anatomy during device selection. This suggests the importance of individualized, evidence-based decision-making in reducing complications.^2(Ia)^
+Ongoing competency training that includes patient-specific considerations is associated with improved catheter outcomes. In a large cohort study, structured ultrasound-guided internal jugular catheter insertion training yielded a 99.3% first-attempt success rate and a low complication rate (3.4%), reinforcing the value of hands-on procedural competency.<sup><a href="#s5-ref-1">1(IIIb)</a></sup> Authors of another study reported that adverse event rates were significantly lower with totally implanted vascular access devices (TIVADs) than with peripherally inserted central catheters (PICCs), particularly when clinicians factored in patient comorbidities and anatomy during device selection. This suggests the importance of individualized, evidence-based decision-making in reducing complications.<sup><a href="#s5-ref-2">2(Ia)</a></sup>
 
 **Recommendation 2: Competency in Complication Recognition**
 
@@ -1034,7 +1034,7 @@ Vascular access clinicians must complete initial and ongoing competency training
 
 **Summary of Evidence**
 
-Simulation-based and structured competency training enhances clinician preparedness for vascular access emergencies. Brull et al. described the lethal consequences of vascular air embolism and advocate for simulation and protocolized team response to reduce harm.^3(Vb)^ Redstone et al. showed that a structured, system-wide competency framework, including standardized insertion checklists, training refreshers, and peer audits, reduced central line-associated bloodstream infection (CLABSI) rates by over 50% in a multisite health system.^4(IIIb)^ Garces-Carrasco et al. found that PICC-related complications during stem cell transplantation were no greater in patients treated at home than in the hospital, provided caregivers and patients received structured catheter care education.^5(IIIb)^ These findings support the role of competency-based education as a critical strategy for minimizing vascular access complications.
+Simulation-based and structured competency training enhances clinician preparedness for vascular access emergencies. Brull et al. described the lethal consequences of vascular air embolism and advocate for simulation and protocolized team response to reduce harm.<sup><a href="#s5-ref-3">3(Vb)</a></sup> Redstone et al. showed that a structured, system-wide competency framework, including standardized insertion checklists, training refreshers, and peer audits, reduced central line-associated bloodstream infection (CLABSI) rates by over 50% in a multisite health system.<sup><a href="#s5-ref-4">4(IIIb)</a></sup> Garces-Carrasco et al. found that PICC-related complications during stem cell transplantation were no greater in patients treated at home than in the hospital, provided caregivers and patients received structured catheter care education.<sup><a href="#s5-ref-5">5(IIIb)</a></sup> These findings support the role of competency-based education as a critical strategy for minimizing vascular access complications.
 
 **Recommendation 3: Clinician Insertion Training**
 
@@ -1042,7 +1042,7 @@ Vascular access clinicians should be trained in ultrasound guidance, relevant an
 
 **Summary of Evidence**
 
-Competency in ultrasound guidance and anatomical visualization is essential to safe and effective vascular access. Yu et al. conducted a multicenter study of 433 adult patients receiving ultrasound-guided TIVADs via the brachiocephalic vein, reporting a 94.9% first-attempt success rate and a 6.2% overall complication rate, confirming the technique's reliability and safety.^6^ Redstone et al. demonstrated that clinician training in insertion technique, including ultrasound guidance, contributed to a 51% reduction in CLABSI across a health system.^4(IIIb)^ Appropriate training must include technical use of the ultrasound machine and in-depth knowledge of vascular anatomy, procedural technique, and complications such as inadvertent thoracic duct injury or catheter malposition.^6(IIb)^ Zhou et al. analyzed over 1500 patients and found that thrombosis risk increases with catheter duration and mechanical vessel injury, which can be minimized through anatomically informed ultrasound-guided access.^7(IIIb)^
+Competency in ultrasound guidance and anatomical visualization is essential to safe and effective vascular access. Yu et al. conducted a multicenter study of 433 adult patients receiving ultrasound-guided TIVADs via the brachiocephalic vein, reporting a 94.9% first-attempt success rate and a 6.2% overall complication rate, confirming the technique's reliability and safety.<sup><a href="#s5-ref-6">6</a></sup> Redstone et al. demonstrated that clinician training in insertion technique, including ultrasound guidance, contributed to a 51% reduction in CLABSI across a health system.<sup><a href="#s5-ref-4">4(IIIb)</a></sup> Appropriate training must include technical use of the ultrasound machine and in-depth knowledge of vascular anatomy, procedural technique, and complications such as inadvertent thoracic duct injury or catheter malposition.<sup><a href="#s5-ref-6">6(IIb)</a></sup> Zhou et al. analyzed over 1500 patients and found that thrombosis risk increases with catheter duration and mechanical vessel injury, which can be minimized through anatomically informed ultrasound-guided access.<sup><a href="#s5-ref-7">7(IIIb)</a></sup>
 
 **Recommendation 4: National Certification**
 
@@ -1050,9 +1050,9 @@ Organizations should promote initial and ongoing national certification for vasc
 
 **Summary of Evidence**
 
-Knowledge-based national certification in vascular access is associated with improved clinical performance, reduced complication rates, and greater adherence to evidence-based practices. Certified clinicians report more experience, are more likely to hold leadership roles, and consistently apply best practices such as ultrasound-guided insertion and catheter-to-vessel ratio assessment.^8,9(IIIb, IIIb)^
+Knowledge-based national certification in vascular access is associated with improved clinical performance, reduced complication rates, and greater adherence to evidence-based practices. Certified clinicians report more experience, are more likely to hold leadership roles, and consistently apply best practices such as ultrasound-guided insertion and catheter-to-vessel ratio assessment.<sup><a href="#s5-ref-8">8(IIIb)</a>,<a href="#s5-ref-9">9(IIIb)</a></sup>
 
-Structured competency-based programs incorporating simulation and hands-on deliberate practice improve procedural skills and reduce errors. Corvetto et al. found that residents who completed simulation-based training had significantly improved technical performance and reduced catheter insertion time.^10,11(IIb, IIb)^ Ongoing certification and recertification also play a critical role in maintaining proficiency. Clinical assessment requirements and recent practice directly influenced competency in vascular access procedures.^12,13(IIIb, Ia)^
+Structured competency-based programs incorporating simulation and hands-on deliberate practice improve procedural skills and reduce errors. Corvetto et al. found that residents who completed simulation-based training had significantly improved technical performance and reduced catheter insertion time.<sup><a href="#s5-ref-10">10(IIb)</a>,<a href="#s5-ref-11">11(IIb)</a></sup> Ongoing certification and recertification also play a critical role in maintaining proficiency. Clinical assessment requirements and recent practice directly influenced competency in vascular access procedures.<sup><a href="#s5-ref-12">12(IIIb)</a>,<a href="#s5-ref-13">13(Ia)</a></sup>
 
 **Recommendation 5: Periodic Competency Assessments**
 
@@ -1060,7 +1060,7 @@ Structured competency evaluations must be conducted at least annually for all cl
 
 **Summary of Evidence**
 
-Evidence demonstrates that periodic competency assessments, especially those using simulation and video-based feedback, help maintain clinician proficiency, improve adherence to aseptic technique, and reduce procedural complications. Authors of 1 study emphasized that procedural exposure alone does not guarantee competence, highlighting the need for structured evaluations.^14(IIa)^ Authors of another study showed video-enhanced feedback supports long-term skill retention, while those of a third study reported that repeated assessment improves procedural success during ultrasound-guided catheter placement.^15,16(IIa, IIa)^
+Evidence demonstrates that periodic competency assessments, especially those using simulation and video-based feedback, help maintain clinician proficiency, improve adherence to aseptic technique, and reduce procedural complications. Authors of 1 study emphasized that procedural exposure alone does not guarantee competence, highlighting the need for structured evaluations.<sup><a href="#s5-ref-14">14(IIa)</a></sup> Authors of another study showed video-enhanced feedback supports long-term skill retention, while those of a third study reported that repeated assessment improves procedural success during ultrasound-guided catheter placement.<sup><a href="#s5-ref-15">15(IIa)</a>,<a href="#s5-ref-16">16(IIa)</a></sup>
 
 **Recommendation 6: Multidisciplinary Competency Program Development**
 
@@ -1068,7 +1068,7 @@ Facilities should implement vascular access competency programs developed throug
 
 **Summary of Evidence**
 
-A multidisciplinary approach to vascular access education and competency development has been associated with improved adherence to guidelines, greater standardization of care, and reduced complications. Keogh et al. demonstrated improved outcomes following the implementation of guideline-based vascular access practices.^13(Ia)^ Authors of another study emphasized that the roles and collaboration of direct care clinicians, physicians, and educators influence appropriate vascular access device use.^9(IIIb)^ Survey data have also revealed gaps in clinician awareness and training regarding catheter dislodgement risks and securement strategies, reinforcing the need for interprofessional education and structured monitoring processes.^17-19(IIIb, IIIb, IIIb)^
+A multidisciplinary approach to vascular access education and competency development has been associated with improved adherence to guidelines, greater standardization of care, and reduced complications. Keogh et al. demonstrated improved outcomes following the implementation of guideline-based vascular access practices.<sup><a href="#s5-ref-13">13(Ia)</a></sup> Authors of another study emphasized that the roles and collaboration of direct care clinicians, physicians, and educators influence appropriate vascular access device use.<sup><a href="#s5-ref-9">9(IIIb)</a></sup> Survey data have also revealed gaps in clinician awareness and training regarding catheter dislodgement risks and securement strategies, reinforcing the need for interprofessional education and structured monitoring processes.<sup><a href="#s5-ref-17">17(IIIb)</a>,<a href="#s5-ref-18">18(IIIb)</a>,<a href="#s5-ref-19">19(IIIb)</a></sup>
 
 **Recommendation 7: Comprehensive Competency Program**
 
@@ -1076,7 +1076,7 @@ Vascular access competency programs should incorporate simulation-based training
 
 **Summary of Evidence**
 
-Simulation-based training has consistently demonstrated improvements in procedural success and complication reduction, including up to an 85% decrease in CLABSI and arterial punctures.^14,20(IIa, Ia)^ Researchers have confirmed that peer-assisted learning methods are equally effective as instructor-led formats, enhancing procedural confidence and technical skill acquisition.^21-23(IIa, IIa, IIa)^ Video-based feedback further accelerates learning and improves performance consistency, making it a valuable adjunct to simulation in structured training programs.^24(IIa)^
+Simulation-based training has consistently demonstrated improvements in procedural success and complication reduction, including up to an 85% decrease in CLABSI and arterial punctures.<sup><a href="#s5-ref-14">14(IIa)</a>,<a href="#s5-ref-20">20(Ia)</a></sup> Researchers have confirmed that peer-assisted learning methods are equally effective as instructor-led formats, enhancing procedural confidence and technical skill acquisition.<sup><a href="#s5-ref-21">21(IIa)</a>,<a href="#s5-ref-22">22(IIa)</a>,<a href="#s5-ref-23">23(IIa)</a></sup> Video-based feedback further accelerates learning and improves performance consistency, making it a valuable adjunct to simulation in structured training programs.<sup><a href="#s5-ref-24">24(IIa)</a></sup>
 
 #### Clinical Considerations
 
@@ -1084,81 +1084,81 @@ The following points summarize potential benefits, risks, and implementation fac
 
 **Benefits**
 
-- **Reduced infection risks:** Comprehensive training, including aseptic technique, catheter care, and standardized procedures, has been shown to reduce catheter-related bloodstream infections, while simulation-based education enhances adherence to evidence-based protocols and infection prevention standards. Additionally, instruction in securement and maintenance techniques supports reductions in dislodgement, malposition, and infection risk.^10,25-29^
-- **Improved access and safety:** Early difficult intravenous access recognition and ultrasound-guided training reduce delays and access attempts, while standardized documentation and maintenance minimize complications and enhance safety.^30-37^
-- **Support for accreditation and regulatory compliance:** Training supports institutional alignment with infection prevention guidelines and accreditation requirements, and consistent documentation practices improve quality reporting and legal defensibility.^25,26,38,39^
-- **Leadership development and professional growth:** Certification pathways and continuing education foster clinical leadership and mentorship roles.^8,9^
+- **Reduced infection risks:** Comprehensive training, including aseptic technique, catheter care, and standardized procedures, has been shown to reduce catheter-related bloodstream infections, while simulation-based education enhances adherence to evidence-based protocols and infection prevention standards. Additionally, instruction in securement and maintenance techniques supports reductions in dislodgement, malposition, and infection risk.<sup><a href="#s5-ref-10">10</a>,<a href="#s5-ref-25">25</a>,<a href="#s5-ref-26">26</a>,<a href="#s5-ref-27">27</a>,<a href="#s5-ref-28">28</a>,<a href="#s5-ref-29">29</a></sup>
+- **Improved access and safety:** Early difficult intravenous access recognition and ultrasound-guided training reduce delays and access attempts, while standardized documentation and maintenance minimize complications and enhance safety.<sup><a href="#s5-ref-30">30</a>,<a href="#s5-ref-31">31</a>,<a href="#s5-ref-32">32</a>,<a href="#s5-ref-33">33</a>,<a href="#s5-ref-34">34</a>,<a href="#s5-ref-35">35</a>,<a href="#s5-ref-36">36</a>,<a href="#s5-ref-37">37</a></sup>
+- **Support for accreditation and regulatory compliance:** Training supports institutional alignment with infection prevention guidelines and accreditation requirements, and consistent documentation practices improve quality reporting and legal defensibility.<sup><a href="#s5-ref-25">25</a>,<a href="#s5-ref-26">26</a>,<a href="#s5-ref-38">38</a>,<a href="#s5-ref-39">39</a></sup>
+- **Leadership development and professional growth:** Certification pathways and continuing education foster clinical leadership and mentorship roles.<sup><a href="#s5-ref-8">8</a>,<a href="#s5-ref-9">9</a></sup>
 
 **Risks**
 
-- **Training fatigue or burnout:** Mandatory training and frequent reassessments may cause frustration or disengagement among clinicians.^14,40^
-- **Resistance to change:** Staff may be reluctant to shift from established practices or adopt new documentation and assessment protocols.^13,25,26,41^
-- **Workflow disruptions:** Time spent on training may temporarily reduce staffing availability or delay care delivery.^14,15,36^
+- **Training fatigue or burnout:** Mandatory training and frequent reassessments may cause frustration or disengagement among clinicians.<sup><a href="#s5-ref-14">14</a>,<a href="#s5-ref-40">40</a></sup>
+- **Resistance to change:** Staff may be reluctant to shift from established practices or adopt new documentation and assessment protocols.<sup><a href="#s5-ref-13">13</a>,<a href="#s5-ref-25">25</a>,<a href="#s5-ref-26">26</a>,<a href="#s5-ref-41">41</a></sup>
+- **Workflow disruptions:** Time spent on training may temporarily reduce staffing availability or delay care delivery.<sup><a href="#s5-ref-14">14</a>,<a href="#s5-ref-15">15</a>,<a href="#s5-ref-36">36</a></sup>
 
 **Implementation Considerations**
 
-- **Staff education and competency:** Implement structured training on aseptic nontouch technique, ultrasound guidance, catheter care, and documentation.^1,13,25,26,30,32,35,42-47^
-- **Policy alignment and support:** Align training with infection control policies, secure leadership support, and designate clinical champions to reinforce best practices.^25,48,49^
-- **Sustained competency:** Allocate funds for training, equipment, and certification, and establish regular recertification to maintain proficiency.^25,48,49^
-- **Cross-disciplinary collaboration:** Engage infection prevention, nursing, vascular access teams, radiology, and administration to co-develop and deliver training.^38,39,45^
+- **Staff education and competency:** Implement structured training on aseptic nontouch technique, ultrasound guidance, catheter care, and documentation.<sup><a href="#s5-ref-1">1</a>,<a href="#s5-ref-13">13</a>,<a href="#s5-ref-25">25</a>,<a href="#s5-ref-26">26</a>,<a href="#s5-ref-30">30</a>,<a href="#s5-ref-32">32</a>,<a href="#s5-ref-35">35</a>,<a href="#s5-ref-42">42</a>,<a href="#s5-ref-43">43</a>,<a href="#s5-ref-44">44</a>,<a href="#s5-ref-45">45</a>,<a href="#s5-ref-46">46</a>,<a href="#s5-ref-47">47</a></sup>
+- **Policy alignment and support:** Align training with infection control policies, secure leadership support, and designate clinical champions to reinforce best practices.<sup><a href="#s5-ref-25">25</a>,<a href="#s5-ref-48">48</a>,<a href="#s5-ref-49">49</a></sup>
+- **Sustained competency:** Allocate funds for training, equipment, and certification, and establish regular recertification to maintain proficiency.<sup><a href="#s5-ref-25">25</a>,<a href="#s5-ref-48">48</a>,<a href="#s5-ref-49">49</a></sup>
+- **Cross-disciplinary collaboration:** Engage infection prevention, nursing, vascular access teams, radiology, and administration to co-develop and deliver training.<sup><a href="#s5-ref-38">38</a>,<a href="#s5-ref-39">39</a>,<a href="#s5-ref-45">45</a></sup>
 
 **Barriers to Implementation**
 
-- **Resource limitations:** Simulation equipment, educator capacity, and physical training space may not be readily available.^13,49^
-- **Time constraints:** Competing clinical demands often limit staff availability for training or reassessment.^14,15^
-- **Resistance to reassessment:** Experienced clinicians may push back against mandatory competency validation.^14,40^
+- **Resource limitations:** Simulation equipment, educator capacity, and physical training space may not be readily available.<sup><a href="#s5-ref-13">13</a>,<a href="#s5-ref-49">49</a></sup>
+- **Time constraints:** Competing clinical demands often limit staff availability for training or reassessment.<sup><a href="#s5-ref-14">14</a>,<a href="#s5-ref-15">15</a></sup>
+- **Resistance to reassessment:** Experienced clinicians may push back against mandatory competency validation.<sup><a href="#s5-ref-14">14</a>,<a href="#s5-ref-40">40</a></sup>
 
 **References**
 
-1. Ye W, Li D, Ji X, et al. Real-time ultrasound-guided internal jugular vein cannulation by oblique-axis in-plane: practice at the Fourth Hospital of Hebei Medical University. *Int J Clin Pract*. 2021;75(2):e13673. doi:10.1111/ijcp.13673.
-2. Lin L, Li W, Chen C, Wei A, Liu Y. Peripherally inserted central catheters versus implantable port catheters for cancer patients: a meta-analysis. *Front Oncol*. 2023;13:1228092. doi:10.3389/fonc.2023.1228092.
-3. Brull SJ, Prielipp RC. Vascular air embolism: a silent hazard to patient safety. *J Crit Care*. 2017;42:255-263. doi:10.1016/j.jcrc.2017.08.010.
-4. Redstone CS, Zadeh M, Wilson MA, et al. A quality improvement initiative to decrease central line-associated bloodstream infections during the COVID-19 pandemic: a "zero harm" approach. *J Patient Saf*. 2023;19(3):173-179. doi:10.1097/pts.0000000000001107.
-5. Garces-Carrasco AM, Santacatalina-Roig E, Carretero-Marquez C, Martinez-Sabater A, Balaguer-Lopez E. Complications associated with peripherally inserted central catheters (PICC) in people undergoing autologous hematopoietic stem cell transplantation (HSCT) in home hospitalization. *Int J Environ Res Public Health*. 2023;20(3):1704. doi:10.3390/ijerph20031704.
-6. Yu Z, Sun X, Bai X, et al. Perioperative and postoperative complications of supraclavicular, ultrasound-guided, totally implantable venous access port via the brachiocephalic vein in adult patients: a retrospective multicentre study. *Ther Clin Risk Manag*. 2021;17:137-144. doi:10.2147/tcrm.S292230.
-7. Zhou X, Lin X, Shen R, et al. A retrospective analysis of risk factors associated with catheter-related thrombosis: a single-center study. *Perfusion*. 2020;35(8):806-813. doi:10.1177/0267659120915142.
-8. Chopra V, Kuhn L, Vaughn V, et al. CE: original research: does certification in vascular access matter? An analysis of the PICC1 survey. *Am J Nurs*. 2017;117(12):24-34.
-9. Krein SL, Kuhn L, Ratz D, Winter S, Vaughn VM, Chopra V. The relationship between perceived role and appropriate use of peripherally inserted central catheters: a survey of vascular access nurses in the United States. *Int J Nurs Stud*. 2017;71:28-33.
-10. Corvetto MA, Pedemonte JC, Varas D, Fuentes C, Altermatt FR. Simulation-based training program with deliberate practice for ultrasound-guided jugular central venous catheter placement. *Acta Anaesthesiol Scand*. 2017;61(9):1184-1191.
-11. Day J, Winchester ZB, Cairns CA, et al. The impact of a comprehensive simulation-based training and certification program on resident central venous catheter complication rates. *Simul Healthcare*. 2021;16(2):92-97.
-12. Garner S, van Dreven A, MacDermott S, Yates M. Assessment and recency drive skill acquisition. *Clin Teach*. 2019;16(3):232-235.
-13. Keogh S, Shelverton C, Flynn J, et al. Implementation and evaluation of short peripheral intravenous catheter flushing guidelines: a stepped wedge cluster randomised trial. *BMC Med*. 2020;18(1):252.
-14. Barsuk JH, Cohen ER, Feinglass J, McGaghie WC, Wayne DB. Residents' procedural experience does not ensure competence: a research synthesis. *J Grad Med Educ*. 2017;9(2):201-208.
-15. Rammell J, Matthan J, Gray M, et al. Asynchronous unsupervised video-enhanced feedback as effective as direct expert feedback in the long-term retention of practical clinical skills: randomised trial comparing 2 feedback methods in a cohort of novice medical students. *J Surg Educ*. 2018;75(6):1463-1470.
-16. Stolz LA, Cappa AR, Minckler MR, et al. Prospective evaluation of the learning curve for ultrasound-guided peripheral intravenous catheter placement. *J Vasc Access*. 2016;17(4):366-370. doi:10.5301/jva.5000574.
-17. DeVries M, Sarbenoff J, Scott N, Wickert M, Hayes LM. Improving vascular access dressing integrity in the acute care setting: a quality improvement project. *J Wound Ostomy Continence Nurs*. 2021;48(5):383-388. doi:10.1097/won.0000000000000787.
-18. McParlan D, Edgar L, Gault M, Gillespie S, Menelly R, Reid M. Intravascular catheter migration: a cross-sectional and health-economic comparison of adhesive and subcutaneous engineered stabilisation devices for intravascular device securement. *J Vasc Access*. 2020;21(1):33-38. doi:10.1177/1129729819851059.
-19. Moureau N. Impact and safety associated with accidental dislodgement of vascular access devices: a survey of professions, settings, and devices. *J Assoc Vasc Access*. 2018;23(4):203-215. doi:10.1016/j.java.2018.07.002.
-20. Hu Y, Brooks KD, Kim H, et al. Adaptive simulation training using cumulative sum: a randomized prospective trial. *Am J Surg*. 2016;211(2):377-383.
-21. Onder HE, Sari D. Simulation-based teaching is effective in developing peripheral intravenous catheterization skills. *Int J Caring Sci*. 2021;14(1):309-318.
-22. Pelloux S, Gregoire A, Kirmizigul P, et al. Peripheral venous catheter insertion simulation training: a randomized controlled trial comparing performance after instructor-led teaching versus peer-assisted learning. *Anaesth Crit Care Pain Med*. 2017;36(6):397-402.
-23. Su S, Vicdan AK. The effect of peer mentoring model used to teach peripheral intravenous catheter placement on knowledge, skills, self-confidence, satisfaction and fear of nursing students: a randomized controlled trial. *Karya J Health Sci*. 2022;3(3):343-349. doi:10.52831/kjhs.1172830.
-24. Yu J, Lo C, Madampage C, et al. Video modeling and video feedback to reduce time to perform intravenous cannulation in medical students: a randomized-controlled mixed-methods study. *Can J Anaesth*. 2020;67(6):715-725.
-25. Rowley S, Clare S. ANTT standardisation facilitates new efficiencies with a novel partially-sterile standard-ANTT PIVC pack. *Br J Nurs*. 2023;32(7):S4-S10. doi:10.12968/bjon.2023.32.7.S4.
-26. Rowley S, Clare S. Aseptic non-touch technique (ANTT): a critical competency in infection control. *Infusion*. 2020;26(1):22-27.
-27. Corley A, Marsh N, Ullman AJ, Rickard CM. Peripheral intravenous catheter securement: an integrative review of contemporary literature around medical adhesive tapes and supplementary securement products. *J Clin Nurs*. 2023;32(9):1841-1857. doi:10.1111/jocn.16237.
-28. Spencer TR, Bardin-Spencer A. Central venous access device insertion by qualified vascular access specialists or other applicable healthcare clinicians. *J Assoc Vasc Access*. 2020;25(1):52-55.
-29. Phillips AW, Matthan J, Bookless LR, et al. Individualised expert feedback is not essential for improving basic clinical skills performance in novice learners: a randomized trial. *J Surg Educ*. 2017;74(4):612-620.
-30. van Loon FHJ, Buise MP, Claassen JJF, Dierick-van Daele ATM, Bouwman ARA. Comparison of ultrasound guidance with palpation and direct visualisation for peripheral vein cannulation in adult patients: a systematic review and meta-analysis. *Br J Anaesth*. 2018;121(2):358-366. doi:10.1016/j.bja.2018.04.047.
-31. Poulsen E, Aagaard R, Bisgaard J, Sorensen HT, Juhl-Olsen P. The effects of ultrasound guidance on first-attempt success for difficult peripheral intravenous catheterization: a systematic review and meta-analysis. *Eur J Emerg Med*. 2023;30(2):70-77. doi:10.1097/mej.0000000000000993.
-32. Yalcinli S, Karbek Akarca F, Can O, Uz I, Konakci G. Comparison of standard technique, ultrasonography, and near-infrared light in difficult peripheral vascular access: a randomized controlled trial. *Prehosp Disaster Med*. 2022;37(1):65-70. doi:10.1017/S1049023X21001217.
-33. Saugel B, Scheeren TWL, Teboul JL. Ultrasound-guided central venous catheter placement: a structured review and recommendations for clinical practice. *Crit Care*. 2017;21(1):225.
-34. Little A, Jones DG, Alsbrooks K. A narrative review of historic and current approaches for patients with difficult venous access: considerations for the emergency department. *Expert Rev Med Devices*. 2022;19(5):441-449. doi:10.1080/17434440.2022.2095904.
-35. Moss JG, Wu O, Bodenham AR, et al. Central venous access devices for the delivery of systemic anticancer therapy (CAVA): a randomised controlled trial. *Lancet*. 2021;398(10298):403-415. doi:10.1016/s0140-6736(21)00766-2.
-36. Ostroff MD, Moureau N, Pittiruti M. Rapid assessment of vascular exit site and tunneling options (RAVESTO): a new decision tool in the management of the complex vascular access patients. *J Vasc Access*. 2021;24(2):311-317. doi:10.1177/11297298211034306.
-37. Zawadka M, La Via L, Wong A, et al. Real-time ultrasound guidance as compared with landmark technique for subclavian central venous cannulation: a systematic review and meta-analysis with trial sequential analysis. *Crit Care Med*. 2023;51(5):642-652. doi:10.1097/ccm.0000000000005819.
-38. Wang P, He L, Yuan Q, et al. Risk factors for peripherally inserted central catheter-related venous thrombosis in adult patients with cancer. *Thromb J*. 2024;22(1):6. doi:10.1186/s12959-023-00574-4.
-39. Ricou Rios L, Esposito Catala C, Pons Calsapeu A, et al. Implementation of a vascular access specialist team in a tertiary hospital: a cost-benefit analysis. *Cost Eff Resour Alloc*. 2023;21(1):67. doi:10.1186/s12962-023-00464-6.
-40. Wittler M, Hartman N, Manthey D, Hiestand B, Askew K. Video-augmented feedback for procedural performance. *Med Teach*. 2016;38(6):607-612.
-41. Yagnik L, Graves A, Thong K. Plastic in patient study: prospective audit of adherence to peripheral intravenous cannula monitoring and documentation guidelines, with the aim of reducing future rates of intravenous cannula-related complications. *Am J Infect Control*. 2017;45(1):34-38. doi:10.1016/j.ajic.2016.09.008.
-42. Tran QK, Fairchild M, Yardi I, Mirda D, Markin K, Pourmand A. Efficacy of ultrasound-guided peripheral intravenous cannulation versus standard of care: a systematic review and meta-analysis. *Ultrasound Med Biol*. 2021;47(11):3068-3078. doi:10.1016/j.ultrasmedbio.2021.07.002.
-43. Salleras-Duran L, Fuentes-Pumarola C, Fontova-Almato A, Roqueta-Vall-Llosera M, Camara-Liebana D, Ballester-Ferrando D. Pain and satisfaction perceptions of ultrasound-guided versus conventional peripheral intravenous catheterization: a randomized controlled trial. *Pain Manag Nurs*. 2024;25(1):e37-e44. doi:10.1016/j.pmn.2023.07.010.
-44. Bertoglio S, Annetta MG, Brescia F, et al. A multicenter retrospective study on 4480 implanted PICC-ports: a GAVeCeLT project. *J Vasc Access*. 2022:112972982110676. doi:10.1177/11297298211067683.
-45. Privitera D, Mazzone A, Pierotti F, et al. Ultrasound-guided peripheral intravenous catheters insertion in patient with difficult vascular access: short axis/out-of-plane versus long axis/in-plane, a randomized controlled trial. *J Vasc Access*. 2022;23(4):589-597. doi:10.1177/11297298211006996.
-46. Righetti M, Palmieri N, Bracchi O, et al. Tegaderm CHG dressing significantly improves catheter-related infection rate in hemodialysis patients. *J Vasc Access*. 2016;17(5):417-422. doi:10.5301/jva.5000596.
-47. Oliveira LB, Fava YR, Rodrigues ARB, Franulovic AC, Ferreira NT, Puschel VAA. Management of peripherally inserted central catheter use in an intensive care unit of a teaching hospital in Brazil: a best practice implementation project. *JBI Database System Rev Implement Rep*. 2018;16(9):1874-1886.
-48. Primdahl SC, Weile J, Clemmesen L, et al. Validation of the peripheral ultrasound-guided vascular access rating scale. *Medicine (Baltimore)*. 2018;97(2):e9576. doi:10.1097/md.0000000000009576.
-49. Andersen NL, Jensen RO, Posth S, Laursen CB, Jorgensen R, Graumann O. Teaching ultrasound-guided peripheral venous catheter placement through immersive virtual reality: an explorative pilot study. *Medicine*. 2021;100(27):e26394.
+1. <a id="s5-ref-1"></a>Ye W, Li D, Ji X, et al. Real-time ultrasound-guided internal jugular vein cannulation by oblique-axis in-plane: practice at the Fourth Hospital of Hebei Medical University. *Int J Clin Pract*. 2021;75(2):e13673. doi:10.1111/ijcp.13673.
+2. <a id="s5-ref-2"></a>Lin L, Li W, Chen C, Wei A, Liu Y. Peripherally inserted central catheters versus implantable port catheters for cancer patients: a meta-analysis. *Front Oncol*. 2023;13:1228092. doi:10.3389/fonc.2023.1228092.
+3. <a id="s5-ref-3"></a>Brull SJ, Prielipp RC. Vascular air embolism: a silent hazard to patient safety. *J Crit Care*. 2017;42:255-263. doi:10.1016/j.jcrc.2017.08.010.
+4. <a id="s5-ref-4"></a>Redstone CS, Zadeh M, Wilson MA, et al. A quality improvement initiative to decrease central line-associated bloodstream infections during the COVID-19 pandemic: a "zero harm" approach. *J Patient Saf*. 2023;19(3):173-179. doi:10.1097/pts.0000000000001107.
+5. <a id="s5-ref-5"></a>Garces-Carrasco AM, Santacatalina-Roig E, Carretero-Marquez C, Martinez-Sabater A, Balaguer-Lopez E. Complications associated with peripherally inserted central catheters (PICC) in people undergoing autologous hematopoietic stem cell transplantation (HSCT) in home hospitalization. *Int J Environ Res Public Health*. 2023;20(3):1704. doi:10.3390/ijerph20031704.
+6. <a id="s5-ref-6"></a>Yu Z, Sun X, Bai X, et al. Perioperative and postoperative complications of supraclavicular, ultrasound-guided, totally implantable venous access port via the brachiocephalic vein in adult patients: a retrospective multicentre study. *Ther Clin Risk Manag*. 2021;17:137-144. doi:10.2147/tcrm.S292230.
+7. <a id="s5-ref-7"></a>Zhou X, Lin X, Shen R, et al. A retrospective analysis of risk factors associated with catheter-related thrombosis: a single-center study. *Perfusion*. 2020;35(8):806-813. doi:10.1177/0267659120915142.
+8. <a id="s5-ref-8"></a>Chopra V, Kuhn L, Vaughn V, et al. CE: original research: does certification in vascular access matter? An analysis of the PICC1 survey. *Am J Nurs*. 2017;117(12):24-34.
+9. <a id="s5-ref-9"></a>Krein SL, Kuhn L, Ratz D, Winter S, Vaughn VM, Chopra V. The relationship between perceived role and appropriate use of peripherally inserted central catheters: a survey of vascular access nurses in the United States. *Int J Nurs Stud*. 2017;71:28-33.
+10. <a id="s5-ref-10"></a>Corvetto MA, Pedemonte JC, Varas D, Fuentes C, Altermatt FR. Simulation-based training program with deliberate practice for ultrasound-guided jugular central venous catheter placement. *Acta Anaesthesiol Scand*. 2017;61(9):1184-1191.
+11. <a id="s5-ref-11"></a>Day J, Winchester ZB, Cairns CA, et al. The impact of a comprehensive simulation-based training and certification program on resident central venous catheter complication rates. *Simul Healthcare*. 2021;16(2):92-97.
+12. <a id="s5-ref-12"></a>Garner S, van Dreven A, MacDermott S, Yates M. Assessment and recency drive skill acquisition. *Clin Teach*. 2019;16(3):232-235.
+13. <a id="s5-ref-13"></a>Keogh S, Shelverton C, Flynn J, et al. Implementation and evaluation of short peripheral intravenous catheter flushing guidelines: a stepped wedge cluster randomised trial. *BMC Med*. 2020;18(1):252.
+14. <a id="s5-ref-14"></a>Barsuk JH, Cohen ER, Feinglass J, McGaghie WC, Wayne DB. Residents' procedural experience does not ensure competence: a research synthesis. *J Grad Med Educ*. 2017;9(2):201-208.
+15. <a id="s5-ref-15"></a>Rammell J, Matthan J, Gray M, et al. Asynchronous unsupervised video-enhanced feedback as effective as direct expert feedback in the long-term retention of practical clinical skills: randomised trial comparing 2 feedback methods in a cohort of novice medical students. *J Surg Educ*. 2018;75(6):1463-1470.
+16. <a id="s5-ref-16"></a>Stolz LA, Cappa AR, Minckler MR, et al. Prospective evaluation of the learning curve for ultrasound-guided peripheral intravenous catheter placement. *J Vasc Access*. 2016;17(4):366-370. doi:10.5301/jva.5000574.
+17. <a id="s5-ref-17"></a>DeVries M, Sarbenoff J, Scott N, Wickert M, Hayes LM. Improving vascular access dressing integrity in the acute care setting: a quality improvement project. *J Wound Ostomy Continence Nurs*. 2021;48(5):383-388. doi:10.1097/won.0000000000000787.
+18. <a id="s5-ref-18"></a>McParlan D, Edgar L, Gault M, Gillespie S, Menelly R, Reid M. Intravascular catheter migration: a cross-sectional and health-economic comparison of adhesive and subcutaneous engineered stabilisation devices for intravascular device securement. *J Vasc Access*. 2020;21(1):33-38. doi:10.1177/1129729819851059.
+19. <a id="s5-ref-19"></a>Moureau N. Impact and safety associated with accidental dislodgement of vascular access devices: a survey of professions, settings, and devices. *J Assoc Vasc Access*. 2018;23(4):203-215. doi:10.1016/j.java.2018.07.002.
+20. <a id="s5-ref-20"></a>Hu Y, Brooks KD, Kim H, et al. Adaptive simulation training using cumulative sum: a randomized prospective trial. *Am J Surg*. 2016;211(2):377-383.
+21. <a id="s5-ref-21"></a>Onder HE, Sari D. Simulation-based teaching is effective in developing peripheral intravenous catheterization skills. *Int J Caring Sci*. 2021;14(1):309-318.
+22. <a id="s5-ref-22"></a>Pelloux S, Gregoire A, Kirmizigul P, et al. Peripheral venous catheter insertion simulation training: a randomized controlled trial comparing performance after instructor-led teaching versus peer-assisted learning. *Anaesth Crit Care Pain Med*. 2017;36(6):397-402.
+23. <a id="s5-ref-23"></a>Su S, Vicdan AK. The effect of peer mentoring model used to teach peripheral intravenous catheter placement on knowledge, skills, self-confidence, satisfaction and fear of nursing students: a randomized controlled trial. *Karya J Health Sci*. 2022;3(3):343-349. doi:10.52831/kjhs.1172830.
+24. <a id="s5-ref-24"></a>Yu J, Lo C, Madampage C, et al. Video modeling and video feedback to reduce time to perform intravenous cannulation in medical students: a randomized-controlled mixed-methods study. *Can J Anaesth*. 2020;67(6):715-725.
+25. <a id="s5-ref-25"></a>Rowley S, Clare S. ANTT standardisation facilitates new efficiencies with a novel partially-sterile standard-ANTT PIVC pack. *Br J Nurs*. 2023;32(7):S4-S10. doi:10.12968/bjon.2023.32.7.S4.
+26. <a id="s5-ref-26"></a>Rowley S, Clare S. Aseptic non-touch technique (ANTT): a critical competency in infection control. *Infusion*. 2020;26(1):22-27.
+27. <a id="s5-ref-27"></a>Corley A, Marsh N, Ullman AJ, Rickard CM. Peripheral intravenous catheter securement: an integrative review of contemporary literature around medical adhesive tapes and supplementary securement products. *J Clin Nurs*. 2023;32(9):1841-1857. doi:10.1111/jocn.16237.
+28. <a id="s5-ref-28"></a>Spencer TR, Bardin-Spencer A. Central venous access device insertion by qualified vascular access specialists or other applicable healthcare clinicians. *J Assoc Vasc Access*. 2020;25(1):52-55.
+29. <a id="s5-ref-29"></a>Phillips AW, Matthan J, Bookless LR, et al. Individualised expert feedback is not essential for improving basic clinical skills performance in novice learners: a randomized trial. *J Surg Educ*. 2017;74(4):612-620.
+30. <a id="s5-ref-30"></a>van Loon FHJ, Buise MP, Claassen JJF, Dierick-van Daele ATM, Bouwman ARA. Comparison of ultrasound guidance with palpation and direct visualisation for peripheral vein cannulation in adult patients: a systematic review and meta-analysis. *Br J Anaesth*. 2018;121(2):358-366. doi:10.1016/j.bja.2018.04.047.
+31. <a id="s5-ref-31"></a>Poulsen E, Aagaard R, Bisgaard J, Sorensen HT, Juhl-Olsen P. The effects of ultrasound guidance on first-attempt success for difficult peripheral intravenous catheterization: a systematic review and meta-analysis. *Eur J Emerg Med*. 2023;30(2):70-77. doi:10.1097/mej.0000000000000993.
+32. <a id="s5-ref-32"></a>Yalcinli S, Karbek Akarca F, Can O, Uz I, Konakci G. Comparison of standard technique, ultrasonography, and near-infrared light in difficult peripheral vascular access: a randomized controlled trial. *Prehosp Disaster Med*. 2022;37(1):65-70. doi:10.1017/S1049023X21001217.
+33. <a id="s5-ref-33"></a>Saugel B, Scheeren TWL, Teboul JL. Ultrasound-guided central venous catheter placement: a structured review and recommendations for clinical practice. *Crit Care*. 2017;21(1):225.
+34. <a id="s5-ref-34"></a>Little A, Jones DG, Alsbrooks K. A narrative review of historic and current approaches for patients with difficult venous access: considerations for the emergency department. *Expert Rev Med Devices*. 2022;19(5):441-449. doi:10.1080/17434440.2022.2095904.
+35. <a id="s5-ref-35"></a>Moss JG, Wu O, Bodenham AR, et al. Central venous access devices for the delivery of systemic anticancer therapy (CAVA): a randomised controlled trial. *Lancet*. 2021;398(10298):403-415. doi:10.1016/s0140-6736(21)00766-2.
+36. <a id="s5-ref-36"></a>Ostroff MD, Moureau N, Pittiruti M. Rapid assessment of vascular exit site and tunneling options (RAVESTO): a new decision tool in the management of the complex vascular access patients. *J Vasc Access*. 2021;24(2):311-317. doi:10.1177/11297298211034306.
+37. <a id="s5-ref-37"></a>Zawadka M, La Via L, Wong A, et al. Real-time ultrasound guidance as compared with landmark technique for subclavian central venous cannulation: a systematic review and meta-analysis with trial sequential analysis. *Crit Care Med*. 2023;51(5):642-652. doi:10.1097/ccm.0000000000005819.
+38. <a id="s5-ref-38"></a>Wang P, He L, Yuan Q, et al. Risk factors for peripherally inserted central catheter-related venous thrombosis in adult patients with cancer. *Thromb J*. 2024;22(1):6. doi:10.1186/s12959-023-00574-4.
+39. <a id="s5-ref-39"></a>Ricou Rios L, Esposito Catala C, Pons Calsapeu A, et al. Implementation of a vascular access specialist team in a tertiary hospital: a cost-benefit analysis. *Cost Eff Resour Alloc*. 2023;21(1):67. doi:10.1186/s12962-023-00464-6.
+40. <a id="s5-ref-40"></a>Wittler M, Hartman N, Manthey D, Hiestand B, Askew K. Video-augmented feedback for procedural performance. *Med Teach*. 2016;38(6):607-612.
+41. <a id="s5-ref-41"></a>Yagnik L, Graves A, Thong K. Plastic in patient study: prospective audit of adherence to peripheral intravenous cannula monitoring and documentation guidelines, with the aim of reducing future rates of intravenous cannula-related complications. *Am J Infect Control*. 2017;45(1):34-38. doi:10.1016/j.ajic.2016.09.008.
+42. <a id="s5-ref-42"></a>Tran QK, Fairchild M, Yardi I, Mirda D, Markin K, Pourmand A. Efficacy of ultrasound-guided peripheral intravenous cannulation versus standard of care: a systematic review and meta-analysis. *Ultrasound Med Biol*. 2021;47(11):3068-3078. doi:10.1016/j.ultrasmedbio.2021.07.002.
+43. <a id="s5-ref-43"></a>Salleras-Duran L, Fuentes-Pumarola C, Fontova-Almato A, Roqueta-Vall-Llosera M, Camara-Liebana D, Ballester-Ferrando D. Pain and satisfaction perceptions of ultrasound-guided versus conventional peripheral intravenous catheterization: a randomized controlled trial. *Pain Manag Nurs*. 2024;25(1):e37-e44. doi:10.1016/j.pmn.2023.07.010.
+44. <a id="s5-ref-44"></a>Bertoglio S, Annetta MG, Brescia F, et al. A multicenter retrospective study on 4480 implanted PICC-ports: a GAVeCeLT project. *J Vasc Access*. 2022:112972982110676. doi:10.1177/11297298211067683.
+45. <a id="s5-ref-45"></a>Privitera D, Mazzone A, Pierotti F, et al. Ultrasound-guided peripheral intravenous catheters insertion in patient with difficult vascular access: short axis/out-of-plane versus long axis/in-plane, a randomized controlled trial. *J Vasc Access*. 2022;23(4):589-597. doi:10.1177/11297298211006996.
+46. <a id="s5-ref-46"></a>Righetti M, Palmieri N, Bracchi O, et al. Tegaderm CHG dressing significantly improves catheter-related infection rate in hemodialysis patients. *J Vasc Access*. 2016;17(5):417-422. doi:10.5301/jva.5000596.
+47. <a id="s5-ref-47"></a>Oliveira LB, Fava YR, Rodrigues ARB, Franulovic AC, Ferreira NT, Puschel VAA. Management of peripherally inserted central catheter use in an intensive care unit of a teaching hospital in Brazil: a best practice implementation project. *JBI Database System Rev Implement Rep*. 2018;16(9):1874-1886.
+48. <a id="s5-ref-48"></a>Primdahl SC, Weile J, Clemmesen L, et al. Validation of the peripheral ultrasound-guided vascular access rating scale. *Medicine (Baltimore)*. 2018;97(2):e9576. doi:10.1097/md.0000000000009576.
+49. <a id="s5-ref-49"></a>Andersen NL, Jensen RO, Posth S, Laursen CB, Jorgensen R, Graumann O. Teaching ultrasound-guided peripheral venous catheter placement through immersive virtual reality: an explorative pilot study. *Medicine*. 2021;100(27):e26394.
 
 ---
 
@@ -1176,7 +1176,7 @@ Organizations are encouraged to standardize documentation for vascular access pr
 
 **Summary of Evidence**
 
-Variations in procedural documentation can undermine clarity, introduce safety risks, and limit alignment with current standards.^1(IIIa)^ Researchers have shown that standardizing documentation based on best available evidence improves care consistency and enhances team learning.^2,3(Vb, Va)^ Patient-reported outcome frameworks and safety education models like quality and safety education for nurses further support documentation as a driver of quality improvement and safer infusion therapy.^3(Va)^
+Variations in procedural documentation can undermine clarity, introduce safety risks, and limit alignment with current standards.<sup><a href="#s6-ref-1">1(IIIa)</a></sup> Researchers have shown that standardizing documentation based on best available evidence improves care consistency and enhances team learning.<sup><a href="#s6-ref-2">2(Vb)</a>,<a href="#s6-ref-3">3(Va)</a></sup> Patient-reported outcome frameworks and safety education models like quality and safety education for nurses further support documentation as a driver of quality improvement and safer infusion therapy.<sup><a href="#s6-ref-3">3(Va)</a></sup>
 
 **Recommendation 2: Integrate Documentation into the Electronic Health Record**
 
@@ -1184,7 +1184,7 @@ Electronic health records (EHRs) should include standardized documentation templ
 
 **Summary of Evidence**
 
-Standardized EHR templates improve the completeness and clarity of documentation, promote interdisciplinary communication, and support quality monitoring. Authors of a study of central venous catheter templates demonstrated an increase in documentation completeness from 38% to 93%.^4(IIa)^ Templates developed without input from vascular access clinicians often lack critical data fields such as procedural technique, tip verification, or post-procedural care, limiting their value for tracking complications and evaluating performance.
+Standardized EHR templates improve the completeness and clarity of documentation, promote interdisciplinary communication, and support quality monitoring. Authors of a study of central venous catheter templates demonstrated an increase in documentation completeness from 38% to 93%.<sup><a href="#s6-ref-4">4(IIa)</a></sup> Templates developed without input from vascular access clinicians often lack critical data fields such as procedural technique, tip verification, or post-procedural care, limiting their value for tracking complications and evaluating performance.
 
 **Recommendation 3: Documentation of Adverse Events**
 
@@ -1192,7 +1192,7 @@ Health care institutions are encouraged to implement structured templates and pr
 
 **Summary of Evidence**
 
-Underreporting of catheter-related complications is common: Authors of 1 study found that only 1.6% were captured in formal adverse event systems.^5(IIIb)^ Standardized documentation can uncover the true incidence of complications and help prevent recurrence.^3,6(Va, IIIb)^ Well-documented events also support system-wide learning, root cause analysis, and quality improvement. Including patient-reported experiences enhances the accuracy and utility of adverse event records.^2(Vb)^
+Underreporting of catheter-related complications is common: Authors of 1 study found that only 1.6% were captured in formal adverse event systems.<sup><a href="#s6-ref-5">5(IIIb)</a></sup> Standardized documentation can uncover the true incidence of complications and help prevent recurrence.<sup><a href="#s6-ref-3">3(Va)</a>,<a href="#s6-ref-6">6(IIIb)</a></sup> Well-documented events also support system-wide learning, root cause analysis, and quality improvement. Including patient-reported experiences enhances the accuracy and utility of adverse event records.<sup><a href="#s6-ref-2">2(Vb)</a></sup>
 
 **Recommendation 4: Standardized Documentation Tools**
 
@@ -1200,7 +1200,7 @@ Health care organizations may consider using standardized tools to document vasc
 
 **Summary of Evidence**
 
-Structured documentation improves consistency in reporting and facilitates retrospective analysis for quality improvement and patient safety. Authors of 1 study demonstrated the benefit of using a central venous access device checklist to improve accuracy and reduce complications associated with malpositioned tips.^7(Vb)^
+Structured documentation improves consistency in reporting and facilitates retrospective analysis for quality improvement and patient safety. Authors of 1 study demonstrated the benefit of using a central venous access device checklist to improve accuracy and reduce complications associated with malpositioned tips.<sup><a href="#s6-ref-7">7(Vb)</a></sup>
 
 **Recommendation 5: Continuously Evaluate Documentation Protocols**
 
@@ -1208,7 +1208,7 @@ Health care organizations are encouraged to conduct periodic audits and solicit 
 
 **Summary of Evidence**
 
-Regular evaluation of documentation protocols is essential to maintain accuracy, ensure alignment with current standards, and promote safe practices. Thate et al. emphasized how effective documentation supports collaborative decision-making and infection prevention strategies.^8(IIIb)^ Laan et al. revealed that failure to audit catheter-related documentation led to major underreporting, with only 1.6% of complications recorded.^5(IIIb)^ Field et al. found that integrating patient experiences into documentation reviews helped tailor tools to real-world needs.^2(Vb)^ Sherwood and Nickel reported that staff feedback in process reviews promotes a culture of safety and improves infusion therapy outcomes.^3(Va)^
+Regular evaluation of documentation protocols is essential to maintain accuracy, ensure alignment with current standards, and promote safe practices. Thate et al. emphasized how effective documentation supports collaborative decision-making and infection prevention strategies.<sup><a href="#s6-ref-8">8(IIIb)</a></sup> Laan et al. revealed that failure to audit catheter-related documentation led to major underreporting, with only 1.6% of complications recorded.<sup><a href="#s6-ref-5">5(IIIb)</a></sup> Field et al. found that integrating patient experiences into documentation reviews helped tailor tools to real-world needs.<sup><a href="#s6-ref-2">2(Vb)</a></sup> Sherwood and Nickel reported that staff feedback in process reviews promotes a culture of safety and improves infusion therapy outcomes.<sup><a href="#s6-ref-3">3(Va)</a></sup>
 
 **Recommendation 6: Postinsertion Documentation**
 
@@ -1216,7 +1216,7 @@ Following VAD insertion, clinicians are encouraged to document external catheter
 
 **Summary of Evidence**
 
-Recording external and trim catheter length is critical for detecting migration and supporting safe device monitoring. Authors of a prospective study found documentation of insertion variables was highly compliant (93.3%), but removal-related data were often missing or unreliable, limiting the detection of complications.^9(IIIb)^ Current clinical standards also recommend capturing catheter characteristics at insertion to guide safe ongoing care.^10(IVa)^
+Recording external and trim catheter length is critical for detecting migration and supporting safe device monitoring. Authors of a prospective study found documentation of insertion variables was highly compliant (93.3%), but removal-related data were often missing or unreliable, limiting the detection of complications.<sup><a href="#s6-ref-9">9(IIIb)</a></sup> Current clinical standards also recommend capturing catheter characteristics at insertion to guide safe ongoing care.<sup><a href="#s6-ref-10">10(IVa)</a></sup>
 
 **Recommendation 7: Documentation of VAD Assessment**
 
@@ -1229,7 +1229,7 @@ Each vascular access assessment should be documented and include:
 
 **Summary of Evidence**
 
-Comprehensive and structured documentation supports clinical decision-making, helps detect complications early, and improves communication across care teams. Failure to document line necessity may result in idle catheters that increase infection risk. Daily audits and EHR-based prompts have been shown to reduce central line days and associated CLABSI rates.^11(Vb)^ Additionally, documentation of symptoms and interventions helps prevent complications such as extravasation and medical adhesive injury. Bahl et al. also highlighted the consequences of unreliable documentation for catheter-related complications and outcomes.^9,12,13(IIIb, Vb, Vb)^
+Comprehensive and structured documentation supports clinical decision-making, helps detect complications early, and improves communication across care teams. Failure to document line necessity may result in idle catheters that increase infection risk. Daily audits and EHR-based prompts have been shown to reduce central line days and associated CLABSI rates.<sup><a href="#s6-ref-11">11(Vb)</a></sup> Additionally, documentation of symptoms and interventions helps prevent complications such as extravasation and medical adhesive injury. Bahl et al. also highlighted the consequences of unreliable documentation for catheter-related complications and outcomes.<sup><a href="#s6-ref-9">9(IIIb)</a>,<a href="#s6-ref-12">12(Vb)</a>,<a href="#s6-ref-13">13(Vb)</a></sup>
 
 #### Clinical Considerations
 
@@ -1237,50 +1237,50 @@ The following points summarize potential benefits, risks, and implementation fac
 
 **Benefits**
 
-- **Reduced infection risks:** Routine documentation of catheter care, including securement, flushing, and dressing changes, supports early identification of complications and reduces infection risk, while ongoing monitoring for catheter migration and dislodgement ensures adherence to evidence-based infection prevention protocols.^14-16^
-- **Improved workflow and standardization:** Structured documentation templates and EHR-based prompts streamline clinical entries, promote consistent language among providers, and enhance EHR efficiency, reducing missed steps in catheter care documentation and improving continuity of care.^4,6,17^
-- **Support for accreditation and regulatory compliance:** Detailed documentation supports compliance with infection prevention standards and is auditable during quality inspections or legal reviews.^4,8^
+- **Reduced infection risks:** Routine documentation of catheter care, including securement, flushing, and dressing changes, supports early identification of complications and reduces infection risk, while ongoing monitoring for catheter migration and dislodgement ensures adherence to evidence-based infection prevention protocols.<sup><a href="#s6-ref-14">14</a>,<a href="#s6-ref-15">15</a>,<a href="#s6-ref-16">16</a></sup>
+- **Improved workflow and standardization:** Structured documentation templates and EHR-based prompts streamline clinical entries, promote consistent language among providers, and enhance EHR efficiency, reducing missed steps in catheter care documentation and improving continuity of care.<sup><a href="#s6-ref-4">4</a>,<a href="#s6-ref-6">6</a>,<a href="#s6-ref-17">17</a></sup>
+- **Support for accreditation and regulatory compliance:** Detailed documentation supports compliance with infection prevention standards and is auditable during quality inspections or legal reviews.<sup><a href="#s6-ref-4">4</a>,<a href="#s6-ref-8">8</a></sup>
 
 **Risks**
 
-- **Training fatigue or workflow disruption:** Repeated updates to documentation protocols may require frequent training and temporarily disrupt clinical workflows.^17^
-- **Resistance to change:** Staff may be reluctant to adopt new documentation templates, especially if perceived as increasing workload.^4,8^
-- **Incomplete or inaccurate documentation:** Poorly completed entries or missing data may impair clinical decision-making and hinder infection prevention efforts.^14^
-- **Overdocumentation or redundancy:** Excessive or repetitive fields may obscure critical information or delay entry completion.^4^
+- **Training fatigue or workflow disruption:** Repeated updates to documentation protocols may require frequent training and temporarily disrupt clinical workflows.<sup><a href="#s6-ref-17">17</a></sup>
+- **Resistance to change:** Staff may be reluctant to adopt new documentation templates, especially if perceived as increasing workload.<sup><a href="#s6-ref-4">4</a>,<a href="#s6-ref-8">8</a></sup>
+- **Incomplete or inaccurate documentation:** Poorly completed entries or missing data may impair clinical decision-making and hinder infection prevention efforts.<sup><a href="#s6-ref-14">14</a></sup>
+- **Overdocumentation or redundancy:** Excessive or repetitive fields may obscure critical information or delay entry completion.<sup><a href="#s6-ref-4">4</a></sup>
 
 **Implementation Considerations**
 
-- **Staff education and competency validation:** Provide regular training on documentation standards, focusing on infection prevention, device tracking, and structured EHR templates.^6,14,17^
-- **Tailored documentation tools and templates design:** EHR templates specific to VADs, accounting for device type, patient acuity, and care setting while allowing flexibility to document adverse events such as dislodgement, infiltration, or infection.^4,6,18,19^
-- **Measurement and feedback loops:** Audit documentation for completeness, timeliness, and alignment with clinical outcomes.^4,14^
+- **Staff education and competency validation:** Provide regular training on documentation standards, focusing on infection prevention, device tracking, and structured EHR templates.<sup><a href="#s6-ref-6">6</a>,<a href="#s6-ref-14">14</a>,<a href="#s6-ref-17">17</a></sup>
+- **Tailored documentation tools and templates design:** EHR templates specific to VADs, accounting for device type, patient acuity, and care setting while allowing flexibility to document adverse events such as dislodgement, infiltration, or infection.<sup><a href="#s6-ref-4">4</a>,<a href="#s6-ref-6">6</a>,<a href="#s6-ref-18">18</a>,<a href="#s6-ref-19">19</a></sup>
+- **Measurement and feedback loops:** Audit documentation for completeness, timeliness, and alignment with clinical outcomes.<sup><a href="#s6-ref-4">4</a>,<a href="#s6-ref-14">14</a></sup>
 
 **Barriers to Implementation**
 
-- **System limitations:** EHR systems may not be optimized for vascular access documentation or lack customizable templates.^19^
-- **Staff resistance to new workflows:** Clinicians may resist additional documentation burdens or prefer unstructured charting.^8,4^
-- **Overdocumentation fatigue:** Excessive fields or prompts may result in superficial compliance or bypassing critical steps.^8,4^
+- **System limitations:** EHR systems may not be optimized for vascular access documentation or lack customizable templates.<sup><a href="#s6-ref-19">19</a></sup>
+- **Staff resistance to new workflows:** Clinicians may resist additional documentation burdens or prefer unstructured charting.<sup><a href="#s6-ref-8">8</a>,<a href="#s6-ref-4">4</a></sup>
+- **Overdocumentation fatigue:** Excessive fields or prompts may result in superficial compliance or bypassing critical steps.<sup><a href="#s6-ref-8">8</a>,<a href="#s6-ref-4">4</a></sup>
 
 **References**
 
-1. Furniss D, Lyons I, Franklin BD, et al. Procedural and documentation variations in intravenous infusion administration: a mixed methods study of policy and practice across 16 hospital trusts in England. *BMC Health Serv Res*. 2018;18(1):270.
-2. Field M, Tullett K, Khawaja A, Jones R, Inston NG. Quality improvement in vascular access: the role of patient-reported outcome measures. *J Vasc Access*. 2020;21(1):19-25.
-3. Sherwood G, Nickel B. Integrating quality and safety competencies to improve outcomes: application in infusion therapy practice. *J Infus Nurs*. 2017;40(2):116-122.
-4. Saliba P, Hornero A, Cuervo G, et al. Interventions to decrease short-term peripheral venous catheter-related bloodstream infections: impact on incidence and mortality. *J Hosp Infect*. 2018;100(3):e178-e186. doi:10.1016/j.jhin.2018.06.010.
-5. Laan BJ, Godfried MH, Geerlings SE. Registration of catheter-related complications in adverse events reporting systems: a major underestimation of the real complication practice. *J Infect Prev*. 2022;23(1):11-14. doi:10.1177/17571774211012455.
-6. Harrod M, Montoya A, Mody L, McGuirk H, Winter S, Chopra V. Challenges for nurses caring for individuals with peripherally inserted central catheters in skilled nursing facilities. *J Am Geriatr Soc*. 2016;64(10):2059-2064. doi:10.1111/jgs.14341.
-7. Hade AD, Beckmann LA, Basappa BK. A checklist to improve the quality of central venous catheter tip positioning. *Anaesthesia*. 2019;74(7):896-903. doi:10.1111/anae.14679.
-8. Thate JA, Couture B, Schnock KO, Rossetti SC. Information needs and the use of documentation to support collaborative decision-making: implications for the reduction of central line-associated blood stream infections. *Comput Inform Nurs*. 2020;39(4):208-214.
-9. Bahl A, Mielke N, Johnson S. Reliability and compliance of peripheral intravenous catheter documentation: a prospective observational study. *J Vasc Access*. 2024;25(1):89-93. doi:10.1177/11297298221097555.
-10. Gorski LA, Lynn Hadaway F, Hagle ME, et al. Infusion therapy standards of practice. *J Infus Nurs*. 2021;44(Suppl 1):S1-S224. doi:10.1097/NAN.0000000000000396.
-11. Beville ASM, Heipel D, Vanhoozer G, Bailey P. Reducing central line associated bloodstream infections (CLABSIs) by reducing central line days. *Curr Infect Dis Rep*. 2021;23(12):23. doi:10.1007/s11908-021-00767-w.
-12. Whitehorn A, Sivapuram MS. Medical adhesive injury: prevention. *JBI EBP Database*. 2022;JBI-ES-1908-3.
-13. Whitehorn A. Chemotherapy drug extravasation: prevention. *JBI EBP Database*. 2021;JBI-ES-24-2.
-14. Wang P, He L, Yuan Q, et al. Risk factors for peripherally inserted central catheter-related venous thrombosis in adult patients with cancer. *Thromb J*. 2024;22(1):6.
-15. Yuki I, Cammack I, Takeshi Y. Management of a malpositioned central venous catheter in the accessory hemiazygos vein. *BMJ Case Rep*. 2021;14(12):1-3. doi:10.1136/bcr-2021-245654.
-16. Saugel B, Scheeren TWL, Teboul JL. Ultrasound-guided central venous catheter placement: a structured review and recommendations for clinical practice. *Crit Care*. 2017;21(1):225.
-17. Rhodes D, Cheng AC, McLellan S, et al. Reducing Staphylococcus aureus bloodstream infections associated with peripheral intravenous cannulae: successful implementation of a care bundle at a large Australian health service. *J Hosp Infect*. 2016;94(1):86-91. doi:10.1016/j.jhin.2016.05.020.
-18. Spencer TR, Bardin-Spencer A. Ultrasound guidance for vascular access procedures by qualified vascular access specialists or other applicable healthcare clinicians. *J Assoc Vasc Access*. 2019;24(4):18-22. doi:10.2309/j.java.2019.004.002.
-19. Zawadka M, La Via L, Wong A, et al. Real-time ultrasound guidance as compared with landmark technique for subclavian central venous cannulation: a systematic review and meta-analysis with trial sequential analysis. *Crit Care Med*. 2023;51(5):642-652. doi:10.1097/ccm.0000000000005819.
+1. <a id="s6-ref-1"></a>Furniss D, Lyons I, Franklin BD, et al. Procedural and documentation variations in intravenous infusion administration: a mixed methods study of policy and practice across 16 hospital trusts in England. *BMC Health Serv Res*. 2018;18(1):270.
+2. <a id="s6-ref-2"></a>Field M, Tullett K, Khawaja A, Jones R, Inston NG. Quality improvement in vascular access: the role of patient-reported outcome measures. *J Vasc Access*. 2020;21(1):19-25.
+3. <a id="s6-ref-3"></a>Sherwood G, Nickel B. Integrating quality and safety competencies to improve outcomes: application in infusion therapy practice. *J Infus Nurs*. 2017;40(2):116-122.
+4. <a id="s6-ref-4"></a>Saliba P, Hornero A, Cuervo G, et al. Interventions to decrease short-term peripheral venous catheter-related bloodstream infections: impact on incidence and mortality. *J Hosp Infect*. 2018;100(3):e178-e186. doi:10.1016/j.jhin.2018.06.010.
+5. <a id="s6-ref-5"></a>Laan BJ, Godfried MH, Geerlings SE. Registration of catheter-related complications in adverse events reporting systems: a major underestimation of the real complication practice. *J Infect Prev*. 2022;23(1):11-14. doi:10.1177/17571774211012455.
+6. <a id="s6-ref-6"></a>Harrod M, Montoya A, Mody L, McGuirk H, Winter S, Chopra V. Challenges for nurses caring for individuals with peripherally inserted central catheters in skilled nursing facilities. *J Am Geriatr Soc*. 2016;64(10):2059-2064. doi:10.1111/jgs.14341.
+7. <a id="s6-ref-7"></a>Hade AD, Beckmann LA, Basappa BK. A checklist to improve the quality of central venous catheter tip positioning. *Anaesthesia*. 2019;74(7):896-903. doi:10.1111/anae.14679.
+8. <a id="s6-ref-8"></a>Thate JA, Couture B, Schnock KO, Rossetti SC. Information needs and the use of documentation to support collaborative decision-making: implications for the reduction of central line-associated blood stream infections. *Comput Inform Nurs*. 2020;39(4):208-214.
+9. <a id="s6-ref-9"></a>Bahl A, Mielke N, Johnson S. Reliability and compliance of peripheral intravenous catheter documentation: a prospective observational study. *J Vasc Access*. 2024;25(1):89-93. doi:10.1177/11297298221097555.
+10. <a id="s6-ref-10"></a>Gorski LA, Lynn Hadaway F, Hagle ME, et al. Infusion therapy standards of practice. *J Infus Nurs*. 2021;44(Suppl 1):S1-S224. doi:10.1097/NAN.0000000000000396.
+11. <a id="s6-ref-11"></a>Beville ASM, Heipel D, Vanhoozer G, Bailey P. Reducing central line associated bloodstream infections (CLABSIs) by reducing central line days. *Curr Infect Dis Rep*. 2021;23(12):23. doi:10.1007/s11908-021-00767-w.
+12. <a id="s6-ref-12"></a>Whitehorn A, Sivapuram MS. Medical adhesive injury: prevention. *JBI EBP Database*. 2022;JBI-ES-1908-3.
+13. <a id="s6-ref-13"></a>Whitehorn A. Chemotherapy drug extravasation: prevention. *JBI EBP Database*. 2021;JBI-ES-24-2.
+14. <a id="s6-ref-14"></a>Wang P, He L, Yuan Q, et al. Risk factors for peripherally inserted central catheter-related venous thrombosis in adult patients with cancer. *Thromb J*. 2024;22(1):6.
+15. <a id="s6-ref-15"></a>Yuki I, Cammack I, Takeshi Y. Management of a malpositioned central venous catheter in the accessory hemiazygos vein. *BMJ Case Rep*. 2021;14(12):1-3. doi:10.1136/bcr-2021-245654.
+16. <a id="s6-ref-16"></a>Saugel B, Scheeren TWL, Teboul JL. Ultrasound-guided central venous catheter placement: a structured review and recommendations for clinical practice. *Crit Care*. 2017;21(1):225.
+17. <a id="s6-ref-17"></a>Rhodes D, Cheng AC, McLellan S, et al. Reducing Staphylococcus aureus bloodstream infections associated with peripheral intravenous cannulae: successful implementation of a care bundle at a large Australian health service. *J Hosp Infect*. 2016;94(1):86-91. doi:10.1016/j.jhin.2016.05.020.
+18. <a id="s6-ref-18"></a>Spencer TR, Bardin-Spencer A. Ultrasound guidance for vascular access procedures by qualified vascular access specialists or other applicable healthcare clinicians. *J Assoc Vasc Access*. 2019;24(4):18-22. doi:10.2309/j.java.2019.004.002.
+19. <a id="s6-ref-19"></a>Zawadka M, La Via L, Wong A, et al. Real-time ultrasound guidance as compared with landmark technique for subclavian central venous cannulation: a systematic review and meta-analysis with trial sequential analysis. *Crit Care Med*. 2023;51(5):642-652. doi:10.1097/ccm.0000000000005819.
 
 ---
 
@@ -1298,7 +1298,7 @@ Before implementing new vascular access devices, organizations should conduct st
 
 **Summary of Evidence**
 
-Effective product evaluation requires both objective outcome data and qualitative feedback from end users and patients. Thate et al. emphasized that standardized data collection and interdisciplinary documentation are critical for identifying device-related risks and informing collaborative decision-making.^1(IIIb)^ Larsen et al. found that patient experiences with peripheral intravenous catheter insertion varied significantly based on inserter skill, communication, and device placement, supporting the need for human-centered evaluation during product trials.^2(IIIb)^ These findings reinforce the value of collecting technical and experiential real-world data before widespread device adoption.
+Effective product evaluation requires both objective outcome data and qualitative feedback from end users and patients. Thate et al. emphasized that standardized data collection and interdisciplinary documentation are critical for identifying device-related risks and informing collaborative decision-making.<sup><a href="#s7-ref-1">1(IIIb)</a></sup> Larsen et al. found that patient experiences with peripheral intravenous catheter insertion varied significantly based on inserter skill, communication, and device placement, supporting the need for human-centered evaluation during product trials.<sup><a href="#s7-ref-2">2(IIIb)</a></sup> These findings reinforce the value of collecting technical and experiential real-world data before widespread device adoption.
 
 **Recommendation 2: Ongoing Evaluation of Products in Use**
 
@@ -1306,7 +1306,7 @@ Facilities should implement ongoing evaluation of vascular access products curre
 
 **Summary of Evidence**
 
-Ongoing product surveillance is essential to identify device-related complications, ensure clinical effectiveness, and capture the evolving patient and staff experience. Thate et al. highlighted the importance of integrated data collection and standardized documentation to support collaborative decision-making and identified risks related to catheter management.^1(IIIb)^ Larsen et al. demonstrated how patient feedback reveals critical insights that may not be captured through clinical metrics alone, such as pain, insertion site complications, and device inconvenience.^2(IIIb)^ These findings underscore the importance of clinical data and human experience in continuous product evaluation.
+Ongoing product surveillance is essential to identify device-related complications, ensure clinical effectiveness, and capture the evolving patient and staff experience. Thate et al. highlighted the importance of integrated data collection and standardized documentation to support collaborative decision-making and identified risks related to catheter management.<sup><a href="#s7-ref-1">1(IIIb)</a></sup> Larsen et al. demonstrated how patient feedback reveals critical insights that may not be captured through clinical metrics alone, such as pain, insertion site complications, and device inconvenience.<sup><a href="#s7-ref-2">2(IIIb)</a></sup> These findings underscore the importance of clinical data and human experience in continuous product evaluation.
 
 **Recommendation 3: Assignment of Data Entry to Trained Personnel**
 
@@ -1314,7 +1314,7 @@ Personnel with appropriate computer skills, familiarity with vascular access ter
 
 **Summary of Evidence**
 
-Accurate vascular access data are foundational for quality improvement and infection surveillance. Assigning this responsibility to trained personnel has improved data integrity, reduced reporting errors, and strengthened accountability.^3(IIIb)^ In a national survey, Chopra et al. found that vascular access specialists with formal training reported greater adherence to best practices and documentation protocols.^3(IIIb)^ Authors of quality improvement studies have further demonstrated that structured, multidisciplinary documentation processes lead to sustained reductions in catheter-related complications and more reliable reporting of infection rates.^4,5(IIIa, IIIb)^
+Accurate vascular access data are foundational for quality improvement and infection surveillance. Assigning this responsibility to trained personnel has improved data integrity, reduced reporting errors, and strengthened accountability.<sup><a href="#s7-ref-3">3(IIIb)</a></sup> In a national survey, Chopra et al. found that vascular access specialists with formal training reported greater adherence to best practices and documentation protocols.<sup><a href="#s7-ref-3">3(IIIb)</a></sup> Authors of quality improvement studies have further demonstrated that structured, multidisciplinary documentation processes lead to sustained reductions in catheter-related complications and more reliable reporting of infection rates.<sup><a href="#s7-ref-4">4(IIIa)</a>,<a href="#s7-ref-5">5(IIIb)</a></sup>
 
 **Recommendation 4: Assignment of Ongoing Data Monitoring**
 
@@ -1322,7 +1322,7 @@ It is recommended that responsibility for ongoing data monitoring be assigned to
 
 **Summary of Evidence**
 
-Ongoing data monitoring by clinically experienced personnel enables early detection of complications, facilitates contextual interpretation of findings, and supports timely intervention. Thate et al. emphasized the need for clear and accessible documentation to support collaborative decision-making across care teams.^1(IIIb)^ Li et al. demonstrated how continuous surveillance and root cause analysis can drive targeted infection prevention strategies.^6(IIIa)^ Monitoring catheter-related outcomes, as seen in a study by McGuire and Coronado on peripheral vascular access device removal timing, can improve safety and reduce unnecessary device days.^7(IIIa)^
+Ongoing data monitoring by clinically experienced personnel enables early detection of complications, facilitates contextual interpretation of findings, and supports timely intervention. Thate et al. emphasized the need for clear and accessible documentation to support collaborative decision-making across care teams.<sup><a href="#s7-ref-1">1(IIIb)</a></sup> Li et al. demonstrated how continuous surveillance and root cause analysis can drive targeted infection prevention strategies.<sup><a href="#s7-ref-6">6(IIIa)</a></sup> Monitoring catheter-related outcomes, as seen in a study by McGuire and Coronado on peripheral vascular access device removal timing, can improve safety and reduce unnecessary device days.<sup><a href="#s7-ref-7">7(IIIa)</a></sup>
 
 **Recommendation 5: Establish Monitoring Intervals**
 
@@ -1330,7 +1330,7 @@ It is recommended that data monitoring intervals be established that support the
 
 **Summary of Evidence**
 
-Timely and routine data monitoring supports early identification of complications and enables proactive intervention. In the Keystone ICU project, routine implementation of daily safety huddles and checklists significantly reduced catheter-related infections by fostering consistent interdisciplinary review.^8(IIIb)^ Similarly, Mena Lora et al. demonstrated that hospital-wide daily huddles improved device utilization practices and decreased infection rates, highlighting the value of structured, time-based monitoring.^5(IIIb)^
+Timely and routine data monitoring supports early identification of complications and enables proactive intervention. In the Keystone ICU project, routine implementation of daily safety huddles and checklists significantly reduced catheter-related infections by fostering consistent interdisciplinary review.<sup><a href="#s7-ref-8">8(IIIb)</a></sup> Similarly, Mena Lora et al. demonstrated that hospital-wide daily huddles improved device utilization practices and decreased infection rates, highlighting the value of structured, time-based monitoring.<sup><a href="#s7-ref-5">5(IIIb)</a></sup>
 
 #### Clinical Considerations
 
@@ -1338,37 +1338,37 @@ The following points summarize potential benefits, risks, and implementation fac
 
 **Benefits**
 
-- **Patient safety:** Enhanced data collection supports patient safety by enabling trend analysis and facilitating adaptability to evolving institutional priorities.^6,9,10^
+- **Patient safety:** Enhanced data collection supports patient safety by enabling trend analysis and facilitating adaptability to evolving institutional priorities.<sup><a href="#s7-ref-6">6</a>,<a href="#s7-ref-9">9</a>,<a href="#s7-ref-10">10</a></sup>
 - Adoption of a standardized dataset ensures consistent terminology and outcome definitions, reducing variability in reporting and enabling valid comparisons across studies and institutions.
 - **Enhanced research and quality improvement:** Standardized metrics facilitate meta-analyses, increase sample size and statistical power, and support evidence synthesis to guide practice.
 - **Benchmarking and learning:** Consistent reporting enables tracking of institutional performance, identification of best practices, and contribution to global vascular access learning systems.
 
 **Risks**
 
-- **Additional resources:** Increased data collection may disrupt workflows and necessitate additional resources for training and management.^6,11^
+- **Additional resources:** Increased data collection may disrupt workflows and necessitate additional resources for training and management.<sup><a href="#s7-ref-6">6</a>,<a href="#s7-ref-11">11</a></sup>
 
 **Implementation Considerations**
 
-- **Standardization:** Use electronic health record templates to standardize data entry and ensure real-time data access for clinical teams.^1,5^
+- **Standardization:** Use electronic health record templates to standardize data entry and ensure real-time data access for clinical teams.<sup><a href="#s7-ref-1">1</a>,<a href="#s7-ref-5">5</a></sup>
 
 **Barriers to Implementation**
 
-- **Resistance to change:** Regular training and demonstrating the impact on patient safety can mitigate resistance.^1,6,12^
+- **Resistance to change:** Regular training and demonstrating the impact on patient safety can mitigate resistance.<sup><a href="#s7-ref-1">1</a>,<a href="#s7-ref-6">6</a>,<a href="#s7-ref-12">12</a></sup>
 
 **References**
 
-1. Thate JA, Couture B, Schnock KO, Rossetti SC. Information needs and the use of documentation to support collaborative decision-making: implications for the reduction of central line-associated blood stream infections. *Comput Inf Nurs*. 2020;39(4):208-214.
-2. Larsen E, Keogh S, Marsh N, Rickard C. Experiences of peripheral IV insertion in hospital: a qualitative study. *Br J Nurs*. 2017;26(19):S18-S25. doi:10.12968/bjon.2017.26.19.S18.
-3. Chopra V, Kuhn L, Ratz D, et al. Vascular access specialist training, experience, and practice in the United States: results from the national PICC1 survey. *J Infus Nurs*. 2017;40(1):15-25.
-4. Han J, Wan J, Cheng Y, et al. A hospital-wide reduction in central line-associated bloodstream infections through systematic quality improvement initiative and multidisciplinary teamwork. *Am J Infect Control*. 2019;47(11):1358-1364.
-5. Mena Lora AJ, Ali M, Krill C, Spencer S, Takhsh E, Bleasdale SC. Impact of a hospital-wide huddle on device utilisation and infection rates: a community hospital's journey to zero. *J Infect Prev*. 2020;21(6):228-233. doi:10.1177/1757177420939239.
-6. Li X, He M, Wang H. Application of failure mode and effect analysis in managing catheter-related blood stream infection in intensive care unit. *Medicine*. 2017;96(51):e9339.
-7. McGuire R, Coronado A. Evaluation of clinically indicated removal versus routine replacement of peripheral vascular catheters. *Br J Nurs*. 2020;29(2):S10-S16. doi:10.12968/bjon.2020.29.2.S10.
-8. Hsu YJ, Marsteller JA. Influence of the comprehensive unit-based safety program in ICUs: evidence from the Keystone ICU project. *Am J Med Qual*. 2016;31(4):349-357.
-9. Rammell J, Matthan J, Gray M, et al. Asynchronous unsupervised video-enhanced feedback as effective as direct expert feedback in the long-term retention of practical clinical skills: randomised trial comparing 2 feedback methods in a cohort of novice medical students. *J Surg Educ*. 2018;75(6):1463-1470.
-10. Hade AD, Beckmann LA, Basappa BK. A checklist to improve the quality of central venous catheter tip positioning. *Anaesthesia*. 2019;74(7):896-903. doi:10.1111/anae.14679.
-11. Civetta G, Cortesi S, Mancardi M, et al. EA-DIVA score (enhanced adult DIVA score): a new scale to predict difficult preoperative venous cannulation in adult surgical patients. *J Vasc Access*. 2019;20(3):281-289. doi:10.1177/1129729818804994.
-12. Cooke M, Ullman AJ, Ray-Barruel G, Wallis M, Corley A, Rickard CM. Not "just" an intravenous line: consumer perspectives on peripheral intravenous cannulation (PIVC). An international cross-sectional survey of 25 countries. *PLoS ONE*. 2018;13(2):e0193436.
+1. <a id="s7-ref-1"></a>Thate JA, Couture B, Schnock KO, Rossetti SC. Information needs and the use of documentation to support collaborative decision-making: implications for the reduction of central line-associated blood stream infections. *Comput Inf Nurs*. 2020;39(4):208-214.
+2. <a id="s7-ref-2"></a>Larsen E, Keogh S, Marsh N, Rickard C. Experiences of peripheral IV insertion in hospital: a qualitative study. *Br J Nurs*. 2017;26(19):S18-S25. doi:10.12968/bjon.2017.26.19.S18.
+3. <a id="s7-ref-3"></a>Chopra V, Kuhn L, Ratz D, et al. Vascular access specialist training, experience, and practice in the United States: results from the national PICC1 survey. *J Infus Nurs*. 2017;40(1):15-25.
+4. <a id="s7-ref-4"></a>Han J, Wan J, Cheng Y, et al. A hospital-wide reduction in central line-associated bloodstream infections through systematic quality improvement initiative and multidisciplinary teamwork. *Am J Infect Control*. 2019;47(11):1358-1364.
+5. <a id="s7-ref-5"></a>Mena Lora AJ, Ali M, Krill C, Spencer S, Takhsh E, Bleasdale SC. Impact of a hospital-wide huddle on device utilisation and infection rates: a community hospital's journey to zero. *J Infect Prev*. 2020;21(6):228-233. doi:10.1177/1757177420939239.
+6. <a id="s7-ref-6"></a>Li X, He M, Wang H. Application of failure mode and effect analysis in managing catheter-related blood stream infection in intensive care unit. *Medicine*. 2017;96(51):e9339.
+7. <a id="s7-ref-7"></a>McGuire R, Coronado A. Evaluation of clinically indicated removal versus routine replacement of peripheral vascular catheters. *Br J Nurs*. 2020;29(2):S10-S16. doi:10.12968/bjon.2020.29.2.S10.
+8. <a id="s7-ref-8"></a>Hsu YJ, Marsteller JA. Influence of the comprehensive unit-based safety program in ICUs: evidence from the Keystone ICU project. *Am J Med Qual*. 2016;31(4):349-357.
+9. <a id="s7-ref-9"></a>Rammell J, Matthan J, Gray M, et al. Asynchronous unsupervised video-enhanced feedback as effective as direct expert feedback in the long-term retention of practical clinical skills: randomised trial comparing 2 feedback methods in a cohort of novice medical students. *J Surg Educ*. 2018;75(6):1463-1470.
+10. <a id="s7-ref-10"></a>Hade AD, Beckmann LA, Basappa BK. A checklist to improve the quality of central venous catheter tip positioning. *Anaesthesia*. 2019;74(7):896-903. doi:10.1111/anae.14679.
+11. <a id="s7-ref-11"></a>Civetta G, Cortesi S, Mancardi M, et al. EA-DIVA score (enhanced adult DIVA score): a new scale to predict difficult preoperative venous cannulation in adult surgical patients. *J Vasc Access*. 2019;20(3):281-289. doi:10.1177/1129729818804994.
+12. <a id="s7-ref-12"></a>Cooke M, Ullman AJ, Ray-Barruel G, Wallis M, Corley A, Rickard CM. Not "just" an intravenous line: consumer perspectives on peripheral intravenous cannulation (PIVC). An international cross-sectional survey of 25 countries. *PLoS ONE*. 2018;13(2):e0193436.
 
 ---
 

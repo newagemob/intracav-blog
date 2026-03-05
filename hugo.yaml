@@ -36,6 +36,25 @@ sitemap:
   filename: sitemap.xml
   priority: 0.5
 
+# Navigation menu
+menus:
+  main:
+    - name: Guidelines
+      url: /guidelines/
+      weight: 10
+    - name: Clinical Database
+      url: /guides/
+      weight: 20
+    - name: Policies
+      url: /policies/
+      weight: 30
+    - name: Patient Education
+      url: /patient-education/
+      weight: 40
+    - name: Blog
+      url: /blog/
+      weight: 50
+
 # Permalinks for clean URLs
 permalinks:
   blog: /blog/:slug/
@@ -247,4 +266,4 @@ params:
   # home-info mode
   homeInfoParams:
     Title: "The Clinical Database"
-    Content: Evidence-based clinical guides, policies, and patient education for vascular access — PICC lines, central venous catheters, CLABSI prevention, infusion therapy safety, and more.
+    Content: Evidence-based clinical guides, organization guidelines, policies, and patient education for vascular access — PICC lines, central venous catheters, CLABSI prevention, infusion therapy safety, and more.
