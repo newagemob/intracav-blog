@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PICC Lines — The Central Line Lab</title>
+<script src="https://unpkg.com/htmx.org@1.9.10"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Nunito:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{--bg:#EDE4D5;--surface:#F6F0E8;--border:#D4C7B5;--border-lt:#E2D8CC;--text:#28180C;--text-2:#685040;--text-3:#9E8272;--accent:#BC7250;--accent-lt:#E8C4A8;--sage:#7E9C84;--rose:#B87070;--gold:#C9A84C;--blue:#4A8ACA;--shadow-sm:0 1px 8px rgba(40,24,12,0.06),0 0 0 1px rgba(40,24,12,0.04);--r:16px;--r-sm:10px;}
+  body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+  body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");opacity:.028;pointer-events:none;z-index:9999}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 3rem;border-bottom:1px solid var(--border-lt);background:rgba(237,228,213,0.85);backdrop-filter:blur(12px);position:sticky;top:0;z-index:100}
+  .nl{display:flex;align-items:center;gap:1rem}.nb{font-size:.8rem;color:var(--text-3);text-decoration:none;transition:color 200ms}.nb:hover{color:var(--accent)}.ns{color:var(--border)}
+  .hero{padding:4rem 3rem 2.5rem;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:end;border-bottom:1px solid var(--border-lt);max-width:1100px;margin:0 auto}
+  .ml{font-size:.68rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--sage);display:flex;align-items:center;gap:.6rem;margin-bottom:.75rem}.ml::before{content:'02';font-family:'JetBrains Mono',monospace;color:var(--accent)}
+  h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:400;line-height:1.1;margin-bottom:1rem}h1 em{font-style:italic;color:var(--text-2)}
+  .hd{font-size:.92rem;line-height:1.7;color:var(--text-2);font-weight:300;max-width:500px}
+  .heq{background:var(--surface);border:1px solid var(--border-lt);border-radius:var(--r);padding:1.75rem 2rem;text-align:center;min-width:230px}
+  .er{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--text);margin-bottom:.5rem}.en{font-size:.65rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);margin-top:.4rem}
+  .main{max-width:1100px;margin:0 auto;padding:2.5rem 3rem}
+  .sl{font-size:.65rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);margin-bottom:.2rem}
+  .st{font-family:'Cormorant Garamond',serif;font-size:1.35rem;margin-bottom:1.25rem}
+
+  /* PICC path canvas */
+  .picc-section{background:var(--surface);border:1px solid var(--border-lt);border-radius:var(--r);overflow:hidden;margin-bottom:2rem;box-shadow:var(--shadow-sm)}
+  .picc-header{padding:1.5rem 2rem;border-bottom:1px solid var(--border-lt);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+  .picc-body{display:grid;grid-template-columns:1.3fr 1fr}
+  #piccCanvas{width:100%;height:440px;display:block;border-right:1px solid var(--border-lt)}
+  .picc-panel{padding:1.75rem;display:flex;flex-direction:column;gap:1.1rem;overflow-y:auto;max-height:440px}
+
+  /* ECG simulator */
+  .ecg-section{background:var(--surface);border:1px solid var(--border-lt);border-radius:var(--r);overflow:hidden;margin-bottom:2rem;box-shadow:var(--shadow-sm)}
+  .ecg-header{padding:1.5rem 2rem;border-bottom:1px solid var(--border-lt);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+  .ecg-body{display:grid;grid-template-columns:1.3fr 1fr}
+  #ecgCanvas{width:100%;height:260px;display:block;border-right:1px solid var(--border-lt)}
+  .ecg-panel{padding:1.75rem;display:flex;flex-direction:column;gap:1rem}
+  .ecg-stages{display:flex;flex-direction:column;gap:.5rem}
+  .ecg-stage{padding:.6rem 1rem;border:1px solid var(--border);border-radius:var(--r-sm);font-size:.78rem;cursor:pointer;transition:all 150ms;font-family:'Nunito',sans-serif;background:var(--bg);text-align:left}
+  .ecg-stage:hover,.ecg-stage.active{background:var(--sage);border-color:var(--sage);color:white}
+
+  /* Length calculator */
+  .calc-section{background:var(--surface);border:1px solid var(--border-lt);border-radius:var(--r);padding:1.75rem 2rem;margin-bottom:2rem;box-shadow:var(--shadow-sm)}
+  .calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1rem}
+  .calc-input{display:flex;flex-direction:column;gap:.4rem}
+  .ci-label{font-size:.78rem;font-weight:600;color:var(--text-2)}
+  .ci-input{padding:.5rem .75rem;border:1px solid var(--border);border-radius:var(--r-sm);font-size:.9rem;font-family:'Nunito',sans-serif;background:var(--bg);outline:none;transition:border-color 200ms}
+  .ci-input:focus{border-color:var(--accent)}
+  .calc-result{background:var(--bg);border-radius:var(--r-sm);padding:1.25rem;text-align:center;margin-top:1rem}
+  .cr-label{font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-bottom:.3rem}
+  .cr-val{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:300;color:var(--accent)}
+  .cr-sub{font-size:.72rem;color:var(--text-3)}
+
+  /* Indications table */
+  .ind-table{width:100%;border-collapse:collapse;margin-bottom:2rem}
+  .ind-table th{font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);padding:.5rem .75rem;border-bottom:1px solid var(--border);text-align:left;background:var(--surface)}
+  .ind-table td{padding:.85rem .75rem;border-bottom:1px solid var(--border-lt);font-size:.82rem;vertical-align:top}
+  .ind-table tr:last-child td{border-bottom:none}
+
+  /* Timeline */
+  .tl-items{display:flex;flex-direction:column;margin-bottom:2rem}
+  .tl-item{display:flex;gap:1.5rem;padding:1.25rem 0;border-bottom:1px solid var(--border-lt)}.tl-item:last-child{border-bottom:none}
+  .tl-year{font-family:'JetBrains Mono',monospace;font-size:.85rem;color:var(--accent);min-width:60px;padding-top:.2rem}
+  .tl-dot{width:10px;height:10px;border-radius:50%;margin-top:.3rem;flex-shrink:0}
+  .tl-title{font-family:'Cormorant Garamond',serif;font-size:1.1rem;margin-bottom:.3rem}
+  .tl-desc{font-size:.8rem;line-height:1.65;color:var(--text-2);font-weight:300}
+  .tl-tag{display:inline-block;font-size:.62rem;font-weight:600;padding:.15rem .55rem;border-radius:100px;margin-top:.4rem}
+
+  .pearls{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem;margin-bottom:2rem}
+  .pearl{background:var(--surface);border:1px solid var(--border-lt);border-radius:var(--r-sm);padding:1.25rem 1.5rem;box-shadow:var(--shadow-sm)}
+  .pearl-icon{font-size:1.4rem;margin-bottom:.75rem}
+  .pearl-title{font-family:'Cormorant Garamond',serif;font-size:1.05rem;margin-bottom:.5rem}
+  .pearl-text{font-size:.8rem;line-height:1.65;color:var(--text-2);font-weight:300}
+
+  .ctrl{display:flex;flex-direction:column;gap:.4rem}
+  .ctrl-row{display:flex;justify-content:space-between}
+  .ctrl-name{font-size:.78rem;font-weight:600;color:var(--text-2)}
+  .ctrl-val{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--accent)}
+  .ctrl-unit{font-size:.65rem;color:var(--text-3)}
+  input[type=range]{-webkit-appearance:none;width:100%;height:4px;background:var(--border);border-radius:100px;outline:none;cursor:pointer}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;background:var(--accent);border-radius:50%;box-shadow:0 0 0 4px rgba(188,114,80,0.15)}
+
+  .nf{display:flex;justify-content:space-between;align-items:center;padding:2rem 3rem;border-top:1px solid var(--border-lt);max-width:1100px;margin:0 auto}
+  .nl2{text-decoration:none;color:var(--text-3);font-size:.82rem;transition:color 200ms;display:flex;align-items:center;gap:.5rem}.nl2:hover{color:var(--accent)}
+  .nll{font-size:.65rem;text-transform:uppercase;letter-spacing:.1em}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}.hero{animation:fadeUp .5s ease both}
+  @media(max-width:700px){nav,.hero,.main,.nf{padding-left:1.25rem;padding-right:1.25rem}.hero,.picc-body,.ecg-body,.calc-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nl"><a href="/education/central-line-lab/" class="nb">← Collection</a><span class="ns">|</span><span style="font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--text-2)">The Central Line Lab</span></div>
+  <div class="nl"><span style="font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--accent)">02 / 06</span><a href="/education/central-line-lab/01-anatomy.html" class="nb">← Anatomy</a><span class="ns">|</span><a href="/education/central-line-lab/03-insertion.html" class="nb">CVC Insertion →</a></div>
+</nav>
+
+<div class="hero">
+  <div>
+    <div class="ml">PICC Lines — Peripherally Inserted Central Catheters</div>
+    <h1>Central access<br><em>from the arm.</em></h1>
+    <p class="hd">A PICC line starts in the basilic or brachial vein of the upper arm and travels 45–55 cm to the cavoatrial junction. No chest puncture, no pneumothorax risk, outpatient placement, weeks-to-months dwell time. The trade: upper extremity DVT in 5–14% of placements.</p>
+  </div>
+  <div class="heq">
+    <div class="er">Length ≈ Height(cm) ÷ 10 − 2</div><div class="en">Quick PICC Length Estimate</div>
+    <div style="height:.6rem"></div>
+    <div class="er">Basilic > Brachial > Cephalic</div><div class="en">Vein Preference Order</div>
+    <div style="height:.6rem"></div>
+    <div class="er">PICC DVT: 5–14%</div><div class="en">Upper Extremity DVT Rate</div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- PICC PATH CANVAS -->
+  <div class="picc-section">
+    <div class="picc-header">
+      <div><div class="sl">Animated Route</div><div class="st" style="margin:0;font-family:'Cormorant Garamond',serif;font-size:1.3rem;">PICC journey: basilic vein → SVC → CAJ</div></div>
+      <div style="font-size:.8rem;color:var(--text-3);font-weight:300">45–55 cm · arm → chest → heart</div>
+    </div>
+    <div class="picc-body">
+      <canvas id="piccCanvas"></canvas>
+      <div class="picc-panel">
+        <div class="sl" style="margin-bottom:.5rem">Vein Selection</div>
+        <div style="font-size:.82rem;line-height:1.7;color:var(--text-2);font-weight:300;background:var(--bg);border-radius:var(--r-sm);padding:1rem">
+          <strong style="color:var(--sage)">1st: Basilic vein</strong><br>Largest arm vein, medial surface, no adjacent artery, fewest valves, straightest path to axillary. Target diameter ≥3 mm (tourniquet-engorged).<br><br>
+          <strong style="color:var(--gold)">2nd: Brachial vein</strong><br>Paired, runs with brachial artery. More tortuous. Higher nerve risk from brachial plexus proximity. Use if basilic &lt;3 mm.<br><br>
+          <strong style="color:var(--rose)">3rd: Cephalic vein</strong><br>Lateral arm. Sharp 90° turn at deltopectoral groove causes tip malposition in 18–30% of cephalic PICCs. Avoid if possible.
+        </div>
+        <div class="sl" style="margin-bottom:.5rem">Arm Measurement</div>
+        <div style="font-size:.8rem;line-height:1.65;color:var(--text-2);font-weight:300;background:var(--bg);border-radius:var(--r-sm);padding:1rem">
+          Measure in cm from insertion site → mid-clavicle → sternal notch → 3rd intercostal space. Right arm PICCs: ~40–45 cm. Left arm PICCs: ~45–52 cm (crosses midline under clavicle). Add 2 cm for brachial approach (deeper).
+        </div>
+        <div class="ctrl">
+          <div class="ctrl-row"><span class="ctrl-name">Catheter advance progress</span><span class="ctrl-val"><span id="piccProgress">45</span><span class="ctrl-unit"> cm</span></span></div>
+          <input type="range" id="piccSlider" min="5" max="55" step="1" value="45" oninput="updatePicc()">
+        </div>
+        <div id="piccPosLabel" style="font-size:.78rem;font-weight:600;color:var(--accent);background:var(--bg);padding:.6rem .9rem;border-radius:var(--r-sm)">Tip position: Distal SVC</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ECG GUIDANCE SIMULATOR -->
+  <div class="ecg-section">
+    <div class="ecg-header">
+      <div><div class="sl">ECG Tip Guidance</div><div class="st" style="margin:0;font-family:'Cormorant Garamond',serif;font-size:1.3rem;">P-wave morphology changes as tip advances toward the SA node</div></div>
+      <div style="font-size:.8rem;color:var(--text-3);font-weight:300">Maximum biphasic P → correct CAJ position</div>
+    </div>
+    <div class="ecg-body">
+      <canvas id="ecgCanvas"></canvas>
+      <div class="ecg-panel">
+        <div class="sl" style="margin-bottom:.5rem">Tip Position Simulation</div>
+        <div class="ecg-stages">
+          <button class="ecg-stage" onclick="setEcgStage('arm',this)">💪 Tip in arm / axilla<br><span style="font-size:.7rem;opacity:.8">Flat P-wave — no change from surface ECG</span></button>
+          <button class="ecg-stage" onclick="setEcgStage('svc_high',this)">🔼 Tip in proximal SVC<br><span style="font-size:.7rem;opacity:.8">Mildly enlarged P-wave</span></button>
+          <button class="ecg-stage active" onclick="setEcgStage('caj',this)">✅ Tip at CAJ (optimal)<br><span style="font-size:.7rem;opacity:.8">Maximum biphasic P-wave — correct position</span></button>
+          <button class="ecg-stage" onclick="setEcgStage('ra',this)">⚠️ Tip in right atrium<br><span style="font-size:.7rem;opacity:.8">Deeply inverted P-wave — withdraw 2–3 cm</span></button>
+          <button class="ecg-stage" onclick="setEcgStage('rv',this)">🔴 Tip in right ventricle<br><span style="font-size:.7rem;opacity:.8">Wide complex, PVCs — withdraw immediately</span></button>
+        </div>
+        <div style="font-size:.78rem;line-height:1.6;color:var(--text-2);font-weight:300;background:var(--bg);border-radius:var(--r-sm);padding:.9rem 1rem;margin-top:.5rem" id="ecgInfo">
+          Optimal position: maximum amplitude biphasic (positive-then-negative) P-wave. The SiAnode of the sinoatrial node in the RA wall creates a distinctive P-wave pattern when the saline-column electrode is within 2 cm of it.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LENGTH CALCULATOR -->
+  <div class="calc-section">
+    <div class="sl">PICC Length Calculator</div>
+    <div class="st">Estimate insertion length before the procedure</div>
+    <div class="calc-grid">
+      <div>
+        <div class="calc-input"><label class="ci-label">Patient height (cm)</label><input type="number" class="ci-input" id="heightInput" value="170" min="100" max="220" oninput="calcPicc()"></div>
+        <div style="height:.75rem"></div>
+        <div class="calc-input"><label class="ci-label">Insertion site arm</label>
+          <select class="ci-input" id="armSide" onchange="calcPicc()">
+            <option value="right">Right arm</option><option value="left">Left arm</option>
+          </select>
+        </div>
+        <div style="height:.75rem"></div>
+        <div class="calc-input"><label class="ci-label">Vein selected</label>
+          <select class="ci-input" id="veinType" onchange="calcPicc()">
+            <option value="basilic">Basilic</option><option value="brachial">Brachial</option><option value="cephalic">Cephalic</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <div class="calc-result">
+          <div class="cr-label">Estimated PICC Length</div>
+          <div class="cr-val" id="piccLengthResult">47</div>
+          <div class="cr-sub">cm ± 2 cm — verify with intravascular ECG</div>
+        </div>
+        <div style="height:.75rem"></div>
+        <div style="background:var(--bg);border-radius:var(--r-sm);padding:1rem;font-size:.78rem;line-height:1.65;color:var(--text-2)">
+          <strong>Formula:</strong> (Height ÷ 10) − 2 + arm adjustment<br>
+          Right arm basilic: baseline · Left arm: +4 cm · Brachial: +2 cm · Cephalic: +2 cm
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INDICATIONS TABLE -->
+  <div class="sl" style="margin-bottom:.75rem">Clinical Indications & Contraindications</div>
+  <div style="background:var(--surface);border:1px solid var(--border-lt);border-radius:var(--r);overflow:hidden;margin-bottom:2rem;box-shadow:var(--shadow-sm)">
+    <table class="ind-table">
+      <thead><tr><th>Category</th><th>Indication / Drug</th><th>Why Central Access Required</th><th>Dwell Estimate</th></tr></thead>
+      <tbody>
+        <tr><td style="font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--sage)">IV Antibiotics</td><td>Vancomycin, cefazolin, ertapenem, 6-week courses</td><td>Prolonged therapy destroys peripheral veins; OPAT (outpatient) administration</td><td>2–6 weeks</td></tr>
+        <tr><td style="font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--gold)">Chemotherapy</td><td>5-FU, cyclophosphamide, vesicants</td><td>Vesicant drugs require high-flow central dilution; prevents extravasation injury</td><td>Months</td></tr>
+        <tr><td style="font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--accent)">TPN</td><td>Parenteral nutrition (900–1200 mOsm/L)</td><td>Hyperosmolar solution thromboses peripheral veins within hours</td><td>Weeks–months</td></tr>
+        <tr><td style="font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--blue)">Hemodynamic Meds</td><td>Vasoactive amines at low/moderate doses</td><td>High-concentration vasopressors require central access (though some can run peripherally &lt;24hr)</td><td>Days–weeks</td></tr>
+        <tr><td style="font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--text-2)">Poor Peripheral Access</td><td>Multiple failed PIV, critical medications</td><td>Preserved central vein patency when peripheral access exhausted</td><td>Situational</td></tr>
+        <tr><td style="font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--rose)">Contraindications</td><td colspan="3" style="color:var(--rose);font-size:.78rem">Lymphedema in target arm · AV fistula or graft (same arm) · Venous thrombosis in proposed pathway · Skin infection at proposed site · Bilateral mastectomy with lymph node dissection (relative)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- HISTORY -->
+  <div class="sl" style="margin-bottom:1rem">Historical Record</div>
+  <div class="tl-items">
+    <div class="tl-item"><div class="tl-year">1975</div><div class="tl-dot" style="background:var(--sage)"></div><div><div class="tl-title">Hoshal — First PICC Description</div><p class="tl-desc">V.L. Hoshal described the first peripherally inserted central catheter in 1975, using a 16-gauge polyvinyl chloride catheter inserted into the antecubital fossa and advanced to the SVC. The motivation was simple: avoid the thoracic complication risk of subclavian and IJ insertion. The technique was largely ignored for a decade — home infusion therapy had not yet emerged as a clinical practice, so the advantage of arm-based long-term access was not yet clinically relevant.</p><span class="tl-tag" style="background:rgba(126,156,132,0.15);color:var(--sage)">Invention</span></div></div>
+    <div class="tl-item"><div class="tl-year">1980s</div><div class="tl-dot" style="background:var(--gold)"></div><div><div class="tl-title">Home Infusion Therapy — The PICC Explosion</div><p class="tl-desc">The growth of outpatient antibiotic therapy (OPAT), home TPN for short bowel syndrome, and HIV-related home chemotherapy in the 1980s created a clinical need for long-term access that could be placed and maintained outside the hospital. PICCs could be inserted by trained nurses — not requiring a physician or sterile OR suite. This positioned them as the first widely nurse-placed central access device and transformed infusion nursing as a specialty.</p><span class="tl-tag" style="background:rgba(201,168,76,0.15);color:var(--gold)">Clinical Expansion</span></div></div>
+    <div class="tl-item"><div class="tl-year">2010s</div><div class="tl-dot" style="background:var(--blue)"></div><div><div class="tl-title">ECG-Guided PICC Placement — Eliminating the Delay CXR</div><p class="tl-desc">Intravascular ECG tip confirmation — using the saline column as an electrode and monitoring P-wave morphology — allowed real-time tip positioning verification without waiting for a post-procedure chest X-ray. The technique is based on the proximity of the catheter tip to the sinoatrial node: as the tip approaches the CAJ, the P-wave increases in amplitude and becomes biphasic. Maximum biphasic P-wave = optimal position. This eliminated the 1–4 hour delay between PICC placement and first use in many institutions.</p><span class="tl-tag" style="background:rgba(74,138,202,0.15);color:var(--blue)">Technology Advance</span></div></div>
+  </div>
+
+  <div class="pearls">
+    <div class="pearl"><div class="pearl-icon">💪</div><div class="pearl-title">Basilic Is Always First</div><p class="pearl-text">The basilic vein is the PICC vein of choice — largest caliber, fewest valves, medial arm location with no adjacent artery, and a smooth continuous path from upper arm through axillary to subclavian to SVC. The cephalic vein has a sharp angulation at the deltopectoral groove that causes malposition in 18–30% of cephalic PICCs. Unless the basilic is unavailable, use it.</p></div>
+    <div class="pearl"><div class="pearl-icon">📏</div><div class="pearl-title">Measure Before You Thread</div><p class="pearl-text">Pre-insertion arm measurement is the primary determinant of tip position accuracy. Measure with the arm at 90° abduction (the position during insertion). Left arm PICCs need 4–5 cm more than right arm due to the longer path across the mediastinum. Failure to account for this is the most common cause of a "too short" PICC tip in the subclavian rather than SVC.</p></div>
+    <div class="pearl"><div class="pearl-icon">🩸</div><div class="pearl-title">PICC DVT: 5–14% — Know the Risk Factors</div><p class="pearl-text">PICC-associated DVT risk is driven by: catheter-to-vein diameter ratio (catheter should be ≤45% of vein diameter), number of lumens (triple-lumen PICCs have 3× DVT rate of single-lumen), tip malposition in subclavian/proximal SVC, and underlying hypercoagulable state. Ultrasound-guided placement targeting basilic vein reduces DVT risk significantly vs blind antecubital placement.</p></div>
+    <div class="pearl"><div class="pearl-icon">⚡</div><div class="pearl-title">Power-Injectable PICCs — Not All Are Equal</div><p class="pearl-text">Standard PICCs cannot withstand the pressure of CT contrast injection (300–500 psi). Power-injectable PICCs (stamped "Power PICC" or purple hub) are rated for high-pressure injection. Verify power-injection compatibility before contrast administration — using a non-rated PICC for power injection can rupture the catheter, embolizing fragments into the pulmonary circulation.</p></div>
+  </div>
+
+</div>
+
+<div class="nf">
+  <a href="/education/central-line-lab/01-anatomy.html" class="nl2"><span>←</span><div><div class="nll">Previous</div>Anatomy</div></a>
+  <a href="/education/central-line-lab/03-insertion.html" class="nl2"><div style="text-align:right"><div class="nll">Next Module</div>CVC Insertion</div><span>→</span></a>
+</div>
+
+<script>
+// PICC PATH CANVAS
+const pc=document.getElementById('piccCanvas');
+const pctx=pc.getContext('2d');
+let pAnimT=0;
+let piccAdvance=45;
+
+function resize(){pc.width=pc.offsetWidth;pc.height=440}
+resize();window.addEventListener('resize',resize);
+
+function updatePicc(){
+  piccAdvance=+document.getElementById('piccSlider').value;
+  document.getElementById('piccProgress').textContent=piccAdvance;
+  const pos=piccAdvance<20?'Basilic / axillary vein':piccAdvance<32?'Subclavian vein':piccAdvance<40?'Proximal SVC':piccAdvance<48?'Distal SVC / CAJ (optimal)':'Right atrium (too far — withdraw)';
+  const el=document.getElementById('piccPosLabel');
+  el.textContent='Tip position: '+pos;
+  el.style.color=piccAdvance>48?'#C04040':piccAdvance>=40?'#7E9C84':'#BC7250';
+}
+
+// ECG
+const ec=document.getElementById('ecgCanvas');
+const ectx=ec.getContext('2d');
+let ecgStage='caj';
+let ecgT=0;
+const ECG_STAGES={
+  arm:{pAmp:.3,pBiphasic:false,qrs:.8,label:'Arm / axilla — normal P-wave',color:'#7E9C84'},
+  svc_high:{pAmp:.6,pBiphasic:false,qrs:.8,label:'Proximal SVC — P-wave enlarging',color:'#C9A84C'},
+  caj:{pAmp:1.0,pBiphasic:true,qrs:.8,label:'CAJ (optimal) — biphasic P, max amplitude',color:'#7E9C84'},
+  ra:{pAmp:.8,pBiphasic:true,inverted:true,qrs:.8,label:'Right atrium — inverted P, withdraw 2–3 cm',color:'#C04040'},
+  rv:{pAmp:.2,pBiphasic:false,wide:true,qrs:1.4,label:'Right ventricle — wide QRS, PVCs — WITHDRAW',color:'#C04040'},
+};
+function setEcgStage(s,btn){
+  ecgStage=s;
+  document.querySelectorAll('.ecg-stage').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  const info={
+    arm:'Tip in arm or axillary vein. P-wave looks identical to surface ECG. No guidance information yet.',
+    svc_high:'Tip entering proximal SVC. P-wave amplitude increasing as electrode approaches the SA node in the RA wall.',
+    caj:'OPTIMAL POSITION. Maximum biphasic (positive deflection followed by negative deflection) P-wave indicates tip at CAJ, 2–4 cm above the SA node. Advance catheter 0.5–1 cm, then secure.',
+    ra:'Tip has entered right atrium. P-wave inverts (negative) as electrode passes inferior to SA node. Withdraw 2–3 cm to restore biphasic morphology.',
+    rv:'DANGER: Tip in right ventricle. Wide QRS complexes, PVCs. Withdraw catheter immediately until rhythm normalizes. Confirm tip position with CXR.',
+  };
+  document.getElementById('ecgInfo').textContent=info[s];
+}
+
+function resizeEcg(){ec.width=ec.offsetWidth;ec.height=260}
+resizeEcg();
+
+function calcPicc(){
+  const h=+document.getElementById('heightInput').value||170;
+  const arm=document.getElementById('armSide').value;
+  const vein=document.getElementById('veinType').value;
+  let len=h/10-2;
+  if(arm==='left')len+=4;
+  if(vein==='brachial')len+=2;
+  if(vein==='cephalic')len+=2;
+  document.getElementById('piccLengthResult').textContent=Math.round(len);
+}
+calcPicc();
+
+let pAnimT2=0;
+
+function drawPicc(){
+  const W=pc.width,H=pc.height;
+  pAnimT+=.01;
+  pctx.clearRect(0,0,W,H);
+  pctx.fillStyle='#0E0C0A';pctx.fillRect(0,0,W,H);
+
+  const prog=piccAdvance/55;
+
+  // Simple body outline
+  // Arm (right side)
+  pctx.fillStyle='#1E160E';
+  pctx.beginPath();pctx.roundRect(W*.62,H*.15,W*.28,H*.7,8);pctx.fill();
+
+  // Torso
+  pctx.fillStyle='#1A1208';
+  pctx.beginPath();pctx.roundRect(W*.2,H*.12,W*.4,H*.75,8);pctx.fill();
+
+  // Head
+  pctx.beginPath();pctx.ellipse(W*.4,H*.07,W*.08,H*.06,0,0,Math.PI*2);
+  pctx.fillStyle='#1E160E';pctx.fill();
+
+  // PICC path segments
+  const pathPoints=[
+    // Basilic in upper arm
+    {x:W*.74,y:H*.72,label:'Insertion site (basilic)',cm:0,color:'#7E9C84'},
+    {x:W*.73,y:H*.55,label:'Upper arm basilic',cm:10,color:'#7E9C84'},
+    {x:W*.7,y:H*.38,label:'Axillary vein',cm:22,color:'#7E9C84'},
+    // Across to subclavian
+    {x:W*.58,y:H*.26,label:'Subclavian vein',cm:32,color:'#C9A84C'},
+    {x:W*.46,y:H*.22,label:'',cm:36,color:'#C9A84C'},
+    // Down SVC
+    {x:W*.4,y:H*.2,label:'Proximal SVC',cm:38,color:'#BC7250'},
+    {x:W*.4,y:H*.3,label:'Distal SVC',cm:44,color:'#BC7250'},
+    {x:W*.4,y:H*.36,label:'CAJ',cm:48,color:'#7E9C84'},
+    // RA (too far)
+    {x:W*.4,y:H*.44,label:'Right atrium',cm:54,color:'#C04040'},
+  ];
+
+  // Find active path (up to piccAdvance depth)
+  let activeIdx=0;
+  for(let i=0;i<pathPoints.length;i++){
+    if(pathPoints[i].cm<=piccAdvance)activeIdx=i;
+  }
+
+  // Draw full path (faint)
+  pctx.beginPath();pctx.moveTo(pathPoints[0].x,pathPoints[0].y);
+  pathPoints.slice(1).forEach(p=>pctx.lineTo(p.x,p.y));
+  pctx.strokeStyle='rgba(158,130,114,0.12)';pctx.lineWidth=8;pctx.stroke();
+  pctx.strokeStyle='rgba(158,130,114,0.08)';pctx.lineWidth=4;pctx.stroke();
+
+  // Draw active path
+  if(activeIdx>0){
+    pctx.beginPath();pctx.moveTo(pathPoints[0].x,pathPoints[0].y);
+    pathPoints.slice(1,activeIdx+1).forEach(p=>{pctx.lineTo(p.x,p.y)});
+    const activeColor=pathPoints[activeIdx].color;
+    pctx.strokeStyle=activeColor+'88';pctx.lineWidth=10;pctx.stroke();
+    pctx.strokeStyle=activeColor;pctx.lineWidth=5;pctx.stroke();
+
+    // Animated tip
+    const tip=pathPoints[activeIdx];
+    const glow=Math.sin(pAnimT*5)*.15+.6;
+    pctx.beginPath();pctx.arc(tip.x,tip.y,10+Math.sin(pAnimT*4)*2,0,Math.PI*2);
+    pctx.fillStyle=tip.color+'44';pctx.fill();
+    pctx.beginPath();pctx.arc(tip.x,tip.y,6,0,Math.PI*2);
+    pctx.fillStyle=tip.color;pctx.fill();
+
+    // Label
+    if(tip.label){
+      pctx.fillStyle=tip.color;pctx.font='500 10px Nunito';pctx.textAlign='left';
+      pctx.fillText(tip.label,tip.x+12,tip.y+3);
+      pctx.fillStyle='rgba(158,130,114,0.5)';pctx.font='9px JetBrains Mono';
+      pctx.fillText(piccAdvance+'cm',tip.x+12,tip.y+14);
+    }
+  }
+
+  // Landmarks
+  const landmarks=[
+    {x:W*.4,y:H*.35,label:'SVC',color:'#BC7250',r:22},
+    {x:W*.4,y:H*.38,label:'CAJ',color:'#BC7250',r:8,mark:true},
+    {x:W*.4,y:H*.44,label:'RA',color:'#8B2020',r:18},
+  ];
+  landmarks.forEach(lm=>{
+    if(lm.mark){
+      pctx.strokeStyle=lm.color+'55';pctx.lineWidth=2;pctx.setLineDash([3,6]);
+      pctx.beginPath();pctx.moveTo(W*.22,lm.y);pctx.lineTo(W*.55,lm.y);pctx.stroke();
+      pctx.setLineDash([]);
+    }
+    pctx.fillStyle=lm.color+'33';pctx.beginPath();pctx.arc(lm.x,lm.y,lm.r,0,Math.PI*2);pctx.fill();
+    pctx.fillStyle=lm.color+'99';pctx.font='9px Nunito';pctx.textAlign='right';
+    pctx.fillText(lm.label,lm.x-lm.r-4,lm.y+3);
+  });
+
+  // Depth ruler
+  for(let i=0;i<=5;i++){
+    pctx.strokeStyle='rgba(158,130,114,0.2)';pctx.lineWidth=.5;
+    pctx.beginPath();pctx.moveTo(14,H*.15+i*(H*.6/5));pctx.lineTo(22,H*.15+i*(H*.6/5));pctx.stroke();
+    pctx.fillStyle='rgba(158,130,114,0.4)';pctx.font='8px JetBrains Mono';pctx.textAlign='right';
+    pctx.fillText(i*10+'cm',12,H*.15+i*(H*.6/5)+3);
+  }
+
+  pctx.textAlign='left';
+  requestAnimationFrame(drawPicc);
+}
+
+// ECG drawing
+function drawEcg(){
+  const W=ec.width,H=ec.height;
+  ecgT+=.02;
+  ectx.clearRect(0,0,W,H);
+  ectx.fillStyle='#0A0806';ectx.fillRect(0,0,W,H);
+
+  const st=ECG_STAGES[ecgStage];
+  const beat=(ecgT*.8)%1;
+
+  // Grid
+  for(let x=0;x<W;x+=20){ectx.strokeStyle='rgba(0,60,0,0.2)';ectx.lineWidth=.5;ectx.beginPath();ectx.moveTo(x,0);ectx.lineTo(x,H);ectx.stroke()}
+  for(let y=0;y<H;y+=20){ectx.beginPath();ectx.moveTo(0,y);ectx.lineTo(W,y);ectx.stroke()}
+  ectx.strokeStyle='rgba(0,80,0,0.3)';ectx.lineWidth=1;
+  for(let x=0;x<W;x+=100){ectx.beginPath();ectx.moveTo(x,0);ectx.lineTo(x,H);ectx.stroke()}
+
+  const baseline=H*.55;
+  const history=[];
+  const nPts=W;
+
+  for(let i=0;i<nPts;i++){
+    const t=(ecgT*.8+i/nPts)%1;
+    let y=0;
+    // P-wave
+    const pCenter=.1;const pWidth=.06;
+    const pDist=Math.abs(t-pCenter);
+    if(pDist<pWidth){
+      const pFrac=pDist/pWidth;
+      const pShape=Math.exp(-pFrac*pFrac*8)*st.pAmp;
+      if(st.inverted){y-=pShape*30}
+      else if(st.pBiphasic){y+=pShape*35*(t<pCenter?1:-0.6)}
+      else{y+=pShape*20}
+    }
+    // QRS
+    const qrsCenter=.3;const qrsWidth=st.wide?.04:.02;
+    const qrsDist=Math.abs(t-qrsCenter);
+    if(qrsDist<qrsWidth){
+      const qf=qrsDist/qrsWidth;
+      y+=(1-qf*qf)*H*.3*st.qrs*(t<qrsCenter?-.1:t<qrsCenter+.005?1:-.2);
+    }
+    // T-wave
+    const tCenter=.45;const tWidth=.08;
+    const tDist=Math.abs(t-tCenter);
+    if(tDist<tWidth){const tf=tDist/tWidth;y+=Math.exp(-tf*tf*4)*15}
+    // PVCs (RV)
+    if(st.wide&&Math.abs(t-.65)<.025){const pf=Math.abs(t-.65)/.025;y-=(1-pf)*H*.25}
+
+    history.push(baseline-y);
+  }
+
+  ectx.beginPath();
+  history.forEach((yv,i)=>{if(i===0)ectx.moveTo(i,yv);else ectx.lineTo(i,yv)});
+  ectx.strokeStyle=st.color;ectx.lineWidth=2;ectx.stroke();
+
+  ectx.fillStyle=st.color+'CC';ectx.font='500 10px Nunito';ectx.textAlign='center';
+  ectx.fillText(st.label,W*.5,18);
+
+  requestAnimationFrame(drawEcg);
+}
+
+drawPicc();
+drawEcg();
+</script>
+</body>
+</html>

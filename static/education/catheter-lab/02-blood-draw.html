@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blood Draw — The Catheter Lab</title>
+<script src="https://unpkg.com/htmx.org@1.9.10"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Nunito:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #EDE4D5; --surface: #F6F0E8;
+    --border: #D4C7B5; --border-lt: #E2D8CC;
+    --text: #28180C; --text-2: #685040; --text-3: #9E8272;
+    --accent: #BC7250; --accent-lt: #E8C4A8;
+    --sage: #7E9C84; --rose: #B87070; --gold: #C9A84C;
+    --blood: #8B1A1A; --blood-lt: #C04040;
+    --shadow-sm: 0 1px 8px rgba(40,24,12,0.06), 0 0 0 1px rgba(40,24,12,0.04);
+    --shadow-md: 0 4px 28px rgba(40,24,12,0.10); --r: 16px; --r-sm: 10px;
+  }
+  body { font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+  body::after { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E"); opacity: 0.028; pointer-events: none; z-index: 9999; }
+  nav { display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 3rem; border-bottom: 1px solid var(--border-lt); background: rgba(237,228,213,0.85); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100; }
+  .nav-left { display: flex; align-items: center; gap: 1rem; }
+  .nav-back { font-size: 0.8rem; color: var(--text-3); text-decoration: none; transition: color 200ms; }
+  .nav-back:hover { color: var(--accent); }
+  .nav-sep { color: var(--border); }
+  .hero { padding: 4rem 3rem 2.5rem; display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: end; border-bottom: 1px solid var(--border-lt); max-width: 1100px; margin: 0 auto; }
+  .module-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #4A8ACA; display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.75rem; }
+  .module-label::before { content: '02'; font-family: 'JetBrains Mono', monospace; color: var(--accent); }
+  h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 400; line-height: 1.1; margin-bottom: 1rem; }
+  h1 em { font-style: italic; color: var(--text-2); }
+  .hero-desc { font-size: 0.92rem; line-height: 1.7; color: var(--text-2); font-weight: 300; max-width: 500px; }
+  .hero-eq { background: var(--surface); border: 1px solid var(--border-lt); border-radius: var(--r); padding: 1.75rem 2rem; text-align: center; min-width: 240px; }
+  .eq-row { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: var(--text); margin-bottom: 0.5rem; }
+  .eq-name { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3); margin-top: 0.4rem; }
+  .frac { display: inline-flex; flex-direction: column; align-items: center; vertical-align: middle; }
+  .frac .num { border-bottom: 1.5px solid var(--text-2); padding: 0 4px 3px; }
+  .frac .den { padding: 3px 4px 0; }
+  .main { max-width: 1100px; margin: 0 auto; padding: 2.5rem 3rem; }
+  .section-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3); margin-bottom: 0.2rem; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; margin-bottom: 1.25rem; }
+
+  /* Draw simulator */
+  .draw-section { background: var(--surface); border: 1px solid var(--border-lt); border-radius: var(--r); overflow: hidden; margin-bottom: 2rem; box-shadow: var(--shadow-sm); }
+  .draw-header { padding: 1.5rem 2rem; border-bottom: 1px solid var(--border-lt); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; align-items: center; }
+  .draw-body { display: grid; grid-template-columns: 1.2fr 1fr; }
+  #drawCanvas { width: 100%; height: 360px; display: block; border-right: 1px solid var(--border-lt); }
+  .draw-panel { padding: 1.75rem; display: flex; flex-direction: column; gap: 1.1rem; }
+
+  /* Hemolysis meter */
+  .hemolysis-meter { background: var(--bg); border-radius: var(--r-sm); padding: 1.25rem; }
+  .hm-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); margin-bottom: 0.5rem; }
+  .hm-bar-wrap { height: 20px; background: rgba(40,24,12,0.08); border-radius: 100px; overflow: hidden; margin-bottom: 0.4rem; position: relative; }
+  .hm-bar { height: 100%; border-radius: 100px; transition: width 400ms, background 400ms; }
+  .hm-marks { display: flex; justify-content: space-between; font-size: 0.6rem; color: var(--text-3); font-family: 'JetBrains Mono', monospace; }
+  .hm-val { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 300; }
+
+  /* Gauge selector */
+  .gauge-row { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+  .g-btn { padding: 0.35rem 0.75rem; border: 1px solid var(--border); border-radius: 100px; font-size: 0.72rem; font-weight: 600; font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text-2); cursor: pointer; transition: all 150ms; }
+  .g-btn:hover, .g-btn.active { background: var(--accent); border-color: var(--accent); color: white; }
+
+  .ctrl { display: flex; flex-direction: column; gap: 0.4rem; }
+  .ctrl-row { display: flex; justify-content: space-between; }
+  .ctrl-name { font-size: 0.78rem; font-weight: 600; color: var(--text-2); }
+  .ctrl-val { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--accent); }
+  .ctrl-unit { font-size: 0.65rem; color: var(--text-3); }
+  input[type=range] { -webkit-appearance: none; width: 100%; height: 4px; background: var(--border); border-radius: 100px; outline: none; cursor: pointer; }
+  input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 0 4px rgba(188,114,80,0.15); }
+
+  /* Results row */
+  .results-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.75rem; margin-bottom: 2rem; }
+  .res-card { background: var(--surface); border: 1px solid var(--border-lt); border-radius: var(--r-sm); padding: 1rem 1.25rem; box-shadow: var(--shadow-sm); text-align: center; }
+  .rc-label { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); margin-bottom: 0.3rem; }
+  .rc-val { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 300; color: var(--accent); }
+  .rc-sub { font-size: 0.68rem; color: var(--text-3); }
+
+  /* Discard volume table */
+  .discard-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; margin-bottom: 2rem; }
+  .discard-table th { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--border); text-align: left; }
+  .discard-table td { padding: 0.9rem 0.75rem; border-bottom: 1px solid var(--border-lt); }
+  .discard-table tr:last-child td { border-bottom: none; }
+  .disc-bar { height: 6px; border-radius: 100px; background: var(--border-lt); overflow: hidden; }
+  .disc-bar-fill { height: 100%; border-radius: 100px; background: var(--accent); }
+  .risk-badge { font-size: 0.65rem; font-weight: 600; padding: 0.15rem 0.55rem; border-radius: 100px; }
+
+  /* Timeline */
+  .tl-items { display: flex; flex-direction: column; gap: 0; margin-bottom: 2rem; }
+  .tl-item { display: flex; gap: 1.5rem; padding: 1.25rem 0; border-bottom: 1px solid var(--border-lt); }
+  .tl-item:last-child { border-bottom: none; }
+  .tl-year { font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: var(--accent); min-width: 60px; padding-top: 0.2rem; }
+  .tl-dot { width: 10px; height: 10px; border-radius: 50%; margin-top: 0.3rem; flex-shrink: 0; }
+  .tl-title { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; margin-bottom: 0.3rem; }
+  .tl-desc { font-size: 0.8rem; line-height: 1.65; color: var(--text-2); font-weight: 300; }
+  .tl-tag { display: inline-block; font-size: 0.62rem; font-weight: 600; padding: 0.15rem 0.55rem; border-radius: 100px; margin-top: 0.4rem; }
+
+  /* Pearls */
+  .pearls { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+  .pearl { background: var(--surface); border: 1px solid var(--border-lt); border-radius: var(--r-sm); padding: 1.25rem 1.5rem; box-shadow: var(--shadow-sm); }
+  .pearl-icon { font-size: 1.4rem; margin-bottom: 0.75rem; }
+  .pearl-title { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; margin-bottom: 0.5rem; }
+  .pearl-text { font-size: 0.8rem; line-height: 1.65; color: var(--text-2); font-weight: 300; }
+
+  /* Navi / Venocare panel */
+  .navi-panel { background: var(--text); border-radius: var(--r); padding: 0; margin-bottom: 2rem; overflow: hidden; }
+  .navi-header { padding: 2rem 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .navi-kicker { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
+  .navi-title { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: #F0E8E0; margin-bottom: 0.75rem; }
+  .navi-title em { font-style: italic; color: var(--accent-lt); }
+  .navi-desc { font-size: 0.85rem; line-height: 1.75; color: #8A7A6A; max-width: 680px; }
+  .navi-cards { display: grid; grid-template-columns: repeat(3, 1fr); background: rgba(255,255,255,0.02); }
+  .navi-card { padding: 1.5rem 1.75rem; border-right: 1px solid rgba(255,255,255,0.06); }
+  .navi-card:last-child { border-right: none; }
+  .nc-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
+  .nc-val { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: #E8E0D8; margin-bottom: 0.4rem; }
+  .nc-desc { font-size: 0.75rem; line-height: 1.6; color: #6A5A4A; font-weight: 300; }
+
+  .nav-footer { display: flex; justify-content: space-between; align-items: center; padding: 2rem 3rem; border-top: 1px solid var(--border-lt); max-width: 1100px; margin: 0 auto; }
+  .nav-link { text-decoration: none; color: var(--text-3); font-size: 0.82rem; transition: color 200ms; display: flex; align-items: center; gap: 0.5rem; }
+  .nav-link:hover { color: var(--accent); }
+  .nav-link-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+  .hero { animation: fadeUp 0.5s ease both; }
+  @media (max-width: 700px) { nav, .hero, .main, .nav-footer { padding-left: 1.25rem; padding-right: 1.25rem; } .hero, .draw-body, .navi-cards, .results-row { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-left">
+    <a href="/education/catheter-lab/" class="nav-back">← Collection</a>
+    <span class="nav-sep">|</span>
+    <span style="font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--text-2);">The Catheter Lab</span>
+  </div>
+  <div class="nav-left">
+    <span style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--accent);">02 / 04</span>
+    <a href="/education/catheter-lab/01-reflux.html" class="nav-back">← Reflux</a>
+    <span class="nav-sep">|</span>
+    <a href="/education/catheter-lab/03-medication-surge.html" class="nav-back">Med Surge →</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div>
+    <div class="module-label">Blood Draw via Existing IV Catheter</div>
+    <h1>One needle.<br><em>Two uses.</em></h1>
+    <p class="hero-desc">Drawing blood through a peripheral IV catheter eliminates a second venipuncture — but the physics of negative pressure through a narrow lumen creates shear stress that ruptures red blood cells, corrupts lab values, and invalidates samples. Understanding why tells you when it's safe.</p>
+  </div>
+  <div class="hero-eq">
+    <div class="eq-row">τ = <span class="frac"><span class="num">4ηQ</span><span class="den">πr³</span></span></div>
+    <div class="eq-name">Wall Shear Stress (hemolysis driver)</div>
+    <div style="height:0.75rem"></div>
+    <div class="eq-row">τ<sub>crit</sub> ≈ 150 Pa → RBC rupture</div>
+    <div class="eq-name">Hemolysis Threshold</div>
+    <div style="height:0.75rem"></div>
+    <div class="eq-row">V<sub>discard</sub> = 1.5–2× dead volume</div>
+    <div class="eq-name">Discard Volume Rule</div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- DRAW SIMULATOR -->
+  <div class="draw-section">
+    <div class="draw-header">
+      <div>
+        <div class="section-label">Live Simulator</div>
+        <div class="section-title" style="margin:0;font-family:'Cormorant Garamond',serif;font-size:1.3rem;">Shear Stress & Hemolysis Risk by Gauge and Pull Rate</div>
+      </div>
+      <div style="font-size:0.78rem;color:var(--text-3);font-weight:300;">τ > 150 Pa → erythrocyte membrane rupture</div>
+    </div>
+    <div class="draw-body">
+      <canvas id="drawCanvas"></canvas>
+      <div class="draw-panel">
+        <div>
+          <div class="section-label" style="margin-bottom:0.5rem;">Catheter Gauge</div>
+          <div class="gauge-row">
+            <button class="g-btn" onclick="setGauge(14,this)">14G</button>
+            <button class="g-btn" onclick="setGauge(16,this)">16G</button>
+            <button class="g-btn" onclick="setGauge(18,this)">18G</button>
+            <button class="g-btn active" onclick="setGauge(20,this)">20G</button>
+            <button class="g-btn" onclick="setGauge(22,this)">22G</button>
+            <button class="g-btn" onclick="setGauge(24,this)">24G</button>
+          </div>
+        </div>
+        <div class="ctrl">
+          <div class="ctrl-row">
+            <span class="ctrl-name">Draw rate</span>
+            <span class="ctrl-val"><span id="drawRateVal">5</span><span class="ctrl-unit"> mL/min</span></span>
+          </div>
+          <input type="range" id="drawRateSlider" min="0.5" max="20" step="0.5" value="5" oninput="updateDraw()">
+        </div>
+        <div class="ctrl">
+          <div class="ctrl-row">
+            <span class="ctrl-name">Syringe size</span>
+            <span class="ctrl-val"><span id="syringeVal">10</span><span class="ctrl-unit"> mL</span></span>
+          </div>
+          <input type="range" id="syringeSlider" min="1" max="60" step="1" value="10" oninput="updateDraw()">
+        </div>
+
+        <!-- Hemolysis meter -->
+        <div class="hemolysis-meter">
+          <div class="hm-label">Shear Stress / Hemolysis Risk</div>
+          <div class="hm-val" id="tauVal">— <span style="font-size:0.75rem;color:var(--text-3)">Pa</span></div>
+          <div class="hm-bar-wrap">
+            <div class="hm-bar" id="hemBar" style="width:0%;background:var(--sage);"></div>
+          </div>
+          <div class="hm-marks">
+            <span>0</span><span>Safe</span><span>150 Pa</span><span>Rupture</span><span>300 Pa</span>
+          </div>
+        </div>
+
+        <div id="hemWarning" style="display:none;background:rgba(184,112,112,0.1);border:1px solid var(--rose);border-radius:var(--r-sm);padding:0.9rem 1rem;font-size:0.8rem;color:var(--rose);line-height:1.5;">
+          ⚠ Shear stress exceeds hemolysis threshold. Sample will show falsely elevated potassium, LDH, and hemoglobin. Consider slower draw or larger gauge.
+        </div>
+
+        <div style="background:rgba(74,138,202,0.08);border:1px solid rgba(74,138,202,0.2);border-radius:var(--r-sm);padding:1rem;font-size:0.8rem;line-height:1.6;color:var(--text-2);">
+          <strong>Navi Device:</strong> Draws from vessel lumen through existing IV catheter at controlled negative pressure, eliminating shear stress from rapid syringe pull. No additional venipuncture, no hemolysis artifact.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="results-row">
+    <div class="res-card">
+      <div class="rc-label">Shear Stress</div>
+      <div class="rc-val" id="resShear">—</div>
+      <div class="rc-sub">Pa · (safe &lt;150)</div>
+    </div>
+    <div class="res-card">
+      <div class="rc-label">Flow Rate (Poiseuille)</div>
+      <div class="rc-val" id="resFlow">—</div>
+      <div class="rc-sub">mL/min theoretical max</div>
+    </div>
+    <div class="res-card">
+      <div class="rc-label">Hemolysis Index</div>
+      <div class="rc-val" id="resHem">—</div>
+      <div class="rc-sub">% of threshold exceeded</div>
+    </div>
+  </div>
+
+  <!-- DISCARD VOLUME TABLE -->
+  <div class="section-label" style="margin-bottom:0.75rem;">Discard Volume Reference</div>
+  <div class="section-title">How Much to Waste Before Your Sample — By Catheter and Line Type</div>
+  <div style="background:var(--surface);border:1px solid var(--border-lt);border-radius:var(--r);overflow:hidden;margin-bottom:2rem;box-shadow:var(--shadow-sm);">
+    <table class="discard-table">
+      <thead>
+        <tr><th>Access Type</th><th>Dead Volume (mL)</th><th>Discard (1.5–2×)</th><th>Hemolysis Risk</th><th>Sample Reliability</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>14G PIV — short</strong></td>
+          <td style="font-family:'JetBrains Mono',monospace;">0.02</td>
+          <td>0.03–0.04 mL <div class="disc-bar"><div class="disc-bar-fill" style="width:4%"></div></div></td>
+          <td><span class="risk-badge" style="background:rgba(126,156,132,0.12);color:var(--sage);">Low</span></td>
+          <td style="font-size:0.78rem;color:var(--text-2);">High — large bore, low shear</td>
+        </tr>
+        <tr>
+          <td><strong>18G PIV — standard</strong></td>
+          <td style="font-family:'JetBrains Mono',monospace;">0.016</td>
+          <td>0.024–0.032 mL <div class="disc-bar"><div class="disc-bar-fill" style="width:8%"></div></div></td>
+          <td><span class="risk-badge" style="background:rgba(126,156,132,0.12);color:var(--sage);">Low–Mod</span></td>
+          <td style="font-size:0.78rem;color:var(--text-2);">Good — depends on draw rate</td>
+        </tr>
+        <tr>
+          <td><strong>20G PIV — common</strong></td>
+          <td style="font-family:'JetBrains Mono',monospace;">0.010</td>
+          <td>0.015–0.020 mL <div class="disc-bar"><div class="disc-bar-fill" style="width:12%"></div></div></td>
+          <td><span class="risk-badge" style="background:rgba(201,168,76,0.12);color:var(--gold);">Moderate</span></td>
+          <td style="font-size:0.78rem;color:var(--text-2);">Acceptable — draw slowly</td>
+        </tr>
+        <tr>
+          <td><strong>22G PIV — peds</strong></td>
+          <td style="font-family:'JetBrains Mono',monospace;">0.006</td>
+          <td>0.009–0.012 mL + tubing <div class="disc-bar"><div class="disc-bar-fill" style="width:20%"></div></div></td>
+          <td><span class="risk-badge" style="background:rgba(184,112,112,0.12);color:var(--rose);">High</span></td>
+          <td style="font-size:0.78rem;color:var(--text-2);">K⁺/LDH falsely elevated common</td>
+        </tr>
+        <tr>
+          <td><strong>Extension set + PIV</strong></td>
+          <td style="font-family:'JetBrains Mono',monospace;">0.5–2.0 mL</td>
+          <td>0.75–4 mL <div class="disc-bar"><div class="disc-bar-fill" style="width:55%;background:var(--rose)"></div></div></td>
+          <td><span class="risk-badge" style="background:rgba(184,112,112,0.12);color:var(--rose);">High</span></td>
+          <td style="font-size:0.78rem;color:var(--text-2);">Often underdiscarded → sample error</td>
+        </tr>
+        <tr>
+          <td><strong>Navi (Venocare)</strong></td>
+          <td style="font-family:'JetBrains Mono',monospace;">Controlled</td>
+          <td>Protocol-defined <div class="disc-bar"><div class="disc-bar-fill" style="width:10%;background:#4A8ACA"></div></div></td>
+          <td><span class="risk-badge" style="background:rgba(74,138,202,0.12);color:#4A8ACA;">Minimized</span></td>
+          <td style="font-size:0.78rem;color:var(--text-2);">Engineered to eliminate shear hemolysis</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- HISTORY TIMELINE -->
+  <div class="section-label" style="margin-bottom:1rem;">Historical Record</div>
+  <div class="tl-items">
+    <div class="tl-item">
+      <div class="tl-year">1901</div>
+      <div class="tl-dot" style="background:var(--text-3)"></div>
+      <div>
+        <div class="tl-title">Blood Typing — When Sample Integrity Became Life-or-Death</div>
+        <p class="tl-desc">Karl Landsteiner's ABO blood group discovery (Nobel 1930) established the stakes for sample integrity. A hemolyzed sample that falsely agglutinates creates mistyping risk. Hemolysis wasn't just a lab inconvenience — it became a patient safety issue the moment transfusion medicine emerged.</p>
+        <span class="tl-tag" style="background:rgba(158,130,114,0.15);color:var(--text-3);">Foundation</span>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">1960s</div>
+      <div class="tl-dot" style="background:var(--gold)"></div>
+      <div>
+        <div class="tl-title">Vacutainer System — The Modern Blood Draw Standard</div>
+        <p class="tl-desc">Becton Dickinson's evacuated tube system created the first standardized negative-pressure blood collection method. The calibrated vacuum matched to expected blood volume controlled draw rate — the first engineering solution to hemolysis from excessive negative pressure, though largely empirical rather than physics-derived.</p>
+        <span class="tl-tag" style="background:rgba(201,168,76,0.15);color:var(--gold);">Technology</span>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">1970s</div>
+      <div class="tl-dot" style="background:var(--rose)"></div>
+      <div>
+        <div class="tl-title">IV-Draw Hemolysis — First Clinical Documentation</div>
+        <p class="tl-desc">As peripheral IV access became routine, nurses began drawing blood from existing catheters to avoid repeat venipuncture. The first systematic documentation of hemolysis rates from catheter-drawn samples appeared — elevated potassium, LDH, and bilirubin traced to red cell rupture during aspiration through small-bore catheters.</p>
+        <span class="tl-tag" style="background:rgba(184,112,112,0.15);color:var(--rose);">Problem Recognition</span>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">1990s</div>
+      <div class="tl-dot" style="background:var(--sage)"></div>
+      <div>
+        <div class="tl-title">Shear Stress Quantification in Blood Draws</div>
+        <p class="tl-desc">Biomedical engineering studies applied the Hagen-Poiseuille model to syringe blood draws, quantifying the shear stress experienced by erythrocytes at different gauge-flow rate combinations. The 150 Pa threshold for membrane rupture was established. Studies showed that 22G and smaller catheters exceed this threshold at any clinically useful draw speed.</p>
+        <span class="tl-tag" style="background:rgba(126,156,132,0.15);color:var(--sage);">Science</span>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">2000s</div>
+      <div class="tl-dot" style="background:var(--accent)"></div>
+      <div>
+        <div class="tl-title">ED "Nurse-Draw" Controversy — The Clinical Debate</div>
+        <p class="tl-desc">Emergency departments adopted IV catheter blood draw as a standard practice during line placement — saving time and patient pain. Large studies showed hemolysis rates of 8–15% in catheter-drawn samples vs 1–2% in venipuncture draws. The College of American Pathologists flagged IV-drawn specimens as a leading cause of reportable lab errors.</p>
+        <span class="tl-tag" style="background:rgba(188,114,80,0.15);color:var(--accent);">Clinical Debate</span>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">2024</div>
+      <div class="tl-dot" style="background:#4A8ACA"></div>
+      <div>
+        <div class="tl-title">Navi — FDA 510(k) K244047 · Venocare Inc.</div>
+        <p class="tl-desc">The first FDA-cleared device engineered specifically for needle-free blood collection through existing peripheral IV catheters. Rather than eliminating catheter-draw (which nurses will continue regardless), Navi controls the negative pressure profile to stay below hemolysis threshold — making what clinicians already do, safe.</p>
+        <span class="tl-tag" style="background:rgba(74,138,202,0.15);color:#4A8ACA;">Clinical Innovation</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PEARLS -->
+  <div class="pearls">
+    <div class="pearl">
+      <div class="pearl-icon">🩸</div>
+      <div class="pearl-title">Potassium: The Canary</div>
+      <p class="pearl-text">Erythrocytes contain 100× more potassium than plasma. A 1% hemolysis rate can raise serum K⁺ by 0.5 mEq/L. A hemolyzed sample reporting K⁺ of 5.8 may reflect a true value of 4.2 — the difference between treating a life-threatening arrhythmia and triggering iatrogenic harm with calcium and insulin.</p>
+    </div>
+    <div class="pearl">
+      <div class="pearl-icon">⏱️</div>
+      <div class="pearl-title">Slower Is Almost Always Better</div>
+      <p class="pearl-text">Shear stress scales with flow rate cubed (τ ∝ Q/r³). Pulling at 2 mL/min vs 10 mL/min reduces shear stress by 80%. Most clinicians draw as fast as possible — which is the worst thing to do with a small-gauge catheter. The correct technique: slow, steady pull over 30–60 seconds for a 5 mL sample.</p>
+    </div>
+    <div class="pearl">
+      <div class="pearl-icon">🧪</div>
+      <div class="pearl-title">The Discard Volume Myth</div>
+      <p class="pearl-text">Discard volume rules (2× dead space) were designed to clear IV fluid from the line — not to eliminate hemolyzed cells. Even after proper discard, cells that passed through the high-shear zone at the catheter tip are already damaged. Discard doesn't fix hemolysis; only reducing shear does.</p>
+    </div>
+    <div class="pearl">
+      <div class="pearl-icon">💙</div>
+      <div class="pearl-title">Why Nurses Keep Drawing Through IVs</div>
+      <p class="pearl-text">A patient with a running IV who needs a CBC faces two options: second venipuncture (pain, delay, skill required) or draw through existing access (fast, painless, one stick). Nurses choose the latter for patients — not for convenience. The clinical need is real. The engineering solution is controlling the physics of the draw.</p>
+    </div>
+  </div>
+
+  <!-- NAVI PANEL -->
+  <div class="navi-panel">
+    <div class="navi-header">
+      <div class="navi-kicker">Venocare Inc. · Navi Device · FDA 510(k) K244047</div>
+      <div class="navi-title">Needle-free blood draw that <em>respects the physics.</em></div>
+      <p class="navi-desc">Navi draws blood samples through existing peripheral IV catheters using a controlled negative pressure profile engineered to stay below the hemolysis threshold — regardless of operator technique. The device eliminates the variable of how fast a nurse pulls the plunger, replacing human variability with physics-controlled aspiration.</p>
+    </div>
+    <div class="navi-cards">
+      <div class="navi-card">
+        <div class="nc-label">Hemolysis Control</div>
+        <div class="nc-val">Shear stress &lt; 150 Pa</div>
+        <p class="nc-desc">Pressure profile maintained below erythrocyte rupture threshold regardless of operator pull speed</p>
+      </div>
+      <div class="navi-card">
+        <div class="nc-label">Patient Benefit</div>
+        <div class="nc-val">Zero additional venipunctures</div>
+        <p class="nc-desc">Draws from existing catheter — no second needle, no needle anxiety, no vascular injury at second site</p>
+      </div>
+      <div class="navi-card">
+        <div class="nc-label">Lab Integrity</div>
+        <div class="nc-val">Sample quality = venipuncture</div>
+        <p class="nc-desc">Hemolysis rates equivalent to gold-standard venipuncture draw, eliminating the leading cause of IV-draw lab errors</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="nav-footer">
+  <a href="/education/catheter-lab/01-reflux.html" class="nav-link"><span>←</span><div><div class="nav-link-label">Previous</div>Catheter Reflux</div></a>
+  <a href="/education/catheter-lab/03-medication-surge.html" class="nav-link"><div style="text-align:right"><div class="nav-link-label">Next Module</div>Medication Surge</div><span>→</span></a>
+</div>
+
+<script>
+const cv = document.getElementById('drawCanvas');
+const ctx = cv.getContext('2d');
+let aT = 0;
+const GAUGE_DATA = {
+  14:{r:0.80, label:'14G'}, 16:{r:0.635, label:'16G'}, 18:{r:0.51, label:'18G'},
+  20:{r:0.40, label:'20G'}, 22:{r:0.32, label:'22G'}, 24:{r:0.255, label:'24G'}
+};
+let currentGauge = 20;
+let drawRate = 5; // mL/min
+let syringeSize = 10;
+let progress = 0;
+
+function resize() { cv.width = cv.offsetWidth; cv.height = 360; }
+resize();
+window.addEventListener('resize', resize);
+
+function setGauge(g, btn) {
+  currentGauge = g;
+  document.querySelectorAll('.g-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  updateDraw();
+}
+
+function calcShear(gauge, qMlMin) {
+  const r = GAUGE_DATA[gauge].r * 0.001; // m
+  const Q = qMlMin / 60 / 1000; // m³/s
+  const eta = 0.003; // Pa·s blood viscosity
+  return (4 * eta * Q) / (Math.PI * Math.pow(r, 3));
+}
+
+function updateDraw() {
+  drawRate = +document.getElementById('drawRateSlider').value;
+  syringeSize = +document.getElementById('syringeSlider').value;
+  document.getElementById('drawRateVal').textContent = drawRate.toFixed(1);
+  document.getElementById('syringeVal').textContent = syringeSize;
+
+  const tau = calcShear(currentGauge, drawRate);
+  const pct = Math.min(100, (tau / 300) * 100);
+  const isHem = tau > 150;
+
+  document.getElementById('tauVal').textContent = tau.toFixed(1) + ' Pa';
+  document.getElementById('hemBar').style.width = pct + '%';
+  document.getElementById('hemBar').style.background = isHem ? '#C04040' : tau > 80 ? '#C9A84C' : '#7E9C84';
+  document.getElementById('hemWarning').style.display = isHem ? 'block' : 'none';
+
+  const maxQ = (Math.PI * Math.pow(GAUGE_DATA[currentGauge].r * 0.001, 4) * 13332) / (8 * 0.003 * 0.032) / 0.001 * 60;
+  document.getElementById('resShear').textContent = tau.toFixed(0);
+  document.getElementById('resShear').style.color = isHem ? '#C04040' : tau > 80 ? '#C9A84C' : '#7E9C84';
+  document.getElementById('resFlow').textContent = maxQ.toFixed(0);
+  document.getElementById('resHem').textContent = isHem ? Math.round((tau / 150 - 1) * 100) + '%' : 'OK';
+  document.getElementById('resHem').style.color = isHem ? '#C04040' : '#7E9C84';
+}
+
+function drawSim() {
+  const W = cv.width, H = cv.height;
+  aT += 0.014;
+  ctx.clearRect(0, 0, W, H);
+  ctx.fillStyle = '#F6F0E8';
+  ctx.fillRect(0, 0, W, H);
+
+  const tau = calcShear(currentGauge, drawRate);
+  const isHem = tau > 150;
+  const r_mm = GAUGE_DATA[currentGauge].r;
+  const displayR = Math.max(6, r_mm * 18);
+
+  progress = (progress + drawRate / (syringeSize * 60) * 0.5) % 1;
+
+  // === Syringe ===
+  const syX = 60, syY = H * 0.25;
+  const syH = H * 0.5, syW = 50;
+
+  // Syringe body
+  ctx.strokeStyle = 'rgba(40,24,12,0.2)'; ctx.lineWidth = 1.5;
+  ctx.fillStyle = 'rgba(255,255,255,0.5)';
+  ctx.beginPath(); ctx.roundRect(syX, syY, syW, syH, [0, 0, 4, 4]); ctx.fill(); ctx.stroke();
+
+  // Plunger
+  const plungerY = syY + (1 - progress) * syH * 0.85;
+  ctx.fillStyle = '#BC7250';
+  ctx.fillRect(syX + 4, plungerY, syW - 8, 10);
+  ctx.fillStyle = 'rgba(40,24,12,0.2)';
+  ctx.fillRect(syX + syW/2 - 3, plungerY - syH * 0.3, 6, syH * 0.3 + 2);
+
+  // Fluid in syringe
+  const fluidColor = isHem ? `rgba(139,26,26,${0.6 + progress * 0.3})` : `rgba(139,26,26,${0.6})`;
+  const fluidH = progress * syH * 0.82;
+  ctx.fillStyle = fluidColor;
+  ctx.beginPath();
+  ctx.roundRect(syX + 2, syY + syH - fluidH - 2, syW - 4, fluidH, [0, 0, 3, 3]);
+  ctx.fill();
+
+  // Hemolysis particles in syringe
+  if (isHem && progress > 0.1) {
+    for (let i = 0; i < 8; i++) {
+      const px = syX + 8 + Math.random() * (syW - 16);
+      const py = syY + syH - fluidH + Math.random() * fluidH;
+      ctx.beginPath(); ctx.arc(px, py, 2, 0, Math.PI*2);
+      ctx.fillStyle = 'rgba(255,200,180,0.5)'; ctx.fill();
+    }
+  }
+
+  // Syringe tip / needle connector
+  ctx.fillStyle = '#BC7250';
+  ctx.beginPath(); ctx.roundRect(syX + syW/2 - 4, syY + syH, 8, 16, [0, 0, 4, 4]); ctx.fill();
+
+  // === Catheter tube ===
+  const cathStartX = syX + syW/2, cathStartY = syY + syH + 16;
+  const cathEndX = W * 0.62, cathEndY = H * 0.68;
+
+  // Tube outline
+  ctx.strokeStyle = 'rgba(40,24,12,0.1)'; ctx.lineWidth = displayR * 2 + 4;
+  ctx.beginPath(); ctx.moveTo(cathStartX, cathStartY); ctx.lineTo(cathEndX, cathEndY); ctx.stroke();
+
+  // Tube interior — blood flow
+  const bloodColor = isHem ? '#8B1A1A' : '#8B2020';
+  ctx.strokeStyle = bloodColor + 'CC'; ctx.lineWidth = displayR * 2;
+  ctx.beginPath(); ctx.moveTo(cathStartX, cathStartY); ctx.lineTo(cathEndX, cathEndY); ctx.stroke();
+
+  // Flow particles (going upward — being drawn)
+  const nParticles = 6;
+  for (let i = 0; i < nParticles; i++) {
+    const t = 1 - ((aT * drawRate * 0.06 + i / nParticles) % 1);
+    const px = cathStartX + (cathEndX - cathStartX) * t;
+    const py = cathStartY + (cathEndY - cathStartY) * t;
+    const particleColor = isHem && t > 0.7 ? 'rgba(255,200,160,0.8)' : `rgba(220,80,80,0.8)`;
+    ctx.beginPath(); ctx.arc(px, py, Math.max(2, displayR * 0.7), 0, Math.PI*2);
+    ctx.fillStyle = particleColor; ctx.fill();
+  }
+
+  // Shear stress arrows in catheter
+  const midX = (cathStartX + cathEndX) / 2, midY = (cathStartY + cathEndY) / 2;
+  const perpLen = displayR * 2.5;
+  const angle = Math.atan2(cathEndY - cathStartY, cathEndX - cathStartX);
+  const perpAngle = angle - Math.PI/2;
+  // Velocity profile arrows
+  for (let i = -2; i <= 2; i++) {
+    const frac = i / 2; // -1 to 1 across lumen
+    const vFrac = 1 - frac * frac; // parabolic
+    const arrowLen = vFrac * 18;
+    const px = midX + Math.cos(perpAngle) * frac * displayR;
+    const py = midY + Math.sin(perpAngle) * frac * displayR;
+    ctx.beginPath();
+    ctx.moveTo(px, py);
+    ctx.lineTo(px - Math.cos(angle) * arrowLen, py - Math.sin(angle) * arrowLen);
+    ctx.strokeStyle = isHem ? 'rgba(255,180,100,0.5)' : 'rgba(200,100,80,0.4)';
+    ctx.lineWidth = 1.5; ctx.stroke();
+  }
+
+  // Shear stress label
+  ctx.fillStyle = isHem ? '#C04040' : '#7E9C84';
+  ctx.font = '500 10px JetBrains Mono, monospace';
+  ctx.textAlign = 'center';
+  ctx.fillText('τ = ' + tau.toFixed(0) + ' Pa', midX + 40, midY - 20);
+  ctx.fillStyle = isHem ? 'rgba(184,112,112,0.6)' : 'rgba(126,156,132,0.6)';
+  ctx.font = '9px Nunito, sans-serif';
+  ctx.fillText(isHem ? '> 150 Pa RUPTURE' : '< 150 Pa safe', midX + 40, midY - 8);
+
+  // === Vessel / arm ===
+  const armGrad = ctx.createLinearGradient(0, H*0.62-16, 0, H*0.62+30);
+  armGrad.addColorStop(0, '#E8C4A8'); armGrad.addColorStop(1, '#D4A880');
+  ctx.fillStyle = armGrad;
+  ctx.beginPath(); ctx.roundRect(W*0.55, H*0.62-16, W*0.4, 46, 8); ctx.fill();
+
+  // Vein
+  ctx.fillStyle = '#6A1010';
+  ctx.beginPath(); ctx.roundRect(W*0.57, H*0.62-4, W*0.35, 18, 9); ctx.fill();
+
+  // Catheter tip in vein
+  ctx.fillStyle = '#BC7250';
+  ctx.beginPath(); ctx.roundRect(cathEndX - 6, cathEndY - 3, 20, 8, 4); ctx.fill();
+
+  // Gauge label
+  ctx.fillStyle = 'rgba(40,24,12,0.4)'; ctx.font = '500 9px Nunito, sans-serif';
+  ctx.fillText(GAUGE_DATA[currentGauge].label + ' (r=' + r_mm + 'mm)', cathEndX - 20, cathEndY + 24);
+
+  ctx.textAlign = 'left';
+  requestAnimationFrame(drawSim);
+}
+updateDraw();
+drawSim();
+</script>
+</body>
+</html>

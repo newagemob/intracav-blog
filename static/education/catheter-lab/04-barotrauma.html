@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barotrauma — The Catheter Lab</title>
+<script src="https://unpkg.com/htmx.org@1.9.10"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Nunito:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #EDE4D5; --surface: #F6F0E8;
+    --border: #D4C7B5; --border-lt: #E2D8CC;
+    --text: #28180C; --text-2: #685040; --text-3: #9E8272;
+    --accent: #BC7250; --accent-lt: #E8C4A8;
+    --sage: #7E9C84; --rose: #B87070; --gold: #C9A84C;
+    --danger: #C04040; --warning: #D08040;
+    --shadow-sm: 0 1px 8px rgba(40,24,12,0.06), 0 0 0 1px rgba(40,24,12,0.04);
+    --r: 16px; --r-sm: 10px;
+  }
+  body { font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+  body::after { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E"); opacity: 0.028; pointer-events: none; z-index: 9999; }
+  nav { display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 3rem; border-bottom: 1px solid var(--border-lt); background: rgba(237,228,213,0.85); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100; }
+  .nav-left { display: flex; align-items: center; gap: 1rem; }
+  .nav-back { font-size: 0.8rem; color: var(--text-3); text-decoration: none; transition: color 200ms; }
+  .nav-back:hover { color: var(--accent); }
+  .nav-sep { color: var(--border); }
+  .hero { padding: 4rem 3rem 2.5rem; display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: end; border-bottom: 1px solid var(--border-lt); max-width: 1100px; margin: 0 auto; }
+  .module-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--danger); display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.75rem; }
+  .module-label::before { content: '04'; font-family: 'JetBrains Mono', monospace; color: var(--accent); }
+  h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 400; line-height: 1.1; margin-bottom: 1rem; }
+  h1 em { font-style: italic; color: var(--text-2); }
+  .hero-desc { font-size: 0.92rem; line-height: 1.7; color: var(--text-2); font-weight: 300; max-width: 500px; }
+  .hero-eq { background: var(--surface); border: 1px solid var(--border-lt); border-radius: var(--r); padding: 1.75rem 2rem; text-align: center; min-width: 240px; }
+  .eq-row { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--text); margin-bottom: 0.5rem; }
+  .eq-name { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3); margin-top: 0.4rem; }
+  .frac { display: inline-flex; flex-direction: column; align-items: center; vertical-align: middle; }
+  .frac .num { border-bottom: 1.5px solid var(--text-2); padding: 0 4px 3px; }
+  .frac .den { padding: 3px 4px 0; }
+  .main { max-width: 1100px; margin: 0 auto; padding: 2.5rem 3rem; }
+  .section-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3); margin-bottom: 0.2rem; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; margin-bottom: 1.25rem; }
+
+  /* Barotrauma simulator */
+  .baro-section { background: var(--surface); border: 1px solid var(--border-lt); border-radius: var(--r); overflow: hidden; margin-bottom: 2rem; box-shadow: var(--shadow-sm); }
+  .baro-header { padding: 1.5rem 2rem; border-bottom: 1px solid var(--border-lt); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+  .baro-body { display: grid; grid-template-columns: 1.3fr 1fr; }
+  #baroCanvas { width: 100%; height: 400px; display: block; border-right: 1px solid var(--border-lt); }
+  .baro-panel { padding: 1.75rem; display: flex; flex-direction: column; gap: 1.1rem; }
+
+  /* Pressure gauge arc */
+  .pressure-arc { background: var(--bg); border-radius: var(--r-sm); padding: 1.25rem; text-align: center; }
+  .pa-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); margin-bottom: 0.5rem; }
+  #pressureArcCanvas { width: 100%; height: 100px; display: block; }
+  .pa-val { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 300; }
+  .pa-unit { font-size: 0.72rem; color: var(--text-3); }
+
+  .ctrl { display: flex; flex-direction: column; gap: 0.4rem; }
+  .ctrl-row { display: flex; justify-content: space-between; }
+  .ctrl-name { font-size: 0.78rem; font-weight: 600; color: var(--text-2); }
+  .ctrl-val { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--accent); }
+  .ctrl-unit { font-size: 0.65rem; color: var(--text-3); }
+  input[type=range] { -webkit-appearance: none; width: 100%; height: 4px; background: var(--border); border-radius: 100px; outline: none; cursor: pointer; }
+  input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 0 4px rgba(188,114,80,0.15); }
+
+  /* Injury progression */
+  .injury-stages { display: flex; flex-direction: column; gap: 0; border: 1px solid var(--border-lt); border-radius: var(--r); overflow: hidden; margin-bottom: 2rem; }
+  .injury-stage { display: grid; grid-template-columns: 120px 1fr auto; align-items: center; padding: 1.1rem 1.5rem; gap: 1.25rem; border-bottom: 1px solid var(--border-lt); transition: background 300ms; }
+  .injury-stage:last-child { border-bottom: none; }
+  .injury-stage.active { background: rgba(184,112,112,0.06); }
+  .is-pressure { font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; }
+  .is-title { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; }
+  .is-desc { font-size: 0.75rem; color: var(--text-2); font-weight: 300; line-height: 1.5; }
+  .is-badge { font-size: 0.65rem; font-weight: 600; padding: 0.2rem 0.65rem; border-radius: 100px; white-space: nowrap; }
+  .is-bar { height: 4px; border-radius: 100px; margin-top: 0.35rem; background: var(--border-lt); overflow: hidden; }
+  .is-bar-fill { height: 100%; border-radius: 100px; }
+
+  /* Vesicant table */
+  .vesicant-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+  .ves-card { background: var(--surface); border: 1px solid var(--border-lt); border-radius: var(--r-sm); padding: 1.1rem 1.25rem; box-shadow: var(--shadow-sm); }
+  .vc-name { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; margin-bottom: 0.5rem; }
+  .vc-row { display: flex; justify-content: space-between; font-size: 0.72rem; padding: 0.18rem 0; }
+  .vc-key { color: var(--text-3); }
+  .vc-val { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; }
+  .vc-risk { font-size: 0.62rem; font-weight: 600; padding: 0.12rem 0.5rem; border-radius: 100px; margin-top: 0.4rem; display: inline-block; }
+
+  /* Timeline */
+  .tl-items { display: flex; flex-direction: column; gap: 0; margin-bottom: 2rem; }
+  .tl-item { display: flex; gap: 1.5rem; padding: 1.25rem 0; border-bottom: 1px solid var(--border-lt); }
+  .tl-item:last-child { border-bottom: none; }
+  .tl-year { font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: var(--accent); min-width: 60px; padding-top: 0.2rem; }
+  .tl-dot { width: 10px; height: 10px; border-radius: 50%; margin-top: 0.3rem; flex-shrink: 0; }
+  .tl-title { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; margin-bottom: 0.3rem; }
+  .tl-desc { font-size: 0.8rem; line-height: 1.65; color: var(--text-2); font-weight: 300; }
+  .tl-tag { display: inline-block; font-size: 0.62rem; font-weight: 600; padding: 0.15rem 0.55rem; border-radius: 100px; margin-top: 0.4rem; }
+
+  /* Pearls */
+  .pearls { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+  .pearl { background: var(--surface); border: 1px solid var(--border-lt); border-radius: var(--r-sm); padding: 1.25rem 1.5rem; box-shadow: var(--shadow-sm); }
+  .pearl-icon { font-size: 1.4rem; margin-bottom: 0.75rem; }
+  .pearl-title { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; margin-bottom: 0.5rem; }
+  .pearl-text { font-size: 0.8rem; line-height: 1.65; color: var(--text-2); font-weight: 300; }
+
+  /* Big Dark Insight */
+  .insight-dark { background: var(--text); border-radius: var(--r); padding: 2.5rem; margin-bottom: 2rem; }
+  .id-kicker { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--rose); margin-bottom: 0.5rem; }
+  .id-title { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: #F0E8E0; margin-bottom: 0.75rem; font-weight: 300; }
+  .id-title em { font-style: italic; color: var(--accent-lt); }
+  .id-desc { font-size: 0.82rem; line-height: 1.75; color: #6A5A4A; font-weight: 300; }
+  .id-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(255,255,255,0.05); margin-top: 1.75rem; border-radius: var(--r-sm); overflow: hidden; }
+  .id-cell { background: rgba(255,255,255,0.02); padding: 1.25rem 1.5rem; }
+  .id-cell-label { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3); margin-bottom: 0.4rem; }
+  .id-cell-val { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: #E0D8D0; }
+
+  .nav-footer { display: flex; justify-content: space-between; align-items: center; padding: 2rem 3rem; border-top: 1px solid var(--border-lt); max-width: 1100px; margin: 0 auto; }
+  .nav-link { text-decoration: none; color: var(--text-3); font-size: 0.82rem; transition: color 200ms; display: flex; align-items: center; gap: 0.5rem; }
+  .nav-link:hover { color: var(--accent); }
+  .nav-link-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+  .hero { animation: fadeUp 0.5s ease both; }
+  @media (max-width: 700px) { nav, .hero, .main, .nav-footer { padding-left: 1.25rem; padding-right: 1.25rem; } .hero, .baro-body, .id-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-left">
+    <a href="/education/catheter-lab/" class="nav-back">← Collection</a>
+    <span class="nav-sep">|</span>
+    <span style="font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--text-2);">The Catheter Lab</span>
+  </div>
+  <div class="nav-left">
+    <span style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--accent);">04 / 04</span>
+    <a href="/education/catheter-lab/03-medication-surge.html" class="nav-back">← Medication Surge</a>
+    <span class="nav-sep">|</span>
+    <a href="/education/catheter-lab/" class="nav-back">Collection →</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div>
+    <div class="module-label">Barotrauma — Pressure Injury & Extravasation</div>
+    <h1>Fluid under pressure<br><em>finds the wrong path.</em></h1>
+    <p class="hero-desc">When a catheter dislodges or a vein wall fails, infused fluid enters the interstitial space. Pressure builds. At 30 mmHg, capillary perfusion ceases. At greater pressures, compartment syndrome and irreversible ischemia begin — all from a routine saline drip through a misplaced IV.</p>
+  </div>
+  <div class="hero-eq">
+    <div class="eq-row">P<sub>comp</sub> = <span class="frac"><span class="num">F</span><span class="den">A</span></span></div>
+    <div class="eq-name">Compartment Pressure</div>
+    <div style="height:0.75rem"></div>
+    <div class="eq-row">ΔP<sub>perf</sub> = MAP − P<sub>comp</sub></div>
+    <div class="eq-name">Perfusion Pressure (must stay &gt;0)</div>
+    <div style="height:0.75rem"></div>
+    <div class="eq-row">Q<sub>extrav</sub> = <span class="frac"><span class="num">πr⁴ΔP</span><span class="den">8ηL</span></span></div>
+    <div class="eq-name">Extravasation Flow Rate</div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- BAROTRAUMA SIMULATOR -->
+  <div class="baro-section">
+    <div class="baro-header">
+      <div>
+        <div class="section-label">Live Simulator</div>
+        <div class="section-title" style="margin:0;font-family:'Cormorant Garamond',serif;font-size:1.3rem;">Extravasation pressure and tissue injury progression</div>
+      </div>
+      <div id="baroBadge" style="font-size:0.72rem;font-weight:600;padding:0.4rem 0.9rem;border-radius:100px;background:rgba(126,156,132,0.15);color:var(--sage);border:1px solid var(--sage);">● Patent — IV within vessel</div>
+    </div>
+    <div class="baro-body">
+      <canvas id="baroCanvas"></canvas>
+      <div class="baro-panel">
+        <div class="pressure-arc">
+          <div class="pa-label">Compartment Pressure</div>
+          <canvas id="pressureArcCanvas"></canvas>
+          <div class="pa-val"><span id="compPVal">—</span> <span class="pa-unit">mmHg</span></div>
+        </div>
+
+        <div class="ctrl">
+          <div class="ctrl-row">
+            <span class="ctrl-name">Infusion rate</span>
+            <span class="ctrl-val"><span id="infRateVal">100</span><span class="ctrl-unit"> mL/hr</span></span>
+          </div>
+          <input type="range" id="infRateSlider" min="10" max="500" step="10" value="100" oninput="updateBaro()">
+        </div>
+        <div class="ctrl">
+          <div class="ctrl-row">
+            <span class="ctrl-name">Catheter gauge</span>
+            <span class="ctrl-val"><span id="gaugeVal">20</span><span class="ctrl-unit">G</span></span>
+          </div>
+          <input type="range" id="gaugeSlider" min="14" max="24" step="2" value="20" oninput="updateBaro()">
+        </div>
+        <div class="ctrl">
+          <div class="ctrl-row">
+            <span class="ctrl-name">Extravasation volume</span>
+            <span class="ctrl-val"><span id="extravVolVal">0</span><span class="ctrl-unit"> mL</span></span>
+          </div>
+          <input type="range" id="extravSlider" min="0" max="80" step="1" value="0" oninput="updateBaro()">
+        </div>
+        <div class="ctrl">
+          <div class="ctrl-row">
+            <span class="ctrl-name">Tissue compartment size</span>
+            <span class="ctrl-val"><span id="compartVal">200</span><span class="ctrl-unit"> mL</span></span>
+          </div>
+          <input type="range" id="compartSlider" min="50" max="500" step="10" value="200" oninput="updateBaro()">
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:0.6rem;">
+          <div style="font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-3);">Drug type</div>
+          <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+            <button onclick="setDrug('saline',this)" style="padding:0.3rem 0.7rem;border:1px solid var(--border);border-radius:100px;font-size:0.7rem;font-weight:600;background:var(--bg);cursor:pointer;font-family:Nunito,sans-serif;" class="drug-select active">Saline (non-vesicant)</button>
+            <button onclick="setDrug('kci',this)" style="padding:0.3rem 0.7rem;border:1px solid var(--border);border-radius:100px;font-size:0.7rem;font-weight:600;background:var(--bg);cursor:pointer;font-family:Nunito,sans-serif;">KCl (irritant)</button>
+            <button onclick="setDrug('phenyto',this)" style="padding:0.3rem 0.7rem;border:1px solid var(--border);border-radius:100px;font-size:0.7rem;font-weight:600;background:var(--bg);cursor:pointer;font-family:Nunito,sans-serif;">Phenytoin (vesicant)</button>
+            <button onclick="setDrug('chemo',this)" style="padding:0.3rem 0.7rem;border:1px solid var(--border);border-radius:100px;font-size:0.7rem;font-weight:600;background:var(--bg);cursor:pointer;font-family:Nunito,sans-serif;">Chemotherapy (severe)</button>
+          </div>
+        </div>
+
+        <div id="baroWarning" style="display:none;background:rgba(184,112,112,0.1);border:1px solid var(--rose);border-radius:var(--r-sm);padding:0.9rem 1rem;font-size:0.78rem;color:var(--danger);line-height:1.5;font-weight:500;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INJURY STAGES -->
+  <div class="section-label" style="margin-bottom:0.75rem;">Pressure-Injury Progression</div>
+  <div class="section-title">From Infiltration to Compartment Syndrome</div>
+  <div class="injury-stages" id="injuryStages">
+    <div class="injury-stage" data-min="0" data-max="15">
+      <div>
+        <div class="is-pressure" style="color:var(--sage)">0–15 mmHg</div>
+        <div class="is-bar"><div class="is-bar-fill" style="width:25%;background:var(--sage)"></div></div>
+      </div>
+      <div>
+        <div class="is-title">Infiltration — Non-Vesicant</div>
+        <div class="is-desc">Non-vesicant fluid (saline, D5W) enters interstitial space. Swelling, coolness, discomfort. Tissue usually absorbs without permanent injury if flow stopped early. Reversible.</div>
+      </div>
+      <div class="is-badge" style="background:rgba(126,156,132,0.15);color:var(--sage);">Reversible</div>
+    </div>
+    <div class="injury-stage" data-min="15" data-max="30">
+      <div>
+        <div class="is-pressure" style="color:var(--gold)">15–30 mmHg</div>
+        <div class="is-bar"><div class="is-bar-fill" style="width:55%;background:var(--gold)"></div></div>
+      </div>
+      <div>
+        <div class="is-title">Progressive Edema — Capillary Compression Beginning</div>
+        <div class="is-desc">Interstitial pressure approaching capillary perfusion pressure. Microvascular flow begins to stagnate. Blistering possible. Vesicant drugs at this pressure cause progressive tissue necrosis.</div>
+      </div>
+      <div class="is-badge" style="background:rgba(201,168,76,0.15);color:var(--gold);">Urgent</div>
+    </div>
+    <div class="injury-stage" data-min="30" data-max="45">
+      <div>
+        <div class="is-pressure" style="color:var(--danger)">30–45 mmHg</div>
+        <div class="is-bar"><div class="is-bar-fill" style="width:75%;background:var(--danger)"></div></div>
+      </div>
+      <div>
+        <div class="is-title">Compartment Syndrome Threshold — Ischemia</div>
+        <div class="is-desc">30 mmHg = Whiteside's criterion for urgent fasciotomy. Capillary perfusion pressure (MAP − P_comp) approaches zero. Muscle ischemia begins. The <em>30 mmHg rule</em>: if within 30 mmHg of diastolic BP, surgical decompression is indicated.</div>
+      </div>
+      <div class="is-badge" style="background:rgba(192,64,64,0.15);color:var(--danger);">Surgical Emergency</div>
+    </div>
+    <div class="injury-stage" data-min="45" data-max="999">
+      <div>
+        <div class="is-pressure" style="color:#8B0000">&gt;45 mmHg</div>
+        <div class="is-bar"><div class="is-bar-fill" style="width:100%;background:#8B0000"></div></div>
+      </div>
+      <div>
+        <div class="is-title">Irreversible Ischemia — Rhabdomyolysis, Nerve Death</div>
+        <div class="is-desc">Sustained pressures above 45 mmHg for 6–8 hours produce irreversible nerve and muscle damage. Rhabdomyolysis, contracture (Volkmann's), and permanent neurological deficit. A routine IV that goes undetected for hours.</div>
+      </div>
+      <div class="is-badge" style="background:rgba(139,0,0,0.15);color:#8B0000;">Irreversible</div>
+    </div>
+  </div>
+
+  <!-- VESICANT TABLE -->
+  <div class="section-label" style="margin-bottom:0.75rem;">Vesicant / Irritant Drug Reference</div>
+  <div class="section-title">Extravasation Injury Risk by Drug Class</div>
+  <div class="vesicant-grid">
+    <div class="ves-card">
+      <div class="vc-name">Vancomycin</div>
+      <div class="vc-row"><span class="vc-key">Class</span><span class="vc-val">Irritant</span></div>
+      <div class="vc-row"><span class="vc-key">pH</span><span class="vc-val">3.0–5.0</span></div>
+      <div class="vc-row"><span class="vc-key">Osmolarity</span><span class="vc-val">~320 mOsm/L</span></div>
+      <div class="vc-row"><span class="vc-key">Extravasation Rx</span><span class="vc-val">Elevation, warm compress</span></div>
+      <div class="vc-risk" style="background:rgba(201,168,76,0.12);color:var(--gold);">Moderate irritant</div>
+    </div>
+    <div class="ves-card">
+      <div class="vc-name">Phenytoin</div>
+      <div class="vc-row"><span class="vc-key">Class</span><span class="vc-val">Vesicant</span></div>
+      <div class="vc-row"><span class="vc-key">pH</span><span class="vc-val">10–12</span></div>
+      <div class="vc-row"><span class="vc-key">Osmolarity</span><span class="vc-val">&gt;6,000 mOsm/L</span></div>
+      <div class="vc-row"><span class="vc-key">Extravasation Rx</span><span class="vc-val">Stop immediately, surgeon</span></div>
+      <div class="vc-risk" style="background:rgba(184,112,112,0.12);color:var(--rose);">Severe vesicant</div>
+    </div>
+    <div class="ves-card">
+      <div class="vc-name">Doxorubicin</div>
+      <div class="vc-row"><span class="vc-key">Class</span><span class="vc-val">DNA-binding vesicant</span></div>
+      <div class="vc-row"><span class="vc-key">pH</span><span class="vc-val">3.0–4.0</span></div>
+      <div class="vc-row"><span class="vc-key">Osmolarity</span><span class="vc-val">~280 mOsm/L</span></div>
+      <div class="vc-row"><span class="vc-key">Extravasation Rx</span><span class="vc-val">Dexrazoxane antidote</span></div>
+      <div class="vc-risk" style="background:rgba(139,0,0,0.12);color:#8B0000;">Life-altering necrosis</div>
+    </div>
+    <div class="ves-card">
+      <div class="vc-name">Potassium Chloride</div>
+      <div class="vc-row"><span class="vc-key">Class</span><span class="vc-val">Irritant/Vesicant</span></div>
+      <div class="vc-row"><span class="vc-key">pH</span><span class="vc-val">4.0–8.0</span></div>
+      <div class="vc-row"><span class="vc-key">Osmolarity</span><span class="vc-val">~1,000+ mOsm/L (conc)</span></div>
+      <div class="vc-row"><span class="vc-key">Extravasation Rx</span><span class="vc-val">Stop, hyaluronidase</span></div>
+      <div class="vc-risk" style="background:rgba(184,112,112,0.12);color:var(--rose);">High-risk irritant</div>
+    </div>
+    <div class="ves-card">
+      <div class="vc-name">Dopamine</div>
+      <div class="vc-row"><span class="vc-key">Class</span><span class="vc-val">Vasoconstrictor</span></div>
+      <div class="vc-row"><span class="vc-key">pH</span><span class="vc-val">2.5–5.5</span></div>
+      <div class="vc-row"><span class="vc-key">Osmolarity</span><span class="vc-val">Variable</span></div>
+      <div class="vc-row"><span class="vc-key">Extravasation Rx</span><span class="vc-val">Phentolamine infiltrate</span></div>
+      <div class="vc-risk" style="background:rgba(184,112,112,0.12);color:var(--rose);">Tissue necrosis / gangrene</div>
+    </div>
+    <div class="ves-card">
+      <div class="vc-name">Normal Saline</div>
+      <div class="vc-row"><span class="vc-key">Class</span><span class="vc-val">Non-vesicant</span></div>
+      <div class="vc-row"><span class="vc-key">pH</span><span class="vc-val">4.5–7.0</span></div>
+      <div class="vc-row"><span class="vc-key">Osmolarity</span><span class="vc-val">308 mOsm/L</span></div>
+      <div class="vc-row"><span class="vc-key">Extravasation Rx</span><span class="vc-val">Elevation, warm compress</span></div>
+      <div class="vc-risk" style="background:rgba(126,156,132,0.12);color:var(--sage);">Low risk (volume-dependent)</div>
+    </div>
+  </div>
+
+  <!-- HISTORY TIMELINE -->
+  <div class="section-label" style="margin-bottom:1rem;">Historical Record</div>
+  <div class="tl-items">
+    <div class="tl-item">
+      <div class="tl-year">1830s</div>
+      <div class="tl-dot" style="background:var(--text-3)"></div>
+      <div>
+        <div class="tl-title">Thomas Latta's Cholera IV — First Extravasation Deaths</div>
+        <p class="tl-desc">Thomas Latta's pioneering IV saline use in cholera patients (1832) saved many lives — but inadequate catheter technology meant frequent extravasation into surrounding tissue. The first documented deaths from IV-related tissue injury were volume-based — large volumes of saline extravasating into extremity compartments before anyone understood the pressure consequences.</p>
+        <span class="tl-tag" style="background:rgba(158,130,114,0.15);color:var(--text-3);">Foundation</span>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">1973</div>
+      <div class="tl-dot" style="background:var(--rose)"></div>
+      <div>
+        <div class="tl-title">Chemotherapy Extravasation — Formal Classification</div>
+        <p class="tl-desc">As cancer chemotherapy became widespread in the 1960s–70s, extravasation of vesicant drugs produced catastrophic soft tissue injuries — some requiring limb amputation. The 1973 publication by Larson and colleagues was among the first systematic clinical series documenting the mechanism: vesicant-induced DNA damage in surrounding cells creates a zone of progressive necrosis that expands even after the infusion is stopped.</p>
+        <span class="tl-tag" style="background:rgba(184,112,112,0.15);color:var(--rose);">Clinical Emergency</span>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">1979</div>
+      <div class="tl-dot" style="background:var(--gold)"></div>
+      <div>
+        <div class="tl-title">Whiteside's Compartment Pressure Criterion — 30 mmHg Rule</div>
+        <p class="tl-desc">Whiteside's 1979 landmark paper established 30 mmHg as the threshold above which compartment syndrome requires surgical decompression (fasciotomy). The criterion (fasciotomy when P_comp is within 30 mmHg of diastolic BP) became the clinical standard — applicable directly to extravasation-induced compartment syndrome from IV fluid accumulation in enclosed fascial compartments.</p>
+        <span class="tl-tag" style="background:rgba(201,168,76,0.15);color:var(--gold);">Clinical Standard</span>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">1985</div>
+      <div class="tl-dot" style="background:var(--sage)"></div>
+      <div>
+        <div class="tl-title">ONS Extravasation Guidelines — Vesicant Protocol Formalized</div>
+        <p class="tl-desc">The Oncology Nursing Society published the first comprehensive vesicant extravasation protocols, establishing drug-specific antidote regimens (hyaluronidase for vinca alkaloids, dexrazoxane for anthracyclines, phentolamine for vasopressors). The ONS framework transformed extravasation response from ad hoc to systematic — though recognition remained the persistent failure point.</p>
+        <span class="tl-tag" style="background:rgba(126,156,132,0.15);color:var(--sage);">Protocol Standards</span>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">2000s</div>
+      <div class="tl-dot" style="background:var(--accent)"></div>
+      <div>
+        <div class="tl-title">Electronic Pump Alarms — Pressure-Based Detection</div>
+        <p class="tl-desc">IV pump manufacturers integrated back-pressure sensing as a proxy for extravasation detection. If the downstream resistance drops (vessel lumen lost, fluid now entering low-resistance tissue), some pumps alarm on pressure deviation. However, these alarms are late — triggering only after significant volume has already extravasated. The detection gap remains a clinical problem.</p>
+        <span class="tl-tag" style="background:rgba(188,114,80,0.15);color:var(--accent);">Technology Gap</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PEARLS -->
+  <div class="pearls">
+    <div class="pearl">
+      <div class="pearl-icon">💥</div>
+      <div class="pearl-title">The 30 mmHg Rule</div>
+      <p class="pearl-text">Whiteside's criterion: fasciotomy is indicated when compartment pressure is within 30 mmHg of the patient's diastolic blood pressure. A patient with diastolic BP of 50 mmHg (septic) reaches the fasciotomy threshold at a compartment pressure of only 20 mmHg — lower than textbook examples assume. Hypotension dramatically narrows the safety window.</p>
+    </div>
+    <div class="pearl">
+      <div class="pearl-icon">⏰</div>
+      <div class="pearl-title">Phenytoin: The Purple Glove Syndrome</div>
+      <p class="pearl-text">Phenytoin (pH 10–12, osmolarity &gt;6,000 mOsm/L) causes a unique extravasation syndrome: progressive purple discoloration, blistering, and full-thickness necrosis — often without pain initially. The alkalinity and hypertonicity together destroy tissue. Onset can be delayed 24–48 hours after extravasation, making early recognition nearly impossible without awareness.</p>
+    </div>
+    <div class="pearl">
+      <div class="pearl-icon">🌡️</div>
+      <div class="pearl-title">Vasopressor Extravasation = Ischemic Gangrene</div>
+      <p class="pearl-text">Norepinephrine and dopamine extravasation causes intense local vasoconstriction through α-receptor activation in surrounding tissue — cutting off microvascular supply in addition to the pressure effect. Tissue can become necrotic within hours. Phentolamine (α-blocker) infiltrated around the extravasation site is the antidote, but must be given within 12 hours.</p>
+    </div>
+    <div class="pearl">
+      <div class="pearl-icon">📐</div>
+      <div class="pearl-title">Flow Rate Determines Injury Window</div>
+      <p class="pearl-text">At 100 mL/hr, a missed extravasation accumulates 50 mL in 30 minutes — enough to elevate compartment pressure to dangerous levels in a small fascial compartment. At 500 mL/hr (rapid infusion), injury-threshold volume accumulates in 6 minutes. Flow rate determines not just severity, but the time window available for intervention.</p>
+    </div>
+  </div>
+
+  <!-- DARK INSIGHT -->
+  <div class="insight-dark">
+    <div class="id-kicker">The Synthesis — Across All Four Modules</div>
+    <div class="id-title">Every IV complication is <em>a pressure problem with a biological clock.</em></div>
+    <p class="id-desc">Reflux is reversed pressure gradient. Hemolysis is shear pressure across an RBC membrane. Medication surge is a concentration pressure event in the microcirculation. Barotrauma is fluid pressure in the wrong anatomical compartment. The unifying principle: physics is indifferent to anatomy. The body absorbs the consequence of every gradient, every stress, every uncontrolled force — until the biology fails. Teaching clinicians to see the physics is the first step. Making it computable is the second.</p>
+    <div class="id-grid">
+      <div class="id-cell">
+        <div class="id-cell-label">Reflux</div>
+        <div class="id-cell-val">ΔP gradient → clot in 2 min</div>
+      </div>
+      <div class="id-cell">
+        <div class="id-cell-label">Hemolysis</div>
+        <div class="id-cell-val">τ &gt; 150 Pa → K⁺ error</div>
+      </div>
+      <div class="id-cell">
+        <div class="id-cell-label">Med Surge</div>
+        <div class="id-cell-val">V_dead × C_drug → bolus dose</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="nav-footer">
+  <a href="/education/catheter-lab/03-medication-surge.html" class="nav-link"><span>←</span><div><div class="nav-link-label">Previous</div>Medication Surge</div></a>
+  <a href="/education/catheter-lab/" class="nav-link"><div style="text-align:right"><div class="nav-link-label">Return to</div>Collection</div><span>→</span></a>
+</div>
+
+<script>
+const bc = document.getElementById('baroCanvas');
+const bctx = bc.getContext('2d');
+const pac = document.getElementById('pressureArcCanvas');
+const pactx = pac.getContext('2d');
+let bAnimT = 0;
+let drugType = 'saline';
+
+function resize() {
+  bc.width = bc.offsetWidth; bc.height = 400;
+  pac.width = pac.offsetWidth; pac.height = 100;
+}
+resize();
+window.addEventListener('resize', resize);
+
+const DRUGS = {
+  saline:  { color:'#4A8ACA', name:'Normal Saline', injuryMult:1.0 },
+  kci:     { color:'#C9A84C', name:'KCl Infusion', injuryMult:2.2 },
+  phenyto: { color:'#BC7250', name:'Phenytoin', injuryMult:4.5 },
+  chemo:   { color:'#C04040', name:'Chemotherapy', injuryMult:8.0 },
+};
+
+function setDrug(d, btn) {
+  drugType = d;
+  document.querySelectorAll('.drug-select').forEach(b => {
+    b.style.background = 'var(--bg)'; b.style.borderColor = 'var(--border)'; b.style.color = 'var(--text-2)';
+  });
+  btn.style.background = 'var(--accent)'; btn.style.borderColor = 'var(--accent)'; btn.style.color = 'white';
+  updateBaro();
+}
+document.querySelector('.drug-select').style.background = 'var(--accent)';
+document.querySelector('.drug-select').style.borderColor = 'var(--accent)';
+document.querySelector('.drug-select').style.color = 'white';
+
+function calcCompPressure(extravVol, compartSize) {
+  // Simplified: linear rise in pressure with volume, capped
+  const compliance = compartSize * 0.3; // mL per mmHg
+  return (extravVol / compliance) * 45;
+}
+
+let bp = { infRate:100, gauge:20, extravVol:0, compartSize:200 };
+
+function updateBaro() {
+  bp.infRate    = +document.getElementById('infRateSlider').value;
+  bp.gauge      = +document.getElementById('gaugeSlider').value;
+  bp.extravVol  = +document.getElementById('extravSlider').value;
+  bp.compartSize = +document.getElementById('compartSlider').value;
+  document.getElementById('infRateVal').textContent  = bp.infRate;
+  document.getElementById('gaugeVal').textContent    = bp.gauge;
+  document.getElementById('extravVolVal').textContent = bp.extravVol;
+  document.getElementById('compartVal').textContent  = bp.compartSize;
+
+  const compP = calcCompPressure(bp.extravVol, bp.compartSize);
+  document.getElementById('compPVal').textContent = compP.toFixed(0);
+
+  // Update injury stage highlights
+  document.querySelectorAll('.injury-stage').forEach(stage => {
+    const min = +stage.dataset.min, max = +stage.dataset.max;
+    stage.classList.toggle('active', compP >= min && compP < max);
+  });
+
+  // Warning message
+  const drug = DRUGS[drugType];
+  const warn = document.getElementById('baroWarning');
+  if (compP >= 30) {
+    warn.style.display = 'block';
+    warn.textContent = `⚠ SURGICAL EMERGENCY: Compartment pressure ${compP.toFixed(0)} mmHg with ${drug.name} — fasciotomy threshold reached. Stop infusion, elevate limb, surgical consult STAT.`;
+  } else if (compP >= 15 && drug.injuryMult > 1.5) {
+    warn.style.display = 'block';
+    warn.textContent = `⚡ URGENT: ${drug.name} extravasation at ${compP.toFixed(0)} mmHg. Drug has vesicant properties — progressive necrosis even at sub-threshold pressures. Stop infusion immediately, antidote per protocol.`;
+  } else if (bp.extravVol > 0) {
+    warn.style.display = 'block';
+    warn.style.color = 'var(--gold)';
+    warn.style.borderColor = 'var(--gold)';
+    warn.textContent = `⚡ Extravasation detected — ${compP.toFixed(0)} mmHg. Monitor closely. Pressure approaching capillary perfusion limit.`;
+  } else {
+    warn.style.display = 'none';
+  }
+
+  // Badge
+  const badge = document.getElementById('baroBadge');
+  if (compP >= 30) {
+    badge.textContent = '🔴 COMPARTMENT SYNDROME';
+    badge.style.cssText = 'font-size:0.72rem;font-weight:600;padding:0.4rem 0.9rem;border-radius:100px;background:rgba(192,64,64,0.15);color:#C04040;border:1px solid #C04040;';
+  } else if (bp.extravVol > 0) {
+    badge.textContent = '⚠ EXTRAVASATION IN PROGRESS';
+    badge.style.cssText = 'font-size:0.72rem;font-weight:600;padding:0.4rem 0.9rem;border-radius:100px;background:rgba(201,168,76,0.15);color:var(--gold);border:1px solid var(--gold);';
+  } else {
+    badge.textContent = '● Patent — IV within vessel';
+    badge.style.cssText = 'font-size:0.72rem;font-weight:600;padding:0.4rem 0.9rem;border-radius:100px;background:rgba(126,156,132,0.15);color:var(--sage);border:1px solid var(--sage);';
+  }
+}
+
+function drawPressureArc() {
+  const W = pac.width, H = pac.height;
+  pactx.clearRect(0, 0, W, H);
+  const compP = calcCompPressure(bp.extravVol, bp.compartSize);
+  const maxP = 60;
+  const pct = Math.min(1, compP / maxP);
+  const cx = W/2, cy = H - 12, r = Math.min(W/2 - 8, H - 20);
+  const startAngle = Math.PI, endAngle = 2 * Math.PI;
+
+  // Background arc
+  pactx.beginPath();
+  pactx.arc(cx, cy, r, startAngle, endAngle);
+  pactx.strokeStyle = 'rgba(40,24,12,0.08)';
+  pactx.lineWidth = 12;
+  pactx.stroke();
+
+  // Colored arc
+  const arcColor = compP >= 30 ? '#C04040' : compP >= 15 ? '#C9A84C' : '#7E9C84';
+  pactx.beginPath();
+  pactx.arc(cx, cy, r, startAngle, startAngle + pct * Math.PI);
+  pactx.strokeStyle = arcColor;
+  pactx.lineWidth = 10;
+  pactx.stroke();
+
+  // Zone markers
+  [15/maxP, 30/maxP, 45/maxP].forEach((frac, i) => {
+    const angle = Math.PI + frac * Math.PI;
+    const mx = cx + Math.cos(angle) * (r - 3);
+    const my = cy + Math.sin(angle) * (r - 3);
+    pactx.beginPath(); pactx.arc(mx, my, 3, 0, Math.PI*2);
+    pactx.fillStyle = i === 0 ? '#C9A84C' : i === 1 ? '#C04040' : '#8B0000';
+    pactx.fill();
+  });
+
+  // Threshold labels
+  pactx.font = '8px JetBrains Mono, monospace'; pactx.fillStyle = 'rgba(158,130,114,0.6)';
+  pactx.textAlign = 'left'; pactx.fillText('0', cx - r - 4, cy + 2);
+  pactx.textAlign = 'right'; pactx.fillText('60', cx + r + 4, cy + 2);
+  pactx.textAlign = 'center'; pactx.fillText('30⚠', cx - 2, cy - r - 4);
+}
+
+function drawBaro() {
+  const W = bc.width, H = bc.height;
+  bAnimT += 0.012;
+  bctx.clearRect(0, 0, W, H);
+
+  // Warm bg
+  bctx.fillStyle = '#F6F0E8';
+  bctx.fillRect(0, 0, W, H);
+
+  const compP = calcCompPressure(bp.extravVol, bp.compartSize);
+  const drug = DRUGS[drugType];
+  const isExtr = bp.extravVol > 0;
+
+  // ===== ARM CROSS-SECTION =====
+  const armCX = W * 0.5, armCY = H * 0.52;
+  const armR = Math.min(W, H) * 0.28;
+
+  // Skin
+  const skinGrad = bctx.createRadialGradient(armCX, armCY, armR * 0.85, armCX, armCY, armR);
+  skinGrad.addColorStop(0, '#E8C4A8');
+  skinGrad.addColorStop(1, '#D4A070');
+  bctx.beginPath(); bctx.arc(armCX, armCY, armR, 0, Math.PI * 2);
+  bctx.fillStyle = skinGrad; bctx.fill();
+
+  // Muscle compartment
+  const muscleR = armR * 0.72;
+  bctx.beginPath(); bctx.arc(armCX, armCY, muscleR, 0, Math.PI * 2);
+  bctx.fillStyle = '#C47A5A'; bctx.fill();
+
+  // Fascia
+  bctx.beginPath(); bctx.arc(armCX, armCY, muscleR, 0, Math.PI * 2);
+  bctx.strokeStyle = 'rgba(80,40,20,0.5)'; bctx.lineWidth = 2.5; bctx.stroke();
+
+  // Bone
+  bctx.beginPath(); bctx.arc(armCX, armCY, armR * 0.18, 0, Math.PI * 2);
+  bctx.fillStyle = '#D4C7B5'; bctx.fill();
+
+  // Vein (patent)
+  const veinX = armCX - armR * 0.35, veinY = armCY - armR * 0.3;
+  const veinR = isExtr ? armR * 0.04 : armR * 0.12;
+  bctx.beginPath(); bctx.arc(veinX, veinY, veinR, 0, Math.PI * 2);
+  bctx.fillStyle = isExtr ? '#6A1010' : '#1A3A7A'; bctx.fill();
+  if (!isExtr) {
+    // Flow in vein
+    bctx.beginPath(); bctx.arc(veinX, veinY, veinR * 0.6, 0, Math.PI * 2);
+    bctx.fillStyle = '#2A5ABA'; bctx.fill();
+  }
+
+  // Catheter entering from outside
+  const cathAngle = -0.7; // radians from top
+  const cathStartX = armCX + Math.cos(cathAngle) * (armR + 20);
+  const cathStartY = armCY + Math.sin(cathAngle) * (armR + 20);
+  const cathEndX = isExtr ? armCX + Math.cos(cathAngle) * armR * 0.6 : veinX;
+  const cathEndY = isExtr ? armCY + Math.sin(cathAngle) * armR * 0.6 : veinY;
+
+  bctx.beginPath(); bctx.moveTo(cathStartX, cathStartY); bctx.lineTo(cathEndX, cathEndY);
+  bctx.strokeStyle = '#BC7250'; bctx.lineWidth = 3; bctx.stroke();
+
+  // Extravasation fluid plume
+  if (isExtr && bp.extravVol > 0) {
+    const extravFrac = bp.extravVol / 80;
+    const extravRad = armR * 0.25 + extravFrac * armR * 0.35;
+    const extravGrad = bctx.createRadialGradient(cathEndX, cathEndY, 0, cathEndX, cathEndY, extravRad);
+    extravGrad.addColorStop(0, drug.color + 'AA');
+    extravGrad.addColorStop(0.6, drug.color + '44');
+    extravGrad.addColorStop(1, drug.color + '00');
+    bctx.beginPath(); bctx.arc(cathEndX, cathEndY, extravRad, 0, Math.PI * 2);
+    bctx.fillStyle = extravGrad; bctx.fill();
+
+    // Pressure arrows radiating outward
+    for (let i = 0; i < 8; i++) {
+      const arrAngle = (i / 8) * Math.PI * 2 + bAnimT * 0.1;
+      const arrStart = extravRad * 0.6;
+      const arrEnd = extravRad * 0.85;
+      const ax1 = cathEndX + Math.cos(arrAngle) * arrStart;
+      const ay1 = cathEndY + Math.sin(arrAngle) * arrStart;
+      const ax2 = cathEndX + Math.cos(arrAngle) * arrEnd;
+      const ay2 = cathEndY + Math.sin(arrAngle) * arrEnd;
+      bctx.beginPath(); bctx.moveTo(ax1, ay1); bctx.lineTo(ax2, ay2);
+      bctx.strokeStyle = `rgba(${compP >= 30 ? '192,64,64' : '201,168,76'},${0.4 + extravFrac * 0.4})`;
+      bctx.lineWidth = 1.5; bctx.stroke();
+    }
+
+    // Volume label
+    bctx.fillStyle = drug.color; bctx.font = '500 10px JetBrains Mono, monospace'; bctx.textAlign = 'center';
+    bctx.fillText(bp.extravVol + ' mL extravasated', armCX, armCY + armR + 22);
+  }
+
+  // Labels
+  bctx.fillStyle = 'rgba(40,24,12,0.35)'; bctx.font = '500 9px Nunito, sans-serif'; bctx.textAlign = 'center';
+  bctx.fillText('MUSCLE', armCX, armCY - 4);
+  bctx.fillStyle = 'rgba(40,24,12,0.25)'; bctx.font = '9px Nunito';
+  bctx.fillText('arm cross-section', armCX, armCY + armR + 10);
+
+  // Compartment pressure ring indicator
+  if (compP > 5) {
+    const ringAlpha = Math.min(0.6, compP / 60);
+    const ringColor = compP >= 30 ? `rgba(192,64,64,${ringAlpha})` : `rgba(201,168,76,${ringAlpha})`;
+    bctx.beginPath(); bctx.arc(armCX, armCY, muscleR - 4, 0, Math.PI * 2);
+    bctx.strokeStyle = ringColor; bctx.lineWidth = 4 + compP / 12; bctx.stroke();
+  }
+
+  drawPressureArc();
+  requestAnimationFrame(drawBaro);
+}
+updateBaro();
+drawBaro();
+</script>
+</body>
+</html>

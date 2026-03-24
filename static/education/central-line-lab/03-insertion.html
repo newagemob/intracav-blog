@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CVC Insertion — The Central Line Lab</title>
+<script src="https://unpkg.com/htmx.org@1.9.10"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Nunito:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{--bg:#EDE4D5;--surface:#F6F0E8;--border:#D4C7B5;--border-lt:#E2D8CC;--text:#28180C;--text-2:#685040;--text-3:#9E8272;--accent:#BC7250;--accent-lt:#E8C4A8;--sage:#7E9C84;--rose:#B87070;--gold:#C9A84C;--blue:#4A8ACA;--shadow-sm:0 1px 8px rgba(40,24,12,0.06),0 0 0 1px rgba(40,24,12,0.04);--r:16px;--r-sm:10px;}
+  body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+  body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");opacity:.028;pointer-events:none;z-index:9999}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 3rem;border-bottom:1px solid var(--border-lt);background:rgba(237,228,213,0.85);backdrop-filter:blur(12px);position:sticky;top:0;z-index:100}
+  .nl{display:flex;align-items:center;gap:1rem}
+  .nb{font-size:.8rem;color:var(--text-3);text-decoration:none;transition:color 200ms}.nb:hover{color:var(--accent)}
+  .ns{color:var(--border)}
+  .hero{padding:4rem 3rem 2.5rem;border-bottom:1px solid var(--border-lt);max-width:1100px;margin:0 auto}
+  .ml{font-size:.68rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:.6rem;margin-bottom:.75rem}
+  .ml::before{content:'03';font-family:'JetBrains Mono',monospace}
+  h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:400;line-height:1.1;margin-bottom:1rem}
+  h1 em{font-style:italic;color:var(--text-2)}
+  .hd{font-size:.92rem;line-height:1.7;color:var(--text-2);font-weight:300;max-width:680px}
+  .main{max-width:1100px;margin:0 auto;padding:2.5rem 3rem}
+  .sl{font-size:.65rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);margin-bottom:.2rem}
+  .st{font-family:'Cormorant Garamond',serif;font-size:1.35rem;margin-bottom:1.25rem}
+
+  /* Seldinger step-by-step */
+  .seldinger-section{background:var(--surface);border:1px solid var(--border-lt);border-radius:var(--r);overflow:hidden;margin-bottom:2rem;box-shadow:var(--shadow-sm)}
+  .seld-header{padding:1.5rem 2rem;border-bottom:1px solid var(--border-lt);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+  .seld-body{display:grid;grid-template-columns:1fr 1fr}
+  #seldingerCanvas{width:100%;height:420px;display:block;border-right:1px solid var(--border-lt)}
+  .seld-panel{padding:1.75rem;display:flex;flex-direction:column;gap:1rem;overflow-y:auto;max-height:420px}
+  .step-btn{padding:.65rem 1rem;border:1px solid var(--border);border-radius:var(--r-sm);font-size:.8rem;font-weight:600;font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text-2);cursor:pointer;transition:all 150ms;text-align:left;display:flex;align-items:flex-start;gap:.75rem}
+  .step-btn:hover{border-color:var(--accent);color:var(--text)}
+  .step-btn.active{background:var(--accent);border-color:var(--accent);color:white}
+  .step-num{font-family:'JetBrains Mono',monospace;font-size:.7rem;min-width:22px;margin-top:.1rem}
+  .step-title{font-weight:600;font-size:.82rem;display:block;margin-bottom:.2rem}
+  .step-detail{font-size:.72rem;font-weight:400;line-height:1.5;opacity:.8}
+  .step-info{background:var(--bg);border-radius:var(--r-sm);padding:1rem 1.25rem;font-size:.8rem;line-height:1.65;color:var(--text-2);font-weight:300;border-left:3px solid var(--accent)}
+  .step-warning{background:rgba(184,112,112,0.08);border:1px solid rgba(184,112,112,0.3);border-radius:var(--r-sm);padding:.9rem 1rem;font-size:.78rem;color:var(--rose);line-height:1.5;display:none}
+
+  /* Approach comparison */
+  .approach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:2rem}
+  .app-card{background:var(--surface);border:1px solid var(--border-lt);border-radius:var(--r-sm);padding:1.35rem;box-shadow:var(--shadow-sm);cursor:pointer;transition:all 200ms}
+  .app-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-sm)}
+  .app-name{font-family:'Cormorant Garamond',serif;font-size:1.1rem;margin-bottom:.6rem}
+  .app-row{display:flex;justify-content:space-between;font-size:.75rem;padding:.2rem 0;border-bottom:1px solid var(--border-lt)}
+  .app-row:last-child{border-bottom:none}
+  .app-key{color:var(--text-3)}
+  .app-val{font-family:'JetBrains Mono',monospace;font-size:.7rem}
+  .app-badge{font-size:.6rem;font-weight:700;padding:.15rem .5rem;border-radius:100px;margin-top:.5rem;display:inline-block}
+
+  /* Physics explainer */
+  .physics-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-bottom:2rem}
+  .phys-card{background:var(--surface);border:1px solid var(--border-lt);border-radius:var(--r-sm);padding:1.5rem;box-shadow:var(--shadow-sm)}
+  .pc-title{font-family:'Cormorant Garamond',serif;font-size:1.1rem;margin-bottom:.75rem}
+  .pc-eq{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--accent);margin-bottom:.6rem;background:var(--bg);padding:.6rem .9rem;border-radius:var(--r-sm);display:inline-block}
+  .pc-text{font-size:.8rem;line-height:1.65;color:var(--text-2);font-weight:300}
+
+  /* Complications table */
+  .comp-table{width:100%;border-collapse:collapse;margin-bottom:2rem}
+  .comp-table th{font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);padding:.5rem .75rem;border-bottom:1px solid var(--border);text-align:left;background:var(--surface)}
+  .comp-table td{padding:.9rem .75rem;border-bottom:1px solid var(--border-lt);font-size:.82rem}
+  .comp-table tr:last-child td{border-bottom:none}
+  .comp-name{font-family:'Cormorant Garamond',serif;font-size:1rem}
+  .risk-bar{height:6px;background:var(--border-lt);border-radius:100px;overflow:hidden;min-width:60px}
+  .risk-fill{height:100%;border-radius:100px}
+  .risk-badge{font-size:.65rem;font-weight:600;padding:.15rem .55rem;border-radius:100px}
+
+  .tl-items{display:flex;flex-direction:column;margin-bottom:2rem}
+  .tl-item{display:flex;gap:1.5rem;padding:1.25rem 0;border-bottom:1px solid var(--border-lt)}
+  .tl-item:last-child{border-bottom:none}
+  .tl-year{font-family:'JetBrains Mono',monospace;font-size:.85rem;color:var(--accent);min-width:60px;padding-top:.2rem}
+  .tl-dot{width:10px;height:10px;border-radius:50%;margin-top:.3rem;flex-shrink:0}
+  .tl-title{font-family:'Cormorant Garamond',serif;font-size:1.1rem;margin-bottom:.3rem}
+  .tl-desc{font-size:.8rem;line-height:1.65;color:var(--text-2);font-weight:300}
+  .tl-tag{display:inline-block;font-size:.62rem;font-weight:600;padding:.15rem .55rem;border-radius:100px;margin-top:.4rem}
+
+  .pearls{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem;margin-bottom:2rem}
+  .pearl{background:var(--surface);border:1px solid var(--border-lt);border-radius:var(--r-sm);padding:1.25rem 1.5rem;box-shadow:var(--shadow-sm)}
+  .pearl-icon{font-size:1.4rem;margin-bottom:.75rem}
+  .pearl-title{font-family:'Cormorant Garamond',serif;font-size:1.05rem;margin-bottom:.5rem}
+  .pearl-text{font-size:.8rem;line-height:1.65;color:var(--text-2);font-weight:300}
+
+  .nf{display:flex;justify-content:space-between;align-items:center;padding:2rem 3rem;border-top:1px solid var(--border-lt);max-width:1100px;margin:0 auto}
+  .nl2{text-decoration:none;color:var(--text-3);font-size:.82rem;transition:color 200ms;display:flex;align-items:center;gap:.5rem}
+  .nl2:hover{color:var(--accent)}
+  .nll{font-size:.65rem;text-transform:uppercase;letter-spacing:.1em}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+  .hero{animation:fadeUp .5s ease both}
+  @media(max-width:700px){nav,.hero,.main,.nf{padding-left:1.25rem;padding-right:1.25rem}.hero,.seld-body,.approach-grid,.physics-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nl"><a href="/education/central-line-lab/" class="nb">← Collection</a><span class="ns">|</span><span style="font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--text-2)">The Central Line Lab</span></div>
+  <div class="nl"><span style="font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--accent)">03 / 06</span><a href="/education/central-line-lab/02-picc.html" class="nb">← PICC</a><span class="ns">|</span><a href="/education/central-line-lab/04-tip-position.html" class="nb">Tip Position →</a></div>
+</nav>
+
+<div class="hero">
+  <div class="ml">CVC / CICC Insertion & Seldinger Technique</div>
+  <h1>Seven steps.<br><em>Seventy years unchanged.</em></h1>
+  <p class="hd">Sven-Ivar Seldinger published his wire-exchange technique in 1953 in Acta Radiologica — one page, six illustrations. It remains the universal method for every central venous catheter insertion. Understanding the physics of each step is the foundation of doing it safely.</p>
+</div>
+
+<div class="main">
+
+  <!-- SELDINGER STEP-BY-STEP -->
+  <div class="seldinger-section">
+    <div class="seld-header">
+      <div><div class="sl">Interactive Step-by-Step</div><div class="st" style="margin:0;font-family:'Cormorant Garamond',serif;font-size:1.3rem;">The Seldinger Technique — click each step</div></div>
+      <div style="font-size:.8rem;color:var(--text-3);font-weight:300">Needle → Wire → Dilator → Catheter</div>
+    </div>
+    <div class="seld-body">
+      <canvas id="seldingerCanvas"></canvas>
+      <div class="seld-panel">
+        <div id="stepBtns"></div>
+        <div class="step-info" id="stepInfo">Select a step to see the clinical detail and physics.</div>
+        <div class="step-warning" id="stepWarning"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- IJ / SUBCLAVIAN / FEMORAL COMPARISON -->
+  <div class="sl" style="margin-bottom:.75rem">Approach Comparison</div>
+  <div class="st">IJ vs Subclavian vs Femoral — The Clinical Decision</div>
+  <div class="approach-grid">
+    <div class="app-card">
+      <div class="app-name" style="color:var(--blue)">Internal Jugular (IJ)</div>
+      <div class="app-row"><span class="app-key">CLABSI rate</span><span class="app-val">1.2 / 1000 catheter-days</span></div>
+      <div class="app-row"><span class="app-key">Pneumothorax</span><span class="app-val">&lt;0.5% (US-guided)</span></div>
+      <div class="app-row"><span class="app-key">Arterial puncture</span><span class="app-val">&lt;1% (US-guided)</span></div>
+      <div class="app-row"><span class="app-key">DVT risk</span><span class="app-val">Moderate</span></div>
+      <div class="app-row"><span class="app-key">US guidance</span><span class="app-val">Required (NICE)</span></div>
+      <div class="app-row"><span class="app-key">Comfortable</span><span class="app-val">Moderate (neck)</span></div>
+      <div class="app-row"><span class="app-key">Best for</span><span class="app-val">Most ICU CVCs</span></div>
+      <div class="app-badge" style="background:rgba(74,138,202,0.12);color:var(--blue)">Standard first choice</div>
+    </div>
+    <div class="app-card">
+      <div class="app-name" style="color:var(--accent)">Subclavian</div>
+      <div class="app-row"><span class="app-key">CLABSI rate</span><span class="app-val">0.8 / 1000 catheter-days</span></div>
+      <div class="app-row"><span class="app-key">Pneumothorax</span><span class="app-val">1–3% (landmark)</span></div>
+      <div class="app-row"><span class="app-key">Arterial puncture</span><span class="app-val">1–2%</span></div>
+      <div class="app-row"><span class="app-key">DVT risk</span><span class="app-val">Lowest</span></div>
+      <div class="app-row"><span class="app-key">US guidance</span><span class="app-val">Limited by clavicle</span></div>
+      <div class="app-row"><span class="app-key">Comfortable</span><span class="app-val">Best (shoulder)</span></div>
+      <div class="app-row"><span class="app-key">Best for</span><span class="app-val">Long dwell, TPN, ambulatory</span></div>
+      <div class="app-badge" style="background:rgba(188,114,80,0.12);color:var(--accent)">Lowest infection rate</div>
+    </div>
+    <div class="app-card">
+      <div class="app-name" style="color:var(--gold)">Femoral</div>
+      <div class="app-row"><span class="app-key">CLABSI rate</span><span class="app-val">2.0 / 1000 catheter-days</span></div>
+      <div class="app-row"><span class="app-key">Pneumothorax</span><span class="app-val">Zero</span></div>
+      <div class="app-row"><span class="app-key">Arterial puncture</span><span class="app-val">1–2%</span></div>
+      <div class="app-row"><span class="app-key">DVT risk</span><span class="app-val">Highest (15–20%)</span></div>
+      <div class="app-row"><span class="app-key">US guidance</span><span class="app-val">Yes (easy)</span></div>
+      <div class="app-row"><span class="app-key">Comfortable</span><span class="app-val">Poor (groin, immobility)</span></div>
+      <div class="app-row"><span class="app-key">Best for</span><span class="app-val">Emergency / coagulopathy</span></div>
+      <div class="app-badge" style="background:rgba(201,168,76,0.12);color:var(--gold)">Last resort, short dwell</div>
+    </div>
+  </div>
+
+  <!-- PHYSICS OF WIRE ADVANCEMENT -->
+  <div class="sl" style="margin-bottom:.75rem">Physics</div>
+  <div class="st">The Wire, the Dilator, and the Resistance</div>
+  <div class="physics-grid">
+    <div class="phys-card">
+      <div class="pc-title">J-Tip Wire — Why the Curve?</div>
+      <div class="pc-eq">r_min = f(wire stiffness, vessel diameter)</div>
+      <p class="pc-text">A straight wire advanced against the angle of a branch point or valve will perforate the vessel wall. The J-tip allows the wire to "find" the vessel lumen by curling around obstructions rather than penetrating them. The J-tip radius (typically 3 mm) is designed to be smaller than most vessel diameters but larger than most wall puncture scenarios. Rotating the wire 90° changes the J-curve direction — the "J rotation" technique navigates tortuous vessels.</p>
+    </div>
+    <div class="phys-card">
+      <div class="pc-title">Dilator Physics — Tissue Resistance</div>
+      <div class="pc-eq">F = σ × A + μ × N</div>
+      <p class="pc-text">Dilators expand the tract by plastic deformation of tissue — not cutting. The progressive taper converts axial force into radial force against the tissue. Too rapid dilation tears the venous wall. The dilator should follow the wire axis precisely — if resistance is felt, check wire position first. A dilator that diverges from the wire axis is tearing the vessel rather than dilating it. Skin nicking (scalpel) before dilation dramatically reduces the force required.</p>
+    </div>
+    <div class="phys-card">
+      <div class="pc-title">Blood Flashback — Venous vs Arterial</div>
+      <div class="pc-eq">P_arterial ≈ 80–120 mmHg · P_venous ≈ 5–15 mmHg</div>
+      <p class="pc-text">In a correctly positioned patient (Trendelenburg for IJ), venous blood fills the needle hub under low positive pressure — it does not pulsate. Bright red blood that pulses under pressure indicates arterial puncture. In hypotensive patients, arterial blood may not pulsate and may appear darker — color alone does not distinguish. Pressure manometry (connecting to a stopcock and ruler) or transduction resolves ambiguity.</p>
+    </div>
+    <div class="phys-card">
+      <div class="pc-title">Wire Length & Arrhythmia Risk</div>
+      <div class="pc-eq">Wire depth = IJ → RA ≈ 15–20 cm</div>
+      <p class="pc-text">A guidewire advanced past the right atrium into the right ventricle produces ventricular ectopy and potentially life-threatening arrhythmia by mechanical irritation of the conduction system. The wire should never be advanced more than 15–18 cm from the IJ access point. Monitor continuously during wire advancement. PVCs that terminate immediately on wire withdrawal confirm RV contact. Never release the wire — maintain control at all times.</p>
+    </div>
+  </div>
+
+  <!-- IMMEDIATE COMPLICATIONS TABLE -->
+  <div class="sl" style="margin-bottom:.75rem">Insertion Complications</div>
+  <div class="st">Immediate Risks by Approach and Mechanism</div>
+  <div style="background:var(--surface);border:1px solid var(--border-lt);border-radius:var(--r);overflow:hidden;margin-bottom:2rem;box-shadow:var(--shadow-sm)">
+    <table class="comp-table">
+      <thead><tr><th>Complication</th><th>Mechanism</th><th>IJ rate</th><th>Subclavian rate</th><th>Detection</th></tr></thead>
+      <tbody>
+        <tr><td><span class="comp-name">Arterial puncture</span></td><td style="font-size:.78rem;color:var(--text-2)">Needle/wire enters carotid or subclavian artery</td><td><span class="risk-badge" style="background:rgba(126,156,132,0.12);color:var(--sage)">&lt;1% (US)</span></td><td><span class="risk-badge" style="background:rgba(201,168,76,0.12);color:var(--gold)">1–2%</span></td><td style="font-size:.78rem">Pulsatile bright red blood; pressure transduction</td></tr>
+        <tr><td><span class="comp-name">Pneumothorax</span></td><td style="font-size:.78rem;color:var(--text-2)">Needle punctures pleural space (subclavian/IJ)</td><td><span class="risk-badge" style="background:rgba(126,156,132,0.12);color:var(--sage)">&lt;0.5%</span></td><td><span class="risk-badge" style="background:rgba(184,112,112,0.12);color:var(--rose)">1–3%</span></td><td style="font-size:.78rem">Post-procedure CXR; respiratory deterioration</td></tr>
+        <tr><td><span class="comp-name">Wire arrhythmia</span></td><td style="font-size:.78rem;color:var(--text-2)">Wire contacts RV endocardium / septum</td><td><span class="risk-badge" style="background:rgba(201,168,76,0.12);color:var(--gold)">5–10% transient</span></td><td><span class="risk-badge" style="background:rgba(201,168,76,0.12);color:var(--gold)">5–10% transient</span></td><td style="font-size:.78rem">Continuous ECG monitoring during insertion</td></tr>
+        <tr><td><span class="comp-name">Air embolism</span></td><td style="font-size:.78rem;color:var(--text-2)">Air entrainment through open needle hub</td><td><span class="risk-badge" style="background:rgba(126,156,132,0.12);color:var(--sage)">&lt;0.2%</span></td><td><span class="risk-badge" style="background:rgba(126,156,132,0.12);color:var(--sage)">&lt;0.5%</span></td><td style="font-size:.78rem">Trendelenburg position; "mill-wheel" murmur</td></tr>
+        <tr><td><span class="comp-name">Malposition</span></td><td style="font-size:.78rem;color:var(--text-2)">Catheter exits via IJ into contralateral SVC or azygos</td><td><span class="risk-badge" style="background:rgba(201,168,76,0.12);color:var(--gold)">3–6%</span></td><td><span class="risk-badge" style="background:rgba(126,156,132,0.12);color:var(--sage)">1–2%</span></td><td style="font-size:.78rem">Post-procedure CXR; lateral film if uncertain</td></tr>
+        <tr><td><span class="comp-name">Hematoma</span></td><td style="font-size:.78rem;color:var(--text-2)">Bleeding into surrounding tissue from arterial nick</td><td><span class="risk-badge" style="background:rgba(201,168,76,0.12);color:var(--gold)">1–2%</span></td><td><span class="risk-badge" style="background:rgba(184,112,112,0.12);color:var(--rose)">Cannot compress</span></td><td style="font-size:.78rem">Neck/chest swelling; tracheal deviation if large</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- HISTORY -->
+  <div class="sl" style="margin-bottom:1rem">Historical Record</div>
+  <div class="tl-items">
+    <div class="tl-item">
+      <div class="tl-year">1953</div><div class="tl-dot" style="background:var(--accent)"></div>
+      <div><div class="tl-title">The Seldinger Paper — One Page That Changed Medicine</div>
+      <p class="tl-desc">Sven-Ivar Seldinger's 1953 paper in Acta Radiologica described a catheter-exchange technique originally intended for percutaneous arterial access in angiography. The technique — needle puncture, wire insertion, needle removal, catheter threading over wire — eliminated the need to push a catheter through the same needle that had punctured the vessel, dramatically reducing vessel trauma. The paper is now the most-cited technique paper in vascular access history.</p>
+      <span class="tl-tag" style="background:rgba(188,114,80,0.15);color:var(--accent)">Paradigm Shift</span></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">1961</div><div class="tl-dot" style="background:var(--blue)"></div>
+      <div><div class="tl-title">Subclavian Central Venous Pressure — Wilson et al.</div>
+      <p class="tl-desc">Wilson, Grow, Demong, Prevedel and Owens published the first systematic description of subclavian vein catheterization for central venous pressure monitoring. They reported on 285 procedures, establishing the infraclavicular landmark technique that remained the standard for the next three decades. The 2.5% pneumothorax rate they reported — considered acceptable at the time — would later drive adoption of ultrasound guidance.</p>
+      <span class="tl-tag" style="background:rgba(74,138,202,0.15);color:var(--blue)">Clinical Establishment</span></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">1969</div><div class="tl-dot" style="background:var(--sage)"></div>
+      <div><div class="tl-title">Dudrick's TPN — Central Access as Lifeline</div>
+      <p class="tl-desc">Stanley Dudrick's work on total parenteral nutrition through central venous catheters transformed the clinical indications. TPN required central access because the hyperosmolar glucose-amino acid solution (900–1200 mOsm/L) would thrombose a peripheral vein in hours. The SVC's high-flow environment (2 L/min) diluted the solution instantly. Dudrick's patients — including infants with intestinal failure — survived on central line nutrition alone, establishing that catheters could sustain life indefinitely.</p>
+      <span class="tl-tag" style="background:rgba(126,156,132,0.15);color:var(--sage)">Clinical Impact</span></div>
+    </div>
+  </div>
+
+  <div class="pearls">
+    <div class="pearl"><div class="pearl-icon">📍</div><div class="pearl-title">Never Let Go of the Wire</div><p class="pearl-text">The guidewire must be controlled at all times. An embolized guidewire requires cardiac catheterization or surgical retrieval. If the wire must be let go briefly (syringe change), clamp it with a hemostat or hold it against the drape. Wire embolism is entirely preventable and always constitutes a procedural error.</p></div>
+    <div class="pearl"><div class="pearl-icon">🫁</div><div class="pearl-title">Trendelenburg Position Is Not Optional</div><p class="pearl-text">For IJ and subclavian insertion, 15° Trendelenburg position increases venous pressure by engorging the target vein (easier puncture), reduces the risk of air embolism (positive venous pressure when hub is open), and moves lung apex away from the subclavian needle path. It is not a preference — it is a safety measure.</p></div>
+    <div class="pearl"><div class="pearl-icon">🔴</div><div class="pearl-title">Dilating the Artery Is Catastrophic</div><p class="pearl-text">Inadvertent arterial dilation and catheter placement — rather than simple arterial needle puncture — is a life-threatening complication. Signs: pulsatile bright blood, high pressure, waveform on transduction. If in doubt: do not dilate. Confirm venous position by transduction, blood gas, or fluoroscopy before any dilation step. A catheter in the carotid artery must be removed in a controlled surgical setting, not at the bedside.</p></div>
+    <div class="pearl"><div class="pearl-icon">🎯</div><div class="pearl-title">The One-Attempt Rule for Subclavian</div><p class="pearl-text">Multiple subclavian attempts on the same side compound the pneumothorax risk — each needle pass may partially tear the pleura. After two unsuccessful attempts on one side, switch approaches (try IJ or opposite subclavian). Never attempt bilateral subclavian on the same day — bilateral pneumothorax is immediately fatal without bilateral chest tubes.</p></div>
+  </div>
+
+</div>
+
+<div class="nf">
+  <a href="/education/central-line-lab/02-picc.html" class="nl2"><span>←</span><div><div class="nll">Previous</div>PICC Lines</div></a>
+  <a href="/education/central-line-lab/04-tip-position.html" class="nl2"><div style="text-align:right"><div class="nll">Next Module</div>Tip Positioning</div><span>→</span></a>
+</div>
+
+<script>
+// SELDINGER STEPS
+const STEPS=[
+  {label:'1. Informed Consent & Setup',title:'Sterile Precautions & Positioning',detail:'Maximum sterile barrier: hat, mask, sterile gown/gloves, full-body drape. Trendelenburg for IJ/subclavian.',info:'Maximal sterile barrier precautions reduce CLABSI rates by 6–8×. A cap, mask, sterile gown, sterile gloves, and a full-body drape are not optional. These are the single most impactful infection-prevention intervention in the entire procedure.',warning:null,phase:'setup'},
+  {label:'2. Identify Target Vein',title:'Ultrasound Vein Assessment',detail:'Confirm patency, compressibility, absence of thrombus. Identify arterial pulsation. Mark needle entry angle.',info:'Compress the target vein fully with the probe to confirm it is not thrombosed. The adjacent artery will remain round and pulsatile. Measure depth. Choose entry point 1–2 cm distal to probe for in-plane approach.',warning:null,phase:'us'},
+  {label:'3. Local Anesthetic',title:'Lidocaine 1% — Skin & Periosteum',detail:'Infiltrate skin, subcutaneous tissue, periosteum. Test before needle.',info:'1% lidocaine 3–5 mL. For subclavian: infiltrate the periosteum of the inferior surface of the clavicle — this is the most painful element of the procedure. Confirm anesthesia before advancing the hollow needle.',warning:null,phase:'anesthetic'},
+  {label:'4. Hollow Needle Puncture',title:'18G Introducer Needle — Vein Entry',detail:'Advance bevel-up at target angle. Apply continuous negative pressure with syringe.',info:'Advance slowly under continuous aspiration. "Loss of resistance" + blood flashback confirms lumen entry. Venous blood should be dark, non-pulsatile, and fill the syringe under low pressure. Bright/pulsatile blood = arterial. Angle: 45° for IJ, 15° below horizontal for subclavian, aimed toward sternal notch.',warning:'⚠ Do NOT advance further once blood flashback occurs. Stabilize the needle. Advancing too far exits the posterior wall of the vein.',phase:'needle'},
+  {label:'5. Guidewire Insertion',title:'J-Tip Wire Advancement',detail:'Remove syringe. Advance J-wire. ≤15 cm from IJ. Never force. Monitor ECG.',info:'Insert the J-wire through the needle with the J-tip leading. The wire should advance without resistance. If resistance is felt — stop. DO NOT force. Rotate 90° and retry. Monitor ECG for PVCs (wire in RV). Advance only 12–15 cm from IJ entry point to stay in SVC.',warning:'⚠ If PVCs develop: withdraw wire 2–3 cm. Persistent ectopy or failure of wire to advance = wrong position. Arrhythmia risk from wire contacting RV endocardium is 5–10%.',phase:'wire'},
+  {label:'6. Nick Skin, Remove Needle',title:'Scalpel Nick & Needle Withdrawal',detail:'Skin nick adjacent to wire. Remove needle over wire while maintaining wire control.',info:'A 3–4 mm scalpel nick adjacent to the wire reduces the force required for dilation and prevents skin tearing. Remove the needle while maintaining firm control of the wire at all times. Never let go of the wire.',warning:null,phase:'nick'},
+  {label:'7. Dilator',title:'Tissue Dilation Over Wire',detail:'Thread dilator over wire. Gentle rotating advancement. Do not advance too deep.',info:'The dilator only needs to pass through skin and subcutaneous tissue to the vein — not into the vein more than 1–2 cm. Advancing the dilator too deep risks venous perforation and posterior wall tear. Use a controlled rotating motion; straight push risks kinking the wire.',warning:'⚠ Resistance during dilation: confirm wire is free (can rotate wire). Skin nick inadequate or fascial resistance. Never force a kinked wire — this perforates the vessel.',phase:'dilator'},
+  {label:'8. Catheter Insertion',title:'Catheter Threading Over Wire',detail:'Thread catheter over wire. Confirm wire exits catheter hub before advancing. Maintain wire control.',info:'Always ensure the wire exits the proximal (hub) end of the catheter before advancing the catheter forward. This sounds obvious but is responsible for most guidewire embolism events. Advance to appropriate depth per access site (IJ right: 15 cm; IJ left: 17 cm; subclavian right: 12–14 cm; subclavian left: 14–16 cm).',warning:null,phase:'catheter'},
+  {label:'9. Remove Wire & Confirm',title:'Wire Removal, Aspiration & Flush',detail:'Remove wire. Aspirate blood from each lumen. Flush with saline. Apply securement.',info:'Aspirate brisk blood return from each lumen to confirm intravascular position. Flush each lumen with 10 mL saline. Apply chlorhexidine disc and securement device. Proceed to CXR for tip position confirmation.',warning:null,phase:'confirm'},
+];
+
+let currentStep=0;
+const canvas=document.getElementById('seldingerCanvas');
+const ctx=canvas.getContext('2d');
+
+function resize(){canvas.width=canvas.offsetWidth;canvas.height=420}
+resize();window.addEventListener('resize',resize);
+
+// Build step buttons
+const btnContainer=document.getElementById('stepBtns');
+STEPS.forEach((s,i)=>{
+  const btn=document.createElement('button');
+  btn.className='step-btn'+(i===0?' active':'');
+  btn.innerHTML=`<span class="step-num">${i+1}</span><div><span class="step-title">${s.label.replace(/^\d+\.\s/,'')}</span><span class="step-detail">${s.detail}</span></div>`;
+  btn.onclick=()=>setStep(i);
+  btnContainer.appendChild(btn);
+});
+
+function setStep(i){
+  currentStep=i;
+  document.querySelectorAll('.step-btn').forEach((b,j)=>b.classList.toggle('active',j===i));
+  const s=STEPS[i];
+  document.getElementById('stepInfo').textContent=s.info;
+  const warn=document.getElementById('stepWarning');
+  if(s.warning){warn.textContent=s.warning;warn.style.display='block'}
+  else{warn.style.display='none'}
+}
+
+let aT=0;
+function drawSeldinger(){
+  const W=canvas.width,H=canvas.height;
+  aT+=0.012;
+  ctx.clearRect(0,0,W,H);
+  ctx.fillStyle='#0E0C0A';ctx.fillRect(0,0,W,H);
+
+  const phase=STEPS[currentStep].phase;
+
+  // Tissue layers
+  const skinY=H*.18;
+  const fatY=H*.26;
+  const fasciaY=H*.32;
+  const veinY=H*.52;
+  const veinR=H*.1;
+
+  // Layer fills
+  const layers=[
+    [0,skinY,'#201408',''],
+    [skinY,H*.08,'#3A2010','SKIN'],
+    [fatY,H*.06,'#2A1C08','FAT'],
+    [fasciaY,H*.2,'#221408','MUSCLE'],
+    [veinY-veinR,veinR*2,'#04080F',''],
+    [veinY+veinR,H,'#221408',''],
+  ];
+  layers.forEach(([y,h,c,l])=>{
+    ctx.fillStyle=c;ctx.fillRect(0,y,W,h);
+    if(l){ctx.fillStyle='rgba(158,130,114,0.3)';ctx.font='9px Nunito';ctx.textAlign='right';ctx.fillText(l,W-8,y+h*.6)}
+  });
+
+  // Vein lumen
+  const veinGrad=ctx.createLinearGradient(0,veinY-veinR,0,veinY+veinR);
+  veinGrad.addColorStop(0,'#0A1525');veinGrad.addColorStop(.5,'#050810');veinGrad.addColorStop(1,'#0A1525');
+  ctx.fillStyle=veinGrad;ctx.beginPath();ctx.ellipse(W*.5,veinY,W*.35,veinR,0,0,Math.PI*2);ctx.fill();
+  ctx.strokeStyle='rgba(74,138,202,0.4)';ctx.lineWidth=2;ctx.stroke();
+
+  // Blood flow in vein
+  for(let i=0;i<8;i++){
+    const t=((aT*.3+i/8)%1);
+    const bx=(t)*W;
+    ctx.beginPath();ctx.arc(bx,veinY+(Math.sin(i)*veinR*.35),3,0,Math.PI*2);
+    ctx.fillStyle='rgba(139,32,32,0.6)';ctx.fill();
+  }
+
+  // Adjacent artery (subclavian scenario)
+  const artY=veinY-veinR*1.8;
+  const pulsate=Math.sin(aT*8)*.5+.5;
+  ctx.beginPath();ctx.ellipse(W*.5,artY,W*.14+pulsate*3,veinR*.5+pulsate*2,0,0,Math.PI*2);
+  ctx.fillStyle='#1A0808';ctx.fill();
+  ctx.strokeStyle=`rgba(192,64,64,${.3+pulsate*.3})`;ctx.lineWidth=2;ctx.stroke();
+  ctx.fillStyle='rgba(184,112,112,0.5)';ctx.font='8px Nunito';ctx.textAlign='center';
+  ctx.fillText('carotid/subclavian artery',W*.5,artY-12);
+
+  // Entry point on skin
+  const entryX=W*.45,entryY=skinY;
+  const needleAngle=Math.PI*.42;
+
+  // === PHASE-SPECIFIC RENDERING ===
+  const phases=['setup','us','anesthetic','needle','wire','nick','dilator','catheter','confirm'];
+  const phaseIdx=phases.indexOf(phase);
+
+  // Ultrasound probe
+  if(phaseIdx>=1&&phaseIdx<=2){
+    ctx.fillStyle='#3A3028';
+    ctx.beginPath();ctx.roundRect(entryX-20,skinY-40,40,35,6);ctx.fill();
+    ctx.fillStyle='#BC7250';
+    ctx.fillRect(entryX-20,skinY-8,40,8);
+    // US beam
+    const beamGrad=ctx.createLinearGradient(entryX,skinY,entryX,veinY+veinR);
+    beamGrad.addColorStop(0,'rgba(188,114,80,0.2)');
+    beamGrad.addColorStop(1,'rgba(188,114,80,0)');
+    ctx.beginPath();ctx.moveTo(entryX-15,skinY);ctx.lineTo(entryX+15,skinY);ctx.lineTo(entryX+30,veinY+veinR);ctx.lineTo(entryX-30,veinY+veinR);ctx.closePath();
+    ctx.fillStyle=beamGrad;ctx.fill();
+  }
+
+  // Needle
+  if(phaseIdx>=3){
+    const needleLen=Math.min(veinY-skinY+veinR*.5,H*.45);
+    const nx=entryX+Math.cos(needleAngle)*needleLen;
+    const ny=entryY+Math.sin(needleAngle)*needleLen;
+    ctx.strokeStyle='rgba(200,200,180,0.9)';ctx.lineWidth=3;
+    ctx.beginPath();ctx.moveTo(entryX,entryY);ctx.lineTo(nx,ny);ctx.stroke();
+    // Bevel
+    ctx.fillStyle='rgba(200,200,180,0.9)';ctx.beginPath();ctx.arc(nx,ny,4,0,Math.PI*2);ctx.fill();
+    // Flash indication
+    if(phaseIdx>=3){
+      ctx.fillStyle='rgba(139,32,32,0.8)';ctx.beginPath();ctx.arc(entryX,entryY-8,4,0,Math.PI*2);ctx.fill();
+    }
+  }
+
+  // Wire
+  if(phaseIdx>=4){
+    const wLen=Math.min(H*.55,(phaseIdx-3)*H*.1+H*.2);
+    ctx.beginPath();
+    ctx.moveTo(entryX,entryY);
+    // Slight curve for J-tip effect
+    ctx.bezierCurveTo(entryX+5,entryY+wLen*.3,entryX+3,entryY+wLen*.6,entryX+Math.cos(needleAngle)*wLen,entryY+Math.sin(needleAngle)*wLen);
+    ctx.strokeStyle='rgba(220,220,180,0.85)';ctx.lineWidth=1.5;ctx.stroke();
+    // J-tip curl
+    const wex=entryX+Math.cos(needleAngle)*wLen;const wey=entryY+Math.sin(needleAngle)*wLen;
+    ctx.beginPath();ctx.arc(wex+6,wey,6,Math.PI,0);
+    ctx.strokeStyle='rgba(220,220,180,0.85)';ctx.lineWidth=1.5;ctx.stroke();
+  }
+
+  // Dilator
+  if(phaseIdx>=6){
+    const dLen=H*.38;
+    ctx.beginPath();
+    ctx.moveTo(entryX-4,entryY);ctx.lineTo(entryX+Math.cos(needleAngle)*(dLen+8),entryY+Math.sin(needleAngle)*(dLen+8));
+    ctx.lineTo(entryX+Math.cos(needleAngle)*dLen,entryY+Math.sin(needleAngle)*dLen+8);
+    ctx.lineTo(entryX+4,entryY+6);ctx.closePath();
+    ctx.fillStyle='rgba(100,180,200,0.4)';ctx.fill();
+    ctx.strokeStyle='rgba(100,180,200,0.7)';ctx.lineWidth=1;ctx.stroke();
+  }
+
+  // Catheter (multi-lumen hint)
+  if(phaseIdx>=7){
+    const cLen=H*.4;
+    const cx2=entryX+Math.cos(needleAngle)*cLen;const cy2=entryY+Math.sin(needleAngle)*cLen;
+    for(let l=0;l<3;l++){
+      const off=(l-1)*3;
+      ctx.beginPath();ctx.moveTo(entryX+off,entryY);ctx.lineTo(cx2+off*.5,cy2);
+      ctx.strokeStyle=`rgba(${l===0?'188,200,220':l===1?'180,140,100':'140,180,140'},0.6)`;
+      ctx.lineWidth=2.5;ctx.stroke();
+    }
+    ctx.fillStyle='#3A3028';ctx.beginPath();ctx.roundRect(entryX-18,entryY-20,36,20,4);ctx.fill();
+    ctx.fillStyle='rgba(158,130,114,0.6)';ctx.font='8px Nunito';ctx.textAlign='center';
+    ctx.fillText('triple lumen',entryX,entryY-22);
+  }
+
+  // Depth ruler on left
+  for(let d=0;d<=6;d++){
+    const y=skinY+d*(veinY+veinR-skinY)/6;
+    ctx.strokeStyle='rgba(158,130,114,0.25)';ctx.lineWidth=.5;
+    ctx.beginPath();ctx.moveTo(14,y);ctx.lineTo(24,y);ctx.stroke();
+    ctx.fillStyle='rgba(158,130,114,0.4)';ctx.font='8px JetBrains Mono';ctx.textAlign='right';
+    ctx.fillText(d+'cm',12,y+3);
+  }
+
+  // Step label
+  ctx.fillStyle='rgba(188,114,80,0.7)';ctx.font='500 10px Nunito';ctx.textAlign='center';
+  ctx.fillText('Step '+(currentStep+1)+': '+STEPS[currentStep].label.replace(/^\d+\.\s/,''),W*.5,H-10);
+
+  ctx.textAlign='left';
+  requestAnimationFrame(drawSeldinger);
+}
+drawSeldinger();
+</script>
+</body>
+</html>

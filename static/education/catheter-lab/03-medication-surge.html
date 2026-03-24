@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medication Surge — The Catheter Lab</title>
+<script src="https://unpkg.com/htmx.org@1.9.10"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Nunito:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #EDE4D5; --surface: #F6F0E8;
+    --border: #D4C7B5; --border-lt: #E2D8CC;
+    --text: #28180C; --text-2: #685040; --text-3: #9E8272;
+    --accent: #BC7250; --accent-lt: #E8C4A8;
+    --sage: #7E9C84; --rose: #B87070; --gold: #C9A84C;
+    --shadow-sm: 0 1px 8px rgba(40,24,12,0.06), 0 0 0 1px rgba(40,24,12,0.04);
+    --r: 16px; --r-sm: 10px;
+  }
+  body { font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+  body::after { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E"); opacity: 0.028; pointer-events: none; z-index: 9999; }
+  nav { display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 3rem; border-bottom: 1px solid var(--border-lt); background: rgba(237,228,213,0.85); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100; }
+  .nav-left { display: flex; align-items: center; gap: 1rem; }
+  .nav-back { font-size: 0.8rem; color: var(--text-3); text-decoration: none; transition: color 200ms; }
+  .nav-back:hover { color: var(--accent); }
+  .nav-sep { color: var(--border); }
+  .hero { padding: 4rem 3rem 2.5rem; display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: end; border-bottom: 1px solid var(--border-lt); max-width: 1100px; margin: 0 auto; }
+  .module-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.75rem; }
+  .module-label::before { content: '03'; font-family: 'JetBrains Mono', monospace; color: var(--accent); }
+  h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 400; line-height: 1.1; margin-bottom: 1rem; }
+  h1 em { font-style: italic; color: var(--text-2); }
+  .hero-desc { font-size: 0.92rem; line-height: 1.7; color: var(--text-2); font-weight: 300; max-width: 500px; }
+  .hero-eq { background: var(--surface); border: 1px solid var(--border-lt); border-radius: var(--r); padding: 1.75rem 2rem; text-align: center; min-width: 240px; }
+  .eq-row { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--text); margin-bottom: 0.5rem; }
+  .eq-name { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3); margin-top: 0.4rem; }
+  .frac { display: inline-flex; flex-direction: column; align-items: center; vertical-align: middle; }
+  .frac .num { border-bottom: 1.5px solid var(--text-2); padding: 0 4px 3px; }
+  .frac .den { padding: 3px 4px 0; }
+  .main { max-width: 1100px; margin: 0 auto; padding: 2.5rem 3rem; }
+  .section-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3); margin-bottom: 0.2rem; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; margin-bottom: 1.25rem; }
+
+  .surge-section { background: var(--surface); border: 1px solid var(--border-lt); border-radius: var(--r); overflow: hidden; margin-bottom: 2rem; box-shadow: var(--shadow-sm); }
+  .surge-header { padding: 1.5rem 2rem; border-bottom: 1px solid var(--border-lt); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+  .surge-body { display: grid; grid-template-columns: 1.3fr 1fr; }
+  #surgeCanvas { width: 100%; height: 380px; display: block; border-right: 1px solid var(--border-lt); }
+  .surge-panel { padding: 1.75rem; display: flex; flex-direction: column; gap: 1.1rem; }
+
+  /* Concentration spike display */
+  .spike-display { background: var(--bg); border-radius: var(--r-sm); padding: 1.25rem; text-align: center; }
+  .sd-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); margin-bottom: 0.3rem; }
+  .sd-val { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 300; line-height: 1; transition: color 400ms; }
+  .sd-sub { font-size: 0.72rem; color: var(--text-3); margin-top: 0.3rem; }
+
+  .ctrl { display: flex; flex-direction: column; gap: 0.4rem; }
+  .ctrl-row { display: flex; justify-content: space-between; }
+  .ctrl-name { font-size: 0.78rem; font-weight: 600; color: var(--text-2); }
+  .ctrl-val { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--accent); }
+  .ctrl-unit { font-size: 0.65rem; color: var(--text-3); }
+  input[type=range] { -webkit-appearance: none; width: 100%; height: 4px; background: var(--border); border-radius: 100px; outline: none; cursor: pointer; }
+  input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 0 4px rgba(188,114,80,0.15); }
+
+  /* Drug presets */
+  .drug-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+  .drug-card { background: var(--surface); border: 1px solid var(--border-lt); border-radius: var(--r-sm); padding: 1.1rem 1.25rem; box-shadow: var(--shadow-sm); cursor: pointer; transition: all 200ms; }
+  .drug-card:hover, .drug-card.active { border-color: var(--accent); background: rgba(188,114,80,0.05); }
+  .dc-name { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; margin-bottom: 0.5rem; }
+  .dc-row { display: flex; justify-content: space-between; font-size: 0.72rem; padding: 0.15rem 0; }
+  .dc-key { color: var(--text-3); }
+  .dc-val { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; }
+  .dc-risk { font-size: 0.62rem; font-weight: 600; padding: 0.12rem 0.5rem; border-radius: 100px; margin-top: 0.4rem; display: inline-block; }
+
+  /* Timeline */
+  .tl-items { display: flex; flex-direction: column; gap: 0; margin-bottom: 2rem; }
+  .tl-item { display: flex; gap: 1.5rem; padding: 1.25rem 0; border-bottom: 1px solid var(--border-lt); }
+  .tl-item:last-child { border-bottom: none; }
+  .tl-year { font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: var(--accent); min-width: 60px; padding-top: 0.2rem; }
+  .tl-dot { width: 10px; height: 10px; border-radius: 50%; margin-top: 0.3rem; flex-shrink: 0; }
+  .tl-title { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; margin-bottom: 0.3rem; }
+  .tl-desc { font-size: 0.8rem; line-height: 1.65; color: var(--text-2); font-weight: 300; }
+  .tl-tag { display: inline-block; font-size: 0.62rem; font-weight: 600; padding: 0.15rem 0.55rem; border-radius: 100px; margin-top: 0.4rem; }
+
+  .pearls { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+  .pearl { background: var(--surface); border: 1px solid var(--border-lt); border-radius: var(--r-sm); padding: 1.25rem 1.5rem; box-shadow: var(--shadow-sm); }
+  .pearl-icon { font-size: 1.4rem; margin-bottom: 0.75rem; }
+  .pearl-title { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; margin-bottom: 0.5rem; }
+  .pearl-text { font-size: 0.8rem; line-height: 1.65; color: var(--text-2); font-weight: 300; }
+
+  .insight-dark { background: var(--text); border-radius: var(--r); padding: 2rem 2.5rem; margin-bottom: 2rem; }
+  .id-kicker { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+  .id-title { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: #F0E8E0; margin-bottom: 0.75rem; }
+  .id-title em { font-style: italic; color: var(--accent-lt); }
+  .id-desc { font-size: 0.82rem; line-height: 1.7; color: #6A5A4A; font-weight: 300; }
+
+  .nav-footer { display: flex; justify-content: space-between; align-items: center; padding: 2rem 3rem; border-top: 1px solid var(--border-lt); max-width: 1100px; margin: 0 auto; }
+  .nav-link { text-decoration: none; color: var(--text-3); font-size: 0.82rem; transition: color 200ms; display: flex; align-items: center; gap: 0.5rem; }
+  .nav-link:hover { color: var(--accent); }
+  .nav-link-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+  .hero { animation: fadeUp 0.5s ease both; }
+  @media (max-width: 700px) { nav, .hero, .main, .nav-footer { padding-left: 1.25rem; padding-right: 1.25rem; } .hero, .surge-body { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-left">
+    <a href="/education/catheter-lab/" class="nav-back">← Collection</a>
+    <span class="nav-sep">|</span>
+    <span style="font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--text-2);">The Catheter Lab</span>
+  </div>
+  <div class="nav-left">
+    <span style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--accent);">03 / 04</span>
+    <a href="/education/catheter-lab/02-blood-draw.html" class="nav-back">← Blood Draw</a>
+    <span class="nav-sep">|</span>
+    <a href="/education/catheter-lab/04-barotrauma.html" class="nav-back">Barotrauma →</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div>
+    <div class="module-label">IV Medication Surge & the Deadspace Bolus</div>
+    <h1>The flush<br><em>is the dose.</em></h1>
+    <p class="hero-desc">Every time you flush an IV line, you push concentrated medication that was sitting in the deadspace into the circulation — as a bolus, before dilution occurs. In critical care, the saline flush itself is a drug delivery event. The pharmacokinetics of deadspace determines the surge profile.</p>
+  </div>
+  <div class="hero-eq">
+    <div class="eq-row">C<sub>surge</sub> = C<sub>drug</sub> × <span class="frac"><span class="num">V<sub>dead</sub></span><span class="den">V<sub>flush</sub></span></span></div>
+    <div class="eq-name">Deadspace Surge Concentration</div>
+    <div style="height:0.75rem"></div>
+    <div class="eq-row">t<sub>surge</sub> = <span class="frac"><span class="num">V<sub>dead</sub></span><span class="den">Q<sub>flush</sub></span></span></div>
+    <div class="eq-name">Duration of Surge</div>
+    <div style="height:0.75rem"></div>
+    <div class="eq-row">D<sub>bolus</sub> = C<sub>drug</sub> × V<sub>dead</sub></div>
+    <div class="eq-name">Unintended Bolus Dose</div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- SURGE SIMULATOR -->
+  <div class="surge-section">
+    <div class="surge-header">
+      <div>
+        <div class="section-label">Live Simulator</div>
+        <div class="section-title" style="margin:0;font-family:'Cormorant Garamond',serif;font-size:1.3rem;">Watch the concentration surge as saline flushes through deadspace</div>
+      </div>
+      <div id="surgeBadge" style="font-size:0.72rem;font-weight:600;padding:0.4rem 0.9rem;border-radius:100px;background:rgba(126,156,132,0.15);color:var(--sage);border:1px solid var(--sage);">● Infusing normally</div>
+    </div>
+    <div class="surge-body">
+      <canvas id="surgeCanvas"></canvas>
+      <div class="surge-panel">
+        <div class="spike-display">
+          <div class="sd-label">Peak Surge Concentration</div>
+          <div class="sd-val" id="surgeConc">—</div>
+          <div class="sd-sub">× prescribed concentration</div>
+        </div>
+
+        <div class="ctrl">
+          <div class="ctrl-row">
+            <span class="ctrl-name">Drug concentration (mg/mL)</span>
+            <span class="ctrl-val"><span id="concVal">10</span><span class="ctrl-unit"> mg/mL</span></span>
+          </div>
+          <input type="range" id="concSlider" min="0.1" max="50" step="0.1" value="10" oninput="updateSurge()">
+        </div>
+        <div class="ctrl">
+          <div class="ctrl-row">
+            <span class="ctrl-name">Deadspace volume</span>
+            <span class="ctrl-val"><span id="deadspaceVal">0.5</span><span class="ctrl-unit"> mL</span></span>
+          </div>
+          <input type="range" id="deadspaceSlider" min="0.06" max="3" step="0.02" value="0.5" oninput="updateSurge()">
+        </div>
+        <div class="ctrl">
+          <div class="ctrl-row">
+            <span class="ctrl-name">Flush volume</span>
+            <span class="ctrl-val"><span id="flushVolVal">10</span><span class="ctrl-unit"> mL</span></span>
+          </div>
+          <input type="range" id="flushVolSlider" min="1" max="30" step="1" value="10" oninput="updateSurge()">
+        </div>
+        <div class="ctrl">
+          <div class="ctrl-row">
+            <span class="ctrl-name">Flush rate</span>
+            <span class="ctrl-val"><span id="flushRateVal">10</span><span class="ctrl-unit"> mL/min</span></span>
+          </div>
+          <input type="range" id="flushRateSlider" min="1" max="60" step="1" value="10" oninput="updateSurge()">
+        </div>
+
+        <div id="surgeWarning" style="display:none;background:rgba(184,112,112,0.1);border:1px solid var(--rose);border-radius:var(--r-sm);padding:0.9rem 1rem;font-size:0.78rem;color:var(--rose);line-height:1.5;">
+          ⚠ Surge exceeds 2× prescribed concentration. Monitor for hemodynamic response during flush.
+        </div>
+        <div style="font-size:0.78rem;line-height:1.6;color:var(--text-2);background:var(--bg);border-radius:var(--r-sm);padding:0.9rem 1rem;">
+          <strong>Bolus dose:</strong> <span id="bolusVal" style="font-family:'JetBrains Mono',monospace;color:var(--accent);">—</span> mg of drug reaches circulation before saline dilutes it.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DRUG PRESETS -->
+  <div class="section-label" style="margin-bottom:0.75rem;">Clinical Drug Reference</div>
+  <div class="section-title">High-Risk Medications & Deadspace Surge Implications</div>
+  <div class="drug-grid" id="drugGrid"></div>
+
+  <!-- HISTORY TIMELINE -->
+  <div class="section-label" style="margin-bottom:1rem;">Historical Record</div>
+  <div class="tl-items">
+    <div class="tl-item">
+      <div class="tl-year">1946</div>
+      <div class="tl-dot" style="background:var(--text-3)"></div>
+      <div>
+        <div class="tl-title">Continuous IV Drip — The Age of IV Medication Begins</div>
+        <p class="tl-desc">The adoption of continuous IV medication infusion in the post-WWII era created the first sustained interaction between drug pharmacokinetics and fluid dynamics. Nurses were now delivering drugs not as discrete injections but as flow-rate-dependent infusions — and the deadspace of tubing, stopcocks, and catheters became pharmacologically relevant for the first time.</p>
+        <span class="tl-tag" style="background:rgba(158,130,114,0.15);color:var(--text-3);">Foundation</span>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">1970s</div>
+      <div class="tl-dot" style="background:var(--rose)"></div>
+      <div>
+        <div class="tl-title">ICU Drug Safety — First Adverse Events Traced to Flush Boluses</div>
+        <p class="tl-desc">As intensive care medicine matured and vasoactive drugs (dopamine, epinephrine, nitroglycerin) became standard ICU infusions, clinicians began documenting hemodynamic events correlated with routine saline flushes. A nurse flushing a dopamine line to clear an occlusion was inadvertently delivering a concentrated dopamine bolus. The deadspace surge mechanism was recognized, but not yet quantified.</p>
+        <span class="tl-tag" style="background:rgba(184,112,112,0.15);color:var(--rose);">Problem Recognition</span>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">1985</div>
+      <div class="tl-dot" style="background:var(--gold)"></div>
+      <div>
+        <div class="tl-title">Pharmacokinetics of IV Infusion — Deadspace First Quantified</div>
+        <p class="tl-desc">Researchers applied pharmacokinetic modeling to IV line deadspace, formalizing C_surge = C_drug × V_dead / V_flush. Studies showed that flushing a 0.5 mL deadspace connector at 10 mL/min created a 5% undiluted drug surge lasting approximately 3 seconds — clinically silent for most drugs, but potentially life-threatening for vasopressors at high concentrations.</p>
+        <span class="tl-tag" style="background:rgba(201,168,76,0.15);color:var(--gold);">Quantification</span>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">1990s</div>
+      <div class="tl-dot" style="background:var(--accent)"></div>
+      <div>
+        <div class="tl-title">Needleless Connectors Add New Deadspace</div>
+        <p class="tl-desc">The OSHA mandate for needleless connectors introduced devices with internal deadspace of 0.06–0.2 mL — filled with whatever drug was infusing before the syringe disconnect. Positive-displacement connectors, designed to prevent reflux, push this deadspace content into the line on disconnect. The reflux solution had created the surge problem.</p>
+        <span class="tl-tag" style="background:rgba(188,114,80,0.15);color:var(--accent);">Technology Tradeoff</span>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">2010s</div>
+      <div class="tl-dot" style="background:var(--sage)"></div>
+      <div>
+        <div class="tl-title">ISMP & Joint Commission — Flush Safety Alerts</div>
+        <p class="tl-desc">The Institute for Safe Medication Practices issued multiple alerts on flush-induced drug surges, documenting cardiac arrests and hemodynamic crises from routine saline flushes on vasopressor lines. The Joint Commission added IV line flushing to its sentinel event taxonomy. Slow, turbulent flushing ("push-pause" technique) emerged as a partial mitigation — but the physics of deadspace remained largely unaddressed by device design.</p>
+        <span class="tl-tag" style="background:rgba(126,156,132,0.15);color:var(--sage);">Safety Response</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PEARLS -->
+  <div class="pearls">
+    <div class="pearl">
+      <div class="pearl-icon">⚡</div>
+      <div class="pearl-title">The Vasopressor Flush Problem</div>
+      <p class="pearl-text">A dopamine infusion at 10 mcg/kg/min running through a 0.5 mL deadspace connector gets flushed with 10 mL saline. The first 0.5 mL of saline pushes undiluted dopamine into the patient before any dilution occurs. For a 70 kg patient, this is a ~1 mcg/kg/min surge for roughly 3 seconds — invisible on paper, potentially catastrophic in hemodynamic instability.</p>
+    </div>
+    <div class="pearl">
+      <div class="pearl-icon">🔄</div>
+      <div class="pearl-title">Push-Pause Helps — But Doesn't Solve It</div>
+      <p class="pearl-text">The "push-pause" flushing technique (flush 1 mL, pause, repeat) creates turbulence that mixes deadspace drug with incoming saline — reducing the peak surge concentration. It does not eliminate the surge. It's a technique workaround for a physics problem. Device redesign (minimal-deadspace connectors) is the engineering solution.</p>
+    </div>
+    <div class="pearl">
+      <div class="pearl-icon">🧮</div>
+      <div class="pearl-title">Deadspace Is Additive</div>
+      <p class="pearl-text">A catheter (0.01 mL) + extension set (0.5 mL) + stopcock (0.07 mL) + needleless connector (0.1 mL) = 0.68 mL total deadspace. In a neonatal ICU, this can exceed the patient's stroke volume. Every component contributes. Calculating total deadspace before initiating high-risk infusions is essential and rarely done.</p>
+    </div>
+    <div class="pearl">
+      <div class="pearl-icon">⏰</div>
+      <div class="pearl-title">Lag Time Is Also Deadspace</div>
+      <p class="pearl-text">When a new drug infusion starts, it doesn't reach the patient until it fills all the deadspace between pump and catheter tip. A drip started at 12:00 may not reach the patient until 12:04 if line deadspace is large relative to infusion rate. This is why ICU nurses prime lines before connecting — the deadspace lag is a pharmacokinetic reality.</p>
+    </div>
+  </div>
+
+  <!-- INTRACAV INSIGHT -->
+  <div class="insight-dark">
+    <div class="id-kicker">Intracav · Deadspace Intelligence</div>
+    <div class="id-title">Every IV setup has a deadspace <em>pharmacokinetic profile.</em></div>
+    <p class="id-desc">Intracav's clinical database can model total deadspace from a patient's documented IV setup (catheter gauge, extension sets, connectors, stopcocks), compute surge concentration by drug, and flag high-risk flush events before they happen. Proactive deadspace management is a software problem — the physics is already known.</p>
+  </div>
+
+</div>
+
+<div class="nav-footer">
+  <a href="/education/catheter-lab/02-blood-draw.html" class="nav-link"><span>←</span><div><div class="nav-link-label">Previous</div>Blood Draw</div></a>
+  <a href="/education/catheter-lab/04-barotrauma.html" class="nav-link"><div style="text-align:right"><div class="nav-link-label">Final Module</div>Barotrauma</div><span>→</span></a>
+</div>
+
+<script>
+// DRUG DATA
+const DRUGS = [
+  { name:'Dopamine', conc:3.2, deadspaceRisk:'Critical', color:'#C04040', note:'Heart rate + BP spike on flush', riskColor:'rgba(184,112,112,0.15)', riskTextColor:'var(--rose)' },
+  { name:'Nitroglycerin', conc:0.1, deadspaceRisk:'High', color:'#C9A84C', note:'BP drop on flush bolus', riskColor:'rgba(201,168,76,0.15)', riskTextColor:'var(--gold)' },
+  { name:'Heparin', conc:100, deadspaceRisk:'High', color:'#C04040', note:'Anticoagulation spike', riskColor:'rgba(184,112,112,0.15)', riskTextColor:'var(--rose)' },
+  { name:'Propofol', conc:10, deadspaceRisk:'Moderate', color:'#C9A84C', note:'Sedation surge on flush', riskColor:'rgba(201,168,76,0.15)', riskTextColor:'var(--gold)' },
+  { name:'Insulin', conc:1, deadspaceRisk:'Moderate', color:'#C9A84C', note:'Hypoglycemia from bolus', riskColor:'rgba(201,168,76,0.15)', riskTextColor:'var(--gold)' },
+  { name:'Vancomycin', conc:5, deadspaceRisk:'Low', color:'#7E9C84', note:'Red man syndrome if too fast', riskColor:'rgba(126,156,132,0.15)', riskTextColor:'var(--sage)' },
+];
+
+function buildDrugGrid() {
+  const grid = document.getElementById('drugGrid');
+  DRUGS.forEach((d, i) => {
+    const card = document.createElement('div');
+    card.className = 'drug-card';
+    card.innerHTML = `
+      <div class="dc-name">${d.name}</div>
+      <div class="dc-row"><span class="dc-key">Typical conc</span><span class="dc-val">${d.conc} mg/mL</span></div>
+      <div class="dc-row"><span class="dc-key">Surge risk</span><span class="dc-val">${d.deadspaceRisk}</span></div>
+      <div class="dc-row" style="font-size:0.68rem;color:var(--text-3);margin-top:0.3rem;">${d.note}</div>
+      <div class="dc-risk" style="background:${d.riskColor};color:${d.riskTextColor};">${d.deadspaceRisk} flush risk</div>
+    `;
+    card.onclick = () => {
+      document.querySelectorAll('.drug-card').forEach(c => c.classList.remove('active'));
+      card.classList.add('active');
+      document.getElementById('concSlider').value = d.conc;
+      document.getElementById('concVal').textContent = d.conc;
+      updateSurge();
+    };
+    grid.appendChild(card);
+  });
+}
+buildDrugGrid();
+
+// CANVAS
+const cv = document.getElementById('surgeCanvas');
+const ctx = cv.getContext('2d');
+let aT = 0;
+let flushPhase = 0; // 0=normal, >0=flushing
+
+function resize() { cv.width = cv.offsetWidth; cv.height = 380; }
+resize();
+window.addEventListener('resize', resize);
+
+let sp = { conc: 10, deadspace: 0.5, flushVol: 10, flushRate: 10 };
+let waveHistory = [];
+let isFlushing = false;
+let surgeT = 0;
+
+function updateSurge() {
+  sp.conc       = +document.getElementById('concSlider').value;
+  sp.deadspace  = +document.getElementById('deadspaceSlider').value;
+  sp.flushVol   = +document.getElementById('flushVolSlider').value;
+  sp.flushRate  = +document.getElementById('flushRateSlider').value;
+  document.getElementById('concVal').textContent      = sp.conc.toFixed(1);
+  document.getElementById('deadspaceVal').textContent = sp.deadspace.toFixed(2);
+  document.getElementById('flushVolVal').textContent  = sp.flushVol;
+  document.getElementById('flushRateVal').textContent = sp.flushRate;
+
+  const surgeMult = sp.deadspace / sp.flushVol * (sp.flushRate / 5);
+  const surgeConc = sp.conc * Math.min(1, sp.deadspace / (sp.flushVol * 0.1));
+  const bolus = sp.conc * sp.deadspace;
+
+  document.getElementById('surgeConc').textContent = (1 + surgeMult).toFixed(2) + '×';
+  document.getElementById('surgeConc').style.color = surgeMult > 1 ? '#C04040' : surgeMult > 0.3 ? '#C9A84C' : '#7E9C84';
+  document.getElementById('bolusVal').textContent = bolus.toFixed(2) + ' mg';
+  document.getElementById('surgeWarning').style.display = (1 + surgeMult) > 2 ? 'block' : 'none';
+}
+
+// Trigger flush button built into canvas click
+cv.addEventListener('click', () => {
+  isFlushing = true;
+  surgeT = 0;
+  document.getElementById('surgeBadge').textContent = '⚡ FLUSH IN PROGRESS — surge event';
+  document.getElementById('surgeBadge').style.cssText = 'font-size:0.72rem;font-weight:600;padding:0.4rem 0.9rem;border-radius:100px;background:rgba(184,112,112,0.15);color:#C04040;border:1px solid #C04040;';
+  setTimeout(() => {
+    isFlushing = false;
+    document.getElementById('surgeBadge').textContent = '● Infusing normally';
+    document.getElementById('surgeBadge').style.cssText = 'font-size:0.72rem;font-weight:600;padding:0.4rem 0.9rem;border-radius:100px;background:rgba(126,156,132,0.15);color:var(--sage);border:1px solid var(--sage);';
+  }, 4000);
+});
+
+function draw() {
+  const W = cv.width, H = cv.height;
+  aT += 0.012;
+  if (isFlushing) surgeT += 0.018;
+  ctx.clearRect(0, 0, W, H);
+  ctx.fillStyle = '#F6F0E8';
+  ctx.fillRect(0, 0, W, H);
+
+  const surgeMult = sp.deadspace / sp.flushVol * (sp.flushRate / 5);
+
+  // === IV System Layout ===
+  // Bag
+  const bagX = W * 0.12, bagY = H * 0.05;
+  const bagW = 60, bagH = 75;
+  ctx.strokeStyle = 'rgba(40,24,12,0.2)'; ctx.lineWidth = 1.5;
+  ctx.fillStyle = 'rgba(200,225,245,0.5)';
+  ctx.beginPath(); ctx.roundRect(bagX - bagW/2, bagY, bagW, bagH, 6); ctx.fill(); ctx.stroke();
+  ctx.fillStyle = 'rgba(40,24,12,0.35)'; ctx.font = '10px Nunito'; ctx.textAlign = 'center';
+  ctx.fillText('DRUG', bagX, bagY + bagH/2 - 4);
+  ctx.font = '9px JetBrains Mono'; ctx.fillStyle = 'rgba(188,114,80,0.8)';
+  ctx.fillText(sp.conc.toFixed(1)+'mg/mL', bagX, bagY + bagH/2 + 10);
+
+  // Saline bag
+  const salX = W * 0.28, salY = H * 0.05;
+  ctx.fillStyle = isFlushing ? 'rgba(150,210,240,0.7)' : 'rgba(200,220,245,0.35)';
+  ctx.strokeStyle = 'rgba(40,24,12,0.2)'; ctx.lineWidth = 1.5;
+  ctx.beginPath(); ctx.roundRect(salX - bagW/2, salY, bagW, bagH * 0.8, 6); ctx.fill(); ctx.stroke();
+  ctx.fillStyle = isFlushing ? 'rgba(60,120,160,0.9)' : 'rgba(40,24,12,0.3)'; ctx.font = '10px Nunito';
+  ctx.fillText(isFlushing ? 'FLUSHING' : 'NS Flush', salX, salY + bagH * 0.4);
+
+  // Stopcock/connector (deadspace)
+  const connX = W * 0.45, connY = H * 0.28;
+  ctx.fillStyle = isFlushing ? '#C04040' : '#BC7250';
+  ctx.beginPath(); ctx.roundRect(connX - 18, connY - 12, 36, 24, 5); ctx.fill();
+  ctx.fillStyle = 'white'; ctx.font = '8px Nunito';
+  ctx.fillText('DS', connX, connY + 3);
+
+  // Deadspace label
+  ctx.fillStyle = isFlushing ? '#C04040' : 'rgba(158,130,114,0.8)';
+  ctx.font = '9px JetBrains Mono'; ctx.fillText('V_dead = '+sp.deadspace.toFixed(2)+'mL', connX - 8, connY - 18);
+
+  // Catheter + patient
+  const cathEndX = W * 0.78, cathEndY = H * 0.65;
+  const cathStartX = connX + 18, cathStartY = connY;
+
+  // Tube (drug line)
+  ctx.strokeStyle = 'rgba(40,24,12,0.08)'; ctx.lineWidth = 14;
+  ctx.beginPath(); ctx.moveTo(cathStartX, cathStartY); ctx.lineTo(cathEndX, cathEndY); ctx.stroke();
+
+  // Drug in tube (highlighted when flushing)
+  const tubeColor = isFlushing && surgeT < 1.5 ? '#C04040' : '#8B2020';
+  ctx.strokeStyle = tubeColor + 'AA'; ctx.lineWidth = 10;
+  ctx.beginPath(); ctx.moveTo(cathStartX, cathStartY); ctx.lineTo(cathEndX, cathEndY); ctx.stroke();
+
+  // Animated bolus
+  const nBolus = 5;
+  for (let i = 0; i < nBolus; i++) {
+    const speed = isFlushing ? 0.22 : 0.08;
+    const t = (aT * speed + i / nBolus) % 1;
+    const bx = cathStartX + (cathEndX - cathStartX) * t;
+    const by = cathStartY + (cathEndY - cathStartY) * t;
+    const isHighConc = isFlushing && surgeT < 1.5 && t < 0.5;
+    ctx.beginPath(); ctx.arc(bx, by, isHighConc ? 7 : 4, 0, Math.PI * 2);
+    ctx.fillStyle = isHighConc ? '#FF6060' : 'rgba(139,32,32,0.7)'; ctx.fill();
+    if (isHighConc) {
+      ctx.strokeStyle = 'rgba(255,100,100,0.3)'; ctx.lineWidth = 4;
+      ctx.beginPath(); ctx.arc(bx, by, 12, 0, Math.PI * 2); ctx.stroke();
+    }
+  }
+
+  // Arm
+  const armGrad = ctx.createLinearGradient(0, cathEndY - 14, 0, cathEndY + 30);
+  armGrad.addColorStop(0, '#E8C4A8'); armGrad.addColorStop(1, '#D4A880');
+  ctx.fillStyle = armGrad;
+  ctx.beginPath(); ctx.roundRect(cathEndX - 20, cathEndY - 14, W - cathEndX + 10, 44, [0, 0, 8, 0]); ctx.fill();
+
+  // Vein
+  ctx.fillStyle = '#6A1010';
+  ctx.beginPath(); ctx.roundRect(cathEndX - 5, cathEndY - 4, W - cathEndX - 5, 16, 8); ctx.fill();
+
+  // Waveform display in patient area
+  const waveBaseY = H * 0.42;
+  const waveX1 = W * 0.62, waveW2 = W * 0.34;
+
+  // Background
+  ctx.fillStyle = '#0E0C0A'; ctx.beginPath(); ctx.roundRect(waveX1, waveBaseY - 40, waveW2, 80, 8); ctx.fill();
+  ctx.strokeStyle = 'rgba(255,255,255,0.06)'; ctx.lineWidth = 1;
+  ctx.beginPath(); ctx.moveTo(waveX1, waveBaseY); ctx.lineTo(waveX1 + waveW2, waveBaseY); ctx.stroke();
+
+  // Generate waveform value
+  const cardiac = (aT * 1.1) % 1;
+  let baseAmp = 0.5;
+  if (cardiac < 0.1) baseAmp = cardiac / 0.1;
+  else if (cardiac < 0.2) baseAmp = 1 - (cardiac - 0.1) / 0.1 * 0.4;
+  else if (cardiac < 0.35) baseAmp = 0.6 - (cardiac - 0.2) / 0.15 * 0.4;
+  else baseAmp = 0.2;
+
+  const surgeMult2 = isFlushing && surgeT < 1.5 ? (1 + surgeMult * (1.5 - surgeT) / 1.5) : 1;
+  waveHistory.push(baseAmp * surgeMult2);
+  if (waveHistory.length > waveW2 - 4) waveHistory.shift();
+
+  ctx.beginPath();
+  waveHistory.forEach((v, i) => {
+    const x = waveX1 + 2 + i;
+    const y = waveBaseY - v * 32;
+    if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+  });
+  const waveColor = isFlushing && surgeT < 1.5 ? '#FF6060' : '#7E9C84';
+  ctx.strokeStyle = waveColor; ctx.lineWidth = 1.5; ctx.stroke();
+
+  ctx.fillStyle = 'rgba(158,130,114,0.6)'; ctx.font = '8px Nunito'; ctx.textAlign = 'left';
+  ctx.fillText('MAP', waveX1 + 4, waveBaseY - 44);
+  if (isFlushing && surgeT < 1.5) {
+    ctx.fillStyle = '#FF6060'; ctx.font = '500 8px Nunito';
+    ctx.fillText('⚡ SURGE', waveX1 + 30, waveBaseY - 44);
+  }
+
+  // CLICK TO FLUSH hint
+  if (!isFlushing) {
+    ctx.fillStyle = 'rgba(188,114,80,0.5)'; ctx.font = '10px Nunito'; ctx.textAlign = 'center';
+    ctx.fillText('Click canvas to simulate flush →', W * 0.45, H - 14);
+  }
+
+  ctx.textAlign = 'left';
+  requestAnimationFrame(draw);
+}
+updateSurge();
+draw();
+</script>
+</body>
+</html>

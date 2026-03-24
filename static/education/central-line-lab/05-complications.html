@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Complications — The Central Line Lab</title>
+<script src="https://unpkg.com/htmx.org@1.9.10"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Nunito:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{--bg:#EDE4D5;--surface:#F6F0E8;--border:#D4C7B5;--border-lt:#E2D8CC;--text:#28180C;--text-2:#685040;--text-3:#9E8272;--accent:#BC7250;--accent-lt:#E8C4A8;--sage:#7E9C84;--rose:#B87070;--gold:#C9A84C;--blue:#4A8ACA;--shadow-sm:0 1px 8px rgba(40,24,12,0.06),0 0 0 1px rgba(40,24,12,0.04);--r:16px;--r-sm:10px;}
+  body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+  body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");opacity:.028;pointer-events:none;z-index:9999}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 3rem;border-bottom:1px solid var(--border-lt);background:rgba(237,228,213,0.85);backdrop-filter:blur(12px);position:sticky;top:0;z-index:100}
+  .nl{display:flex;align-items:center;gap:1rem}.nb{font-size:.8rem;color:var(--text-3);text-decoration:none;transition:color 200ms}.nb:hover{color:var(--accent)}.ns{color:var(--border)}
+  .hero{padding:4rem 3rem 2.5rem;border-bottom:1px solid var(--border-lt);max-width:1100px;margin:0 auto}
+  .ml{font-size:.68rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--rose);display:flex;align-items:center;gap:.6rem;margin-bottom:.75rem}.ml::before{content:'05';font-family:'JetBrains Mono',monospace;color:var(--accent)}
+  h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:400;line-height:1.1;margin-bottom:1rem}h1 em{font-style:italic;color:var(--text-2)}
+  .hd{font-size:.92rem;line-height:1.7;color:var(--text-2);font-weight:300;max-width:680px}
+  .main{max-width:1100px;margin:0 auto;padding:2.5rem 3rem}
+  .sl{font-size:.65rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);margin-bottom:.2rem}
+  .st{font-family:'Cormorant Garamond',serif;font-size:1.35rem;margin-bottom:1.25rem}
+
+  /* CLABSI bundle */
+  .clabsi-section{background:var(--surface);border:1px solid var(--border-lt);border-radius:var(--r);overflow:hidden;margin-bottom:2rem;box-shadow:var(--shadow-sm)}
+  .clas-header{padding:1.5rem 2rem;border-bottom:1px solid var(--border-lt);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+  .clas-body{display:grid;grid-template-columns:1.2fr 1fr}
+  #clabsiCanvas{width:100%;height:340px;display:block;border-right:1px solid var(--border-lt)}
+  .clas-panel{padding:1.75rem;display:flex;flex-direction:column;gap:1rem}
+  .bundle-item{display:flex;align-items:flex-start;gap:.75rem;padding:.7rem;border:1px solid var(--border-lt);border-radius:var(--r-sm);background:var(--bg);cursor:pointer;transition:all 150ms}
+  .bundle-item:hover,.bundle-item.done{background:rgba(126,156,132,0.08);border-color:var(--sage)}
+  .bi-check{width:20px;height:20px;border-radius:50%;border:2px solid var(--border);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:.7rem;transition:all 150ms}
+  .bundle-item.done .bi-check{background:var(--sage);border-color:var(--sage);color:white}
+  .bi-text{font-size:.78rem;line-height:1.5;color:var(--text-2);font-weight:300}
+  .bi-text strong{font-weight:600;color:var(--text)}
+
+  /* Complication cards */
+  .comp-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.25rem;margin-bottom:2rem}
+  .cc{background:var(--surface);border:1px solid var(--border-lt);border-radius:var(--r);padding:1.5rem;box-shadow:var(--shadow-sm)}
+  .cc-name{font-family:'Cormorant Garamond',serif;font-size:1.25rem;margin-bottom:.2rem}
+  .cc-rate{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--accent);margin-bottom:.75rem}
+  .cc-section{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin:.5rem 0 .2rem}
+  .cc-text{font-size:.78rem;line-height:1.6;color:var(--text-2);font-weight:300}
+  .cc-badge{font-size:.62rem;font-weight:600;padding:.15rem .55rem;border-radius:100px;margin-top:.6rem;display:inline-block}
+
+  /* Risk accumulation chart */
+  .risk-section{background:var(--surface);border:1px solid var(--border-lt);border-radius:var(--r);overflow:hidden;margin-bottom:2rem;box-shadow:var(--shadow-sm)}
+  #riskCanvas{width:100%;height:220px;display:block}
+
+  .tl-items{display:flex;flex-direction:column;margin-bottom:2rem}
+  .tl-item{display:flex;gap:1.5rem;padding:1.25rem 0;border-bottom:1px solid var(--border-lt)}.tl-item:last-child{border-bottom:none}
+  .tl-year{font-family:'JetBrains Mono',monospace;font-size:.85rem;color:var(--accent);min-width:60px;padding-top:.2rem}
+  .tl-dot{width:10px;height:10px;border-radius:50%;margin-top:.3rem;flex-shrink:0}
+  .tl-title{font-family:'Cormorant Garamond',serif;font-size:1.1rem;margin-bottom:.3rem}
+  .tl-desc{font-size:.8rem;line-height:1.65;color:var(--text-2);font-weight:300}
+  .tl-tag{display:inline-block;font-size:.62rem;font-weight:600;padding:.15rem .55rem;border-radius:100px;margin-top:.4rem}
+
+  .pearls{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem;margin-bottom:2rem}
+  .pearl{background:var(--surface);border:1px solid var(--border-lt);border-radius:var(--r-sm);padding:1.25rem 1.5rem;box-shadow:var(--shadow-sm)}
+  .pearl-icon{font-size:1.4rem;margin-bottom:.75rem}
+  .pearl-title{font-family:'Cormorant Garamond',serif;font-size:1.05rem;margin-bottom:.5rem}
+  .pearl-text{font-size:.8rem;line-height:1.65;color:var(--text-2);font-weight:300}
+
+  .nf{display:flex;justify-content:space-between;align-items:center;padding:2rem 3rem;border-top:1px solid var(--border-lt);max-width:1100px;margin:0 auto}
+  .nl2{text-decoration:none;color:var(--text-3);font-size:.82rem;transition:color 200ms;display:flex;align-items:center;gap:.5rem}.nl2:hover{color:var(--accent)}
+  .nll{font-size:.65rem;text-transform:uppercase;letter-spacing:.1em}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}.hero{animation:fadeUp .5s ease both}
+  @media(max-width:700px){nav,.hero,.main,.nf{padding-left:1.25rem;padding-right:1.25rem}.clas-body{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nl"><a href="/education/central-line-lab/" class="nb">← Collection</a><span class="ns">|</span><span style="font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--text-2)">The Central Line Lab</span></div>
+  <div class="nl"><span style="font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--accent)">05 / 06</span><a href="/education/central-line-lab/04-tip-position.html" class="nb">← Tip Position</a><span class="ns">|</span><a href="/education/central-line-lab/06-cvp-monitoring.html" class="nb">CVP →</a></div>
+</nav>
+
+<div class="hero">
+  <div class="ml">Complications — What Goes Wrong & When</div>
+  <h1>Every catheter-day<br><em>is a risk event.</em></h1>
+  <p class="hd">Central line complications fall into two temporal categories: insertion complications (immediate) and dwell complications (cumulative). The longer the line stays in, the higher the infection and thrombosis risk. Every day a central line is in place is a day it should be questioned whether it still needs to be there.</p>
+</div>
+
+<div class="main">
+
+  <!-- CLABSI BUNDLE -->
+  <div class="clabsi-section">
+    <div class="clas-header">
+      <div><div class="sl">CLABSI Prevention Bundle</div><div class="st" style="margin:0;font-family:'Cormorant Garamond',serif;font-size:1.3rem;">Interactive checklist — the 5 practices that eliminated CLABSI in Michigan</div></div>
+      <div id="clabsiScore" style="font-family:'JetBrains Mono',monospace;font-size:.85rem;color:var(--sage)">0 / 5</div>
+    </div>
+    <div class="clas-body">
+      <canvas id="clabsiCanvas"></canvas>
+      <div class="clas-panel">
+        <div style="font-size:.8rem;line-height:1.65;color:var(--text-2);font-weight:300;background:var(--bg);border-radius:var(--r-sm);padding:1rem">Pronovost's <em>Keystone Project</em> (2002–2006) reduced CLABSI rates from 2.7 to 0 per 1000 catheter-days in Michigan ICUs by implementing five evidence-based practices as an all-or-nothing bundle.</div>
+        <div id="bundleItems"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMPLICATION CARDS -->
+  <div class="sl" style="margin-bottom:.75rem">Complication Library</div>
+  <div class="st">Mechanism, Recognition, and Response</div>
+  <div class="comp-cards">
+    <div class="cc">
+      <div class="cc-name" style="color:var(--rose)">CLABSI</div>
+      <div class="cc-rate">1.5–2.0 / 1000 catheter-days (US ICU average)</div>
+      <div class="cc-section">Mechanism</div><p class="cc-text">Bacteria migrate along the catheter's external surface from skin flora (insertion path) or via hub contamination. Biofilm forms on the catheter surface — protected from antibiotics and immune cells. After 72 hours, biofilm begins to form on all intravascular catheters.</p>
+      <div class="cc-section">Recognition</div><p class="cc-text">Fever, rigors, hemodynamic instability without another source; blood cultures positive with skin/hub organisms (CoNS, Staph aureus, Candida). BSI temporally related to line access.</p>
+      <div class="cc-section">Prevention</div><p class="cc-text">Pronovost bundle (5 elements). Daily review of line necessity. Chlorhexidine-impregnated dressings. Antimicrobial-impregnated catheters. Remove all lines ASAP.</p>
+      <div class="cc-badge" style="background:rgba(184,112,112,0.12);color:var(--rose)">Preventable — #1 catheter killer</div>
+    </div>
+    <div class="cc">
+      <div class="cc-name" style="color:var(--blue)">Pneumothorax</div>
+      <div class="cc-rate">1–3% subclavian landmark · &lt;0.5% US-guided IJ</div>
+      <div class="cc-section">Mechanism</div><p class="cc-text">Needle punctures the visceral pleura during subclavian or IJ approach. Air enters pleural space, lung collapses. Tension pneumothorax: one-way valve creates progressive air accumulation → mediastinal shift → cardiovascular collapse.</p>
+      <div class="cc-section">Recognition</div><p class="cc-text">Post-procedure CXR (upright expiratory). Respiratory distress, decreased breath sounds, tracheal deviation (tension). Immediate hemodynamic instability = tension until proven otherwise.</p>
+      <div class="cc-section">Response</div><p class="cc-text">Small pneumothorax (&lt;15%): observation + O2. Symptomatic or &gt;15%: chest tube or needle aspiration. Tension: immediate 2nd ICS midclavicular needle, then chest tube.</p>
+      <div class="cc-badge" style="background:rgba(74,138,202,0.12);color:var(--blue)">Insertion complication — CXR always</div>
+    </div>
+    <div class="cc">
+      <div class="cc-name" style="color:var(--gold)">DVT / Thrombosis</div>
+      <div class="cc-rate">PICC: 5–14% · CVC upper arm: 2–5% · Femoral: 15–20%</div>
+      <div class="cc-section">Mechanism</div><p class="cc-text">Virchow's triad: endothelial injury from catheter, stasis from catheter-to-vein ratio, hypercoagulable state from underlying illness. PICC DVT classically presents 1–2 weeks after insertion.</p>
+      <div class="cc-section">Recognition</div><p class="cc-text">Arm/neck swelling, pain, erythema. Diagnosis by compression duplex ultrasound. Pulmonary embolism is the main risk — any DVT diagnosis requires anticoagulation risk-benefit assessment.</p>
+      <div class="cc-section">Prevention</div><p class="cc-text">Select catheter ≤45% vein diameter. Basilic first choice (largest, least tortuous). Tip at CAJ (stasis occurs with proximal malposition). Avoid femoral &gt;48 hours.</p>
+      <div class="cc-badge" style="background:rgba(201,168,76,0.12);color:var(--gold)">Dwell complication — daily assessment</div>
+    </div>
+    <div class="cc">
+      <div class="cc-name" style="color:var(--accent)">Air Embolism</div>
+      <div class="cc-rate">&lt;0.5% (rare but life-threatening)</div>
+      <div class="cc-section">Mechanism</div><p class="cc-text">Air enters the venous system through an open central line hub (insertion, tubing change, disconnection). 50–300 mL of air can be lethal. Air in RV outflow tract creates "air lock" — no blood pumped to pulmonary circulation. Cardiac arrest within seconds to minutes.</p>
+      <div class="cc-section">Recognition</div><p class="cc-text">"Mill-wheel" machinery murmur (pathognomonic — air in RV). Sudden cardiovascular collapse, hypoxia, altered consciousness during or after central line manipulation. Etco2 drops.</p>
+      <div class="cc-section">Response</div><p class="cc-text">Left lateral decubitus + Trendelenburg (air floats to apex, off RVOT). 100% O2. Aspiration via central line if in situ. CPR if pulseless. Hyperbaric O2 if available.</p>
+      <div class="cc-badge" style="background:rgba(188,114,80,0.12);color:var(--accent)">Prevention: always cap open hubs</div>
+    </div>
+    <div class="cc">
+      <div class="cc-name" style="color:var(--text-2)">Catheter Fracture / Pinch-Off</div>
+      <div class="cc-rate">&lt;1% (subclavian-specific)</div>
+      <div class="cc-section">Mechanism</div><p class="cc-text">Subclavian catheters pass through the costoclavicular space — between clavicle and first rib. Arm movement can repeatedly compress the catheter. Over time, the repetitive mechanical stress fractures the catheter — the fragment embolizes to the pulmonary vasculature.</p>
+      <div class="cc-section">Recognition</div><p class="cc-text">Difficulty aspirating from subclavian line. Patient reports tingling/pain with arm movement. CXR/fluoroscopy shows catheter fragment. "Pinch-off sign": catheter compressed on CXR between clavicle and first rib.</p>
+      <div class="cc-section">Response</div><p class="cc-text">Catheter fragment retrieval by interventional radiology (snare technique). Remove catheter if pinch-off sign seen — before fracture occurs.</p>
+      <div class="cc-badge" style="background:rgba(158,130,114,0.12);color:var(--text-3)">Subclavian-specific — CXR follow-up</div>
+    </div>
+    <div class="cc">
+      <div class="cc-name" style="color:var(--sage)">Fibrin Sheath / Occlusion</div>
+      <div class="cc-rate">PICC: ~30–50% develop fibrin sheath over dwell</div>
+      <div class="cc-section">Mechanism</div><p class="cc-text">A fibrin sheath forms around all intravascular catheters within 24 hours of insertion — it's a normal host response to a foreign body. The sheath can create a one-way valve: aspiration pulls the sheath over the tip (blocks), infusion opens it. Or the sheath fills the lumen with precipitate.</p>
+      <div class="cc-section">Recognition</div><p class="cc-text">Inability to aspirate but able to infuse. Resistance to flushing. Elevated infusion pump pressures. Sluggish blood return.</p>
+      <div class="cc-section">Response</div><p class="cc-text">Alteplase (tPA) 2 mg per lumen, dwell 30–120 min. Fibrinolytic agents dissolve fibrin clot. 60–85% success rate. If fails: fluoroscopic sheath stripping or line replacement.</p>
+      <div class="cc-badge" style="background:rgba(126,156,132,0.12);color:var(--sage)">Universal — early recognition key</div>
+    </div>
+  </div>
+
+  <!-- RISK ACCUMULATION -->
+  <div class="risk-section">
+    <div style="padding:1.5rem 2rem;border-bottom:1px solid var(--border-lt)"><div class="sl" style="margin-bottom:.2rem">Catheter-Day Risk Model</div><div style="font-family:'Cormorant Garamond',serif;font-size:1.2rem">Cumulative CLABSI & DVT risk over time — PICC vs CVC</div></div>
+    <canvas id="riskCanvas"></canvas>
+  </div>
+
+  <!-- HISTORY -->
+  <div class="sl" style="margin-bottom:1rem">Historical Record</div>
+  <div class="tl-items">
+    <div class="tl-item"><div class="tl-year">2002</div><div class="tl-dot" style="background:var(--sage)"></div><div><div class="tl-title">Pronovost's Michigan Keystone Project — CLABSI as a Preventable Event</div><p class="tl-desc">Peter Pronovost's publication in the NEJM (2006) reported on the Michigan Health & Hospital Association Keystone ICU Project — implementing a five-element evidence-based bundle in 103 ICUs across Michigan. CLABSI rates fell by 66% within 18 months, with 18 months of near-zero rates in many units. The study definitively established that CLABSI is preventable — not an expected complication — and that a simple checklist could eliminate it. The paper is one of the most influential in patient safety history.</p><span class="tl-tag" style="background:rgba(126,156,132,0.15);color:var(--sage)">Patient Safety Revolution</span></div></div>
+    <div class="tl-item"><div class="tl-year">2008</div><div class="tl-dot" style="background:var(--blue)"></div><div><div class="tl-title">Atul Gawande's The Checklist Manifesto</div><p class="tl-desc">Gawande's popularization of Pronovost's work brought central line infection prevention to public consciousness. His book, drawing on both the Michigan project and aviation checklists, argued that complex processes fail not from ignorance but from failure to apply knowledge consistently. The CLABSI bundle became the paradigmatic example of checklist-based medical error reduction — studied in surgical, anesthetic, and nursing education worldwide.</p><span class="tl-tag" style="background:rgba(74,138,202,0.15);color:var(--blue)">Public Impact</span></div></div>
+  </div>
+
+  <div class="pearls">
+    <div class="pearl"><div class="pearl-icon">🦠</div><div class="pearl-title">The 72-Hour Biofilm Window</div><p class="pearl-text">All central lines begin developing biofilm within 24 hours of insertion. By 72 hours, a mature biofilm exists on both the external catheter surface and the intraluminal surface. Biofilm-embedded organisms are protected from antibiotics at up to 1,000× their usual minimum inhibitory concentration. This is why treating CLABSI without removing the line fails in most cases — you cannot sterilize a biofilm with antibiotics alone.</p></div>
+    <div class="pearl"><div class="pearl-icon">📊</div><div class="pearl-title">CLABSI Rate Is a Compliance Metric</div><p class="pearl-text">Institutions with CLABSI rates near zero have not eliminated bacteria — they have achieved near-perfect compliance with insertion and maintenance bundle elements. Every CLABSI represents at least one bundle element that was omitted. The CLABSI rate is the institutional equivalent of a process audit: it tells you whether your clinicians are following evidence-based practice, not just whether bacteria exist.</p></div>
+    <div class="pearl"><div class="pearl-icon">❓</div><div class="pearl-title">Daily Necessity Review — The Most Important Prevention</div><p class="pearl-text">The single most effective central line complication prevention strategy is removing the line when it is no longer needed. Studies consistently show that 30–40% of central lines remain in place longer than clinically necessary. Every "unnecessary" catheter-day adds infection, thrombosis, and complication risk. "Is this line still needed today?" should be asked on every ICU round, every day.</p></div>
+    <div class="pearl"><div class="pearl-icon">💨</div><div class="pearl-title">Air Embolism: Left Lateral Decubitus</div><p class="pearl-text">The left lateral decubitus (Durant's maneuver) + Trendelenburg position is the first-line response to suspected air embolism. In this position, air in the right ventricle floats to the apex (away from the RVOT) by buoyancy, allowing some blood to continue flowing around it. It buys time for aspiration or CPR. Knowing this position by reflex — not by looking it up — can save a life during a central line disconnection event.</p></div>
+  </div>
+
+</div>
+
+<div class="nf">
+  <a href="/education/central-line-lab/04-tip-position.html" class="nl2"><span>←</span><div><div class="nll">Previous</div>Tip Positioning</div></a>
+  <a href="/education/central-line-lab/06-cvp-monitoring.html" class="nl2"><div style="text-align:right"><div class="nll">Final Module</div>CVP Monitoring</div><span>→</span></a>
+</div>
+
+<script>
+// BUNDLE ITEMS
+const BUNDLE=[
+  {text:'<strong>Hand hygiene</strong> before procedure and all line touches'},
+  {text:'<strong>Maximal sterile barrier</strong>: cap, mask, gown, gloves, full-body drape'},
+  {text:'<strong>Chlorhexidine skin antisepsis</strong> and allow full drying before insertion'},
+  {text:'<strong>Optimal site selection</strong>: subclavian preferred; avoid femoral'},
+  {text:'<strong>Daily review</strong> of line necessity — remove when no longer needed'},
+];
+
+let bundleDone=new Set();
+const bundleContainer=document.getElementById('bundleItems');
+BUNDLE.forEach((b,i)=>{
+  const div=document.createElement('div');div.className='bundle-item';
+  div.innerHTML=`<div class="bi-check">✓</div><div class="bi-text">${b.text}</div>`;
+  div.onclick=()=>{
+    div.classList.toggle('done');
+    if(div.classList.contains('done'))bundleDone.add(i);else bundleDone.delete(i);
+    document.getElementById('clabsiScore').textContent=bundleDone.size+' / 5';
+    document.getElementById('clabsiScore').style.color=bundleDone.size===5?'#7E9C84':bundleDone.size>=3?'#C9A84C':'#BC7250';
+  };
+  bundleContainer.appendChild(div);
+});
+
+// CLABSI Canvas — biofilm timeline visualization
+const cc=document.getElementById('clabsiCanvas');
+const cctx=cc.getContext('2d');
+let ccT=0;
+
+function resizeCC(){cc.width=cc.offsetWidth;cc.height=340}
+resizeCC();window.addEventListener('resize',resizeCC);
+
+const particles=[];
+for(let i=0;i<120;i++){
+  particles.push({x:Math.random(),y:Math.random(),r:Math.random()*3+1,vx:(Math.random()-.5)*.002,vy:(Math.random()-.5)*.002,attached:Math.random()>.6});
+}
+
+function drawClabsi(){
+  const W=cc.width,H=cc.height;
+  ccT+=.008;
+  cctx.clearRect(0,0,W,H);
+  cctx.fillStyle='#0E0C0A';cctx.fillRect(0,0,W,H);
+
+  // Catheter cross-section
+  const cX=W*.5,cY=H*.5;
+  const outerR=W*.12,innerR=W*.09;
+
+  // Outer catheter wall
+  const wallGrad=cctx.createRadialGradient(cX,cY,innerR,cX,cY,outerR);
+  wallGrad.addColorStop(0,'#2A3A5A');wallGrad.addColorStop(1,'#1A2A4A');
+  cctx.beginPath();cctx.arc(cX,cY,outerR,0,Math.PI*2);
+  cctx.fillStyle=wallGrad;cctx.fill();
+  cctx.strokeStyle='rgba(74,138,202,0.4)';cctx.lineWidth=1.5;cctx.stroke();
+
+  // Lumen (blood)
+  cctx.beginPath();cctx.arc(cX,cY,innerR,0,Math.PI*2);
+  cctx.fillStyle='#1A0808';cctx.fill();
+  // Blood flow
+  for(let i=0;i<6;i++){
+    const t=(ccT*.4+i/6)%1;
+    const ang=t*Math.PI*2;
+    const rx=cX+Math.cos(ang)*innerR*.6,ry=cY+Math.sin(ang)*innerR*.6;
+    cctx.beginPath();cctx.arc(rx,ry,2.5,0,Math.PI*2);
+    cctx.fillStyle='rgba(139,32,32,0.7)';cctx.fill();
+  }
+
+  // Biofilm layer on catheter exterior
+  const biofilmThickness=bundleDone.size===5?2:8;
+  const biofilmAlpha=bundleDone.size===5?.1:.45;
+  cctx.beginPath();cctx.arc(cX,cY,outerR+biofilmThickness,0,Math.PI*2);
+  cctx.strokeStyle=`rgba(180,140,60,${biofilmAlpha})`;cctx.lineWidth=biofilmThickness;cctx.stroke();
+
+  // Bacteria particles
+  const bundleComp=bundleDone.size/5;
+  particles.forEach((p,i)=>{
+    p.x+=p.vx*(1-bundleComp*.8);p.y+=p.vy*(1-bundleComp*.8);
+    if(p.x<0)p.x=1;if(p.x>1)p.x=0;if(p.y<0)p.y=1;if(p.y>1)p.y=0;
+    const px=p.x*W,py=p.y*H;
+    const dist=Math.sqrt((px-cX)**2+(py-cY)**2);
+    // Bacteria near catheter (in biofilm zone)
+    if(dist>outerR&&dist<outerR+20){
+      if(bundleDone.size<5){
+        cctx.beginPath();cctx.arc(px,py,p.r,0,Math.PI*2);
+        cctx.fillStyle=`rgba(${p.attached?'180,140,40':'220,80,60'},0.7)`;
+        cctx.fill();
+      }
+    } else if(dist>outerR+20&&bundleDone.size<4){
+      cctx.beginPath();cctx.arc(px,py,p.r*.6,0,Math.PI*2);
+      cctx.fillStyle='rgba(200,80,60,0.4)';cctx.fill();
+    }
+  });
+
+  // Bundle compliance label
+  const compColor=bundleDone.size===5?'#7E9C84':bundleDone.size>=3?'#C9A84C':'#C04040';
+  cctx.fillStyle=compColor;cctx.font='500 10px Nunito';cctx.textAlign='center';
+  cctx.fillText(bundleDone.size===5?'Bundle complete — biofilm suppressed':'Bundle incomplete — biofilm growing',cX,H*.12);
+  cctx.fillStyle='rgba(158,130,114,0.4)';cctx.font='9px Nunito';
+  cctx.fillText('catheter cross-section with biofilm',cX,H*.92);
+
+  requestAnimationFrame(drawClabsi);
+}
+drawClabsi();
+
+// RISK ACCUMULATION CHART
+const rc=document.getElementById('riskCanvas');
+const rctx=rc.getContext('2d');
+function resizeRC(){rc.width=rc.offsetWidth;rc.height=220}
+resizeRC();
+
+function drawRiskChart(){
+  const W=rc.width,H=rc.height;
+  rctx.clearRect(0,0,W,H);
+  rctx.fillStyle='#F6F0E8';rctx.fillRect(0,0,W,H);
+  const pad={l:50,r:20,t:20,b:35};
+  const cW=W-pad.l-pad.r,cH=H-pad.t-pad.b;
+  const maxDays=28,maxRisk=0.35;
+  function tx(d){return pad.l+d/maxDays*cW}
+  function ty(r){return pad.t+(1-r/maxRisk)*cH}
+  // Grid
+  for(let r=0;r<=0.35;r+=.05){
+    rctx.strokeStyle='rgba(40,24,12,0.06)';rctx.lineWidth=1;
+    rctx.beginPath();rctx.moveTo(pad.l,ty(r));rctx.lineTo(W-pad.r,ty(r));rctx.stroke();
+    rctx.fillStyle='rgba(40,24,12,0.35)';rctx.font='9px JetBrains Mono';rctx.textAlign='right';
+    rctx.fillText((r*100).toFixed(0)+'%',pad.l-4,ty(r)+3);
+  }
+  for(let d=0;d<=28;d+=7){
+    rctx.strokeStyle='rgba(40,24,12,0.06)';rctx.lineWidth=1;
+    rctx.beginPath();rctx.moveTo(tx(d),pad.t);rctx.lineTo(tx(d),H-pad.b);rctx.stroke();
+    rctx.fillStyle='rgba(40,24,12,0.35)';rctx.font='9px Nunito';rctx.textAlign='center';
+    rctx.fillText('Day '+d,tx(d),H-pad.b+14);
+  }
+  // CLABSI CVC
+  rctx.beginPath();
+  for(let d=0;d<=28;d++){
+    const r=1-Math.exp(-0.0015*d);
+    if(d===0)rctx.moveTo(tx(d),ty(r));else rctx.lineTo(tx(d),ty(r));
+  }
+  rctx.strokeStyle='#B87070';rctx.lineWidth=2.5;rctx.stroke();
+  // CLABSI PICC
+  rctx.beginPath();
+  for(let d=0;d<=28;d++){
+    const r=1-Math.exp(-0.001*d);
+    if(d===0)rctx.moveTo(tx(d),ty(r));else rctx.lineTo(tx(d),ty(r));
+  }
+  rctx.strokeStyle='#7E9C84';rctx.lineWidth=2.5;rctx.stroke();
+  // DVT PICC
+  rctx.beginPath();rctx.setLineDash([6,4]);
+  for(let d=0;d<=28;d++){
+    const r=1-Math.exp(-0.006*d);
+    if(d===0)rctx.moveTo(tx(d),ty(r));else rctx.lineTo(tx(d),ty(r));
+  }
+  rctx.strokeStyle='#4A8ACA';rctx.lineWidth=2;rctx.stroke();rctx.setLineDash([]);
+  // Legend
+  const legends=[['CVC CLABSI rate','#B87070',false],['PICC CLABSI rate','#7E9C84',false],['PICC DVT risk','#4A8ACA',true]];
+  legends.forEach(([l,c,d],i)=>{
+    const lx=pad.l+10+i*130;
+    if(d)rctx.setLineDash([5,4]);
+    rctx.beginPath();rctx.moveTo(lx,pad.t+8);rctx.lineTo(lx+24,pad.t+8);
+    rctx.strokeStyle=c;rctx.lineWidth=2;rctx.stroke();rctx.setLineDash([]);
+    rctx.fillStyle='rgba(40,24,12,0.6)';rctx.font='9px Nunito';rctx.textAlign='left';
+    rctx.fillText(l,lx+28,pad.t+11);
+  });
+  rctx.fillStyle='rgba(40,24,12,0.3)';rctx.font='9px Nunito';rctx.textAlign='right';
+  rctx.fillText('Cumulative risk (%)',pad.l-2,pad.t-6);
+}
+drawRiskChart();
+</script>
+</body>
+</html>

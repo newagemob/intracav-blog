@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catheter Reflux — The Catheter Lab</title>
+<script src="https://unpkg.com/htmx.org@1.9.10"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Nunito:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #EDE4D5; --surface: #F6F0E8;
+    --border: #D4C7B5; --border-lt: #E2D8CC;
+    --text: #28180C; --text-2: #685040; --text-3: #9E8272;
+    --accent: #BC7250; --accent-lt: #E8C4A8;
+    --sage: #7E9C84; --rose: #B87070; --gold: #C9A84C;
+    --blood: #8B2020; --blood-lt: #C04040;
+    --shadow-sm: 0 1px 8px rgba(40,24,12,0.06), 0 0 0 1px rgba(40,24,12,0.04);
+    --r: 16px; --r-sm: 10px;
+  }
+  body { font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+  body::after { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E"); opacity: 0.028; pointer-events: none; z-index: 9999; }
+  nav { display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 3rem; border-bottom: 1px solid var(--border-lt); background: rgba(237,228,213,0.85); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100; }
+  .nav-left { display: flex; align-items: center; gap: 1rem; }
+  .nav-back { font-size: 0.8rem; color: var(--text-3); text-decoration: none; transition: color 200ms; }
+  .nav-back:hover { color: var(--accent); }
+  .nav-sep { color: var(--border); }
+  .nav-title { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--text-2); }
+  .hero { padding: 4rem 3rem 2.5rem; display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: end; border-bottom: 1px solid var(--border-lt); max-width: 1100px; margin: 0 auto; }
+  .module-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rose); display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.75rem; }
+  .module-label::before { content: '01'; font-family: 'JetBrains Mono', monospace; color: var(--accent); }
+  h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 400; line-height: 1.1; margin-bottom: 1rem; }
+  h1 em { font-style: italic; color: var(--text-2); }
+  .hero-desc { font-size: 0.92rem; line-height: 1.7; color: var(--text-2); font-weight: 300; max-width: 500px; }
+  .hero-eq { background: var(--surface); border: 1px solid var(--border-lt); border-radius: var(--r); padding: 1.75rem 2rem; text-align: center; min-width: 240px; }
+  .eq-row { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: var(--text); margin-bottom: 0.5rem; }
+  .eq-name { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3); margin-top: 0.4rem; }
+  .frac { display: inline-flex; flex-direction: column; align-items: center; vertical-align: middle; }
+  .frac .num { border-bottom: 1.5px solid var(--text-2); padding: 0 4px 3px; }
+  .frac .den { padding: 3px 4px 0; }
+
+  .main { max-width: 1100px; margin: 0 auto; padding: 2.5rem 3rem; }
+  .section-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3); margin-bottom: 0.2rem; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; margin-bottom: 1.25rem; }
+
+  /* Pressure simulator */
+  .sim-section { background: var(--surface); border: 1px solid var(--border-lt); border-radius: var(--r); overflow: hidden; margin-bottom: 2rem; box-shadow: var(--shadow-sm); }
+  .sim-header { padding: 1.5rem 2rem; border-bottom: 1px solid var(--border-lt); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+  .sim-body { display: grid; grid-template-columns: 1.4fr 1fr; }
+  #refluxCanvas { width: 100%; height: 380px; display: block; border-right: 1px solid var(--border-lt); }
+  .sim-panel { padding: 1.75rem; display: flex; flex-direction: column; gap: 1.25rem; }
+
+  /* Pressure gauge */
+  .pressure-gauge { background: var(--bg); border-radius: var(--r-sm); padding: 1.25rem; text-align: center; }
+  .pg-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); margin-bottom: 0.5rem; }
+  .pg-num { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 300; line-height: 1; transition: color 400ms; }
+  .pg-unit { font-size: 0.78rem; color: var(--text-3); }
+  .status-badge { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.4rem 0.9rem; border-radius: 100px; font-size: 0.72rem; font-weight: 600; transition: all 300ms; }
+
+  /* Scenario triggers */
+  .scenario-btns { display: flex; flex-direction: column; gap: 0.5rem; }
+  .sc-btn { padding: 0.55rem 1rem; border: 1px solid var(--border); border-radius: var(--r-sm); font-size: 0.78rem; font-weight: 600; font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text-2); cursor: pointer; transition: all 150ms; text-align: left; display: flex; align-items: center; gap: 0.5rem; }
+  .sc-btn:hover, .sc-btn.active { background: var(--accent); border-color: var(--accent); color: white; }
+  .sc-badge { font-size: 0.65rem; font-weight: 700; padding: 0.1rem 0.4rem; border-radius: 4px; background: rgba(255,255,255,0.2); }
+
+  .ctrl { display: flex; flex-direction: column; gap: 0.4rem; }
+  .ctrl-row { display: flex; justify-content: space-between; }
+  .ctrl-name { font-size: 0.78rem; font-weight: 600; color: var(--text-2); }
+  .ctrl-val { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--accent); }
+  .ctrl-unit { font-size: 0.65rem; color: var(--text-3); }
+  input[type=range] { -webkit-appearance: none; width: 100%; height: 4px; background: var(--border); border-radius: 100px; outline: none; cursor: pointer; }
+  input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 0 4px rgba(188,114,80,0.15); }
+
+  /* Timeline */
+  .timeline { margin-bottom: 2rem; }
+  .tl-items { display: flex; flex-direction: column; gap: 0; }
+  .tl-item { display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.25rem 0; border-bottom: 1px solid var(--border-lt); }
+  .tl-item:last-child { border-bottom: none; }
+  .tl-year { font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: var(--accent); min-width: 60px; padding-top: 0.2rem; }
+  .tl-dot { width: 10px; height: 10px; border-radius: 50%; margin-top: 0.3rem; flex-shrink: 0; }
+  .tl-content { flex: 1; }
+  .tl-title { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; margin-bottom: 0.3rem; }
+  .tl-desc { font-size: 0.8rem; line-height: 1.65; color: var(--text-2); font-weight: 300; }
+  .tl-tag { display: inline-block; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.06em; padding: 0.15rem 0.55rem; border-radius: 100px; margin-top: 0.4rem; }
+
+  /* Connector types */
+  .connector-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+  .conn-card { background: var(--surface); border: 1px solid var(--border-lt); border-radius: var(--r-sm); padding: 1.25rem; box-shadow: var(--shadow-sm); }
+  .conn-type { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; margin-bottom: 0.5rem; }
+  .conn-row { display: flex; justify-content: space-between; font-size: 0.75rem; padding: 0.2rem 0; }
+  .conn-key { color: var(--text-3); }
+  .conn-val { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; }
+  .conn-risk { font-size: 0.65rem; font-weight: 600; padding: 0.15rem 0.55rem; border-radius: 100px; margin-top: 0.5rem; display: inline-block; }
+
+  /* Pearls */
+  .pearls { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+  .pearl { background: var(--surface); border: 1px solid var(--border-lt); border-radius: var(--r-sm); padding: 1.25rem 1.5rem; box-shadow: var(--shadow-sm); }
+  .pearl-icon { font-size: 1.4rem; margin-bottom: 0.75rem; }
+  .pearl-title { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; margin-bottom: 0.5rem; }
+  .pearl-text { font-size: 0.8rem; line-height: 1.65; color: var(--text-2); font-weight: 300; }
+
+  /* Intracav */
+  .intracav-strip { background: var(--text); border-radius: var(--r); padding: 2rem 2.5rem; margin-bottom: 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; }
+  .is-kicker { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
+  .is-title { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: #F0E8E0; margin-bottom: 0.75rem; }
+  .is-title em { font-style: italic; color: var(--accent-lt); }
+  .is-desc { font-size: 0.82rem; line-height: 1.7; color: #6A5A4A; font-weight: 300; }
+  .is-metrics { display: flex; flex-direction: column; gap: 0.75rem; }
+  .is-metric { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); border-radius: var(--r-sm); padding: 0.9rem 1.1rem; }
+  .ism-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); margin-bottom: 0.25rem; }
+  .ism-val { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: #E0D8D0; }
+
+  .nav-footer { display: flex; justify-content: space-between; align-items: center; padding: 2rem 3rem; border-top: 1px solid var(--border-lt); max-width: 1100px; margin: 0 auto; }
+  .nav-link { text-decoration: none; color: var(--text-3); font-size: 0.82rem; transition: color 200ms; display: flex; align-items: center; gap: 0.5rem; }
+  .nav-link:hover { color: var(--accent); }
+  .nav-link-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+  .hero { animation: fadeUp 0.5s ease both; }
+
+  @media (max-width: 700px) {
+    nav, .hero, .main, .nav-footer { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .hero, .sim-body, .intracav-strip { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-left">
+    <a href="/education/catheter-lab/" class="nav-back">← Collection</a>
+    <span class="nav-sep">|</span>
+    <span class="nav-title">The Catheter Lab</span>
+  </div>
+  <div class="nav-left">
+    <span style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--accent);">01 / 04</span>
+    <a href="/education/catheter-lab/02-blood-draw.html" class="nav-back">Blood Draw →</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div>
+    <div class="module-label">Catheter Reflux & Pressure Reversal</div>
+    <h1>Blood flows<br><em>the wrong way.</em></h1>
+    <p class="hero-desc">Every peripheral IV catheter is sitting inside a vessel under pressure. The moment your IV line pressure drops below venous pressure — cough, valsalva, empty bag, kinked tubing — blood flows backward. The physics is indifferent to your intentions.</p>
+  </div>
+  <div class="hero-eq">
+    <div class="eq-row">ΔP = P<sub>vein</sub> − P<sub>IV</sub></div>
+    <div class="eq-name">Reflux Condition (ΔP &gt; 0 → reflux)</div>
+    <div style="height:0.75rem"></div>
+    <div class="eq-row">Q = <span class="frac"><span class="num">πr⁴ΔP</span><span class="den">8ηL</span></span></div>
+    <div class="eq-name">Reflux Flow Rate (Hagen-Poiseuille)</div>
+    <div style="height:0.75rem"></div>
+    <div class="eq-row">t<sub>clot</sub> ≈ <span class="frac"><span class="num">V<sub>stasis</sub></span><span class="den">Q<sub>reflux</sub></span></span></div>
+    <div class="eq-name">Time to Stasis Clotting</div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- SIMULATOR -->
+  <div class="sim-section">
+    <div class="sim-header">
+      <div>
+        <div class="section-label">Live Pressure Simulator</div>
+        <div class="section-title" style="margin:0;font-family:'Cormorant Garamond',serif;font-size:1.3rem;">Watch blood reflux in real time</div>
+      </div>
+      <div id="statusBadge" class="status-badge" style="background:rgba(126,156,132,0.15);color:var(--sage);border:1px solid var(--sage);">
+        ● PATENT — forward flow
+      </div>
+    </div>
+    <div class="sim-body">
+      <canvas id="refluxCanvas"></canvas>
+      <div class="sim-panel">
+        <!-- Pressure gauge -->
+        <div class="pressure-gauge">
+          <div class="pg-label">Net Pressure Gradient ΔP</div>
+          <div class="pg-num" id="deltaP">+18</div>
+          <div class="pg-unit">mmHg (positive = forward flow)</div>
+        </div>
+
+        <!-- Sliders -->
+        <div class="ctrl">
+          <div class="ctrl-row">
+            <span class="ctrl-name">IV bag height</span>
+            <span class="ctrl-val"><span id="bagHeight">80</span><span class="ctrl-unit"> cm above site</span></span>
+          </div>
+          <input type="range" id="bagSlider" min="0" max="200" step="5" value="80" oninput="updateReflux()">
+        </div>
+        <div class="ctrl">
+          <div class="ctrl-row">
+            <span class="ctrl-name">Venous pressure (CVP)</span>
+            <span class="ctrl-val"><span id="cvpVal">8</span><span class="ctrl-unit"> mmHg</span></span>
+          </div>
+          <input type="range" id="cvpSlider" min="0" max="30" step="1" value="8" oninput="updateReflux()">
+        </div>
+        <div class="ctrl">
+          <div class="ctrl-row">
+            <span class="ctrl-name">Catheter gauge</span>
+            <span class="ctrl-val"><span id="gaugeVal">20</span><span class="ctrl-unit">G</span></span>
+          </div>
+          <input type="range" id="gaugeSlider" min="14" max="24" step="2" value="20" oninput="updateReflux()">
+        </div>
+
+        <!-- Scenario triggers -->
+        <div class="section-label" style="margin-bottom:0.5rem;">Clinical Scenarios</div>
+        <div class="scenario-btns">
+          <button class="sc-btn active" onclick="setScenario('normal', this)">🟢 Normal infusion running</button>
+          <button class="sc-btn" onclick="setScenario('empty', this)">🟡 Bag runs empty <span class="sc-badge">common</span></button>
+          <button class="sc-btn" onclick="setScenario('cough', this)">🟠 Patient coughs / Valsalva</button>
+          <button class="sc-btn" onclick="setScenario('arm', this)">🟠 Arm raised above IV bag</button>
+          <button class="sc-btn" onclick="setScenario('clamp', this)">🔴 Line clamped / kinked</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONNECTOR TYPES -->
+  <div style="margin-bottom:0.75rem;">
+    <div class="section-label">Connector Comparison</div>
+    <div class="section-title">How Needleless Connectors Changed the Reflux Problem</div>
+  </div>
+  <div class="connector-grid">
+    <div class="conn-card">
+      <div class="conn-type">Simple Cap</div>
+      <div class="conn-row"><span class="conn-key">Mechanism</span><span class="conn-val">None</span></div>
+      <div class="conn-row"><span class="conn-key">On disconnect</span><span class="conn-val">Open → direct reflux</span></div>
+      <div class="conn-row"><span class="conn-key">Deadspace</span><span class="conn-val">Minimal</span></div>
+      <div class="conn-row"><span class="conn-key">Era</span><span class="conn-val">Pre-1990s</span></div>
+      <div class="conn-risk" style="background:rgba(184,112,112,0.12);color:var(--rose);">High reflux risk</div>
+    </div>
+    <div class="conn-card">
+      <div class="conn-type">Negative Displacement</div>
+      <div class="conn-row"><span class="conn-key">Mechanism</span><span class="conn-val">Slit-valve</span></div>
+      <div class="conn-row"><span class="conn-key">On disconnect</span><span class="conn-val">−0.1 to −1 μL reflux</span></div>
+      <div class="conn-row"><span class="conn-key">Deadspace</span><span class="conn-val">~0.06 mL</span></div>
+      <div class="conn-row"><span class="conn-key">Era</span><span class="conn-val">1990s–2000s</span></div>
+      <div class="conn-risk" style="background:rgba(201,168,76,0.12);color:var(--gold);">Moderate risk</div>
+    </div>
+    <div class="conn-card">
+      <div class="conn-type">Neutral Displacement</div>
+      <div class="conn-row"><span class="conn-key">Mechanism</span><span class="conn-val">Balanced internal</span></div>
+      <div class="conn-row"><span class="conn-key">On disconnect</span><span class="conn-val">≈0 displacement</span></div>
+      <div class="conn-row"><span class="conn-key">Deadspace</span><span class="conn-val">~0.07 mL</span></div>
+      <div class="conn-row"><span class="conn-key">Era</span><span class="conn-val">2000s–present</span></div>
+      <div class="conn-risk" style="background:rgba(126,156,132,0.12);color:var(--sage);">Low reflux risk</div>
+    </div>
+    <div class="conn-card">
+      <div class="conn-type">Positive Displacement</div>
+      <div class="conn-row"><span class="conn-key">Mechanism</span><span class="conn-val">Fluid bolus on disconnect</span></div>
+      <div class="conn-row"><span class="conn-key">On disconnect</span><span class="conn-val">+0.04–0.2 mL expelled</span></div>
+      <div class="conn-row"><span class="conn-key">Deadspace</span><span class="conn-val">~0.2 mL ⚠</span></div>
+      <div class="conn-row"><span class="conn-key">Era</span><span class="conn-val">2000s–present</span></div>
+      <div class="conn-risk" style="background:rgba(126,156,132,0.12);color:var(--sage);">Lowest reflux, drug surge risk</div>
+    </div>
+  </div>
+
+  <!-- HISTORY TIMELINE -->
+  <div class="timeline">
+    <div class="section-label" style="margin-bottom:1rem;">Historical Record</div>
+    <div class="tl-items">
+      <div class="tl-item">
+        <div class="tl-year">1628</div>
+        <div class="tl-dot" style="background:var(--text-3)"></div>
+        <div class="tl-content">
+          <div class="tl-title">Harvey's Circulation — The Pressure Foundation</div>
+          <p class="tl-desc">William Harvey's <em>De Motu Cordis</em> establishes that blood circulates continuously under pressure from the heart. This is the prerequisite for understanding reflux: venous pressure is not zero, and the gradient between venous blood and any external line determines direction of flow.</p>
+          <span class="tl-tag" style="background:rgba(158,130,114,0.15);color:var(--text-3);">Foundation Science</span>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1945</div>
+        <div class="tl-dot" style="background:var(--gold)"></div>
+        <div class="tl-content">
+          <div class="tl-title">First Dwell Catheters — Reflux Becomes Possible</div>
+          <p class="tl-desc">Before plastic-over-needle catheters (Massa, Rochester), IV access was through rigid metal needles — removed immediately after injection. Dwell catheters created the first continuous patient-to-line connection, making reflux a persistent clinical reality rather than a momentary risk.</p>
+          <span class="tl-tag" style="background:rgba(201,168,76,0.15);color:var(--gold);">Technology Shift</span>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1950s</div>
+        <div class="tl-dot" style="background:var(--rose)"></div>
+        <div class="tl-content">
+          <div class="tl-title">Reflux-Induced Occlusion — First Descriptions</div>
+          <p class="tl-desc">As peripheral IV dwell times extended, clinicians began documenting "clotted" catheters — fibrin clots and blood plugs traced to episodes of backflow. The relationship between bag height, patient position, and catheter patency began to be understood empirically before it was explained mathematically.</p>
+          <span class="tl-tag" style="background:rgba(184,112,112,0.15);color:var(--rose);">Clinical Problem</span>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1960s</div>
+        <div class="tl-dot" style="background:var(--accent)"></div>
+        <div class="tl-content">
+          <div class="tl-title">Heparin Locks — First Systematic Response</div>
+          <p class="tl-desc">Dilute heparin flush was adopted hospital-wide to prevent reflux-induced clotting at catheter tips. The "heparin lock" became a clinical standard, but introduced iatrogenic anticoagulation risk. The saline-vs-heparin controversy persisted for 40 years before large randomized trials (2000s) showed normal saline equivalent for peripheral IVs.</p>
+          <span class="tl-tag" style="background:rgba(188,114,80,0.15);color:var(--accent);">Clinical Response</span>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1985</div>
+        <div class="tl-dot" style="background:var(--sage)"></div>
+        <div class="tl-content">
+          <div class="tl-title">INS Standards — Flush Protocols Formalized</div>
+          <p class="tl-desc">The Infusion Nurses Society published the first comprehensive standards specifying flush volumes, flush frequency, and catheter patency maintenance. The "SASH" protocol (Saline-Administer-Saline-Heparin) became a clinical teaching framework, though the underlying physics of what keeps a line patent was rarely taught explicitly.</p>
+          <span class="tl-tag" style="background:rgba(126,156,132,0.15);color:var(--sage);">Standards</span>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1990s–2000s</div>
+        <div class="tl-dot" style="background:var(--gold)"></div>
+        <div class="tl-content">
+          <div class="tl-title">Needleless Connectors — Solving and Creating Problems</div>
+          <p class="tl-desc">OSHA needlestick regulations drove adoption of needleless connectors. These reduced reflux volume but introduced new problems: deadspace, fluid surge on disconnect (positive displacement types), and biofilm accumulation in complex internal geometries. Reflux-related infection and CRBSI rates paradoxically rose in some institutions after adoption — traced to technique failures and deadspace-resident organisms.</p>
+          <span class="tl-tag" style="background:rgba(201,168,76,0.15);color:var(--gold);">Technology Tradeoff</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PEARLS -->
+  <div class="pearls">
+    <div class="pearl">
+      <div class="pearl-icon">📐</div>
+      <div class="pearl-title">The 73 cm Rule</div>
+      <p class="pearl-text">Each 1 cm of IV bag height above the insertion site generates ~0.73 mmHg of hydrostatic pressure. A bag 100 cm high generates ~73 mmHg — far above typical venous pressure. Lower the bag to 30 cm and you're at ~22 mmHg, barely above CVP in a volume-loaded patient.</p>
+    </div>
+    <div class="pearl">
+      <div class="pearl-icon">😮‍💨</div>
+      <div class="pearl-title">Valsalva Doubles Venous Pressure</div>
+      <p class="pearl-text">During coughing or straining, intrathoracic pressure rises sharply — transmitted to venous pressure. CVP can spike from 8 mmHg to 20+ mmHg instantaneously, easily exceeding IV line pressure and driving reflux for the duration of the maneuver. This is why blood in the tubing after a cough is a normal finding — but it shouldn't stay there.</p>
+    </div>
+    <div class="pearl">
+      <div class="pearl-icon">🔴</div>
+      <div class="pearl-title">Reflux Blood Clots Fast</div>
+      <p class="pearl-text">Blood that enters the lumen of the catheter is in a low-flow or static environment, often without anticoagulant. Thrombin generation can begin within minutes. A 20G catheter has a lumen volume of only ~0.02 mL — enough that even minimal reflux occupies the entire tip, creating the nidus for occlusion.</p>
+    </div>
+    <div class="pearl">
+      <div class="pearl-icon">⚗️</div>
+      <div class="pearl-title">Positive Displacement Solves One, Creates Another</div>
+      <p class="pearl-text">Positive-displacement connectors prevent reflux by pushing a small bolus of fluid into the catheter on syringe disconnection. But that 0.04–0.2 mL bolus contains whatever drug was in the deadspace — which can reach the systemic circulation as a concentrated surge before dilution occurs.</p>
+    </div>
+  </div>
+
+  <!-- INTRACAV STRIP -->
+  <div class="intracav-strip">
+    <div>
+      <div class="is-kicker">Intracav · Agent Platform</div>
+      <div class="is-title">Real-time reflux risk scoring — <em>before occlusion.</em></div>
+      <p class="is-desc">An AI clinical assistant that knows catheter gauge, IV bag height, patient CVP estimate, infusion rate, and time-since-flush can compute a live reflux risk gradient and alert nursing staff before stasis clotting occurs. Proactive — not reactive.</p>
+    </div>
+    <div class="is-metrics">
+      <div class="is-metric">
+        <div class="ism-label">Inputs</div>
+        <div class="ism-val">Gauge · bag height · CVP · infusion rate · connector type</div>
+      </div>
+      <div class="is-metric">
+        <div class="ism-label">Output</div>
+        <div class="ism-val">ΔP live estimate → patent / at-risk / reflux alert</div>
+      </div>
+      <div class="is-metric">
+        <div class="ism-label">Intervention Signal</div>
+        <div class="ism-val">"Raise bag" · "Flush now" · "Check patency"</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="nav-footer">
+  <a href="/education/catheter-lab/" class="nav-link"><span>←</span><div><div class="nav-link-label">Back to</div>Collection</div></a>
+  <a href="/education/catheter-lab/02-blood-draw.html" class="nav-link"><div style="text-align:right"><div class="nav-link-label">Next Module</div>Blood Draw</div><span>→</span></a>
+</div>
+
+<script>
+const cv = document.getElementById('refluxCanvas');
+const ctx = cv.getContext('2d');
+let aT = 0;
+let scenario = 'normal';
+let state = { bagHeight:80, cvp:8, gauge:20 };
+let refluxFrac = 0; // 0=full forward, 1=full backward
+
+const GAUGE_RADIUS = { 14:0.80, 16:0.635, 18:0.51, 20:0.40, 22:0.32, 24:0.255 }; // mm
+
+function resize() { cv.width = cv.offsetWidth; cv.height = 380; }
+resize();
+window.addEventListener('resize', resize);
+
+function setScenario(s, btn) {
+  scenario = s;
+  document.querySelectorAll('.sc-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  // Override sliders
+  const overrides = {
+    normal: { bagHeight:80, cvp:8 },
+    empty:  { bagHeight:0, cvp:8 },
+    cough:  { bagHeight:80, cvp:25 },
+    arm:    { bagHeight:-30, cvp:8 },
+    clamp:  { bagHeight:0, cvp:12 },
+  };
+  const o = overrides[s];
+  document.getElementById('bagSlider').value = Math.max(0, o.bagHeight);
+  document.getElementById('cvpSlider').value = o.cvp;
+  state.bagHeight = o.bagHeight;
+  state.cvp = o.cvp;
+  document.getElementById('bagHeight').textContent = o.bagHeight;
+  document.getElementById('cvpVal').textContent = o.cvp;
+  updateReflux();
+}
+
+function updateReflux() {
+  state.bagHeight = +document.getElementById('bagSlider').value;
+  state.cvp       = +document.getElementById('cvpSlider').value;
+  state.gauge     = +document.getElementById('gaugeSlider').value;
+  document.getElementById('bagHeight').textContent = state.bagHeight;
+  document.getElementById('cvpVal').textContent    = state.cvp;
+  document.getElementById('gaugeVal').textContent  = state.gauge;
+}
+
+function getDeltaP() {
+  const ivPressure = state.bagHeight * 0.73; // mmHg from hydrostatic
+  return ivPressure - state.cvp;
+}
+
+function draw() {
+  const W = cv.width, H = cv.height;
+  aT += 0.016;
+  ctx.clearRect(0, 0, W, H);
+
+  // Warm background
+  ctx.fillStyle = '#F6F0E8';
+  ctx.fillRect(0, 0, W, H);
+
+  const dP = getDeltaP();
+  const isReflux = dP <= 0;
+  const refluxStrength = Math.max(0, Math.min(1, -dP / 25));
+  const forwardStrength = Math.max(0, Math.min(1, dP / 60));
+
+  // Smooth transition
+  const target = isReflux ? 0.7 + refluxStrength * 0.3 : 0;
+  refluxFrac += (target - refluxFrac) * 0.04;
+
+  // === IV Bag ===
+  const bagH = 90, bagW = 70;
+  const bagFullness = scenario === 'empty' ? 0.05 : 0.65;
+  const bagX = W * 0.2, bagY = H * 0.06;
+
+  // Bag outline
+  ctx.strokeStyle = 'rgba(40,24,12,0.2)';
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.roundRect(bagX - bagW/2, bagY, bagW, bagH, 6);
+  ctx.stroke();
+
+  // Fluid in bag
+  const fluidH = bagH * bagFullness;
+  const fluidGrad = ctx.createLinearGradient(0, bagY + bagH - fluidH, 0, bagY + bagH);
+  fluidGrad.addColorStop(0, 'rgba(180,210,240,0.6)');
+  fluidGrad.addColorStop(1, 'rgba(140,180,220,0.8)');
+  ctx.fillStyle = fluidGrad;
+  ctx.beginPath();
+  ctx.roundRect(bagX - bagW/2 + 2, bagY + bagH - fluidH, bagW - 4, fluidH, [0, 0, 4, 4]);
+  ctx.fill();
+
+  if (scenario === 'empty') {
+    ctx.fillStyle = 'rgba(184,112,112,0.7)';
+    ctx.font = '500 10px Nunito, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('EMPTY', bagX, bagY + bagH/2 + 4);
+  }
+
+  // Height label
+  ctx.fillStyle = 'rgba(158,130,114,0.7)';
+  ctx.font = '9px JetBrains Mono, monospace';
+  ctx.textAlign = 'center';
+  ctx.fillText(state.bagHeight + 'cm', bagX, bagY - 6);
+
+  // === Tubing ===
+  const tubeStartX = bagX, tubeStartY = bagY + bagH;
+  const siteX = W * 0.62, siteY = H * 0.62;
+
+  // Tube path (S-curve)
+  const cp1x = bagX, cp1y = siteY * 0.4;
+  const cp2x = siteX * 0.5, cp2y = siteY;
+
+  // Tube background
+  ctx.beginPath();
+  ctx.moveTo(tubeStartX, tubeStartY);
+  ctx.bezierCurveTo(cp1x, cp1y, cp2x, cp2y, siteX - 40, siteY);
+  ctx.strokeStyle = 'rgba(40,24,12,0.08)';
+  ctx.lineWidth = 12;
+  ctx.stroke();
+  ctx.strokeStyle = isReflux ? 'rgba(139,32,32,0.15)' : 'rgba(180,210,240,0.5)';
+  ctx.lineWidth = 10;
+  ctx.stroke();
+
+  // Animated fluid in tube
+  const nDrops = 8;
+  for (let i = 0; i < nDrops; i++) {
+    const t = (aT * (isReflux ? -0.18 : 0.22) * (1 + forwardStrength) + i/nDrops + 10) % 1;
+    if (t < 0 || t > 1) continue;
+
+    // Bezier point
+    const bx = Math.pow(1-t,3)*tubeStartX + 3*Math.pow(1-t,2)*t*cp1x + 3*(1-t)*t*t*cp2x + t*t*t*(siteX-40);
+    const by = Math.pow(1-t,3)*tubeStartY + 3*Math.pow(1-t,2)*t*cp1y + 3*(1-t)*t*t*cp2y + t*t*t*siteY;
+
+    const dropColor = refluxFrac > 0.3 ? `rgba(${139+Math.round(refluxFrac*60)},${32},${32},${0.7})` : `rgba(140,180,220,0.75)`;
+    ctx.beginPath();
+    ctx.arc(bx, by, 5, 0, Math.PI * 2);
+    ctx.fillStyle = dropColor;
+    ctx.fill();
+  }
+
+  // === Patient arm / vessel ===
+  const armY = siteY + 18;
+  const armGrad = ctx.createLinearGradient(0, armY - 14, 0, armY + 30);
+  armGrad.addColorStop(0, '#E8C4A8');
+  armGrad.addColorStop(1, '#D4A880');
+  ctx.fillStyle = armGrad;
+  ctx.beginPath();
+  ctx.roundRect(siteX - 20, armY - 14, W - siteX + 20 - 20, 44, [0, 0, 8, 0]);
+  ctx.fill();
+
+  // Vein inside arm
+  const veinY = armY + 8;
+  ctx.fillStyle = isReflux ? '#8B2020' : '#3A5888';
+  ctx.beginPath();
+  ctx.roundRect(siteX - 8, veinY - 5, W - siteX - 10, 14, 7);
+  ctx.fill();
+
+  // Catheter
+  const cathR = GAUGE_RADIUS[state.gauge];
+  const cathColor = isReflux ? '#C04040' : '#BC7250';
+  ctx.strokeStyle = cathColor;
+  ctx.lineWidth = 4;
+  ctx.beginPath();
+  ctx.moveTo(siteX - 38, siteY + 2);
+  ctx.lineTo(siteX + 10, veinY + 2);
+  ctx.stroke();
+
+  // Reflux blood in catheter (red fill from tip backward)
+  if (refluxFrac > 0.05) {
+    const bloodLen = refluxFrac * 44;
+    ctx.strokeStyle = `rgba(180,32,32,${refluxFrac * 0.9})`;
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.moveTo(siteX + 10, veinY + 2);
+    ctx.lineTo(siteX + 10 - bloodLen, siteY + 2 - (bloodLen / 44) * (veinY - siteY) * 0.5);
+    ctx.stroke();
+  }
+
+  // Venous pressure label
+  ctx.fillStyle = isReflux ? '#C04040' : '#3A5888';
+  ctx.font = '500 9px Nunito, sans-serif';
+  ctx.textAlign = 'left';
+  ctx.fillText('P_vein = ' + state.cvp + ' mmHg', siteX + 20, veinY - 8);
+
+  // === ΔP display ===
+  const dp = getDeltaP();
+  const dpEl = document.getElementById('deltaP');
+  dpEl.textContent = (dp >= 0 ? '+' : '') + dp.toFixed(0);
+  dpEl.style.color = isReflux ? '#C04040' : dp < 15 ? '#C9A84C' : '#7E9C84';
+
+  const badge = document.getElementById('statusBadge');
+  if (isReflux) {
+    badge.textContent = '⚠ REFLUX — blood flowing backward';
+    badge.style.cssText = 'background:rgba(184,112,112,0.15);color:#C04040;border:1px solid #C04040;';
+  } else if (dp < 15) {
+    badge.textContent = '⚡ MARGINAL — at-risk gradient';
+    badge.style.cssText = 'background:rgba(201,168,76,0.15);color:#C9A84C;border:1px solid #C9A84C;';
+  } else {
+    badge.textContent = '● PATENT — forward flow';
+    badge.style.cssText = 'background:rgba(126,156,132,0.15);color:#7E9C84;border:1px solid #7E9C84;';
+  }
+
+  // Pressure arrow indicator
+  const arrX = W * 0.45, arrY = H * 0.3;
+  const arrLen = Math.min(60, Math.abs(dp) * 1.5);
+  const arrDir = isReflux ? -1 : 1;
+  ctx.beginPath();
+  ctx.moveTo(arrX, arrY);
+  ctx.lineTo(arrX + arrDir * arrLen, arrY);
+  ctx.strokeStyle = isReflux ? '#C04040' : '#7E9C84';
+  ctx.lineWidth = 2.5;
+  ctx.stroke();
+  // Arrowhead
+  ctx.beginPath();
+  ctx.moveTo(arrX + arrDir * arrLen - arrDir * 8, arrY - 5);
+  ctx.lineTo(arrX + arrDir * arrLen, arrY);
+  ctx.lineTo(arrX + arrDir * arrLen - arrDir * 8, arrY + 5);
+  ctx.strokeStyle = isReflux ? '#C04040' : '#7E9C84';
+  ctx.stroke();
+  ctx.fillStyle = 'rgba(40,24,12,0.45)';
+  ctx.font = '9px Nunito, sans-serif';
+  ctx.textAlign = 'center';
+  ctx.fillText(isReflux ? 'REFLUX' : 'FORWARD', arrX + arrDir * arrLen / 2, arrY - 10);
+
+  ctx.textAlign = 'left';
+  requestAnimationFrame(draw);
+}
+draw();
+</script>
+</body>
+</html>

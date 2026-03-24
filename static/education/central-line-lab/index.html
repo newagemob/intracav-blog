@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Central Line Lab — Clinical Learning Series</title>
+<script src="https://unpkg.com/htmx.org@1.9.10"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Nunito:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #EDE4D5; --surface: #F6F0E8; --surface-hi: #FDFAF5;
+    --border: #D4C7B5; --border-lt: #E2D8CC;
+    --text: #28180C; --text-2: #685040; --text-3: #9E8272;
+    --accent: #BC7250; --accent-lt: #E8C4A8;
+    --sage: #7E9C84; --rose: #B87070; --gold: #C9A84C;
+    --blue: #4A8ACA; --blue-lt: #A8CAEC;
+    --shadow-sm: 0 1px 8px rgba(40,24,12,0.06), 0 0 0 1px rgba(40,24,12,0.04);
+    --shadow-md: 0 4px 28px rgba(40,24,12,0.10), 0 0 0 1px rgba(40,24,12,0.06);
+    --r: 16px; --r-sm: 10px;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; overflow-x: hidden; }
+  body::after { content:''; position:fixed; inset:0; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E"); opacity:.028; pointer-events:none; z-index:9999; }
+  nav { display:flex; align-items:center; justify-content:space-between; padding:1.75rem 3.5rem; border-bottom:1px solid var(--border-lt); background:rgba(237,228,213,0.8); backdrop-filter:blur(12px); position:sticky; top:0; z-index:100; }
+  .nav-brand { font-family:'Cormorant Garamond',serif; font-size:1.05rem; font-weight:500; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); text-decoration:none; }
+  .nav-tag { font-size:.72rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--text-3); }
+
+  .hero { padding:6rem 3.5rem 3.5rem; max-width:1060px; }
+  .hero-label { font-size:.72rem; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); margin-bottom:1.25rem; }
+  .hero-title { font-family:'Cormorant Garamond',serif; font-size:clamp(3rem,6vw,5rem); font-weight:300; line-height:1.05; margin-bottom:1.5rem; }
+  .hero-title em { font-style:italic; color:var(--text-2); }
+  .hero-desc { font-size:.95rem; line-height:1.8; color:var(--text-2); font-weight:300; max-width:560px; margin-bottom:1.5rem; }
+  .series-links { display:flex; gap:1rem; flex-wrap:wrap; }
+  .series-link { font-size:.75rem; color:var(--text-3); text-decoration:none; border:1px solid var(--border-lt); border-radius:100px; padding:.3rem .85rem; transition:all 200ms; }
+  .series-link:hover { color:var(--accent); border-color:var(--accent); }
+
+  /* Type comparison strip */
+  .type-strip { margin:0 3.5rem 2.5rem; display:grid; grid-template-columns:repeat(3,1fr); gap:0; background:var(--text); border-radius:var(--r); overflow:hidden; }
+  .ts-type { padding:2rem 2rem; border-right:1px solid rgba(255,255,255,0.07); }
+  .ts-type:last-child { border-right:none; }
+  .ts-abbr { font-family:'JetBrains Mono',monospace; font-size:1.3rem; color:var(--accent); margin-bottom:.3rem; }
+  .ts-full { font-family:'Cormorant Garamond',serif; font-size:1.05rem; color:#E0D8D0; margin-bottom:.6rem; }
+  .ts-row { display:flex; justify-content:space-between; font-size:.72rem; padding:.18rem 0; }
+  .ts-key { color:#5A4A3A; }
+  .ts-val { color:#9A8A7A; font-family:'JetBrains Mono',monospace; font-size:.68rem; }
+  .ts-badge { display:inline-block; font-size:.6rem; font-weight:700; letter-spacing:.08em; padding:.15rem .55rem; border-radius:100px; margin-top:.5rem; }
+
+  /* Equation strip */
+  .equation-strip { margin:0 3.5rem 2rem; background:var(--surface); border:1px solid var(--border-lt); border-radius:var(--r); padding:1.5rem 2rem; display:flex; gap:2.5rem; overflow-x:auto; scrollbar-width:none; }
+  .equation-strip::-webkit-scrollbar { display:none; }
+  .eq-item { flex-shrink:0; text-align:center; }
+  .eq-formula { font-family:'Cormorant Garamond',serif; font-size:1.05rem; color:var(--text); margin-bottom:.35rem; }
+  .eq-label { font-size:.62rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--text-3); }
+
+  .divider { padding:0 3.5rem; display:flex; align-items:center; gap:1.5rem; margin-bottom:2.5rem; }
+  .divider-line { flex:1; height:1px; background:var(--border); }
+  .divider-text { font-size:.7rem; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--text-3); }
+
+  .modules { display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:1.25rem; padding:0 3.5rem 3rem; }
+  .card { background:var(--surface); border:1px solid var(--border-lt); border-radius:var(--r); padding:2rem; text-decoration:none; color:var(--text); display:flex; flex-direction:column; gap:1rem; transition:all 220ms; box-shadow:var(--shadow-sm); position:relative; overflow:hidden; }
+  .card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; border-radius:var(--r) var(--r) 0 0; opacity:0; transition:opacity 200ms; }
+  .c1::before { background:var(--blue); }
+  .c2::before { background:var(--sage); }
+  .c3::before { background:var(--accent); }
+  .c4::before { background:var(--gold); }
+  .c5::before { background:var(--rose); }
+  .c6::before { background:#9E7EBC; }
+  .card:hover::before { opacity:1; }
+  .card:hover { transform:translateY(-3px); box-shadow:var(--shadow-md); }
+  .card-num { display:flex; align-items:center; gap:.75rem; font-size:.72rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--text-3); }
+  .card-num-circle { width:28px; height:28px; border-radius:50%; background:var(--bg); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; font-family:'JetBrains Mono',monospace; font-size:.65rem; color:var(--accent); }
+  .card-title { font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:400; line-height:1.2; }
+  .card-desc { font-size:.8rem; line-height:1.7; color:var(--text-2); font-weight:300; flex:1; }
+  .card-tags { display:flex; flex-wrap:wrap; gap:.4rem; }
+  .tag { font-size:.62rem; font-weight:600; letter-spacing:.06em; padding:.2rem .6rem; border-radius:100px; background:var(--bg); border:1px solid var(--border); color:var(--text-3); }
+  .card-arrow { font-size:.75rem; color:var(--text-3); display:flex; align-items:center; gap:.3rem; transition:color 200ms; }
+  .card:hover .card-arrow { color:var(--accent); }
+
+  /* Timeline */
+  .timeline-strip { margin:0 3.5rem 2.5rem; }
+  .ts-label { font-size:.65rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--text-3); margin-bottom:1rem; }
+  .ts-events { display:flex; overflow-x:auto; scrollbar-width:none; background:var(--surface); border:1px solid var(--border-lt); border-radius:var(--r); }
+  .ts-events::-webkit-scrollbar { display:none; }
+  .ts-event { flex-shrink:0; padding:1.25rem 1.5rem; border-right:1px solid var(--border-lt); min-width:200px; }
+  .ts-event:last-child { border-right:none; }
+  .ts-year { font-family:'JetBrains Mono',monospace; font-size:.78rem; color:var(--accent); margin-bottom:.3rem; }
+  .ts-title { font-family:'Cormorant Garamond',serif; font-size:.95rem; margin-bottom:.2rem; }
+  .ts-sub { font-size:.68rem; color:var(--text-3); font-weight:300; line-height:1.4; }
+
+  .insight-dark { margin:0 3.5rem 2.5rem; background:var(--text); border-radius:var(--r); padding:2.5rem; }
+  .id-kicker { font-size:.62rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--accent); margin-bottom:.75rem; }
+  .id-title { font-family:'Cormorant Garamond',serif; font-size:1.7rem; font-weight:300; color:#F0E8E0; line-height:1.2; margin-bottom:1rem; }
+  .id-title em { font-style:italic; color:var(--accent-lt); }
+  .id-desc { font-size:.82rem; line-height:1.75; color:#6A5A4A; }
+
+  footer { padding:2rem 3.5rem; border-top:1px solid var(--border-lt); display:flex; justify-content:space-between; align-items:center; }
+  .footer-brand { font-family:'Cormorant Garamond',serif; font-size:.9rem; color:var(--text-3); }
+  .footer-brand strong { color:var(--accent); font-weight:500; }
+
+  @keyframes fadeUp { from{opacity:0;transform:translateY(18px)} to{opacity:1;transform:translateY(0)} }
+  .hero { animation:fadeUp 600ms ease both; }
+  .card:nth-child(1){animation:fadeUp 500ms 60ms ease both}
+  .card:nth-child(2){animation:fadeUp 500ms 120ms ease both}
+  .card:nth-child(3){animation:fadeUp 500ms 180ms ease both}
+  .card:nth-child(4){animation:fadeUp 500ms 240ms ease both}
+  .card:nth-child(5){animation:fadeUp 500ms 300ms ease both}
+  .card:nth-child(6){animation:fadeUp 500ms 360ms ease both}
+
+  @media(max-width:700px){
+    nav,.hero,.modules,.divider,.equation-strip,.type-strip,.timeline-strip,.insight-dark,footer{padding-left:1.5rem;padding-right:1.5rem}
+    .hero{padding-top:3.5rem} .modules{grid-template-columns:1fr} .type-strip{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="/education/central-line-lab/">The Central Line Lab</a>
+  <span class="nav-tag"><a href="/education/" style="color:inherit;text-decoration:none;border-bottom:1px solid var(--border-lt);">All Series</a> · Clinical Learning Series · Vol. IV</span>
+</nav>
+
+<section class="hero">
+  <div class="hero-label">PICC · CICC · CVC — Central Venous Access</div>
+  <h1 class="hero-title">Where catheters<br><em>meet the heart.</em></h1>
+  <p class="hero-desc">Six interactive modules on central venous access — anatomy, insertion technique, tip positioning, hemodynamic monitoring, and the complications that define the risk-benefit calculus of every central line decision.</p>
+  <div class="series-links">
+    <a class="series-link" href="/education/vascular-lab/">← Vol. I: Vascular Lab</a>
+    <a class="series-link" href="/education/ultrasound-lab/">← Vol. II: Ultrasound Lab</a>
+    <a class="series-link" href="/education/catheter-lab/">← Vol. III: Catheter Lab</a>
+  </div>
+</section>
+
+<!-- Type Comparison -->
+<div class="type-strip">
+  <div class="ts-type">
+    <div class="ts-abbr">PICC</div>
+    <div class="ts-full">Peripherally Inserted Central Catheter</div>
+    <div class="ts-row"><span class="ts-key">Insertion site</span><span class="ts-val">Basilic / cephalic / brachial</span></div>
+    <div class="ts-row"><span class="ts-key">Tip position</span><span class="ts-val">Distal SVC / CAJ</span></div>
+    <div class="ts-row"><span class="ts-key">Dwell time</span><span class="ts-val">Up to 12 months</span></div>
+    <div class="ts-row"><span class="ts-key">Lumens</span><span class="ts-val">1–3 lumens</span></div>
+    <div class="ts-row"><span class="ts-key">Pneumothorax risk</span><span class="ts-val">None (arm approach)</span></div>
+    <span class="ts-badge" style="background:rgba(126,156,132,0.2);color:#9EC4A4;">Lowest immediate risk</span>
+  </div>
+  <div class="ts-type">
+    <div class="ts-abbr">CICC</div>
+    <div class="ts-full">Centrally Inserted Central Catheter</div>
+    <div class="ts-row"><span class="ts-key">Insertion site</span><span class="ts-val">IJ / subclavian / femoral</span></div>
+    <div class="ts-row"><span class="ts-key">Tip position</span><span class="ts-val">Distal SVC / CAJ</span></div>
+    <div class="ts-row"><span class="ts-key">Dwell time</span><span class="ts-val">Days to weeks (non-tunneled)</span></div>
+    <div class="ts-row"><span class="ts-key">Lumens</span><span class="ts-val">1–5 lumens</span></div>
+    <div class="ts-row"><span class="ts-key">Pneumothorax risk</span><span class="ts-val">1–3% subclavian approach</span></div>
+    <span class="ts-badge" style="background:rgba(201,168,76,0.2);color:#D4B44C;">ICU / acute care workhorse</span>
+  </div>
+  <div class="ts-type">
+    <div class="ts-abbr">CVC</div>
+    <div class="ts-full">Central Venous Catheter (tunneled / port)</div>
+    <div class="ts-row"><span class="ts-key">Insertion site</span><span class="ts-val">IJ / subclavian (tunneled)</span></div>
+    <div class="ts-row"><span class="ts-key">Tip position</span><span class="ts-val">CAJ / right atrium</span></div>
+    <div class="ts-row"><span class="ts-key">Dwell time</span><span class="ts-val">Years (tunneled/port)</span></div>
+    <div class="ts-row"><span class="ts-key">Lumens</span><span class="ts-val">1–3 lumens + cuff</span></div>
+    <div class="ts-row"><span class="ts-key">Pneumothorax risk</span><span class="ts-val">1–3% (insertion-dependent)</span></div>
+    <span class="ts-badge" style="background:rgba(188,114,80,0.2);color:#CC9A70;">Long-term / chemotherapy</span>
+  </div>
+</div>
+
+<div class="equation-strip">
+  <div class="eq-item"><div class="eq-formula">P_CVP = P_RA ± ΔP_hydrostatic</div><div class="eq-label">CVP Measurement</div></div>
+  <div class="eq-item"><div class="eq-formula">Q = πr⁴ΔP / 8ηL</div><div class="eq-label">Flow by Gauge & Length</div></div>
+  <div class="eq-item"><div class="eq-formula">CLABSI rate = events / 1000 catheter-days</div><div class="eq-label">Infection Surveillance</div></div>
+  <div class="eq-item"><div class="eq-formula">Tip depth (cm) ≈ Height(cm)/10 − 2</div><div class="eq-label">PICC Length Estimate</div></div>
+  <div class="eq-item"><div class="eq-formula">CO = HR × SV</div><div class="eq-label">Hemodynamic Output</div></div>
+  <div class="eq-item"><div class="eq-formula">SVR = (MAP − CVP) × 80 / CO</div><div class="eq-label">Systemic Vascular Resistance</div></div>
+</div>
+
+<div class="divider"><div class="divider-line"></div><div class="divider-text">Six Modules</div><div class="divider-line"></div></div>
+
+<section class="modules">
+  <a class="card c1" href="/education/central-line-lab/01-anatomy.html">
+    <div class="card-num"><div class="card-num-circle">01</div>Vascular Anatomy</div>
+    <div class="card-title">Central Venous<br>Anatomy & Access Routes</div>
+    <div class="card-desc">The complete vascular roadmap from arm vein to right atrium. IJ, subclavian, femoral, basilic, brachial — their relationships, depths, landmarks, and compressibility. Why the SVC-RA junction is the only acceptable tip destination.</div>
+    <div class="card-tags"><span class="tag">SVC</span><span class="tag">CAJ</span><span class="tag">Landmark Technique</span><span class="tag">Ultrasound Guidance</span></div>
+    <div class="card-arrow">Open module <span>→</span></div>
+  </a>
+  <a class="card c2" href="/education/central-line-lab/02-picc.html">
+    <div class="card-num"><div class="card-num-circle">02</div>PICC Lines</div>
+    <div class="card-title">Peripherally Inserted<br>Central Catheters</div>
+    <div class="card-desc">Basilic vs cephalic vs brachial approach, vein selection, arm measurement, tip advancement to the CAJ, power injection capability, and the PICC-specific complication profile — DVT, fibrin sheath, tip migration.</div>
+    <div class="card-tags"><span class="tag">Basilic Vein</span><span class="tag">Arm Measurement</span><span class="tag">ECG Tip Guidance</span><span class="tag">PICC DVT</span></div>
+    <div class="card-arrow">Open module <span>→</span></div>
+  </a>
+  <a class="card c3" href="/education/central-line-lab/03-insertion.html">
+    <div class="card-num"><div class="card-num-circle">03</div>CVC / CICC Insertion</div>
+    <div class="card-title">Seldinger Technique<br>& Insertion Physics</div>
+    <div class="card-desc">The Seldinger technique step by step — needle angle, guidewire advancement, dilator use, catheter threading. IJ vs subclavian vs femoral tradeoffs. The physics of wire advancement through tortuous veins and the J-tip rotation technique.</div>
+    <div class="card-tags"><span class="tag">Seldinger</span><span class="tag">J-Wire</span><span class="tag">IJ vs Subclavian</span><span class="tag">Guidewire Physics</span></div>
+    <div class="card-arrow">Open module <span>→</span></div>
+  </a>
+  <a class="card c4" href="/education/central-line-lab/04-tip-position.html">
+    <div class="card-num"><div class="card-num-circle">04</div>Tip Positioning</div>
+    <div class="card-title">The CAJ & Why<br>Position Is Everything</div>
+    <div class="card-desc">The cavoatrial junction — where the SVC meets the right atrium — is the only safe tip destination for every central line. Too high causes poor drug dilution and thrombosis. Too low causes arrhythmia, perforation, tamponade. CXR interpretation, ECG guidance, malposition recognition.</div>
+    <div class="card-tags"><span class="tag">Cavoatrial Junction</span><span class="tag">Malposition</span><span class="tag">CXR Verification</span><span class="tag">Right Atrium</span></div>
+    <div class="card-arrow">Open module <span>→</span></div>
+  </a>
+  <a class="card c5" href="/education/central-line-lab/05-complications.html">
+    <div class="card-num"><div class="card-num-circle">05</div>Complications</div>
+    <div class="card-title">What Goes Wrong<br>& When</div>
+    <div class="card-desc">CLABSI — the leading catheter-related killer. Pneumothorax. DVT and thrombosis. Air embolism. Arrhythmia from tip migration. Catheter fracture. Each complication has a physics, a timeline, and a recognition signature. Understand the mechanism to prevent or catch it early.</div>
+    <div class="card-tags"><span class="tag">CLABSI</span><span class="tag">Pneumothorax</span><span class="tag">Air Embolism</span><span class="tag">DVT</span></div>
+    <div class="card-arrow">Open module <span>→</span></div>
+  </a>
+  <a class="card c6" href="/education/central-line-lab/06-cvp-monitoring.html">
+    <div class="card-num"><div class="card-num-circle">06</div>CVP Monitoring</div>
+    <div class="card-title">Hemodynamic Waveforms<br>& Clinical Interpretation</div>
+    <div class="card-desc">The CVP waveform — a, c, x, v, y components decoded. What each segment represents, what pathology looks like, and how to interpret CVP in the context of fluid responsiveness. Includes the Starling curve, PA catheter basics, and the limits of CVP as a preload marker.</div>
+    <div class="card-tags"><span class="tag">CVP Waveform</span><span class="tag">a-c-v Waves</span><span class="tag">Fluid Responsiveness</span><span class="tag">Frank-Starling</span></div>
+    <div class="card-arrow">Open module <span>→</span></div>
+  </a>
+</section>
+
+<!-- Timeline -->
+<div class="timeline-strip">
+  <div class="ts-label">Historical Timeline — Central Venous Access</div>
+  <div class="ts-events">
+    <div class="ts-event"><div class="ts-year">1929</div><div class="ts-title">Werner Forssmann Self-Catheterizes</div><div class="ts-sub">Passes urologic catheter into his own right atrium — first cardiac catheterization. Nobel Prize 1956.</div></div>
+    <div class="ts-event"><div class="ts-year">1953</div><div class="ts-title">Seldinger Technique</div><div class="ts-sub">Sven-Ivar Seldinger's needle-wire-catheter exchange revolutionizes vascular access — still the standard 70 years later.</div></div>
+    <div class="ts-event"><div class="ts-year">1960s</div><div class="ts-title">Subclavian CVP Lines</div><div class="ts-sub">Wilson and Dudrick establish subclavian vein catheterization for total parenteral nutrition. CVP monitoring in ICUs begins.</div></div>
+    <div class="ts-event"><div class="ts-year">1970</div><div class="ts-title">Swan-Ganz Catheter</div><div class="ts-sub">Flow-directed pulmonary artery catheter enables bedside hemodynamic monitoring — CVP, PCWP, CO measurement.</div></div>
+    <div class="ts-event"><div class="ts-year">1975</div><div class="ts-title">First PICC Lines</div><div class="ts-sub">Peripherally inserted technique described by Hoshal — avoids chest insertion risk while achieving central tip position.</div></div>
+    <div class="ts-event"><div class="ts-year">1988</div><div class="ts-title">Tunneled Hickman Catheter</div><div class="ts-sub">Long-term tunneled CVCs enable home chemotherapy, TPN, and chronic IV access without hospitalization.</div></div>
+    <div class="ts-event"><div class="ts-year">1990s</div><div class="ts-title">Ultrasound-Guided Access</div><div class="ts-sub">Real-time US guidance for IJ access cuts pneumothorax and arterial puncture rates dramatically. NICE guidelines mandate it 2002.</div></div>
+    <div class="ts-event"><div class="ts-year">2002</div><div class="ts-title">CLABSI Prevention Bundles</div><div class="ts-sub">Peter Pronovost's Michigan Keystone Project reduces CLABSI rates 66% using insertion/maintenance checklists. 1,500 lives/year saved.</div></div>
+    <div class="ts-event"><div class="ts-year">2010s</div><div class="ts-title">ECG-Guided Tip Placement</div><div class="ts-sub">Intravascular ECG guidance (P-wave morphology) enables real-time tip position confirmation without post-insertion CXR delay.</div></div>
+    <div class="ts-event"><div class="ts-year">2020s</div><div class="ts-title">AI-Assisted Placement</div><div class="ts-sub">Machine learning for vein mapping, tip prediction, and CLABSI risk scoring — the Intracav opportunity space.</div></div>
+  </div>
+</div>
+
+<div class="insight-dark">
+  <div class="id-kicker">The Central Line Paradox</div>
+  <div class="id-title">The most dangerous access device is also<br><em>the most indispensable one.</em></div>
+  <p class="id-desc" style="max-width:680px;">Central venous catheters cause more preventable deaths than almost any other routine medical device — yet no ICU, no cancer ward, no cardiac surgery program can function without them. The CLABSI rate is a direct measure of institutional compliance with evidence-based practice. Understanding the physics and microbiology of central lines is the foundation of preventing every complication they cause.</p>
+</div>
+
+<footer>
+  <div class="footer-brand"><strong>The Central Line Lab</strong> · Intracav Clinical Learning Series · Vol. IV</div>
+  <div style="font-size:.7rem;color:var(--text-3);font-weight:300;">For education only · Not a substitute for supervised clinical training</div>
+</footer>
+</body>
+</html>

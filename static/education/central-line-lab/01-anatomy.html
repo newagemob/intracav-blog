@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vascular Anatomy — The Central Line Lab</title>
+<script src="https://unpkg.com/htmx.org@1.9.10"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Nunito:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --bg:#EDE4D5;--surface:#F6F0E8;--border:#D4C7B5;--border-lt:#E2D8CC;
+    --text:#28180C;--text-2:#685040;--text-3:#9E8272;
+    --accent:#BC7250;--accent-lt:#E8C4A8;--sage:#7E9C84;--rose:#B87070;--gold:#C9A84C;--blue:#4A8ACA;
+    --shadow-sm:0 1px 8px rgba(40,24,12,0.06),0 0 0 1px rgba(40,24,12,0.04);
+    --r:16px;--r-sm:10px;
+  }
+  body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+  body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");opacity:.028;pointer-events:none;z-index:9999}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 3rem;border-bottom:1px solid var(--border-lt);background:rgba(237,228,213,0.85);backdrop-filter:blur(12px);position:sticky;top:0;z-index:100}
+  .nl{display:flex;align-items:center;gap:1rem}
+  .nb{font-size:.8rem;color:var(--text-3);text-decoration:none;transition:color 200ms}
+  .nb:hover{color:var(--accent)}
+  .ns{color:var(--border)}
+  .hero{padding:4rem 3rem 2.5rem;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:end;border-bottom:1px solid var(--border-lt);max-width:1100px;margin:0 auto}
+  .ml{font-size:.68rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);display:flex;align-items:center;gap:.6rem;margin-bottom:.75rem}
+  .ml::before{content:'01';font-family:'JetBrains Mono',monospace;color:var(--accent)}
+  h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:400;line-height:1.1;margin-bottom:1rem}
+  h1 em{font-style:italic;color:var(--text-2)}
+  .hd{font-size:.92rem;line-height:1.7;color:var(--text-2);font-weight:300;max-width:500px}
+  .heq{background:var(--surface);border:1px solid var(--border-lt);border-radius:var(--r);padding:1.75rem 2rem;text-align:center;min-width:220px}
+  .er{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--text);margin-bottom:.5rem}
+  .en{font-size:.65rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);margin-top:.4rem}
+  .main{max-width:1100px;margin:0 auto;padding:2.5rem 3rem}
+  .sl{font-size:.65rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);margin-bottom:.2rem}
+  .st{font-family:'Cormorant Garamond',serif;font-size:1.35rem;margin-bottom:1.25rem}
+
+  /* Anatomy canvas section */
+  .anat-section{background:var(--surface);border:1px solid var(--border-lt);border-radius:var(--r);overflow:hidden;margin-bottom:2rem;box-shadow:var(--shadow-sm)}
+  .anat-header{padding:1.5rem 2rem;border-bottom:1px solid var(--border-lt);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+  .anat-body{display:grid;grid-template-columns:1.2fr 1fr}
+  #anatCanvas{width:100%;height:480px;display:block;border-right:1px solid var(--border-lt);cursor:pointer}
+  .anat-panel{padding:1.75rem;display:flex;flex-direction:column;gap:1rem;overflow-y:auto;max-height:480px}
+  .site-btn{padding:.5rem 1rem;border:1px solid var(--border);border-radius:var(--r-sm);font-size:.78rem;font-weight:600;font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text-2);cursor:pointer;transition:all 150ms;text-align:left;display:flex;align-items:center;gap:.6rem}
+  .site-btn:hover,.site-btn.active{background:var(--accent);border-color:var(--accent);color:white}
+  .site-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+  .site-info{background:var(--bg);border-radius:var(--r-sm);padding:1.25rem;display:none}
+  .site-info.show{display:block}
+  .si-name{font-family:'Cormorant Garamond',serif;font-size:1.2rem;margin-bottom:.75rem}
+  .si-row{display:flex;justify-content:space-between;font-size:.78rem;padding:.25rem 0;border-bottom:1px solid var(--border-lt)}
+  .si-row:last-child{border-bottom:none}
+  .si-key{color:var(--text-3)}
+  .si-val{font-weight:600;color:var(--text)}
+
+  /* Vein depth reference */
+  .depth-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;margin-bottom:2rem}
+  .depth-card{background:var(--surface);border:1px solid var(--border-lt);border-radius:var(--r-sm);padding:1.25rem;box-shadow:var(--shadow-sm)}
+  .dc-vein{font-family:'Cormorant Garamond',serif;font-size:1.05rem;margin-bottom:.5rem}
+  .dc-row{display:flex;justify-content:space-between;font-size:.75rem;padding:.2rem 0}
+  .dc-key{color:var(--text-3)}
+  .dc-val{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--accent)}
+  .dc-depth-bar{height:8px;background:var(--border-lt);border-radius:100px;overflow:hidden;margin:.4rem 0}
+  .dc-depth-fill{height:100%;border-radius:100px;background:var(--blue)}
+
+  /* Landmark / US comparison */
+  .comp-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-bottom:2rem}
+  .comp-card{background:var(--surface);border:1px solid var(--border-lt);border-radius:var(--r);padding:1.75rem;box-shadow:var(--shadow-sm)}
+  .cc-title{font-family:'Cormorant Garamond',serif;font-size:1.2rem;margin-bottom:.75rem}
+  .cc-pro{font-size:.75rem;color:var(--sage);font-weight:600;margin-bottom:.3rem}
+  .cc-con{font-size:.75rem;color:var(--rose);font-weight:600;margin-bottom:.3rem}
+  .cc-point{font-size:.8rem;line-height:1.6;color:var(--text-2);font-weight:300;padding-left:.75rem;position:relative;margin-bottom:.2rem}
+  .cc-point::before{content:'—';position:absolute;left:0;color:var(--text-3)}
+
+  /* Timeline */
+  .tl-items{display:flex;flex-direction:column;margin-bottom:2rem}
+  .tl-item{display:flex;gap:1.5rem;padding:1.25rem 0;border-bottom:1px solid var(--border-lt)}
+  .tl-item:last-child{border-bottom:none}
+  .tl-year{font-family:'JetBrains Mono',monospace;font-size:.85rem;color:var(--accent);min-width:60px;padding-top:.2rem}
+  .tl-dot{width:10px;height:10px;border-radius:50%;margin-top:.3rem;flex-shrink:0}
+  .tl-title{font-family:'Cormorant Garamond',serif;font-size:1.1rem;margin-bottom:.3rem}
+  .tl-desc{font-size:.8rem;line-height:1.65;color:var(--text-2);font-weight:300}
+  .tl-tag{display:inline-block;font-size:.62rem;font-weight:600;padding:.15rem .55rem;border-radius:100px;margin-top:.4rem}
+
+  .pearls{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem;margin-bottom:2rem}
+  .pearl{background:var(--surface);border:1px solid var(--border-lt);border-radius:var(--r-sm);padding:1.25rem 1.5rem;box-shadow:var(--shadow-sm)}
+  .pearl-icon{font-size:1.4rem;margin-bottom:.75rem}
+  .pearl-title{font-family:'Cormorant Garamond',serif;font-size:1.05rem;margin-bottom:.5rem}
+  .pearl-text{font-size:.8rem;line-height:1.65;color:var(--text-2);font-weight:300}
+
+  .nf{display:flex;justify-content:space-between;align-items:center;padding:2rem 3rem;border-top:1px solid var(--border-lt);max-width:1100px;margin:0 auto}
+  .nl2{text-decoration:none;color:var(--text-3);font-size:.82rem;transition:color 200ms;display:flex;align-items:center;gap:.5rem}
+  .nl2:hover{color:var(--accent)}
+  .nll{font-size:.65rem;text-transform:uppercase;letter-spacing:.1em}
+
+  @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+  .hero{animation:fadeUp .5s ease both}
+  @media(max-width:700px){nav,.hero,.main,.nf{padding-left:1.25rem;padding-right:1.25rem}.hero,.anat-body,.comp-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nl"><a href="/education/central-line-lab/" class="nb">← Collection</a><span class="ns">|</span><span style="font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--text-2)">The Central Line Lab</span></div>
+  <div class="nl"><span style="font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--accent)">01 / 06</span><a href="/education/central-line-lab/02-picc.html" class="nb">PICC Lines →</a></div>
+</nav>
+
+<div class="hero">
+  <div>
+    <div class="ml">Central Venous Anatomy & Access Routes</div>
+    <h1>The roads to<br><em>the right atrium.</em></h1>
+    <p class="hd">Every central line follows one of a handful of venous highways — each with its own depth, compressibility, adjacency risks, and clinical tradeoffs. Click any access site to explore its anatomy.</p>
+  </div>
+  <div class="heq">
+    <div class="er">IJ depth ≈ 1–3 cm</div><div class="en">Internal Jugular (typical)</div>
+    <div style="height:.6rem"></div>
+    <div class="er">Subclavian ≈ 1–4 cm</div><div class="en">Subclavian Vein (typical)</div>
+    <div style="height:.6rem"></div>
+    <div class="er">SVC ≈ 6–9 cm</div><div class="en">Tip-to-CAJ distance (adult)</div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- ANATOMY CANVAS -->
+  <div class="anat-section">
+    <div class="anat-header">
+      <div><div class="sl">Interactive Anatomy</div><div class="st" style="margin:0;font-family:'Cormorant Garamond',serif;font-size:1.3rem;">Click a site to explore — central vein roadmap</div></div>
+      <div style="font-size:.8rem;color:var(--text-3);font-weight:300">IJ · Subclavian · Femoral · Basilic · Brachial</div>
+    </div>
+    <div class="anat-body">
+      <canvas id="anatCanvas"></canvas>
+      <div class="anat-panel">
+        <div class="sl" style="margin-bottom:.5rem">Access Sites</div>
+        <button class="site-btn" onclick="selectSite('ij',this)"><div class="site-dot" style="background:#4A8ACA"></div>Internal Jugular (IJ)</button>
+        <button class="site-btn" onclick="selectSite('subclavian',this)"><div class="site-dot" style="background:#BC7250"></div>Subclavian</button>
+        <button class="site-btn" onclick="selectSite('femoral',this)"><div class="site-dot" style="background:#C9A84C"></div>Femoral</button>
+        <button class="site-btn" onclick="selectSite('basilic',this)"><div class="site-dot" style="background:#7E9C84"></div>Basilic (PICC)</button>
+        <button class="site-btn" onclick="selectSite('brachial',this)"><div class="site-dot" style="background:#B87070"></div>Brachial (PICC)</button>
+
+        <div class="site-info show" id="siteInfo">
+          <div class="si-name" id="siName">← Select a site</div>
+          <div id="siRows"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VEIN DEPTH REFERENCE -->
+  <div class="sl" style="margin-bottom:.75rem">Depth & Diameter Reference</div>
+  <div class="st">Central Veins — Typical Dimensions in Adults</div>
+  <div class="depth-grid">
+    <div class="depth-card">
+      <div class="dc-vein">Internal Jugular</div>
+      <div class="dc-depth-bar"><div class="dc-depth-fill" style="width:28%"></div></div>
+      <div class="dc-row"><span class="dc-key">Depth to skin</span><span class="dc-val">1–3 cm</span></div>
+      <div class="dc-row"><span class="dc-key">Diameter</span><span class="dc-val">8–18 mm</span></div>
+      <div class="dc-row"><span class="dc-key">Adjacent artery</span><span class="dc-val">Carotid (medial)</span></div>
+      <div class="dc-row"><span class="dc-key">US compressible</span><span class="dc-val">Yes ✓</span></div>
+    </div>
+    <div class="depth-card">
+      <div class="dc-vein">Subclavian</div>
+      <div class="dc-depth-bar"><div class="dc-depth-fill" style="width:38%"></div></div>
+      <div class="dc-row"><span class="dc-key">Depth to skin</span><span class="dc-val">1–4 cm</span></div>
+      <div class="dc-row"><span class="dc-key">Diameter</span><span class="dc-val">10–20 mm</span></div>
+      <div class="dc-row"><span class="dc-key">Adjacent artery</span><span class="dc-val">Subclavian artery (posterior)</span></div>
+      <div class="dc-row"><span class="dc-key">US compressible</span><span class="dc-val">No (clavicle blocks)</span></div>
+    </div>
+    <div class="depth-card">
+      <div class="dc-vein">Femoral</div>
+      <div class="dc-depth-bar"><div class="dc-depth-fill" style="width:42%"></div></div>
+      <div class="dc-row"><span class="dc-key">Depth to skin</span><span class="dc-val">2–5 cm</span></div>
+      <div class="dc-row"><span class="dc-key">Diameter</span><span class="dc-val">10–15 mm</span></div>
+      <div class="dc-row"><span class="dc-key">Adjacent artery</span><span class="dc-val">Femoral artery (lateral)</span></div>
+      <div class="dc-row"><span class="dc-key">US compressible</span><span class="dc-val">Yes ✓</span></div>
+    </div>
+    <div class="depth-card">
+      <div class="dc-vein">Basilic (arm)</div>
+      <div class="dc-depth-bar"><div class="dc-depth-fill" style="width:20%"></div></div>
+      <div class="dc-row"><span class="dc-key">Depth to skin</span><span class="dc-val">0.5–1.5 cm</span></div>
+      <div class="dc-row"><span class="dc-key">Diameter</span><span class="dc-val">3–8 mm (variable)</span></div>
+      <div class="dc-row"><span class="dc-key">Adjacent artery</span><span class="dc-val">None (medial arm)</span></div>
+      <div class="dc-row"><span class="dc-key">US compressible</span><span class="dc-val">Yes ✓</span></div>
+    </div>
+    <div class="depth-card">
+      <div class="dc-vein">Brachial (arm)</div>
+      <div class="dc-depth-bar"><div class="dc-depth-fill" style="width:26%"></div></div>
+      <div class="dc-row"><span class="dc-key">Depth to skin</span><span class="dc-val">1–2.5 cm</span></div>
+      <div class="dc-row"><span class="dc-key">Diameter</span><span class="dc-val">3–6 mm (paired)</span></div>
+      <div class="dc-row"><span class="dc-key">Adjacent artery</span><span class="dc-val">Brachial artery (adjacent)</span></div>
+      <div class="dc-row"><span class="dc-key">US compressible</span><span class="dc-val">Yes ✓</span></div>
+    </div>
+    <div class="depth-card">
+      <div class="dc-vein">SVC (target)</div>
+      <div class="dc-depth-bar"><div class="dc-depth-fill" style="width:100%;background:var(--accent)"></div></div>
+      <div class="dc-row"><span class="dc-key">Length</span><span class="dc-val">~7 cm (adult)</span></div>
+      <div class="dc-row"><span class="dc-key">Diameter</span><span class="dc-val">15–25 mm</span></div>
+      <div class="dc-row"><span class="dc-key">Flow rate</span><span class="dc-val">~2 L/min</span></div>
+      <div class="dc-row"><span class="dc-key">Tip destination</span><span class="dc-val">Distal SVC / CAJ</span></div>
+    </div>
+  </div>
+
+  <!-- LANDMARK vs US -->
+  <div class="comp-grid">
+    <div class="comp-card">
+      <div class="cc-title">Landmark (Anatomic) Technique</div>
+      <div class="cc-pro">Advantages</div>
+      <div class="cc-point">No equipment required — always available</div>
+      <div class="cc-point">Faster setup in emergency</div>
+      <div class="cc-point">Unaffected by acoustic windows / obesity with IJ</div>
+      <div style="height:.75rem"></div>
+      <div class="cc-con">Disadvantages</div>
+      <div class="cc-point">Anatomic variation causes ~5–10% failed first attempts</div>
+      <div class="cc-point">Cannot distinguish arterial from venous before puncture</div>
+      <div class="cc-point">Higher pneumothorax rate (subclavian)</div>
+      <div class="cc-point">Cannot assess thrombosis or hematoma pre-procedure</div>
+    </div>
+    <div class="comp-card">
+      <div class="cc-title">Ultrasound-Guided Technique</div>
+      <div class="cc-pro">Advantages</div>
+      <div class="cc-point">Confirms vein patency before needle insertion</div>
+      <div class="cc-point">Distinguishes vein (compressible) from artery (pulsatile)</div>
+      <div class="cc-point">Reduces arterial puncture rate by ~80%</div>
+      <div class="cc-point">NICE guidelines mandate for IJ (2002)</div>
+      <div class="cc-point">Identifies anatomic variants (bifid IJ, high carotid)</div>
+      <div style="height:.75rem"></div>
+      <div class="cc-con">Limitations</div>
+      <div class="cc-point">Subclavian: acoustic shadowing from clavicle limits view</div>
+      <div class="cc-point">Requires sterility of probe — additional setup time</div>
+      <div class="cc-point">Skill-dependent — requires training to avoid false confidence</div>
+    </div>
+  </div>
+
+  <!-- HISTORY -->
+  <div class="sl" style="margin-bottom:1rem">Historical Record</div>
+  <div class="tl-items">
+    <div class="tl-item">
+      <div class="tl-year">1929</div><div class="tl-dot" style="background:var(--text-3)"></div>
+      <div><div class="tl-title">Werner Forssmann — First Cardiac Catheterization</div>
+      <p class="tl-desc">A 25-year-old German surgical trainee passed a urological catheter through his own left antecubital vein, advanced it to his right atrium, then walked to the radiology department to confirm position by X-ray. His supervisor had tried to stop him. He was censured, fired, and largely forgotten — until the Nobel Prize in 1956. His self-experiment established that vascular access to the heart was survivable.</p>
+      <span class="tl-tag" style="background:rgba(158,130,114,0.15);color:var(--text-3)">Foundation</span></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">1953</div><div class="tl-dot" style="background:var(--accent)"></div>
+      <div><div class="tl-title">Seldinger's Wire Exchange — The Technique That Changed Everything</div>
+      <p class="tl-desc">Swedish radiologist Sven-Ivar Seldinger published a one-page paper describing access via a hollow needle, insertion of a flexible guidewire, removal of the needle over the wire, and threading of a catheter over the wire. The simplicity was radical: you no longer needed to thread a catheter through the same needle that punctured the vessel. Seventy years later, every central line uses this technique unchanged.</p>
+      <span class="tl-tag" style="background:rgba(188,114,80,0.15);color:var(--accent)">Paradigm Shift</span></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">1962</div><div class="tl-dot" style="background:var(--blue)"></div>
+      <div><div class="tl-title">Subclavian Vein Catheterization — Wilson's Infraclavicular Technique</div>
+      <p class="tl-desc">Aubaniac described the infraclavicular subclavian approach in 1952, but it was Wilson and colleagues who established the anatomical rationale and clinical indications in the early 1960s. The subclavian approach offered a fixed anatomical target independent of patient neck position — ideal for trauma and resuscitation. It became the dominant central access site for two decades before ultrasound-guided IJ access emerged.</p>
+      <span class="tl-tag" style="background:rgba(74,138,202,0.15);color:var(--blue)">Technique</span></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">1990s</div><div class="tl-dot" style="background:var(--sage)"></div>
+      <div><div class="tl-title">Real-Time Ultrasound Guidance — From Radiology to Bedside</div>
+      <p class="tl-desc">Landmark-based subclavian access had a pneumothorax rate of 1–3% — acceptable for ICU populations, catastrophic for ambulatory patients. The migration of portable ultrasound to the bedside in the 1990s enabled real-time IJ cannulation under direct vision. NICE Technology Appraisal 49 (2002) mandated US guidance for all elective IJ central line insertions in the UK — the first national guideline to require real-time imaging for a procedure.</p>
+      <span class="tl-tag" style="background:rgba(126,156,132,0.15);color:var(--sage)">Safety Advance</span></div>
+    </div>
+  </div>
+
+  <div class="pearls">
+    <div class="pearl"><div class="pearl-icon">🔵</div><div class="pearl-title">The IJ Vein Is Lateral to the Artery — Mostly</div><p class="pearl-text">In 95% of patients, the IJ vein lies anterior and lateral to the carotid artery. In 5%, the vein lies directly anterior — making inadvertent carotid puncture nearly impossible to avoid by landmark alone. Ultrasound identifies this variant in 30 seconds.</p></div>
+    <div class="pearl"><div class="pearl-icon">💨</div><div class="pearl-title">Why the Subclavian Causes Pneumothorax</div><p class="pearl-text">The subclavian vein runs immediately posterior to the clavicle, above the first rib, and anterior to the subclavian artery and brachial plexus — directly adjacent to the apex of the lung. A needle angled even slightly posteriorly can enter the pleural space before it enters the vein. The pleura is 1–4 mm away from the needle path in most approaches.</p></div>
+    <div class="pearl"><div class="pearl-icon">🦵</div><div class="pearl-title">Femoral — The Last Resort</div><p class="pearl-text">The femoral approach has no pneumothorax risk and is technically easy — but carries the highest CLABSI rate of any central access site (inguinal flora, patient mobility) and the highest DVT rate (flow stasis in dependent limb). Appropriate in cardiac arrest and coagulopathic emergencies. Not appropriate for dwell times &gt;24–48 hours.</p></div>
+    <div class="pearl"><div class="pearl-icon">📐</div><div class="pearl-title">The SVC-RA Junction: 1–2 cm Above the Pericardial Reflection</div><p class="pearl-text">The CAJ (cavoatrial junction) is approximately 3–5 cm below the right tracheobronchial angle on CXR. The pericardial reflection begins approximately 1–2 cm above the RA-SVC junction. A tip in the RA can perforate the pericardium and cause tamponade from fluid accumulation. All central line tips should terminate in the lower third of the SVC or at the CAJ — never in the RA proper.</p></div>
+  </div>
+
+</div>
+
+<div class="nf">
+  <a href="/education/central-line-lab/" class="nl2"><span>←</span><div><div class="nll">Back to</div>Collection</div></a>
+  <a href="/education/central-line-lab/02-picc.html" class="nl2"><div style="text-align:right"><div class="nll">Next Module</div>PICC Lines</div><span>→</span></a>
+</div>
+
+<script>
+const SITES = {
+  ij:{name:'Internal Jugular Vein',color:'#4A8ACA',cx:.55,cy:.17,rows:[
+    ['Approach','Anterior / central / posterior'],['Needle angle','45° to skin, aim for ipsilateral nipple'],
+    ['Depth to vein','1–3 cm'],['Compressible','Yes — confirms vein vs artery'],
+    ['Pneumothorax risk','<0.5% with ultrasound'],['DVT risk','Low'],
+    ['CLABSI risk','Low-Moderate'],['US-guided standard','Yes (NICE mandated)'],
+    ['Adjacent structures','Carotid artery (medial), vagus nerve, brachial plexus'],
+  ]},
+  subclavian:{name:'Subclavian Vein',color:'#BC7250',cx:.43,cy:.22,rows:[
+    ['Approach','Infraclavicular (most common)'],['Needle angle','15° below horizontal, aim for sternal notch'],
+    ['Depth to vein','1–4 cm'],['Compressible','No — clavicle blocks US'],
+    ['Pneumothorax risk','1–3% landmark; <0.5% US-guided supraclavicular'],['DVT risk','Low'],
+    ['CLABSI risk','Lowest of all central sites'],['Comfortable for patient','Yes (shoulder immobilized)'],
+    ['Adjacent structures','Subclavian artery posterior, pleura inferior, brachial plexus'],
+  ]},
+  femoral:{name:'Femoral Vein',color:'#C9A84C',cx:.52,cy:.82,rows:[
+    ['Approach','NAVEL: Nerve/Artery/Vein/Empty/Lymphatics (medial to lateral)'],['Needle angle','45°, aim cephalad'],
+    ['Depth to vein','2–5 cm'],['Compressible','Yes'],
+    ['Pneumothorax risk','Zero'],['DVT risk','Highest (15–20%)'],
+    ['CLABSI risk','Highest of all sites'],['Tip position','Inferior vena cava'],
+    ['Adjacent structures','Femoral artery (lateral), femoral nerve (lateral to artery)'],
+  ]},
+  basilic:{name:'Basilic Vein (PICC)',color:'#7E9C84',cx:.8,cy:.48,rows:[
+    ['Approach','Medial upper arm, ultrasound guided'],['Preferred for PICC?','Yes — largest, straightest path'],
+    ['Depth to skin','0.5–1.5 cm'],['Diameter','3–8 mm (increases with tourniquet)'],
+    ['Path to SVC','Basilic → axillary → subclavian → SVC'],['PICC length (adult)','45–55 cm'],
+    ['Nerve risk','Medial cutaneous nerve (superficial, minimal)'],['DVT risk','5–14% (PICC-associated)'],
+  ]},
+  brachial:{name:'Brachial Vein (PICC)',color:'#B87070',cx:.78,cy:.42,rows:[
+    ['Approach','Paired veins, medial aspect of upper arm'],['Preferred for PICC?','Second choice to basilic'],
+    ['Depth to skin','1–2.5 cm'],['Diameter','3–6 mm (paired)'],
+    ['Nerve risk','Median nerve runs alongside — high if inadvertent needle pass'],['DVT risk','Higher than basilic'],
+    ['Advantages','Accessible when basilic unavailable'],['Disadvantages','Paired (easy to confuse), nerve risk'],
+  ]},
+};
+
+const canvas = document.getElementById('anatCanvas');
+const ctx = canvas.getContext('2d');
+let hoveredSite = null;
+let selectedSite = null;
+
+function resize(){canvas.width=canvas.offsetWidth;canvas.height=480}
+resize();
+window.addEventListener('resize',resize);
+
+function selectSite(key,btn){
+  selectedSite=key;
+  document.querySelectorAll('.site-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  const s=SITES[key];
+  document.getElementById('siName').textContent=s.name;
+  const rows=document.getElementById('siRows');
+  rows.innerHTML='';
+  s.rows.forEach(([k,v])=>{
+    const r=document.createElement('div');r.className='si-row';
+    r.innerHTML=`<span class="si-key">${k}</span><span class="si-val">${v}</span>`;
+    rows.appendChild(r);
+  });
+  document.getElementById('siteInfo').classList.add('show');
+}
+
+canvas.addEventListener('mousemove',function(e){
+  const rect=this.getBoundingClientRect();
+  const mx=(e.clientX-rect.left)/rect.width;
+  const my=(e.clientY-rect.top)/rect.height;
+  let found=null;
+  Object.entries(SITES).forEach(([k,s])=>{
+    const dx=mx-s.cx,dy=my-s.cy;
+    if(Math.sqrt(dx*dx+dy*dy)<0.05)found=k;
+  });
+  if(found!==hoveredSite){hoveredSite=found;this.style.cursor=found?'pointer':'default'}
+});
+
+canvas.addEventListener('click',function(e){
+  const rect=this.getBoundingClientRect();
+  const mx=(e.clientX-rect.left)/rect.width;
+  const my=(e.clientY-rect.top)/rect.height;
+  Object.entries(SITES).forEach(([k,s])=>{
+    const dx=mx-s.cx,dy=my-s.cy;
+    if(Math.sqrt(dx*dx+dy*dy)<0.05){
+      const btn=document.querySelector(`.site-btn:nth-child(${Object.keys(SITES).indexOf(k)+2})`);
+      selectSite(k,btn);
+    }
+  });
+});
+
+let aT=0;
+function drawAnat(){
+  const W=canvas.width,H=canvas.height;
+  aT+=0.008;
+  ctx.clearRect(0,0,W,H);
+
+  // Dark body background
+  ctx.fillStyle='#0E0C0A';ctx.fillRect(0,0,W,H);
+
+  // Simple body silhouette — torso + head + arms
+  // Head
+  ctx.beginPath();ctx.ellipse(W*.5,H*.08,W*.07,H*.07,0,0,Math.PI*2);
+  ctx.fillStyle='#1E160E';ctx.fill();
+  ctx.strokeStyle='rgba(158,130,114,0.15)';ctx.lineWidth=1;ctx.stroke();
+
+  // Neck
+  ctx.fillStyle='#1A1208';
+  ctx.beginPath();ctx.roundRect(W*.46,H*.14,W*.08,H*.05,4);ctx.fill();
+
+  // Torso
+  ctx.fillStyle='#1A1208';
+  ctx.beginPath();ctx.roundRect(W*.35,H*.18,W*.3,H*.5,8);ctx.fill();
+
+  // Arms
+  ctx.fillStyle='#1E160E';
+  // Left arm
+  ctx.beginPath();ctx.roundRect(W*.17,H*.2,W*.16,H*.55,8);ctx.fill();
+  // Right arm
+  ctx.beginPath();ctx.roundRect(W*.67,H*.2,W*.16,H*.55,8);ctx.fill();
+
+  // Pelvis/legs
+  ctx.fillStyle='#1A1208';
+  ctx.beginPath();ctx.roundRect(W*.37,H*.68,W*.26,H*.28,4);ctx.fill();
+
+  // ===== VEINS =====
+  // Helper to draw animated blood vessel
+  function drawVein(points,color,width,label,isArtery=false){
+    ctx.beginPath();
+    ctx.moveTo(points[0][0]*W,points[0][1]*H);
+    points.slice(1).forEach(p=>ctx.lineTo(p[0]*W,p[1]*H));
+    ctx.strokeStyle=color+'55';ctx.lineWidth=width+3;ctx.stroke();
+    ctx.strokeStyle=color;ctx.lineWidth=width;ctx.stroke();
+    if(label){
+      ctx.fillStyle=color+'AA';ctx.font='9px Nunito,sans-serif';ctx.textAlign='left';
+      ctx.fillText(label,points[0][0]*W+6,points[0][1]*H-4);
+    }
+  }
+
+  // SVC (central target)
+  const svcColor='#BC7250';
+  ctx.beginPath();
+  ctx.moveTo(W*.5,H*.19);ctx.lineTo(W*.5,H*.29);
+  ctx.strokeStyle=svcColor+'44';ctx.lineWidth=14;ctx.stroke();
+  ctx.strokeStyle=svcColor+'88';ctx.lineWidth=10;ctx.stroke();
+  ctx.strokeStyle=svcColor;ctx.lineWidth=6;ctx.stroke();
+  // SVC pulsing glow
+  const svcGlow=Math.sin(aT*3)*0.15+0.35;
+  const g=ctx.createRadialGradient(W*.5,H*.245,0,W*.5,H*.245,W*.06);
+  g.addColorStop(0,`rgba(188,114,80,${svcGlow})`);g.addColorStop(1,'transparent');
+  ctx.fillStyle=g;ctx.fillRect(W*.4,H*.19,W*.2,H*.1);
+  ctx.fillStyle='rgba(188,114,80,0.7)';ctx.font='500 9px Nunito';ctx.textAlign='center';
+  ctx.fillText('SVC',W*.5,H*.19-6);
+  ctx.fillText('CAJ ▼',W*.5,H*.3+12);
+
+  // Right atrium hint
+  ctx.beginPath();ctx.ellipse(W*.5,H*.31,W*.05,H*.04,0,0,Math.PI*2);
+  ctx.fillStyle='rgba(139,32,32,0.3)';ctx.fill();
+  ctx.strokeStyle='rgba(139,32,32,0.5)';ctx.lineWidth=1;ctx.stroke();
+  ctx.fillStyle='rgba(184,112,112,0.6)';ctx.font='8px Nunito';ctx.textAlign='center';
+  ctx.fillText('RA',W*.5,H*.315);
+
+  // Left IJ
+  const ijPoints=[[.51,.15],[.52,.19]];
+  drawVein(ijPoints,'#4A8ACA',4,'IJ');
+  // Right IJ
+  ctx.beginPath();ctx.moveTo(W*.49,H*.15);ctx.lineTo(W*.48,H*.19);
+  ctx.strokeStyle='#4A8ACA55';ctx.lineWidth=7;ctx.stroke();
+  ctx.strokeStyle='#4A8ACA';ctx.lineWidth=3;ctx.stroke();
+
+  // Left subclavian → SVC
+  ctx.beginPath();ctx.moveTo(W*.38,H*.21);ctx.bezierCurveTo(W*.42,H*.21,W*.46,H*.2,W*.5,H*.2);
+  ctx.strokeStyle='#BC7250AA';ctx.lineWidth=5;ctx.stroke();
+  ctx.strokeStyle='#BC7250';ctx.lineWidth=3;ctx.stroke();
+  ctx.fillStyle='rgba(188,114,80,0.6)';ctx.font='8px Nunito';ctx.textAlign='right';
+  ctx.fillText('Subclavian',W*.37,H*.19);
+
+  // Brachiocephalic veins
+  ctx.beginPath();ctx.moveTo(W*.62,H*.21);ctx.bezierCurveTo(W*.56,H*.21,W*.52,H*.2,W*.5,H*.2);
+  ctx.strokeStyle='#BC725066';ctx.lineWidth=5;ctx.stroke();
+  ctx.strokeStyle='#BC7250';ctx.lineWidth=3;ctx.stroke();
+
+  // Basilic vein right arm
+  ctx.beginPath();ctx.moveTo(W*.8,H*.48);ctx.bezierCurveTo(W*.79,H*.36,W*.75,H*.28,W*.66,H*.22);
+  ctx.bezierCurveTo(W*.6,H*.19,W*.54,H*.19,W*.5,H*.2);
+  ctx.strokeStyle='#7E9C8433';ctx.lineWidth=7;ctx.stroke();
+  ctx.strokeStyle='#7E9C84AA';ctx.lineWidth=3;ctx.stroke();
+  ctx.fillStyle='rgba(126,156,132,0.6)';ctx.font='8px Nunito';ctx.textAlign='left';
+  ctx.fillText('Basilic',W*.82,H*.48);
+
+  // Brachial vein
+  ctx.beginPath();ctx.moveTo(W*.78,H*.42);ctx.bezierCurveTo(W*.77,H*.32,W*.72,H*.26,W*.65,H*.22);
+  ctx.strokeStyle='#B8707044';ctx.lineWidth=5;ctx.stroke();
+  ctx.strokeStyle='#B87070AA';ctx.lineWidth=2;ctx.stroke();
+
+  // Femoral vein
+  ctx.beginPath();ctx.moveTo(W*.52,H*.82);ctx.bezierCurveTo(W*.52,H*.72,W*.51,H*.6,W*.51,H*.5);
+  ctx.bezierCurveTo(W*.51,H*.4,W*.5,H*.35,W*.5,H*.3);
+  ctx.strokeStyle='#C9A84C44';ctx.lineWidth=9;ctx.stroke();
+  ctx.strokeStyle='#C9A84CAA';ctx.lineWidth=5;ctx.stroke();
+  ctx.fillStyle='rgba(201,168,76,0.6)';ctx.font='8px Nunito';ctx.textAlign='left';
+  ctx.fillText('Femoral',W*.55,H*.83);
+
+  // Animated flow particles
+  function flowParticle(path,color,t){
+    const phase=t%1;
+    const idx=Math.floor(phase*(path.length-1));
+    if(idx>=path.length-1)return;
+    const frac=phase*(path.length-1)-idx;
+    const x=path[idx][0]+(path[idx+1][0]-path[idx][0])*frac;
+    const y=path[idx][1]+(path[idx+1][1]-path[idx][1])*frac;
+    ctx.beginPath();ctx.arc(x*W,y*H,3,0,Math.PI*2);
+    ctx.fillStyle=color;ctx.fill();
+  }
+  const ij_path=[[.51,.15],[.51,.18],[.5,.19],[.5,.22]];
+  const bas_path=[[.8,.48],[.78,.36],[.74,.28],[.66,.22],[.58,.2],[.5,.2]];
+  const fem_path=[[.52,.82],[.52,.7],[.51,.55],[.51,.42],[.5,.35],[.5,.3]];
+  flowParticle(ij_path,'#4A8ACA',aT*.4);
+  flowParticle(ij_path,'#4A8ACA',(aT*.4+.5)%1);
+  flowParticle(bas_path,'#7E9C84',aT*.25);
+  flowParticle(bas_path,'#7E9C84',(aT*.25+.5)%1);
+  flowParticle(fem_path,'#C9A84C',aT*.35);
+
+  // Highlighted site dot
+  Object.entries(SITES).forEach(([k,s])=>{
+    const isHov=hoveredSite===k,isSel=selectedSite===k;
+    const x=s.cx*W,y=s.cy*H;
+    if(isHov||isSel){
+      ctx.beginPath();ctx.arc(x,y,16,0,Math.PI*2);
+      ctx.fillStyle=s.color+'22';ctx.fill();
+    }
+    ctx.beginPath();ctx.arc(x,y,isSel?8:5,0,Math.PI*2);
+    ctx.fillStyle=isSel?s.color:s.color+'88';ctx.fill();
+    if(isSel){
+      ctx.beginPath();ctx.arc(x,y,12+Math.sin(aT*4)*2,0,Math.PI*2);
+      ctx.strokeStyle=s.color+'55';ctx.lineWidth=2;ctx.stroke();
+    }
+  });
+
+  ctx.textAlign='left';
+  requestAnimationFrame(drawAnat);
+}
+drawAnat();
+</script>
+</body>
+</html>

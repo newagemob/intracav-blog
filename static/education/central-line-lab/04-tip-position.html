@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tip Positioning — The Central Line Lab</title>
+<script src="https://unpkg.com/htmx.org@1.9.10"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Nunito:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{--bg:#EDE4D5;--surface:#F6F0E8;--border:#D4C7B5;--border-lt:#E2D8CC;--text:#28180C;--text-2:#685040;--text-3:#9E8272;--accent:#BC7250;--accent-lt:#E8C4A8;--sage:#7E9C84;--rose:#B87070;--gold:#C9A84C;--blue:#4A8ACA;--shadow-sm:0 1px 8px rgba(40,24,12,0.06),0 0 0 1px rgba(40,24,12,0.04);--r:16px;--r-sm:10px;}
+  body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+  body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");opacity:.028;pointer-events:none;z-index:9999}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 3rem;border-bottom:1px solid var(--border-lt);background:rgba(237,228,213,0.85);backdrop-filter:blur(12px);position:sticky;top:0;z-index:100}
+  .nl{display:flex;align-items:center;gap:1rem}.nb{font-size:.8rem;color:var(--text-3);text-decoration:none;transition:color 200ms}.nb:hover{color:var(--accent)}.ns{color:var(--border)}
+  .hero{padding:4rem 3rem 2.5rem;border-bottom:1px solid var(--border-lt);max-width:1100px;margin:0 auto}
+  .ml{font-size:.68rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:.6rem;margin-bottom:.75rem}.ml::before{content:'04';font-family:'JetBrains Mono',monospace;color:var(--accent)}
+  h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:400;line-height:1.1;margin-bottom:1rem}h1 em{font-style:italic;color:var(--text-2)}
+  .hd{font-size:.92rem;line-height:1.7;color:var(--text-2);font-weight:300;max-width:680px}
+  .main{max-width:1100px;margin:0 auto;padding:2.5rem 3rem}
+  .sl{font-size:.65rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);margin-bottom:.2rem}
+  .st{font-family:'Cormorant Garamond',serif;font-size:1.35rem;margin-bottom:1.25rem}
+  /* CXR sim */
+  .cxr-section{background:var(--surface);border:1px solid var(--border-lt);border-radius:var(--r);overflow:hidden;margin-bottom:2rem;box-shadow:var(--shadow-sm)}
+  .cxr-header{padding:1.5rem 2rem;border-bottom:1px solid var(--border-lt);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+  .cxr-body{display:grid;grid-template-columns:1fr 1fr}
+  #cxrCanvas{width:100%;height:420px;display:block;border-right:1px solid var(--border-lt)}
+  .cxr-panel{padding:1.75rem;display:flex;flex-direction:column;gap:1rem;overflow-y:auto;max-height:420px}
+  .tip-btn{padding:.55rem 1rem;border:1px solid var(--border);border-radius:var(--r-sm);font-size:.8rem;font-weight:600;font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text-2);cursor:pointer;transition:all 150ms;text-align:left}
+  .tip-btn:hover{border-color:var(--accent)}.tip-btn.active{background:var(--accent);border-color:var(--accent);color:white}
+  /* malposition grid */
+  .malpos-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem;margin-bottom:2rem}
+  .mp-card{background:var(--surface);border:1px solid var(--border-lt);border-radius:var(--r-sm);padding:1.25rem;box-shadow:var(--shadow-sm)}
+  .mpc-title{font-family:'Cormorant Garamond',serif;font-size:1.05rem;margin-bottom:.5rem}
+  .mpc-row{display:flex;justify-content:space-between;font-size:.75rem;padding:.2rem 0;border-bottom:1px solid var(--border-lt)}.mpc-row:last-child{border-bottom:none}
+  .mpc-key{color:var(--text-3)}.mpc-val{font-family:'JetBrains Mono',monospace;font-size:.68rem}
+  .mpc-risk{font-size:.62rem;font-weight:600;padding:.12rem .5rem;border-radius:100px;margin-top:.4rem;display:inline-block}
+  .pearls{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem;margin-bottom:2rem}
+  .pearl{background:var(--surface);border:1px solid var(--border-lt);border-radius:var(--r-sm);padding:1.25rem 1.5rem;box-shadow:var(--shadow-sm)}
+  .pearl-icon{font-size:1.4rem;margin-bottom:.75rem}
+  .pearl-title{font-family:'Cormorant Garamond',serif;font-size:1.05rem;margin-bottom:.5rem}
+  .pearl-text{font-size:.8rem;line-height:1.65;color:var(--text-2);font-weight:300}
+  .tl-items{display:flex;flex-direction:column;margin-bottom:2rem}
+  .tl-item{display:flex;gap:1.5rem;padding:1.25rem 0;border-bottom:1px solid var(--border-lt)}.tl-item:last-child{border-bottom:none}
+  .tl-year{font-family:'JetBrains Mono',monospace;font-size:.85rem;color:var(--accent);min-width:60px;padding-top:.2rem}
+  .tl-dot{width:10px;height:10px;border-radius:50%;margin-top:.3rem;flex-shrink:0}
+  .tl-title{font-family:'Cormorant Garamond',serif;font-size:1.1rem;margin-bottom:.3rem}
+  .tl-desc{font-size:.8rem;line-height:1.65;color:var(--text-2);font-weight:300}
+  .tl-tag{display:inline-block;font-size:.62rem;font-weight:600;padding:.15rem .55rem;border-radius:100px;margin-top:.4rem}
+  .nf{display:flex;justify-content:space-between;align-items:center;padding:2rem 3rem;border-top:1px solid var(--border-lt);max-width:1100px;margin:0 auto}
+  .nl2{text-decoration:none;color:var(--text-3);font-size:.82rem;transition:color 200ms;display:flex;align-items:center;gap:.5rem}.nl2:hover{color:var(--accent)}
+  .nll{font-size:.65rem;text-transform:uppercase;letter-spacing:.1em}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}.hero{animation:fadeUp .5s ease both}
+  @media(max-width:700px){nav,.hero,.main,.nf{padding-left:1.25rem;padding-right:1.25rem}.hero,.cxr-body{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nl"><a href="/education/central-line-lab/" class="nb">← Collection</a><span class="ns">|</span><span style="font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--text-2)">The Central Line Lab</span></div>
+  <div class="nl"><span style="font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--accent)">04 / 06</span><a href="/education/central-line-lab/03-insertion.html" class="nb">← Insertion</a><span class="ns">|</span><a href="/education/central-line-lab/05-complications.html" class="nb">Complications →</a></div>
+</nav>
+
+<div class="hero">
+  <div class="ml">Tip Positioning — The CAJ</div>
+  <h1>One centimeter<br><em>changes everything.</em></h1>
+  <p class="hd">The cavoatrial junction — where the superior vena cava meets the right atrium — is the only acceptable destination for every central venous catheter tip. Too high: thrombosis, inadequate dilution, TPN-related vessel injury. Too low: arrhythmia, perforation, tamponade. The margin is measured in centimeters.</p>
+</div>
+
+<div class="main">
+
+  <!-- CXR SIMULATOR -->
+  <div class="cxr-section">
+    <div class="cxr-header">
+      <div><div class="sl">Interactive CXR Simulator</div><div class="st" style="margin:0;font-family:'Cormorant Garamond',serif;font-size:1.3rem;">Identify the tip position — select each scenario</div></div>
+      <div id="cxrStatusBadge" style="font-size:.72rem;font-weight:600;padding:.4rem .9rem;border-radius:100px;background:rgba(126,156,132,0.15);color:var(--sage);border:1px solid var(--sage)">✓ Optimal position</div>
+    </div>
+    <div class="cxr-body">
+      <canvas id="cxrCanvas"></canvas>
+      <div class="cxr-panel">
+        <div class="sl" style="margin-bottom:.5rem">Tip Position Scenarios</div>
+        <button class="tip-btn active" onclick="setTip('optimal',this)">✅ Optimal — lower SVC / CAJ</button>
+        <button class="tip-btn" onclick="setTip('high',this)">⬆ Too high — mid-SVC</button>
+        <button class="tip-btn" onclick="setTip('subclavian',this)">↩ Too short — subclavian</button>
+        <button class="tip-btn" onclick="setTip('ra',this)">⬇ Too low — right atrium</button>
+        <button class="tip-btn" onclick="setTip('rv',this)">🔴 Right ventricle — emergency</button>
+        <button class="tip-btn" onclick="setTip('azygos',this)">↪ Malposition — azygos vein</button>
+        <button class="tip-btn" onclick="setTip('contralateral',this)">↩ Malposition — contralateral SVC</button>
+        <div id="tipInfo" style="background:var(--bg);border-radius:var(--r-sm);padding:1rem;font-size:.8rem;line-height:1.65;color:var(--text-2);font-weight:300;border-left:3px solid var(--sage)">
+          Optimal position: lower third of the SVC, at or just above the CAJ. The carina serves as the primary CXR landmark — the tip should be 2–3 cm below the carina on an AP chest film.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MALPOSITION GRID -->
+  <div class="sl" style="margin-bottom:.75rem">Malposition Types</div>
+  <div class="st">Where Central Lines End Up When They Shouldn't</div>
+  <div class="malpos-grid">
+    <div class="mp-card">
+      <div class="mpc-title" style="color:var(--rose)">Right Atrium / RV</div>
+      <div class="mpc-row"><span class="mpc-key">Frequency</span><span class="mpc-val">2–4% of CVCs</span></div>
+      <div class="mpc-row"><span class="mpc-key">Consequences</span><span class="mpc-val">Arrhythmia, perforation, tamponade</span></div>
+      <div class="mpc-row"><span class="mpc-key">Detection</span><span class="mpc-val">CXR: tip below carina + 5 cm</span></div>
+      <div class="mpc-row"><span class="mpc-key">Action</span><span class="mpc-val">Withdraw to CAJ under fluoroscopy</span></div>
+      <div class="mpc-risk" style="background:rgba(184,112,112,0.12);color:var(--rose)">High risk</div>
+    </div>
+    <div class="mp-card">
+      <div class="mpc-title" style="color:var(--gold)">Mid / Proximal SVC</div>
+      <div class="mpc-row"><span class="mpc-key">Frequency</span><span class="mpc-val">8–12% of PICCs</span></div>
+      <div class="mpc-row"><span class="mpc-key">Consequences</span><span class="mpc-val">Thrombosis, poor drug dilution</span></div>
+      <div class="mpc-row"><span class="mpc-key">Detection</span><span class="mpc-val">CXR: tip above carina</span></div>
+      <div class="mpc-row"><span class="mpc-key">Action</span><span class="mpc-val">Advance to CAJ (PICC) or accept if minor</span></div>
+      <div class="mpc-risk" style="background:rgba(201,168,76,0.12);color:var(--gold)">Moderate risk</div>
+    </div>
+    <div class="mp-card">
+      <div class="mpc-title" style="color:var(--gold)">Subclavian Vein</div>
+      <div class="mpc-row"><span class="mpc-key">Frequency</span><span class="mpc-val">3–6% (arm or IJ lines)</span></div>
+      <div class="mpc-row"><span class="mpc-key">Consequences</span><span class="mpc-val">DVT, no central pressure, drug maldilution</span></div>
+      <div class="mpc-row"><span class="mpc-key">Detection</span><span class="mpc-val">CXR: tip lateral, no SVC shadow</span></div>
+      <div class="mpc-row"><span class="mpc-key">Action</span><span class="mpc-val">Reposition under fluoroscopy</span></div>
+      <div class="mpc-risk" style="background:rgba(201,168,76,0.12);color:var(--gold)">Moderate risk</div>
+    </div>
+    <div class="mp-card">
+      <div class="mpc-title" style="color:var(--accent)">Azygos Vein</div>
+      <div class="mpc-row"><span class="mpc-key">Frequency</span><span class="mpc-val">1–2%</span></div>
+      <div class="mpc-row"><span class="mpc-key">Consequences</span><span class="mpc-val">Perforation risk, poor flow, thrombosis</span></div>
+      <div class="mpc-row"><span class="mpc-key">Detection</span><span class="mpc-val">CXR: tip angled right paramedian, curves posteriorly</span></div>
+      <div class="mpc-row"><span class="mpc-key">Action</span><span class="mpc-val">Reposition — azygos too small for central line</span></div>
+      <div class="mpc-risk" style="background:rgba(188,114,80,0.12);color:var(--accent)">Reposition required</div>
+    </div>
+    <div class="mp-card">
+      <div class="mpc-title" style="color:var(--blue)">Contralateral SVC</div>
+      <div class="mpc-row"><span class="mpc-key">Frequency</span><span class="mpc-val">1–3% (IJ lines)</span></div>
+      <div class="mpc-row"><span class="mpc-key">Consequences</span><span class="mpc-val">Perforation, contralateral SVC thrombosis</span></div>
+      <div class="mpc-row"><span class="mpc-key">Detection</span><span class="mpc-val">CXR: tip crosses midline, contralateral</span></div>
+      <div class="mpc-row"><span class="mpc-key">Action</span><span class="mpc-val">Withdraw and reposition</span></div>
+      <div class="mpc-risk" style="background:rgba(74,138,202,0.12);color:var(--blue)">Reposition required</div>
+    </div>
+    <div class="mp-card">
+      <div class="mpc-title" style="color:var(--sage)">Internal Mammary</div>
+      <div class="mpc-row"><span class="mpc-key">Frequency</span><span class="mpc-val">&lt;1%</span></div>
+      <div class="mpc-row"><span class="mpc-key">Consequences</span><span class="mpc-val">Mediastinal infusion, chest wall necrosis</span></div>
+      <div class="mpc-row"><span class="mpc-key">Detection</span><span class="mpc-val">CXR: tip runs vertically along sternum</span></div>
+      <div class="mpc-row"><span class="mpc-key">Action</span><span class="mpc-val">Immediate removal</span></div>
+      <div class="mpc-risk" style="background:rgba(184,112,112,0.12);color:var(--rose)">Immediate action</div>
+    </div>
+  </div>
+
+  <!-- CXR LANDMARKS -->
+  <div style="background:var(--surface);border:1px solid var(--border-lt);border-radius:var(--r);padding:1.75rem 2rem;margin-bottom:2rem;box-shadow:var(--shadow-sm)">
+    <div class="sl" style="margin-bottom:.75rem">CXR Interpretation Guide</div>
+    <div class="st" style="margin-bottom:1rem">How to Read a Post-CVC Chest X-Ray in 60 Seconds</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem">
+      <div>
+        <div style="font-size:.8rem;font-weight:600;color:var(--text-2);margin-bottom:.5rem">Step 1 — Find the carina</div>
+        <p style="font-size:.8rem;line-height:1.65;color:var(--text-2);font-weight:300;margin-bottom:1rem">The carina (tracheal bifurcation) is visible at the level of the aortic arch on AP film. It marks the approximate border between proximal and distal SVC. The CAJ is approximately 2–3 cm below the carina.</p>
+        <div style="font-size:.8rem;font-weight:600;color:var(--text-2);margin-bottom:.5rem">Step 2 — Trace the catheter</div>
+        <p style="font-size:.8rem;line-height:1.65;color:var(--text-2);font-weight:300;margin-bottom:1rem">Follow the catheter from entry point to tip. It should parallel the right mediastinal border (right brachiocephalic → SVC). Any deviation laterally, crossing midline, or heading toward the lung field = malposition.</p>
+        <div style="font-size:.8rem;font-weight:600;color:var(--text-2);margin-bottom:.5rem">Step 3 — Check for complications</div>
+        <p style="font-size:.8rem;line-height:1.65;color:var(--text-2);font-weight:300">Pneumothorax: apical lucency, absent lung markings. Hemothorax: unilateral haziness. Compare left vs right. Check for mediastinal widening (hematoma). Assess lung fields.</p>
+      </div>
+      <div>
+        <div style="font-size:.8rem;font-weight:600;color:var(--text-2);margin-bottom:.5rem">Acceptable Tip Positions</div>
+        <div style="display:flex;flex-direction:column;gap:.4rem">
+          <div style="display:flex;gap:.75rem;align-items:center;padding:.5rem;background:rgba(126,156,132,0.08);border-radius:var(--r-sm)"><span style="color:var(--sage);font-size:1rem">✓</span><span style="font-size:.78rem">Lower third SVC (1–2 cm above CAJ)</span></div>
+          <div style="display:flex;gap:.75rem;align-items:center;padding:.5rem;background:rgba(126,156,132,0.08);border-radius:var(--r-sm)"><span style="color:var(--sage);font-size:1rem">✓</span><span style="font-size:.78rem">At the CAJ (SVC-RA junction)</span></div>
+          <div style="display:flex;gap:.75rem;align-items:center;padding:.5rem;background:rgba(201,168,76,0.08);border-radius:var(--r-sm)"><span style="color:var(--gold);font-size:1rem">~</span><span style="font-size:.78rem">Mid-SVC (acceptable for short-term, not for TPN)</span></div>
+          <div style="display:flex;gap:.75rem;align-items:center;padding:.5rem;background:rgba(184,112,112,0.08);border-radius:var(--r-sm)"><span style="color:var(--rose);font-size:1rem">✗</span><span style="font-size:.78rem">Right atrium (withdraw to SVC)</span></div>
+          <div style="display:flex;gap:.75rem;align-items:center;padding:.5rem;background:rgba(192,64,64,0.08);border-radius:var(--r-sm)"><span style="color:#C04040;font-size:1rem">⚠</span><span style="font-size:.78rem">Right ventricle (immediate withdrawal)</span></div>
+          <div style="display:flex;gap:.75rem;align-items:center;padding:.5rem;background:rgba(184,112,112,0.08);border-radius:var(--r-sm)"><span style="color:var(--rose);font-size:1rem">✗</span><span style="font-size:.78rem">Azygos / internal mammary (reposition)</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HISTORY -->
+  <div class="sl" style="margin-bottom:1rem">Historical Record</div>
+  <div class="tl-items">
+    <div class="tl-item"><div class="tl-year">1960s</div><div class="tl-dot" style="background:var(--text-3)"></div><div><div class="tl-title">Right Atrium Placement — The Initial Standard</div><p class="tl-desc">Early central venous pressure measurement protocols positioned catheter tips in the right atrium. CVP measurement from within the RA was considered physiologically appropriate — it reflects true atrial filling pressure directly. Complications from intracardiac catheters (arrhythmia, perforation) led to the gradual adoption of SVC positioning as safer.</p><span class="tl-tag" style="background:rgba(158,130,114,0.15);color:var(--text-3)">Historical Standard</span></div></div>
+    <div class="tl-item"><div class="tl-year">1984</div><div class="tl-dot" style="background:var(--rose)"></div><div><div class="tl-title">Cardiac Tamponade from TPN — The CAJ Standard Emerges</div><p class="tl-desc">A series of deaths from cardiac tamponade related to TPN infusion through central lines positioned within the RA led to regulatory guidance requiring tip positioning in the SVC. Hyperosmolar TPN solution in direct contact with thin-walled RA myocardium caused erosion and perforation. The cavoatrial junction became the target: close enough to the RA for optimal CVP measurement, far enough to avoid intracardiac infusion.</p><span class="tl-tag" style="background:rgba(184,112,112,0.15);color:var(--rose)">Safety Turning Point</span></div></div>
+    <div class="tl-item"><div class="tl-year">2000s</div><div class="tl-dot" style="background:var(--blue)"></div><div><div class="tl-title">ECG Guidance — The End of the Delayed CXR</div><p class="tl-desc">Intravascular ECG tip confirmation transformed PICC placement practice. Using the saline column as an electrode, P-wave morphology changes are observed in real time as the tip advances toward the SA node. Maximum biphasic P-wave corresponds to CAJ position. This eliminated the 1–6 hour delay between PICC insertion and first clinical use that was required while waiting for CXR interpretation.</p><span class="tl-tag" style="background:rgba(74,138,202,0.15);color:var(--blue)">Technology Advance</span></div></div>
+  </div>
+
+  <div class="pearls">
+    <div class="pearl"><div class="pearl-icon">🎯</div><div class="pearl-title">The Carina: Your CXR Landmark</div><p class="pearl-text">The tracheal carina is visible on virtually every AP chest film and marks the approximate level of the upper-mid SVC junction. The CAJ is 2–4 cm below the carina. A CVC tip positioned 3 cm below the carina is correct. A tip at or above the carina level is too high — it's in the proximal SVC or brachiocephalic vein.</p></div>
+    <div class="pearl"><div class="pearl-icon">❤️</div><div class="pearl-title">Why the RA Is Dangerous</div><p class="pearl-text">The right atrial wall is only 2–3 mm thick. A catheter tip moving with cardiac motion against a thin wall, infusing concentrated solution, can erode through over days. The pericardial space fills with infusate — cardiac tamponade. This can occur with normal saline as easily as with TPN. Withdraw all central line tips from the RA to the SVC.</p></div>
+    <div class="pearl"><div class="pearl-icon">↩</div><div class="pearl-title">Cephalic Vein: The Malposition Highway</div><p class="pearl-text">Cephalic PICCs malposition into the internal jugular vein, contralateral subclavian, or axillary vein in 18–30% of cases due to the sharp angulation at the cephalopectoral groove. If you use the cephalic vein, use ECG or fluoroscopic guidance and confirm tip position before use.</p></div>
+    <div class="pearl"><div class="pearl-icon">🔄</div><div class="pearl-title">Tip Migration After Placement</div><p class="pearl-text">PICC tips can migrate 1–4 cm with arm position changes. Extension of the arm moves the tip distally (toward RA); flexion moves it proximally (toward subclavian). A tip confirmed at the CAJ with the arm adducted may be in the mid-SVC with the arm abducted. Position the arm at 90° during ECG guidance — the functional position for most patients.</p></div>
+  </div>
+
+</div>
+
+<div class="nf">
+  <a href="/education/central-line-lab/03-insertion.html" class="nl2"><span>←</span><div><div class="nll">Previous</div>CVC Insertion</div></a>
+  <a href="/education/central-line-lab/05-complications.html" class="nl2"><div style="text-align:right"><div class="nll">Next Module</div>Complications</div><span>→</span></a>
+</div>
+
+<script>
+const cv=document.getElementById('cxrCanvas');
+const ctx=cv.getContext('2d');
+let cT=0;
+let tipPos='optimal';
+
+const TIP_DATA={
+  optimal:{y:.68,x:.51,color:'#7E9C84',label:'CAJ (optimal)',info:'Optimal position. Tip at the cavoatrial junction, 2–3 cm below the carina. High-flow environment for drug dilution. Safe for TPN, vesicants, all concentrations.',status:'✓ Optimal position',statusColor:'rgba(126,156,132,0.15)',statusText:var('--sage')},
+  high:{y:.5,x:.5,color:'#C9A84C',label:'Proximal SVC (too high)',info:'Too high — mid/proximal SVC. Inadequate dilution for hyperosmolar solutions (TPN). Higher thrombosis rate from slower flow. Not acceptable for vesicant chemotherapy. Advance if possible.',status:'⬆ Too high — reposition',statusColor:'rgba(201,168,76,0.15)',statusText:'var(--gold)'},
+  subclavian:{y:.35,x:.36,color:'#C9A84C',label:'Subclavian (too short)',info:'Tip in subclavian vein — too short. Not a central line by function. Cannot measure CVP. Risk of subclavian DVT. Advance to SVC.',status:'↩ Too short — subclavian',statusColor:'rgba(201,168,76,0.15)',statusText:'var(--gold)'},
+  ra:{y:.77,x:.52,color:'#C04040',label:'Right atrium (too low)',info:'Tip in right atrium — withdraw 2–4 cm to CAJ. Risk of arrhythmia, atrial perforation, cardiac tamponade. Not acceptable for TPN.',status:'⬇ Right atrium — withdraw',statusColor:'rgba(192,64,64,0.15)',statusText:'#C04040'},
+  rv:{y:.88,x:.55,color:'#8B0000',label:'Right ventricle — EMERGENCY',info:'EMERGENCY: Tip in right ventricle. Arrhythmia, VF risk. Withdraw immediately to SVC position. Continuous ECG monitoring during withdrawal.',status:'🔴 RV — withdraw immediately',statusColor:'rgba(139,0,0,0.2)',statusText:'#8B0000'},
+  azygos:{y:.62,x:.6,color:'#BC7250',label:'Azygos vein (malposition)',info:'Azygos malposition — tip angles rightward at level of SVC-azygos junction. High perforation risk (small vessel). Must reposition under fluoroscopy.',status:'↪ Azygos malposition',statusColor:'rgba(188,114,80,0.15)',statusText:'var(--accent)'},
+  contralateral:{y:.48,x:.42,color:'#4A8ACA',label:'Contralateral SVC (malposition)',info:'Tip crossed midline into contralateral brachiocephalic or SVC. Reposition under fluoroscopy. Risk of contralateral venous perforation.',status:'↩ Contralateral malposition',statusColor:'rgba(74,138,202,0.15)',statusText:'var(--blue)'},
+};
+
+function varColor(v){const map={'var(--sage)':'#7E9C84','var(--gold)':'#C9A84C','var(--accent)':'#BC7250','var(--blue)':'#4A8ACA','#C04040':'#C04040','#8B0000':'#8B0000'};return map[v]||v}
+
+function setTip(t,btn){
+  tipPos=t;
+  document.querySelectorAll('.tip-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  const d=TIP_DATA[t];
+  document.getElementById('tipInfo').textContent=d.info;
+  const badge=document.getElementById('cxrStatusBadge');
+  badge.textContent=d.status;
+  badge.style.cssText=`font-size:.72rem;font-weight:600;padding:.4rem .9rem;border-radius:100px;background:${d.statusColor};color:${varColor(d.statusText)};border:1px solid ${varColor(d.statusText)}`;
+}
+
+function resize(){cv.width=cv.offsetWidth;cv.height=420}
+resize();window.addEventListener('resize',resize);
+
+function drawCxr(){
+  const W=cv.width,H=cv.height;
+  cT+=.008;
+  ctx.clearRect(0,0,W,H);
+  // CXR background (dark, film-like)
+  ctx.fillStyle='#060404';ctx.fillRect(0,0,W,H);
+  const cxrGrad=ctx.createRadialGradient(W*.5,H*.4,W*.1,W*.5,H*.4,W*.55);
+  cxrGrad.addColorStop(0,'rgba(200,210,220,0.1)');cxrGrad.addColorStop(1,'rgba(200,210,220,0.02)');
+  ctx.fillStyle=cxrGrad;ctx.fillRect(0,0,W,H);
+
+  // Lung fields (bright)
+  const lungAlpha=.08;
+  ctx.fillStyle=`rgba(200,210,220,${lungAlpha})`;
+  // Right lung
+  ctx.beginPath();ctx.ellipse(W*.32,H*.5,W*.22,H*.36,-.05,0,Math.PI*2);ctx.fill();
+  // Left lung
+  ctx.beginPath();ctx.ellipse(W*.66,H*.5,W*.2,H*.35,.05,0,Math.PI*2);ctx.fill();
+
+  // Diaphragm
+  ctx.beginPath();ctx.moveTo(W*.05,H*.82);ctx.bezierCurveTo(W*.25,H*.78,W*.4,H*.82,W*.5,H*.8);ctx.bezierCurveTo(W*.6,H*.82,W*.78,H*.77,W*.9,H*.82);
+  ctx.strokeStyle='rgba(180,190,200,0.3)';ctx.lineWidth=3;ctx.stroke();
+
+  // Mediastinum
+  ctx.fillStyle='rgba(30,20,15,0.7)';
+  ctx.beginPath();ctx.roundRect(W*.43,H*.05,W*.14,H*.85,4);ctx.fill();
+
+  // Trachea
+  ctx.beginPath();ctx.moveTo(W*.5,H*.05);ctx.lineTo(W*.5,H*.42);
+  ctx.strokeStyle='rgba(160,170,180,0.35)';ctx.lineWidth=4;ctx.stroke();
+  // Carina
+  const carinaY=H*.42;
+  ctx.strokeStyle='rgba(201,168,76,0.6)';ctx.lineWidth=1;ctx.setLineDash([4,8]);
+  ctx.beginPath();ctx.moveTo(W*.25,carinaY);ctx.lineTo(W*.75,carinaY);ctx.stroke();
+  ctx.setLineDash([]);
+  ctx.fillStyle='rgba(201,168,76,0.7)';ctx.font='9px Nunito';ctx.textAlign='right';
+  ctx.fillText('Carina',W*.74,carinaY-4);
+  // Bronchi
+  ctx.beginPath();ctx.moveTo(W*.5,carinaY);ctx.lineTo(W*.38,carinaY+H*.06);
+  ctx.moveTo(W*.5,carinaY);ctx.lineTo(W*.62,carinaY+H*.06);
+  ctx.strokeStyle='rgba(160,170,180,0.3)';ctx.lineWidth=3;ctx.setLineDash([]);ctx.stroke();
+
+  // Aortic arch
+  ctx.beginPath();ctx.arc(W*.44,H*.37,W*.05,Math.PI,0);
+  ctx.strokeStyle='rgba(120,100,90,0.3)';ctx.lineWidth=4;ctx.stroke();
+
+  // SVC
+  const svcX=W*.51;
+  ctx.beginPath();ctx.moveTo(svcX,H*.2);ctx.lineTo(svcX,H*.72);
+  ctx.strokeStyle='rgba(74,138,202,0.15)';ctx.lineWidth=12;ctx.stroke();
+  ctx.strokeStyle='rgba(74,138,202,0.3)';ctx.lineWidth=6;ctx.stroke();
+  ctx.fillStyle='rgba(74,138,202,0.4)';ctx.font='8px Nunito';ctx.textAlign='right';
+  ctx.fillText('SVC',W*.49,H*.5);
+
+  // CAJ marker
+  const cajY=H*.7;
+  ctx.strokeStyle='rgba(188,114,80,0.5)';ctx.lineWidth=1;ctx.setLineDash([3,6]);
+  ctx.beginPath();ctx.moveTo(W*.3,cajY);ctx.lineTo(W*.7,cajY);ctx.stroke();
+  ctx.setLineDash([]);
+  ctx.fillStyle='rgba(188,114,80,0.7)';ctx.font='9px Nunito';ctx.textAlign='right';
+  ctx.fillText('CAJ',W*.7,cajY-4);
+
+  // Heart
+  ctx.beginPath();ctx.ellipse(W*.48,H*.7,W*.12,H*.12,-.1,0,Math.PI*2);
+  ctx.strokeStyle='rgba(120,50,50,0.3)';ctx.lineWidth=2;ctx.stroke();
+  // RA
+  ctx.beginPath();ctx.ellipse(W*.54,H*.68,W*.05,H*.06,.1,0,Math.PI*2);
+  ctx.fillStyle='rgba(139,32,32,0.2)';ctx.fill();
+
+  // CVC catheter path
+  const td=TIP_DATA[tipPos];
+  const insertX=W*.28,insertY=H*.2;
+  const tipX=td.x*W,tipY=td.y*H;
+
+  // Catheter
+  ctx.beginPath();ctx.moveTo(insertX,insertY);
+  if(tipPos==='subclavian'){ctx.bezierCurveTo(insertX+10,insertY+20,W*.38,insertY+H*.05,tipX,tipY)}
+  else if(tipPos==='azygos'){ctx.bezierCurveTo(W*.4,H*.3,W*.48,H*.45,tipX,tipY)}
+  else if(tipPos==='contralateral'){ctx.bezierCurveTo(W*.4,H*.3,W*.45,H*.4,tipX,tipY)}
+  else{ctx.bezierCurveTo(W*.35,H*.28,W*.48,H*.35,tipX,tipY)}
+  ctx.strokeStyle=td.color+'55';ctx.lineWidth=8;ctx.stroke();
+  ctx.strokeStyle=td.color+'AA';ctx.lineWidth=4;ctx.stroke();
+  ctx.strokeStyle='rgba(220,220,190,0.8)';ctx.lineWidth=2;ctx.stroke();
+
+  // Tip
+  const tipGlow=Math.sin(cT*5)*.2+.7;
+  ctx.beginPath();ctx.arc(tipX,tipY,10+Math.sin(cT*4)*2,0,Math.PI*2);
+  ctx.fillStyle=td.color+Math.round(tipGlow*30).toString(16).padStart(2,'0');ctx.fill();
+  ctx.beginPath();ctx.arc(tipX,tipY,5,0,Math.PI*2);
+  ctx.fillStyle=td.color;ctx.fill();
+  ctx.fillStyle=td.color;ctx.font='500 9px Nunito';ctx.textAlign='left';
+  ctx.fillText(td.label,tipX+10,tipY-2);
+
+  // Insertion label
+  ctx.fillStyle='rgba(158,130,114,0.5)';ctx.font='8px Nunito';ctx.textAlign='center';
+  ctx.fillText('IJ/subclavian insertion',insertX,insertY-6);
+
+  ctx.textAlign='left';
+  requestAnimationFrame(drawCxr);
+}
+drawCxr();
+</script>
+</body>
+</html>

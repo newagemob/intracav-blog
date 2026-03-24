@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CVP Monitoring — The Central Line Lab</title>
+<script src="https://unpkg.com/htmx.org@1.9.10"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Nunito:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{--bg:#EDE4D5;--surface:#F6F0E8;--border:#D4C7B5;--border-lt:#E2D8CC;--text:#28180C;--text-2:#685040;--text-3:#9E8272;--accent:#BC7250;--accent-lt:#E8C4A8;--sage:#7E9C84;--rose:#B87070;--gold:#C9A84C;--blue:#4A8ACA;--shadow-sm:0 1px 8px rgba(40,24,12,0.06),0 0 0 1px rgba(40,24,12,0.04);--r:16px;--r-sm:10px;}
+  body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+  body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");opacity:.028;pointer-events:none;z-index:9999}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 3rem;border-bottom:1px solid var(--border-lt);background:rgba(237,228,213,0.85);backdrop-filter:blur(12px);position:sticky;top:0;z-index:100}
+  .nl{display:flex;align-items:center;gap:1rem}.nb{font-size:.8rem;color:var(--text-3);text-decoration:none;transition:color 200ms}.nb:hover{color:var(--accent)}.ns{color:var(--border)}
+  .hero{padding:4rem 3rem 2.5rem;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:end;border-bottom:1px solid var(--border-lt);max-width:1100px;margin:0 auto}
+  .ml{font-size:.68rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#9E7EBC;display:flex;align-items:center;gap:.6rem;margin-bottom:.75rem}.ml::before{content:'06';font-family:'JetBrains Mono',monospace;color:var(--accent)}
+  h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:400;line-height:1.1;margin-bottom:1rem}h1 em{font-style:italic;color:var(--text-2)}
+  .hd{font-size:.92rem;line-height:1.7;color:var(--text-2);font-weight:300;max-width:500px}
+  .heq{background:var(--surface);border:1px solid var(--border-lt);border-radius:var(--r);padding:1.75rem 2rem;text-align:center;min-width:230px}
+  .er{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--text);margin-bottom:.5rem}.en{font-size:.65rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);margin-top:.4rem}
+  .main{max-width:1100px;margin:0 auto;padding:2.5rem 3rem}
+  .sl{font-size:.65rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);margin-bottom:.2rem}
+  .st{font-family:'Cormorant Garamond',serif;font-size:1.35rem;margin-bottom:1.25rem}
+
+  /* CVP Waveform */
+  .cvp-section{background:var(--surface);border:1px solid var(--border-lt);border-radius:var(--r);overflow:hidden;margin-bottom:2rem;box-shadow:var(--shadow-sm)}
+  .cvp-header{padding:1.5rem 2rem;border-bottom:1px solid var(--border-lt);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+  .cvp-body{display:grid;grid-template-columns:1.3fr 1fr}
+  #cvpCanvas{width:100%;height:300px;display:block;border-right:1px solid var(--border-lt)}
+  .cvp-panel{padding:1.75rem;display:flex;flex-direction:column;gap:1rem}
+  .waveform-btn{padding:.5rem 1rem;border:1px solid var(--border);border-radius:var(--r-sm);font-size:.78rem;font-weight:600;font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text-2);cursor:pointer;transition:all 150ms;text-align:left}
+  .waveform-btn:hover{border-color:var(--accent)}.waveform-btn.active{background:var(--accent);border-color:var(--accent);color:white}
+
+  /* Components legend */
+  .component-legend{display:grid;grid-template-columns:repeat(5,1fr);gap:.6rem;margin-bottom:2rem}
+  .cl-item{background:var(--surface);border:1px solid var(--border-lt);border-radius:var(--r-sm);padding:1rem;text-align:center;box-shadow:var(--shadow-sm)}
+  .cli-wave{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;margin-bottom:.2rem}
+  .cli-name{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-bottom:.5rem}
+  .cli-desc{font-size:.72rem;line-height:1.5;color:var(--text-2);font-weight:300}
+
+  /* Frank-Starling */
+  .starling-section{background:var(--surface);border:1px solid var(--border-lt);border-radius:var(--r);overflow:hidden;margin-bottom:2rem;box-shadow:var(--shadow-sm)}
+  .star-header{padding:1.5rem 2rem;border-bottom:1px solid var(--border-lt)}
+  .star-body{display:grid;grid-template-columns:1fr 1fr}
+  #starlingCanvas{width:100%;height:260px;display:block;border-right:1px solid var(--border-lt)}
+  .star-panel{padding:1.75rem;display:flex;flex-direction:column;gap:.9rem}
+
+  /* SVR calculator */
+  .svr-section{background:var(--surface);border:1px solid var(--border-lt);border-radius:var(--r);padding:1.75rem 2rem;margin-bottom:2rem;box-shadow:var(--shadow-sm)}
+  .svr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem}
+  .svr-input{display:flex;flex-direction:column;gap:.4rem}
+  .svr-label{font-size:.78rem;font-weight:600;color:var(--text-2)}
+  .svr-in{padding:.5rem .75rem;border:1px solid var(--border);border-radius:var(--r-sm);font-size:.9rem;font-family:'Nunito',sans-serif;background:var(--bg);outline:none;transition:border-color 200ms}
+  .svr-in:focus{border-color:var(--accent)}
+  .svr-result{background:var(--bg);border-radius:var(--r-sm);padding:1.25rem;text-align:center;margin-top:1rem}
+  .svr-val{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:300;color:var(--accent)}
+  .svr-unit{font-size:.72rem;color:var(--text-3)}
+
+  /* Pathological waveforms */
+  .path-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem;margin-bottom:2rem}
+  .path-card{background:var(--surface);border:1px solid var(--border-lt);border-radius:var(--r-sm);padding:1.35rem;box-shadow:var(--shadow-sm)}
+  .pc-condition{font-family:'Cormorant Garamond',serif;font-size:1.05rem;margin-bottom:.4rem}
+  .pc-finding{font-size:.65rem;font-weight:700;letter-spacing:.08em;color:var(--accent);margin-bottom:.4rem;text-transform:uppercase}
+  .pc-mech{font-size:.78rem;line-height:1.55;color:var(--text-2);font-weight:300}
+
+  .tl-items{display:flex;flex-direction:column;margin-bottom:2rem}
+  .tl-item{display:flex;gap:1.5rem;padding:1.25rem 0;border-bottom:1px solid var(--border-lt)}.tl-item:last-child{border-bottom:none}
+  .tl-year{font-family:'JetBrains Mono',monospace;font-size:.85rem;color:var(--accent);min-width:60px;padding-top:.2rem}
+  .tl-dot{width:10px;height:10px;border-radius:50%;margin-top:.3rem;flex-shrink:0}
+  .tl-title{font-family:'Cormorant Garamond',serif;font-size:1.1rem;margin-bottom:.3rem}
+  .tl-desc{font-size:.8rem;line-height:1.65;color:var(--text-2);font-weight:300}
+  .tl-tag{display:inline-block;font-size:.62rem;font-weight:600;padding:.15rem .55rem;border-radius:100px;margin-top:.4rem}
+
+  .pearls{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem;margin-bottom:2rem}
+  .pearl{background:var(--surface);border:1px solid var(--border-lt);border-radius:var(--r-sm);padding:1.25rem 1.5rem;box-shadow:var(--shadow-sm)}
+  .pearl-icon{font-size:1.4rem;margin-bottom:.75rem}
+  .pearl-title{font-family:'Cormorant Garamond',serif;font-size:1.05rem;margin-bottom:.5rem}
+  .pearl-text{font-size:.8rem;line-height:1.65;color:var(--text-2);font-weight:300}
+
+  .insight-dark{background:var(--text);border-radius:var(--r);padding:2.5rem;margin-bottom:2rem}
+  .id-kicker{font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.75rem}
+  .id-title{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:300;color:#F0E8E0;line-height:1.2;margin-bottom:1rem}.id-title em{font-style:italic;color:var(--accent-lt)}
+  .id-desc{font-size:.82rem;line-height:1.75;color:#6A5A4A}
+
+  .nf{display:flex;justify-content:space-between;align-items:center;padding:2rem 3rem;border-top:1px solid var(--border-lt);max-width:1100px;margin:0 auto}
+  .nl2{text-decoration:none;color:var(--text-3);font-size:.82rem;transition:color 200ms;display:flex;align-items:center;gap:.5rem}.nl2:hover{color:var(--accent)}
+  .nll{font-size:.65rem;text-transform:uppercase;letter-spacing:.1em}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}.hero{animation:fadeUp .5s ease both}
+  @media(max-width:700px){nav,.hero,.main,.nf{padding-left:1.25rem;padding-right:1.25rem}.hero,.cvp-body,.star-body,.svr-grid,.component-legend{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nl"><a href="/education/central-line-lab/" class="nb">← Collection</a><span class="ns">|</span><span style="font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--text-2)">The Central Line Lab</span></div>
+  <div class="nl"><span style="font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--accent)">06 / 06</span><a href="/education/central-line-lab/05-complications.html" class="nb">← Complications</a></div>
+</nav>
+
+<div class="hero">
+  <div>
+    <div class="ml">CVP Monitoring & Hemodynamic Interpretation</div>
+    <h1>The waveform<br><em>tells the story.</em></h1>
+    <p class="hd">CVP is not just a number — it is a waveform with five named components, each reflecting a distinct event in the cardiac cycle. Reading the waveform tells you what the RA is doing, what the valves are doing, and sometimes what disease the patient has.</p>
+  </div>
+  <div class="heq">
+    <div class="er">SVR = (MAP − CVP) × 80 / CO</div><div class="en">Systemic Vascular Resistance</div>
+    <div style="height:.6rem"></div>
+    <div class="er">CO = HR × SV</div><div class="en">Cardiac Output</div>
+    <div style="height:.6rem"></div>
+    <div class="er">Normal CVP: 2–8 mmHg</div><div class="en">Right Atrial Pressure Reference</div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- CVP WAVEFORM -->
+  <div class="cvp-section">
+    <div class="cvp-header">
+      <div><div class="sl">Interactive Waveform</div><div class="st" style="margin:0;font-family:'Cormorant Garamond',serif;font-size:1.3rem;">CVP components — hover the waveform or select a pathology</div></div>
+      <div style="font-size:.8rem;color:var(--text-3);font-weight:300">a · c · x · v · y descent</div>
+    </div>
+    <div class="cvp-body">
+      <canvas id="cvpCanvas"></canvas>
+      <div class="cvp-panel">
+        <div class="sl" style="margin-bottom:.4rem">Waveform Patterns</div>
+        <button class="waveform-btn active" onclick="setCvp('normal',this)">📈 Normal CVP waveform</button>
+        <button class="waveform-btn" onclick="setCvp('cannon',this)">💥 Cannon a-waves (complete heart block)</button>
+        <button class="waveform-btn" onclick="setCvp('af',this)">〜 Absent a-wave (atrial fibrillation)</button>
+        <button class="waveform-btn" onclick="setCvp('tr',this)">🔺 Prominent v-wave (tricuspid regurgitation)</button>
+        <button class="waveform-btn" onclick="setCvp('pericardial',this)">W Pericardial constriction (M/W pattern)</button>
+        <div id="cvpInfo" style="background:var(--bg);border-radius:var(--r-sm);padding:1rem;font-size:.8rem;line-height:1.65;color:var(--text-2);font-weight:300;border-left:3px solid #9E7EBC">
+          Normal CVP waveform: a-wave = atrial contraction; c-wave = tricuspid closure; x-descent = atrial relaxation; v-wave = venous filling during systole; y-descent = tricuspid opening.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMPONENT LEGEND -->
+  <div class="sl" style="margin-bottom:.75rem">Waveform Components</div>
+  <div class="st">The Five Named Events in the CVP Waveform</div>
+  <div class="component-legend">
+    <div class="cl-item"><div class="cli-wave" style="color:#4A8ACA">a</div><div class="cli-name">a-wave</div><p class="cli-desc">Atrial contraction. RA contracts against closed tricuspid valve — pressure rises. Absent in AF, exaggerated in heart block (cannon).</p></div>
+    <div class="cl-item"><div class="cli-wave" style="color:#BC7250">c</div><div class="cli-name">c-wave</div><p class="cli-desc">Tricuspid valve closure. Slight bulging of tricuspid leaflets into RA at onset of systole. Small, often not visible clinically.</p></div>
+    <div class="cl-item"><div class="cli-wave" style="color:#7E9C84">x</div><div class="cli-name">x-descent</div><p class="cli-desc">Atrial relaxation. RA moves away from tricuspid annulus during ventricular systole. Absent/blunted in tricuspid regurgitation.</p></div>
+    <div class="cl-item"><div class="cli-wave" style="color:#C9A84C">v</div><div class="cli-name">v-wave</div><p class="cli-desc">Venous filling. Blood fills the RA during ventricular systole (tricuspid still closed). Giant v-wave = tricuspid regurgitation.</p></div>
+    <div class="cl-item"><div class="cli-wave" style="color:#B87070">y</div><div class="cli-name">y-descent</div><p class="cli-desc">Tricuspid opening. RA empties into RV as tricuspid opens. Steep y-descent = constrictive pericarditis or tamponade.</p></div>
+  </div>
+
+  <!-- PATHOLOGICAL WAVEFORMS -->
+  <div class="sl" style="margin-bottom:.75rem">Pathological Waveform Patterns</div>
+  <div class="st">What Disease Looks Like on the CVP Trace</div>
+  <div class="path-grid">
+    <div class="path-card">
+      <div class="pc-condition">Cannon a-Waves</div>
+      <div class="pc-finding">Exaggerated a-wave, irregular timing</div>
+      <p class="pc-mech">Atrium contracts against a closed tricuspid valve (AV dissociation, complete heart block, PVCs). The RA contraction is not coordinated with ventricular filling — creates a large pressure wave. Classic in complete heart block, junctional rhythm, VT.</p>
+    </div>
+    <div class="path-card">
+      <div class="pc-condition">Atrial Fibrillation</div>
+      <div class="pc-finding">Absent a-wave, irregular rhythm</div>
+      <p class="pc-mech">No organized atrial contraction = no a-wave. The CVP trace shows c, x, v, y but no a-wave. Loss of atrial kick reduces CO 15–20%. The irregular RR interval is visible in the v-wave timing.</p>
+    </div>
+    <div class="path-card">
+      <div class="pc-condition">Tricuspid Regurgitation</div>
+      <div class="pc-finding">Giant v-wave, absent x-descent</div>
+      <p class="pc-mech">Blood regurgitates from RV into RA during systole, creating a massive v-wave that overwhelms the x-descent. The CVP trace looks like a single large systolic wave. Can be confused with arterial waveform (distinguish by timing with pulse).</p>
+    </div>
+    <div class="path-card">
+      <div class="pc-condition">Cardiac Tamponade</div>
+      <div class="pc-finding">Elevated CVP, x-descent preserved, y-descent absent</div>
+      <p class="pc-mech">Pericardial fluid compresses the RA. Venous return impaired. The y-descent (tricuspid opening) is blunted or absent — the RA cannot fill the RV because the ventricle is compressed. "Beck's triad": hypotension, JVD, muffled heart sounds.</p>
+    </div>
+    <div class="path-card">
+      <div class="pc-condition">Constrictive Pericarditis</div>
+      <div class="pc-finding">M or W pattern, prominent x and y descents</div>
+      <p class="pc-mech">Rigid pericardium restricts cardiac filling. Both x and y descents are steep and prominent — creating an "M" or "W" pattern on the CVP trace. Distinguishable from tamponade by preserved (even enhanced) y-descent in constriction.</p>
+    </div>
+    <div class="path-card">
+      <div class="pc-condition">Fluid Overload / RV Failure</div>
+      <div class="pc-finding">Elevated CVP baseline, blunted waveform</div>
+      <p class="pc-mech">Elevated right atrial pressure elevates all waveform components. CVP &gt;15–20 mmHg suggests severe RV dysfunction or cardiac tamponade. A rising CVP in a hemodynamically deteriorating patient is a critical sign requiring urgent evaluation.</p>
+    </div>
+  </div>
+
+  <!-- FRANK-STARLING + CVP LIMITS -->
+  <div class="starling-section">
+    <div class="star-header"><div class="sl">Frank-Starling Curve & CVP Limitations</div><div class="st" style="margin:.2rem 0 0;font-family:'Cormorant Garamond',serif;font-size:1.2rem">CVP does not predict fluid responsiveness reliably</div></div>
+    <div class="star-body">
+      <canvas id="starlingCanvas"></canvas>
+      <div class="star-panel">
+        <div style="font-size:.82rem;line-height:1.7;color:var(--text-2);font-weight:300">
+          <strong style="color:var(--text)">The Starling Curve:</strong> Up the ascending limb, increasing preload (CVP) increases stroke volume. On the plateau, more preload doesn't help — the ventricle is operating near maximum.<br><br>
+          <strong style="color:var(--text)">The CVP Problem:</strong> The same CVP value of 8 mmHg might represent a patient on the steep ascending limb (fluid responsive) or near the plateau (non-responsive). Without knowing the patient's position on the curve, a single CVP number tells you nothing about fluid responsiveness.<br><br>
+          <strong style="color:var(--text)">Current Evidence:</strong> A 2008 meta-analysis (Marik et al., Chest) found CVP does not predict fluid responsiveness. Dynamic indices (pulse pressure variation, passive leg raise, Trendelenburg response) are more reliable for fluid responsiveness assessment.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SVR CALCULATOR -->
+  <div class="svr-section">
+    <div class="sl">Hemodynamic Calculator</div>
+    <div class="st">SVR, CO, and Vascular Resistance at the Bedside</div>
+    <div class="svr-grid">
+      <div class="svr-input"><label class="svr-label">MAP (mmHg)</label><input type="number" class="svr-in" id="mapInput" value="80" min="30" max="180" oninput="calcSvr()"></div>
+      <div class="svr-input"><label class="svr-label">CVP (mmHg)</label><input type="number" class="svr-in" id="cvpInput" value="8" min="0" max="30" oninput="calcSvr()"></div>
+      <div class="svr-input"><label class="svr-label">Cardiac Output (L/min)</label><input type="number" class="svr-in" id="coInput" value="5" min="1" max="15" step="0.1" oninput="calcSvr()"></div>
+    </div>
+    <div class="svr-result">
+      <div style="font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-bottom:.3rem">Systemic Vascular Resistance</div>
+      <div class="svr-val" id="svrResult">1152</div>
+      <div class="svr-unit">dyn·s/cm⁵ (normal: 700–1600)</div>
+      <div style="font-size:.75rem;color:var(--text-3);margin-top:.5rem" id="svrInterp">Normal SVR — adequate vascular tone</div>
+    </div>
+  </div>
+
+  <!-- HISTORY -->
+  <div class="sl" style="margin-bottom:1rem">Historical Record</div>
+  <div class="tl-items">
+    <div class="tl-item"><div class="tl-year">1970</div><div class="tl-dot" style="background:var(--accent)"></div><div><div class="tl-title">Swan-Ganz Catheter — The Hemodynamic Revolution</div><p class="tl-desc">Harold Swan and William Ganz published their description of the flow-directed, balloon-tipped pulmonary artery catheter in the NEJM in 1970. For the first time, bedside hemodynamic measurement was possible without fluoroscopy or cardiac catheterization — CVP, pulmonary artery pressure, pulmonary capillary wedge pressure (PCWP), and thermodilution cardiac output could all be measured at the ICU bedside. The Swan-Ganz catheter was the dominant hemodynamic monitoring tool in ICUs for 30 years.</p><span class="tl-tag" style="background:rgba(188,114,80,0.15);color:var(--accent)">Clinical Revolution</span></div></div>
+    <div class="tl-item"><div class="tl-year">2008</div><div class="tl-dot" style="background:var(--rose)"></div><div><div class="tl-title">Marik et al. — CVP Is Dead as a Resuscitation Target</div><p class="tl-desc">Marik, Baram, and Vahid published a systematic review in Chest (2008) analyzing 24 studies and 803 patients examining CVP as a predictor of fluid responsiveness. The pooled analysis found CVP had essentially no predictive value — r²=0.02. This paper, combined with the ARDS Network's FACTT trial (2006) showing that conservative fluid management improved outcomes, ended CVP as a resuscitation endpoint in modern sepsis management. The Surviving Sepsis Campaign removed CVP targets from their guidelines in 2012.</p><span class="tl-tag" style="background:rgba(184,112,112,0.15);color:var(--rose)">Paradigm Shift</span></div></div>
+  </div>
+
+  <div class="pearls">
+    <div class="pearl"><div class="pearl-icon">📈</div><div class="pearl-title">CVP Trend Matters More Than Value</div><p class="pearl-text">A CVP of 4 mmHg rising rapidly to 12 mmHg over 30 minutes in a fluid-resuscitated patient tells you far more than either number alone. Trend interpretation in context is the skill — a falling CVP in a bleeding patient is an emergency; the same number in a recovering post-operative patient is expected.</p></div>
+    <div class="pearl"><div class="pearl-icon">🫀</div><div class="pearl-title">The c-Wave and Why It's Invisible</div><p class="pearl-text">The c-wave (tricuspid valve closure creating a small pressure bump) is often not visible on clinical CVP traces because it is small (1–2 mmHg) and merged with the tail of the a-wave or the beginning of the x-descent. In teaching tracings it is always labeled; in real CVP monitoring it is usually absent. Don't expect to see it clinically.</p></div>
+    <div class="pearl"><div class="pearl-icon">⚖️</div><div class="pearl-title">Phlebostatic Axis — Reference Point Is Everything</div><p class="pearl-text">CVP is measured relative to the phlebostatic axis — the intersection of the mid-axillary line and the 4th intercostal space, approximating the level of the RA. An elevated HOB or transducer at the wrong height changes the CVP reading by 0.73 mmHg per cm of error. Confirm the transducer is leveled to the phlebostatic axis every time before interpreting a CVP reading.</p></div>
+    <div class="pearl"><div class="pearl-icon">💉</div><div class="pearl-title">Passive Leg Raise: The No-Cost Fluid Challenge</div><p class="pearl-text">Raising the legs to 45° transfers 150–300 mL of venous blood from the lower extremities to the central circulation — a reversible, real-time fluid challenge. If MAP increases ≥10% and/or CO increases ≥10% within 1 minute, the patient is fluid-responsive. This is more reliable than any static CVP value and requires no additional fluids or monitoring equipment.</p></div>
+  </div>
+
+  <!-- DARK SYNTHESIS -->
+  <div class="insight-dark">
+    <div class="id-kicker">The Central Line Lab — Series Synthesis</div>
+    <div class="id-title">A central line is not just an access device.<br><em>It is a hemodynamic window into the heart.</em></div>
+    <p class="id-desc" style="max-width:700px">From the first needle puncture through the subclavian tissue to the waveform on the bedside monitor, every element of central venous access involves physics, anatomy, and physiology working in concert. Understanding why a guidewire must stay in your hand, why the carina is your landmark, why a giant v-wave means regurgitation, and why CVP doesn't predict fluid responsiveness — this is what separates a clinician who places lines from one who understands them. The line is a tool. The waveform is the signal. Your clinical reasoning is the instrument.</p>
+  </div>
+
+</div>
+
+<div class="nf">
+  <a href="/education/central-line-lab/05-complications.html" class="nl2"><span>←</span><div><div class="nll">Previous</div>Complications</div></a>
+  <a href="/education/central-line-lab/" class="nl2"><div style="text-align:right"><div class="nll">Return to</div>Collection</div><span>→</span></a>
+</div>
+
+<script>
+// CVP WAVEFORM
+const cc=document.getElementById('cvpCanvas');
+const cctx=cc.getContext('2d');
+let cvpT=0;
+let cvpMode='normal';
+
+function resize(){cc.width=cc.offsetWidth;cc.height=300}
+resize();window.addEventListener('resize',resize);
+
+const CVP_INFO={
+  normal:'Normal CVP waveform: a-wave = atrial contraction (pre-systolic); c-wave = tricuspid valve closure; x-descent = atrial relaxation; v-wave = passive venous filling during systole; y-descent = tricuspid opening and ventricular filling.',
+  cannon:'Cannon a-waves: RA contracts against a closed tricuspid valve due to AV dissociation (complete heart block, junctional rhythm, PVCs). The cannon a-wave is a giant pressure pulse at unpredictable timing — irregular and dramatic. Pathognomonic of AV dissociation.',
+  af:'Absent a-wave in atrial fibrillation: No organized atrial contraction = no a-wave. The remaining waveform (c, x, v, y) is preserved but irregular. Loss of atrial kick reduces CO by 15–20%. The baseline irregularity reflects variable RR intervals.',
+  tr:'Giant v-wave in tricuspid regurgitation: Blood regurgitates from RV into RA during systole, creating a massive v-wave. The x-descent is obliterated. The CVP trace may mimic an arterial waveform. Distinguish by timing: v-wave peaks after T-wave on ECG.',
+  pericardial:'Pericardial constriction M/W pattern: Both x and y descents are steep and prominent. The x-descent is preserved (unlike tamponade) and the y-descent is enhanced (rapid early filling then abrupt stop). Creates "M" shape on the descents and "W" on the waves. Kussmaul sign: JVD increases with inspiration.',
+};
+
+function setCvp(mode,btn){
+  cvpMode=mode;
+  document.querySelectorAll('.waveform-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('cvpInfo').textContent=CVP_INFO[mode];
+}
+
+function getCvpValue(t,mode){
+  const beat=t%1;
+  let y=0;
+  if(mode==='normal'){
+    // a-wave
+    if(beat<.12){const f=Math.abs(beat-.06)/.06;y+=Math.exp(-f*f*5)*18}
+    // c-wave
+    if(beat>.14&&beat<.2){const f=Math.abs(beat-.17)/.03;y+=Math.exp(-f*f*8)*5}
+    // x-descent
+    if(beat>.18&&beat<.4){y-=(beat-.18)/.22*8}
+    // v-wave
+    if(beat>.38&&beat<.62){const f=Math.abs(beat-.5)/.12;y+=Math.exp(-f*f*5)*14}
+    // y-descent
+    if(beat>.6&&beat<.9){y-=(beat-.6)/.3*12}
+  } else if(mode==='cannon'){
+    const cannonProb=Math.sin(t*1.3+.7)>.6?1:0;
+    if(cannonProb&&beat<.15){const f=Math.abs(beat-.07)/.07;y+=Math.exp(-f*f*4)*38}
+    else if(beat<.12){const f=Math.abs(beat-.06)/.06;y+=Math.exp(-f*f*5)*8}
+    if(beat>.38&&beat<.62){const f=Math.abs(beat-.5)/.12;y+=Math.exp(-f*f*5)*12}
+    if(beat>.6&&beat<.9){y-=(beat-.6)/.3*10}
+  } else if(mode==='af'){
+    // No a-wave, irregular
+    const irregOffset=Math.sin(t*.7)*.05;
+    if(beat>.38+irregOffset&&beat<.62+irregOffset){const f=Math.abs(beat-.5-.irregOffset)/.12;y+=Math.exp(-f*f*5)*14}
+    if(beat>.6+irregOffset&&beat<.9+irregOffset){y-=(beat-.6-irregOffset)/.3*12}
+  } else if(mode==='tr'){
+    // Absent a, giant v
+    if(beat>.3&&beat<.75){const f=Math.abs(beat-.52)/.22;y+=Math.exp(-f*f*3)*30}
+    if(beat>.73&&beat<.9){y-=(beat-.73)/.17*25}
+  } else if(mode==='pericardial'){
+    // a-wave preserved
+    if(beat<.12){const f=Math.abs(beat-.06)/.06;y+=Math.exp(-f*f*5)*16}
+    // steep x
+    if(beat>.14&&beat<.32){y-=(beat-.14)/.18*18}
+    // v-wave preserved
+    if(beat>.3&&beat<.55){const f=Math.abs(beat-.42)/.12;y+=Math.exp(-f*f*5)*15}
+    // very steep y
+    if(beat>.53&&beat<.7){y-=(beat-.53)/.17*20}
+  }
+  return y;
+}
+
+const history=[];
+function drawCvp(){
+  const W=cc.width,H=cc.height;
+  cvpT+=.015;
+  cctx.clearRect(0,0,W,H);
+  cctx.fillStyle='#0A0806';cctx.fillRect(0,0,W,H);
+  // Grid
+  for(let x=0;x<W;x+=40){cctx.strokeStyle='rgba(0,60,0,0.18)';cctx.lineWidth=.5;cctx.beginPath();cctx.moveTo(x,0);cctx.lineTo(x,H);cctx.stroke()}
+  for(let y=0;y<H;y+=30){cctx.beginPath();cctx.moveTo(0,y);cctx.lineTo(W,y);cctx.stroke()}
+  // mmHg axis
+  const baseline=H*.7;
+  const mmPerPx=H*.35/20;
+  for(let mmhg=0;mmhg<=20;mmhg+=5){
+    const py=baseline-mmhg*mmPerPx;
+    cctx.strokeStyle='rgba(0,80,0,0.3)';cctx.lineWidth=1;
+    cctx.beginPath();cctx.moveTo(0,py);cctx.lineTo(W,py);cctx.stroke();
+    cctx.fillStyle='rgba(126,156,132,0.5)';cctx.font='8px JetBrains Mono';cctx.textAlign='right';
+    cctx.fillText(mmhg+'mmHg',28,py+3);
+  }
+
+  // Waveform
+  history.push(getCvpValue(cvpT,cvpMode));
+  if(history.length>W-30)history.shift();
+  cctx.beginPath();
+  history.forEach((v,i)=>{
+    const x=30+i;const y=baseline-v*mmPerPx;
+    if(i===0)cctx.moveTo(x,y);else cctx.lineTo(x,y);
+  });
+  cctx.strokeStyle='#7E9C84';cctx.lineWidth=2;cctx.stroke();
+
+  // Label waves live
+  const currentBeat=cvpT%1;
+  const labels=cvpMode==='normal'?[
+    {phase:.06,name:'a',.color:'#4A8ACA'},
+    {phase:.17,name:'c',.color:'#BC7250'},
+    {phase:.29,name:'x',.color:'#7E9C84'},
+    {phase:.5,name:'v',.color:'#C9A84C'},
+    {phase:.75,name:'y',.color:'#B87070'},
+  ]:[];
+  labels.forEach(l=>{
+    const bx=W*.15+(l.phase)*W*.7;
+    cctx.fillStyle=l.color;cctx.font='bold 14px Cormorant Garamond';cctx.textAlign='center';
+    cctx.fillText(l.name,bx,18);
+  });
+
+  cctx.fillStyle='rgba(158,130,114,0.5)';cctx.font='9px Nunito';cctx.textAlign='center';
+  cctx.fillText(cvpMode==='normal'?'Normal CVP Waveform':cvpMode==='cannon'?'Cannon a-Waves (AV Dissociation)':cvpMode==='af'?'Atrial Fibrillation (no a-wave)':cvpMode==='tr'?'Tricuspid Regurgitation (giant v-wave)':'Constrictive Pericarditis (M/W pattern)',W*.5,H-8);
+
+  requestAnimationFrame(drawCvp);
+}
+drawCvp();
+
+// FRANK-STARLING
+const sc=document.getElementById('starlingCanvas');
+const sctx=sc.getContext('2d');
+function resizeSC(){sc.width=sc.offsetWidth;sc.height=260}
+resizeSC();
+let starT=0;
+
+function drawStarling(){
+  const W=sc.width,H=sc.height;
+  starT+=.01;
+  sctx.clearRect(0,0,W,H);
+  sctx.fillStyle='#F6F0E8';sctx.fillRect(0,0,W,H);
+  const pad={l:50,r:20,t:20,b:40};
+  const cW=W-pad.l-pad.r,cH=H-pad.t-pad.b;
+  // Grid
+  sctx.strokeStyle='rgba(40,24,12,0.06)';sctx.lineWidth=1;
+  for(let i=0;i<=5;i++){
+    sctx.beginPath();sctx.moveTo(pad.l,pad.t+i*cH/5);sctx.lineTo(W-pad.r,pad.t+i*cH/5);sctx.stroke();
+    sctx.beginPath();sctx.moveTo(pad.l+i*cW/5,pad.t);sctx.lineTo(pad.l+i*cW/5,H-pad.b);sctx.stroke();
+  }
+  // Axes
+  sctx.strokeStyle='rgba(40,24,12,0.3)';sctx.lineWidth=1.5;
+  sctx.beginPath();sctx.moveTo(pad.l,pad.t);sctx.lineTo(pad.l,H-pad.b);sctx.lineTo(W-pad.r,H-pad.b);sctx.stroke();
+  sctx.fillStyle='rgba(40,24,12,0.4)';sctx.font='9px Nunito';
+  sctx.textAlign='center';sctx.fillText('Preload (CVP / LVEDP)',W*.5,H-8);
+  sctx.save();sctx.translate(12,H*.5);sctx.rotate(-Math.PI/2);sctx.fillText('Stroke Volume / Cardiac Output',0,0);sctx.restore();
+
+  // Normal curve
+  const curve=(x)=>Math.tanh(x*1.5)*cH*.8;
+  sctx.beginPath();
+  for(let i=0;i<=cW;i++){
+    const x=i/cW;const y=curve(x);
+    if(i===0)sctx.moveTo(pad.l+i,H-pad.b-y);else sctx.lineTo(pad.l+i,H-pad.b-y);
+  }
+  sctx.strokeStyle='#7E9C84';sctx.lineWidth=2.5;sctx.stroke();
+
+  // Failing heart curve
+  const failCurve=(x)=>Math.tanh(x*0.8)*cH*.45;
+  sctx.beginPath();
+  for(let i=0;i<=cW;i++){
+    const x=i/cW;const y=failCurve(x);
+    if(i===0)sctx.moveTo(pad.l+i,H-pad.b-y);else sctx.lineTo(pad.l+i,H-pad.b-y);
+  }
+  sctx.strokeStyle='#B87070';sctx.lineWidth=2;sctx.setLineDash([6,4]);sctx.stroke();sctx.setLineDash([]);
+
+  // Animated patient dot
+  const cvpFrac=(.5+Math.sin(starT*.3)*.15);
+  const svNorm=curve(cvpFrac)/cH*.8;
+  const dotX=pad.l+cvpFrac*cW,dotY=H-pad.b-curve(cvpFrac);
+  sctx.beginPath();sctx.arc(dotX,dotY,7,0,Math.PI*2);
+  sctx.fillStyle='#BC7250';sctx.fill();
+  // CVP label on x-axis
+  sctx.fillStyle='#BC7250';sctx.font='500 9px Nunito';sctx.textAlign='center';
+  sctx.fillText('CVP='+(cvpFrac*20).toFixed(0)+'mmHg',dotX,H-pad.b+16);
+  // Dashed drop to axis
+  sctx.strokeStyle='rgba(188,114,80,0.3)';sctx.lineWidth=1;sctx.setLineDash([3,5]);
+  sctx.beginPath();sctx.moveTo(dotX,dotY);sctx.lineTo(dotX,H-pad.b);sctx.stroke();sctx.setLineDash([]);
+
+  // Legend
+  sctx.fillStyle='#7E9C84';sctx.font='9px Nunito';sctx.textAlign='left';
+  sctx.fillText('Normal ventricle',pad.l+10,pad.t+12);
+  sctx.fillStyle='#B87070';sctx.fillText('Failing ventricle',pad.l+10,pad.t+24);
+
+  requestAnimationFrame(drawStarling);
+}
+drawStarling();
+
+// SVR CALCULATOR
+function calcSvr(){
+  const map=+document.getElementById('mapInput').value||80;
+  const cvp=+document.getElementById('cvpInput').value||8;
+  const co=+document.getElementById('coInput').value||5;
+  const svr=Math.round((map-cvp)*80/co);
+  document.getElementById('svrResult').textContent=svr.toLocaleString();
+  const interp=svr<700?'Low SVR — vasodilated (sepsis, hepatic failure)':svr>1600?'High SVR — vasoconstricted (cardiogenic shock, hypothermia)':'Normal SVR — adequate vascular tone';
+  document.getElementById('svrInterp').textContent=interp;
+  document.getElementById('svrResult').style.color=svr<700?'#4A8ACA':svr>1600?'#C04040':'#BC7250';
+}
+calcSvr();
+</script>
+</body>
+</html>
