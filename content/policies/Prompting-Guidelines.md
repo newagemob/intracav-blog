@@ -7,6 +7,7 @@ category = ["Clinical AI", "User Guide"]
 author = ["TCD-CM01"]
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access"]
 description = "Complete guide to maximizing Lumen effectiveness: best practices for prompting, query formulation, and leveraging AI assistance for vascular access clinical practice and research."
 summary = "Learn how to effectively interact with Lumen for vascular access guidance: comprehensive prompting strategies and optimization techniques."
 slug = "intracav-ai-prompting-guidelines"

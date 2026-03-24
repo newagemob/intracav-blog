@@ -4,6 +4,7 @@ date = 2026-01-21T13:16:02-05:00
 lastmod = 2026-02-23T00:00:00-05:00
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["Patient Rights", "Legal", "Clinical Practice"]
 tags = ["informed consent", "patient rights", "autonomy", "vascular access", "legal", "consent documentation", "emergency consent", "surrogate decision-maker"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

@@ -4,6 +4,7 @@ date = 2026-02-25T00:00:00-05:00
 lastmod = 2026-02-25T00:00:00-05:00
 content_type = "guide"
 audience = "clinician"
+departments = ["vascular-access", "infection-prevention"]
 category = ["CLABSI Prevention", "Antimicrobial Catheters", "Infection Control"]
 tags = ["antimicrobial catheter", "CHG silver sulfadiazine catheter", "minocycline rifampin catheter", "antimicrobial dressing", "silver dressing CLABSI", "CLABSI supplemental prevention", "impregnated catheter", "antimicrobial lock therapy"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

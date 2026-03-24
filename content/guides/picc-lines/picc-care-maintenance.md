@@ -4,6 +4,7 @@ date = 2026-02-25T00:00:00-05:00
 lastmod = 2026-02-25T00:00:00-05:00
 content_type = "guide"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["PICC Line", "Catheter Maintenance", "Clinical Practice"]
 tags = ["PICC care maintenance", "PICC dressing change", "PICC flushing protocol", "SASH protocol PICC", "PICC line removal", "PICC daily assessment", "CHG dressing PICC", "PICC securement"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

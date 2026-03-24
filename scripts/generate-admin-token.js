@@ -94,7 +94,7 @@ async function main() {
   console.log('   hugo');
   console.log('\n2. Share the PASSWORD securely with your clinical team');
   console.log('\n3. They can access the admin page at:');
-  console.log('   https://blog.intracav.ai/admin/');
+  console.log('   https://clinical-database.com/admin/');
   console.log('   and enter the password when prompted');
   console.log('\n⚠️  Keep the password secure and change it periodically');
   console.log('='.repeat(60) + '\n');

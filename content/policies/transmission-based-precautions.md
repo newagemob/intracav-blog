@@ -4,6 +4,7 @@ date = 2024-11-28T00:00:00-05:00
 lastmod = 2024-11-28T00:00:00-05:00
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access", "infection-prevention"]
 category = ["Infection Control", "Isolation Precautions", "PPE", "Patient Safety"]
 tags = ["transmission-based precautions", "contact precautions", "droplet precautions", "airborne precautions", "isolation", "N95", "respirator", "MDRO", "enhanced barrier precautions", "pandemic response", "fit testing"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

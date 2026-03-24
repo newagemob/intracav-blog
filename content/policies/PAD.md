@@ -6,6 +6,7 @@ tags = ["Vascular Access", "PAD", "Peripheral"]
 category = ["Vascular Access", "Clinical Guidelines"]
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access"]
 author = ["TCD-CM01"]
 description = "Comprehensive clinical guideline for Peripheral Arterial Disease (PAD) management in vascular access: evidence-based protocols for assessment, prevention, and treatment strategies."
 summary = "Complete PAD clinical overview including diagnostic criteria, risk factors, and vascular access considerations based on current clinical evidence and medical literature."

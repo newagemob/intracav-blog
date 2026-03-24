@@ -4,6 +4,7 @@ date = 2026-02-25T00:00:00-05:00
 lastmod = 2026-02-25T00:00:00-05:00
 content_type = "guide"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["Complication Management", "Patient Safety", "Vascular Access"]
 tags = ["catheter complications", "PICC complications", "catheter thrombosis", "phlebitis", "extravasation", "air embolism", "catheter occlusion", "MARSI", "catheter malposition", "infiltration"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

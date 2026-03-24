@@ -4,6 +4,7 @@ date = 2026-02-25T00:00:00-05:00
 lastmod = 2026-02-25T00:00:00-05:00
 content_type = "guide"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["Catheter Complications", "Occlusion", "Vascular Access Safety"]
 tags = ["catheter occlusion", "CVAD occlusion", "alteplase catheter", "catheter withdrawal occlusion", "fibrin sheath occlusion", "non-thrombotic occlusion", "PICC occlusion", "catheter flush occlusion"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slice Geometry — The Ultrasound Lab</title>
+<script src="https://unpkg.com/htmx.org@1.9.10"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Nunito:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #EDE4D5; --surface: #F6F0E8; --surface-hi: #FDFAF5;
+    --border: #D4C7B5; --border-lt: #E2D8CC;
+    --text: #28180C; --text-2: #685040; --text-3: #9E8272;
+    --accent: #BC7250; --accent-lt: #E8C4A8;
+    --sage: #7E9C84; --rose: #B87070; --gold: #C9A84C;
+    --shadow-sm: 0 1px 8px rgba(40,24,12,0.06), 0 0 0 1px rgba(40,24,12,0.04);
+    --shadow-md: 0 4px 28px rgba(40,24,12,0.10), 0 0 0 1px rgba(40,24,12,0.06);
+    --r: 16px; --r-sm: 10px;
+  }
+  body { font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+  body::after {
+    content: ''; position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+    opacity: 0.028; pointer-events: none; z-index: 9999;
+  }
+  nav { display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 3rem; border-bottom: 1px solid var(--border-lt); background: rgba(237,228,213,0.85); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100; }
+  .nav-left { display: flex; align-items: center; gap: 1rem; }
+  .nav-back { font-size: 0.8rem; color: var(--text-3); text-decoration: none; transition: color 200ms; }
+  .nav-back:hover { color: var(--accent); }
+  .nav-sep { color: var(--border); }
+  .nav-title { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--text-2); }
+  .nav-num { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--accent); }
+
+  .hero { padding: 4rem 3rem 2.5rem; border-bottom: 1px solid var(--border-lt); max-width: 1100px; margin: 0 auto; }
+  .module-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.75rem; }
+  .module-label::before { content: '05'; font-family: 'JetBrains Mono', monospace; }
+  h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 400; line-height: 1.1; margin-bottom: 1rem; }
+  h1 em { font-style: italic; color: var(--text-2); }
+  .hero-desc { font-size: 0.92rem; line-height: 1.7; color: var(--text-2); font-weight: 300; max-width: 600px; }
+
+  .main { max-width: 1100px; margin: 0 auto; padding: 2.5rem 3rem; }
+  .section-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3); margin-bottom: 0.2rem; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; margin-bottom: 1.25rem; }
+
+  /* === PROBE ROTATION SIMULATOR === */
+  .probe-section { background: var(--surface); border: 1px solid var(--border-lt); border-radius: var(--r); overflow: hidden; margin-bottom: 2rem; box-shadow: var(--shadow-sm); }
+  .probe-header { padding: 1.5rem 2rem; border-bottom: 1px solid var(--border-lt); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+  .probe-body { display: grid; grid-template-columns: 1fr 1fr; }
+  #rotatorCanvas { width: 100%; height: 360px; display: block; border-right: 1px solid var(--border-lt); cursor: grab; }
+  #sliceCanvas { width: 100%; height: 360px; display: block; }
+
+  .probe-controls { padding: 1.25rem 2rem; border-top: 1px solid var(--border-lt); display: flex; gap: 2rem; align-items: center; flex-wrap: wrap; }
+  .ctrl { display: flex; flex-direction: column; gap: 0.5rem; flex: 1; min-width: 180px; }
+  .ctrl-label { display: flex; justify-content: space-between; }
+  .ctrl-name { font-size: 0.78rem; font-weight: 600; color: var(--text-2); }
+  .ctrl-val { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--accent); }
+  .ctrl-unit { font-size: 0.65rem; color: var(--text-3); }
+  .ctrl-hint { font-size: 0.68rem; color: var(--text-3); font-weight: 300; }
+  input[type=range] { -webkit-appearance: none; width: 100%; height: 4px; background: var(--border); border-radius: 100px; outline: none; cursor: pointer; }
+  input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 0 4px rgba(188,114,80,0.15); }
+
+  /* === VIEW CARDS === */
+  .view-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-bottom: 2rem; }
+  .view-card { background: var(--surface); border: 1px solid var(--border-lt); border-radius: var(--r); overflow: hidden; box-shadow: var(--shadow-sm); transition: all 200ms; cursor: pointer; }
+  .view-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+  .view-card.selected { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent-lt); }
+  .vc-header { padding: 1rem 1.25rem; border-bottom: 1px solid var(--border-lt); display: flex; align-items: center; gap: 0.75rem; }
+  .vc-num { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--accent); }
+  .vc-title { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; }
+  .vc-canvas { width: 100%; height: 160px; display: block; }
+  .vc-footer { padding: 0.9rem 1.25rem; }
+  .vc-desc { font-size: 0.78rem; line-height: 1.6; color: var(--text-2); font-weight: 300; }
+
+  /* === INTERPRETATION GUIDE === */
+  .interp-section { background: var(--surface); border: 1px solid var(--border-lt); border-radius: var(--r); padding: 1.75rem 2rem; margin-bottom: 2rem; box-shadow: var(--shadow-sm); }
+  .shape-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; margin-top: 1rem; }
+  .shape-card { background: var(--bg); border: 1px solid var(--border-lt); border-radius: var(--r-sm); padding: 1rem; text-align: center; }
+  .sc-shape { height: 64px; display: flex; align-items: center; justify-content: center; margin-bottom: 0.5rem; }
+  .sc-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); margin-bottom: 0.2rem; }
+  .sc-meaning { font-family: 'Cormorant Garamond', serif; font-size: 0.95rem; color: var(--text); }
+
+  /* === DOMAIN MAP TABLE === */
+  .domain-table { width: 100%; border-collapse: collapse; margin-bottom: 2rem; }
+  .domain-table th { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); padding: 0.6rem 1rem; border-bottom: 1px solid var(--border); text-align: left; background: var(--surface); }
+  .domain-table td { padding: 1rem; border-bottom: 1px solid var(--border-lt); vertical-align: top; }
+  .domain-table tr:last-child td { border-bottom: none; }
+  .domain-name { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; }
+  .domain-dim { font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: var(--accent); font-weight: 500; }
+  .domain-repr { font-size: 0.8rem; color: var(--text-2); font-weight: 300; line-height: 1.5; }
+  .domain-loss { font-size: 0.72rem; color: var(--rose); font-weight: 600; }
+  .domain-opp { font-size: 0.72rem; color: var(--sage); font-weight: 600; }
+
+  /* === NEEDLE SIMULATOR === */
+  .needle-section { background: var(--surface); border: 1px solid var(--border-lt); border-radius: var(--r); overflow: hidden; margin-bottom: 2rem; box-shadow: var(--shadow-sm); }
+  .needle-header { padding: 1.5rem 2rem; border-bottom: 1px solid var(--border-lt); }
+  #needleCanvas { width: 100%; height: 300px; display: block; }
+  .needle-controls { padding: 1.25rem 2rem; border-top: 1px solid var(--border-lt); display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; }
+
+  /* === PEARLS === */
+  .pearls { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+  .pearl { background: var(--surface); border: 1px solid var(--border-lt); border-radius: var(--r-sm); padding: 1.25rem 1.5rem; box-shadow: var(--shadow-sm); }
+  .pearl-icon { font-size: 1.4rem; margin-bottom: 0.75rem; }
+  .pearl-title { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; margin-bottom: 0.5rem; }
+  .pearl-text { font-size: 0.8rem; line-height: 1.65; color: var(--text-2); font-weight: 300; }
+
+  /* === INTRACAV PANEL === */
+  .intracav-panel { background: var(--text); border-radius: var(--r); overflow: hidden; margin-bottom: 2rem; }
+  .ip-header { padding: 2rem 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .ip-kicker { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
+  .ip-title { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: #F6F0E8; margin-bottom: 0.75rem; }
+  .ip-title em { font-style: italic; color: var(--accent-lt); }
+  .ip-desc { font-size: 0.85rem; line-height: 1.75; color: #8A7A6A; max-width: 680px; }
+  .ip-cards { display: grid; grid-template-columns: repeat(3, 1fr); }
+  .ip-card { padding: 1.5rem 1.75rem; border-right: 1px solid rgba(255,255,255,0.06); }
+  .ip-card:last-child { border-right: none; }
+  .ipc-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
+  .ipc-title { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: #E8E0D8; margin-bottom: 0.5rem; }
+  .ipc-desc { font-size: 0.75rem; line-height: 1.6; color: #6A5A4A; font-weight: 300; }
+
+  .nav-footer { display: flex; justify-content: space-between; align-items: center; padding: 2rem 3rem; border-top: 1px solid var(--border-lt); max-width: 1100px; margin: 0 auto; }
+  .nav-link { text-decoration: none; color: var(--text-3); font-size: 0.82rem; transition: color 200ms; display: flex; align-items: center; gap: 0.5rem; }
+  .nav-link:hover { color: var(--accent); }
+  .nav-link-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+  .hero { animation: fadeUp 0.5s ease both; }
+  .probe-section { animation: fadeUp 0.5s 0.05s ease both; }
+  .view-grid { animation: fadeUp 0.5s 0.1s ease both; }
+
+  @media (max-width: 800px) {
+    nav, .hero, .main, .nav-footer { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .probe-body, .ip-cards, .needle-controls { grid-template-columns: 1fr; }
+    .view-grid, .shape-grid { grid-template-columns: 1fr 1fr; }
+    .domain-table { font-size: 0.8rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-left">
+    <a href="index.html" class="nav-back">← Collection</a>
+    <span class="nav-sep">|</span>
+    <span class="nav-title">The Ultrasound Lab</span>
+  </div>
+  <div class="nav-left">
+    <span class="nav-num">05 / 06</span>
+    <a href="04-doppler.html" class="nav-back">← Doppler</a>
+    <span class="nav-sep">|</span>
+    <a href="06-dimensional-pipeline.html" class="nav-back">Pipeline →</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="module-label">Slice Geometry & 2D→3D Inference</div>
+  <h1>The same vessel.<br><em>Three different shapes.</em></h1>
+  <p class="hero-desc">A circular vein appears as a circle, an oval, or a thin line depending entirely on how the probe is oriented. This is the geometry problem at the heart of ultrasound skill — learning to rotate a mental 3D model in real time from a 2D slice on a flat screen.</p>
+</div>
+
+<div class="main">
+
+  <!-- === PROBE ROTATION SIMULATOR === -->
+  <div class="probe-section">
+    <div class="probe-header">
+      <div>
+        <div class="section-label">Interactive Simulator</div>
+        <div class="section-title" style="margin:0;font-family:'Cormorant Garamond',serif;font-size:1.3rem;">3D Vessel → 2D Slice (drag to rotate)</div>
+      </div>
+      <div style="font-size:0.8rem;color:var(--text-3);font-weight:300;">Left: 3D view &nbsp;·&nbsp; Right: what the clinician sees on screen</div>
+    </div>
+    <div class="probe-body">
+      <canvas id="rotatorCanvas"></canvas>
+      <canvas id="sliceCanvas"></canvas>
+    </div>
+    <div class="probe-controls">
+      <div class="ctrl">
+        <div class="ctrl-label">
+          <span class="ctrl-name">Probe rotation (in-plane)</span>
+          <span class="ctrl-val"><span id="rotVal">0</span><span class="ctrl-unit">°</span></span>
+        </div>
+        <input type="range" id="rotSlider" min="-90" max="90" step="1" value="0" oninput="updateSlice()">
+        <div class="ctrl-hint">0° = short axis (circle) · 90° = long axis (tube)</div>
+      </div>
+      <div class="ctrl">
+        <div class="ctrl-label">
+          <span class="ctrl-name">Probe tilt (off-axis)</span>
+          <span class="ctrl-val"><span id="tiltVal">0</span><span class="ctrl-unit">°</span></span>
+        </div>
+        <input type="range" id="tiltSlider" min="-45" max="45" step="1" value="0" oninput="updateSlice()">
+        <div class="ctrl-hint">Tilt creates oval → beginners mistake for smaller vessel</div>
+      </div>
+      <div class="ctrl">
+        <div class="ctrl-label">
+          <span class="ctrl-name">Vessel diameter</span>
+          <span class="ctrl-val"><span id="diamVal">8</span><span class="ctrl-unit"> mm</span></span>
+        </div>
+        <input type="range" id="diamSlider" min="2" max="20" step="1" value="8" oninput="updateSlice()">
+        <div class="ctrl-hint">Average IJ: 8–14 mm · Average basilic: 3–6 mm</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- === THREE VIEW CARDS === -->
+  <div class="section-label" style="margin-bottom:0.75rem;">The Three Canonical Views</div>
+  <div class="view-grid">
+    <div class="view-card" id="vcShort" onclick="setView('short')">
+      <div class="vc-header">
+        <span class="vc-num">SAX</span>
+        <span class="vc-title">Short Axis</span>
+      </div>
+      <canvas class="vc-canvas" id="saxCanvas"></canvas>
+      <div class="vc-footer">
+        <p class="vc-desc">Probe perpendicular to vessel. You see the full circular lumen — and compressibility testing collapses it cleanly into a slit. Best for confirming vessel identity and measuring diameter.</p>
+      </div>
+    </div>
+    <div class="view-card" id="vcLong" onclick="setView('long')">
+      <div class="vc-header">
+        <span class="vc-num">LAX</span>
+        <span class="vc-title">Long Axis</span>
+      </div>
+      <canvas class="vc-canvas" id="laxCanvas"></canvas>
+      <div class="vc-footer">
+        <p class="vc-desc">Probe parallel to vessel. Two parallel bright lines with an anechoic channel between them. Needle trajectory and wire passage are most clearly seen in this view during cannulation.</p>
+      </div>
+    </div>
+    <div class="view-card" id="vcOblique" onclick="setView('oblique')">
+      <div class="vc-header">
+        <span class="vc-num">OBL</span>
+        <span class="vc-title">Oblique</span>
+      </div>
+      <canvas class="vc-canvas" id="oblCanvas"></canvas>
+      <div class="vc-footer">
+        <p class="vc-desc">Any angle between short and long axis. An oval that looks smaller than reality. Beginners misread this as a narrow vessel or as a different structure. Rotate to confirm the true axis.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- === SHAPE INTERPRETATION GUIDE === -->
+  <div class="interp-section">
+    <div class="section-label">Shape Dictionary</div>
+    <div class="section-title">What Shape You See → What It Means</div>
+    <div class="shape-grid">
+      <div class="shape-card">
+        <div class="sc-shape">
+          <svg width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="18" fill="#04080F" stroke="rgba(180,200,220,0.5)" stroke-width="2"/></svg>
+        </div>
+        <div class="sc-label">Perfect Circle</div>
+        <div class="sc-meaning">Short axis, centered</div>
+      </div>
+      <div class="shape-card">
+        <div class="sc-shape">
+          <svg width="48" height="48" viewBox="0 0 48 48"><ellipse cx="24" cy="24" rx="22" ry="12" fill="#04080F" stroke="rgba(180,200,220,0.4)" stroke-width="2"/></svg>
+        </div>
+        <div class="sc-label">Wide Oval</div>
+        <div class="sc-meaning">Slightly oblique</div>
+      </div>
+      <div class="shape-card">
+        <div class="sc-shape">
+          <svg width="48" height="48" viewBox="0 0 48 48"><ellipse cx="24" cy="24" rx="13" ry="22" fill="#04080F" stroke="rgba(180,200,220,0.4)" stroke-width="2"/></svg>
+        </div>
+        <div class="sc-label">Tall Oval</div>
+        <div class="sc-meaning">Tilted probe</div>
+      </div>
+      <div class="shape-card">
+        <div class="sc-shape">
+          <svg width="60" height="48" viewBox="0 0 60 48"><rect x="4" y="16" width="52" height="16" rx="3" fill="#04080F" stroke="rgba(180,200,220,0.4)" stroke-width="2"/></svg>
+        </div>
+        <div class="sc-label">Parallel Lines</div>
+        <div class="sc-meaning">Long axis view</div>
+      </div>
+      <div class="shape-card">
+        <div class="sc-shape">
+          <svg width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="18" fill="#0A0806" stroke="rgba(180,200,220,0.15)" stroke-width="1" stroke-dasharray="3,3"/></svg>
+        </div>
+        <div class="sc-label">Faint / Blurred</div>
+        <div class="sc-meaning">Deep / compressed / collapsed</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- === DOMAIN MAPPING TABLE === -->
+  <div class="section-label" style="margin-bottom:0.75rem;">The Dimensional Transformation Map</div>
+  <div style="background:var(--surface);border:1px solid var(--border-lt);border-radius:var(--r);overflow:hidden;margin-bottom:2rem;box-shadow:var(--shadow-sm);">
+    <table class="domain-table">
+      <thead>
+        <tr>
+          <th>Domain</th>
+          <th>Dimensions</th>
+          <th>Representation</th>
+          <th>What's Lost</th>
+          <th>Clinical Skill Required</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="domain-name">Physical Reality</span></td>
+          <td><span class="domain-dim">3D space</span></td>
+          <td><span class="domain-repr">Tissue geometry, vessel anatomy, blood flow</span></td>
+          <td><span class="domain-opp">Source of truth</span></td>
+          <td><span class="domain-repr">Anatomical knowledge</span></td>
+        </tr>
+        <tr>
+          <td><span class="domain-name">Wave Interaction</span></td>
+          <td><span class="domain-dim">4D (space + time)</span></td>
+          <td><span class="domain-repr">Acoustic pressure fields, scatter patterns, reflections</span></td>
+          <td><span class="domain-loss">Structures that don't reflect are invisible</span></td>
+          <td><span class="domain-repr">Understanding of artifact types</span></td>
+        </tr>
+        <tr>
+          <td><span class="domain-name">Sensor Signal</span></td>
+          <td><span class="domain-dim">1D (time)</span></td>
+          <td><span class="domain-repr">Echo amplitude vs time per element</span></td>
+          <td><span class="domain-loss">All lateral spatial information</span></td>
+          <td><span class="domain-repr">Signal interpretation, gain adjustment</span></td>
+        </tr>
+        <tr>
+          <td><span class="domain-name">Reconstructed Image</span></td>
+          <td><span class="domain-dim">2D slice</span></td>
+          <td><span class="domain-repr">Grayscale pixels encoding impedance mismatch</span></td>
+          <td><span class="domain-loss">All out-of-plane anatomy (~3 mm thick)</span></td>
+          <td><span class="domain-repr">Pattern recognition, axis identification</span></td>
+        </tr>
+        <tr>
+          <td><span class="domain-name">Mental Model</span></td>
+          <td><span class="domain-dim">3D cognition</span></td>
+          <td><span class="domain-repr">Clinician's inferred volumetric anatomy</span></td>
+          <td><span class="domain-opp">Inverse problem — this is the skill</span></td>
+          <td><span class="domain-repr">Probe orientation fluency, 3D reconstruction</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- === NEEDLE APPROACH SIMULATOR === -->
+  <div class="needle-section">
+    <div class="needle-header">
+      <div class="section-label">Practical Application</div>
+      <div class="section-title" style="margin:0;font-family:'Cormorant Garamond',serif;font-size:1.3rem;">Needle Visualization — In-Plane vs Out-of-Plane</div>
+    </div>
+    <canvas id="needleCanvas"></canvas>
+    <div class="needle-controls">
+      <div class="ctrl">
+        <div class="ctrl-label">
+          <span class="ctrl-name">Approach: In-plane (LAX)</span>
+          <span class="ctrl-val"><span id="ipVal">1</span></span>
+        </div>
+        <input type="range" id="ipSlider" min="0" max="1" step="1" value="1" oninput="updateNeedle()">
+        <div class="ctrl-hint">In-plane: see full needle length · Out-of-plane: see only dot</div>
+      </div>
+      <div class="ctrl">
+        <div class="ctrl-label">
+          <span class="ctrl-name">Needle depth</span>
+          <span class="ctrl-val"><span id="ndepthVal">1.5</span><span class="ctrl-unit"> cm</span></span>
+        </div>
+        <input type="range" id="ndepthSlider" min="0.2" max="4" step="0.1" value="1.5" oninput="updateNeedle()">
+        <div class="ctrl-hint">Advance toward vessel lumen</div>
+      </div>
+      <div class="ctrl">
+        <div class="ctrl-label">
+          <span class="ctrl-name">Insertion angle</span>
+          <span class="ctrl-val"><span id="nangVal">35</span><span class="ctrl-unit">°</span></span>
+        </div>
+        <input type="range" id="nangSlider" min="10" max="80" step="1" value="35" oninput="updateNeedle()">
+        <div class="ctrl-hint">Shallower = better needle visualization in LAX</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- === CLINICAL PEARLS === -->
+  <div class="pearls">
+    <div class="pearl">
+      <div class="pearl-icon">⭕</div>
+      <div class="pearl-title">Circle = Short Axis = Most Important</div>
+      <p class="pearl-text">The short-axis view gives you the most reliable information: true lumen diameter, compressibility, relationship to adjacent structures (artery, nerve). Start here before rotating to long axis for needle guidance.</p>
+    </div>
+    <div class="pearl">
+      <div class="pearl-icon">🧭</div>
+      <div class="pearl-title">Rotate — Don't Guess</div>
+      <p class="pearl-text">If you're unsure whether you're seeing a circle or an oblique oval, rotate the probe 45° and observe the shape change. If it becomes a longer oval or parallel lines, you found a vessel axis. Shape that stays round is likely a lymph node or cyst.</p>
+    </div>
+    <div class="pearl">
+      <div class="pearl-icon">📌</div>
+      <div class="pearl-title">The "Out-of-Plane" Illusion</div>
+      <p class="pearl-text">In out-of-plane (short-axis) needle approaches, you only see the needle tip as a bright dot. If you advance without tracking the tip, you may advance past the vessel without entering it. The needle is in the image; the tip may not be.</p>
+    </div>
+    <div class="pearl">
+      <div class="pearl-icon">🪞</div>
+      <div class="pearl-title">Mirror Artifacts</div>
+      <p class="pearl-text">Strong reflectors (pleura, bone) create mirror-image artifacts — a second apparent structure appears on the other side of the reflector at the same depth interval. Knowing physics lets you identify and discard these confidently.</p>
+    </div>
+  </div>
+
+  <!-- === INTRACAV PANEL === -->
+  <div class="intracav-panel">
+    <div class="ip-header">
+      <div class="ip-kicker">Intracav · Slice Geometry Intelligence</div>
+      <div class="ip-title">From a 2D slice to <em>a 3D recommendation</em> — in real time.</div>
+      <p class="ip-desc">The slice geometry problem is the exact problem where AI adds the most value. Intracav can explicitly track probe orientation, stack slices into volumetric models, and output a 3D confidence map — converting the most cognitively demanding part of ultrasound into a computable, auditable workflow.</p>
+    </div>
+    <div class="ip-cards">
+      <div class="ip-card">
+        <div class="ipc-label">Axis Detection</div>
+        <div class="ipc-title">Auto Short/Long Axis Classification</div>
+        <p class="ipc-desc">Classify the current probe orientation from image shape alone. Flag when the probe is oblique, suggest rotation to canonical axis, and lock in the true diameter once confirmed.</p>
+      </div>
+      <div class="ip-card">
+        <div class="ipc-label">3D Reconstruction</div>
+        <div class="ipc-title">Volume From Motion</div>
+        <p class="ipc-desc">Track probe movement with IMU or video analysis. Stack registered 2D slices into a volumetric model. Compute vessel path, depth, and tortuosity — even from a conventional 2D probe.</p>
+      </div>
+      <div class="ip-card">
+        <div class="ipc-label">Cannulation Guide</div>
+        <div class="ipc-title">Optimal Angle & Entry Point</div>
+        <p class="ipc-desc">Given vessel depth, diameter, and patient anatomy, compute the optimal needle entry point and angle. Visualize the predicted needle path overlaid on the live image. Output: go / caution / re-site.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="nav-footer">
+  <a href="04-doppler.html" class="nav-link"><span>←</span><div><div class="nav-link-label">Previous</div>Doppler Effect</div></a>
+  <a href="06-dimensional-pipeline.html" class="nav-link"><div style="text-align:right"><div class="nav-link-label">Final Module</div>Dimensional Pipeline</div><span>→</span></a>
+</div>
+
+<script>
+// ===== CANVAS SETUP =====
+const rc = document.getElementById('rotatorCanvas');
+const rctx = rc.getContext('2d');
+const sc = document.getElementById('sliceCanvas');
+const sctx = sc.getContext('2d');
+const nc = document.getElementById('needleCanvas');
+const nctx = nc.getContext('2d');
+
+let rAnimT = 0;
+let rp = { rot: 0, tilt: 0, diam: 8 };
+let np = { inPlane: 1, depth: 1.5, angle: 35 };
+let selectedView = 'short';
+
+function resizeAll() {
+  rc.width = rc.offsetWidth; rc.height = 360;
+  sc.width = sc.offsetWidth; sc.height = 360;
+  nc.width = nc.offsetWidth; nc.height = 300;
+  drawViewCards();
+}
+resizeAll();
+window.addEventListener('resize', resizeAll);
+
+function updateSlice() {
+  rp.rot  = +document.getElementById('rotSlider').value;
+  rp.tilt = +document.getElementById('tiltSlider').value;
+  rp.diam = +document.getElementById('diamSlider').value;
+  document.getElementById('rotVal').textContent  = rp.rot;
+  document.getElementById('tiltVal').textContent = rp.tilt;
+  document.getElementById('diamVal').textContent = rp.diam;
+}
+
+function updateNeedle() {
+  np.inPlane = +document.getElementById('ipSlider').value;
+  np.depth   = +document.getElementById('ndepthSlider').value;
+  np.angle   = +document.getElementById('nangSlider').value;
+  document.getElementById('ipVal').textContent    = np.inPlane ? 'In-Plane (LAX)' : 'Out-of-Plane (SAX)';
+  document.getElementById('ndepthVal').textContent = np.depth.toFixed(1);
+  document.getElementById('nangVal').textContent  = np.angle;
+}
+
+function setView(v) {
+  selectedView = v;
+  document.querySelectorAll('.view-card').forEach(c => c.classList.remove('selected'));
+  document.getElementById('vc' + (v === 'short' ? 'Short' : v === 'long' ? 'Long' : 'Oblique')).classList.add('selected');
+  const angle = v === 'short' ? 0 : v === 'long' ? 90 : 40;
+  document.getElementById('rotSlider').value = angle;
+  rp.rot = angle;
+  document.getElementById('rotVal').textContent = angle;
+}
+
+// ===== ROTATOR CANVAS: 3D VESSEL =====
+function drawRotator() {
+  const W = rc.width, H = rc.height;
+  rctx.clearRect(0, 0, W, H);
+  rctx.fillStyle = '#0E0C0A';
+  rctx.fillRect(0, 0, W, H);
+
+  rAnimT += 0.008;
+
+  const cx = W / 2, cy = H / 2;
+  const rotRad  = rp.rot  * Math.PI / 180;
+  const tiltRad = rp.tilt * Math.PI / 180;
+  const vesselR = rp.diam * 2.5;
+  const vesselL = W * 0.4;
+
+  // 3D axes guide (faint)
+  const axes = [[1,0,0,'X'],[0,1,0,'Y'],[0,0,1,'Z']];
+  axes.forEach(([ax,ay,az,lbl]) => {
+    const ex = cx + ax * 30 - az * 15;
+    const ey = cy - ay * 30 + az * 10;
+    rctx.beginPath(); rctx.moveTo(cx, cy); rctx.lineTo(ex, ey);
+    rctx.strokeStyle = 'rgba(158,130,114,0.15)'; rctx.lineWidth = 1; rctx.stroke();
+    rctx.fillStyle = 'rgba(158,130,114,0.2)'; rctx.font = '9px JetBrains Mono, monospace'; rctx.textAlign = 'center';
+    rctx.fillText(lbl, ex, ey - 4);
+  });
+
+  // Vessel tube (isometric-ish 3D cylinder)
+  // Project end points with rotation
+  const cos = Math.cos(rotRad + rAnimT * 0.15);
+  const sin = Math.sin(rotRad + rAnimT * 0.15);
+  const cosT = Math.cos(tiltRad);
+  const sinT = Math.sin(tiltRad);
+
+  const lenH = vesselL;
+  const p1x = cx - cos * lenH;
+  const p1y = cy + sin * lenH * 0.4 + sinT * lenH * 0.3;
+  const p2x = cx + cos * lenH;
+  const p2y = cy - sin * lenH * 0.4 - sinT * lenH * 0.3;
+
+  // Tube walls
+  const perpX =  sin;
+  const perpY =  cos * 0.4;
+  const r = vesselR * cosT;
+
+  rctx.beginPath();
+  rctx.moveTo(p1x + perpX * r, p1y - perpY * r);
+  rctx.lineTo(p2x + perpX * r, p2y - perpY * r);
+  rctx.lineTo(p2x - perpX * r, p2y + perpY * r);
+  rctx.lineTo(p1x - perpX * r, p1y + perpY * r);
+  rctx.closePath();
+
+  const tubeGrad = rctx.createLinearGradient(p1x, p1y, p2x, p2y);
+  tubeGrad.addColorStop(0, 'rgba(74,138,202,0.25)');
+  tubeGrad.addColorStop(0.5, 'rgba(74,138,202,0.12)');
+  tubeGrad.addColorStop(1, 'rgba(74,138,202,0.25)');
+  rctx.fillStyle = tubeGrad;
+  rctx.fill();
+  rctx.strokeStyle = 'rgba(74,138,202,0.5)';
+  rctx.lineWidth = 1;
+  rctx.stroke();
+
+  // End circles
+  [[p1x,p1y],[p2x,p2y]].forEach(([px,py]) => {
+    rctx.beginPath();
+    rctx.ellipse(px, py, r, r * 0.3, rotRad + rAnimT * 0.15, 0, Math.PI * 2);
+    rctx.strokeStyle = 'rgba(74,138,202,0.7)';
+    rctx.lineWidth = 1.5;
+    rctx.stroke();
+    rctx.fillStyle = '#04080F';
+    rctx.fill();
+  });
+
+  // Animated flow particles inside tube
+  for (let i = 0; i < 6; i++) {
+    const phase = ((rAnimT * 0.5 + i / 6) % 1);
+    const t = phase * 2 - 1; // -1 to 1 along tube
+    const px2 = cx + cos * lenH * t;
+    const py2 = cy - sin * lenH * t * 0.4 - sinT * lenH * t * 0.3;
+    rctx.beginPath();
+    rctx.arc(px2, py2, 2.5, 0, Math.PI * 2);
+    rctx.fillStyle = `rgba(74,138,202,${(1 - Math.abs(t)) * 0.8})`;
+    rctx.fill();
+  }
+
+  // Probe plane indicator
+  const planeW = vesselR * 2.4;
+  const probeY = cy - vesselR * 2.2;
+  rctx.save();
+  rctx.globalAlpha = 0.35;
+  rctx.fillStyle = '#BC7250';
+  rctx.fillRect(cx - planeW, probeY, planeW * 2, 4);
+  rctx.globalAlpha = 1;
+  rctx.restore();
+  rctx.fillStyle = 'rgba(188,114,80,0.7)';
+  rctx.font = '9px Nunito, sans-serif'; rctx.textAlign = 'center';
+  rctx.fillText('probe plane', cx, probeY - 4);
+
+  // Vertical dotted cut line
+  rctx.setLineDash([3, 5]);
+  rctx.beginPath(); rctx.moveTo(cx, probeY + 4); rctx.lineTo(cx, cy);
+  rctx.strokeStyle = 'rgba(188,114,80,0.35)'; rctx.lineWidth = 1; rctx.stroke();
+  rctx.setLineDash([]);
+  rctx.textAlign = 'left';
+}
+
+// ===== SLICE CANVAS: WHAT CLINICIAN SEES =====
+function drawSlice() {
+  const W = sc.width, H = sc.height;
+  sctx.clearRect(0, 0, W, H);
+  sctx.fillStyle = '#0A0806';
+  sctx.fillRect(0, 0, W, H);
+
+  const cx = W / 2, cy = H / 2 + 30;
+  const rotAbs = Math.abs(rp.rot);
+  const tiltAbs = Math.abs(rp.tilt);
+  const baseR = rp.diam * 4;
+
+  // Compute apparent shape from rotation and tilt
+  // At 0°: circle. At 90°: parallel lines. Tilt squishes one axis.
+  const tiltFactor = Math.cos(tiltAbs * Math.PI / 180);
+  const rotFactor  = Math.abs(Math.cos(rp.rot * Math.PI / 180));
+
+  const rx = (rotAbs < 80 ? baseR : W * 0.38) * tiltFactor;
+  const ry = baseR * tiltFactor;
+
+  // Tissue bg
+  sctx.fillStyle = '#160E08';
+  sctx.fillRect(0, 0, W, H);
+
+  // Some tissue texture
+  for (let i = 0; i < 200; i++) {
+    const tx = Math.random() * W;
+    const ty = Math.random() * H;
+    sctx.fillStyle = `rgba(${40 + Math.random()*20},${28+Math.random()*15},${12+Math.random()*8},${Math.random()*0.4})`;
+    sctx.fillRect(tx, ty, Math.random()*3, Math.random()*3);
+  }
+
+  if (rotAbs < 80) {
+    // ELLIPSE / CIRCLE VIEW
+    // Vessel lumen (anechoic/dark)
+    sctx.beginPath();
+    sctx.ellipse(cx, cy, rx, ry, 0, 0, Math.PI * 2);
+    sctx.fillStyle = '#030608';
+    sctx.fill();
+
+    // Bright wall
+    const wallGrad = sctx.createRadialGradient(cx, cy, rx * 0.85, cx, cy, rx * 1.15);
+    wallGrad.addColorStop(0, 'rgba(200,215,235,0)');
+    wallGrad.addColorStop(0.5, `rgba(200,215,235,${0.45 * tiltFactor})`);
+    wallGrad.addColorStop(1, 'rgba(200,215,235,0)');
+    sctx.beginPath();
+    sctx.ellipse(cx, cy, rx * 1.05, ry * 1.05, 0, 0, Math.PI * 2);
+    sctx.strokeStyle = wallGrad;
+    sctx.lineWidth = 8;
+    sctx.stroke();
+
+    // Diameter annotation
+    sctx.strokeStyle = 'rgba(188,114,80,0.5)';
+    sctx.lineWidth = 1;
+    sctx.setLineDash([2, 5]);
+    sctx.beginPath(); sctx.moveTo(cx - rx, cy); sctx.lineTo(cx + rx, cy); sctx.stroke();
+    sctx.setLineDash([]);
+    const measuredMm = (rp.diam * tiltFactor * rotFactor).toFixed(1);
+    sctx.fillStyle = 'rgba(188,114,80,0.8)';
+    sctx.font = '10px JetBrains Mono, monospace'; sctx.textAlign = 'center';
+    sctx.fillText(`⌀ ${measuredMm} mm`, cx, cy + ry + 22);
+    if (tiltAbs > 10 || rotAbs > 10) {
+      sctx.fillStyle = 'rgba(201,168,76,0.8)';
+      sctx.fillText(`(true: ${rp.diam} mm)`, cx, cy + ry + 36);
+    }
+  } else {
+    // LONG AXIS VIEW — parallel walls
+    const wallY1 = cy - ry;
+    const wallY2 = cy + ry;
+    const wallX1 = W * 0.1;
+    const wallX2 = W * 0.9;
+
+    // Wall glow top
+    const wg1 = sctx.createLinearGradient(0, wallY1 - 10, 0, wallY1 + 10);
+    wg1.addColorStop(0, 'rgba(200,215,235,0)');
+    wg1.addColorStop(0.5, `rgba(200,215,235,${0.5 * tiltFactor})`);
+    wg1.addColorStop(1, 'rgba(200,215,235,0)');
+    sctx.fillStyle = wg1;
+    sctx.fillRect(wallX1, wallY1 - 10, wallX2 - wallX1, 20);
+
+    // Lumen
+    sctx.fillStyle = '#030608';
+    sctx.fillRect(wallX1, wallY1, wallX2 - wallX1, wallY2 - wallY1);
+
+    // Wall glow bottom
+    const wg2 = sctx.createLinearGradient(0, wallY2 - 10, 0, wallY2 + 10);
+    wg2.addColorStop(0, 'rgba(200,215,235,0)');
+    wg2.addColorStop(0.5, `rgba(200,215,235,${0.5 * tiltFactor})`);
+    wg2.addColorStop(1, 'rgba(200,215,235,0)');
+    sctx.fillStyle = wg2;
+    sctx.fillRect(wallX1, wallY2 - 10, wallX2 - wallX1, 20);
+
+    // Flow dots
+    for (let i = 0; i < 8; i++) {
+      const phase = ((rAnimT * 0.5 + i / 8) % 1);
+      const fx = wallX1 + phase * (wallX2 - wallX1);
+      const fy = cy + (i % 3 - 1) * ry * 0.35;
+      sctx.beginPath(); sctx.arc(fx, fy, 2, 0, Math.PI * 2);
+      sctx.fillStyle = 'rgba(74,138,202,0.5)'; sctx.fill();
+    }
+  }
+
+  // View label
+  const viewName = rotAbs < 20 && tiltAbs < 15 ? 'SHORT AXIS' : rotAbs > 70 ? 'LONG AXIS' : 'OBLIQUE';
+  const viewColor = rotAbs < 20 && tiltAbs < 15 ? '#7E9C84' : rotAbs > 70 ? '#4A8ACA' : '#C9A84C';
+  sctx.fillStyle = viewColor;
+  sctx.font = '500 11px Nunito, sans-serif'; sctx.textAlign = 'center';
+  sctx.fillText(viewName, cx, 20);
+  sctx.fillStyle = 'rgba(158,130,114,0.5)';
+  sctx.font = '9px Nunito, sans-serif';
+  sctx.fillText('US image (what you see on screen)', cx, H - 12);
+  sctx.textAlign = 'left';
+}
+
+// ===== NEEDLE CANVAS =====
+function drawNeedle() {
+  const W = nc.width, H = nc.height;
+  nctx.clearRect(0, 0, W, H);
+  nctx.fillStyle = '#0A0806';
+  nctx.fillRect(0, 0, W, H);
+
+  const vesselDepth = np.depth;
+  const maxDepth = 5;
+  const pxPerCm = (H - 40) / maxDepth;
+  const vesselY = 30 + vesselDepth * pxPerCm;
+  const vesselRpx = 28;
+
+  // Tissue gradient
+  nctx.fillStyle = 'rgba(34,26,18,0.5)';
+  nctx.fillRect(40, 30, W - 40, H - 40);
+
+  // Depth grid
+  for (let d = 0; d <= maxDepth; d++) {
+    const y = 30 + d * pxPerCm;
+    nctx.strokeStyle = 'rgba(255,255,255,0.04)';
+    nctx.lineWidth = 1;
+    nctx.setLineDash([2, 8]);
+    nctx.beginPath(); nctx.moveTo(40, y); nctx.lineTo(W, y); nctx.stroke();
+    nctx.setLineDash([]);
+    nctx.fillStyle = 'rgba(158,130,114,0.4)';
+    nctx.font = '9px JetBrains Mono, monospace'; nctx.textAlign = 'right';
+    nctx.fillText(d + 'cm', 36, y + 3);
+  }
+
+  if (np.inPlane === 1) {
+    // IN-PLANE (LAX) — show full vessel as parallel walls + full needle
+    const wallSpread = W * 0.6;
+    const wallStart = (W - wallSpread) / 2;
+
+    // Vessel walls
+    const wallGrad = nctx.createLinearGradient(0, vesselY - vesselRpx - 8, 0, vesselY - vesselRpx + 8);
+    wallGrad.addColorStop(0,'rgba(200,215,235,0)');
+    wallGrad.addColorStop(0.5,'rgba(200,215,235,0.5)');
+    wallGrad.addColorStop(1,'rgba(200,215,235,0)');
+    nctx.fillStyle = wallGrad;
+    nctx.fillRect(wallStart, vesselY - vesselRpx - 8, wallSpread, 16);
+    nctx.fillStyle = '#030608';
+    nctx.fillRect(wallStart, vesselY - vesselRpx, wallSpread, vesselRpx * 2);
+    const wallGrad2 = nctx.createLinearGradient(0, vesselY + vesselRpx - 8, 0, vesselY + vesselRpx + 8);
+    wallGrad2.addColorStop(0,'rgba(200,215,235,0)');
+    wallGrad2.addColorStop(0.5,'rgba(200,215,235,0.5)');
+    wallGrad2.addColorStop(1,'rgba(200,215,235,0)');
+    nctx.fillStyle = wallGrad2;
+    nctx.fillRect(wallStart, vesselY + vesselRpx - 8, wallSpread, 16);
+
+    // Needle (full line visible)
+    const angRad = np.angle * Math.PI / 180;
+    const nStartX = wallStart * 0.4;
+    const nStartY = 30;
+    const nLen = (vesselDepth - 0.1) * pxPerCm;
+    const nEndX = nStartX + Math.cos(angRad) * nLen;
+    const nEndY = nStartY + Math.sin(angRad) * nLen;
+
+    nctx.beginPath();
+    nctx.moveTo(nStartX, nStartY);
+    nctx.lineTo(nEndX, nEndY);
+    nctx.strokeStyle = 'rgba(220,220,200,0.85)';
+    nctx.lineWidth = 2;
+    nctx.stroke();
+
+    // Tip highlight
+    const tipInVessel = vesselDepth <= np.depth && np.depth <= vesselDepth + 0.5;
+    nctx.beginPath();
+    nctx.arc(nEndX, nEndY, 5, 0, Math.PI * 2);
+    nctx.fillStyle = tipInVessel ? 'rgba(126,156,132,0.9)' : 'rgba(188,114,80,0.9)';
+    nctx.fill();
+
+    nctx.fillStyle = 'rgba(158,130,114,0.8)';
+    nctx.font = '10px Nunito, sans-serif'; nctx.textAlign = 'center';
+    nctx.fillText('IN-PLANE — full needle visible', W/2, H - 10);
+
+  } else {
+    // OUT-OF-PLANE (SAX) — show vessel as circle, needle as just a dot
+    nctx.beginPath();
+    nctx.ellipse(W/2, vesselY, vesselRpx, vesselRpx * 0.9, 0, 0, Math.PI * 2);
+    nctx.fillStyle = '#030608'; nctx.fill();
+    const wallG = nctx.createRadialGradient(W/2, vesselY, vesselRpx * 0.9, W/2, vesselY, vesselRpx * 1.15);
+    wallG.addColorStop(0, 'rgba(200,215,235,0)');
+    wallG.addColorStop(0.5, 'rgba(200,215,235,0.45)');
+    wallG.addColorStop(1, 'rgba(200,215,235,0)');
+    nctx.beginPath();
+    nctx.ellipse(W/2, vesselY, vesselRpx * 1.05, vesselRpx * 0.95, 0, 0, Math.PI * 2);
+    nctx.strokeStyle = wallG; nctx.lineWidth = 8; nctx.stroke();
+
+    // Needle appears as just a bright dot
+    const dotX = W / 2 - 25;
+    const dotY = vesselY - 5;
+    const nearVessel = Math.abs(vesselDepth - np.depth) < 0.4;
+    nctx.beginPath();
+    nctx.arc(dotX, dotY, 5, 0, Math.PI * 2);
+    nctx.fillStyle = nearVessel ? 'rgba(126,156,132,0.9)' : 'rgba(220,220,200,0.9)';
+    nctx.fill();
+
+    nctx.fillStyle = 'rgba(201,168,76,0.8)';
+    nctx.font = '10px Nunito, sans-serif'; nctx.textAlign = 'center';
+    nctx.fillText('OUT-OF-PLANE — only needle tip dot visible ⚠', W/2, H - 10);
+  }
+  nctx.textAlign = 'left';
+}
+
+// ===== VIEW CARDS =====
+function drawViewCard(canvasId, type) {
+  const cv = document.getElementById(canvasId);
+  if (!cv) return;
+  cv.width = cv.offsetWidth; cv.height = 160;
+  const ctx = cv.getContext('2d');
+  const W = cv.width, H = cv.height;
+  ctx.fillStyle = '#0A0806'; ctx.fillRect(0, 0, W, H);
+  ctx.fillStyle = 'rgba(34,26,18,0.5)'; ctx.fillRect(0, 0, W, H);
+  const cx = W/2, cy = H/2;
+
+  if (type === 'short') {
+    ctx.beginPath(); ctx.ellipse(cx, cy, 32, 32, 0, 0, Math.PI*2);
+    ctx.fillStyle = '#030608'; ctx.fill();
+    const g = ctx.createRadialGradient(cx, cy, 28, cx, cy, 40);
+    g.addColorStop(0,'rgba(200,215,235,0)'); g.addColorStop(0.5,'rgba(200,215,235,0.45)'); g.addColorStop(1,'rgba(200,215,235,0)');
+    ctx.beginPath(); ctx.ellipse(cx, cy, 38, 38, 0, 0, Math.PI*2);
+    ctx.strokeStyle = g; ctx.lineWidth = 10; ctx.stroke();
+  } else if (type === 'long') {
+    const g1 = ctx.createLinearGradient(0, cy - 38, 0, cy - 28);
+    g1.addColorStop(0,'rgba(200,215,235,0)'); g1.addColorStop(0.5,'rgba(200,215,235,0.5)'); g1.addColorStop(1,'rgba(200,215,235,0)');
+    ctx.fillStyle = g1; ctx.fillRect(W*0.1, cy - 38, W*0.8, 16);
+    ctx.fillStyle = '#030608'; ctx.fillRect(W*0.1, cy - 28, W*0.8, 56);
+    const g2 = ctx.createLinearGradient(0, cy + 22, 0, cy + 38);
+    g2.addColorStop(0,'rgba(200,215,235,0)'); g2.addColorStop(0.5,'rgba(200,215,235,0.5)'); g2.addColorStop(1,'rgba(200,215,235,0)');
+    ctx.fillStyle = g2; ctx.fillRect(W*0.1, cy + 28, W*0.8, 16);
+  } else {
+    ctx.beginPath(); ctx.ellipse(cx, cy, 22, 36, Math.PI * 0.18, 0, Math.PI*2);
+    ctx.fillStyle = '#030608'; ctx.fill();
+    const g = ctx.createRadialGradient(cx, cy, 28, cx, cy, 42);
+    g.addColorStop(0,'rgba(200,215,235,0)'); g.addColorStop(0.7,'rgba(200,215,235,0.3)'); g.addColorStop(1,'rgba(200,215,235,0)');
+    ctx.beginPath(); ctx.ellipse(cx, cy, 27, 42, Math.PI * 0.18, 0, Math.PI*2);
+    ctx.strokeStyle = g; ctx.lineWidth = 8; ctx.stroke();
+  }
+}
+
+function drawViewCards() {
+  drawViewCard('saxCanvas', 'short');
+  drawViewCard('laxCanvas', 'long');
+  drawViewCard('oblCanvas', 'oblique');
+}
+
+// ===== MAIN LOOP =====
+function loop() {
+  rAnimT += 0.012;
+  drawRotator();
+  drawSlice();
+  drawNeedle();
+  requestAnimationFrame(loop);
+}
+
+updateNeedle();
+drawViewCards();
+loop();
+</script>
+</body>
+</html>

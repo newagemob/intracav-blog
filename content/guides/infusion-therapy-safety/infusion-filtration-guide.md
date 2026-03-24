@@ -4,6 +4,7 @@ date = 2026-02-25T00:00:00-05:00
 lastmod = 2026-02-25T00:00:00-05:00
 content_type = "guide"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["Infusion Therapy Safety", "Filtration", "Clinical Practice"]
 tags = ["infusion filtration", "0.2 micron filter", "1.2 micron filter", "IV filter requirements", "in-line filter", "air eliminating filter", "TPN filter", "IV filtration CVAA"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

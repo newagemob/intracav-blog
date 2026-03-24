@@ -4,6 +4,7 @@ date = 2026-02-25T00:00:00-05:00
 lastmod = 2026-02-25T00:00:00-05:00
 content_type = "guide"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["Credentialing", "Certification", "Professional Development", "Vascular Access Teams"]
 tags = ["VA-BC certification", "CRNI certification", "PICC credentialing", "vascular access competency", "ultrasound credentialing", "institutional privileging", "AVAR", "vascular access training"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

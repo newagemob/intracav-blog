@@ -4,6 +4,7 @@ date = 2026-02-25T00:00:00-05:00
 lastmod = 2026-02-25T00:00:00-05:00
 content_type = "guide"
 audience = "clinician"
+departments = ["vascular-access", "infection-prevention"]
 category = ["CLABSI Prevention", "Infection Control", "Epidemiology"]
 tags = ["CLABSI definition", "CLABSI epidemiology", "NHSN CLABSI", "CLABSI vs CRBSI", "central line infection surveillance", "CLABSI incidence", "CLABSI mortality", "CLABSI SIR"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

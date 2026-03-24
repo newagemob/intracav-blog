@@ -4,6 +4,7 @@ date = 2024-01-08T00:00:00-05:00
 lastmod = 2025-08-14T00:00:00-05:00
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["Complication Management", "Device Maintenance", "Patient Safety"]
 tags = ["occlusion", "catheter patency", "thrombolysis", "alteplase", "flushing", "CVAD", "catheter clearance"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

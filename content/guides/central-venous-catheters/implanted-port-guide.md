@@ -4,6 +4,7 @@ date = 2026-02-25T00:00:00-05:00
 lastmod = 2026-02-25T00:00:00-05:00
 content_type = "guide"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["Central Venous Catheters", "Implanted Port", "Long-Term Access"]
 tags = ["implanted port", "port access", "Huber needle", "port flush", "port care", "chemotherapy port", "vascular access port", "power port", "port deaccessing"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

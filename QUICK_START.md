@@ -48,7 +48,7 @@ Share the **password** (not the hash) with your clinical team via a secure chann
 
 ### Accessing the Admin Dashboard
 
-1. Navigate to: `https://blog.intracav.ai/admin/`
+1. Navigate to: `https://clinical-database.com/admin/`
 2. Enter the password provided by your administrator
 3. Click "Access Dashboard"
 

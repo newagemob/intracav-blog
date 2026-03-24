@@ -4,6 +4,7 @@ date = 2024-08-20T00:00:00-05:00
 lastmod = 2026-01-15T00:00:00-05:00
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["Specialized Devices", "Infusion Therapy", "Patient Management"]
 tags = ["subcutaneous infusion", "hypodermoclysis", "subcutaneous access", "CSII", "insulin pump", "hyaluronidase", "subcutaneous immunoglobulin", "subcutaneous hydration", "on-body delivery", "vessel health preservation"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

@@ -4,6 +4,7 @@ date = 2026-02-23T00:00:00-05:00
 lastmod = 2026-02-23T00:00:00-05:00
 content_type = "patient-education"
 audience = "patient"
+departments = ["vascular-access"]
 category = ["Lifestyle", "Home Care", "Patient Education"]
 tags = ["travel with PICC", "travel with port", "flying with catheter", "TSA medical device", "traveling on IV therapy", "home infusion travel", "PICC travel tips"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

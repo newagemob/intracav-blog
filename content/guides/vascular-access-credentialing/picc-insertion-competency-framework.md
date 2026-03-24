@@ -4,6 +4,7 @@ date = 2026-02-25T00:00:00-05:00
 lastmod = 2026-02-25T00:00:00-05:00
 content_type = "guide"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["Credentialing", "PICC Line", "Competency"]
 tags = ["PICC insertion competency", "PICC training program", "PICC proctoring", "PICC credentialing requirements", "PICC insertion training", "vascular access training", "PICC competency checklist", "PICC independent practice"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

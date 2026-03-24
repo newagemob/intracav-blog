@@ -4,6 +4,7 @@ date = 2026-02-23T00:00:00-05:00
 lastmod = 2026-02-23T00:00:00-05:00
 content_type = "patient-education"
 audience = "patient"
+departments = ["vascular-access", "neonatal"]
 category = ["Neonatal", "Pediatric", "Patient Education", "Caregiver"]
 tags = ["NICU vascular access", "umbilical catheter baby", "neonatal PICC", "NICU IV lines", "premature baby IV", "umbilical line newborn", "NICU parent guide", "neonatal central line"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

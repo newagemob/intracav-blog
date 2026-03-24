@@ -4,6 +4,7 @@ date = 2026-02-25T00:00:00-05:00
 lastmod = 2026-02-25T00:00:00-05:00
 content_type = "guide"
 audience = "clinician"
+departments = ["vascular-access", "nephrology"]
 category = ["Special Populations", "Hemodialysis", "Vascular Access"]
 tags = ["hemodialysis vascular access", "arteriovenous fistula", "AVF", "AV graft", "tunneled dialysis catheter", "TDC", "fistula first", "dialysis access maturation", "buttonhole cannulation", "rope ladder cannulation"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

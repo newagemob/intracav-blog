@@ -4,6 +4,7 @@ date = 2026-02-25T00:00:00-05:00
 lastmod = 2026-02-25T00:00:00-05:00
 content_type = "guide"
 audience = "clinician"
+departments = ["vascular-access", "nephrology"]
 category = ["Central Venous Catheters", "Hemodialysis", "Renal Access"]
 tags = ["hemodialysis vascular access", "AV fistula", "AV graft", "tunneled dialysis catheter", "hemodialysis catheter care", "dialysis access", "ESRD vascular access", "CKD access planning"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

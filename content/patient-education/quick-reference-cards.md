@@ -4,6 +4,7 @@ date = 2026-02-23T00:00:00-05:00
 lastmod = 2026-02-23T00:00:00-05:00
 content_type = "patient-education"
 audience = "patient"
+departments = ["vascular-access"]
 category = ["Quick Reference", "Safety", "Patient Education"]
 tags = ["quick reference", "PICC care summary", "port care summary", "when to call ER", "flush reminder", "catheter care cheat sheet", "patient safety quick guide"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

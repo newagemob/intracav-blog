@@ -4,6 +4,7 @@ date = 2024-05-20T00:00:00-05:00
 lastmod = 2025-10-14T00:00:00-05:00
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access", "infection-prevention"]
 category = ["Infusion Therapy", "Medication Safety", "Infection Prevention"]
 tags = ["administration set", "IV tubing", "tubing replacement", "parenteral nutrition tubing", "blood administration set", "propofol infusion", "sorption", "leaching", "continuous infusion", "intermittent infusion", "labeling", "ANTT", "anti-free-flow"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

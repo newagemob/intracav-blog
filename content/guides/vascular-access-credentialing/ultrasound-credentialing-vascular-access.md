@@ -4,6 +4,7 @@ date = 2026-02-25T00:00:00-05:00
 lastmod = 2026-02-25T00:00:00-05:00
 content_type = "guide"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["Credentialing", "Ultrasound-Guided Access", "Program Leadership"]
 tags = ["ultrasound credentialing vascular access program", "US guided vascular access credentialing", "bedside ultrasound nursing credentialing", "ultrasound scope of practice nurses", "ultrasound privileges vascular access", "ultrasound training program vascular access", "US PIV credentialing program", "PICC ultrasound credentialing implementation"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

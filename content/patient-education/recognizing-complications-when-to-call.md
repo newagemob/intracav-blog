@@ -4,6 +4,7 @@ date = 2026-02-23T00:00:00-05:00
 lastmod = 2026-02-23T00:00:00-05:00
 content_type = "patient-education"
 audience = "patient"
+departments = ["vascular-access"]
 category = ["Safety", "Complications", "Patient Education"]
 tags = ["complications", "phlebitis", "infiltration", "occlusion", "infection", "DVT", "air embolism", "patient safety", "when to call nurse"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

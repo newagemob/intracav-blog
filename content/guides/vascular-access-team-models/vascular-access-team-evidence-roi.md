@@ -4,6 +4,7 @@ date = 2026-02-25T00:00:00-05:00
 lastmod = 2026-02-25T00:00:00-05:00
 content_type = "guide"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["VAT Models", "Vascular Access Teams", "Evidence"]
 tags = ["vascular access team evidence", "VAT ROI", "IV team outcomes", "CLABSI reduction VAT", "vascular access specialist", "infusion therapy team", "IV team cost effectiveness", "PICC team outcomes"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

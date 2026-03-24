@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Vascular Lab — Clinical Learning Series</title>
+<script src="https://unpkg.com/htmx.org@1.9.10"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Nunito:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:         #EDE4D5;
+    --surface:    #F6F0E8;
+    --surface-hi: #FDFAF5;
+    --border:     #D4C7B5;
+    --border-lt:  #E2D8CC;
+    --text:       #28180C;
+    --text-2:     #685040;
+    --text-3:     #9E8272;
+    --accent:     #BC7250;
+    --accent-lt:  #E8C4A8;
+    --sage:       #7E9C84;
+    --shadow-sm:  0 1px 8px rgba(40,24,12,0.06), 0 0 0 1px rgba(40,24,12,0.04);
+    --shadow-md:  0 4px 28px rgba(40,24,12,0.10), 0 0 0 1px rgba(40,24,12,0.06);
+    --shadow-lg:  0 12px 48px rgba(40,24,12,0.14), 0 0 0 1px rgba(40,24,12,0.07);
+    --r:          16px;
+    --r-sm:       10px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Grain */
+  body::after {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+    opacity: 0.028; pointer-events: none; z-index: 9999;
+  }
+
+  /* Nav */
+  nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.75rem 3.5rem;
+    border-bottom: 1px solid var(--border-lt);
+    background: rgba(237,228,213,0.8);
+    backdrop-filter: blur(12px);
+    position: sticky; top: 0; z-index: 100;
+  }
+
+  .nav-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem; font-weight: 500;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--accent); text-decoration: none;
+  }
+
+  .nav-tag {
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--text-3);
+  }
+
+  /* Hero */
+  .hero {
+    padding: 6rem 3.5rem 4rem;
+    max-width: 900px;
+  }
+
+  .hero-label {
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--accent);
+    margin-bottom: 1.25rem;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+
+  .hero-label::after {
+    content: ''; display: block;
+    width: 2rem; height: 1px; background: var(--accent); opacity: 0.4;
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 400; line-height: 1.05;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-title em {
+    font-style: italic; color: var(--text-2);
+  }
+
+  .hero-desc {
+    font-size: 1.05rem; font-weight: 300; line-height: 1.75;
+    color: var(--text-2); max-width: 560px;
+  }
+
+  /* Modules grid */
+  .modules {
+    padding: 3rem 3.5rem 6rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+  }
+
+  .card {
+    background: var(--surface);
+    border-radius: var(--r);
+    box-shadow: var(--shadow-sm);
+    padding: 2.25rem;
+    text-decoration: none; color: inherit;
+    display: flex; flex-direction: column;
+    transition: transform 280ms cubic-bezier(0.25,0,0,1),
+                box-shadow 280ms cubic-bezier(0.25,0,0,1),
+                background 280ms ease;
+    cursor: pointer;
+    border: 1px solid var(--border-lt);
+    position: relative; overflow: hidden;
+  }
+
+  .card::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(188,114,80,0.03) 0%, transparent 60%);
+    transition: opacity 300ms;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    background: var(--surface-hi);
+  }
+
+  .card:hover::before { opacity: 0; }
+
+  .card-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem; font-weight: 500;
+    color: var(--accent); letter-spacing: 0.08em;
+    margin-bottom: 1.5rem;
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+
+  .card-num-circle {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--accent-lt); color: var(--accent);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.65rem; font-weight: 600;
+  }
+
+  .card-icon {
+    width: 48px; height: 48px; margin-bottom: 1.25rem;
+    color: var(--accent); opacity: 0.7;
+  }
+
+  .card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem; font-weight: 500; line-height: 1.2;
+    margin-bottom: 0.75rem; color: var(--text);
+  }
+
+  .card-desc {
+    font-size: 0.88rem; font-weight: 300; line-height: 1.65;
+    color: var(--text-2); margin-bottom: 1.75rem; flex: 1;
+  }
+
+  .card-tags {
+    display: flex; flex-wrap: wrap; gap: 0.4rem;
+  }
+
+  .tag {
+    font-size: 0.65rem; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 0.25rem 0.6rem; border-radius: 100px;
+    background: var(--bg); color: var(--text-3);
+    border: 1px solid var(--border);
+  }
+
+  .card-arrow {
+    margin-top: 1.5rem;
+    display: flex; align-items: center; gap: 0.4rem;
+    font-size: 0.78rem; font-weight: 600; color: var(--accent);
+    letter-spacing: 0.04em;
+    transition: gap 250ms ease;
+  }
+
+  .card:hover .card-arrow { gap: 0.7rem; }
+
+  /* Divider */
+  .divider {
+    padding: 0 3.5rem;
+    display: flex; align-items: center; gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .divider-line {
+    flex: 1; height: 1px; background: var(--border);
+  }
+
+  .divider-text {
+    font-size: 0.7rem; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--text-3);
+  }
+
+  /* Equation strip */
+  .equation-strip {
+    margin: 0 3.5rem 2rem;
+    background: var(--surface);
+    border: 1px solid var(--border-lt);
+    border-radius: var(--r);
+    padding: 1.5rem 2rem;
+    display: flex; gap: 3rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .equation-strip::-webkit-scrollbar { display: none; }
+
+  .eq-item {
+    flex-shrink: 0; text-align: center;
+  }
+
+  .eq-formula {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; color: var(--text); margin-bottom: 0.35rem;
+  }
+
+  .eq-label {
+    font-size: 0.65rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--text-3);
+  }
+
+  /* Mental Models */
+  .models-section { padding: 0 3.5rem 3rem; }
+  .models-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-3); margin-bottom: 1.25rem; }
+  .models-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+  .model-card { background: var(--surface); border: 1px solid var(--border-lt); border-radius: var(--r); padding: 1.75rem 2rem; box-shadow: var(--shadow-sm); }
+  .model-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+  .model-icon { font-size: 1.8rem; flex-shrink: 0; }
+  .model-name { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 400; }
+  .model-map { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.75rem; }
+  .model-node { font-size: 0.72rem; font-weight: 600; padding: 0.3rem 0.7rem; border-radius: 100px; background: var(--bg); border: 1px solid var(--border); color: var(--text-2); }
+  .model-arrow { color: var(--accent); font-size: 0.85rem; }
+  .model-desc { font-size: 0.8rem; line-height: 1.65; color: var(--text-2); font-weight: 300; }
+
+  /* Discoverers */
+  .discoverers-section { padding: 0 3.5rem 3rem; }
+  .timeline { position: relative; padding-left: 1.5rem; }
+  .timeline::before { content: ''; position: absolute; left: 0; top: 8px; bottom: 8px; width: 1.5px; background: linear-gradient(to bottom, var(--accent), var(--border-lt)); border-radius: 2px; }
+  .timeline-item { position: relative; margin-bottom: 1.5rem; padding-left: 1.75rem; display: grid; grid-template-columns: 100px 1fr; gap: 1.25rem; align-items: start; }
+  .timeline-item::before { content: ''; position: absolute; left: -5px; top: 8px; width: 11px; height: 11px; border-radius: 50%; background: var(--bg); border: 2px solid var(--accent); }
+  .timeline-year { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--accent); padding-top: 0.2rem; font-weight: 500; }
+  .timeline-content {}
+  .timeline-name { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 500; color: var(--text); margin-bottom: 0.2rem; }
+  .timeline-text { font-size: 0.78rem; line-height: 1.6; color: var(--text-2); font-weight: 300; }
+  .timeline-tag { display: inline-block; font-size: 0.6rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.15rem 0.55rem; border-radius: 100px; margin-left: 0.5rem; vertical-align: middle; }
+  .tag-original { background: #C7E0CA; color: #2A4E2D; }
+  .tag-adapted { background: var(--accent-lt); color: #5A2E10; }
+  .tag-modern  { background: #EFE0A0; color: #5A4010; }
+
+  /* Big Insight */
+  .insight-section { margin: 0 3.5rem 3rem; background: var(--text); border-radius: var(--r); padding: 2.5rem 3rem; color: var(--bg); overflow: hidden; position: relative; }
+  .insight-section::before { content: ''; position: absolute; top: -60px; right: -60px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(188,114,80,0.18) 0%, transparent 70%); pointer-events: none; }
+  .insight-kicker { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+  .insight-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 400; line-height: 1.25; color: #F6F0E8; margin-bottom: 1.25rem; }
+  .insight-title em { font-style: italic; color: var(--accent-lt); }
+  .insight-desc { font-size: 0.85rem; line-height: 1.75; color: #C0B0A0; font-weight: 300; max-width: 580px; margin-bottom: 2rem; }
+  .insight-pillars { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+  .pillar { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--r-sm); padding: 1rem 1.25rem; }
+  .pillar-formula { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--accent-lt); margin-bottom: 0.4rem; }
+  .pillar-name { font-family: 'Cormorant Garamond', serif; font-size: 0.95rem; color: #F0E8E0; margin-bottom: 0.3rem; }
+  .pillar-desc { font-size: 0.7rem; color: #8A7A6A; line-height: 1.5; }
+
+  /* Intracav callout (used across modules) */
+  .intracav-callout {
+    border-left: 3px solid var(--accent); background: linear-gradient(135deg, rgba(188,114,80,0.06) 0%, transparent 70%);
+    border-radius: 0 var(--r-sm) var(--r-sm) 0; padding: 1.25rem 1.5rem; margin-top: 1.5rem;
+  }
+  .ic-kicker { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.4rem; }
+  .ic-title { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; margin-bottom: 0.5rem; }
+  .ic-text { font-size: 0.78rem; line-height: 1.65; color: var(--text-2); font-weight: 300; }
+
+  /* Footer */
+  footer {
+    padding: 2rem 3.5rem;
+    border-top: 1px solid var(--border-lt);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+
+  .footer-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.9rem; color: var(--text-3);
+  }
+
+  .footer-brand strong { color: var(--accent); font-weight: 500; }
+
+  .footer-note {
+    font-size: 0.7rem; color: var(--text-3);
+    font-weight: 300; letter-spacing: 0.04em;
+  }
+
+  /* Animations */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero { animation: fadeUp 600ms ease-out both; }
+  .card:nth-child(1) { animation: fadeUp 500ms 100ms ease-out both; }
+  .card:nth-child(2) { animation: fadeUp 500ms 180ms ease-out both; }
+  .card:nth-child(3) { animation: fadeUp 500ms 260ms ease-out both; }
+  .card:nth-child(4) { animation: fadeUp 500ms 340ms ease-out both; }
+  .card:nth-child(5) { animation: fadeUp 500ms 420ms ease-out both; }
+
+  /* Ambient blob */
+  .ambient {
+    position: fixed; top: -200px; right: -100px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(188,114,80,0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none; z-index: 0;
+  }
+
+  @media (max-width: 700px) {
+    nav, .hero, .modules, .divider, .equation-strip, footer {
+      padding-left: 1.5rem; padding-right: 1.5rem;
+    }
+    .hero { padding-top: 3.5rem; }
+    .modules { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="ambient"></div>
+
+<nav>
+  <a class="nav-brand" href="index.html">The Vascular Lab</a>
+  <span class="nav-tag"><a href="/education/" style="color:inherit;text-decoration:none;border-bottom:1px solid var(--border-lt);">All Series</a> · Clinical Learning Series · Vol. I</span>
+</nav>
+
+<section class="hero">
+  <div class="hero-label">Vascular Access Education</div>
+  <h1 class="hero-title">
+    The physics<br>
+    <em>beneath the needle.</em>
+  </h1>
+  <p class="hero-desc">
+    Five interactive modules that take clinicians deeper into the mathematics, fluid mechanics,
+    and probability that govern every vascular access decision — built for the bedside mind.
+  </p>
+  <a class="hero-series-link" href="/education/ultrasound-lab/" style="font-size:0.75rem;color:var(--text-3);text-decoration:none;display:inline-flex;align-items:center;gap:0.4rem;transition:color 200ms;">Also see: The Ultrasound Lab, Vol. II →</a>
+</section>
+
+<div class="equation-strip">
+  <div class="eq-item">
+    <div class="eq-formula">Q = πr⁴ΔP / 8ηL</div>
+    <div class="eq-label">Hagen-Poiseuille</div>
+  </div>
+  <div class="eq-item">
+    <div class="eq-formula">Re = ρvD / μ</div>
+    <div class="eq-label">Reynolds Number</div>
+  </div>
+  <div class="eq-item">
+    <div class="eq-formula">R = 8ηL / πr⁴</div>
+    <div class="eq-label">Vascular Resistance</div>
+  </div>
+  <div class="eq-item">
+    <div class="eq-formula">τ_w = 4ηQ / πr³</div>
+    <div class="eq-label">Wall Shear Stress</div>
+  </div>
+  <div class="eq-item">
+    <div class="eq-formula">P(A|B) = P(B|A)·P(A) / P(B)</div>
+    <div class="eq-label">Bayes' Theorem</div>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="divider-line"></div>
+  <div class="divider-text">Five Modules</div>
+  <div class="divider-line"></div>
+</div>
+
+<section class="modules">
+
+  <a class="card" href="01-flow-dynamics.html">
+    <div class="card-num">
+      <div class="card-num-circle">01</div>
+      Flow Dynamics
+    </div>
+    <svg class="card-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+      <circle cx="24" cy="24" r="18"/>
+      <ellipse cx="24" cy="24" rx="6" ry="18"/>
+      <line x1="6" y1="24" x2="42" y2="24"/>
+      <path d="M12 16 Q24 20 36 16" stroke-dasharray="2,3"/>
+      <path d="M12 32 Q24 28 36 32" stroke-dasharray="2,3"/>
+    </svg>
+    <div class="card-title">Hagen-Poiseuille<br>Flow Dynamics</div>
+    <div class="card-desc">
+      Explore why a 14G catheter flows over 16× faster than a 22G. Interact with the
+      Hagen-Poiseuille equation in real time — radius, pressure, viscosity, length —
+      and watch the velocity profile respond.
+    </div>
+    <div class="card-tags">
+      <span class="tag">Laminar Flow</span>
+      <span class="tag">Catheter Gauge</span>
+      <span class="tag">Pressure</span>
+      <span class="tag">Viscosity</span>
+    </div>
+    <div class="card-arrow">Open module <span>→</span></div>
+  </a>
+
+  <a class="card" href="02-resistance-networks.html">
+    <div class="card-num">
+      <div class="card-num-circle">02</div>
+      Resistance Networks
+    </div>
+    <svg class="card-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+      <line x1="4" y1="24" x2="12" y2="24"/>
+      <rect x="12" y="18" width="10" height="12" rx="2"/>
+      <line x1="22" y1="24" x2="26" y2="24"/>
+      <rect x="26" y="18" width="10" height="12" rx="2"/>
+      <line x1="36" y1="24" x2="44" y2="24"/>
+      <path d="M16 18 L16 10 L36 10 L36 18" stroke-dasharray="2,2"/>
+      <path d="M16 30 L16 38 L36 38 L36 30" stroke-dasharray="2,2"/>
+    </svg>
+    <div class="card-title">Resistance<br>Networks in IV Lines</div>
+    <div class="card-desc">
+      Every extension set, inline filter, and needleless connector adds resistance.
+      Build virtual IV configurations in series and parallel, and discover how
+      total resistance determines your flow.
+    </div>
+    <div class="card-tags">
+      <span class="tag">Series Resistance</span>
+      <span class="tag">Parallel Lines</span>
+      <span class="tag">IV Tubing</span>
+      <span class="tag">Ohm's Law</span>
+    </div>
+    <div class="card-arrow">Open module <span>→</span></div>
+  </a>
+
+  <a class="card" href="03-turbulence.html">
+    <div class="card-num">
+      <div class="card-num-circle">03</div>
+      Turbulence
+    </div>
+    <svg class="card-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M4 20 Q10 14 16 20 Q22 26 28 20 Q34 14 40 20"/>
+      <path d="M4 28 Q10 22 16 28 Q22 34 28 28 Q34 22 40 28"/>
+      <circle cx="44" cy="24" r="3"/>
+      <circle cx="4" cy="24" r="2" fill="currentColor" opacity="0.3"/>
+    </svg>
+    <div class="card-title">Turbulence &<br>Reynolds Number</div>
+    <div class="card-desc">
+      Watch smooth laminar flow become chaotic turbulence as the Reynolds number rises.
+      Understand the critical threshold and why high-viscosity contrast agents and
+      rapid boluses change everything.
+    </div>
+    <div class="card-tags">
+      <span class="tag">Reynolds Number</span>
+      <span class="tag">Laminar</span>
+      <span class="tag">Turbulent</span>
+      <span class="tag">Contrast Media</span>
+    </div>
+    <div class="card-arrow">Open module <span>→</span></div>
+  </a>
+
+  <a class="card" href="04-shear-stress.html">
+    <div class="card-num">
+      <div class="card-num-circle">04</div>
+      Shear Stress
+    </div>
+    <svg class="card-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M8 32 Q24 28 40 32"/>
+      <path d="M8 16 Q24 20 40 16"/>
+      <line x1="14" y1="16" x2="14" y2="32"/>
+      <line x1="24" y1="16" x2="24" y2="32"/>
+      <line x1="34" y1="16" x2="34" y2="32"/>
+      <path d="M10 14 L6 14 L4 10" stroke-linecap="round"/>
+      <path d="M38 34 L42 34 L44 38" stroke-linecap="round"/>
+    </svg>
+    <div class="card-title">Shear Stress &<br>Vessel Injury</div>
+    <div class="card-desc">
+      The endothelium feels every bolus. Visualize wall shear stress in real time,
+      understand the injury thresholds that trigger phlebitis and thrombosis,
+      and see how injection rate determines damage.
+    </div>
+    <div class="card-tags">
+      <span class="tag">Endothelium</span>
+      <span class="tag">Phlebitis</span>
+      <span class="tag">Thrombosis</span>
+      <span class="tag">Injection Rate</span>
+    </div>
+    <div class="card-arrow">Open module <span>→</span></div>
+  </a>
+
+  <a class="card" href="05-probability.html">
+    <div class="card-num">
+      <div class="card-num-circle">05</div>
+      Probability & Decision
+    </div>
+    <svg class="card-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+      <circle cx="8" cy="24" r="3"/>
+      <line x1="11" y1="24" x2="18" y2="14"/>
+      <line x1="11" y1="24" x2="18" y2="34"/>
+      <circle cx="22" cy="14" r="3"/>
+      <circle cx="22" cy="34" r="3"/>
+      <line x1="25" y1="14" x2="34" y2="9"/>
+      <line x1="25" y1="14" x2="34" y2="19"/>
+      <line x1="25" y1="34" x2="34" y2="29"/>
+      <line x1="25" y1="34" x2="34" y2="39"/>
+      <circle cx="38" cy="9" r="2.5"/>
+      <circle cx="38" cy="19" r="2.5"/>
+      <circle cx="38" cy="29" r="2.5"/>
+      <circle cx="38" cy="39" r="2.5"/>
+    </svg>
+    <div class="card-title">Probability &<br>Decision Theory</div>
+    <div class="card-desc">
+      First-attempt success, Bayesian updating, expected utility — the mathematics
+      that should inform every access strategy. Build decision trees, update
+      probabilities in real time, and find the optimal path.
+    </div>
+    <div class="card-tags">
+      <span class="tag">Bayesian</span>
+      <span class="tag">Decision Trees</span>
+      <span class="tag">First Attempt</span>
+      <span class="tag">Risk</span>
+    </div>
+    <div class="card-arrow">Open module <span>→</span></div>
+  </a>
+
+</section>
+
+<!-- ===== MENTAL MODELS ===== -->
+<div class="models-section">
+  <div class="divider" style="margin:0 0 1.5rem;padding:0">
+    <div class="divider-line"></div>
+    <div class="divider-text">Mental Models</div>
+    <div class="divider-line"></div>
+  </div>
+  <div class="models-label">Two ways to hold the physics in your head</div>
+  <div class="models-grid">
+    <div class="model-card">
+      <div class="model-header">
+        <div class="model-icon">🔧</div>
+        <div class="model-name">The Pipe + Pump Model</div>
+      </div>
+      <div class="model-map">
+        <span class="model-node">Vessel = Pipe</span>
+        <span class="model-arrow">→</span>
+        <span class="model-node">Heart / Pressure Bag = Pump</span>
+        <span class="model-arrow">→</span>
+        <span class="model-node">Catheter = Restriction</span>
+      </div>
+      <p class="model-desc">Think of your IV catheter as the narrowest pipe in the circuit. The pressure bag drives flow the way a pump drives water — and Poiseuille tells you exactly how much that restriction costs you. Halve the catheter radius and you lose 94% of your flow.</p>
+    </div>
+    <div class="model-card">
+      <div class="model-header">
+        <div class="model-icon">🚗</div>
+        <div class="model-name">The Traffic Flow Model</div>
+      </div>
+      <div class="model-map">
+        <span class="model-node">Blood = Cars</span>
+        <span class="model-arrow">→</span>
+        <span class="model-node">Narrow Catheter = Bottleneck</span>
+        <span class="model-arrow">→</span>
+        <span class="model-node">Turbulence = Traffic Jam</span>
+      </div>
+      <p class="model-desc">Laminar flow is a highway — orderly lanes, maximum throughput. When Reynolds number exceeds ~2300, it's rush-hour gridlock. Energy that should move fluid forward now spins it sideways, generating heat and wall stress. The jam is the injury.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== DISCOVERERS TIMELINE ===== -->
+<div class="discoverers-section">
+  <div class="divider" style="margin:0 0 1.5rem;padding:0">
+    <div class="divider-line"></div>
+    <div class="divider-text">The Discoverers</div>
+    <div class="divider-line"></div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem">
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-year">1628</div>
+        <div class="timeline-content">
+          <div class="timeline-name">William Harvey <span class="timeline-tag tag-original">Origin</span></div>
+          <p class="timeline-text">First described systemic blood circulation — establishing that blood moves continuously in a loop, not tides. The foundation on which all vascular physics stands.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">1838–42</div>
+        <div class="timeline-content">
+          <div class="timeline-name">Hagen &amp; Poiseuille <span class="timeline-tag tag-original">Origin</span></div>
+          <p class="timeline-text">Developed the flow equation independently — and critically, Poiseuille was studying <em>blood flow</em>. This is one of the rare cases where the math was already medical from day one.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">~1820s</div>
+        <div class="timeline-content">
+          <div class="timeline-name">Georg Ohm → Physiology <span class="timeline-tag tag-adapted">Adapted</span></div>
+          <p class="timeline-text">Ohm's law (V = IR) was later mapped directly to hemodynamics: ΔP = Q × R. The electrical circuit became a vascular circuit — resistance networks, series/parallel configurations.</p>
+        </div>
+      </div>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-year">1883</div>
+        <div class="timeline-content">
+          <div class="timeline-name">Osborne Reynolds <span class="timeline-tag tag-original">Origin</span></div>
+          <p class="timeline-text">Defined the dimensionless number bearing his name through dye-streak experiments in glass tubes — proving that the transition from order to chaos follows a predictable law.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">Early 19th c.</div>
+        <div class="timeline-content">
+          <div class="timeline-name">Thomas Young <span class="timeline-tag tag-adapted">Adapted</span></div>
+          <p class="timeline-text">Early work connecting mechanical stress to biological tissue — a bridge between engineering shear theory and the living endothelium that lines every vessel you access.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">~2000s</div>
+        <div class="timeline-content">
+          <div class="timeline-name">Ultrasound-Guided Access Revolution <span class="timeline-tag tag-modern">Modern</span></div>
+          <p class="timeline-text">Real-time visualization transformed vascular access from tactile art to geometry + probability. Diameter, depth, compressibility — suddenly measurable at the bedside, feeding directly into Poiseuille-based flow prediction.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== THE BIG INSIGHT ===== -->
+<div class="insight-section">
+  <div class="insight-kicker">The Big Insight · Why This Matters</div>
+  <div class="insight-title">Vascular access is an<br><em>optimization problem under uncertainty</em><br>constrained by fluid physics and human anatomy.</div>
+  <p class="insight-desc">Every access decision requires simultaneous reasoning across four domains. The clinician at the bedside is running a multi-variable optimization in real time — usually without knowing it. These modules make that reasoning explicit.</p>
+  <div class="insight-pillars">
+    <div class="pillar">
+      <div class="pillar-formula">Q = πr⁴ΔP / 8ηL</div>
+      <div class="pillar-name">Flow Rate</div>
+      <div class="pillar-desc">Gauge selection constrains your maximum throughput before you place a single catheter.</div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-formula">τ = 4ηQ / πr³</div>
+      <div class="pillar-name">Damage Risk</div>
+      <div class="pillar-desc">Every mL/hr carries a shear signature the endothelium reads as injury or safety.</div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-formula">P(A|B) = P(B|A)·P(A)/P(B)</div>
+      <div class="pillar-name">Success Probability</div>
+      <div class="pillar-desc">Patient anatomy and prior attempts update your first-attempt odds in real time.</div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-formula">EU = Σ P(oᵢ) · U(oᵢ)</div>
+      <div class="pillar-name">Clinical Urgency</div>
+      <div class="pillar-desc">Time pressure reshapes expected utility — the same strategy is wrong at different acuity levels.</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-brand">
+    <strong>The Vascular Lab</strong> · Intracav Clinical Learning
+  </div>
+  <div class="footer-note">Interactive mathematics for clinical practice · Not a substitute for clinical judgment</div>
+</footer>
+
+</body>
+</html>

@@ -4,6 +4,7 @@ date = 2026-02-23T00:00:00-05:00
 lastmod = 2026-02-23T00:00:00-05:00
 content_type = "patient-education"
 audience = "patient"
+departments = ["vascular-access", "home-health"]
 category = ["Home Care", "Device Care", "Implanted Port"]
 tags = ["implanted port", "port-a-cath", "port care", "port access", "port flushing", "home care", "cancer treatment", "long-term IV access"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

@@ -4,6 +4,7 @@ date = 2026-01-21T13:16:02-05:00
 lastmod = 2026-01-21T13:16:02-05:00
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["Patient Education", "Patient Safety", "Clinical Practice"]
 tags = ["patient education", "teach-back", "return demonstration", "health literacy", "caregiver education", "infusion therapy", "vascular access", "home care"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

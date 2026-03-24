@@ -6,6 +6,7 @@ tags = ["Vascular Access", "Guidelines", "Human Judgement", "Clinical AI", "Heal
 category = ["Clinical AI", "Healthcare Technology"]
 content_type = "blog"
 audience = "clinician"
+departments = ["vascular-access"]
 author = ["Isaiah Wright", "IntraCav-CM01"]
 description = "Why we built IntracavOS on NixOS: A reproducible, secure, and scalable operating system designed specifically for healthcare AI deployment. Learn about our architecture and why traditional approaches fail."
 summary = "Discover how IntracavOS solves the infrastructure nightmare in healthcare AI with NixOS-based reproducible deployments, enterprise security, and modular architecture."

@@ -4,6 +4,7 @@ date = 2024-03-01T00:00:00-05:00
 lastmod = 2026-01-15T00:00:00-05:00
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access", "pain-management"]
 category = ["Pain Management", "Medication Safety", "Infusion Therapy"]
 tags = ["patient-controlled analgesia", "PCA", "opioids", "OIRD", "respiratory depression", "AACA", "pain assessment", "smart pump", "authorized agent-controlled analgesia"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

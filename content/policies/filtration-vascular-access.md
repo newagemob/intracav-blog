@@ -4,6 +4,7 @@ date = 2024-01-15T00:00:00-05:00
 lastmod = 2025-04-10T00:00:00-05:00
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["Infusion Therapy", "Patient Safety", "Medication Administration"]
 tags = ["filtration", "in-line filter", "parenteral nutrition", "blood products", "intraspinal", "neonates", "filter selection", "air-eliminating filter", "medication safety"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

@@ -4,6 +4,7 @@ date = 2026-02-23T00:00:00-05:00
 lastmod = 2026-02-23T00:00:00-05:00
 content_type = "patient-education"
 audience = "patient"
+departments = ["vascular-access", "infection-prevention"]
 category = ["Infection Prevention", "Safety", "Device Care"]
 tags = ["infection prevention", "hand hygiene", "IV care", "CLABSI", "sterile technique", "patient safety", "catheter infection"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

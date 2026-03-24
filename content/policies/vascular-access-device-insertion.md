@@ -4,6 +4,7 @@ date = 2025-01-20T00:00:00-05:00
 lastmod = 2025-10-08T00:00:00-05:00
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["Vascular Access Procedures", "Patient Safety", "Clinical Practice"]
 tags = ["VAD insertion", "PIVC", "CVAD", "PICC", "arterial catheter", "midline catheter", "ANTT", "ultrasound guidance", "central line bundle", "DIVA", "insertion complications"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

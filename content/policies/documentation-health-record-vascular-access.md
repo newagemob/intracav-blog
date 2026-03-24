@@ -4,6 +4,7 @@ date = 2026-01-21T13:16:02-05:00
 lastmod = 2026-01-21T13:16:02-05:00
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["Documentation", "Legal", "Clinical Practice", "Health Information"]
 tags = ["documentation", "health record", "EHR", "insertion documentation", "maintenance documentation", "medication administration", "clinical decision support", "line necessity"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

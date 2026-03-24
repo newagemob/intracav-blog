@@ -4,6 +4,7 @@ date = 2026-02-23T00:00:00-05:00
 lastmod = 2026-02-23T00:00:00-05:00
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["Patient Safety", "Regulatory Compliance", "Pharmacy"]
 tags = ["controlled substance", "drug diversion", "opioid stewardship", "chain of custody", "automated dispensing", "waste management", "substance use disorder", "impaired provider"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

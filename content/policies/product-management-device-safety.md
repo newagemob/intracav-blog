@@ -4,6 +4,7 @@ date = 2026-02-23T00:00:00-05:00
 lastmod = 2026-02-23T00:00:00-05:00
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["Product Evaluation", "Patient Safety", "Supply Chain"]
 tags = ["product evaluation", "device safety", "product inspection", "supply chain", "product recall", "hazard alert", "formulary", "vascular access devices"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

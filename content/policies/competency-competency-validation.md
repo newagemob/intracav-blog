@@ -4,6 +4,7 @@ date = 2026-01-21T13:16:02-05:00
 lastmod = 2026-01-21T13:16:02-05:00
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["Education", "Competency", "Patient Safety"]
 tags = ["competency", "validation", "training", "simulation", "mastery learning", "orientation", "infusion therapy", "vascular access"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

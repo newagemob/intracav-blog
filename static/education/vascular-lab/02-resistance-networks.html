@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resistance Networks — The Vascular Lab</title>
+<script src="https://unpkg.com/htmx.org@1.9.10"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Nunito:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #EDE4D5; --surface: #F6F0E8; --surface-hi: #FDFAF5;
+    --border: #D4C7B5; --border-lt: #E2D8CC;
+    --text: #28180C; --text-2: #685040; --text-3: #9E8272;
+    --accent: #BC7250; --accent-lt: #E8C4A8;
+    --sage: #7E9C84; --sage-lt: #C8DEC8; --rose: #B87070;
+    --shadow-sm: 0 1px 8px rgba(40,24,12,0.06), 0 0 0 1px rgba(40,24,12,0.04);
+    --shadow-md: 0 4px 28px rgba(40,24,12,0.10), 0 0 0 1px rgba(40,24,12,0.06);
+    --r: 16px; --r-sm: 10px;
+  }
+  body { font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+  body::after {
+    content: ''; position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+    opacity: 0.028; pointer-events: none; z-index: 9999;
+  }
+  nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.25rem 3rem; border-bottom: 1px solid var(--border-lt);
+    background: rgba(237,228,213,0.85); backdrop-filter: blur(12px);
+    position: sticky; top: 0; z-index: 100;
+  }
+  .nav-left { display: flex; align-items: center; gap: 1rem; }
+  .nav-back, .nav-next { font-size: 0.8rem; color: var(--text-3); text-decoration: none; letter-spacing: 0.04em; transition: color 200ms; }
+  .nav-back:hover, .nav-next:hover { color: var(--accent); }
+  .nav-sep { color: var(--border); }
+  .nav-title { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--text-2); }
+  .nav-num { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--accent); }
+
+  .hero {
+    padding: 4rem 3rem 2.5rem; display: grid;
+    grid-template-columns: 1fr auto; gap: 2rem; align-items: end;
+    border-bottom: 1px solid var(--border-lt); max-width: 1100px; margin: 0 auto;
+  }
+  .module-label {
+    font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--accent);
+    display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.75rem;
+  }
+  .module-label::before { content: '02'; font-family: 'JetBrains Mono', monospace; }
+  h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 400; line-height: 1.1; color: var(--text); margin-bottom: 1rem; }
+  h1 em { font-style: italic; color: var(--text-2); }
+  .hero-desc { font-size: 0.92rem; line-height: 1.7; color: var(--text-2); font-weight: 300; max-width: 500px; }
+
+  .hero-eq {
+    background: var(--surface); border: 1px solid var(--border-lt);
+    border-radius: var(--r); padding: 1.75rem 2rem; text-align: center; min-width: 220px;
+  }
+  .eq-row { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: var(--text); margin-bottom: 0.5rem; }
+  .eq-name { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3); margin-top: 0.3rem; }
+  .frac { display: inline-flex; flex-direction: column; align-items: center; vertical-align: middle; margin: 0 0.15rem; }
+  .frac .num { border-bottom: 1.5px solid var(--text-2); padding: 0 4px 3px; }
+  .frac .den { padding: 3px 4px 0; }
+
+  .main { max-width: 1100px; margin: 0 auto; padding: 2.5rem 3rem; }
+
+  /* Two-column layout */
+  .two-col { display: grid; grid-template-columns: 1fr 340px; gap: 1.5rem; margin-bottom: 2rem; }
+
+  /* Circuit Canvas */
+  .viz-section {
+    background: var(--surface); border: 1px solid var(--border-lt);
+    border-radius: var(--r); overflow: hidden; box-shadow: var(--shadow-sm);
+  }
+  .viz-header { padding: 1.25rem 1.5rem; border-bottom: 1px solid var(--border-lt); display: flex; justify-content: space-between; align-items: center; }
+  .section-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3); margin-bottom: 0.2rem; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--text); }
+
+  #circuitCanvas { width: 100%; height: 320px; display: block; background: #12090400; }
+
+  /* Mode tabs */
+  .mode-tabs {
+    display: flex; border-bottom: 1px solid var(--border-lt);
+  }
+  .mode-tab {
+    flex: 1; padding: 0.85rem 1rem; font-size: 0.78rem; font-weight: 600;
+    color: var(--text-3); cursor: pointer; text-align: center;
+    border: none; background: none; transition: all 200ms;
+    letter-spacing: 0.04em;
+  }
+  .mode-tab.active { color: var(--accent); border-bottom: 2px solid var(--accent); }
+  .mode-tab:hover:not(.active) { color: var(--text-2); background: var(--bg); }
+
+  /* Component palette */
+  .sidebar {
+    display: flex; flex-direction: column; gap: 1rem;
+  }
+
+  .palette {
+    background: var(--surface); border: 1px solid var(--border-lt);
+    border-radius: var(--r); overflow: hidden; box-shadow: var(--shadow-sm);
+  }
+
+  .palette-header {
+    padding: 1rem 1.25rem; border-bottom: 1px solid var(--border-lt);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+
+  .component-list { padding: 0.75rem; display: flex; flex-direction: column; gap: 0.4rem; }
+
+  .comp-item {
+    display: flex; align-items: center; gap: 0.75rem;
+    padding: 0.65rem 0.85rem; border-radius: var(--r-sm);
+    border: 1px solid var(--border-lt); background: var(--surface-hi);
+    cursor: pointer; transition: all 200ms;
+  }
+  .comp-item:hover { border-color: var(--accent); transform: translateX(2px); }
+
+  .comp-icon {
+    width: 32px; height: 32px; border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.85rem; flex-shrink: 0;
+  }
+
+  .comp-info { flex: 1; }
+  .comp-name { font-size: 0.78rem; font-weight: 600; color: var(--text); }
+  .comp-R { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--accent); }
+
+  .comp-add {
+    width: 22px; height: 22px; border-radius: 50%;
+    background: var(--accent-lt); color: var(--accent);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.9rem; font-weight: 700; flex-shrink: 0;
+  }
+
+  /* Result panel */
+  .result-panel {
+    background: var(--surface); border: 1px solid var(--border-lt);
+    border-radius: var(--r); box-shadow: var(--shadow-sm);
+  }
+
+  .result-panel-header { padding: 1rem 1.25rem; border-bottom: 1px solid var(--border-lt); }
+
+  .result-items { padding: 1rem; display: flex; flex-direction: column; gap: 0.6rem; }
+
+  .result-item {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0.6rem 0.8rem; border-radius: var(--r-sm);
+    background: var(--bg);
+  }
+  .ri-label { font-size: 0.72rem; color: var(--text-3); }
+  .ri-val { font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: var(--text); font-weight: 500; }
+  .ri-val.accent { color: var(--accent); }
+  .ri-val.sage { color: var(--sage); }
+
+  /* Placed components bar */
+  .placed-section { padding: 1rem 1.25rem; border-top: 1px solid var(--border-lt); }
+  .placed-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); margin-bottom: 0.6rem; }
+  .placed-chips { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+  .placed-chip {
+    display: flex; align-items: center; gap: 0.4rem;
+    padding: 0.25rem 0.65rem; border-radius: 100px;
+    background: var(--accent-lt); color: var(--text-2);
+    font-size: 0.68rem; font-weight: 600;
+  }
+  .chip-remove { cursor: pointer; color: var(--rose); font-weight: 700; line-height: 1; }
+
+  /* Scenarios */
+  .scenarios { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2rem; }
+  .scenario-btn {
+    background: var(--surface); border: 1px solid var(--border-lt);
+    border-radius: var(--r-sm); padding: 1rem 1.1rem; cursor: pointer;
+    text-align: left; transition: all 200ms;
+  }
+  .scenario-btn:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+  .scenario-btn.active { border-color: var(--accent); background: rgba(188,114,80,0.06); }
+  .sc-label { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); margin-bottom: 0.3rem; }
+  .sc-name { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: var(--text); margin-bottom: 0.3rem; }
+  .sc-desc { font-size: 0.72rem; color: var(--text-3); font-weight: 300; line-height: 1.5; }
+
+  /* Pearls */
+  .pearls { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
+  .pearl { background: var(--surface-hi); border: 1px solid var(--border-lt); border-radius: var(--r-sm); padding: 1.25rem; }
+  .pearl-icon { font-size: 1.2rem; margin-bottom: 0.6rem; }
+  .pearl-title { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: var(--text); margin-bottom: 0.4rem; }
+  .pearl-text { font-size: 0.82rem; line-height: 1.6; color: var(--text-2); font-weight: 300; }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .hero { animation: fadeUp 500ms ease-out both; }
+  .main > * { animation: fadeUp 500ms 100ms ease-out both; }
+
+  @media (max-width: 800px) {
+    .two-col { grid-template-columns: 1fr; }
+    .scenarios { grid-template-columns: 1fr; }
+    .hero { grid-template-columns: 1fr; padding: 2.5rem 1.5rem; }
+    .main { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-left">
+    <a class="nav-back" href="index.html">← Collection</a>
+    <span class="nav-sep">·</span>
+    <span class="nav-num">02</span>
+    <span class="nav-title">Resistance Networks</span>
+  </div>
+  <a class="nav-next" href="03-turbulence.html">Turbulence →</a>
+</nav>
+
+<section class="hero">
+  <div>
+    <div class="module-label">— Series & Parallel Resistance</div>
+    <h1>Everything you <em>add</em><br>slows the flow.</h1>
+    <p class="hero-desc">
+      Every extension set, filter, and needleless connector is a resistor in your IV circuit.
+      The Hagen-Poiseuille equation gives each component a resistance value —
+      and the laws of fluid circuits determine how they combine.
+    </p>
+  </div>
+  <div class="hero-eq">
+    <div class="eq-row">R = <div class="frac"><span class="num">8ηL</span><span class="den">πr⁴</span></div></div>
+    <div class="eq-name">Component Resistance</div>
+    <div style="height:1px;background:var(--border-lt);margin:0.85rem 0;"></div>
+    <div class="eq-row">R<sub>s</sub> = R₁ + R₂ + ···</div>
+    <div class="eq-name">Series (additive)</div>
+    <div style="height:1px;background:var(--border-lt);margin:0.85rem 0;"></div>
+    <div class="eq-row"><div class="frac"><span class="num">1</span><span class="den">R<sub>p</sub></span></div> = <div class="frac"><span class="num">1</span><span class="den">R₁</span></div> + <div class="frac"><span class="num">1</span><span class="den">R₂</span></div></div>
+    <div class="eq-name">Parallel (reciprocal sum)</div>
+  </div>
+</section>
+
+<div class="main">
+
+  <!-- Preset Scenarios -->
+  <div style="margin-bottom:1.25rem;">
+    <div style="font-size:0.65rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-3);margin-bottom:0.75rem;">Quick Scenarios</div>
+    <div class="scenarios">
+      <button class="scenario-btn active" onclick="loadScenario('basic')" id="sc-basic">
+        <div class="sc-label">Scenario A</div>
+        <div class="sc-name">Basic PIV Setup</div>
+        <div class="sc-desc">18G catheter + standard tubing + needleless connector</div>
+      </button>
+      <button class="scenario-btn" onclick="loadScenario('icu')" id="sc-icu">
+        <div class="sc-label">Scenario B</div>
+        <div class="sc-name">ICU Line Bundle</div>
+        <div class="sc-desc">20G + extension + inline filter + two connectors</div>
+      </button>
+      <button class="scenario-btn" onclick="loadScenario('rapid')" id="sc-rapid">
+        <div class="sc-label">Scenario C</div>
+        <div class="sc-name">Rapid Infusion (Two Lines)</div>
+        <div class="sc-desc">Two 16G catheters in parallel via Y-connector</div>
+      </button>
+    </div>
+  </div>
+
+  <div class="two-col">
+
+    <!-- Circuit Visualization -->
+    <div class="viz-section">
+      <div class="viz-header">
+        <div>
+          <div class="section-label">Live Circuit</div>
+          <div class="section-title">IV Line Resistance Network</div>
+        </div>
+        <div style="display:flex;gap:0.5rem;">
+          <button class="mode-tab active" id="tab-series" onclick="setMode('series')">Series</button>
+          <button class="mode-tab" id="tab-parallel" onclick="setMode('parallel')">Parallel</button>
+        </div>
+      </div>
+      <canvas id="circuitCanvas"></canvas>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+
+      <!-- Component Palette -->
+      <div class="palette">
+        <div class="palette-header">
+          <div>
+            <div class="section-label">Add Components</div>
+            <div class="section-title" style="font-size:1rem;">IV Line Parts</div>
+          </div>
+        </div>
+        <div class="component-list" id="componentList"></div>
+        <div class="placed-section">
+          <div class="placed-label">In Circuit</div>
+          <div class="placed-chips" id="placedChips"></div>
+        </div>
+      </div>
+
+      <!-- Results Panel -->
+      <div class="result-panel">
+        <div class="result-panel-header">
+          <div class="section-label">Calculated Results</div>
+          <div class="section-title" style="font-size:1rem;">At 100 mmHg (Gravity)</div>
+        </div>
+        <div class="result-items">
+          <div class="result-item">
+            <span class="ri-label">Total Resistance</span>
+            <span class="ri-val accent" id="totalR">—</span>
+          </div>
+          <div class="result-item">
+            <span class="ri-label">Flow Rate</span>
+            <span class="ri-val sage" id="flowRate">—</span>
+          </div>
+          <div class="result-item">
+            <span class="ri-label">vs. Catheter Alone</span>
+            <span class="ri-val" id="vsBase">—</span>
+          </div>
+          <div class="result-item">
+            <span class="ri-label">Mode</span>
+            <span class="ri-val" id="modeLabel">Series</span>
+          </div>
+          <div class="result-item" id="parallelResult" style="display:none">
+            <span class="ri-label">Parallel lines</span>
+            <span class="ri-val" id="parallelCount">—</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Clinical Pearls -->
+  <div class="pearls">
+    <div class="pearl">
+      <div class="pearl-icon">🔗</div>
+      <div class="pearl-title">Series Always Increases Resistance</div>
+      <div class="pearl-text">Every component in series adds its resistance to the total. A 0.2μm inline filter can have 3–10× the resistance of the catheter itself, dramatically reducing flow.</div>
+    </div>
+    <div class="pearl">
+      <div class="pearl-icon">⚖️</div>
+      <div class="pearl-title">Parallel Lines Are Powerful</div>
+      <div class="pearl-text">Two identical lines in parallel halve the total resistance (double the flow). Three lines reduce resistance to one-third. This is the math behind running two large-bore IVs in trauma.</div>
+    </div>
+    <div class="pearl">
+      <div class="pearl-icon">🚧</div>
+      <div class="pearl-title">The Bottleneck Rule</div>
+      <div class="pearl-text">In a series circuit, the component with the highest resistance dominates. A tiny catheter after huge tubing still limits flow to the catheter's capacity. Always identify your bottleneck.</div>
+    </div>
+    <div class="pearl">
+      <div class="pearl-icon">🔌</div>
+      <div class="pearl-title">Needleless Connectors</div>
+      <div class="pearl-text">Mechanical valve connectors (e.g., Maximus, Tego) can add significant resistance — some equivalent to a 2–4cm length of narrow tubing. Use split-septum connectors for high-flow needs.</div>
+    </div>
+  </div>
+
+  <!-- Graph Model + Intracav sections -->
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-bottom:2rem;">
+
+    <div style="background:var(--surface); border:1px solid var(--border-lt); border-radius:var(--r); padding:1.75rem 2rem; box-shadow:var(--shadow-sm);">
+      <div style="font-size:0.65rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-3); margin-bottom:0.75rem;">Historical Origin · Ohm → Physiology</div>
+      <div style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; margin-bottom:1rem;">An electrical law becomes hemodynamics.</div>
+      <p style="font-size:0.82rem; line-height:1.7; color:var(--text-2); font-weight:300; margin-bottom:1rem;">
+        Georg Ohm's 1827 law (V = IR) was adapted directly to blood flow: ΔP = Q × R. Voltage became pressure gradient; current became flow; resistance stayed resistance. The circuit metaphor is not an approximation — it's the same mathematics, rescaled.
+      </p>
+      <div style="font-size:0.8rem; line-height:1.8; background:var(--bg); border-radius:var(--r-sm); padding:0.9rem 1rem; font-family:'JetBrains Mono',monospace; color:var(--text-2);">
+        Electrical: V = I · R<br>
+        Hemodynamic: ΔP = Q · R<br>
+        Hydraulic: R = 8ηL / πr⁴
+      </div>
+    </div>
+
+    <div style="background:var(--surface); border:1px solid var(--border-lt); border-radius:var(--r); padding:1.75rem 2rem; box-shadow:var(--shadow-sm);">
+      <div style="font-size:0.65rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); margin-bottom:0.75rem;">Intracav Opportunity · Graph-Based Vascular Model</div>
+      <div style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; margin-bottom:1rem;">Model the vascular system as a weighted graph.</div>
+      <p style="font-size:0.82rem; line-height:1.7; color:var(--text-2); font-weight:300; margin-bottom:0.9rem;">
+        Every access point, junction, and vessel segment can be represented as a graph where resistance is the edge weight. This enables computation of optimal access points and predicted flow distribution before insertion.
+      </p>
+      <div style="font-size:0.78rem; color:var(--text-2); background:var(--bg); border-radius:var(--r-sm); padding:0.9rem 1rem; line-height:1.75;">
+        <strong style="color:var(--text)">Nodes</strong> = junctions &amp; bifurcations<br>
+        <strong style="color:var(--text)">Edges</strong> = vessel segments<br>
+        <strong style="color:var(--text)">Weights</strong> = resistance (8ηL/πr⁴)<br>
+        <strong style="color:var(--text)">Output</strong> = optimal access point + flow distribution
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div style="display:flex;justify-content:space-between;padding:2rem 3rem;border-top:1px solid var(--border-lt);max-width:1100px;margin:0 auto;">
+  <a style="text-decoration:none;color:var(--text-3);font-size:0.82rem;display:flex;align-items:center;gap:0.5rem;transition:color 200ms;" href="01-flow-dynamics.html" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-3)'">
+    <span>←</span>
+    <div><div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.1em;">Previous</div>Flow Dynamics</div>
+  </a>
+  <a style="text-decoration:none;color:var(--text-3);font-size:0.82rem;display:flex;align-items:center;gap:0.5rem;transition:color 200ms;" href="03-turbulence.html" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-3)'">
+    <div style="text-align:right"><div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.1em;">Next</div>Turbulence</div>
+    <span>→</span>
+  </a>
+</div>
+
+<script>
+// ── Component Library ──────────────────────────────────────────────────
+const COMPONENTS = [
+  { id: 'cat14', name: '14G Catheter', short: '14G', icon: '💉', R: 0.62, color: '#C07856', desc: 'r=0.80mm, L=45mm' },
+  { id: 'cat16', name: '16G Catheter', short: '16G', icon: '💉', R: 1.55, color: '#C07856', desc: 'r=0.635mm, L=45mm' },
+  { id: 'cat18', name: '18G Catheter', short: '18G', icon: '💉', R: 3.85, color: '#C07856', desc: 'r=0.51mm, L=32mm' },
+  { id: 'cat20', name: '20G Catheter', short: '20G', icon: '💉', R: 9.80, color: '#C07856', desc: 'r=0.40mm, L=32mm' },
+  { id: 'cat22', name: '22G Catheter', short: '22G', icon: '💉', R: 24.4, color: '#C07856', desc: 'r=0.32mm, L=25mm' },
+  { id: 'tubing', name: 'Standard Tubing', short: 'Tubing', icon: '〰️', R: 1.20, color: '#7E9C84', desc: '150cm, r=1.3mm' },
+  { id: 'ext10', name: '10cm Extension', short: 'Ext-10', icon: '📏', R: 0.15, color: '#9E8272', desc: 'r=0.8mm, L=10cm' },
+  { id: 'ext30', name: '30cm Extension', short: 'Ext-30', icon: '📏', R: 0.45, color: '#9E8272', desc: 'r=0.8mm, L=30cm' },
+  { id: 'filter', name: '0.2μm Filter', short: 'Filter', icon: '🔲', R: 12.0, color: '#B87070', desc: 'High resistance!' },
+  { id: 'connector', name: 'Needleless Conn.', short: 'NLC', icon: '🔌', R: 0.80, color: '#9E8272', desc: 'Split-septum type' },
+  { id: 'mvalve', name: 'Mech. Valve Conn.', short: 'MVC', icon: '🔐', R: 3.20, color: '#B87070', desc: 'High resistance!' },
+];
+
+// ── State ──────────────────────────────────────────────────────────────
+let mode = 'series'; // 'series' or 'parallel'
+let placedComponents = [];
+let animOffset = 0;
+
+// ── Canvas ─────────────────────────────────────────────────────────────
+const canvas = document.getElementById('circuitCanvas');
+const ctx = canvas.getContext('2d');
+
+function resizeCanvas() {
+  canvas.width = canvas.offsetWidth;
+  canvas.height = 320;
+}
+resizeCanvas();
+window.addEventListener('resize', () => { resizeCanvas(); });
+
+// ── Physics Calculations ───────────────────────────────────────────────
+function calcTotalR(comps, m) {
+  if (comps.length === 0) return Infinity;
+  if (m === 'series') return comps.reduce((s, c) => s + c.R, 0);
+  // parallel: 1/R_total = sum(1/Ri)
+  const inv = comps.reduce((s, c) => s + 1 / c.R, 0);
+  return inv === 0 ? Infinity : 1 / inv;
+}
+
+function calcFlow(R_total, dP_mmHg = 100) {
+  // R in arbitrary units scaled to give mL/hr
+  // Q = ΔP / R, where R units are ×10¹² Pa·s/m³
+  const dP_Pa = dP_mmHg * 133.322;
+  const Q_m3s = dP_Pa / (R_total * 1e12);
+  return Q_m3s * 1e6 * 3600; // mL/hr
+}
+
+// ── Draw Circuit ───────────────────────────────────────────────────────
+function lerp(a, b, t) { return a + (b - a) * t; }
+function clamp(x, a, b) { return Math.max(a, Math.min(b, x)); }
+
+function draw() {
+  const W = canvas.width, H = canvas.height;
+  animOffset += 1.5;
+
+  ctx.clearRect(0, 0, W, H);
+  ctx.fillStyle = '#FAF6F0';
+  ctx.fillRect(0, 0, W, H);
+
+  const comps = placedComponents;
+  if (comps.length === 0) {
+    ctx.fillStyle = 'rgba(158,130,114,0.45)';
+    ctx.font = '400 14px Nunito';
+    ctx.textAlign = 'center';
+    ctx.fillText('Add components from the panel to build your circuit', W/2, H/2);
+    ctx.textAlign = 'left';
+    requestAnimationFrame(draw);
+    return;
+  }
+
+  if (mode === 'series') drawSeries(W, H, comps);
+  else drawParallel(W, H, comps);
+
+  requestAnimationFrame(draw);
+}
+
+function drawSeries(W, H, comps) {
+  const totalR = calcTotalR(comps, 'series');
+  const totalFlow = calcFlow(totalR);
+  const baseR = comps[0]?.R || 1;
+
+  const margin = 40;
+  const usableW = W - margin * 2;
+  const cy = H / 2;
+
+  // Inlet pressure indicator
+  drawPressureSource(margin - 20, cy, '100 mmHg');
+
+  // Draw components
+  const n = comps.length;
+  const blockW = Math.min(90, (usableW / n) - 16);
+  const blockH = 44;
+  const spacing = usableW / n;
+
+  comps.forEach((comp, i) => {
+    const x = margin + spacing * i + spacing / 2 - blockW / 2;
+    const y = cy - blockH / 2;
+
+    // Connecting wire before
+    if (i === 0) {
+      drawWire(margin - 20, cy, x, cy, totalFlow);
+    } else {
+      const prevX = margin + spacing * (i-1) + spacing / 2 + blockW / 2;
+      drawWire(prevX, cy, x, cy, totalFlow);
+    }
+
+    // Component box
+    drawResistorBox(x, y, blockW, blockH, comp, totalFlow);
+  });
+
+  // Connecting wire after last
+  const lastX = margin + spacing * (n-1) + spacing / 2 + blockW / 2;
+  drawWire(lastX, cy, W - margin + 20, cy, totalFlow);
+
+  // Flow label
+  drawFlowLabel(W - margin - 10, cy, totalFlow);
+}
+
+function drawParallel(W, H, comps) {
+  const totalR = calcTotalR(comps, 'parallel');
+  const totalFlow = calcFlow(totalR);
+  const n = comps.length;
+
+  const margin = 50;
+  const usableW = W - margin * 2;
+  const laneH = Math.min(60, (H - 60) / n);
+  const blockW = 80;
+  const blockH = 32;
+
+  const entryX = margin + 30;
+  const exitX = W - margin - 30;
+  const midX = (entryX + exitX) / 2;
+
+  // Main entry wire
+  drawWire(margin - 10, H/2, entryX, H/2, totalFlow);
+
+  comps.forEach((comp, i) => {
+    const laneFlow = calcFlow(comp.R);
+    const laneY = H/2 + (i - (n-1)/2) * laneH;
+
+    // Branch wires
+    ctx.beginPath();
+    ctx.moveTo(entryX, H/2);
+    ctx.lineTo(entryX, laneY);
+    ctx.lineTo(midX - blockW/2, laneY);
+    ctx.strokeStyle = `rgba(126,156,132,${0.2 + 0.5 * Math.min(laneFlow/500, 1)})`;
+    ctx.lineWidth = Math.max(1.5, Math.min(4, laneFlow / 200));
+    ctx.stroke();
+
+    // Component box
+    drawResistorBox(midX - blockW/2, laneY - blockH/2, blockW, blockH, comp, laneFlow);
+
+    // Exit branch
+    ctx.beginPath();
+    ctx.moveTo(midX + blockW/2, laneY);
+    ctx.lineTo(exitX, laneY);
+    ctx.lineTo(exitX, H/2);
+    ctx.strokeStyle = `rgba(126,156,132,${0.2 + 0.5 * Math.min(laneFlow/500, 1)})`;
+    ctx.lineWidth = Math.max(1.5, Math.min(4, laneFlow / 200));
+    ctx.stroke();
+  });
+
+  // Main exit wire
+  drawWire(exitX, H/2, W - margin + 10, H/2, totalFlow);
+  drawFlowLabel(W - margin, H/2, totalFlow);
+  drawPressureSource(margin - 20, H/2, '100 mmHg');
+}
+
+function drawWire(x1, y1, x2, y2, flow) {
+  const thick = Math.max(1.5, Math.min(6, flow / 150));
+  const alpha = Math.min(0.8, 0.2 + flow / 800);
+
+  ctx.beginPath();
+  ctx.moveTo(x1, y1); ctx.lineTo(x2, y2);
+  ctx.strokeStyle = `rgba(126,156,132,${alpha})`;
+  ctx.lineWidth = thick;
+  ctx.stroke();
+
+  // Animated dots
+  if (flow > 10) {
+    const len = Math.sqrt((x2-x1)**2 + (y2-y1)**2);
+    const dx = (x2-x1)/len, dy = (y2-y1)/len;
+    const speed = Math.min(1, flow/400);
+    for (let d = (animOffset * speed) % 20; d < len; d += 20) {
+      ctx.beginPath();
+      ctx.arc(x1 + dx*d, y1 + dy*d, 2.5, 0, Math.PI*2);
+      ctx.fillStyle = `rgba(126,156,132,0.7)`;
+      ctx.fill();
+    }
+  }
+}
+
+function drawResistorBox(x, y, w, h, comp, flow) {
+  // Shadow
+  ctx.fillStyle = 'rgba(40,24,12,0.07)';
+  ctx.beginPath();
+  ctx.roundRect(x+2, y+2, w, h, 8);
+  ctx.fill();
+
+  // Box
+  ctx.fillStyle = '#FBF7F2';
+  ctx.strokeStyle = comp.color + '80';
+  ctx.lineWidth = 1.5;
+  ctx.beginPath();
+  ctx.roundRect(x, y, w, h, 8);
+  ctx.fill(); ctx.stroke();
+
+  // Resistance fill bar
+  ctx.fillStyle = comp.color + '22';
+  ctx.beginPath();
+  ctx.roundRect(x+2, y+h-6, (w-4) * Math.min(1, comp.R / 15), 4, [0, 0, 4, 4]);
+  ctx.fill();
+
+  // Label
+  ctx.fillStyle = '#28180C';
+  ctx.font = `600 ${Math.min(11, w/7)}px Nunito`;
+  ctx.textAlign = 'center';
+  ctx.fillText(comp.short, x + w/2, y + h/2 - 2);
+  ctx.fillStyle = comp.color;
+  ctx.font = `500 9px JetBrains Mono`;
+  ctx.fillText(`R=${comp.R.toFixed(1)}`, x + w/2, y + h/2 + 10);
+  ctx.textAlign = 'left';
+}
+
+function drawPressureSource(x, y, label) {
+  ctx.beginPath();
+  ctx.arc(x, y, 16, 0, Math.PI*2);
+  ctx.fillStyle = 'rgba(188,114,80,0.12)';
+  ctx.strokeStyle = 'rgba(188,114,80,0.4)';
+  ctx.lineWidth = 1.5;
+  ctx.fill(); ctx.stroke();
+  ctx.fillStyle = '#BC7250';
+  ctx.font = '600 8px Nunito';
+  ctx.textAlign = 'center';
+  ctx.fillText('ΔP', x, y+3);
+  ctx.fillStyle = 'rgba(158,130,114,0.7)';
+  ctx.font = '500 9px Nunito';
+  ctx.fillText(label, x, y - 22);
+  ctx.textAlign = 'left';
+}
+
+function drawFlowLabel(x, y, flow) {
+  ctx.fillStyle = 'rgba(188,114,80,0.9)';
+  ctx.font = '600 12px JetBrains Mono';
+  ctx.textAlign = 'center';
+  ctx.fillText(`${Math.round(flow)} mL/hr`, x, y - 22);
+  ctx.textAlign = 'left';
+}
+
+requestAnimationFrame(draw);
+
+// ── UI ─────────────────────────────────────────────────────────────────
+function buildPalette() {
+  const list = document.getElementById('componentList');
+  list.innerHTML = '';
+  COMPONENTS.forEach(c => {
+    const el = document.createElement('div');
+    el.className = 'comp-item';
+    el.innerHTML = `
+      <div class="comp-icon" style="background:${c.color}18">${c.icon}</div>
+      <div class="comp-info">
+        <div class="comp-name">${c.name}</div>
+        <div class="comp-R">R = ${c.R.toFixed(2)} ×10¹²</div>
+      </div>
+      <div class="comp-add" onclick="addComponent('${c.id}')">+</div>
+    `;
+    list.appendChild(el);
+  });
+}
+
+function addComponent(id) {
+  const comp = COMPONENTS.find(c => c.id === id);
+  if (!comp) return;
+  placedComponents.push({ ...comp });
+  updateUI();
+}
+
+function removeComponent(idx) {
+  placedComponents.splice(idx, 1);
+  updateUI();
+}
+
+function updateUI() {
+  // Update chips
+  const chips = document.getElementById('placedChips');
+  chips.innerHTML = '';
+  placedComponents.forEach((c, i) => {
+    const ch = document.createElement('span');
+    ch.className = 'placed-chip';
+    ch.innerHTML = `${c.short} <span class="chip-remove" onclick="removeComponent(${i})">×</span>`;
+    chips.appendChild(ch);
+  });
+
+  // Update results
+  const totalR = calcTotalR(placedComponents, mode);
+  const flow = calcFlow(totalR);
+  const baseComp = placedComponents.find(c => c.id.startsWith('cat')) || placedComponents[0];
+  const baseFlow = baseComp ? calcFlow(baseComp.R) : flow;
+
+  document.getElementById('totalR').textContent = isFinite(totalR) ? `${totalR.toFixed(2)} ×10¹²` : '∞';
+  document.getElementById('flowRate').textContent = isFinite(flow) ? `${Math.round(flow).toLocaleString()} mL/hr` : '0';
+  document.getElementById('vsBase').textContent = baseFlow > 0 ? `${(flow / baseFlow * 100).toFixed(0)}% of catheter-only` : '—';
+  document.getElementById('modeLabel').textContent = mode === 'series' ? 'Series (additive R)' : 'Parallel (1/R sum)';
+}
+
+function setMode(m) {
+  mode = m;
+  document.getElementById('tab-series').classList.toggle('active', m === 'series');
+  document.getElementById('tab-parallel').classList.toggle('active', m === 'parallel');
+  document.getElementById('parallelResult').style.display = m === 'parallel' ? 'flex' : 'none';
+  updateUI();
+}
+
+// ── Preset Scenarios ───────────────────────────────────────────────────
+const SCENARIOS = {
+  basic: {
+    mode: 'series',
+    comps: ['cat18', 'tubing', 'connector'],
+    label: 'sc-basic'
+  },
+  icu: {
+    mode: 'series',
+    comps: ['cat20', 'ext30', 'filter', 'connector', 'mvalve'],
+    label: 'sc-icu'
+  },
+  rapid: {
+    mode: 'parallel',
+    comps: ['cat16', 'cat16', 'tubing'],
+    label: 'sc-rapid'
+  }
+};
+
+function loadScenario(key) {
+  const sc = SCENARIOS[key];
+  if (!sc) return;
+
+  // Highlight button
+  document.querySelectorAll('.scenario-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(`sc-${key}`).classList.add('active');
+
+  mode = sc.mode;
+  placedComponents = sc.comps.map(id => ({ ...COMPONENTS.find(c => c.id === id) }));
+  document.getElementById('tab-series').classList.toggle('active', mode === 'series');
+  document.getElementById('tab-parallel').classList.toggle('active', mode === 'parallel');
+  updateUI();
+}
+
+buildPalette();
+loadScenario('basic');
+</script>
+</body>
+</html>

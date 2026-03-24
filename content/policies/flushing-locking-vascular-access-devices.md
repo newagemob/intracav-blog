@@ -4,6 +4,7 @@ date = 2023-11-08T00:00:00-05:00
 lastmod = 2025-09-15T00:00:00-05:00
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access", "infection-prevention"]
 category = ["Vascular Access Management", "Infection Prevention", "Medication Safety"]
 tags = ["flushing", "locking", "catheter patency", "heparin lock", "saline lock", "pulsatile flushing", "positive pressure", "PIVC flushing", "CVAD locking", "antimicrobial lock", "implanted port maintenance", "hemodialysis catheter"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

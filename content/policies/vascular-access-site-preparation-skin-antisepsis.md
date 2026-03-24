@@ -4,6 +4,7 @@ date = 2024-10-03T00:00:00-05:00
 lastmod = 2025-12-15T00:00:00-05:00
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access", "infection-prevention"]
 category = ["Infection Prevention", "Vascular Access Procedures"]
 tags = ["skin antisepsis", "chlorhexidine", "site preparation", "ANTT", "neonatal", "infection prevention", "VAD insertion"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

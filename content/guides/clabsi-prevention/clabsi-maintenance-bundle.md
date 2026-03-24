@@ -4,6 +4,7 @@ date = 2026-02-25T00:00:00-05:00
 lastmod = 2026-02-25T00:00:00-05:00
 content_type = "guide"
 audience = "clinician"
+departments = ["vascular-access", "infection-prevention"]
 category = ["CLABSI Prevention", "Maintenance Bundle", "Catheter Maintenance"]
 tags = ["CLABSI maintenance bundle", "scrub the hub", "CHG dressing CLABSI", "CHG bathing CLABSI", "needleless connector CLABSI", "central line maintenance", "CVAD dressing change", "CLABSI post-insertion prevention"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

@@ -4,6 +4,7 @@ date = 2026-02-25T00:00:00-05:00
 lastmod = 2026-02-25T00:00:00-05:00
 content_type = "guide"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["Special Populations", "Pediatric", "Oncology", "Critical Care", "Hemodialysis"]
 tags = ["pediatric vascular access", "NICU vascular access", "oncology vascular access", "hemodialysis catheter", "critical care IV access", "arterial line", "pediatric PICC", "umbilical catheter", "neonatal access"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

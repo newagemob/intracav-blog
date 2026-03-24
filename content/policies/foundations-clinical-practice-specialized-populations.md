@@ -4,6 +4,7 @@ date = 2026-01-21T13:16:02-05:00
 lastmod = 2026-01-21T13:16:02-05:00
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access", "neonatal"]
 category = ["Clinical Practice", "Vascular Access", "Population Health"]
 tags = ["vascular access", "pediatric", "neonatal", "obstetric", "geriatric", "infusion therapy", "patient safety", "specialized populations"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

@@ -4,6 +4,7 @@ date = 2026-02-23T00:00:00-05:00
 lastmod = 2026-02-23T00:00:00-05:00
 content_type = "patient-education"
 audience = "patient"
+departments = ["vascular-access"]
 category = ["Lifestyle", "Quality of Life", "Patient Education"]
 tags = ["long-term IV therapy", "living with catheter", "quality of life IV", "home infusion lifestyle", "PICC daily life", "port daily life", "home TPN lifestyle", "long-term treatment adjustment"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

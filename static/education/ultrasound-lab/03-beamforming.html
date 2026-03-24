@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beamforming — The Ultrasound Lab</title>
+<script src="https://unpkg.com/htmx.org@1.9.10"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Nunito:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #EDE4D5; --surface: #F6F0E8; --surface-hi: #FDFAF5;
+    --border: #D4C7B5; --border-lt: #E2D8CC;
+    --text: #28180C; --text-2: #685040; --text-3: #9E8272;
+    --accent: #BC7250; --accent-lt: #E8C4A8;
+    --sage: #7E9C84; --rose: #B87070; --gold: #C9A84C;
+    --shadow-sm: 0 1px 8px rgba(40,24,12,0.06), 0 0 0 1px rgba(40,24,12,0.04);
+    --r: 16px; --r-sm: 10px;
+  }
+  body { font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+  body::after { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E"); opacity: 0.028; pointer-events: none; z-index: 9999; }
+  nav { display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 3rem; border-bottom: 1px solid var(--border-lt); background: rgba(237,228,213,0.85); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100; }
+  .nav-left { display: flex; align-items: center; gap: 1rem; }
+  .nav-back { font-size: 0.8rem; color: var(--text-3); text-decoration: none; transition: color 200ms; }
+  .nav-back:hover { color: var(--accent); }
+  .nav-sep { color: var(--border); }
+  .nav-title { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--text-2); }
+  .nav-num { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--accent); }
+  .hero { padding: 4rem 3rem 2.5rem; display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: end; border-bottom: 1px solid var(--border-lt); max-width: 1100px; margin: 0 auto; }
+  .module-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.75rem; }
+  .module-label::before { content: '03'; font-family: 'JetBrains Mono', monospace; }
+  h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 400; line-height: 1.1; margin-bottom: 1rem; }
+  h1 em { font-style: italic; color: var(--text-2); }
+  .hero-desc { font-size: 0.92rem; line-height: 1.7; color: var(--text-2); font-weight: 300; max-width: 500px; }
+  .hero-eq { background: var(--surface); border: 1px solid var(--border-lt); border-radius: var(--r); padding: 1.75rem 2rem; text-align: center; min-width: 240px; }
+  .eq-row { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--text); margin-bottom: 0.5rem; }
+  .eq-name { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3); margin-top: 0.4rem; }
+  .main { max-width: 1100px; margin: 0 auto; padding: 2.5rem 3rem; }
+  .section-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3); margin-bottom: 0.2rem; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; margin-bottom: 1.25rem; }
+
+  .beam-section { background: var(--surface); border: 1px solid var(--border-lt); border-radius: var(--r); margin-bottom: 2rem; overflow: hidden; box-shadow: var(--shadow-sm); }
+  .beam-header { padding: 1.5rem 2rem; border-bottom: 1px solid var(--border-lt); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+  .beam-body { display: grid; grid-template-columns: 1fr 1fr; }
+  #beamCanvas { width: 100%; height: 340px; display: block; border-right: 1px solid var(--border-lt); }
+  #interferenceCanvas { width: 100%; height: 340px; display: block; }
+
+  .ctrl { display: flex; flex-direction: column; gap: 0.5rem; }
+  .ctrl-label { display: flex; justify-content: space-between; }
+  .ctrl-name { font-size: 0.78rem; font-weight: 600; color: var(--text-2); }
+  .ctrl-val { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--accent); }
+  .ctrl-unit { font-size: 0.65rem; color: var(--text-3); }
+  .ctrl-hint { font-size: 0.68rem; color: var(--text-3); font-weight: 300; }
+  input[type=range] { -webkit-appearance: none; width: 100%; height: 4px; background: var(--border); border-radius: 100px; outline: none; cursor: pointer; }
+  input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 0 4px rgba(188,114,80,0.15); }
+
+  .controls-strip { background: var(--surface); border: 1px solid var(--border-lt); border-radius: var(--r); padding: 1.5rem 2rem; margin-bottom: 2rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.5rem; box-shadow: var(--shadow-sm); }
+
+  .pearls { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+  .pearl { background: var(--surface); border: 1px solid var(--border-lt); border-radius: var(--r-sm); padding: 1.25rem 1.5rem; box-shadow: var(--shadow-sm); }
+  .pearl-icon { font-size: 1.4rem; margin-bottom: 0.75rem; }
+  .pearl-title { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; margin-bottom: 0.5rem; }
+  .pearl-text { font-size: 0.8rem; line-height: 1.65; color: var(--text-2); font-weight: 300; }
+  .nav-footer { display: flex; justify-content: space-between; align-items: center; padding: 2rem 3rem; border-top: 1px solid var(--border-lt); max-width: 1100px; margin: 0 auto; }
+  .nav-link { text-decoration: none; color: var(--text-3); font-size: 0.82rem; transition: color 200ms; display: flex; align-items: center; gap: 0.5rem; }
+  .nav-link:hover { color: var(--accent); }
+  .nav-link-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+  .hero { animation: fadeUp 0.5s ease both; }
+  @media (max-width: 700px) { nav, .hero, .main, .nav-footer { padding-left: 1.25rem; padding-right: 1.25rem; } .hero, .beam-body { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-left">
+    <a href="index.html" class="nav-back">← Collection</a>
+    <span class="nav-sep">|</span>
+    <span class="nav-title">The Ultrasound Lab</span>
+  </div>
+  <div class="nav-left">
+    <span class="nav-num">03 / 06</span>
+    <a href="02-echo-mapping.html" class="nav-back">← Echo Mapping</a>
+    <span class="nav-sep">|</span>
+    <a href="04-doppler.html" class="nav-back">Doppler →</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div>
+    <div class="module-label">Beamforming</div>
+    <h1>Steering light<br><em>you cannot see.</em></h1>
+    <p class="hero-desc">Ultrasound has no lens. Instead, an array of elements fires and listens with tiny time delays — and constructive interference creates a focused beam. The image is not captured; it is computed from wave mathematics.</p>
+  </div>
+  <div class="hero-eq">
+    <div class="eq-row">Δt = d · sinθ / c</div>
+    <div class="eq-name">Phase Delay per Element</div>
+    <div style="height:0.75rem"></div>
+    <div class="eq-row">A(x,t) = Σ aₙ · e^i(ωt−kxₙ)</div>
+    <div class="eq-name">Array Element Sum</div>
+    <div style="height:0.75rem"></div>
+    <div class="eq-row">X(ω) = ∫ x(t) e^−iωt dt</div>
+    <div class="eq-name">Fourier Transform</div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="beam-section">
+    <div class="beam-header">
+      <div>
+        <div class="section-label">Live Simulation</div>
+        <div class="section-title" style="margin:0;font-family:'Cormorant Garamond',serif;font-size:1.3rem;">Beamforming (left) — Interference Pattern (right)</div>
+      </div>
+    </div>
+    <div class="beam-body">
+      <canvas id="beamCanvas"></canvas>
+      <canvas id="interferenceCanvas"></canvas>
+    </div>
+  </div>
+
+  <div class="controls-strip">
+    <div class="ctrl">
+      <div class="ctrl-label">
+        <span class="ctrl-name">Number of elements</span>
+        <span class="ctrl-val"><span id="elemVal">12</span></span>
+      </div>
+      <input type="range" id="elemSlider" min="2" max="24" step="2" value="12" oninput="updateBeam()">
+      <div class="ctrl-hint">More elements → finer lateral resolution</div>
+    </div>
+    <div class="ctrl">
+      <div class="ctrl-label">
+        <span class="ctrl-name">Steering angle</span>
+        <span class="ctrl-val"><span id="angleVal">0</span><span class="ctrl-unit">°</span></span>
+      </div>
+      <input type="range" id="angleSlider" min="-40" max="40" step="1" value="0" oninput="updateBeam()">
+      <div class="ctrl-hint">Phase delays steer the beam without moving the probe</div>
+    </div>
+    <div class="ctrl">
+      <div class="ctrl-label">
+        <span class="ctrl-name">Focus depth</span>
+        <span class="ctrl-val"><span id="focusVal">3.5</span><span class="ctrl-unit"> cm</span></span>
+      </div>
+      <input type="range" id="focusSlider" min="1" max="8" step="0.5" value="3.5" oninput="updateBeam()">
+      <div class="ctrl-hint">Delays curved to converge at focal point</div>
+    </div>
+    <div class="ctrl">
+      <div class="ctrl-label">
+        <span class="ctrl-name">Element spacing</span>
+        <span class="ctrl-val"><span id="spacingVal">1.5</span><span class="ctrl-unit"> λ</span></span>
+      </div>
+      <input type="range" id="spacingSlider" min="0.5" max="3" step="0.25" value="1.5" oninput="updateBeam()">
+      <div class="ctrl-hint">λ/2 spacing minimizes grating lobes</div>
+    </div>
+  </div>
+
+  <div class="pearls">
+    <div class="pearl">
+      <div class="pearl-icon">🎯</div>
+      <div class="pearl-title">Constructive vs Destructive</div>
+      <p class="pearl-text">Where wavefronts arrive in phase, they amplify. Where they arrive out of phase, they cancel. Beamforming is simply engineering the delays so that constructive interference happens exactly where you want to look.</p>
+    </div>
+    <div class="pearl">
+      <div class="pearl-icon">📡</div>
+      <div class="pearl-title">Lateral vs Axial Resolution</div>
+      <p class="pearl-text">Axial resolution (along the beam) is determined by pulse length — shorter pulses = better. Lateral resolution (side-to-side) is determined by beam width — which is where focusing and element count matter most.</p>
+    </div>
+    <div class="pearl">
+      <div class="pearl-icon">🔢</div>
+      <div class="pearl-title">Fourier at Every Step</div>
+      <p class="pearl-text">The Fourier transform converts between time-domain echo signals and frequency-domain information. It's used in Doppler processing, noise filtering, and the reconstruction mathematics that turn raw signals into beamformed images.</p>
+    </div>
+    <div class="pearl">
+      <div class="pearl-icon">📡</div>
+      <div class="pearl-title">SONAR → RADAR → Medicine</div>
+      <p class="pearl-text">Beamforming was developed for military SONAR and RADAR during WWII. The mathematics translating these to medical ultrasound in the mid-20th century is one of the clearest examples of dual-use physics in history.</p>
+    </div>
+  </div>
+</div>
+
+<div class="nav-footer">
+  <a href="02-echo-mapping.html" class="nav-link"><span>←</span><div><div class="nav-link-label">Previous</div>Echo Mapping</div></a>
+  <a href="04-doppler.html" class="nav-link"><div style="text-align:right"><div class="nav-link-label">Next Module</div>Doppler Effect</div><span>→</span></a>
+</div>
+
+<script>
+const bc = document.getElementById('beamCanvas');
+const bctx = bc.getContext('2d');
+const ic = document.getElementById('interferenceCanvas');
+const ictx = ic.getContext('2d');
+let bAnimT = 0;
+let bParams = { nElem:12, angle:0, focus:3.5, spacing:1.5 };
+
+function resize() {
+  bc.width = bc.offsetWidth; bc.height = 340;
+  ic.width = ic.offsetWidth; ic.height = 340;
+}
+resize();
+window.addEventListener('resize', resize);
+
+function updateBeam() {
+  bParams.nElem   = +document.getElementById('elemSlider').value;
+  bParams.angle   = +document.getElementById('angleSlider').value;
+  bParams.focus   = +document.getElementById('focusSlider').value;
+  bParams.spacing = +document.getElementById('spacingSlider').value;
+  document.getElementById('elemVal').textContent    = bParams.nElem;
+  document.getElementById('angleVal').textContent   = bParams.angle;
+  document.getElementById('focusVal').textContent   = bParams.focus.toFixed(1);
+  document.getElementById('spacingVal').textContent = bParams.spacing.toFixed(2);
+}
+
+function drawBeam() {
+  const W = bc.width, H = bc.height;
+  bAnimT += 0.018;
+  bctx.clearRect(0, 0, W, H);
+  bctx.fillStyle = '#0E0C0A';
+  bctx.fillRect(0, 0, W, H);
+
+  const n = bParams.nElem;
+  const totalArrayW = Math.min(W * 0.7, n * 14);
+  const elemW = totalArrayW / n;
+  const arrayStartX = (W - totalArrayW) / 2;
+  const arrayY = 28;
+  const angleRad = bParams.angle * Math.PI / 180;
+  const focusPx = bParams.focus * (H - 60) / 8;
+
+  // Array elements
+  for (let i = 0; i < n; i++) {
+    const ex = arrayStartX + i * elemW + elemW / 2;
+    const delay = i * elemW * Math.sin(angleRad) / elemW * 0.5;
+    const pulsePhase = ((bAnimT - i * 0.08 * Math.sin(angleRad) - i * 0.04) % 1 + 1) % 1;
+
+    // Element body
+    bctx.fillStyle = `rgba(188,114,80,${0.6 + Math.sin(bAnimT * 4 - i * 0.3) * 0.2})`;
+    bctx.fillRect(ex - 5, arrayY - 8, 10, 8);
+
+    // Wave expanding from element
+    if (pulsePhase < 0.7) {
+      const wR = pulsePhase * H * 0.85;
+      const alpha = (1 - pulsePhase) * 0.18;
+      bctx.beginPath();
+      bctx.arc(ex, arrayY, wR, 0, Math.PI);
+      bctx.strokeStyle = `rgba(188,114,80,${alpha})`;
+      bctx.lineWidth = 1;
+      bctx.stroke();
+    }
+  }
+
+  // Combined beam (constructive interference zone)
+  const cx = W / 2 + Math.sin(angleRad) * focusPx * 0.5;
+  const beamAngle = angleRad;
+
+  // Beam body
+  const beamGrad = bctx.createLinearGradient(W/2, arrayY, cx, arrayY + focusPx);
+  beamGrad.addColorStop(0, 'rgba(188,114,80,0.08)');
+  beamGrad.addColorStop(0.6, 'rgba(188,114,80,0.2)');
+  beamGrad.addColorStop(1, 'rgba(188,114,80,0.0)');
+
+  const beamWidth = 24 + (12 - n/2) * 2;
+  bctx.beginPath();
+  bctx.moveTo(arrayStartX, arrayY);
+  bctx.lineTo(cx - beamWidth, arrayY + focusPx);
+  bctx.lineTo(cx + beamWidth, arrayY + focusPx);
+  bctx.lineTo(arrayStartX + totalArrayW, arrayY);
+  bctx.fillStyle = beamGrad;
+  bctx.fill();
+
+  // Focal point
+  const fpGrad = bctx.createRadialGradient(cx, arrayY + focusPx, 0, cx, arrayY + focusPx, 20);
+  fpGrad.addColorStop(0, 'rgba(188,114,80,0.6)');
+  fpGrad.addColorStop(1, 'transparent');
+  bctx.fillStyle = fpGrad;
+  bctx.fillRect(cx - 20, arrayY + focusPx - 20, 40, 40);
+
+  // Pulse traveling down beam
+  const pPh = (bAnimT * 0.4) % 1;
+  const pY = arrayY + pPh * (focusPx + 40);
+  const pX = W/2 + Math.sin(angleRad) * (pPh * focusPx);
+  bctx.beginPath();
+  bctx.arc(pX, pY, 4 + pPh * 3, 0, Math.PI * 2);
+  bctx.fillStyle = `rgba(188,114,80,${(1-pPh) * 0.9})`;
+  bctx.fill();
+
+  // Labels
+  bctx.fillStyle = 'rgba(158,130,114,0.6)';
+  bctx.font = '9px Nunito, sans-serif';
+  bctx.textAlign = 'center';
+  bctx.fillText(`${n}-element array`, W/2, 14);
+  bctx.fillText(`θ = ${bParams.angle}°`, W/2 + Math.sin(angleRad)*30, arrayY + focusPx/2);
+  bctx.fillStyle = 'rgba(188,114,80,0.7)';
+  bctx.beginPath(); bctx.arc(cx, arrayY + focusPx, 8, 0, Math.PI*2);
+  bctx.stroke();
+  bctx.fillText('focal point', cx, arrayY + focusPx + 18);
+}
+
+function drawInterference() {
+  const W = ic.width, H = ic.height;
+  ictx.clearRect(0, 0, W, H);
+  ictx.fillStyle = '#0E0C0A';
+  ictx.fillRect(0, 0, W, H);
+
+  const n = bParams.nElem;
+  const angleRad = bParams.angle * Math.PI / 180;
+  const lambda = 30;
+  const spacing = bParams.spacing * lambda;
+  const arrayStartX = W/2 - (n-1)*spacing/2;
+
+  // Compute interference pattern
+  const imgData = ictx.createImageData(W, H);
+  const data = imgData.data;
+
+  for (let py = 20; py < H; py++) {
+    for (let px = 0; px < W; px++) {
+      let re = 0, im = 0;
+      for (let i = 0; i < n; i++) {
+        const ex = arrayStartX + i * spacing;
+        const delay = (i - (n-1)/2) * spacing * Math.sin(angleRad) / lambda;
+        const dist = Math.sqrt(Math.pow(px - ex, 2) + Math.pow(py - 20, 2));
+        const phase = (dist / lambda - bAnimT * 0.3 + delay) * Math.PI * 2;
+        re += Math.cos(phase) / n;
+        im += Math.sin(phase) / n;
+      }
+      const amp = Math.sqrt(re*re + im*im);
+      const idx = (py * W + px) * 4;
+      const r = Math.round(amp * 188);
+      const g = Math.round(amp * 114 * 0.7);
+      const b = Math.round(amp * 80 * 0.6);
+      data[idx]   = r;
+      data[idx+1] = g;
+      data[idx+2] = b;
+      data[idx+3] = Math.min(255, amp * 320);
+    }
+  }
+  ictx.putImageData(imgData, 0, 0);
+
+  // Label
+  ictx.fillStyle = 'rgba(158,130,114,0.7)';
+  ictx.font = '9px Nunito, sans-serif';
+  ictx.textAlign = 'center';
+  ictx.fillText('Constructive interference pattern', W/2, 13);
+}
+
+function loop() {
+  drawBeam();
+  drawInterference();
+  requestAnimationFrame(loop);
+}
+loop();
+</script>
+</body>
+</html>

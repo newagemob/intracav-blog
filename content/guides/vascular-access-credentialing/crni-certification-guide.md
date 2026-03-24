@@ -4,6 +4,7 @@ date = 2026-02-25T00:00:00-05:00
 lastmod = 2026-02-25T00:00:00-05:00
 content_type = "guide"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["Credentialing", "Certification", "Infusion Nursing"]
 tags = ["CRNI certification", "certified registered nurse infusion", "CVAA certification", "infusion nursing certification", "CRNI eligibility", "CRNI exam content", "CRNI vs VA-BC"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

@@ -6,6 +6,7 @@ tags = ["Vascular Access", "ANTT", "Guidelines", "Human Judgement", "Healthcare"
 category = ["Healthcare Innovation", "Vascular Access", "Clinical Practice"]
 content_type = "blog"
 audience = "clinician"
+departments = ["vascular-access"]
 author = ["I.M. Wright", "IntraCav-CM01"]
 description = "A candid critique of healthcare's resistance to innovation: why vascular access and clinical practice remain stuck in outdated patterns while real problems like CLABSIs persist."
 summary = "Breaking through healthcare's bureaucratic inertia: why the industry needs to stop fetishizing AI and start solving actual clinical problems."

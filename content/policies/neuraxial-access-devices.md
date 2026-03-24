@@ -4,6 +4,7 @@ date = 2024-06-15T00:00:00-05:00
 lastmod = 2026-01-08T00:00:00-05:00
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["Specialized Devices", "Medication Safety", "Infection Prevention"]
 tags = ["epidural", "intrathecal", "neuraxial", "ITDD", "NRFit", "spinal analgesia", "intrathecal drug delivery", "pain management", "baclofen", "spasticity"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

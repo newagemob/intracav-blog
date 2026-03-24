@@ -4,6 +4,7 @@ date = 2026-02-25T00:00:00-05:00
 lastmod = 2026-02-25T00:00:00-05:00
 content_type = "guide"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["PICC Line", "Vascular Access Devices", "Central Venous Access"]
 tags = ["PICC line", "peripherally inserted central catheter", "PICC insertion", "PICC complications", "PICC tip position", "PICC care", "PICC dressing", "PICC maintenance", "central venous access", "ultrasound PICC"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

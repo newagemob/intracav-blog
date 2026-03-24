@@ -4,6 +4,7 @@ date = 2026-02-23T00:00:00-05:00
 lastmod = 2026-02-23T00:00:00-05:00
 content_type = "patient-education"
 audience = "patient"
+departments = ["vascular-access", "home-health"]
 category = ["Home Care", "Device Care", "PICC Line"]
 tags = ["PICC line", "home care", "PICC dressing", "PICC flushing", "home infusion", "discharge", "PICC complications", "outpatient IV"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

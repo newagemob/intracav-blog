@@ -4,6 +4,7 @@ date = 2026-02-23T00:00:00-05:00
 lastmod = 2026-02-23T00:00:00-05:00
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access", "oncology"]
 category = ["Pharmacy", "Occupational Safety", "Patient Safety"]
 tags = ["hazardous drug", "chemotherapy", "PPE", "closed-system drug transfer", "CSTD", "biological safety cabinet", "spill management", "environmental monitoring", "medical surveillance", "USP 800", "NIOSH", "reproductive health"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

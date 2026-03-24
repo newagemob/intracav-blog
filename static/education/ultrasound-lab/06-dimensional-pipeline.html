@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cross-Dimensional Comprehension — The Ultrasound Lab</title>
+<script src="https://unpkg.com/htmx.org@1.9.10"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Nunito:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #EDE4D5; --surface: #F6F0E8; --surface-hi: #FDFAF5;
+    --border: #D4C7B5; --border-lt: #E2D8CC;
+    --text: #28180C; --text-2: #685040; --text-3: #9E8272;
+    --accent: #BC7250; --accent-lt: #E8C4A8;
+    --sage: #7E9C84; --rose: #B87070; --gold: #C9A84C;
+    --shadow-sm: 0 1px 8px rgba(40,24,12,0.06), 0 0 0 1px rgba(40,24,12,0.04);
+    --r: 16px; --r-sm: 10px;
+  }
+  body { font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+  body::after {
+    content: ''; position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+    opacity: 0.028; pointer-events: none; z-index: 9999;
+  }
+  nav { display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 3rem; border-bottom: 1px solid var(--border-lt); background: rgba(237,228,213,0.85); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100; }
+  .nav-left { display: flex; align-items: center; gap: 1rem; }
+  .nav-back { font-size: 0.8rem; color: var(--text-3); text-decoration: none; transition: color 200ms; }
+  .nav-back:hover { color: var(--accent); }
+  .nav-sep { color: var(--border); }
+  .nav-title { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--text-2); }
+  .nav-num { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--accent); }
+
+  .hero { padding: 4rem 3rem 2.5rem; border-bottom: 1px solid var(--border-lt); max-width: 1100px; margin: 0 auto; }
+  .module-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.75rem; }
+  .module-label::before { content: '06'; font-family: 'JetBrains Mono', monospace; }
+  h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 400; line-height: 1.1; margin-bottom: 1rem; }
+  h1 em { font-style: italic; color: var(--text-2); }
+  .hero-desc { font-size: 0.92rem; line-height: 1.7; color: var(--text-2); font-weight: 300; max-width: 680px; }
+
+  .main { max-width: 1100px; margin: 0 auto; padding: 2.5rem 3rem; }
+  .section-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3); margin-bottom: 0.2rem; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; margin-bottom: 1.25rem; }
+
+  /* === PIPELINE VIZ === */
+  .pipeline-section { background: var(--text); border-radius: var(--r); margin-bottom: 2rem; overflow: hidden; }
+  .pipeline-header { padding: 2rem 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .pipeline-kicker { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
+  .pipeline-title { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: #F6F0E8; }
+  .pipeline-title em { font-style: italic; color: var(--accent-lt); }
+  #pipelineCanvas { width: 100%; height: 280px; display: block; cursor: pointer; }
+  .pipeline-tooltip { padding: 1.25rem 2.5rem; border-top: 1px solid rgba(255,255,255,0.06); min-height: 80px; }
+  .pt-step { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.3rem; }
+  .pt-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: #F0E8E0; margin-bottom: 0.4rem; }
+  .pt-desc { font-size: 0.8rem; line-height: 1.65; color: #8A7A6A; font-weight: 300; }
+  .pt-loss { font-size: 0.68rem; color: var(--rose); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 0.3rem; }
+
+  /* === SLICE GEOMETRY === */
+  .slice-section { background: var(--surface); border: 1px solid var(--border-lt); border-radius: var(--r); margin-bottom: 2rem; overflow: hidden; box-shadow: var(--shadow-sm); }
+  .slice-header { padding: 1.5rem 2rem; border-bottom: 1px solid var(--border-lt); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+  .slice-body { display: grid; grid-template-columns: 1fr 1fr 1fr; }
+  .slice-panel { border-right: 1px solid var(--border-lt); padding: 1.5rem; }
+  .slice-panel:last-child { border-right: none; }
+  .sp-label { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); margin-bottom: 0.5rem; }
+  .sp-title { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; margin-bottom: 0.75rem; }
+  canvas.slice-cv { width: 100%; height: 180px; display: block; }
+  .sp-desc { font-size: 0.75rem; line-height: 1.6; color: var(--text-2); font-weight: 300; margin-top: 0.75rem; }
+
+  /* === INVERSE PROBLEM === */
+  .inverse-section { background: var(--surface); border: 1px solid var(--border-lt); border-radius: var(--r); margin-bottom: 2rem; overflow: hidden; box-shadow: var(--shadow-sm); }
+  .inverse-header { padding: 1.5rem 2rem; border-bottom: 1px solid var(--border-lt); }
+  .inverse-body { display: grid; grid-template-columns: 1fr 1fr; }
+  #uncertaintyCanvas { width: 100%; height: 300px; display: block; border-right: 1px solid var(--border-lt); }
+  .inverse-panel { padding: 1.75rem; }
+  .confidence-item { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.25rem; }
+  .ci-label { font-size: 0.75rem; font-weight: 600; color: var(--text-2); }
+  .ci-bar-wrap { height: 8px; background: var(--border-lt); border-radius: 100px; overflow: hidden; }
+  .ci-bar { height: 100%; border-radius: 100px; transition: width 600ms cubic-bezier(0.25,0,0,1); }
+  .ci-val { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--accent); }
+
+  .scenario-btns { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem; }
+  .sc-btn { padding: 0.5rem 0.9rem; border: 1px solid var(--border); border-radius: var(--r-sm); font-size: 0.78rem; font-weight: 600; font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text-2); cursor: pointer; transition: all 150ms; text-align: left; }
+  .sc-btn:hover, .sc-btn.active { background: var(--accent); border-color: var(--accent); color: white; }
+
+  /* === INTRACAV AI LAYER === */
+  .ai-section { border-radius: var(--r); margin-bottom: 2rem; overflow: hidden; }
+  .ai-header { background: var(--text); padding: 2rem 2.5rem; }
+  .ai-kicker { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
+  .ai-title { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: #F6F0E8; margin-bottom: 0.75rem; }
+  .ai-title em { color: var(--accent-lt); font-style: italic; }
+  .ai-desc { font-size: 0.85rem; line-height: 1.75; color: #8A7A6A; max-width: 620px; }
+  .ai-cards { display: grid; grid-template-columns: repeat(4, 1fr); background: var(--text); border-top: 1px solid rgba(255,255,255,0.06); }
+  .ai-card { padding: 1.5rem 1.75rem; border-right: 1px solid rgba(255,255,255,0.06); }
+  .ai-card:last-child { border-right: none; }
+  .ac-num { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--accent); margin-bottom: 0.5rem; }
+  .ac-title { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: #E8E0D8; margin-bottom: 0.5rem; }
+  .ac-desc { font-size: 0.72rem; line-height: 1.6; color: #6A5A4A; font-weight: 300; }
+
+  /* === DEEP INSIGHT === */
+  .insight-section { background: linear-gradient(135deg, rgba(188,114,80,0.08), rgba(126,156,132,0.05)); border: 1px solid var(--border-lt); border-radius: var(--r); padding: 2.5rem; margin-bottom: 2rem; }
+  .is-kicker { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; }
+  .is-title { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 300; line-height: 1.25; color: var(--text); margin-bottom: 1rem; }
+  .is-title em { font-style: italic; color: var(--text-2); }
+  .is-desc { font-size: 0.85rem; line-height: 1.75; color: var(--text-2); font-weight: 300; }
+
+  /* Pearls */
+  .pearls { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+  .pearl { background: var(--surface); border: 1px solid var(--border-lt); border-radius: var(--r-sm); padding: 1.25rem 1.5rem; box-shadow: var(--shadow-sm); }
+  .pearl-icon { font-size: 1.4rem; margin-bottom: 0.75rem; }
+  .pearl-title { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; margin-bottom: 0.5rem; }
+  .pearl-text { font-size: 0.8rem; line-height: 1.65; color: var(--text-2); font-weight: 300; }
+
+  .nav-footer { display: flex; justify-content: space-between; align-items: center; padding: 2rem 3rem; border-top: 1px solid var(--border-lt); max-width: 1100px; margin: 0 auto; }
+  .nav-link { text-decoration: none; color: var(--text-3); font-size: 0.82rem; transition: color 200ms; display: flex; align-items: center; gap: 0.5rem; }
+  .nav-link:hover { color: var(--accent); }
+  .nav-link-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+  .hero { animation: fadeUp 0.5s ease both; }
+  .pipeline-section { animation: fadeUp 0.5s 0.05s ease both; }
+  .slice-section { animation: fadeUp 0.5s 0.1s ease both; }
+  .inverse-section { animation: fadeUp 0.5s 0.15s ease both; }
+
+  @media (max-width: 800px) {
+    nav, .hero, .main, .nav-footer { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .slice-body, .inverse-body, .ai-cards { grid-template-columns: 1fr; }
+    .slice-panel { border-right: none; border-bottom: 1px solid var(--border-lt); }
+    .ai-card { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-left">
+    <a href="index.html" class="nav-back">← Collection</a>
+    <span class="nav-sep">|</span>
+    <span class="nav-title">The Ultrasound Lab</span>
+  </div>
+  <div class="nav-left">
+    <span class="nav-num">06 / 06</span>
+    <a href="05-slice-geometry.html" class="nav-back">← Slice Geometry</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="module-label">Cross-Dimensional Comprehension</div>
+  <h1>The pipeline from<br><em>physics to perception.</em></h1>
+  <p class="hero-desc">Ultrasound is not a camera. It is a machine that converts 3D physical reality into 4D wave physics, compresses that into a 1D time signal, reconstructs a 2D image — and then asks a human brain to reverse the entire process. Understanding each transformation is the difference between a technician and a master sonographer.</p>
+</div>
+
+<div class="main">
+
+  <!-- ===== PIPELINE VISUALIZATION ===== -->
+  <div class="pipeline-section">
+    <div class="pipeline-header">
+      <div class="pipeline-kicker">Interactive Pipeline</div>
+      <div class="pipeline-title">Click each stage to understand <em>what is lost</em> at every transformation.</div>
+    </div>
+    <canvas id="pipelineCanvas"></canvas>
+    <div class="pipeline-tooltip" id="pipelineTooltip">
+      <div class="pt-step" id="ptStep">← Click a stage</div>
+      <div class="pt-title" id="ptTitle">Five dimensional transformations</div>
+      <div class="pt-desc" id="ptDesc">Each arrow in this pipeline represents an irreversible loss of information. The expert sonographer's skill is reconstructing what was lost.</div>
+    </div>
+  </div>
+
+  <!-- ===== SLICE GEOMETRY ===== -->
+  <div class="slice-section">
+    <div class="slice-header">
+      <div>
+        <div class="section-label">Perceptual Core Skill</div>
+        <div class="section-title" style="margin:0;">The Same Vessel — Three Different Views</div>
+      </div>
+      <div style="font-size:0.8rem;color:var(--text-3);font-weight:300;">Rotate your mental model, not the anatomy.</div>
+    </div>
+    <div class="slice-body">
+      <div class="slice-panel">
+        <div class="sp-label">Short Axis</div>
+        <div class="sp-title">Probe perpendicular</div>
+        <canvas class="slice-cv" id="shortAxisCanvas"></canvas>
+        <p class="sp-desc">The vessel appears as a perfect circle (or oval if oblique). You see the full lumen. Compressibility testing works best here — collapse with pressure to confirm vein vs artery.</p>
+      </div>
+      <div class="slice-panel">
+        <div class="sp-label">Long Axis</div>
+        <div class="sp-title">Probe parallel to vessel</div>
+        <canvas class="slice-cv" id="longAxisCanvas"></canvas>
+        <p class="sp-desc">The vessel appears as parallel bright walls with a dark anechoic channel. Catheter placement and needle trajectory are most visible in this view during insertion.</p>
+      </div>
+      <div class="slice-panel">
+        <div class="sp-label">Oblique / Off-Axis</div>
+        <div class="sp-title">Rotated between axes</div>
+        <canvas class="slice-cv" id="obliqueCanvas"></canvas>
+        <p class="sp-desc">An oval. The same vessel, now appearing smaller and less distinct. Beginners mistake this for a smaller or deeper vessel. Experts rotate the probe to confirm the true short or long axis.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== INVERSE PROBLEM / UNCERTAINTY ===== -->
+  <div class="inverse-section">
+    <div class="inverse-header">
+      <div class="section-label">The Inverse Problem</div>
+      <div class="section-title" style="margin:0;">Given echoes — what structure caused them?</div>
+    </div>
+    <div class="inverse-body">
+      <canvas id="uncertaintyCanvas"></canvas>
+      <div class="inverse-panel">
+        <div style="font-size:0.8rem;color:var(--text-2);font-weight:300;line-height:1.65;margin-bottom:1.5rem;">
+          The inverse problem is <em>ill-posed</em>: multiple tissue configurations can produce identical echo patterns. The brain resolves this using anatomical priors. Intracav can formalize those priors computationally.
+        </div>
+        <div class="section-label" style="margin-bottom:0.75rem;">Scenario</div>
+        <div class="scenario-btns">
+          <button class="sc-btn active" onclick="setScenario('ideal', this)">🟢 Ideal — shallow vein, thin tissue</button>
+          <button class="sc-btn" onclick="setScenario('obese', this)">🟡 Obese patient — deep vessel, fat layer</button>
+          <button class="sc-btn" onclick="setScenario('artifact', this)">🟠 Shadowing artifact from rib</button>
+          <button class="sc-btn" onclick="setScenario('collapsed', this)">🔴 Collapsed / low-pressure vein</button>
+        </div>
+        <div class="section-label" style="margin-bottom:0.75rem;">AI Confidence Model</div>
+        <div class="confidence-item">
+          <div class="ci-label">Vessel identified</div>
+          <div class="ci-bar-wrap"><div class="ci-bar" id="ciVessel" style="background:var(--sage);width:92%"></div></div>
+          <div class="ci-val" id="ciVesselVal">92%</div>
+        </div>
+        <div class="confidence-item">
+          <div class="ci-label">Depth estimate accuracy</div>
+          <div class="ci-bar-wrap"><div class="ci-bar" id="ciDepth" style="background:var(--sage);width:88%"></div></div>
+          <div class="ci-val" id="ciDepthVal">88%</div>
+        </div>
+        <div class="confidence-item">
+          <div class="ci-label">Vein vs artery confidence</div>
+          <div class="ci-bar-wrap"><div class="ci-bar" id="ciType" style="background:var(--gold);width:75%"></div></div>
+          <div class="ci-val" id="ciTypeVal">75%</div>
+        </div>
+        <div class="confidence-item">
+          <div class="ci-label">Cannulation angle estimate</div>
+          <div class="ci-bar-wrap"><div class="ci-bar" id="ciAngle" style="background:var(--sage);width:80%"></div></div>
+          <div class="ci-val" id="ciAngleVal">80%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== INTRACAV AI LAYER ===== -->
+  <div class="ai-section">
+    <div class="ai-header">
+      <div class="ai-kicker">Intracav · Physics-Aware AI</div>
+      <div class="ai-title">Making the inverse problem <em>explicitly computable.</em></div>
+      <p class="ai-desc">Most AI ignores the physics pipeline it sits on top of. Intracav incorporates speed-of-sound constraints, reflection models, and anatomical priors directly into the inference layer — recovering information that pixel-based models discard by design.</p>
+    </div>
+    <div class="ai-cards">
+      <div class="ai-card">
+        <div class="ac-num">01</div>
+        <div class="ac-title">Real-Time 3D Reconstruction</div>
+        <p class="ac-desc">Track probe movement across frames. Stack 2D slices. Build a volumetric model of the vascular anatomy even from a conventional 2D probe — using motion as the third dimension.</p>
+      </div>
+      <div class="ai-card">
+        <div class="ac-num">02</div>
+        <div class="ac-title">Semantic Interpretation Layer</div>
+        <p class="ac-desc">Convert pixels to meaning: "This is a compressible vein at 1.2 cm depth, diameter 6 mm, optimal angle 35°, vein confidence 91%." Not just a picture — a clinical recommendation.</p>
+      </div>
+      <div class="ai-card">
+        <div class="ac-num">03</div>
+        <div class="ac-title">Uncertainty Visualization</div>
+        <p class="ac-desc">Instead of pretending certainty, show confidence heatmaps and probabilistic vessel boundaries. The system flags where the inverse problem is most ambiguous — where human judgment is still needed.</p>
+      </div>
+      <div class="ai-card">
+        <div class="ac-num">04</div>
+        <div class="ac-title">Physics-Constrained Priors</div>
+        <p class="ac-desc">Speed-of-sound constraints, reflection models, and known tissue impedances act as hard priors. The AI cannot "hallucinate" a vessel at bone depth — physics rules out the impossible.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CLINICAL PEARLS ===== -->
+  <div class="pearls">
+    <div class="pearl">
+      <div class="pearl-icon">🧠</div>
+      <div class="pearl-title">Sonographers are inverse problem solvers</div>
+      <p class="pearl-text">Expert sonographers perform real-time inverse modeling with every scan. They infer 3D geometry from 2D slices, track motion across frames, and compensate for artifacts — usually without consciously knowing the mathematics they're executing.</p>
+    </div>
+    <div class="pearl">
+      <div class="pearl-icon">📐</div>
+      <div class="pearl-title">Each transformation loses information</div>
+      <p class="pearl-text">3D → 4D (lost: non-reflecting structures). 4D → 1D (lost: spatial direction). 1D → 2D (lost: out-of-plane anatomy). The expert's skill is knowing what was likely lost and why — not just reading what's on screen.</p>
+    </div>
+    <div class="pearl">
+      <div class="pearl-icon">🔄</div>
+      <div class="pearl-title">The echo cave — held in mind</div>
+      <p class="pearl-text">Think: you are in a dark cave, shouting. You infer the room geometry from echo timing and amplitude. The skill is building an accurate mental model of the room you cannot see. Ultrasound is exactly this problem — held continuously, in 3D, under time pressure.</p>
+    </div>
+    <div class="pearl">
+      <div class="pearl-icon">🎯</div>
+      <div class="pearl-title">Domain mapping is the core skill</div>
+      <p class="pearl-text">Physical (3D geometry) → Signal (1D waveform) → Image (2D grayscale) → Cognition (3D mental model). Mastery means fluent translation between all four domains simultaneously — in milliseconds, at the bedside.</p>
+    </div>
+  </div>
+
+  <!-- ===== DEEP INSIGHT ===== -->
+  <div class="insight-section">
+    <div class="is-kicker">The Deep Insight</div>
+    <div class="is-title">Ultrasound is not imaging.<br><em>It is probabilistic reconstruction of reality from indirect measurements across dimensions.</em></div>
+    <p class="is-desc">Every echo encodes a probability distribution over possible tissue configurations. The image is not a photograph — it is the machine's best guess, given the physics of wave propagation and acoustic impedance, about what structures produced the signals it measured. The expert sonographer is a Bayesian inference engine. Intracav makes that engine explicit, auditable, and clinically accountable.</p>
+  </div>
+
+</div>
+
+<div class="nav-footer">
+  <a href="05-slice-geometry.html" class="nav-link"><span>←</span><div><div class="nav-link-label">Previous</div>Slice Geometry</div></a>
+  <a href="index.html" class="nav-link"><div style="text-align:right"><div class="nav-link-label">Return to</div>Collection</div><span>→</span></a>
+</div>
+
+<script>
+// ===== COLORS =====
+const C = {
+  bg:'#EDE4D5', surface:'#F6F0E8', text:'#28180C', text2:'#685040', text3:'#9E8272',
+  accent:'#BC7250', accentLt:'#E8C4A8', sage:'#7E9C84', rose:'#B87070', gold:'#C9A84C',
+  border:'#D4C7B5', borderLt:'#E2D8CC'
+};
+
+// ===== PIPELINE STAGES =====
+const STAGES = [
+  {
+    dim:'3D', label:'Physical Reality', sub:'Tissue + Blood',
+    color:'#7E9C84',
+    step:'Stage 1 — Input',
+    title:'3D Physical Reality',
+    desc:'Tissue structures, vessel geometry, blood flow velocity, depth — all exist simultaneously in three spatial dimensions. This is the complete truth the machine is trying to approximate.',
+    loss:null
+  },
+  {
+    dim:'4D', label:'Wave Interaction', sub:'Scatter · Reflect · Attenuate',
+    color:'#C9A84C',
+    step:'Stage 2 — Physics',
+    title:'4D Wave Interaction',
+    desc:'Sound pulses travel through tissue, scattering off cell membranes, reflecting at impedance boundaries, attenuating with depth and frequency. Physics transforms 3D structure into time-varying wave fields.',
+    loss:'Lost: Structures that don\'t reflect. Perfect absorbers are invisible. Non-reflecting anatomy doesn\'t exist for the machine.'
+  },
+  {
+    dim:'1D', label:'Sensor Signal', sub:'Echo amplitudes over time',
+    color:'#BC7250',
+    step:'Stage 3 — Measurement',
+    title:'1D Time Signal (A-line)',
+    desc:'Each transducer element records a single time-series: amplitude vs time. This is all the machine actually measures. Everything else is reconstruction. One number per moment in time.',
+    loss:'Lost: All spatial direction information. The signal knows when echoes arrive, not where they came from laterally.'
+  },
+  {
+    dim:'2D', label:'Beamformed Image', sub:'Grayscale slice',
+    color:'#B87070',
+    step:'Stage 4 — Reconstruction',
+    title:'2D Beamformed Image',
+    desc:'Using phase delays across the transducer array, the machine reconstructs a 2D cross-sectional slice. Beamforming, Fourier transforms, and signal processing convert the 1D signals into the image you see on screen.',
+    loss:'Lost: Depth (out-of-plane anatomy). The 2D slice is a 3mm-thick cut through 3D space. Everything outside that plane is invisible.'
+  },
+  {
+    dim:'3D', label:'Mental Model', sub:'Clinician reconstructs anatomy',
+    color:'#9E8272',
+    step:'Stage 5 — Cognition',
+    title:'3D Mental Reconstruction',
+    desc:'The expert sonographer reverses the entire pipeline in their mind: inferring 3D geometry from the 2D slice, tracking structures across probe movement, compensating for artifacts. This is the inverse problem — solved in real time, by a trained brain.',
+    loss:'Opportunity: This cognitive step is where AI can augment the human. Explicit 3D reconstruction, uncertainty quantification, semantic labeling.'
+  },
+];
+
+let hoveredStage = null;
+let selectedStage = null;
+const pipelineCanvas = document.getElementById('pipelineCanvas');
+const pctx = pipelineCanvas.getContext('2d');
+
+function drawPipeline() {
+  const W = pipelineCanvas.offsetWidth;
+  const H = 280;
+  pipelineCanvas.width = W;
+  pipelineCanvas.height = H;
+
+  pctx.fillStyle = '#0E0C0A';
+  pctx.fillRect(0, 0, W, H);
+
+  const n = STAGES.length;
+  const blockW = Math.min(150, (W - 80) / n);
+  const startX = (W - n * blockW - (n-1) * 20) / 2;
+  const cy = H / 2;
+
+  STAGES.forEach((s, i) => {
+    const x = startX + i * (blockW + 20);
+    const isHov = hoveredStage === i || selectedStage === i;
+
+    // Arrow between stages
+    if (i > 0) {
+      const ax = x - 20;
+      pctx.beginPath();
+      pctx.moveTo(ax, cy);
+      pctx.lineTo(ax + 18, cy);
+      pctx.strokeStyle = s.loss ? '#B87070' : '#4A3A2A';
+      pctx.lineWidth = 1.5;
+      pctx.stroke();
+      // Arrowhead
+      pctx.beginPath();
+      pctx.moveTo(ax + 14, cy - 5);
+      pctx.lineTo(ax + 20, cy);
+      pctx.lineTo(ax + 14, cy + 5);
+      pctx.strokeStyle = s.loss ? '#B87070' : '#4A3A2A';
+      pctx.stroke();
+
+      if (s.loss) {
+        pctx.fillStyle = '#B87070';
+        pctx.font = '8px Nunito, sans-serif';
+        pctx.textAlign = 'center';
+        pctx.fillText('loss', ax + 10, cy - 8);
+      }
+    }
+
+    // Block
+    const bh = isHov ? 140 : 120;
+    const by = cy - bh / 2;
+    const col = s.color;
+
+    // Shadow
+    pctx.shadowColor = col + '44';
+    pctx.shadowBlur = isHov ? 20 : 8;
+    pctx.shadowOffsetY = 3;
+
+    // Background fill
+    pctx.fillStyle = isHov ? '#1A1410' : '#130F0C';
+    pctx.beginPath();
+    pctx.roundRect(x, by, blockW, bh, 10);
+    pctx.fill();
+    pctx.shadowBlur = 0; pctx.shadowOffsetY = 0;
+
+    // Border
+    pctx.strokeStyle = col + (isHov ? 'CC' : '55');
+    pctx.lineWidth = isHov ? 1.5 : 1;
+    pctx.beginPath();
+    pctx.roundRect(x, by, blockW, bh, 10);
+    pctx.stroke();
+
+    // Dimension number
+    pctx.fillStyle = col;
+    pctx.font = `${isHov ? 36 : 30}px Cormorant Garamond, serif`;
+    pctx.textAlign = 'center';
+    pctx.fillText(s.dim, x + blockW/2, by + (isHov ? 48 : 42));
+
+    // Label
+    pctx.fillStyle = '#E0D8D0';
+    pctx.font = `500 ${isHov ? 11 : 10}px Nunito, sans-serif`;
+    pctx.fillText(s.label, x + blockW/2, by + (isHov ? 66 : 58));
+
+    // Sub
+    pctx.fillStyle = '#6A5A4A';
+    pctx.font = `300 9px Nunito, sans-serif`;
+    const subLines = s.sub.split(' · ');
+    subLines.forEach((line, li) => {
+      pctx.fillText(line, x + blockW/2, by + (isHov ? 82 : 74) + li * 13);
+    });
+
+    // Loss indicator
+    if (s.loss) {
+      pctx.fillStyle = '#B87070';
+      pctx.font = '8px JetBrains Mono, monospace';
+      pctx.fillText('↑ info lost', x + blockW/2, by + bh - 8);
+    }
+
+    pctx.textAlign = 'left';
+  });
+}
+
+pipelineCanvas.addEventListener('mousemove', function(e) {
+  const rect = this.getBoundingClientRect();
+  const mx = (e.clientX - rect.left) * (this.width / rect.width);
+  const my = (e.clientY - rect.top) * (this.height / rect.height);
+  const n = STAGES.length;
+  const blockW = Math.min(150, (this.width - 80) / n);
+  const startX = (this.width - n * blockW - (n-1) * 20) / 2;
+  let found = null;
+  STAGES.forEach((s, i) => {
+    const x = startX + i * (blockW + 20);
+    if (mx >= x && mx <= x + blockW && my >= 0 && my <= this.height) found = i;
+  });
+  if (found !== hoveredStage) { hoveredStage = found; drawPipeline(); }
+});
+
+pipelineCanvas.addEventListener('click', function(e) {
+  const rect = this.getBoundingClientRect();
+  const mx = (e.clientX - rect.left) * (this.width / rect.width);
+  const n = STAGES.length;
+  const blockW = Math.min(150, (this.width - 80) / n);
+  const startX = (this.width - n * blockW - (n-1) * 20) / 2;
+  let found = null;
+  STAGES.forEach((s, i) => {
+    const x = startX + i * (blockW + 20);
+    if (mx >= x && mx <= x + blockW) found = i;
+  });
+  selectedStage = found;
+  if (found !== null) {
+    const s = STAGES[found];
+    document.getElementById('ptStep').textContent = s.step;
+    document.getElementById('ptTitle').textContent = s.title;
+    document.getElementById('ptDesc').textContent = s.desc;
+    const lossEl = document.getElementById('ptLoss') || (() => {
+      const el = document.createElement('div');
+      el.id = 'ptLoss';
+      el.className = 'pt-loss';
+      document.querySelector('.pipeline-tooltip').appendChild(el);
+      return el;
+    })();
+    lossEl.textContent = s.loss || '';
+  }
+  drawPipeline();
+});
+
+const resizeObs = new ResizeObserver(drawPipeline);
+resizeObs.observe(pipelineCanvas);
+
+// ===== SLICE GEOMETRY =====
+function drawShortAxis() {
+  const cv = document.getElementById('shortAxisCanvas');
+  cv.width = cv.offsetWidth; cv.height = 180;
+  const ctx = cv.getContext('2d');
+  const W = cv.width, H = cv.height;
+  ctx.fillStyle = '#0A0806'; ctx.fillRect(0, 0, W, H);
+
+  // Tissue background
+  const grad = ctx.createRadialGradient(W/2, H/2, 5, W/2, H/2, H*0.55);
+  grad.addColorStop(0, 'rgba(74,138,202,0.15)');
+  grad.addColorStop(1, 'rgba(34,26,18,0.8)');
+  ctx.fillStyle = grad; ctx.fillRect(0, 0, W, H);
+
+  // Tissue
+  ctx.fillStyle = 'rgba(34,26,18,0.6)'; ctx.fillRect(0, 0, W, H);
+
+  // Vessel lumen (dark = blood = anechoic)
+  ctx.beginPath();
+  ctx.ellipse(W/2, H/2, 44, 44, 0, 0, Math.PI*2);
+  ctx.fillStyle = '#050810'; ctx.fill();
+  ctx.strokeStyle = 'rgba(188,200,220,0.6)'; ctx.lineWidth = 2; ctx.stroke();
+
+  // Bright wall highlight
+  const wallGrad = ctx.createRadialGradient(W/2, H/2, 40, W/2, H/2, 50);
+  wallGrad.addColorStop(0, 'rgba(200,215,235,0.0)');
+  wallGrad.addColorStop(0.7, 'rgba(200,215,235,0.35)');
+  wallGrad.addColorStop(1, 'rgba(200,215,235,0.0)');
+  ctx.beginPath();
+  ctx.ellipse(W/2, H/2, 50, 50, 0, 0, Math.PI*2);
+  ctx.strokeStyle = wallGrad; ctx.lineWidth = 8; ctx.stroke();
+
+  // Label
+  ctx.fillStyle = 'rgba(126,156,132,0.8)';
+  ctx.font = '500 10px Nunito, sans-serif';
+  ctx.textAlign = 'center';
+  ctx.fillText('Circle = perfectly centered', W/2, H - 10);
+
+  // Probe indicator at top
+  ctx.fillStyle = '#BC7250';
+  ctx.fillRect(W/2 - 25, 0, 50, 5);
+}
+
+function drawLongAxis() {
+  const cv = document.getElementById('longAxisCanvas');
+  cv.width = cv.offsetWidth; cv.height = 180;
+  const ctx = cv.getContext('2d');
+  const W = cv.width, H = cv.height;
+  ctx.fillStyle = '#0A0806'; ctx.fillRect(0, 0, W, H);
+  ctx.fillStyle = 'rgba(34,26,18,0.6)'; ctx.fillRect(0, 0, W, H);
+
+  // Top wall
+  const wallY1 = H * 0.32, wallY2 = H * 0.68;
+  const wallGrad1 = ctx.createLinearGradient(0, wallY1 - 8, 0, wallY1 + 8);
+  wallGrad1.addColorStop(0, 'rgba(200,215,235,0)');
+  wallGrad1.addColorStop(0.5, 'rgba(200,215,235,0.5)');
+  wallGrad1.addColorStop(1, 'rgba(200,215,235,0)');
+  ctx.fillStyle = wallGrad1; ctx.fillRect(W * 0.1, wallY1 - 8, W * 0.8, 16);
+
+  // Lumen
+  ctx.fillStyle = '#040810';
+  ctx.beginPath();
+  ctx.rect(W * 0.1, wallY1, W * 0.8, wallY2 - wallY1);
+  ctx.fill();
+
+  // Bottom wall
+  const wallGrad2 = ctx.createLinearGradient(0, wallY2 - 8, 0, wallY2 + 8);
+  wallGrad2.addColorStop(0, 'rgba(200,215,235,0)');
+  wallGrad2.addColorStop(0.5, 'rgba(200,215,235,0.5)');
+  wallGrad2.addColorStop(1, 'rgba(200,215,235,0)');
+  ctx.fillStyle = wallGrad2; ctx.fillRect(W * 0.1, wallY2 - 8, W * 0.8, 16);
+
+  // Label
+  ctx.fillStyle = 'rgba(126,156,132,0.8)';
+  ctx.font = '500 10px Nunito, sans-serif';
+  ctx.textAlign = 'center';
+  ctx.fillText('Two parallel bright walls', W/2, H - 10);
+
+  ctx.fillStyle = '#BC7250';
+  ctx.fillRect(W/2 - 25, 0, 50, 5);
+}
+
+function drawOblique() {
+  const cv = document.getElementById('obliqueCanvas');
+  cv.width = cv.offsetWidth; cv.height = 180;
+  const ctx = cv.getContext('2d');
+  const W = cv.width, H = cv.height;
+  ctx.fillStyle = '#0A0806'; ctx.fillRect(0, 0, W, H);
+  ctx.fillStyle = 'rgba(34,26,18,0.6)'; ctx.fillRect(0, 0, W, H);
+
+  // Ellipse (oblique cut)
+  ctx.beginPath();
+  ctx.ellipse(W/2, H/2, 28, 44, Math.PI * 0.2, 0, Math.PI*2);
+  ctx.fillStyle = '#040810'; ctx.fill();
+  ctx.strokeStyle = 'rgba(188,200,220,0.4)'; ctx.lineWidth = 2; ctx.stroke();
+
+  // Wall glow
+  const wallGrad = ctx.createRadialGradient(W/2, H/2, 25, W/2, H/2, 40);
+  wallGrad.addColorStop(0, 'rgba(200,215,235,0)');
+  wallGrad.addColorStop(0.8, 'rgba(200,215,235,0.2)');
+  wallGrad.addColorStop(1, 'rgba(200,215,235,0)');
+  ctx.beginPath();
+  ctx.ellipse(W/2, H/2, 33, 50, Math.PI * 0.2, 0, Math.PI*2);
+  ctx.strokeStyle = wallGrad; ctx.lineWidth = 6; ctx.stroke();
+
+  ctx.fillStyle = 'rgba(201,168,76,0.8)';
+  ctx.font = '500 10px Nunito, sans-serif';
+  ctx.textAlign = 'center';
+  ctx.fillText('Oval = off-axis; looks "smaller"', W/2, H - 10);
+
+  ctx.fillStyle = '#BC7250';
+  const offCenter = W/2 - 30;
+  ctx.save();
+  ctx.translate(offCenter + 30, 0);
+  ctx.rotate(Math.PI * 0.12);
+  ctx.fillRect(-25, 0, 50, 5);
+  ctx.restore();
+}
+
+// ===== UNCERTAINTY CANVAS =====
+const ucv = document.getElementById('uncertaintyCanvas');
+const uctx = ucv.getContext('2d');
+let ucAnimT = 0;
+let ucScenario = 'ideal';
+
+const SCENARIOS = {
+  ideal:     { depth:0.25, fat:0.15, vesselR:0.12, noise:0.05, ciVessel:92, ciDepth:88, ciType:75, ciAngle:80 },
+  obese:     { depth:0.5,  fat:0.4,  vesselR:0.09, noise:0.18, ciVessel:71, ciDepth:62, ciType:68, ciAngle:55 },
+  artifact:  { depth:0.35, fat:0.2,  vesselR:0.11, noise:0.3,  ciVessel:58, ciDepth:72, ciType:55, ciAngle:48 },
+  collapsed: { depth:0.28, fat:0.18, vesselR:0.04, noise:0.1,  ciVessel:44, ciDepth:80, ciType:88, ciAngle:35 },
+};
+
+function setScenario(s, btn) {
+  ucScenario = s;
+  document.querySelectorAll('.sc-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const sc = SCENARIOS[s];
+  const setConf = (id, valId, val, color) => {
+    const el = document.getElementById(id);
+    el.style.width = val + '%';
+    el.style.background = val > 75 ? '#7E9C84' : val > 55 ? '#C9A84C' : '#B87070';
+    document.getElementById(valId).textContent = val + '%';
+  };
+  setConf('ciVessel','ciVesselVal', sc.ciVessel);
+  setConf('ciDepth','ciDepthVal', sc.ciDepth);
+  setConf('ciType','ciTypeVal', sc.ciType);
+  setConf('ciAngle','ciAngleVal', sc.ciAngle);
+}
+
+function drawUncertainty() {
+  const W = ucv.offsetWidth, H = 300;
+  ucv.width = W; ucv.height = H;
+  ucAnimT += 0.015;
+
+  uctx.fillStyle = '#0E0C0A';
+  uctx.fillRect(0, 0, W, H);
+
+  const sc = SCENARIOS[ucScenario];
+  const transW = 24;
+  const maxDepth = H;
+  const vesselY = H * sc.depth;
+  const vesselR = H * sc.vesselR;
+
+  // Fat/tissue layers
+  const fatH = H * sc.fat;
+  const fatGrad = uctx.createLinearGradient(0, 0, 0, fatH);
+  fatGrad.addColorStop(0, 'rgba(201,168,76,0.08)');
+  fatGrad.addColorStop(1, 'rgba(201,168,76,0.03)');
+  uctx.fillStyle = fatGrad;
+  uctx.fillRect(transW, 0, W - transW, fatH);
+
+  uctx.fillStyle = 'rgba(34,26,18,0.4)';
+  uctx.fillRect(transW, fatH, W - transW, H - fatH);
+
+  // Noise pattern
+  for (let i = 0; i < 120 * sc.noise; i++) {
+    const nx = transW + Math.random() * (W - transW);
+    const ny = Math.random() * H;
+    const alpha = Math.random() * 0.3;
+    uctx.fillStyle = `rgba(188,114,80,${alpha})`;
+    uctx.fillRect(nx, ny, 1 + Math.random() * 2, 1 + Math.random() * 2);
+  }
+
+  // Vessel (uncertain boundary = blurry edges)
+  const confidence = SCENARIOS[ucScenario].ciVessel / 100;
+  const blur = (1 - confidence) * 15;
+
+  // Confidence heatmap around vessel
+  for (let r = vesselR + blur * 3; r > vesselR - 4; r -= 2) {
+    const alpha = ((r - vesselR + 4) / (blur * 3 + 4)) * (1 - confidence) * 0.3;
+    uctx.beginPath();
+    uctx.ellipse(W * 0.5, vesselY, r, r * 0.9, 0, 0, Math.PI * 2);
+    uctx.strokeStyle = `rgba(201,168,76,${alpha})`;
+    uctx.lineWidth = 2;
+    uctx.stroke();
+  }
+
+  // Vessel lumen
+  if (ucScenario !== 'collapsed') {
+    uctx.beginPath();
+    uctx.ellipse(W * 0.5, vesselY, vesselR, vesselR * 0.9, 0, 0, Math.PI * 2);
+    uctx.fillStyle = '#030608';
+    uctx.fill();
+  }
+
+  // Vessel wall
+  const wallAlpha = confidence * 0.7;
+  uctx.beginPath();
+  uctx.ellipse(W * 0.5, vesselY, vesselR + blur * 0.5, (vesselR + blur * 0.5) * 0.9, 0, 0, Math.PI * 2);
+  uctx.strokeStyle = `rgba(180,200,220,${wallAlpha})`;
+  uctx.lineWidth = 1.5 + blur * 0.3;
+  uctx.stroke();
+
+  // Shadowing artifact
+  if (ucScenario === 'artifact') {
+    uctx.fillStyle = 'rgba(8,6,4,0.7)';
+    uctx.beginPath();
+    uctx.rect(W * 0.35, H * 0.55, W * 0.12, H * 0.45);
+    uctx.fill();
+    uctx.fillStyle = 'rgba(201,168,76,0.5)';
+    uctx.font = '9px Nunito, sans-serif';
+    uctx.textAlign = 'center';
+    uctx.fillText('rib shadow', W * 0.41, H * 0.98);
+  }
+
+  // Needle track indicator
+  const needleX = W * 0.2;
+  const needleAngle = Math.PI * 0.22;
+  const nLen = vesselY / Math.cos(needleAngle) * 0.9;
+  uctx.beginPath();
+  uctx.moveTo(needleX, 0);
+  uctx.lineTo(needleX + Math.sin(needleAngle) * nLen, nLen * Math.cos(needleAngle));
+  uctx.strokeStyle = 'rgba(188,114,80,0.4)';
+  uctx.lineWidth = 1;
+  uctx.setLineDash([3, 6]);
+  uctx.stroke();
+  uctx.setLineDash([]);
+
+  // Transducer
+  uctx.fillStyle = '#3A3028';
+  uctx.fillRect(0, 0, transW - 2, H);
+  uctx.fillStyle = '#BC7250';
+  uctx.fillRect(transW - 4, 0, 4, H);
+
+  // Depth tick
+  uctx.fillStyle = 'rgba(158,130,114,0.5)';
+  uctx.font = '9px JetBrains Mono, monospace';
+  uctx.textAlign = 'left';
+  uctx.fillText((sc.depth * 5).toFixed(1)+'cm', transW + 4, vesselY + 3);
+
+  requestAnimationFrame(drawUncertainty);
+}
+
+// ===== INIT =====
+window.addEventListener('load', () => {
+  drawPipeline();
+  drawShortAxis();
+  drawLongAxis();
+  drawOblique();
+  drawUncertainty();
+
+  const obs = new ResizeObserver(() => {
+    drawShortAxis(); drawLongAxis(); drawOblique();
+  });
+  obs.observe(document.getElementById('shortAxisCanvas'));
+});
+</script>
+</body>
+</html>

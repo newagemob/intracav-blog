@@ -4,6 +4,7 @@ date = 2023-06-08T00:00:00-05:00
 lastmod = 2025-04-22T00:00:00-05:00
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["Complication Management", "Patient Safety", "Medication Safety"]
 tags = ["infiltration", "extravasation", "vesicant", "vascular access complications", "antidotes", "tissue injury"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

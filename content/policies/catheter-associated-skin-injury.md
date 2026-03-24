@@ -4,6 +4,7 @@ date = 2024-09-05T00:00:00-05:00
 lastmod = 2026-01-20T00:00:00-05:00
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access", "infection-prevention"]
 category = ["Complication Management", "Patient Safety", "Device Maintenance"]
 tags = ["catheter-associated skin injury", "CASI", "MARSI", "medical adhesive", "dressing", "skin barrier", "chlorhexidine", "skin tear", "contact dermatitis", "neonatal skin", "securement"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

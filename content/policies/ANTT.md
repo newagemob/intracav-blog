@@ -4,6 +4,7 @@ date = 2024-04-21T13:16:02-05:00
 lastmod = 2024-07-19T00:00:00-05:00
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access", "infection-prevention"]
 category = ["Infection Control", "Clinical Guidelines", "Aseptic Technique"]
 tags = ["ANTT", "aseptic technique", "key-site", "key-part", "Standard-ANTT", "Surgical-ANTT", "infection prevention", "vascular access", "aseptic field", "Critical Aseptic Field", "Micro Critical Aseptic Field"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

@@ -6,6 +6,7 @@ tags = ["Vascular Access", "Policies", "Guidelines", "Human Judgement", "Open So
 category = ["Healthcare Technology", "Clinical Guidelines", "Open Source"]
 content_type = "blog"
 audience = "clinician"
+departments = ["vascular-access"]
 author = ["I.M. Wright"]
 description = "Clinical guidelines as static PDFs are failing healthcare. Learn why API-first medical knowledge distribution is essential for modern clinical decision support and how open-source approaches can revolutionize healthcare interoperability."
 summary = "Why healthcare must move beyond PDF guidelines to API-first medical knowledge: exploring the interoperability crisis and the case for machine-readable clinical protocols."

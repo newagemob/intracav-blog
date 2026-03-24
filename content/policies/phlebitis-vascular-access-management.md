@@ -4,6 +4,7 @@ date = 2023-04-12T00:00:00-05:00
 lastmod = 2025-03-18T00:00:00-05:00
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["Complication Management", "Patient Safety"]
 tags = ["phlebitis", "peripheral IV", "inflammation", "vascular access complications", "PIVC"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

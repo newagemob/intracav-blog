@@ -4,6 +4,7 @@ date = 2024-01-15T00:00:00-05:00
 lastmod = 2026-01-15T00:00:00-05:00
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["Vascular Access", "Central Venous Access", "Infusion Therapy"]
 tags = ["implanted port", "noncoring needle", "port access", "skin antisepsis", "ANTT", "power injection", "port flushing", "dressing change", "patient education", "TSM dressing", "chlorhexidine dressing"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

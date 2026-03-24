@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shear Stress — The Vascular Lab</title>
+<script src="https://unpkg.com/htmx.org@1.9.10"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Nunito:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #EDE4D5; --surface: #F6F0E8; --surface-hi: #FDFAF5;
+    --border: #D4C7B5; --border-lt: #E2D8CC;
+    --text: #28180C; --text-2: #685040; --text-3: #9E8272;
+    --accent: #BC7250; --accent-lt: #E8C4A8;
+    --sage: #7E9C84; --rose: #B87070; --rose-lt: #EBD0D0;
+    --safe: #7E9C84; --warn: #C9A84C; --danger: #B87070; --critical: #8B3030;
+    --shadow-sm: 0 1px 8px rgba(40,24,12,0.06), 0 0 0 1px rgba(40,24,12,0.04);
+    --r: 16px; --r-sm: 10px;
+  }
+  body { font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+  body::after {
+    content: ''; position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+    opacity: 0.028; pointer-events: none; z-index: 9999;
+  }
+  nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.25rem 3rem; border-bottom: 1px solid var(--border-lt);
+    background: rgba(237,228,213,0.85); backdrop-filter: blur(12px);
+    position: sticky; top: 0; z-index: 100;
+  }
+  .nav-left { display: flex; align-items: center; gap: 1rem; }
+  .nav-back, .nav-next { font-size: 0.8rem; color: var(--text-3); text-decoration: none; transition: color 200ms; }
+  .nav-back:hover, .nav-next:hover { color: var(--accent); }
+  .nav-sep { color: var(--border); }
+  .nav-title { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--text-2); }
+  .nav-num { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--accent); }
+
+  .hero {
+    padding: 4rem 3rem 2.5rem; display: grid;
+    grid-template-columns: 1fr auto; gap: 2rem; align-items: end;
+    border-bottom: 1px solid var(--border-lt); max-width: 1100px; margin: 0 auto;
+  }
+  .module-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.75rem; }
+  .module-label::before { content: '04'; font-family: 'JetBrains Mono', monospace; }
+  h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 400; line-height: 1.1; color: var(--text); margin-bottom: 1rem; }
+  h1 em { font-style: italic; color: var(--text-2); }
+  .hero-desc { font-size: 0.92rem; line-height: 1.7; color: var(--text-2); font-weight: 300; max-width: 500px; }
+
+  .hero-eq { background: var(--surface); border: 1px solid var(--border-lt); border-radius: var(--r); padding: 1.75rem 2rem; text-align: center; min-width: 220px; }
+  .eq-row { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--text); margin-bottom: 0.5rem; }
+  .eq-name { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3); margin-top: 0.3rem; }
+  .frac { display: inline-flex; flex-direction: column; align-items: center; vertical-align: middle; margin: 0 0.15rem; }
+  .frac .num { border-bottom: 1.5px solid var(--text-2); padding: 0 4px 3px; }
+  .frac .den { padding: 3px 4px 0; }
+
+  .main { max-width: 1100px; margin: 0 auto; padding: 2.5rem 3rem; }
+
+  /* Stress meter */
+  .stress-meter {
+    background: var(--surface); border: 1px solid var(--border-lt);
+    border-radius: var(--r); padding: 1.5rem 2rem; margin-bottom: 2rem;
+    box-shadow: var(--shadow-sm);
+    display: flex; align-items: center; gap: 2rem;
+  }
+
+  .stress-value-block { text-align: center; min-width: 140px; }
+  .stress-value { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 400; line-height: 1; transition: color 500ms; }
+  .stress-unit { font-size: 0.82rem; color: var(--text-3); margin-top: 0.25rem; }
+  .stress-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3); margin-top: 0.4rem; }
+
+  .stress-bar-section { flex: 1; }
+  .threshold-bar {
+    position: relative; height: 14px; border-radius: 100px; margin: 1rem 0;
+    background: linear-gradient(90deg, #7E9C84 0%, #7E9C84 35%, #C9A84C 45%, #C9A84C 60%, #B87070 70%, #8B3030 100%);
+  }
+  .threshold-needle {
+    position: absolute; top: -10px; width: 3px; height: 34px;
+    background: var(--text); border-radius: 2px; transform: translateX(-50%);
+    transition: left 400ms cubic-bezier(0.25, 0, 0, 1);
+    box-shadow: 0 0 8px rgba(40,24,12,0.4);
+  }
+  .threshold-labels { display: flex; justify-content: space-between; font-size: 0.62rem; color: var(--text-3); font-family: 'JetBrains Mono', monospace; }
+  .stress-state { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-style: italic; transition: color 500ms; margin-top: 0.5rem; }
+
+  /* Two-column viz */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem; }
+
+  .viz-section { background: var(--surface); border: 1px solid var(--border-lt); border-radius: var(--r); overflow: hidden; box-shadow: var(--shadow-sm); }
+  .viz-header { padding: 1.25rem 1.5rem; border-bottom: 1px solid var(--border-lt); }
+  .section-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3); margin-bottom: 0.2rem; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--text); }
+
+  #vesselCanvas { width: 100%; height: 300px; display: block; }
+  #forceCanvas { width: 100%; height: 300px; display: block; }
+
+  /* Controls */
+  .controls-section { background: var(--surface); border: 1px solid var(--border-lt); border-radius: var(--r); padding: 1.5rem; margin-bottom: 2rem; box-shadow: var(--shadow-sm); }
+  .controls { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.5rem; }
+  .ctrl { display: flex; flex-direction: column; gap: 0.5rem; }
+  .ctrl-label { display: flex; justify-content: space-between; align-items: baseline; }
+  .ctrl-name { font-size: 0.78rem; font-weight: 600; color: var(--text-2); }
+  .ctrl-val { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--accent); font-weight: 500; }
+  .ctrl-unit { font-size: 0.65rem; color: var(--text-3); margin-left: 0.25rem; }
+  input[type=range] {
+    -webkit-appearance: none; width: 100%; height: 4px;
+    background: var(--border); border-radius: 100px; outline: none; cursor: pointer;
+  }
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none; width: 18px; height: 18px; background: var(--accent); border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(188,114,80,0.15); transition: box-shadow 200ms;
+  }
+  input[type=range]::-webkit-slider-thumb:hover { box-shadow: 0 0 0 6px rgba(188,114,80,0.2); }
+  .ctrl-hint { font-size: 0.68rem; color: var(--text-3); font-weight: 300; }
+
+  /* Medication effects */
+  .med-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.75rem; margin-bottom: 2rem; }
+  .med-card { background: var(--surface); border: 1px solid var(--border-lt); border-radius: var(--r-sm); padding: 1rem; cursor: pointer; transition: all 200ms; }
+  .med-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .med-name { font-size: 0.85rem; font-weight: 600; color: var(--text); margin-bottom: 0.25rem; }
+  .med-ph { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--accent); }
+  .med-osm { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--text-3); }
+  .med-risk { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.15rem 0.5rem; border-radius: 100px; margin-top: 0.4rem; display: inline-block; }
+
+  .pearls { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
+  .pearl { background: var(--surface-hi); border: 1px solid var(--border-lt); border-radius: var(--r-sm); padding: 1.25rem; }
+  .pearl-icon { font-size: 1.2rem; margin-bottom: 0.6rem; }
+  .pearl-title { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: var(--text); margin-bottom: 0.4rem; }
+  .pearl-text { font-size: 0.82rem; line-height: 1.6; color: var(--text-2); font-weight: 300; }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .hero { animation: fadeUp 500ms ease-out both; }
+
+  @media (max-width: 800px) {
+    .two-col { grid-template-columns: 1fr; }
+    .hero { grid-template-columns: 1fr; padding: 2.5rem 1.5rem; }
+    .main { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-left">
+    <a class="nav-back" href="index.html">← Collection</a>
+    <span class="nav-sep">·</span>
+    <span class="nav-num">04</span>
+    <span class="nav-title">Shear Stress & Vessel Injury</span>
+  </div>
+  <a class="nav-next" href="05-probability.html">Probability →</a>
+</nav>
+
+<section class="hero">
+  <div>
+    <div class="module-label">— Wall Shear Stress</div>
+    <h1>The wall <em>feels</em><br>every injection.</h1>
+    <p class="hero-desc">
+      Wall shear stress is the tangential force per unit area exerted by flowing fluid
+      on the vessel endothelium. Too low, and cells activate prothrombotic genes.
+      Too high, and the endothelium is literally torn.
+    </p>
+  </div>
+  <div class="hero-eq">
+    <div class="eq-row">
+      τ<sub>w</sub> = <div class="frac"><span class="num">4ηQ</span><span class="den">πr³</span></div>
+    </div>
+    <div class="eq-name">Wall Shear Stress</div>
+    <div style="height:1px;background:var(--border-lt);margin:0.85rem 0;"></div>
+    <div class="eq-row" style="font-size:0.95rem;">
+      τ<sub>w</sub> = <div class="frac"><span class="num">4μQ</span><span class="den">πr³</span></div> = η · <div class="frac"><span class="num">∂v</span><span class="den">∂r</span></div>
+    </div>
+    <div class="eq-name">Also: viscosity × velocity gradient</div>
+    <div style="height:1px;background:var(--border-lt);margin:0.85rem 0;"></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;text-align:left;">
+      <div>
+        <div style="font-size:0.7rem;color:var(--safe);font-weight:600;">Safe &lt;1 Pa</div>
+        <div style="font-size:0.65rem;color:var(--text-3);">Normal physiology</div>
+      </div>
+      <div>
+        <div style="font-size:0.7rem;color:var(--danger);font-weight:600;">Danger &gt;40 Pa</div>
+        <div style="font-size:0.65rem;color:var(--text-3);">Endothelial injury</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="main">
+
+  <!-- Stress Meter -->
+  <div class="stress-meter">
+    <div class="stress-value-block">
+      <div class="stress-value" id="stressVal">—</div>
+      <div class="stress-unit">Pascal (Pa)</div>
+      <div class="stress-label">Wall Shear Stress</div>
+    </div>
+    <div class="stress-bar-section">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
+        <div style="font-size:0.65rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-3);">Injury Risk Scale</div>
+        <div class="stress-state" id="stressState" style="color:var(--safe)">Safe — Normal physiology</div>
+      </div>
+      <div class="threshold-bar">
+        <div class="threshold-needle" id="stressNeedle" style="left:5%"></div>
+      </div>
+      <div class="threshold-labels">
+        <span>0</span><span>1 Pa</span><span>10 Pa</span><span>40 Pa</span><span>100+ Pa</span>
+      </div>
+      <div style="display:flex;gap:1.5rem;margin-top:0.5rem;font-size:0.7rem;color:var(--text-3);">
+        <span style="color:var(--safe)">■ Safe (&lt;1 Pa)</span>
+        <span style="color:var(--warn)">■ Warning (1–10 Pa)</span>
+        <span style="color:var(--danger)">■ Injury risk (10–40 Pa)</span>
+        <span style="color:var(--critical)">■ Critical (&gt;40 Pa)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <div class="controls-section">
+    <div style="font-size:0.65rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-3);margin-bottom:1rem;">Adjust Parameters</div>
+    <div class="controls">
+      <div class="ctrl">
+        <div class="ctrl-label">
+          <span class="ctrl-name">Flow Rate (Q)</span>
+          <span class="ctrl-val" id="qVal">200 <span class="ctrl-unit">mL/hr</span></span>
+        </div>
+        <input type="range" id="qSlider" min="10" max="3000" step="10" value="200" oninput="updateStress()">
+        <div class="ctrl-hint">Slow drip → rapid bolus → pressure-bag infusion</div>
+      </div>
+      <div class="ctrl">
+        <div class="ctrl-label">
+          <span class="ctrl-name">Vessel Radius (r)</span>
+          <span class="ctrl-val" id="rVal">2.0 <span class="ctrl-unit">mm</span></span>
+        </div>
+        <input type="range" id="rSlider" min="0.2" max="5" step="0.1" value="2.0" oninput="updateStress()">
+        <div class="ctrl-hint">Small peripheral vein → basilic → subclavian</div>
+      </div>
+      <div class="ctrl">
+        <div class="ctrl-label">
+          <span class="ctrl-name">Viscosity (η)</span>
+          <span class="ctrl-val" id="etaVal">1.0 <span class="ctrl-unit">cP</span></span>
+        </div>
+        <input type="range" id="etaSlider" min="0.5" max="8" step="0.1" value="1.0" oninput="updateStress()">
+        <div class="ctrl-hint">NS ≈ 1 · Blood ≈ 3.5 · Contrast ≈ 5–8 cP</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Visual pair -->
+  <div class="two-col">
+    <div class="viz-section">
+      <div class="viz-header">
+        <div class="section-label">Vessel Cross-Section</div>
+        <div class="section-title">Endothelial Shear Forces</div>
+      </div>
+      <canvas id="vesselCanvas"></canvas>
+    </div>
+    <div class="viz-section">
+      <div class="viz-header">
+        <div class="section-label">Velocity Profile</div>
+        <div class="section-title">Wall Gradient (∂v/∂r)</div>
+      </div>
+      <canvas id="forceCanvas"></canvas>
+    </div>
+  </div>
+
+  <!-- Medication reference -->
+  <div style="margin-bottom:1.25rem;">
+    <div style="font-size:0.65rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-3);margin-bottom:0.75rem;">Medication Compatibility — Vessel Injury Risk</div>
+    <div class="med-grid">
+      <div class="med-card" onclick="setVesselContext(7.4, 285)">
+        <div class="med-name">Normal Saline</div>
+        <div class="med-ph">pH 5.0–7.0</div>
+        <div class="med-osm">290 mOsm/L</div>
+        <div class="med-risk" style="background:rgba(126,156,132,0.15);color:var(--safe)">Low Risk</div>
+      </div>
+      <div class="med-card" onclick="setVesselContext(3.5, 285)">
+        <div class="med-name">Amiodarone (IV)</div>
+        <div class="med-ph">pH 3.5–4.5</div>
+        <div class="med-osm">700 mOsm/L</div>
+        <div class="med-risk" style="background:rgba(184,112,112,0.15);color:var(--danger)">High Risk</div>
+      </div>
+      <div class="med-card" onclick="setVesselContext(8.5, 330)">
+        <div class="med-name">Vancomycin (IV)</div>
+        <div class="med-ph">pH 2.5–4.5</div>
+        <div class="med-osm">5000 mOsm/L</div>
+        <div class="med-risk" style="background:rgba(184,112,112,0.15);color:var(--danger)">High Risk</div>
+      </div>
+      <div class="med-card" onclick="setVesselContext(6.8, 310)">
+        <div class="med-name">D5W</div>
+        <div class="med-ph">pH 4.0–5.0</div>
+        <div class="med-osm">252 mOsm/L</div>
+        <div class="med-risk" style="background:rgba(201,168,76,0.15);color:var(--warn)">Moderate</div>
+      </div>
+      <div class="med-card" onclick="setVesselContext(4.0, 285)">
+        <div class="med-name">Potassium Chloride</div>
+        <div class="med-ph">pH 4.0–8.0</div>
+        <div class="med-osm">Variable</div>
+        <div class="med-risk" style="background:rgba(201,168,76,0.15);color:var(--warn)">Moderate</div>
+      </div>
+      <div class="med-card" onclick="setVesselContext(7.2, 1200)">
+        <div class="med-name">TPN (full formula)</div>
+        <div class="med-ph">pH 5.5–6.5</div>
+        <div class="med-osm">>900 mOsm/L</div>
+        <div class="med-risk" style="background:rgba(184,112,112,0.15);color:var(--danger)">Central Only</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Clinical Pearls -->
+  <div class="pearls">
+    <div class="pearl">
+      <div class="pearl-icon">📐</div>
+      <div class="pearl-title">The Cube Relationship</div>
+      <div class="pearl-text">Shear stress scales with 1/r³ — much more sensitive than flow rate's 1/r⁴ in the HP equation. A small vein (r=1mm) sees 8× the shear stress of a moderate vein (r=2mm) at the same flow rate.</div>
+    </div>
+    <div class="pearl">
+      <div class="pearl-icon">🔬</div>
+      <div class="pearl-title">Endothelial Response</div>
+      <div class="pearl-text">Endothelial cells sense shear stress via mechanoreceptors. Physiologic shear (0.1–1 Pa) upregulates protective factors (eNOS, t-PA). High shear (&gt;40 Pa) causes cell detachment. Very low shear promotes von Willebrand factor and VCAM-1 — thrombogenesis.</div>
+    </div>
+    <div class="pearl">
+      <div class="pearl-icon">💊</div>
+      <div class="pearl-title">Chemical + Mechanical Injury</div>
+      <div class="pearl-text">Phlebitis from peripheral IVs combines mechanical shear injury with chemical injury from osmolarity and pH extremes. Amiodarone in a small vein is a double insult — high osmolarity AND high shear stress from the narrow radius.</div>
+    </div>
+    <div class="pearl">
+      <div class="pearl-icon">🩺</div>
+      <div class="pearl-title">Dilution as Protection</div>
+      <div class="pearl-text">Diluting irritant medications reduces concentration injury but also reduces viscosity, which can lower shear stress slightly. More importantly, infusing into a larger vessel (central) dramatically reduces shear stress via the r³ factor.</div>
+    </div>
+  </div>
+
+  <!-- Thomas Young + Intracav Risk Heatmap -->
+  <div style="background:var(--text); border-radius:var(--r); padding:2.5rem 3rem; margin-bottom:2rem; position:relative; overflow:hidden;">
+    <div style="position:absolute;top:-80px;right:-80px;width:350px;height:350px;background:radial-gradient(circle,rgba(188,114,80,0.15) 0%,transparent 70%);pointer-events:none;"></div>
+    <div style="font-size:0.62rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--accent); margin-bottom:0.75rem;">Intracav · The Product Vision</div>
+    <div style="font-family:'Cormorant Garamond',serif; font-size:1.8rem; font-weight:400; color:#F6F0E8; margin-bottom:1.25rem; line-height:1.2;">A risk heatmap on the ultrasound — <em style="color:var(--accent-lt)">before you insert.</em></div>
+    <p style="font-size:0.85rem; line-height:1.75; color:#B0A090; font-weight:300; max-width:600px; margin-bottom:2rem;">
+      Overlay shear stress risk directly onto the ultrasound image. Using the measured vessel diameter and planned infusion parameters, compute τ_w in real time. Color-grade every visible vessel segment before the needle goes in.
+    </p>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1rem;">
+      <div style="background:rgba(126,156,132,0.15); border:1px solid rgba(126,156,132,0.25); border-radius:var(--r-sm); padding:1.25rem;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:#7E9C84; margin-bottom:0.5rem;">τ &lt; 1 Pa</div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:1.1rem; color:#C8E0CA; margin-bottom:0.3rem;">🟢 Optimal</div>
+        <div style="font-size:0.75rem; color:#6A8A6E; font-weight:300; line-height:1.5;">Normal endothelial physiology. Proceed with planned gauge and rate.</div>
+      </div>
+      <div style="background:rgba(201,168,76,0.12); border:1px solid rgba(201,168,76,0.25); border-radius:var(--r-sm); padding:1.25rem;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:#C9A84C; margin-bottom:0.5rem;">1–10 Pa</div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:1.1rem; color:#EFE0A0; margin-bottom:0.3rem;">🟡 Monitor</div>
+        <div style="font-size:0.75rem; color:#8A7830; font-weight:300; line-height:1.5;">Reduce rate, dilute medications, or step up to a larger vessel.</div>
+      </div>
+      <div style="background:rgba(184,112,112,0.12); border:1px solid rgba(184,112,112,0.25); border-radius:var(--r-sm); padding:1.25rem;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:#B87070; margin-bottom:0.5rem;">&gt; 10 Pa</div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:1.1rem; color:#EBD0D0; margin-bottom:0.3rem;">🔴 Injury Risk</div>
+        <div style="font-size:0.75rem; color:#7A5050; font-weight:300; line-height:1.5;">Phlebitis / thrombosis likely. Escalate access or reformulate infusion.</div>
+      </div>
+    </div>
+    <div style="margin-top:1.5rem; padding-top:1.5rem; border-top:1px solid rgba(255,255,255,0.08); font-size:0.78rem; color:#7A6A5A; font-weight:300; line-height:1.7;">
+      <strong style="color:#C0A888;">Historical note:</strong> Thomas Young's early 19th-century work connecting mechanical stress to biological tissue built the conceptual bridge between engineering shear mechanics and the living endothelium. The math existed. Clinical translation took 200 years.
+    </div>
+  </div>
+
+</div>
+
+<div style="display:flex;justify-content:space-between;padding:2rem 3rem;border-top:1px solid var(--border-lt);max-width:1100px;margin:0 auto;">
+  <a style="text-decoration:none;color:var(--text-3);font-size:0.82rem;display:flex;align-items:center;gap:0.5rem;" href="03-turbulence.html" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-3)'">
+    <span>←</span><div><div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.1em;">Previous</div>Turbulence</div>
+  </a>
+  <a style="text-decoration:none;color:var(--text-3);font-size:0.82rem;display:flex;align-items:center;gap:0.5rem;" href="05-probability.html" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-3)'">
+    <div style="text-align:right"><div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.1em;">Next</div>Probability & Decision</div><span>→</span>
+  </a>
+</div>
+
+<script>
+// ── Physics ────────────────────────────────────────────────────────────
+function calcShearStress(Q_mlhr, r_mm, eta_cP) {
+  const Q = (Q_mlhr / 3600) * 1e-6; // m³/s
+  const r = r_mm * 1e-3;            // m
+  const eta = eta_cP * 1e-3;        // Pa·s
+  return (4 * eta * Q) / (Math.PI * Math.pow(r, 3)); // Pa
+}
+
+function getStressState(tau) {
+  if (tau < 1) return { label: 'Safe — Normal physiology', color: '#7E9C84', risk: 0 };
+  if (tau < 10) return { label: 'Warning — Monitor closely', color: '#C9A84C', risk: (tau - 1) / 9 * 0.33 + 0.1 };
+  if (tau < 40) return { label: 'Injury risk — Phlebitis possible', color: '#B87070', risk: (tau - 10) / 30 * 0.33 + 0.43 };
+  return { label: 'Critical — Endothelial damage', color: '#8B3030', risk: Math.min(0.95, 0.76 + (tau - 40) / 200) };
+}
+
+function stressToScale(tau) {
+  // Log scale 0-100Pa → 0-100%
+  const pct = Math.log10(1 + tau) / Math.log10(101) * 95;
+  return Math.min(95, Math.max(2, pct));
+}
+
+// ── Canvas Setup ───────────────────────────────────────────────────────
+const vc = document.getElementById('vesselCanvas');
+const fc = document.getElementById('forceCanvas');
+const vctx = vc.getContext('2d');
+const fctx = fc.getContext('2d');
+
+function resizeCanvases() {
+  [vc, fc].forEach(c => {
+    c.width = c.offsetWidth;
+    c.height = 300;
+  });
+}
+resizeCanvases();
+window.addEventListener('resize', resizeCanvases);
+
+// ── State ──────────────────────────────────────────────────────────────
+let state = { Q: 200, r: 2.0, eta: 1.0 };
+let tau = 0;
+let animT = 0;
+
+// ── Draw ───────────────────────────────────────────────────────────────
+function lerp(a, b, t) { return a + (b - a) * t; }
+function clamp(x, a, b) { return Math.max(a, Math.min(b, x)); }
+
+function hsl(h, s, l) { return `hsl(${h},${s}%,${l}%)`; }
+
+function stressColor(risk) {
+  // Green (120°) → Yellow (50°) → Red (0°) as risk increases
+  const h = lerp(120, 0, risk);
+  const s = 40 + risk * 20;
+  const l = 40 - risk * 10;
+  return `hsl(${h},${s}%,${l}%)`;
+}
+
+function drawVesselCanvas() {
+  const W = vc.width, H = vc.height;
+  vctx.clearRect(0, 0, W, H);
+  vctx.fillStyle = '#FAF6F0';
+  vctx.fillRect(0, 0, W, H);
+
+  const cx = W / 2, cy = H / 2;
+  const R_px = Math.min(W, H) * 0.35;
+  const { risk } = getStressState(tau);
+
+  // Outer vessel wall (adventitia)
+  const wallGrad = vctx.createRadialGradient(cx, cy, R_px * 0.85, cx, cy, R_px * 1.2);
+  wallGrad.addColorStop(0, 'rgba(200,160,120,0)');
+  wallGrad.addColorStop(0.5, 'rgba(180,130,90,0.3)');
+  wallGrad.addColorStop(1, 'rgba(160,110,70,0.5)');
+  vctx.beginPath(); vctx.arc(cx, cy, R_px * 1.18, 0, Math.PI * 2);
+  vctx.fillStyle = wallGrad; vctx.fill();
+
+  // Endothelium layer (colored by stress)
+  const endo_r = R_px;
+  const endoThick = 8 + risk * 6;
+  for (let i = 0; i < 40; i++) {
+    const angle = (i / 40) * Math.PI * 2;
+    const nextAngle = ((i + 1) / 40) * Math.PI * 2;
+
+    // Individual endothelial cells with slight variation
+    const cellRisk = risk + (Math.sin(i * 2.3 + animT * 0.5) * 0.1);
+    const cellColor = stressColor(clamp(cellRisk, 0, 1));
+
+    // Damaged cells show as fragments when risk > 0.7
+    if (risk > 0.7 && Math.sin(i * 1.7 + animT) > 0.5) {
+      // Gap in endothelium
+      continue;
+    }
+
+    vctx.beginPath();
+    vctx.arc(cx, cy, endo_r, angle, nextAngle);
+    vctx.arc(cx, cy, endo_r - endoThick, nextAngle, angle, true);
+    vctx.closePath();
+    vctx.fillStyle = cellColor;
+    vctx.strokeStyle = 'rgba(250,246,240,0.3)';
+    vctx.lineWidth = 0.5;
+    vctx.fill(); vctx.stroke();
+  }
+
+  // Lumen (blood)
+  const bloodGrad = vctx.createRadialGradient(cx, cy, 0, cx, cy, R_px - endoThick);
+  bloodGrad.addColorStop(0, '#2A0A0A');
+  bloodGrad.addColorStop(1, '#1A0808');
+  vctx.beginPath(); vctx.arc(cx, cy, R_px - endoThick, 0, Math.PI * 2);
+  vctx.fillStyle = bloodGrad; vctx.fill();
+
+  // Shear stress arrows on the wall
+  const N_ARROWS = 12;
+  for (let i = 0; i < N_ARROWS; i++) {
+    const angle = (i / N_ARROWS) * Math.PI * 2 + Math.PI / 4;
+    const ax = cx + (endo_r - endoThick/2) * Math.cos(angle);
+    const ay = cy + (endo_r - endoThick/2) * Math.sin(angle);
+    const tangAngle = angle + Math.PI / 2; // tangent direction
+    const arrowLen = 8 + risk * 20;
+
+    vctx.beginPath();
+    vctx.moveTo(ax, ay);
+    vctx.lineTo(ax + Math.cos(tangAngle) * arrowLen, ay + Math.sin(tangAngle) * arrowLen);
+    vctx.strokeStyle = stressColor(risk);
+    vctx.lineWidth = 1.5 + risk;
+    vctx.stroke();
+
+    // Arrowhead
+    const ex = ax + Math.cos(tangAngle) * arrowLen;
+    const ey = ay + Math.sin(tangAngle) * arrowLen;
+    vctx.beginPath();
+    vctx.moveTo(ex, ey);
+    vctx.lineTo(ex + Math.cos(tangAngle - 2.4) * 5, ey + Math.sin(tangAngle - 2.4) * 5);
+    vctx.moveTo(ex, ey);
+    vctx.lineTo(ex + Math.cos(tangAngle + 2.4) * 5, ey + Math.sin(tangAngle + 2.4) * 5);
+    vctx.stroke();
+  }
+
+  // Labels
+  vctx.fillStyle = 'rgba(158,130,114,0.7)';
+  vctx.font = '500 11px Nunito';
+  vctx.textAlign = 'center';
+  const stressColor2 = getStressState(tau).color;
+  vctx.fillStyle = stressColor2;
+  vctx.font = '600 13px Nunito';
+  vctx.fillText(`τw = ${tau.toFixed(2)} Pa`, cx, H - 16);
+  vctx.textAlign = 'left';
+}
+
+function drawForceCanvas() {
+  const W = fc.width, H = fc.height;
+  fctx.clearRect(0, 0, W, H);
+  fctx.fillStyle = '#FAF6F0';
+  fctx.fillRect(0, 0, W, H);
+
+  const margin = 50;
+  const usableH = H - margin * 2;
+  const usableW = W - margin * 2;
+  const cy = H / 2;
+  const cx = margin + usableW * 0.15;
+
+  // Axis
+  fctx.strokeStyle = 'rgba(158,130,114,0.3)';
+  fctx.lineWidth = 1;
+  fctx.beginPath();
+  fctx.moveTo(margin, margin); fctx.lineTo(margin, H - margin);
+  fctx.moveTo(margin, cy); fctx.lineTo(W - margin/2, cy);
+  fctx.stroke();
+
+  // Axis labels
+  fctx.fillStyle = 'rgba(158,130,114,0.7)'; fctx.font = '500 10px Nunito';
+  fctx.textAlign = 'center';
+  fctx.fillText('v(r)', W - margin/2, cy - 8);
+  fctx.fillText('r', margin, margin - 8);
+  fctx.textAlign = 'left';
+
+  // Vessel wall lines
+  const R_px = usableH / 2 * 0.85;
+  fctx.strokeStyle = 'rgba(188,114,80,0.4)'; fctx.lineWidth = 1.5;
+  fctx.setLineDash([]);
+  fctx.beginPath();
+  fctx.moveTo(margin, cy - R_px); fctx.lineTo(W - margin/2, cy - R_px);
+  fctx.moveTo(margin, cy + R_px); fctx.lineTo(W - margin/2, cy + R_px);
+  fctx.stroke();
+
+  // Velocity profile (parabolic)
+  const { risk } = getStressState(tau);
+  const profileW = usableW * 0.6;
+
+  fctx.beginPath();
+  for (let iy = cy - R_px; iy <= cy + R_px; iy++) {
+    const rNorm = (iy - cy) / R_px;
+    const v = Math.max(0, 1 - rNorm * rNorm);
+    const x = cx + v * profileW;
+    if (iy === cy - R_px) fctx.moveTo(x, iy);
+    else fctx.lineTo(x, iy);
+  }
+  fctx.strokeStyle = stressColor(risk);
+  fctx.lineWidth = 2; fctx.stroke();
+
+  // Gradient arrows (∂v/∂r) at the wall
+  const gradSteps = 6;
+  for (let i = 0; i < gradSteps; i++) {
+    const iy = cy - R_px + (i / (gradSteps - 1)) * 2 * R_px;
+    const rNorm = (iy - cy) / R_px;
+    const v = Math.max(0, 1 - rNorm * rNorm);
+    const gradMag = Math.abs(-2 * rNorm); // |dv/dr| normalized
+    const x = cx + v * profileW;
+    const arrowLen = gradMag * 25 + 3;
+
+    // Draw gradient arrow
+    fctx.beginPath();
+    fctx.moveTo(x, iy);
+    fctx.lineTo(x - arrowLen, iy);
+    fctx.strokeStyle = `rgba(184,112,112,${0.3 + gradMag * 0.5})`;
+    fctx.lineWidth = 1 + gradMag;
+    fctx.stroke();
+  }
+
+  // Wall gradient label
+  fctx.fillStyle = 'rgba(184,112,112,0.8)';
+  fctx.font = '500 10px Nunito';
+  fctx.textAlign = 'left';
+  fctx.fillText('← ∂v/∂r at wall', margin + 4, cy - R_px - 8);
+  fctx.fillText('← ∂v/∂r at wall', margin + 4, cy + R_px + 14);
+}
+
+function draw() {
+  animT += 0.02;
+  drawVesselCanvas();
+  drawForceCanvas();
+  requestAnimationFrame(draw);
+}
+requestAnimationFrame(draw);
+
+// ── Update ─────────────────────────────────────────────────────────────
+function updateStress() {
+  state.Q   = parseFloat(document.getElementById('qSlider').value);
+  state.r   = parseFloat(document.getElementById('rSlider').value);
+  state.eta = parseFloat(document.getElementById('etaSlider').value);
+
+  document.getElementById('qVal').innerHTML = state.Q + ' <span class="ctrl-unit">mL/hr</span>';
+  document.getElementById('rVal').innerHTML = state.r.toFixed(1) + ' <span class="ctrl-unit">mm</span>';
+  document.getElementById('etaVal').innerHTML = state.eta.toFixed(1) + ' <span class="ctrl-unit">cP</span>';
+
+  tau = calcShearStress(state.Q, state.r, state.eta);
+  const fs = getStressState(tau);
+
+  document.getElementById('stressVal').textContent = tau < 100 ? tau.toFixed(2) : Math.round(tau);
+  document.getElementById('stressVal').style.color = fs.color;
+  document.getElementById('stressState').textContent = fs.label;
+  document.getElementById('stressState').style.color = fs.color;
+  document.getElementById('stressNeedle').style.left = stressToScale(tau) + '%';
+}
+
+function setVesselContext(ph, osm) {
+  // Just a UI affordance — real chemical injury not modeled
+  console.log('Med context: pH', ph, 'osm', osm);
+}
+
+updateStress();
+</script>
+</body>
+</html>

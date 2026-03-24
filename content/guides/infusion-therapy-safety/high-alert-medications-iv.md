@@ -4,6 +4,7 @@ date = 2026-02-25T00:00:00-05:00
 lastmod = 2026-02-25T00:00:00-05:00
 content_type = "guide"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["Infusion Therapy Safety", "Medication Safety", "High-Alert Medications"]
 tags = ["high alert medications IV", "ISMP high alert medications", "IV medication safety", "concentrated electrolytes IV", "heparin IV safety", "insulin IV safety", "potassium chloride IV safety", "chemotherapy IV safety"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

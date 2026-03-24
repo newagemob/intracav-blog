@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Echo Mapping — The Ultrasound Lab</title>
+<script src="https://unpkg.com/htmx.org@1.9.10"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Nunito:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #EDE4D5; --surface: #F6F0E8; --surface-hi: #FDFAF5;
+    --border: #D4C7B5; --border-lt: #E2D8CC;
+    --text: #28180C; --text-2: #685040; --text-3: #9E8272;
+    --accent: #BC7250; --accent-lt: #E8C4A8;
+    --sage: #7E9C84; --rose: #B87070;
+    --shadow-sm: 0 1px 8px rgba(40,24,12,0.06), 0 0 0 1px rgba(40,24,12,0.04);
+    --r: 16px; --r-sm: 10px;
+  }
+  body { font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+  body::after {
+    content: ''; position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+    opacity: 0.028; pointer-events: none; z-index: 9999;
+  }
+  nav { display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 3rem; border-bottom: 1px solid var(--border-lt); background: rgba(237,228,213,0.85); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100; }
+  .nav-left { display: flex; align-items: center; gap: 1rem; }
+  .nav-back { font-size: 0.8rem; color: var(--text-3); text-decoration: none; transition: color 200ms; }
+  .nav-back:hover { color: var(--accent); }
+  .nav-sep { color: var(--border); }
+  .nav-title { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--text-2); }
+  .nav-num { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--accent); }
+
+  .hero { padding: 4rem 3rem 2.5rem; display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: end; border-bottom: 1px solid var(--border-lt); max-width: 1100px; margin: 0 auto; }
+  .module-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.75rem; }
+  .module-label::before { content: '02'; font-family: 'JetBrains Mono', monospace; }
+  h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 400; line-height: 1.1; margin-bottom: 1rem; }
+  h1 em { font-style: italic; color: var(--text-2); }
+  .hero-desc { font-size: 0.92rem; line-height: 1.7; color: var(--text-2); font-weight: 300; max-width: 500px; }
+  .hero-eq { background: var(--surface); border: 1px solid var(--border-lt); border-radius: var(--r); padding: 1.75rem 2rem; text-align: center; min-width: 240px; }
+  .eq-row { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: var(--text); margin-bottom: 0.5rem; }
+  .eq-name { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3); margin-top: 0.4rem; }
+  .frac { display: inline-flex; flex-direction: column; align-items: center; vertical-align: middle; margin: 0 0.1rem; }
+  .frac .num { border-bottom: 1.5px solid var(--text-2); padding: 0 4px 3px; }
+  .frac .den { padding: 3px 4px 0; }
+
+  .main { max-width: 1100px; margin: 0 auto; padding: 2.5rem 3rem; }
+  .section-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3); margin-bottom: 0.2rem; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; margin-bottom: 1.25rem; }
+
+  /* A-line / TOF simulator */
+  .tof-section { background: var(--surface); border: 1px solid var(--border-lt); border-radius: var(--r); margin-bottom: 2rem; overflow: hidden; box-shadow: var(--shadow-sm); }
+  .tof-header { padding: 1.5rem 2rem; border-bottom: 1px solid var(--border-lt); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+  .tof-body { display: grid; grid-template-columns: 1fr 1fr; }
+  #sceneCanvas { width: 100%; height: 320px; display: block; border-right: 1px solid var(--border-lt); }
+  #alineCanvas { width: 100%; height: 320px; display: block; }
+
+  /* Layer builder */
+  .layer-builder { background: var(--surface); border: 1px solid var(--border-lt); border-radius: var(--r); margin-bottom: 2rem; padding: 1.5rem 2rem; box-shadow: var(--shadow-sm); }
+  .layer-row { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1.25rem; align-items: flex-end; }
+  .layer-field { display: flex; flex-direction: column; gap: 0.35rem; }
+  .layer-field label { font-size: 0.7rem; font-weight: 600; color: var(--text-3); text-transform: uppercase; letter-spacing: 0.08em; }
+  .layer-field select, .layer-field input[type=number] {
+    padding: 0.45rem 0.75rem; border: 1px solid var(--border); border-radius: var(--r-sm);
+    font-size: 0.82rem; font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text); outline: none;
+    transition: border-color 200ms; cursor: pointer;
+  }
+  .layer-field select:focus, .layer-field input:focus { border-color: var(--accent); }
+  .add-btn { padding: 0.5rem 1.25rem; background: var(--accent); color: white; border: none; border-radius: 100px; font-size: 0.8rem; font-weight: 600; font-family: 'Nunito', sans-serif; cursor: pointer; transition: background 200ms; height: fit-content; }
+  .add-btn:hover { background: #a85f40; }
+  .layers-list { display: flex; flex-direction: column; gap: 0.5rem; }
+  .layer-chip { display: flex; justify-content: space-between; align-items: center; background: var(--bg); border: 1px solid var(--border-lt); border-radius: var(--r-sm); padding: 0.6rem 1rem; font-size: 0.8rem; }
+  .layer-chip .lc-name { font-weight: 600; color: var(--text); }
+  .layer-chip .lc-data { color: var(--text-3); font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; }
+  .layer-chip .lc-z { color: var(--accent); font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; }
+  .layer-chip .lc-remove { background: none; border: none; cursor: pointer; color: var(--text-3); font-size: 1rem; transition: color 150ms; }
+  .layer-chip .lc-remove:hover { color: var(--rose); }
+
+  /* Impedance table */
+  .imp-section { background: var(--surface); border: 1px solid var(--border-lt); border-radius: var(--r); margin-bottom: 2rem; padding: 1.5rem 2rem; box-shadow: var(--shadow-sm); }
+  .imp-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+  .imp-table th { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--border); text-align: left; }
+  .imp-table td { padding: 0.75rem; border-bottom: 1px solid var(--border-lt); }
+  .imp-table tr:last-child td { border-bottom: none; }
+  .imp-name { font-family: 'Cormorant Garamond', serif; font-size: 1rem; }
+  .imp-bar-wrap { height: 8px; background: var(--border-lt); border-radius: 100px; overflow: hidden; min-width: 80px; }
+  .imp-bar { height: 100%; border-radius: 100px; }
+  .refl-badge { font-size: 0.68rem; font-weight: 600; padding: 0.2rem 0.6rem; border-radius: 100px; }
+
+  /* Pearls */
+  .pearls { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+  .pearl { background: var(--surface); border: 1px solid var(--border-lt); border-radius: var(--r-sm); padding: 1.25rem 1.5rem; box-shadow: var(--shadow-sm); }
+  .pearl-icon { font-size: 1.4rem; margin-bottom: 0.75rem; }
+  .pearl-title { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; margin-bottom: 0.5rem; }
+  .pearl-text { font-size: 0.8rem; line-height: 1.65; color: var(--text-2); font-weight: 300; }
+
+  .ctrl { display: flex; flex-direction: column; gap: 0.5rem; }
+  .ctrl-label { display: flex; justify-content: space-between; }
+  .ctrl-name { font-size: 0.78rem; font-weight: 600; color: var(--text-2); }
+  .ctrl-val { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--accent); }
+  .ctrl-unit { font-size: 0.65rem; color: var(--text-3); }
+  input[type=range] { -webkit-appearance: none; width: 100%; height: 4px; background: var(--border); border-radius: 100px; outline: none; cursor: pointer; }
+  input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 0 4px rgba(188,114,80,0.15); }
+
+  .nav-footer { display: flex; justify-content: space-between; align-items: center; padding: 2rem 3rem; border-top: 1px solid var(--border-lt); max-width: 1100px; margin: 0 auto; }
+  .nav-link { text-decoration: none; color: var(--text-3); font-size: 0.82rem; transition: color 200ms; display: flex; align-items: center; gap: 0.5rem; }
+  .nav-link:hover { color: var(--accent); }
+  .nav-link-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+  .hero { animation: fadeUp 0.5s ease both; }
+  .tof-section { animation: fadeUp 0.5s 0.05s ease both; }
+
+  @media (max-width: 700px) {
+    nav, .hero, .main, .nav-footer { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .hero, .tof-body { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-left">
+    <a href="index.html" class="nav-back">← Collection</a>
+    <span class="nav-sep">|</span>
+    <span class="nav-title">The Ultrasound Lab</span>
+  </div>
+  <div class="nav-left">
+    <span class="nav-num">02 / 06</span>
+    <a href="01-wave-propagation.html" class="nav-back">← Wave Propagation</a>
+    <span class="nav-sep">|</span>
+    <a href="03-beamforming.html" class="nav-back">Beamforming →</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div>
+    <div class="module-label">Echo Mapping</div>
+    <h1>How time becomes<br><em>space on screen.</em></h1>
+    <p class="hero-desc">The machine measures one thing: when echoes return. From that single number — time — it constructs depth. And the amplitude of each echo is determined by a single equation: the mismatch in acoustic impedance at each tissue boundary.</p>
+  </div>
+  <div class="hero-eq">
+    <div class="eq-row">d = <span class="frac"><span class="num">c · t</span><span class="den">2</span></span></div>
+    <div class="eq-name">Time-of-Flight Depth</div>
+    <div style="height:0.75rem"></div>
+    <div class="eq-row">Z = ρ · c</div>
+    <div class="eq-name">Acoustic Impedance</div>
+    <div style="height:0.75rem"></div>
+    <div class="eq-row">R = <span class="frac"><span class="num">(Z₂ − Z₁)²</span><span class="den">(Z₂ + Z₁)²</span></span></div>
+    <div class="eq-name">Reflection Coefficient</div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- TOF Scene + A-line -->
+  <div class="tof-section">
+    <div class="tof-header">
+      <div>
+        <div class="section-label">Live Simulation</div>
+        <div class="section-title" style="font-size:1.3rem;font-family:'Cormorant Garamond',serif;margin:0;">Scene View (left) — A-line Signal (right)</div>
+      </div>
+      <div style="display:flex;gap:1rem;align-items:center;flex-wrap:wrap;">
+        <div class="ctrl" style="min-width:180px;">
+          <div class="ctrl-label">
+            <span class="ctrl-name">Vessel depth</span>
+            <span class="ctrl-val"><span id="vesselDepthVal">2.5</span><span class="ctrl-unit"> cm</span></span>
+          </div>
+          <input type="range" id="vesselDepthSlider" min="0.5" max="6" step="0.1" value="2.5" oninput="updateScene()">
+        </div>
+        <div class="ctrl" style="min-width:180px;">
+          <div class="ctrl-label">
+            <span class="ctrl-name">Vessel diameter</span>
+            <span class="ctrl-val"><span id="vesselDiamVal">8</span><span class="ctrl-unit"> mm</span></span>
+          </div>
+          <input type="range" id="vesselDiamSlider" min="2" max="20" step="1" value="8" oninput="updateScene()">
+        </div>
+      </div>
+    </div>
+    <div class="tof-body">
+      <canvas id="sceneCanvas"></canvas>
+      <canvas id="alineCanvas"></canvas>
+    </div>
+  </div>
+
+  <!-- Layer Builder -->
+  <div class="layer-builder">
+    <div class="section-label">Boundary Calculator</div>
+    <div class="section-title">Build a Tissue Stack — See the Reflection at Each Boundary</div>
+    <div class="layer-row">
+      <div class="layer-field">
+        <label>Tissue</label>
+        <select id="layerTissue">
+          <option value="skin">Skin</option>
+          <option value="fat">Fat</option>
+          <option value="fascia">Fascia</option>
+          <option value="muscle">Muscle</option>
+          <option value="blood" selected>Blood (vessel)</option>
+          <option value="bone">Bone</option>
+          <option value="air">Air</option>
+        </select>
+      </div>
+      <div class="layer-field">
+        <label>Thickness (mm)</label>
+        <input type="number" id="layerThick" value="10" min="1" max="50" step="1">
+      </div>
+      <button class="add-btn" onclick="addLayer()">Add Layer →</button>
+    </div>
+    <div class="layers-list" id="layersList"></div>
+    <div id="boundaryResults" style="margin-top:1.25rem;font-size:0.82rem;line-height:1.8;"></div>
+  </div>
+
+  <!-- Impedance Reference Table -->
+  <div class="imp-section">
+    <div class="section-label">Reference</div>
+    <div class="section-title">Acoustic Impedance & Reflection by Tissue Pair</div>
+    <table class="imp-table" id="impTable">
+      <thead>
+        <tr>
+          <th>Tissue</th>
+          <th>ρ (kg/m³)</th>
+          <th>c (m/s)</th>
+          <th>Z (MRayl)</th>
+          <th>Impedance (relative)</th>
+          <th>Reflection vs Blood</th>
+        </tr>
+      </thead>
+      <tbody id="impBody"></tbody>
+    </table>
+  </div>
+
+  <!-- Clinical Pearls -->
+  <div class="pearls">
+    <div class="pearl">
+      <div class="pearl-icon">⏱️</div>
+      <div class="pearl-title">The 13 μs Rule</div>
+      <p class="pearl-text">At 1540 m/s, round-trip travel to 1 cm depth takes 13 μs. The machine assumes exactly this. Every echo is time-stamped and converted to depth by this single constant — which is why speed artifacts from fat tissue shift structures deeper than reality.</p>
+    </div>
+    <div class="pearl">
+      <div class="pearl-icon">🪟</div>
+      <div class="pearl-title">Why Blood Looks Dark</div>
+      <p class="pearl-text">Blood and the surrounding soft tissue have very similar acoustic impedance (1.61 vs 1.63 MRayl). Almost no reflection occurs within the vessel lumen — so it appears anechoic (black) on screen. The bright walls are the tissue-blood boundaries.</p>
+    </div>
+    <div class="pearl">
+      <div class="pearl-icon">💥</div>
+      <div class="pearl-title">The Air Interface Problem</div>
+      <p class="pearl-text">Tissue Z ≈ 1.6 MRayl. Air Z ≈ 0.0004 MRayl. Reflection coefficient approaches 1.0 — nearly total reflection. No signal penetrates. This is why gel is non-negotiable: it eliminates the skin-air interface entirely.</p>
+    </div>
+    <div class="pearl">
+      <div class="pearl-icon">🔆</div>
+      <div class="pearl-title">Brightness = Impedance Mismatch</div>
+      <p class="pearl-text">The grayscale value of any pixel encodes the amplitude of the returning echo, which directly encodes the acoustic impedance mismatch at that boundary. White = large mismatch. Black = no mismatch (or no structure). The image is literally a map of impedance gradients.</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="nav-footer">
+  <a href="01-wave-propagation.html" class="nav-link"><span>←</span><div><div class="nav-link-label">Previous</div>Wave Propagation</div></a>
+  <a href="03-beamforming.html" class="nav-link"><div style="text-align:right"><div class="nav-link-label">Next Module</div>Beamforming</div><span>→</span></a>
+</div>
+
+<script>
+// === TISSUE DATA ===
+const TISSUES = {
+  skin:    { name:'Skin',    rho:1100, c:1600, color:'#C9A87A', Z:1.76 },
+  fat:     { name:'Fat',     rho: 925, c:1450, color:'#C9A84C', Z:1.34 },
+  fascia:  { name:'Fascia',  rho:1100, c:1600, color:'#9E8272', Z:1.76 },
+  muscle:  { name:'Muscle',  rho:1060, c:1580, color:'#BC7250', Z:1.65 },
+  blood:   { name:'Blood',   rho:1055, c:1570, color:'#4A8ACA', Z:1.61 },
+  bone:    { name:'Bone',    rho:1900, c:3500, color:'#D4C7B5', Z:7.80 },
+  air:     { name:'Air',     rho:1.2,  c: 330, color:'#7E9C84', Z:0.0004 },
+};
+
+function calcZ(t) { return (t.rho * t.c / 1e6).toFixed(3); }
+function calcR(Z1, Z2) { return Math.pow((Z2-Z1)/(Z2+Z1), 2); }
+
+// === IMPEDANCE TABLE ===
+function buildImpTable() {
+  const blood = TISSUES.blood;
+  const tbody = document.getElementById('impBody');
+  const maxZ = TISSUES.bone.Z;
+  Object.entries(TISSUES).forEach(([k, t]) => {
+    const Z = t.Z;
+    const R = calcR(blood.Z, Z);
+    const pct = Math.min(100, (Z / maxZ) * 100);
+    const rPct = (R * 100).toFixed(1);
+    const rColor = R > 0.5 ? '#B87070' : R > 0.1 ? '#C9A84C' : '#7E9C84';
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td><span class="imp-name">${t.name}</span></td>
+      <td style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;">${t.rho}</td>
+      <td style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;">${t.c}</td>
+      <td style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:var(--accent);">${Z.toFixed(3)}</td>
+      <td><div class="imp-bar-wrap"><div class="imp-bar" style="width:${pct}%;background:${t.color}"></div></div></td>
+      <td><span class="refl-badge" style="background:${rColor}22;color:${rColor}">${rPct}%</span></td>
+    `;
+    tbody.appendChild(tr);
+  });
+}
+buildImpTable();
+
+// === LAYER BUILDER ===
+let layers = [
+  { tissue:'skin', thick:3 },
+  { tissue:'fat', thick:8 },
+  { tissue:'muscle', thick:15 },
+  { tissue:'blood', thick:8 },
+  { tissue:'muscle', thick:5 },
+];
+renderLayers();
+
+function addLayer() {
+  const t = document.getElementById('layerTissue').value;
+  const th = +document.getElementById('layerThick').value;
+  layers.push({ tissue: t, thick: th });
+  renderLayers();
+}
+
+function removeLayer(i) { layers.splice(i, 1); renderLayers(); }
+
+function renderLayers() {
+  const list = document.getElementById('layersList');
+  list.innerHTML = '';
+  layers.forEach((l, i) => {
+    const t = TISSUES[l.tissue];
+    const chip = document.createElement('div');
+    chip.className = 'layer-chip';
+    chip.innerHTML = `
+      <span class="lc-name" style="color:${t.color}">${t.name}</span>
+      <span class="lc-data">${l.thick} mm</span>
+      <span class="lc-z">Z = ${t.Z.toFixed(3)} MRayl</span>
+      <button class="lc-remove" onclick="removeLayer(${i})">×</button>
+    `;
+    list.appendChild(chip);
+  });
+
+  // Calculate boundaries
+  const res = document.getElementById('boundaryResults');
+  let html = '';
+  let depth = 0;
+  for (let i = 0; i < layers.length - 1; i++) {
+    const t1 = TISSUES[layers[i].tissue];
+    const t2 = TISSUES[layers[i+1].tissue];
+    depth += layers[i].thick;
+    const R = calcR(t1.Z, t2.Z);
+    const T = 1 - R;
+    const rColor = R > 0.5 ? '#B87070' : R > 0.1 ? '#C9A84C' : '#7E9C84';
+    const tof = (2 * depth * 0.001 / 1540 * 1e6).toFixed(1);
+    html += `
+      <div style="display:flex;gap:1.5rem;align-items:center;padding:0.5rem 0;border-bottom:1px solid var(--border-lt);">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--text-3);min-width:60px;">${tof} μs</span>
+        <span style="min-width:120px;font-size:0.8rem;">${t1.name} → ${t2.name}</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;">ΔZ = ${Math.abs(t2.Z - t1.Z).toFixed(3)}</span>
+        <span style="padding:0.15rem 0.55rem;border-radius:100px;font-size:0.68rem;font-weight:600;background:${rColor}22;color:${rColor};">R = ${(R*100).toFixed(2)}%</span>
+        <span style="font-size:0.72rem;color:var(--text-3);">T = ${(T*100).toFixed(1)}% transmitted</span>
+      </div>`;
+  }
+  res.innerHTML = html || '<span style="color:var(--text-3);font-size:0.8rem;">Add at least 2 layers to see boundary reflections.</span>';
+  updateScene();
+}
+
+// === SCENE + A-LINE CANVAS ===
+const sc = document.getElementById('sceneCanvas');
+const sctx = sc.getContext('2d');
+const al = document.getElementById('alineCanvas');
+const alctx = al.getContext('2d');
+let animT = 0;
+let pulsePhase = 0;
+
+function resizeCanvases() {
+  sc.width = sc.offsetWidth; sc.height = 320;
+  al.width = al.offsetWidth; al.height = 320;
+}
+resizeCanvases();
+window.addEventListener('resize', () => { resizeCanvases(); updateScene(); });
+
+let sceneState = { vesselDepth: 2.5, vesselDiam: 8 };
+
+function updateScene() {
+  sceneState.vesselDepth = +document.getElementById('vesselDepthSlider').value;
+  sceneState.vesselDiam  = +document.getElementById('vesselDiamSlider').value;
+  document.getElementById('vesselDepthVal').textContent = sceneState.vesselDepth.toFixed(1);
+  document.getElementById('vesselDiamVal').textContent = sceneState.vesselDiam;
+}
+
+function drawScene(t) {
+  const W = sc.width, H = sc.height;
+  sctx.clearRect(0, 0, W, H);
+
+  const maxDepth = 8; // cm
+  const pxPerCm = H / maxDepth;
+  const transW = 36;
+
+  // BG
+  sctx.fillStyle = '#0E0C0A';
+  sctx.fillRect(0, 0, W, H);
+
+  // Tissue layers (simplified: skin/fat/muscle/vessel/muscle)
+  const layerDefs = [
+    { cm:0.3, color:'#3A2A1E', label:'Skin' },
+    { cm:0.8, color:'#2A2010', label:'Fat' },
+    { cm:sceneState.vesselDepth - 1.1, color:'#221A12', label:'Muscle' },
+    { cm:sceneState.vesselDiam / 10, color:'#0A1420', label:'Vessel (blood)' },
+    { cm:maxDepth, color:'#221A12', label:'' },
+  ];
+
+  let yOffset = 0;
+  layerDefs.forEach(l => {
+    const h = l.cm * pxPerCm;
+    sctx.fillStyle = l.color;
+    sctx.fillRect(transW, yOffset, W - transW, h);
+    if (l.label) {
+      sctx.fillStyle = 'rgba(158,130,114,0.4)';
+      sctx.font = '10px Nunito, sans-serif';
+      sctx.fillText(l.label, transW + 6, yOffset + h * 0.5 + 4);
+    }
+    // Boundary line
+    sctx.strokeStyle = 'rgba(188,114,80,0.2)';
+    sctx.lineWidth = 1;
+    sctx.beginPath(); sctx.moveTo(transW, yOffset); sctx.lineTo(W, yOffset); sctx.stroke();
+    yOffset += h;
+  });
+
+  // Vessel circle outline
+  const vcy = sceneState.vesselDepth * pxPerCm;
+  const vr = (sceneState.vesselDiam / 10 * pxPerCm) / 2;
+  sctx.beginPath();
+  sctx.arc(W * 0.55, vcy, vr, 0, Math.PI * 2);
+  sctx.strokeStyle = 'rgba(74,138,202,0.5)';
+  sctx.lineWidth = 1.5;
+  sctx.stroke();
+
+  // Animated pulse
+  pulsePhase = (pulsePhase + 0.012) % 1;
+  const pY = pulsePhase * H;
+  const transmitted = pulsePhase > (sceneState.vesselDepth / maxDepth * 0.6);
+  const alpha = transmitted ? 0.25 : 0.7;
+
+  const pGrad = sctx.createRadialGradient(W * 0.55, pY, 0, W * 0.55, pY, 40);
+  pGrad.addColorStop(0, `rgba(188,114,80,${alpha})`);
+  pGrad.addColorStop(1, 'transparent');
+  sctx.fillStyle = pGrad;
+  sctx.fillRect(transW, pY - 40, W - transW, 80);
+
+  // Horizontal pulse line
+  sctx.beginPath();
+  sctx.moveTo(transW, pY);
+  sctx.lineTo(W, pY);
+  sctx.strokeStyle = `rgba(188,114,80,${alpha * 1.2})`;
+  sctx.lineWidth = 2;
+  sctx.stroke();
+
+  // Transducer
+  sctx.fillStyle = '#3A3028';
+  sctx.fillRect(0, 0, transW - 2, H);
+  sctx.fillStyle = '#BC7250';
+  sctx.fillRect(transW - 4, 0, 4, H);
+
+  // Depth ruler
+  for (let d = 0; d <= maxDepth; d += 0.5) {
+    const ry = d * pxPerCm;
+    if (d % 1 === 0) {
+      sctx.strokeStyle = 'rgba(158,130,114,0.4)';
+      sctx.lineWidth = 0.5;
+      sctx.beginPath(); sctx.moveTo(transW, ry); sctx.lineTo(transW + 10, ry); sctx.stroke();
+      sctx.fillStyle = 'rgba(158,130,114,0.5)';
+      sctx.font = '9px JetBrains Mono, monospace';
+      sctx.fillText(d + 'cm', transW + 12, ry + 3);
+    }
+  }
+
+  // A-line rendering
+  drawALine();
+}
+
+function drawALine() {
+  const W = al.width, H = al.height;
+  alctx.clearRect(0, 0, W, H);
+  alctx.fillStyle = '#0E0C0A';
+  alctx.fillRect(0, 0, W, H);
+
+  const maxDepth = 8;
+  const pxPerCm = H / maxDepth;
+
+  // Time axis (vertical = depth)
+  alctx.strokeStyle = 'rgba(158,130,114,0.3)';
+  alctx.lineWidth = 1;
+  alctx.beginPath();
+  alctx.moveTo(W * 0.15, 0); alctx.lineTo(W * 0.15, H);
+  alctx.stroke();
+
+  // Echo spikes at tissue boundaries
+  const boundaries = [
+    { depth:0.3, R:0.12, label:'Skin' },
+    { depth:1.1, R:0.05, label:'Fat→Muscle' },
+    { depth:sceneState.vesselDepth - (sceneState.vesselDiam/20), R:0.08, label:'Vessel wall (ant)' },
+    { depth:sceneState.vesselDepth + (sceneState.vesselDiam/20), R:0.08, label:'Vessel wall (post)' },
+    { depth:Math.min(7.5, sceneState.vesselDepth + sceneState.vesselDiam/10 + 1.2), R:0.03, label:'Deeper muscle' },
+  ];
+
+  // Draw A-line signal
+  alctx.beginPath();
+  const baseline = W * 0.15;
+  for (let d = 0; d < maxDepth; d += 0.005) {
+    const y = d * pxPerCm;
+    let amp = 0;
+    boundaries.forEach(b => {
+      const dist = d - b.depth;
+      amp += b.R * Math.exp(-Math.pow(dist / 0.05, 2)) * Math.cos(dist * 200);
+    });
+    const x = baseline + amp * W * 0.65;
+    if (d === 0) alctx.moveTo(x, y);
+    else alctx.lineTo(x, y);
+  }
+  alctx.strokeStyle = '#BC7250';
+  alctx.lineWidth = 1.5;
+  alctx.stroke();
+
+  // Labels
+  boundaries.forEach(b => {
+    const y = b.depth * pxPerCm;
+    alctx.strokeStyle = 'rgba(188,114,80,0.2)';
+    alctx.lineWidth = 0.5;
+    alctx.setLineDash([2, 6]);
+    alctx.beginPath(); alctx.moveTo(baseline, y); alctx.lineTo(W * 0.85, y); alctx.stroke();
+    alctx.setLineDash([]);
+    alctx.fillStyle = 'rgba(158,130,114,0.7)';
+    alctx.font = '9px Nunito, sans-serif';
+    alctx.fillText(b.label, W * 0.55, y - 3);
+    const tof = (2 * b.depth * 0.01 / 1540 * 1e6).toFixed(1);
+    alctx.fillStyle = 'rgba(188,114,80,0.6)';
+    alctx.font = '9px JetBrains Mono, monospace';
+    alctx.fillText(tof + 'μs', baseline - 32, y + 3);
+  });
+
+  // Axis labels
+  alctx.fillStyle = 'rgba(158,130,114,0.7)';
+  alctx.font = '10px Nunito, sans-serif';
+  alctx.fillText('← depth / time →', 4, 14);
+  alctx.fillText('A-line signal', W * 0.6, 14);
+}
+
+function loop() {
+  drawScene(animT);
+  animT += 0.016;
+  requestAnimationFrame(loop);
+}
+loop();
+</script>
+</body>
+</html>

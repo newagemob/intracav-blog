@@ -4,6 +4,7 @@ date = 2024-02-14T00:00:00-05:00
 lastmod = 2025-08-22T00:00:00-05:00
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["Vascular Access Management", "Patient Safety", "Clinical Practice"]
 tags = ["site protection", "joint stabilization", "arm board", "physical restraint", "dislodgement prevention", "pediatric VAD", "splint", "protective mittens", "tubular sleeve", "injection drug use"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

@@ -4,6 +4,7 @@ date = 2026-02-23T00:00:00-05:00
 lastmod = 2026-02-23T00:00:00-05:00
 content_type = "patient-education"
 audience = "patient"
+departments = ["vascular-access"]
 category = ["Procedures", "Interventional Radiology", "Pre-Procedure"]
 tags = ["interventional radiology", "IR procedure", "PICC placement IR", "port placement IR", "fluoroscopy", "catheter procedure IR", "what to expect IR"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

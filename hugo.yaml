@@ -1,4 +1,4 @@
-baseURL: https://blog.intracav.ai
+baseURL: https://clinical-database.com
 languageCode: en-us
 title: The Clinical Database
 theme: PaperMod
@@ -23,6 +23,7 @@ taxonomies:
   content_type: content_type
   category: category
   audience: audience  # clinician vs patient
+  department: departments  # clinical department cross-referencing (vascular-access, infection-prevention, oncology, icu, trauma, ed, neonatal, nephrology)
   # tag: tag  # Removed - use category instead
 
 enableRobotsTXT: true
@@ -45,6 +46,9 @@ menus:
     - name: Clinical Database
       url: /guides/
       weight: 20
+    - name: Education
+      url: /education/
+      weight: 25
     - name: Policies
       url: /policies/
       weight: 30

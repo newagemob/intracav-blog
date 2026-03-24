@@ -4,6 +4,7 @@ date = 2026-02-25T00:00:00-05:00
 lastmod = 2026-02-25T00:00:00-05:00
 content_type = "guide"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["Infusion Therapy", "Medication Safety", "Patient Safety"]
 tags = ["infusion therapy safety", "IV medication safety", "filtration standards", "SASH protocol", "vesicant administration", "high alert medications IV", "parenteral nutrition", "flushing protocol", "infusion therapy standards", "smart pump"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

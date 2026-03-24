@@ -4,6 +4,7 @@ date = 2023-03-22T00:00:00-05:00
 lastmod = 2024-11-07T00:00:00-05:00
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["Vascular Access", "Patient Safety", "Clinical Guidelines"]
 tags = ["CVAD", "PICC", "central line", "tip location", "cavoatrial junction", "ECG guidance", "radiographic confirmation", "tip malposition", "neonates", "documentation"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

@@ -4,6 +4,7 @@ date = 2026-02-23T00:00:00-05:00
 lastmod = 2026-02-23T00:00:00-05:00
 content_type = "patient-education"
 audience = "patient"
+departments = ["vascular-access", "oncology"]
 category = ["Infusion Therapy", "Oncology", "Patient Education"]
 tags = ["chemotherapy", "chemo infusion", "cancer treatment", "infusion center", "neutropenia", "nadir", "neutropenic precautions", "chemo side effects", "oncology patient education"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

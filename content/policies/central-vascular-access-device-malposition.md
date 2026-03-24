@@ -4,6 +4,7 @@ date = 2024-07-22T00:00:00-05:00
 lastmod = 2025-12-15T00:00:00-05:00
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["Complication Management", "Device Maintenance", "Procedural Safety"]
 tags = ["CVAD malposition", "catheter tip migration", "tip position", "primary malposition", "secondary malposition", "pinch-off", "cardiac tamponade", "catheter repositioning", "fluoroscopy"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

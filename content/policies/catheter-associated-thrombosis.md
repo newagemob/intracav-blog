@@ -4,6 +4,7 @@ date = 2024-02-14T00:00:00-05:00
 lastmod = 2026-01-10T00:00:00-05:00
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["Complication Management", "Patient Safety", "Device Maintenance"]
 tags = ["catheter-associated thrombosis", "DVT", "venous thromboembolism", "PICC thrombosis", "anticoagulation", "Michigan Risk Score", "Caprini", "catheter-to-vessel ratio"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

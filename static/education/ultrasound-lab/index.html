@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Ultrasound Lab — Clinical Learning Series</title>
+<script src="https://unpkg.com/htmx.org@1.9.10"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Nunito:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #EDE4D5; --surface: #F6F0E8; --surface-hi: #FDFAF5;
+    --border: #D4C7B5; --border-lt: #E2D8CC;
+    --text: #28180C; --text-2: #685040; --text-3: #9E8272;
+    --accent: #BC7250; --accent-lt: #E8C4A8;
+    --sage: #7E9C84; --rose: #B87070;
+    --shadow-sm: 0 1px 8px rgba(40,24,12,0.06), 0 0 0 1px rgba(40,24,12,0.04);
+    --shadow-md: 0 4px 28px rgba(40,24,12,0.10), 0 0 0 1px rgba(40,24,12,0.06);
+    --r: 16px; --r-sm: 10px;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; overflow-x: hidden; }
+  body::after {
+    content: ''; position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+    opacity: 0.028; pointer-events: none; z-index: 9999;
+  }
+  nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.75rem 3.5rem; border-bottom: 1px solid var(--border-lt);
+    background: rgba(237,228,213,0.8); backdrop-filter: blur(12px);
+    position: sticky; top: 0; z-index: 100;
+  }
+  .nav-brand { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); text-decoration: none; }
+  .nav-tag { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); }
+
+  .hero { padding: 6rem 3.5rem 3.5rem; max-width: 980px; }
+  .hero-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.25rem; }
+  .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 6vw, 5rem); font-weight: 300; line-height: 1.05; color: var(--text); margin-bottom: 1.5rem; }
+  .hero-title em { font-style: italic; color: var(--text-2); }
+  .hero-desc { font-size: 0.95rem; line-height: 1.8; color: var(--text-2); font-weight: 300; max-width: 540px; margin-bottom: 1.5rem; }
+  .hero-series-link { font-size: 0.75rem; color: var(--text-3); text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem; transition: color 200ms; }
+  .hero-series-link:hover { color: var(--accent); }
+
+  /* Dimensional pipeline strip */
+  .pipeline-strip {
+    margin: 0 3.5rem 3rem; background: var(--text); border-radius: var(--r);
+    padding: 1.75rem 2rem; display: flex; align-items: center; gap: 0; overflow-x: auto; scrollbar-width: none;
+    position: relative;
+  }
+  .pipeline-strip::-webkit-scrollbar { display: none; }
+  .pipe-step { flex-shrink: 0; text-align: center; padding: 0 1.25rem; }
+  .pipe-dim { font-family: 'JetBrains Mono', monospace; font-size: 1.4rem; font-weight: 500; color: var(--accent); line-height: 1; margin-bottom: 0.3rem; }
+  .pipe-label { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #8A7A6A; }
+  .pipe-desc { font-size: 0.7rem; color: #6A5A4A; font-weight: 300; margin-top: 0.2rem; }
+  .pipe-arrow { flex-shrink: 0; color: #4A3A2A; font-size: 1.2rem; padding: 0 0.25rem; align-self: center; }
+  .pipe-loss { font-size: 0.6rem; color: var(--rose); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; display: block; margin-top: 0.3rem; }
+
+  /* Equation strip */
+  .equation-strip {
+    margin: 0 3.5rem 2rem; background: var(--surface); border: 1px solid var(--border-lt);
+    border-radius: var(--r); padding: 1.5rem 2rem; display: flex; gap: 2.5rem; overflow-x: auto; scrollbar-width: none;
+  }
+  .equation-strip::-webkit-scrollbar { display: none; }
+  .eq-item { flex-shrink: 0; text-align: center; }
+  .eq-formula { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: var(--text); margin-bottom: 0.35rem; }
+  .eq-label { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); }
+
+  /* Divider */
+  .divider { padding: 0 3.5rem; display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2.5rem; }
+  .divider-line { flex: 1; height: 1px; background: var(--border); }
+  .divider-text { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3); }
+
+  /* Cards */
+  .modules { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.25rem; padding: 0 3.5rem 4rem; }
+  .card {
+    background: var(--surface); border: 1px solid var(--border-lt); border-radius: var(--r);
+    padding: 2rem; text-decoration: none; color: var(--text); display: flex; flex-direction: column; gap: 1rem;
+    transition: all 220ms; box-shadow: var(--shadow-sm); position: relative; overflow: hidden;
+  }
+  .card::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(188,114,80,0.04), transparent); opacity: 0; transition: opacity 200ms; }
+  .card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--border); }
+  .card:hover::after { opacity: 1; }
+  .card-num { display: flex; align-items: center; gap: 0.75rem; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); }
+  .card-num-circle { width: 28px; height: 28px; border-radius: 50%; background: var(--bg); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--accent); }
+  .card-icon { width: 42px; height: 42px; color: var(--accent); opacity: 0.7; }
+  .card-title { font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; font-weight: 400; line-height: 1.2; }
+  .card-desc { font-size: 0.8rem; line-height: 1.7; color: var(--text-2); font-weight: 300; flex: 1; }
+  .card-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .tag { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.06em; padding: 0.2rem 0.6rem; border-radius: 100px; background: var(--bg); border: 1px solid var(--border); color: var(--text-3); }
+  .card-arrow { font-size: 0.75rem; color: var(--text-3); display: flex; align-items: center; gap: 0.3rem; transition: color 200ms; }
+  .card:hover .card-arrow { color: var(--accent); }
+
+  /* Insight strip */
+  .insight-strip { margin: 0 3.5rem 3rem; background: linear-gradient(135deg, rgba(188,114,80,0.08), rgba(126,156,132,0.06)); border: 1px solid var(--border-lt); border-radius: var(--r); padding: 2rem 2.5rem; }
+  .is-kicker { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.6rem; }
+  .is-title { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--text); margin-bottom: 0.75rem; }
+  .is-title em { font-style: italic; color: var(--text-2); }
+  .is-desc { font-size: 0.82rem; line-height: 1.7; color: var(--text-2); font-weight: 300; max-width: 680px; }
+
+  footer { padding: 2rem 3.5rem; border-top: 1px solid var(--border-lt); display: flex; justify-content: space-between; align-items: center; }
+  .footer-brand { font-family: 'Cormorant Garamond', serif; font-size: 0.9rem; color: var(--text-3); }
+  .footer-brand strong { color: var(--accent); font-weight: 500; }
+  .footer-note { font-size: 0.7rem; color: var(--text-3); font-weight: 300; }
+
+  .ambient { position: fixed; top: -200px; right: -100px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(188,114,80,0.07) 0%, transparent 70%); border-radius: 50%; pointer-events: none; z-index: 0; }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+  .hero { animation: fadeUp 600ms ease-out both; }
+  .card:nth-child(1) { animation: fadeUp 500ms 80ms ease-out both; }
+  .card:nth-child(2) { animation: fadeUp 500ms 150ms ease-out both; }
+  .card:nth-child(3) { animation: fadeUp 500ms 220ms ease-out both; }
+  .card:nth-child(4) { animation: fadeUp 500ms 290ms ease-out both; }
+  .card:nth-child(5) { animation: fadeUp 500ms 360ms ease-out both; }
+  .card:nth-child(6) { animation: fadeUp 500ms 430ms ease-out both; }
+
+  @media (max-width: 700px) {
+    nav, .hero, .modules, .divider, .equation-strip, .pipeline-strip, .insight-strip, footer { padding-left: 1.5rem; padding-right: 1.5rem; }
+    .hero { padding-top: 3.5rem; }
+    .modules { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="ambient"></div>
+
+<nav>
+  <a class="nav-brand" href="index.html">The Ultrasound Lab</a>
+  <span class="nav-tag"><a href="/education/" style="color:inherit;text-decoration:none;border-bottom:1px solid var(--border-lt);">All Series</a> · Clinical Learning Series · Vol. II</span>
+</nav>
+
+<section class="hero">
+  <div class="hero-label">Ultrasound Physics & Cross-Dimensional Comprehension</div>
+  <h1 class="hero-title">
+    The mathematics<br>
+    <em>beneath the image.</em>
+  </h1>
+  <p class="hero-desc">
+    Six interactive modules that reveal the physics pipeline transforming physical reality into the grayscale image on your screen — and the cognitive architecture expert sonographers use to reverse that transformation at the bedside.
+  </p>
+  <a class="hero-series-link" href="/education/vascular-lab/">← Also see: The Vascular Lab, Vol. I</a>
+</section>
+
+<!-- Dimensional Pipeline -->
+<div class="pipeline-strip">
+  <div class="pipe-step">
+    <div class="pipe-dim">3D</div>
+    <div class="pipe-label">Physical Reality</div>
+    <div class="pipe-desc">Tissue structures<br>Blood flow</div>
+  </div>
+  <div class="pipe-arrow">→</div>
+  <div class="pipe-step">
+    <div class="pipe-dim">4D</div>
+    <div class="pipe-label">Wave Interaction</div>
+    <div class="pipe-desc">Scatter, reflect<br>attenuate</div>
+    <span class="pipe-loss">info lost</span>
+  </div>
+  <div class="pipe-arrow">→</div>
+  <div class="pipe-step">
+    <div class="pipe-dim">1D</div>
+    <div class="pipe-label">Sensor Signal</div>
+    <div class="pipe-desc">Raw echo amplitudes<br>over time</div>
+    <span class="pipe-loss">info lost</span>
+  </div>
+  <div class="pipe-arrow">→</div>
+  <div class="pipe-step">
+    <div class="pipe-dim">2D</div>
+    <div class="pipe-label">Beamformed Image</div>
+    <div class="pipe-desc">Grayscale slice<br>on screen</div>
+    <span class="pipe-loss">info lost</span>
+  </div>
+  <div class="pipe-arrow">→</div>
+  <div class="pipe-step">
+    <div class="pipe-dim">3D</div>
+    <div class="pipe-label">Mental Model</div>
+    <div class="pipe-desc">Clinician infers<br>3D anatomy</div>
+    <span class="pipe-loss" style="color:var(--sage)">inverse problem</span>
+  </div>
+</div>
+
+<div class="equation-strip">
+  <div class="eq-item">
+    <div class="eq-formula">∂²u/∂t² = c²∇²u</div>
+    <div class="eq-label">Wave Equation</div>
+  </div>
+  <div class="eq-item">
+    <div class="eq-formula">d = c·t / 2</div>
+    <div class="eq-label">Time-of-Flight Depth</div>
+  </div>
+  <div class="eq-item">
+    <div class="eq-formula">Z = ρc</div>
+    <div class="eq-label">Acoustic Impedance</div>
+  </div>
+  <div class="eq-item">
+    <div class="eq-formula">R = ((Z₂−Z₁)/(Z₂+Z₁))²</div>
+    <div class="eq-label">Reflection Coefficient</div>
+  </div>
+  <div class="eq-item">
+    <div class="eq-formula">f_D = 2f₀v cosθ / c</div>
+    <div class="eq-label">Doppler Shift</div>
+  </div>
+  <div class="eq-item">
+    <div class="eq-formula">F{x(t)} = X(ω)</div>
+    <div class="eq-label">Fourier Transform</div>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="divider-line"></div>
+  <div class="divider-text">Six Modules</div>
+  <div class="divider-line"></div>
+</div>
+
+<section class="modules">
+
+  <a class="card" href="01-wave-propagation.html">
+    <div class="card-num"><div class="card-num-circle">01</div> Wave Propagation</div>
+    <svg class="card-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M4 24 Q12 10 20 24 Q28 38 36 24 Q42 14 46 24"/>
+      <circle cx="4" cy="24" r="2.5" fill="currentColor" opacity="0.5"/>
+      <path d="M8 20 Q10 18 12 20 Q14 22 16 20" opacity="0.4"/>
+    </svg>
+    <div class="card-title">Wave Propagation<br>& the Wave Equation</div>
+    <div class="card-desc">Ultrasound is mechanical waves in tissue. Watch pressure pulses travel, reflect, and attenuate — and understand why the speed of sound (1540 m/s) is the clock the machine reads.</div>
+    <div class="card-tags"><span class="tag">Wave Equation</span><span class="tag">Pressure</span><span class="tag">Attenuation</span><span class="tag">d'Alembert</span></div>
+    <div class="card-arrow">Open module <span>→</span></div>
+  </a>
+
+  <a class="card" href="02-echo-mapping.html">
+    <div class="card-num"><div class="card-num-circle">02</div> Echo Mapping</div>
+    <svg class="card-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+      <rect x="4" y="8" width="6" height="32" rx="2"/>
+      <path d="M14 24 L36 24" stroke-dasharray="3,3"/>
+      <line x1="14" y1="24" x2="14" y2="10"/>
+      <line x1="22" y1="24" x2="22" y2="14"/>
+      <line x1="30" y1="24" x2="30" y2="18"/>
+      <line x1="38" y1="24" x2="38" y2="16"/>
+      <path d="M14 24 L14 38 L22 34 L30 30 L38 32"/>
+    </svg>
+    <div class="card-title">Time-of-Flight &<br>Acoustic Impedance</div>
+    <div class="card-desc">How a 1D time signal becomes spatial depth. Explore how tissue boundaries create echoes — and why the mismatch in acoustic impedance determines whether you see anything at all.</div>
+    <div class="card-tags"><span class="tag">d = ct/2</span><span class="tag">Z = ρc</span><span class="tag">Reflection</span><span class="tag">Tissue Boundaries</span></div>
+    <div class="card-arrow">Open module <span>→</span></div>
+  </a>
+
+  <a class="card" href="03-beamforming.html">
+    <div class="card-num"><div class="card-num-circle">03</div> Beamforming</div>
+    <svg class="card-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+      <line x1="8" y1="6" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="18"/><line x1="24" y1="6" x2="24" y2="18"/>
+      <line x1="32" y1="6" x2="32" y2="18"/><line x1="40" y1="6" x2="40" y2="18"/>
+      <path d="M8 18 Q24 22 40 18" stroke-dasharray="2,2"/>
+      <path d="M8 18 L24 42 L40 18"/>
+      <circle cx="24" cy="42" r="3"/>
+    </svg>
+    <div class="card-title">Beamforming &<br>Spatial Reconstruction</div>
+    <div class="card-desc">How an array of transducers builds a directed beam using phase shifts and interference. The Fourier transform, linear algebra, and signal processing work together to turn echo timing into a 2D slice.</div>
+    <div class="card-tags"><span class="tag">Phase Shifts</span><span class="tag">Interference</span><span class="tag">Fourier</span><span class="tag">Array Processing</span></div>
+    <div class="card-arrow">Open module <span>→</span></div>
+  </a>
+
+  <a class="card" href="04-doppler.html">
+    <div class="card-num"><div class="card-num-circle">04</div> Doppler Effect</div>
+    <svg class="card-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+      <circle cx="24" cy="24" r="4"/>
+      <path d="M24 24 L38 24" marker-end="url(#arr)"/>
+      <path d="M6 24 Q10 18 14 24 Q18 30 22 24"/>
+      <path d="M26 24 Q30 16 34 24 Q38 30 42 24" stroke-dasharray="2,2" opacity="0.5"/>
+    </svg>
+    <div class="card-title">Doppler Effect &<br>Flow Velocity</div>
+    <div class="card-desc">The frequency shift of echoes from moving blood cells encodes velocity. Understand the angle of insonation, artery-vs-vein identification, and why θ=90° gives you nothing.</div>
+    <div class="card-tags"><span class="tag">f_D = 2f₀v cosθ/c</span><span class="tag">Angle</span><span class="tag">Artery vs Vein</span><span class="tag">Christian Doppler</span></div>
+    <div class="card-arrow">Open module <span>→</span></div>
+  </a>
+
+  <a class="card" href="05-slice-geometry.html">
+    <div class="card-num"><div class="card-num-circle">05</div> Slice Geometry</div>
+    <svg class="card-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+      <ellipse cx="24" cy="24" rx="16" ry="8"/>
+      <line x1="8" y1="24" x2="40" y2="24"/>
+      <line x1="24" y1="16" x2="24" y2="32"/>
+      <ellipse cx="24" cy="24" rx="8" ry="3" stroke-dasharray="3,3" opacity="0.5"/>
+    </svg>
+    <div class="card-title">Slice Geometry &<br>2D→3D Inference</div>
+    <div class="card-desc">The same vessel looks like a circle, oval, or line depending on probe angle. Learn to read the 2D slice and reconstruct 3D anatomy — the core perceptual skill of expert sonographers.</div>
+    <div class="card-tags"><span class="tag">Short Axis</span><span class="tag">Long Axis</span><span class="tag">Oblique</span><span class="tag">3D Inference</span></div>
+    <div class="card-arrow">Open module <span>→</span></div>
+  </a>
+
+  <a class="card" href="06-dimensional-pipeline.html">
+    <div class="card-num"><div class="card-num-circle">06</div> Dimensional Pipeline</div>
+    <svg class="card-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+      <rect x="3" y="10" width="10" height="28" rx="2"/>
+      <path d="M13 18 L20 14 L20 34 L13 30"/>
+      <rect x="20" y="16" width="8" height="16" rx="1"/>
+      <path d="M28 20 L35 12 L35 36 L28 28"/>
+      <circle cx="41" cy="24" r="5"/>
+    </svg>
+    <div class="card-title">Cross-Dimensional<br>Comprehension</div>
+    <div class="card-desc">The complete physics pipeline: 3D reality → 4D wave interaction → 1D signal → 2D image → mental 3D model. Where information is lost, where AI can recover it, and what Intracav can build on top.</div>
+    <div class="card-tags"><span class="tag">Inverse Problem</span><span class="tag">AI Integration</span><span class="tag">Intracav</span><span class="tag">Uncertainty</span></div>
+    <div class="card-arrow">Open module <span>→</span></div>
+  </a>
+
+</section>
+
+<div class="insight-strip">
+  <div class="is-kicker">The Deep Insight</div>
+  <div class="is-title">Ultrasound is not imaging in the traditional sense. It is <em>a probabilistic reconstruction of reality from indirect measurements across dimensions.</em></div>
+  <p class="is-desc">Every step in the pipeline loses information and introduces ambiguity. The expert sonographer is solving an inverse problem in real time — inferring 3D geometry from 2D slices, tracking motion through time, compensating for artifacts. These modules make that pipeline visible, and Intracav's platform makes it computable.</p>
+</div>
+
+<footer>
+  <div class="footer-brand"><strong>The Ultrasound Lab</strong> · Intracav Clinical Learning</div>
+  <div class="footer-note">Interactive physics for clinical practice · Not a substitute for clinical training</div>
+</footer>
+</body>
+</html>

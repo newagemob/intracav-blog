@@ -4,6 +4,7 @@ date = 2024-07-18T00:00:00-05:00
 lastmod = 2025-11-01T00:00:00-05:00
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access", "pain-management"]
 category = ["Patient Safety", "Pain Management", "Vascular Access Procedures"]
 tags = ["pain management", "venipuncture", "procedural pain", "topical anesthetic", "EMLA", "distraction", "virtual reality", "neonatal pain", "pediatric pain", "needle phobia", "sucrose", "DIVA"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

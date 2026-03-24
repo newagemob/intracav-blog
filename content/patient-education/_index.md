@@ -4,6 +4,7 @@ date = 2026-02-23T00:00:00-05:00
 lastmod = 2026-02-23T00:00:00-05:00
 content_type = "patient-education"
 audience = "patient"
+departments = ["vascular-access"]
 description = "Plain-language guides for patients and families on IV lines, catheters, infusion therapy, and vascular access care — what to expect, how to stay safe, and when to ask for help."
 +++
 

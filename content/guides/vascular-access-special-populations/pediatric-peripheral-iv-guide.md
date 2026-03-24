@@ -4,6 +4,7 @@ date = 2026-02-25T00:00:00-05:00
 lastmod = 2026-02-25T00:00:00-05:00
 content_type = "guide"
 audience = "clinician"
+departments = ["vascular-access", "neonatal"]
 category = ["Special Populations", "Pediatric", "Peripheral IV"]
 tags = ["pediatric peripheral IV", "pediatric IV site selection", "infant IV access", "scalp vein infant", "EMLA pediatric IV", "pediatric IV pain management", "child IV placement", "pediatric vascular access"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

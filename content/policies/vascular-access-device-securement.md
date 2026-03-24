@@ -4,6 +4,7 @@ date = 2023-09-12T00:00:00-05:00
 lastmod = 2025-07-01T00:00:00-05:00
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["Vascular Access Management", "Patient Safety", "Clinical Practice"]
 tags = ["VAD securement", "adhesive securement device", "integrated securement device", "subcutaneous anchor", "tissue adhesive", "PICC securement", "PIVC securement", "dislodgement prevention", "catheter-associated skin injury", "suture-free securement"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

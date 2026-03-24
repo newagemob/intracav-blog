@@ -4,6 +4,7 @@ date = 2026-02-23T00:00:00-05:00
 lastmod = 2026-02-23T00:00:00-05:00
 content_type = "patient-education"
 audience = "patient"
+departments = ["vascular-access"]
 category = ["Procedures", "Implanted Port", "Pre-Procedure"]
 tags = ["port placement", "port surgery", "port-a-cath", "implanted port procedure", "pre-operative preparation", "interventional radiology"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

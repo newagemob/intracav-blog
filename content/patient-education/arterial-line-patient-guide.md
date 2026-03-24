@@ -4,6 +4,7 @@ date = 2026-02-23T00:00:00-05:00
 lastmod = 2026-02-23T00:00:00-05:00
 content_type = "patient-education"
 audience = "patient"
+departments = ["vascular-access", "icu"]
 category = ["Device Care", "Critical Care", "Patient Education"]
 tags = ["arterial line", "A-line patient guide", "arterial catheter ICU", "radial artery line", "hemodynamic monitoring patient", "ICU IV lines explained", "blood pressure monitoring catheter"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

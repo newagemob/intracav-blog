@@ -4,6 +4,7 @@ date = 2026-02-23T00:00:00-05:00
 lastmod = 2026-02-23T00:00:00-05:00
 content_type = "patient-education"
 audience = "patient"
+departments = ["vascular-access"]
 category = ["Vascular Access Basics", "Device Information"]
 tags = ["peripheral IV", "PICC line", "central line", "midline", "port", "catheter types", "patient education"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

@@ -4,6 +4,7 @@ date = 2026-02-25T00:00:00-05:00
 lastmod = 2026-02-25T00:00:00-05:00
 content_type = "guide"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["PICC Line", "Complications", "Vascular Access Safety"]
 tags = ["PICC complications", "PICC DVT prevention", "PICC CLABSI", "PICC occlusion management", "PICC phlebitis", "PICC malposition", "catheter associated thrombosis PICC", "PICC line problems"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

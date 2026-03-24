@@ -4,6 +4,7 @@ date = 2023-07-11T00:00:00-05:00
 lastmod = 2025-01-14T00:00:00-05:00
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["Vascular Access", "Clinical Technology", "Patient Safety"]
 tags = ["ultrasound", "near-infrared", "visualization technology", "DIVA", "peripheral IV", "PICC", "central venous access", "arterial catheter", "competency", "catheter-to-vein ratio"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

@@ -4,6 +4,7 @@ date = 2026-02-23T00:00:00-05:00
 lastmod = 2026-02-23T00:00:00-05:00
 content_type = "patient-education"
 audience = "patient"
+departments = ["vascular-access", "home-health"]
 category = ["Caregiver Education", "Home Care", "Patient Education"]
 tags = ["caregiver guide", "home infusion caregiver", "PICC caregiver", "caring for someone on IV", "caregiver burnout", "unpaid caregiver IV therapy", "caregiver support"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

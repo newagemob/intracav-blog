@@ -4,6 +4,7 @@ date = 2024-02-01T00:00:00-05:00
 lastmod = 2026-01-20T00:00:00-05:00
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["Infusion Therapy", "Nutrition Support", "Medication Safety"]
 tags = ["parenteral nutrition", "PN", "TPN", "TNA", "lipid injectable emulsion", "ILE", "home parenteral nutrition", "CVAD", "filtration", "DEHP-free", "antimicrobial lock", "ASPEN"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

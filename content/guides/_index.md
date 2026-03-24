@@ -4,6 +4,7 @@ date = 2026-02-25T00:00:00-05:00
 lastmod = 2026-02-25T00:00:00-05:00
 content_type = "guide"
 audience = "clinician"
+departments = ["vascular-access"]
 description = "The most comprehensive vascular access knowledge base for clinicians — evidence-based guides on PICC lines, CVCs, CLABSI prevention, complications, ultrasound, credentialing, and infusion therapy."
 slug = "guides"
 keywords = ["vascular access guide", "PICC line clinical guide", "CLABSI prevention", "catheter complications", "vascular access credentialing", "infusion therapy safety", "ultrasound vascular access"]

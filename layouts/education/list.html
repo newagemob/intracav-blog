@@ -1,0 +1,245 @@
+{{- define "main" }}
+<div class="education-hub">
+  <header class="edu-hero">
+    <div class="edu-hero-label">Interactive Clinical Education</div>
+    <h1 class="edu-hero-title">{{ .Title }}</h1>
+    <p class="edu-hero-desc">{{ .Description }}</p>
+  </header>
+
+  <div class="edu-series-grid">
+
+    <!-- Series I: The Vascular Lab -->
+    <a class="edu-series-card" href="/education/vascular-lab/">
+      <div class="edu-series-vol">Vol. I</div>
+      <div class="edu-series-icon">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" width="48" height="48">
+          <circle cx="24" cy="24" r="18"/>
+          <ellipse cx="24" cy="24" rx="6" ry="18"/>
+          <line x1="6" y1="24" x2="42" y2="24"/>
+          <path d="M12 16 Q24 20 36 16" stroke-dasharray="2,3"/>
+          <path d="M12 32 Q24 28 36 32" stroke-dasharray="2,3"/>
+        </svg>
+      </div>
+      <h2 class="edu-series-title">The Vascular Lab</h2>
+      <p class="edu-series-subtitle">The physics beneath the needle</p>
+      <p class="edu-series-desc">Five interactive modules exploring the mathematics, fluid mechanics, and probability that govern every vascular access decision — Hagen-Poiseuille flow, resistance networks, turbulence, shear stress, and Bayesian decision theory.</p>
+      <div class="edu-series-meta">
+        <span class="edu-series-modules">5 modules</span>
+        <span class="edu-series-tags">Fluid Dynamics &middot; Catheter Physics &middot; Decision Theory</span>
+      </div>
+      <div class="edu-series-equations">
+        <span>Q = &pi;r&sup4;&Delta;P / 8&eta;L</span>
+        <span>Re = &rho;vD / &mu;</span>
+        <span>P(A|B) = P(B|A)&middot;P(A) / P(B)</span>
+      </div>
+      <div class="edu-series-cta">Explore series <span>&rarr;</span></div>
+    </a>
+
+    <!-- Series II: The Ultrasound Lab -->
+    <a class="edu-series-card" href="/education/ultrasound-lab/">
+      <div class="edu-series-vol">Vol. II</div>
+      <div class="edu-series-icon">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" width="48" height="48">
+          <path d="M4 24 Q12 10 20 24 Q28 38 36 24 Q42 14 46 24"/>
+          <circle cx="4" cy="24" r="2.5" fill="currentColor" opacity="0.5"/>
+          <path d="M8 20 Q10 18 12 20 Q14 22 16 20" opacity="0.4"/>
+        </svg>
+      </div>
+      <h2 class="edu-series-title">The Ultrasound Lab</h2>
+      <p class="edu-series-subtitle">The mathematics beneath the image</p>
+      <p class="edu-series-desc">Six interactive modules revealing the physics pipeline that transforms physical reality into a grayscale image — wave propagation, acoustic impedance, beamforming, Doppler effect, slice geometry, and cross-dimensional comprehension.</p>
+      <div class="edu-series-meta">
+        <span class="edu-series-modules">6 modules</span>
+        <span class="edu-series-tags">Wave Physics &middot; Beamforming &middot; Doppler &middot; 3D Inference</span>
+      </div>
+      <div class="edu-series-equations">
+        <span>&part;&sup2;u/&part;t&sup2; = c&sup2;&nabla;&sup2;u</span>
+        <span>Z = &rho;c</span>
+        <span>f<sub>D</sub> = 2f&sub;0&sub;v cos&theta; / c</span>
+      </div>
+      <div class="edu-series-cta">Explore series <span>&rarr;</span></div>
+    </a>
+
+  </div>
+
+  <div class="edu-about">
+    <div class="edu-about-label">About These Series</div>
+    <p>Each series is a collection of self-contained interactive modules. Modules include real-time simulations, parameter controls, historical context, and clinical pearls that connect the underlying science to bedside practice. No login required — open any module and start learning.</p>
+  </div>
+</div>
+
+<style>
+.education-hub {
+  max-width: 900px;
+  padding: 0;
+}
+
+.edu-hero {
+  margin-bottom: 2.5rem;
+}
+
+.edu-hero-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--primary, #BC7250);
+  margin-bottom: 0.75rem;
+}
+
+.edu-hero-title {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 0.75rem;
+}
+
+.edu-hero-desc {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--secondary, #685040);
+  max-width: 640px;
+}
+
+.edu-series-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.edu-series-card {
+  background: var(--entry, #f6f0e8);
+  border: 1px solid var(--border, #ddd);
+  border-radius: 12px;
+  padding: 2rem;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: transform 250ms ease, box-shadow 250ms ease, border-color 250ms ease;
+  position: relative;
+}
+
+.edu-series-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+  border-color: var(--primary, #BC7250);
+}
+
+.edu-series-vol {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--primary, #BC7250);
+}
+
+.edu-series-icon {
+  color: var(--primary, #BC7250);
+  opacity: 0.65;
+}
+
+.edu-series-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.edu-series-subtitle {
+  font-size: 0.88rem;
+  font-style: italic;
+  color: var(--secondary, #685040);
+  margin: 0;
+}
+
+.edu-series-desc {
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: var(--secondary, #685040);
+  flex: 1;
+  margin: 0;
+}
+
+.edu-series-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.edu-series-modules {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 0.25rem 0.7rem;
+  border-radius: 100px;
+  background: var(--primary, #BC7250);
+  color: white;
+}
+
+.edu-series-tags {
+  font-size: 0.72rem;
+  color: var(--secondary, #685040);
+}
+
+.edu-series-equations {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 0.78rem;
+  color: var(--secondary, #685040);
+  opacity: 0.7;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border, #ddd);
+}
+
+.edu-series-cta {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--primary, #BC7250);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+  transition: gap 200ms ease;
+}
+
+.edu-series-card:hover .edu-series-cta {
+  gap: 0.7rem;
+}
+
+.edu-about {
+  background: var(--entry, #f6f0e8);
+  border: 1px solid var(--border, #ddd);
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.edu-about-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--secondary, #685040);
+  margin-bottom: 0.5rem;
+}
+
+.edu-about p {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--secondary, #685040);
+  margin: 0;
+}
+
+@media (max-width: 500px) {
+  .edu-series-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+{{- end }}

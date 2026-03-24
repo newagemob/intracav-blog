@@ -4,6 +4,7 @@ date = 2026-02-25T00:00:00-05:00
 lastmod = 2026-02-25T00:00:00-05:00
 content_type = "guide"
 audience = "clinician"
+departments = ["vascular-access", "infection-prevention"]
 category = ["CLABSI Prevention", "Infection Control", "Antisepsis"]
 tags = ["chlorhexidine gluconate CLABSI", "CHG antisepsis", "CHG bathing", "CHG dressing", "2% CHG vascular access", "CHG vs povidone iodine", "CHG skin prep", "CHG impregnated dressing"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

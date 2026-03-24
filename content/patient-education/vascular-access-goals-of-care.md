@@ -4,6 +4,7 @@ date = 2026-02-23T00:00:00-05:00
 lastmod = 2026-02-23T00:00:00-05:00
 content_type = "patient-education"
 audience = "patient"
+departments = ["vascular-access"]
 category = ["Palliative Care", "Patient Rights", "Patient Education", "End of Life"]
 tags = ["goals of care vascular access", "end of life IV catheter", "palliative care IV line", "comfort care catheter", "PICC port hospice", "removing catheter end of life", "IV fluids end of life"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

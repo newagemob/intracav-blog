@@ -4,6 +4,7 @@ date = 2024-03-14T00:00:00-05:00
 lastmod = 2024-03-14T00:00:00-05:00
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access", "infection-prevention"]
 category = ["Infection Control", "Standard Precautions", "Patient Safety"]
 tags = ["hand hygiene", "ABHR", "infection prevention", "HAI", "fingernail standards", "WHO five moments", "Clostridioides difficile", "alcohol-based hand rub"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

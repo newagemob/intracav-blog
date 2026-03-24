@@ -4,6 +4,7 @@ date = 2024-01-15T00:00:00-05:00
 lastmod = 2026-01-20T00:00:00-05:00
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access", "oncology"]
 category = ["Infusion Therapy", "Medication Safety", "Oncology"]
 tags = ["chemotherapy", "antineoplastic", "hazardous drugs", "PPE", "closed system transfer", "vesicant", "extravasation", "CPOE", "chemotherapy errors"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

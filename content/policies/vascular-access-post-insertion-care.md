@@ -4,6 +4,7 @@ date = 2024-08-01T00:00:00-05:00
 lastmod = 2025-11-30T00:00:00-05:00
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access", "infection-prevention"]
 category = ["Vascular Access Management", "Infection Prevention", "Clinical Practice"]
 tags = ["VAD post-insertion care", "dressing change", "TSM dressing", "CHG dressing", "site assessment", "catheter dressing", "gauze dressing", "dressing integrity", "CLABSI prevention", "catheter necessity review", "bathing VAD protection", "chlorhexidine bathing"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

@@ -4,6 +4,7 @@ date = 2026-02-25T00:00:00-05:00
 lastmod = 2026-02-25T00:00:00-05:00
 content_type = "guide"
 audience = "clinician"
+departments = ["vascular-access", "oncology"]
 category = ["Special Populations", "Oncology", "Vascular Access"]
 tags = ["oncology vascular access", "chemotherapy central access", "implanted port oncology", "PICC oncology", "vesicant central access", "neutropenia vascular access", "cancer patient IV access", "power port oncology"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

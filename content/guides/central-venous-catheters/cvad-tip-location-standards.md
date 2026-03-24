@@ -4,6 +4,7 @@ date = 2026-02-25T00:00:00-05:00
 lastmod = 2026-02-25T00:00:00-05:00
 content_type = "guide"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["Central Venous Catheters", "Tip Location", "Clinical Standards"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]
 description = "CVAD tip location standards per CEVAD 2020 consensus: cavoatrial junction target, radiographic landmarks, device-specific tip positions, tip confirmation methods (ECG, CXR, fluoroscopy), and malposition classification."

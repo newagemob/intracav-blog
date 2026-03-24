@@ -4,6 +4,7 @@ date = 2024-04-20T00:00:00-05:00
 lastmod = 2025-11-15T00:00:00-05:00
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["Hematology", "Infusion Therapy", "Procedural Care"]
 tags = ["therapeutic phlebotomy", "venesection", "polycythemia vera", "hemochromatosis", "iron overload", "erythrocytapheresis", "blood removal", "phlebotomy complications", "vasovagal", "hypovolemia"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

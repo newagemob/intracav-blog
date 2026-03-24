@@ -4,6 +4,7 @@ date = 2024-05-20T00:00:00-05:00
 lastmod = 2025-11-08T00:00:00-05:00
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access", "icu"]
 category = ["Complication Management", "Patient Safety", "Procedural Safety"]
 tags = ["air embolism", "venous air embolism", "arterial air embolism", "CVAD removal", "luer-lock", "Valsalva maneuver", "hyperbaric oxygen", "catheter removal protocol"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

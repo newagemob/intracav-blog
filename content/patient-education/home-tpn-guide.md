@@ -4,6 +4,7 @@ date = 2026-02-23T00:00:00-05:00
 lastmod = 2026-02-23T00:00:00-05:00
 content_type = "patient-education"
 audience = "patient"
+departments = ["vascular-access", "home-health"]
 category = ["Home Care", "Infusion Therapy", "TPN"]
 tags = ["TPN", "total parenteral nutrition", "home TPN", "parenteral nutrition", "IV nutrition", "home infusion", "PICC TPN", "nutritional support"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

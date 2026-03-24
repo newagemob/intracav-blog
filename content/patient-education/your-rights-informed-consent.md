@@ -4,6 +4,7 @@ date = 2026-02-23T00:00:00-05:00
 lastmod = 2026-02-23T00:00:00-05:00
 content_type = "patient-education"
 audience = "patient"
+departments = ["vascular-access"]
 category = ["Patient Rights", "Informed Consent", "Decision-Making"]
 tags = ["informed consent", "patient rights", "decision-making", "right to refuse", "surrogate decision-maker", "patient autonomy"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

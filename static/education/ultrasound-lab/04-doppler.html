@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Doppler Effect — The Ultrasound Lab</title>
+<script src="https://unpkg.com/htmx.org@1.9.10"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Nunito:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #EDE4D5; --surface: #F6F0E8;
+    --border: #D4C7B5; --border-lt: #E2D8CC;
+    --text: #28180C; --text-2: #685040; --text-3: #9E8272;
+    --accent: #BC7250; --accent-lt: #E8C4A8;
+    --sage: #7E9C84; --rose: #B87070; --gold: #C9A84C;
+    --shadow-sm: 0 1px 8px rgba(40,24,12,0.06), 0 0 0 1px rgba(40,24,12,0.04);
+    --r: 16px; --r-sm: 10px;
+  }
+  body { font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+  body::after { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E"); opacity: 0.028; pointer-events: none; z-index: 9999; }
+  nav { display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 3rem; border-bottom: 1px solid var(--border-lt); background: rgba(237,228,213,0.85); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100; }
+  .nav-left { display: flex; align-items: center; gap: 1rem; }
+  .nav-back { font-size: 0.8rem; color: var(--text-3); text-decoration: none; transition: color 200ms; }
+  .nav-back:hover { color: var(--accent); }
+  .nav-sep { color: var(--border); }
+  .nav-title { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--text-2); }
+  .nav-num { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--accent); }
+  .hero { padding: 4rem 3rem 2.5rem; display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: end; border-bottom: 1px solid var(--border-lt); max-width: 1100px; margin: 0 auto; }
+  .module-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.75rem; }
+  .module-label::before { content: '04'; font-family: 'JetBrains Mono', monospace; }
+  h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 400; line-height: 1.1; margin-bottom: 1rem; }
+  h1 em { font-style: italic; color: var(--text-2); }
+  .hero-desc { font-size: 0.92rem; line-height: 1.7; color: var(--text-2); font-weight: 300; max-width: 500px; }
+  .hero-eq { background: var(--surface); border: 1px solid var(--border-lt); border-radius: var(--r); padding: 1.75rem 2rem; text-align: center; min-width: 240px; }
+  .eq-row { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: var(--text); margin-bottom: 0.5rem; }
+  .eq-name { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3); margin-top: 0.4rem; }
+  .frac { display: inline-flex; flex-direction: column; align-items: center; vertical-align: middle; margin: 0 0.1rem; }
+  .frac .num { border-bottom: 1.5px solid var(--text-2); padding: 0 4px 3px; }
+  .frac .den { padding: 3px 4px 0; }
+  .main { max-width: 1100px; margin: 0 auto; padding: 2.5rem 3rem; }
+  .section-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3); margin-bottom: 0.2rem; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; margin-bottom: 1.25rem; }
+
+  /* Doppler display */
+  .doppler-hero { display: flex; justify-content: center; align-items: center; margin-bottom: 2rem; }
+  .fd-display { text-align: center; }
+  .fd-big { font-family: 'Cormorant Garamond', serif; font-size: 5rem; font-weight: 300; line-height: 1; transition: color 500ms; }
+  .fd-unit { font-size: 0.85rem; color: var(--text-3); margin-top: 0.3rem; }
+  .fd-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3); margin-top: 0.4rem; }
+
+  .doppler-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 1.5rem; margin-bottom: 2rem; }
+  .dop-section { background: var(--surface); border: 1px solid var(--border-lt); border-radius: var(--r); overflow: hidden; box-shadow: var(--shadow-sm); }
+  .dop-header { padding: 1.25rem 1.5rem; border-bottom: 1px solid var(--border-lt); }
+  #dopplerCanvas { width: 100%; height: 300px; display: block; }
+  #waveformCanvas { width: 100%; height: 300px; display: block; }
+
+  .controls-section { background: var(--surface); border: 1px solid var(--border-lt); border-radius: var(--r); padding: 1.5rem 2rem; margin-bottom: 2rem; box-shadow: var(--shadow-sm); }
+  .controls { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.5rem; }
+  .ctrl { display: flex; flex-direction: column; gap: 0.5rem; }
+  .ctrl-label { display: flex; justify-content: space-between; }
+  .ctrl-name { font-size: 0.78rem; font-weight: 600; color: var(--text-2); }
+  .ctrl-val { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--accent); }
+  .ctrl-unit { font-size: 0.65rem; color: var(--text-3); }
+  .ctrl-hint { font-size: 0.68rem; color: var(--text-3); font-weight: 300; }
+  input[type=range] { -webkit-appearance: none; width: 100%; height: 4px; background: var(--border); border-radius: 100px; outline: none; cursor: pointer; }
+  input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 0 4px rgba(188,114,80,0.15); }
+
+  /* Angle visualization */
+  .angle-zone { display: flex; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+  .angle-card { flex: 1; min-width: 120px; background: var(--surface); border: 1px solid var(--border-lt); border-radius: var(--r-sm); padding: 1rem; text-align: center; box-shadow: var(--shadow-sm); transition: all 200ms; }
+  .angle-card.optimal { border-color: var(--sage); background: rgba(126,156,132,0.08); }
+  .angle-card.warning { border-color: var(--gold); background: rgba(201,168,76,0.08); }
+  .angle-card.dead { border-color: var(--rose); background: rgba(184,112,112,0.08); }
+  .ac-angle { font-family: 'JetBrains Mono', monospace; font-size: 1.1rem; font-weight: 500; color: var(--accent); }
+  .ac-cos { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; margin: 0.3rem 0; }
+  .ac-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-3); }
+
+  /* Scenario presets */
+  .preset-row { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+  .preset-btn { padding: 0.4rem 0.9rem; border: 1px solid var(--border); border-radius: 100px; font-size: 0.72rem; font-weight: 600; font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text-2); cursor: pointer; transition: all 150ms; }
+  .preset-btn:hover, .preset-btn.active { background: var(--accent); border-color: var(--accent); color: white; }
+
+  /* Artery/vein comparison */
+  .av-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem; }
+  .av-card { background: var(--surface); border: 1px solid var(--border-lt); border-radius: var(--r-sm); padding: 1.25rem; box-shadow: var(--shadow-sm); }
+  .av-title { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
+  .av-dot { width: 10px; height: 10px; border-radius: 50%; }
+  .av-row { display: flex; justify-content: space-between; font-size: 0.78rem; padding: 0.25rem 0; border-bottom: 1px solid var(--border-lt); }
+  .av-key { color: var(--text-3); }
+  .av-val { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; }
+
+  .pearls { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+  .pearl { background: var(--surface); border: 1px solid var(--border-lt); border-radius: var(--r-sm); padding: 1.25rem 1.5rem; box-shadow: var(--shadow-sm); }
+  .pearl-icon { font-size: 1.4rem; margin-bottom: 0.75rem; }
+  .pearl-title { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; margin-bottom: 0.5rem; }
+  .pearl-text { font-size: 0.8rem; line-height: 1.65; color: var(--text-2); font-weight: 300; }
+
+  .nav-footer { display: flex; justify-content: space-between; align-items: center; padding: 2rem 3rem; border-top: 1px solid var(--border-lt); max-width: 1100px; margin: 0 auto; }
+  .nav-link { text-decoration: none; color: var(--text-3); font-size: 0.82rem; transition: color 200ms; display: flex; align-items: center; gap: 0.5rem; }
+  .nav-link:hover { color: var(--accent); }
+  .nav-link-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+  .hero { animation: fadeUp 0.5s ease both; }
+  @media (max-width: 700px) { nav, .hero, .main, .nav-footer { padding-left: 1.25rem; padding-right: 1.25rem; } .hero, .doppler-grid, .av-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-left">
+    <a href="index.html" class="nav-back">← Collection</a>
+    <span class="nav-sep">|</span>
+    <span class="nav-title">The Ultrasound Lab</span>
+  </div>
+  <div class="nav-left">
+    <span class="nav-num">04 / 06</span>
+    <a href="03-beamforming.html" class="nav-back">← Beamforming</a>
+    <span class="nav-sep">|</span>
+    <a href="05-slice-geometry.html" class="nav-back">Slice Geometry →</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div>
+    <div class="module-label">Doppler Effect</div>
+    <h1>Frequency shift<br><em>encodes velocity.</em></h1>
+    <p class="hero-desc">When sound reflects off moving blood cells, the echo returns at a shifted frequency. That shift is directly proportional to how fast the blood is moving — and the angle between the beam and the vessel is everything.</p>
+  </div>
+  <div class="hero-eq">
+    <div class="eq-row">
+      f_D = <span class="frac"><span class="num">2 f₀ v cos θ</span><span class="den">c</span></span>
+    </div>
+    <div class="eq-name">Doppler Shift Equation</div>
+    <div style="height:0.75rem;"></div>
+    <div class="eq-row">v = <span class="frac"><span class="num">f_D · c</span><span class="den">2 f₀ cos θ</span></span></div>
+    <div class="eq-name">Velocity from Doppler</div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- Big fD display -->
+  <div style="background:var(--surface);border:1px solid var(--border-lt);border-radius:var(--r);padding:1.75rem 2rem;margin-bottom:2rem;box-shadow:var(--shadow-sm);display:flex;align-items:center;gap:2rem;flex-wrap:wrap;">
+    <div class="doppler-hero">
+      <div class="fd-display">
+        <div class="fd-big" id="fdBig">—</div>
+        <div class="fd-unit">Hz Doppler shift</div>
+        <div class="fd-label">f_D = 2f₀v cosθ / c</div>
+      </div>
+    </div>
+    <div style="flex:1;display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;min-width:300px;">
+      <div style="background:var(--bg);border-radius:var(--r-sm);padding:0.9rem 1rem;text-align:center;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:1.4rem;color:var(--accent)" id="vResult">—</div>
+        <div style="font-size:0.62rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-3);margin-top:0.2rem">Velocity</div>
+      </div>
+      <div style="background:var(--bg);border-radius:var(--r-sm);padding:0.9rem 1rem;text-align:center;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:1.4rem;color:var(--accent)" id="cosResult">—</div>
+        <div style="font-size:0.62rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-3);margin-top:0.2rem">cos θ</div>
+      </div>
+      <div style="background:var(--bg);border-radius:var(--r-sm);padding:0.9rem 1rem;text-align:center;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:1.4rem;color:var(--accent)" id="errorResult">—</div>
+        <div style="font-size:0.62rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-3);margin-top:0.2rem">Velocity Error</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Doppler viz + waveform -->
+  <div class="doppler-grid">
+    <div class="dop-section">
+      <div class="dop-header">
+        <div class="section-label">Live Simulation</div>
+        <div class="section-title" style="margin:0;font-family:'Cormorant Garamond',serif;font-size:1.2rem;">Vessel + Probe Angle</div>
+      </div>
+      <canvas id="dopplerCanvas"></canvas>
+    </div>
+    <div class="dop-section">
+      <div class="dop-header">
+        <div class="section-label">Spectral Doppler</div>
+        <div class="section-title" style="margin:0;font-family:'Cormorant Garamond',serif;font-size:1.2rem;">Velocity Waveform</div>
+      </div>
+      <canvas id="waveformCanvas"></canvas>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <div class="controls-section">
+    <div class="section-label" style="margin-bottom:0.75rem;">Parameters</div>
+    <div class="controls">
+      <div class="ctrl">
+        <div class="ctrl-label">
+          <span class="ctrl-name">Angle of insonation (θ)</span>
+          <span class="ctrl-val"><span id="angleVal">45</span><span class="ctrl-unit">°</span></span>
+        </div>
+        <input type="range" id="angleSlider" min="0" max="89" step="1" value="45" oninput="updateDoppler()">
+        <div class="ctrl-hint">Optimal: 30–60°. At 90° → cosθ = 0 → no signal</div>
+      </div>
+      <div class="ctrl">
+        <div class="ctrl-label">
+          <span class="ctrl-name">Blood velocity</span>
+          <span class="ctrl-val"><span id="velVal">40</span><span class="ctrl-unit"> cm/s</span></span>
+        </div>
+        <input type="range" id="velSlider" min="1" max="200" step="1" value="40" oninput="updateDoppler()">
+        <div class="ctrl-hint">Vein: 5–30 cm/s · Artery: 40–150 cm/s</div>
+      </div>
+      <div class="ctrl">
+        <div class="ctrl-label">
+          <span class="ctrl-name">Transducer frequency (f₀)</span>
+          <span class="ctrl-val"><span id="f0Val">7.5</span><span class="ctrl-unit"> MHz</span></span>
+        </div>
+        <input type="range" id="f0Slider" min="1" max="20" step="0.5" value="7.5" oninput="updateDoppler()">
+        <div class="ctrl-hint">Higher frequency → larger Doppler shift (easier to detect)</div>
+      </div>
+      <div class="ctrl">
+        <div class="ctrl-label">
+          <span class="ctrl-name">Vessel type</span>
+          <span class="ctrl-val" id="vesselTypeLabel">Vein</span>
+        </div>
+        <input type="range" id="vesselTypeSlider" min="0" max="1" step="1" value="0" oninput="updateDoppler()">
+        <div class="ctrl-hint">Vein = low, continuous; Artery = pulsatile, high peak</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Angle cards -->
+  <div class="section-label" style="margin-bottom:0.75rem;">Angle Effect on Signal</div>
+  <div class="angle-zone">
+    <div class="angle-card optimal"><div class="ac-angle">30°</div><div class="ac-cos">cos 30° = 0.87</div><div class="ac-label" style="color:var(--sage)">Optimal</div></div>
+    <div class="angle-card optimal"><div class="ac-angle">45°</div><div class="ac-cos">cos 45° = 0.71</div><div class="ac-label" style="color:var(--sage)">Good</div></div>
+    <div class="angle-card warning"><div class="ac-angle">60°</div><div class="ac-cos">cos 60° = 0.50</div><div class="ac-label" style="color:var(--gold)">Acceptable</div></div>
+    <div class="angle-card warning"><div class="ac-angle">75°</div><div class="ac-cos">cos 75° = 0.26</div><div class="ac-label" style="color:var(--gold)">Marginal</div></div>
+    <div class="angle-card dead"><div class="ac-angle">90°</div><div class="ac-cos">cos 90° = 0</div><div class="ac-label" style="color:var(--rose)">No signal</div></div>
+  </div>
+
+  <!-- Artery vs Vein -->
+  <div class="section-label" style="margin-bottom:0.75rem;">Artery vs Vein Identification</div>
+  <div class="av-grid">
+    <div class="av-card">
+      <div class="av-title"><div class="av-dot" style="background:#C9A84C"></div>Artery</div>
+      <div class="av-row"><span class="av-key">Waveform</span><span class="av-val" style="color:var(--gold)">Pulsatile, triphasic</span></div>
+      <div class="av-row"><span class="av-key">Peak velocity</span><span class="av-val">40–150 cm/s</span></div>
+      <div class="av-row"><span class="av-key">Compressibility</span><span class="av-val">Non-compressible</span></div>
+      <div class="av-row"><span class="av-key">Wall</span><span class="av-val">Thick, pulsating</span></div>
+      <div class="av-row"><span class="av-key">Color Doppler</span><span class="av-val">Red (toward probe)</span></div>
+    </div>
+    <div class="av-card">
+      <div class="av-title"><div class="av-dot" style="background:#4A8ACA"></div>Vein</div>
+      <div class="av-row"><span class="av-key">Waveform</span><span class="av-val" style="color:#4A8ACA">Low, continuous, respiratory</span></div>
+      <div class="av-row"><span class="av-key">Peak velocity</span><span class="av-val">5–30 cm/s</span></div>
+      <div class="av-row"><span class="av-key">Compressibility</span><span class="av-val">Fully compressible</span></div>
+      <div class="av-row"><span class="av-key">Wall</span><span class="av-val">Thin, collapses</span></div>
+      <div class="av-row"><span class="av-key">Color Doppler</span><span class="av-val">Blue (away from probe)</span></div>
+    </div>
+  </div>
+
+  <div class="pearls">
+    <div class="pearl">
+      <div class="pearl-icon">📐</div>
+      <div class="pearl-title">The 90° Problem</div>
+      <p class="pearl-text">At 90°, cosθ = 0, so f_D = 0. The machine sees no Doppler shift and reports zero velocity — regardless of how fast blood is flowing. This is not a machine error; it's geometry. Always keep your angle between 30° and 60°.</p>
+    </div>
+    <div class="pearl">
+      <div class="pearl-icon">🚂</div>
+      <div class="pearl-title">Christian Doppler, 1842</div>
+      <p class="pearl-text">Christian Doppler described the frequency shift of light from stars in 1842. Medical ultrasound application came in the 1950s–60s — over a century later. The math had been sitting in physics textbooks, waiting for transducer technology to make it clinically useful.</p>
+    </div>
+    <div class="pearl">
+      <div class="pearl-icon">🎨</div>
+      <div class="pearl-title">Color Doppler is a Map, Not a Video</div>
+      <p class="pearl-text">Color Doppler assigns red to flow toward the probe and blue to flow away — by convention. It doesn't show arteries as red and veins as blue; it shows flow direction relative to the probe. Rotate the probe and the colors flip.</p>
+    </div>
+    <div class="pearl">
+      <div class="pearl-icon">🔊</div>
+      <div class="pearl-title">Why You Can Hear It</div>
+      <p class="pearl-text">Doppler shifts for blood flow at 7.5 MHz fall between roughly 200 Hz and 15 kHz — squarely in the audible range. The audio output of a Doppler machine is not a representation; it literally IS the frequency shift, converted to sound.</p>
+    </div>
+  </div>
+</div>
+
+<div class="nav-footer">
+  <a href="03-beamforming.html" class="nav-link"><span>←</span><div><div class="nav-link-label">Previous</div>Beamforming</div></a>
+  <a href="05-slice-geometry.html" class="nav-link"><div style="text-align:right"><div class="nav-link-label">Next Module</div>Slice Geometry</div><span>→</span></a>
+</div>
+
+<script>
+const dc = document.getElementById('dopplerCanvas');
+const dctx = dc.getContext('2d');
+const wc = document.getElementById('waveformCanvas');
+const wctx = wc.getContext('2d');
+let dAnimT = 0;
+let dp = { angle:45, vel:40, f0:7.5, vesselType:0 };
+let waveHistory = [];
+
+function resize() {
+  dc.width = dc.offsetWidth; dc.height = 300;
+  wc.width = wc.offsetWidth; wc.height = 300;
+}
+resize();
+window.addEventListener('resize', resize);
+
+function updateDoppler() {
+  dp.angle      = +document.getElementById('angleSlider').value;
+  dp.vel        = +document.getElementById('velSlider').value;
+  dp.f0         = +document.getElementById('f0Slider').value;
+  dp.vesselType = +document.getElementById('vesselTypeSlider').value;
+  document.getElementById('angleVal').textContent = dp.angle;
+  document.getElementById('velVal').textContent   = dp.vel;
+  document.getElementById('f0Val').textContent    = dp.f0.toFixed(1);
+  document.getElementById('vesselTypeLabel').textContent = dp.vesselType ? 'Artery' : 'Vein';
+
+  const cosTheta = Math.cos(dp.angle * Math.PI / 180);
+  const c = 1540;
+  const fD = (2 * dp.f0 * 1e6 * (dp.vel / 100) * cosTheta) / c;
+  const errorPct = ((1/cosTheta - 1) * 100).toFixed(1);
+
+  const color = dp.angle < 30 ? '#B87070' : dp.angle < 65 ? '#7E9C84' : dp.angle < 80 ? '#C9A84C' : '#B87070';
+  document.getElementById('fdBig').textContent = Math.abs(fD).toFixed(0);
+  document.getElementById('fdBig').style.color = dp.angle >= 88 ? '#B87070' : '#BC7250';
+  document.getElementById('vResult').textContent = dp.vel + ' cm/s';
+  document.getElementById('cosResult').textContent = cosTheta.toFixed(3);
+  document.getElementById('errorResult').innerHTML = dp.angle >= 88 ? '∞%' : `+${errorPct}%`;
+}
+
+function drawDoppler() {
+  const W = dc.width, H = dc.height;
+  dctx.clearRect(0, 0, W, H);
+  dctx.fillStyle = '#0E0C0A';
+  dctx.fillRect(0, 0, W, H);
+
+  const angleRad = dp.angle * Math.PI / 180;
+  const vesselY = H * 0.55;
+  const vesselR = H * 0.1;
+  const vesselColor = dp.vesselType ? '#C9A84C' : '#4A8ACA';
+
+  // Vessel
+  dctx.beginPath();
+  dctx.rect(0, vesselY - vesselR, W, vesselR * 2);
+  dctx.fillStyle = '#050810';
+  dctx.fill();
+  dctx.strokeStyle = vesselColor + '66';
+  dctx.lineWidth = 1;
+  dctx.beginPath();
+  dctx.moveTo(0, vesselY - vesselR); dctx.lineTo(W, vesselY - vesselR);
+  dctx.moveTo(0, vesselY + vesselR); dctx.lineTo(W, vesselY + vesselR);
+  dctx.stroke();
+
+  // Flowing cells
+  const nCells = dp.vesselType ? 14 : 8;
+  for (let i = 0; i < nCells; i++) {
+    const phase = ((dAnimT * (dp.vel / 80) + i / nCells) % 1);
+    const cx = phase * W;
+    const cy = vesselY + (Math.random() < 0.5 ? 1 : -1) * Math.random() * vesselR * 0.6;
+    dctx.beginPath();
+    dctx.arc(cx, vesselY + (i % 3 - 1) * vesselR * 0.4, 2.5, 0, Math.PI*2);
+    dctx.fillStyle = vesselColor + 'AA';
+    dctx.fill();
+  }
+
+  // Probe
+  const probeX = W * 0.4;
+  const probeY = H * 0.1;
+  dctx.save();
+  dctx.translate(probeX, probeY);
+  dctx.rotate(angleRad - Math.PI/2);
+  dctx.fillStyle = '#3A3028';
+  dctx.fillRect(-18, -30, 36, 30);
+  dctx.fillStyle = '#BC7250';
+  dctx.fillRect(-18, 0, 36, 5);
+  dctx.restore();
+
+  // Beam line to vessel
+  const bEndX = probeX + Math.cos(angleRad) * (vesselY - probeY) * 1.2;
+  const bEndY = probeY + Math.sin(angleRad) * (vesselY - probeY);
+  const bGrad = dctx.createLinearGradient(probeX, probeY, bEndX, bEndY);
+  bGrad.addColorStop(0, 'rgba(188,114,80,0.5)');
+  bGrad.addColorStop(1, 'rgba(188,114,80,0.1)');
+  dctx.beginPath();
+  dctx.moveTo(probeX, probeY + 5);
+  dctx.lineTo(bEndX, bEndY);
+  dctx.strokeStyle = bGrad;
+  dctx.lineWidth = 2;
+  dctx.stroke();
+
+  // Angle arc
+  dctx.beginPath();
+  dctx.arc(probeX, vesselY, 40, -Math.PI/2, -Math.PI/2 + angleRad);
+  dctx.strokeStyle = 'rgba(201,168,76,0.5)';
+  dctx.lineWidth = 1;
+  dctx.stroke();
+  dctx.fillStyle = 'rgba(201,168,76,0.8)';
+  dctx.font = '11px JetBrains Mono, monospace';
+  dctx.textAlign = 'center';
+  dctx.fillText(dp.angle + '°', probeX + 55, vesselY - 20);
+
+  // cos θ label
+  dctx.fillStyle = 'rgba(158,130,114,0.7)';
+  dctx.font = '10px Nunito, sans-serif';
+  dctx.fillText('cos θ = ' + Math.cos(dp.angle*Math.PI/180).toFixed(3), probeX - 60, probeY + 50);
+
+  dctx.textAlign = 'left';
+}
+
+function drawWaveform() {
+  const W = wc.width, H = wc.height;
+  wctx.clearRect(0, 0, W, H);
+  wctx.fillStyle = '#0E0C0A';
+  wctx.fillRect(0, 0, W, H);
+
+  const cosTheta = Math.cos(dp.angle * Math.PI / 180);
+  const baseV = dp.vel * cosTheta;
+  const isArtery = dp.vesselType;
+
+  // Build current velocity
+  let v;
+  if (isArtery) {
+    const cardiac = (dAnimT * 1.2) % 1;
+    v = baseV * (cardiac < 0.15 ? cardiac / 0.15 : cardiac < 0.3 ? 1 - (cardiac - 0.15)/0.15 * 0.5 : cardiac < 0.5 ? 0.5 - (cardiac - 0.3)/0.2 * 0.3 : cardiac < 0.6 ? 0.2 - (cardiac - 0.5)/0.1 * 0.05 : 0.15);
+  } else {
+    v = baseV * (0.8 + Math.sin(dAnimT * 0.4) * 0.1 + Math.random() * 0.05);
+  }
+
+  waveHistory.push(v);
+  if (waveHistory.length > W) waveHistory.shift();
+
+  // Grid
+  const baselineY = H * 0.7;
+  wctx.strokeStyle = 'rgba(255,255,255,0.05)';
+  wctx.lineWidth = 1;
+  wctx.setLineDash([2, 8]);
+  wctx.beginPath(); wctx.moveTo(0, baselineY); wctx.lineTo(W, baselineY); wctx.stroke();
+  wctx.setLineDash([]);
+
+  // Waveform
+  const maxV = Math.max(dp.vel * 1.1, 10);
+  wctx.beginPath();
+  waveHistory.forEach((val, i) => {
+    const x = i;
+    const y = baselineY - (val / maxV) * (H * 0.55);
+    if (i === 0) wctx.moveTo(x, y);
+    else wctx.lineTo(x, y);
+  });
+  const vesselColor = isArtery ? '#C9A84C' : '#4A8ACA';
+  wctx.strokeStyle = vesselColor;
+  wctx.lineWidth = 1.5;
+  wctx.stroke();
+
+  // Fill under curve
+  wctx.lineTo(waveHistory.length - 1, baselineY);
+  wctx.lineTo(0, baselineY);
+  wctx.fillStyle = vesselColor + '22';
+  wctx.fill();
+
+  // Labels
+  wctx.fillStyle = 'rgba(158,130,114,0.7)';
+  wctx.font = '10px Nunito, sans-serif';
+  wctx.textAlign = 'left';
+  wctx.fillText(isArtery ? 'Arterial waveform (pulsatile)' : 'Venous waveform (continuous)', 8, 14);
+  wctx.fillStyle = 'rgba(188,114,80,0.6)';
+  wctx.font = '9px JetBrains Mono, monospace';
+  wctx.fillText('Peak: ' + baseV.toFixed(1) + ' cm/s', 8, H - 8);
+  if (dp.angle >= 85) {
+    wctx.fillStyle = '#B87070';
+    wctx.font = '11px Nunito, sans-serif';
+    wctx.textAlign = 'center';
+    wctx.fillText('⚠ Angle ≥ 85° — signal unreliable', W/2, H/2);
+  }
+  wctx.textAlign = 'left';
+}
+
+function loop() {
+  dAnimT += 0.012;
+  drawDoppler();
+  drawWaveform();
+  requestAnimationFrame(loop);
+}
+updateDoppler();
+loop();
+</script>
+</body>
+</html>

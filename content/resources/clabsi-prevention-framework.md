@@ -4,6 +4,7 @@ date = 2026-02-25T00:00:00-05:00
 lastmod = 2026-02-25T00:00:00-05:00
 content_type = "resource"
 audience = "clinician"
+departments = ["vascular-access", "infection-prevention"]
 category = ["CLABSI Prevention", "Infection Control", "Quality Improvement"]
 tags = ["CLABSI prevention framework", "CLABSI bundle", "CLABSI zero", "CLABSI insertion bundle", "CLABSI maintenance bundle", "CHG antisepsis", "scrub the hub", "CLABSI reduction protocol"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

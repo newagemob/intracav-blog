@@ -4,6 +4,7 @@ date = 2026-02-23T00:00:00-05:00
 lastmod = 2026-02-23T00:00:00-05:00
 content_type = "patient-education"
 audience = "patient"
+departments = ["vascular-access"]
 category = ["Safety", "Allergies", "Patient Education"]
 tags = ["allergies", "latex allergy", "drug allergy", "anaphylaxis", "IV reaction", "tape allergy", "chlorhexidine allergy", "patient safety"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

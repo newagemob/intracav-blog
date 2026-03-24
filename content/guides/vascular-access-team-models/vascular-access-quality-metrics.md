@@ -4,6 +4,7 @@ date = 2026-02-25T00:00:00-05:00
 lastmod = 2026-02-25T00:00:00-05:00
 content_type = "guide"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["VAT Models", "Quality Improvement", "Metrics"]
 tags = ["vascular access quality metrics", "CLABSI KPI", "vascular access KPI", "first-attempt success rate", "IV therapy quality indicators", "PICC quality metrics", "vascular access benchmarking", "NHSN benchmarking"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

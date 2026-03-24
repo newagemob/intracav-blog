@@ -4,6 +4,7 @@ date = 2026-02-23T00:00:00-05:00
 lastmod = 2026-02-23T00:00:00-05:00
 content_type = "patient-education"
 audience = "patient"
+departments = ["vascular-access"]
 category = ["Safety", "Medications", "Patient Education"]
 tags = ["medication safety", "medication errors", "patient advocacy", "five rights", "IV medication safety", "speak up", "patient identification", "medication verification"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

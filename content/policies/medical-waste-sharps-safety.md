@@ -4,6 +4,7 @@ date = 2026-02-23T00:00:00-05:00
 lastmod = 2026-02-23T00:00:00-05:00
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access", "infection-prevention"]
 category = ["Occupational Safety", "Environmental Health", "Patient Safety"]
 tags = ["sharps safety", "needlestick prevention", "medical waste", "safety-engineered devices", "biohazard", "sharps container", "bloodborne pathogen", "waste segregation", "home care waste", "needlestick reporting"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

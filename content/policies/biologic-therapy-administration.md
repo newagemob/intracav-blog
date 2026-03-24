@@ -4,6 +4,7 @@ date = 2024-01-01T00:00:00-05:00
 lastmod = 2026-01-15T00:00:00-05:00
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["Infusion Therapy", "Medication Safety", "Immunology"]
 tags = ["biologic therapy", "immunoglobulin", "monoclonal antibodies", "REMS", "biosimilars", "SCIg", "IVIg", "infusion-related reactions", "hypersensitivity"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

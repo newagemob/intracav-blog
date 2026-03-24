@@ -4,6 +4,7 @@ date = 2026-02-25T00:00:00-05:00
 lastmod = 2026-02-25T00:00:00-05:00
 content_type = "guide"
 audience = "clinician"
+departments = ["vascular-access", "infection-prevention"]
 category = ["CLABSI Prevention", "Insertion Bundle", "Infection Control"]
 tags = ["CLABSI insertion bundle", "central line bundle", "maximal sterile barrier", "CHG antisepsis", "hand hygiene central line", "CLABSI prevention", "IHI central line bundle", "daily necessity review"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

@@ -4,6 +4,7 @@ date = 2026-02-23T00:00:00-05:00
 lastmod = 2026-02-23T00:00:00-05:00
 content_type = "patient-education"
 audience = "patient"
+departments = ["vascular-access"]
 category = ["Device Care", "Safety", "Patient Education"]
 tags = ["skin care IV", "adhesive skin injury", "MARSI", "catheter site skin", "contact dermatitis tape", "CHG skin", "fragile skin IV", "dressing skin reaction"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

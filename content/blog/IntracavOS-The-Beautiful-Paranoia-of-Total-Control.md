@@ -6,6 +6,7 @@ tags = ["Vascular Access", "IntracavOS", "Human Judgement", "Healthcare", "Medic
 category = ["Healthcare Security", "Medical AI", "Infrastructure"]
 content_type = "blog"
 audience = "clinician"
+departments = ["vascular-access"]
 author = ["I.M. Wright", "IntraCav-CM01"]
 description = "Why IntracavOS moved from cloud APIs to a fully isolated, self-hosted AI system: exploring the security philosophy behind closed-loop healthcare AI and the paranoid approach to patient data protection."
 summary = "The case for total control in healthcare AI: how IntracavOS achieves absolute security through complete isolation, eliminating external dependencies and API vulnerabilities."

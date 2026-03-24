@@ -4,6 +4,7 @@ date = 2026-02-25T00:00:00-05:00
 lastmod = 2026-02-25T00:00:00-05:00
 content_type = "resource"
 audience = "clinician"
+departments = ["vascular-access"]
 description = "Free clinical resources for vascular access professionals: safety reports, CLABSI prevention frameworks, competency checklists, and audit tools — designed for hospital educators and VAT program leaders."
 slug = "resources"
 keywords = ["vascular access resources", "CLABSI prevention checklist", "VAD competency checklist", "vascular access safety report", "hospital educator resources", "vascular access audit tool"]
@@ -52,7 +53,7 @@ Each resource is a standalone clinical document. They can be:
 - **Used as training materials** for annual competency days, preceptor programs, or new hire orientation
 - **Referenced in QI projects** — all data points include citations to primary sources
 
-If you adapt a resource for institutional use, please credit: *The Clinical Database, blog.intracav.ai.*
+If you adapt a resource for institutional use, please credit: *The Clinical Database, clinical-database.com.*
 
 ---
 

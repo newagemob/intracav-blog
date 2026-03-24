@@ -4,6 +4,7 @@ date = 2026-02-25T00:00:00-05:00
 lastmod = 2026-02-25T00:00:00-05:00
 content_type = "guide"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["Documentation", "Compliance", "Clinical Practice"]
 tags = ["vascular access documentation", "PICC insertion note", "IV documentation requirements", "EHR vascular access", "catheter documentation", "daily assessment documentation"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

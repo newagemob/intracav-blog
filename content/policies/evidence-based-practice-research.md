@@ -4,6 +4,7 @@ date = 2026-01-21T13:16:02-05:00
 lastmod = 2026-01-21T13:16:02-05:00
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["Research", "Evidence-Based Practice", "Professional Development"]
 tags = ["evidence-based practice", "EBP", "research", "implementation science", "IRB", "knowledge dissemination", "clinical research", "mentorship"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

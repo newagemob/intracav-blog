@@ -4,6 +4,7 @@ date = 2026-02-25T00:00:00-05:00
 lastmod = 2026-02-25T00:00:00-05:00
 content_type = "guide"
 audience = "clinician"
+departments = ["vascular-access", "icu"]
 category = ["Central Venous Catheters", "CVC", "Clinical Practice"]
 tags = ["non-tunneled CVC", "central venous catheter insertion", "IJ CVC", "subclavian CVC", "femoral CVC", "CVC site selection", "ultrasound guided CVC", "Seldinger technique CVC"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

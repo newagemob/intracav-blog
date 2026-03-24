@@ -4,6 +4,7 @@ date = 2024-03-07T00:00:00-05:00
 lastmod = 2025-07-22T00:00:00-05:00
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["Vascular Access", "Apheresis", "Device Selection"]
 tags = ["therapeutic apheresis", "peripheral access", "central venous catheter", "apheresis port", "catheter selection", "pediatric vascular access", "plasma exchange", "HIT"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

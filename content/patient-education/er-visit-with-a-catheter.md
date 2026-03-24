@@ -4,6 +4,7 @@ date = 2026-02-23T00:00:00-05:00
 lastmod = 2026-02-23T00:00:00-05:00
 content_type = "patient-education"
 audience = "patient"
+departments = ["vascular-access"]
 category = ["Safety", "Emergency Care", "Patient Education"]
 tags = ["ER visit catheter", "emergency room PICC", "emergency room port", "central line ER", "patient advocacy ER", "catheter emergency care"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

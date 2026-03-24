@@ -4,6 +4,7 @@ date = 2026-01-21T13:16:02-05:00
 lastmod = 2026-01-21T13:16:02-05:00
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["Quality Improvement", "Patient Safety", "Performance Improvement"]
 tags = ["quality improvement", "QI", "PDCA", "lean six sigma", "root cause analysis", "HFMEA", "CABSI", "surveillance", "audit", "just culture", "medication safety"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

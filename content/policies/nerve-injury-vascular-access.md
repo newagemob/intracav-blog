@@ -4,6 +4,7 @@ date = 2023-08-15T00:00:00-05:00
 lastmod = 2025-05-20T00:00:00-05:00
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["Complication Management", "Patient Safety", "Procedural Safety"]
 tags = ["nerve injury", "paresthesia", "compartment syndrome", "CRPS", "phlebotomy safety", "ultrasound guidance"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

@@ -4,6 +4,7 @@ date = 2026-02-25T00:00:00-05:00
 lastmod = 2026-02-25T00:00:00-05:00
 content_type = "guide"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["Catheter Complications", "Infiltration", "Extravasation"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]
 description = "Complete guide to IV infiltration and extravasation: infiltration staging scale (0–4), vesicant vs. non-vesicant injury, antidote table (dexrazoxane, hyaluronidase, phentolamine), emergency response, and prevention."

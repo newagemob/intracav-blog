@@ -4,6 +4,7 @@ date = 2026-02-25T00:00:00-05:00
 lastmod = 2026-02-25T00:00:00-05:00
 content_type = "guide"
 audience = "clinician"
+departments = ["vascular-access", "icu"]
 category = ["Special Populations", "Critical Care", "ICU"]
 tags = ["critical care vascular access", "ICU vascular access", "arterial line ICU", "CVC site selection ICU", "vasopressor central access", "CRRT vascular access", "ICU CLABSI prevention", "PA catheter"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

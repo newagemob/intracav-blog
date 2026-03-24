@@ -4,6 +4,7 @@ date = 2023-10-22T00:00:00-05:00
 lastmod = 2026-01-20T00:00:00-05:00
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access", "ed"]
 category = ["Vascular Access", "Emergency Access", "Specialized Devices"]
 tags = ["intraosseous", "IO access", "cardiac arrest", "emergency access", "difficult vascular access", "EZ-IO", "IO needle", "bone marrow", "resuscitation", "pediatric access"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

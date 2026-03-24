@@ -4,6 +4,7 @@ date = 2026-02-25T00:00:00-05:00
 lastmod = 2026-02-25T00:00:00-05:00
 content_type = "guide"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["Central Venous Catheters", "Tunneled Catheters", "Long-Term Access"]
 tags = ["tunneled central catheter", "Hickman catheter", "Broviac catheter", "Groshong catheter", "tunneled CVC care", "Dacron cuff catheter", "long term central access", "home IV tunneled catheter"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

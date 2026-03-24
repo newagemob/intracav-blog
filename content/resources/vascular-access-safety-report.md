@@ -4,6 +4,7 @@ date = 2026-02-25T00:00:00-05:00
 lastmod = 2026-02-25T00:00:00-05:00
 content_type = "resource"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["Safety", "Quality Improvement", "Vascular Access"]
 tags = ["vascular access safety", "CLABSI national data", "vascular access outcomes", "catheter complication rates", "IV therapy safety", "PICC complication data", "vascular access benchmarks", "HAI national statistics"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

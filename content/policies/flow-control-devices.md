@@ -4,6 +4,7 @@ date = 2024-02-08T00:00:00-05:00
 lastmod = 2025-04-19T00:00:00-05:00
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["Infusion Therapy", "Patient Safety", "Clinical Technology"]
 tags = ["smart pump", "infusion pump", "elastomeric pump", "flow control", "drug library", "alarm fatigue", "dose error reduction", "gravity infusion", "medication safety", "care transitions"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

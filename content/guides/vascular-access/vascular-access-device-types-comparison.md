@@ -4,6 +4,7 @@ date = 2026-02-25T00:00:00-05:00
 lastmod = 2026-02-25T00:00:00-05:00
 content_type = "guide"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["Vascular Access Devices", "Device Selection"]
 tags = ["types of vascular access devices", "PIV vs PICC", "PICC vs CVC", "peripheral vs central", "midline catheter comparison", "implanted port", "vascular access device comparison"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

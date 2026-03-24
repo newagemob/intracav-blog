@@ -4,6 +4,7 @@ date = 2024-03-05T00:00:00-05:00
 lastmod = 2025-06-18T00:00:00-05:00
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["Infusion Therapy", "Patient Safety", "Vascular Access Management"]
 tags = ["add-on devices", "extension sets", "manifold", "stopcock", "CSTD", "in-line filter", "luer-lock", "infusion system", "add-on device replacement", "hub disinfection"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

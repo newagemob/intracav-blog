@@ -3,6 +3,7 @@ title = "Foundations of Clinical Practice and Specialized Population Management"
 date = 2026-01-29T20:24:05.107Z
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access", "neonatal"]
 category = ["Vascular Access", "Infusion Therapy", "Clinical Guidelines", "Patient Safety", "Pediatric Nursing", "Neonatal Care", "Obstetric Care", "Geriatric Nursing", "Evidence-Based Practice", "Nursing Education"]
 tags = ["Vascular Access", "Infusion Therapy", "Clinical Guidelines", "Patient Safety", "Pediatric Nursing", "Neonatal Care", "Obstetric Care", "Geriatric Nursing", "Evidence-Based Practice", "Nursing Education"]
 author = ["Mike Stern", "Dennis Woo", "I.M. Wright"]

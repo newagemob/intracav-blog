@@ -4,6 +4,7 @@ date = 2026-02-23T00:00:00-05:00
 lastmod = 2026-02-23T00:00:00-05:00
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["Allergy", "Patient Safety", "Clinical Practice"]
 tags = ["latex allergy", "latex sensitivity", "anaphylaxis", "contact dermatitis", "latex-free", "PPE", "at-risk patients", "myelomeningocele", "epinephrine", "occupational health"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

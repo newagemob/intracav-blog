@@ -4,6 +4,7 @@ date = 2026-02-23T00:00:00-05:00
 lastmod = 2026-02-23T00:00:00-05:00
 content_type = "patient-education"
 audience = "patient"
+departments = ["vascular-access"]
 category = ["Mental Health", "Quality of Life", "Patient Education"]
 tags = ["mental health IV therapy", "anxiety catheter", "depression cancer treatment", "emotional adjustment illness", "patient mental health", "coping IV therapy", "psychological support"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

@@ -4,6 +4,7 @@ date = 2023-08-22T00:00:00-05:00
 lastmod = 2025-06-01T00:00:00-05:00
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access", "nephrology"]
 category = ["Vascular Access", "Nephrology", "Infection Prevention"]
 tags = ["hemodialysis", "arteriovenous fistula", "AVF", "arteriovenous graft", "AVG", "hemodialysis catheter", "vein preservation", "KDOQI", "buttonhole technique", "rope ladder", "citrate lock", "heparin lock", "tPA", "CLABSI", "dialysis access"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

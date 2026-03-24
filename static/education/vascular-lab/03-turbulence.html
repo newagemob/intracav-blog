@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Turbulence — The Vascular Lab</title>
+<script src="https://unpkg.com/htmx.org@1.9.10"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Nunito:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #EDE4D5; --surface: #F6F0E8; --surface-hi: #FDFAF5;
+    --border: #D4C7B5; --border-lt: #E2D8CC;
+    --text: #28180C; --text-2: #685040; --text-3: #9E8272;
+    --accent: #BC7250; --accent-lt: #E8C4A8;
+    --sage: #7E9C84; --rose: #B87070; --rose-lt: #E8C0C0;
+    --laminar: #7E9C84; --trans: #C9A84C; --turb: #B87070;
+    --shadow-sm: 0 1px 8px rgba(40,24,12,0.06), 0 0 0 1px rgba(40,24,12,0.04);
+    --r: 16px; --r-sm: 10px;
+  }
+  body { font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+  body::after {
+    content: ''; position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+    opacity: 0.028; pointer-events: none; z-index: 9999;
+  }
+  nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.25rem 3rem; border-bottom: 1px solid var(--border-lt);
+    background: rgba(237,228,213,0.85); backdrop-filter: blur(12px);
+    position: sticky; top: 0; z-index: 100;
+  }
+  .nav-left { display: flex; align-items: center; gap: 1rem; }
+  .nav-back, .nav-next { font-size: 0.8rem; color: var(--text-3); text-decoration: none; letter-spacing: 0.04em; transition: color 200ms; }
+  .nav-back:hover, .nav-next:hover { color: var(--accent); }
+  .nav-sep { color: var(--border); }
+  .nav-title { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--text-2); }
+  .nav-num { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--accent); }
+
+  .hero {
+    padding: 4rem 3rem 2.5rem; display: grid;
+    grid-template-columns: 1fr auto; gap: 2rem; align-items: end;
+    border-bottom: 1px solid var(--border-lt); max-width: 1100px; margin: 0 auto;
+  }
+  .module-label {
+    font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--accent);
+    display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.75rem;
+  }
+  .module-label::before { content: '03'; font-family: 'JetBrains Mono', monospace; }
+  h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 400; line-height: 1.1; color: var(--text); margin-bottom: 1rem; }
+  h1 em { font-style: italic; color: var(--text-2); }
+  .hero-desc { font-size: 0.92rem; line-height: 1.7; color: var(--text-2); font-weight: 300; max-width: 500px; }
+
+  .hero-re {
+    background: var(--surface); border: 1px solid var(--border-lt);
+    border-radius: var(--r); padding: 1.75rem 2rem; text-align: center; min-width: 220px;
+  }
+  .re-number {
+    font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 400;
+    line-height: 1; color: var(--text); transition: color 600ms ease;
+  }
+  .re-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3); margin-top: 0.4rem; }
+  .re-state {
+    font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-style: italic;
+    margin-top: 0.6rem; transition: color 600ms ease;
+  }
+  .frac { display: inline-flex; flex-direction: column; align-items: center; vertical-align: middle; margin: 0 0.15rem; }
+  .frac .num { border-bottom: 1.5px solid var(--text-2); padding: 0 4px 3px; }
+  .frac .den { padding: 3px 4px 0; }
+
+  .main { max-width: 1100px; margin: 0 auto; padding: 2.5rem 3rem; }
+
+  /* RE Scale */
+  .re-scale {
+    background: var(--surface); border: 1px solid var(--border-lt);
+    border-radius: var(--r); padding: 1.5rem 2rem; margin-bottom: 2rem;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .scale-track {
+    height: 12px; border-radius: 100px; margin: 1rem 0;
+    background: linear-gradient(90deg, var(--laminar) 0%, var(--laminar) 38%, var(--trans) 45%, var(--trans) 55%, var(--turb) 62%, var(--turb) 100%);
+    position: relative;
+  }
+
+  .scale-needle {
+    position: absolute; top: -8px; width: 3px; height: 28px;
+    background: var(--text); border-radius: 2px; transform: translateX(-50%);
+    transition: left 400ms cubic-bezier(0.25, 0, 0, 1);
+    box-shadow: 0 0 8px rgba(40,24,12,0.3);
+  }
+
+  .scale-labels {
+    display: flex; justify-content: space-between;
+    font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: var(--text-3);
+  }
+
+  .scale-zones { display: flex; gap: 1rem; margin-top: 0.75rem; }
+  .zone-badge {
+    display: flex; align-items: center; gap: 0.4rem;
+    font-size: 0.72rem; font-weight: 600;
+  }
+  .zone-dot { width: 8px; height: 8px; border-radius: 50%; }
+
+  /* Viz section */
+  .viz-section {
+    background: var(--surface); border: 1px solid var(--border-lt);
+    border-radius: var(--r); overflow: hidden; margin-bottom: 2rem;
+    box-shadow: var(--shadow-sm);
+  }
+  .viz-header { padding: 1.25rem 1.5rem; border-bottom: 1px solid var(--border-lt); }
+  .section-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3); margin-bottom: 0.2rem; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--text); }
+
+  #turbCanvas { width: 100%; height: 260px; display: block; background: #12090400; }
+
+  /* Controls */
+  .controls { padding: 1.5rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.5rem; }
+  .ctrl { display: flex; flex-direction: column; gap: 0.5rem; }
+  .ctrl-label { display: flex; justify-content: space-between; align-items: baseline; }
+  .ctrl-name { font-size: 0.78rem; font-weight: 600; color: var(--text-2); letter-spacing: 0.03em; }
+  .ctrl-val { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--accent); font-weight: 500; }
+  .ctrl-unit { font-size: 0.65rem; color: var(--text-3); margin-left: 0.25rem; }
+  input[type=range] {
+    -webkit-appearance: none; width: 100%; height: 4px;
+    background: var(--border); border-radius: 100px; outline: none; cursor: pointer;
+  }
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none; width: 18px; height: 18px;
+    background: var(--accent); border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(188,114,80,0.15); transition: box-shadow 200ms;
+  }
+  input[type=range]::-webkit-slider-thumb:hover { box-shadow: 0 0 0 6px rgba(188,114,80,0.2); }
+  .ctrl-hint { font-size: 0.68rem; color: var(--text-3); font-weight: 300; }
+
+  /* Clinical scenarios */
+  .clinical-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+  .clin-btn {
+    background: var(--surface); border: 1px solid var(--border-lt);
+    border-radius: var(--r-sm); padding: 1rem; cursor: pointer;
+    text-align: left; transition: all 220ms;
+  }
+  .clin-btn:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+  .clin-title { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--text); margin-bottom: 0.25rem; }
+  .clin-re { font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: var(--accent); margin-bottom: 0.25rem; }
+  .clin-desc { font-size: 0.72rem; color: var(--text-3); font-weight: 300; line-height: 1.5; }
+  .clin-badge {
+    display: inline-block; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.08em;
+    text-transform: uppercase; padding: 0.15rem 0.5rem; border-radius: 100px;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Pearls */
+  .pearls { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
+  .pearl { background: var(--surface-hi); border: 1px solid var(--border-lt); border-radius: var(--r-sm); padding: 1.25rem; }
+  .pearl-icon { font-size: 1.2rem; margin-bottom: 0.6rem; }
+  .pearl-title { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: var(--text); margin-bottom: 0.4rem; }
+  .pearl-text { font-size: 0.82rem; line-height: 1.6; color: var(--text-2); font-weight: 300; }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .hero { animation: fadeUp 500ms ease-out both; }
+
+  @media (max-width: 700px) {
+    .hero { grid-template-columns: 1fr; padding: 2.5rem 1.5rem; }
+    .main { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-left">
+    <a class="nav-back" href="index.html">← Collection</a>
+    <span class="nav-sep">·</span>
+    <span class="nav-num">03</span>
+    <span class="nav-title">Turbulence</span>
+  </div>
+  <a class="nav-next" href="04-shear-stress.html">Shear Stress →</a>
+</nav>
+
+<section class="hero">
+  <div>
+    <div class="module-label">— Reynolds Number</div>
+    <h1>Flow <em>breaks</em><br>at a threshold.</h1>
+    <p class="hero-desc">
+      Below Re ≈ 2300, flow stays orderly — laminar, predictable, efficient.
+      Above Re ≈ 4000, it becomes turbulent: chaotic, noisy, and surprisingly
+      energy-intensive. The transition zone between is clinically fascinating.
+    </p>
+  </div>
+  <div class="hero-re">
+    <div class="re-number" id="reDisplay">1,420</div>
+    <div class="re-label">Reynolds Number</div>
+    <div class="re-state" id="reState" style="color:var(--laminar)">Laminar Flow</div>
+    <div style="height:1px;background:var(--border-lt);margin:1rem 0;"></div>
+    <div style="font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--text);text-align:left;">
+      Re = <div class="frac" style="font-size:0.9rem;"><span class="num">ρvD</span><span class="den">μ</span></div>
+    </div>
+    <div style="font-size:0.62rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-3);margin-top:0.3rem;">Reynolds Equation</div>
+  </div>
+</section>
+
+<div class="main">
+
+  <!-- Reynolds Scale -->
+  <div class="re-scale">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.25rem;">
+      <div style="font-size:0.65rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-3);">Reynolds Number Scale</div>
+      <div class="scale-zones">
+        <span class="zone-badge"><span class="zone-dot" style="background:var(--laminar)"></span>Laminar &lt;2300</span>
+        <span class="zone-badge"><span class="zone-dot" style="background:var(--trans)"></span>Transitional 2300–4000</span>
+        <span class="zone-badge"><span class="zone-dot" style="background:var(--turb)"></span>Turbulent &gt;4000</span>
+      </div>
+    </div>
+    <div class="scale-track">
+      <div class="scale-needle" id="scaleNeedle" style="left:24%"></div>
+    </div>
+    <div class="scale-labels">
+      <span>0</span><span>1000</span><span>2300</span><span>4000</span><span>6000</span><span>8000+</span>
+    </div>
+  </div>
+
+  <!-- Flow Visualization -->
+  <div class="viz-section">
+    <div class="viz-header">
+      <div>
+        <div class="section-label">Live Visualization</div>
+        <div class="section-title">Streamline Behavior</div>
+      </div>
+    </div>
+    <canvas id="turbCanvas"></canvas>
+    <div class="controls">
+      <div class="ctrl">
+        <div class="ctrl-label">
+          <span class="ctrl-name">Flow Velocity (v)</span>
+          <span class="ctrl-val" id="vVal">30 <span class="ctrl-unit">cm/s</span></span>
+        </div>
+        <input type="range" id="vSlider" min="1" max="200" step="1" value="30" oninput="updateRe()">
+        <div class="ctrl-hint">Mean velocity in the vessel</div>
+      </div>
+      <div class="ctrl">
+        <div class="ctrl-label">
+          <span class="ctrl-name">Vessel Diameter (D)</span>
+          <span class="ctrl-val" id="dVal">2.0 <span class="ctrl-unit">mm</span></span>
+        </div>
+        <input type="range" id="dSlider" min="0.5" max="10" step="0.1" value="2.0" oninput="updateRe()">
+        <div class="ctrl-hint">Inner diameter of catheter or vessel</div>
+      </div>
+      <div class="ctrl">
+        <div class="ctrl-label">
+          <span class="ctrl-name">Fluid Density (ρ)</span>
+          <span class="ctrl-val" id="rhoVal">1,060 <span class="ctrl-unit">kg/m³</span></span>
+        </div>
+        <input type="range" id="rhoSlider" min="900" max="1100" step="10" value="1060" oninput="updateRe()">
+        <div class="ctrl-hint">Blood ≈ 1,060 · NS ≈ 1,005 · Contrast ≈ 1,200</div>
+      </div>
+      <div class="ctrl">
+        <div class="ctrl-label">
+          <span class="ctrl-name">Dynamic Viscosity (μ)</span>
+          <span class="ctrl-val" id="muVal">3.5 <span class="ctrl-unit">cP</span></span>
+        </div>
+        <input type="range" id="muSlider" min="0.5" max="10" step="0.1" value="3.5" oninput="updateRe()">
+        <div class="ctrl-hint">Blood ≈ 3–4 · NS ≈ 1 · Contrast ≈ 5–8 cP</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Clinical Presets -->
+  <div style="margin-bottom:1.25rem;">
+    <div style="font-size:0.65rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-3);margin-bottom:0.75rem;">Clinical Scenarios</div>
+    <div class="clinical-grid">
+      <button class="clin-btn" onclick="loadPreset('gravity')">
+        <div class="clin-badge" style="background:rgba(126,156,132,0.15);color:var(--laminar)">Laminar</div>
+        <div class="clin-title">Gravity Saline Drip</div>
+        <div class="clin-re" id="re-gravity">Re ≈ —</div>
+        <div class="clin-desc">Standard gravity infusion through 20G at 125 mL/hr</div>
+      </button>
+      <button class="clin-btn" onclick="loadPreset('bolus')">
+        <div class="clin-badge" style="background:rgba(201,168,76,0.15);color:var(--trans)">Transitional</div>
+        <div class="clin-title">Rapid NS Bolus</div>
+        <div class="clin-re" id="re-bolus">Re ≈ —</div>
+        <div class="clin-desc">30mL/min flush through 18G peripheral catheter</div>
+      </button>
+      <button class="clin-btn" onclick="loadPreset('contrast')">
+        <div class="clin-badge" style="background:rgba(184,112,112,0.15);color:var(--turb)">Turbulent risk</div>
+        <div class="clin-title">CT Contrast Injection</div>
+        <div class="clin-re" id="re-contrast">Re ≈ —</div>
+        <div class="clin-desc">4 mL/s Omnipaque through 18G for CT angiography</div>
+      </button>
+      <button class="clin-btn" onclick="loadPreset('blood')">
+        <div class="clin-badge" style="background:rgba(126,156,132,0.15);color:var(--laminar)">Laminar</div>
+        <div class="clin-title">Blood Transfusion</div>
+        <div class="clin-re" id="re-blood">Re ≈ —</div>
+        <div class="clin-desc">pRBCs at 100 mL/hr through 20G, viscosity ≈ 4 cP</div>
+      </button>
+      <button class="clin-btn" onclick="loadPreset('trauma')">
+        <div class="clin-badge" style="background:rgba(184,112,112,0.15);color:var(--turb)">Turbulent</div>
+        <div class="clin-title">Trauma Resuscitation</div>
+        <div class="clin-re" id="re-trauma">Re ≈ —</div>
+        <div class="clin-desc">Wide-open 14G, pressure bag, NS at maximum rate</div>
+      </button>
+      <button class="clin-btn" onclick="loadPreset('picc')">
+        <div class="clin-badge" style="background:rgba(126,156,132,0.15);color:var(--laminar)">Laminar</div>
+        <div class="clin-title">PICC TPN Infusion</div>
+        <div class="clin-re" id="re-picc">Re ≈ —</div>
+        <div class="clin-desc">TPN at 80 mL/hr through 5Fr PICC, high viscosity</div>
+      </button>
+    </div>
+  </div>
+
+  <!-- Clinical Pearls -->
+  <div class="pearls">
+    <div class="pearl">
+      <div class="pearl-icon">🌊</div>
+      <div class="pearl-title">Why Turbulence Matters Clinically</div>
+      <div class="pearl-text">Turbulent flow increases energy loss (more pressure needed for same flow), creates vessel wall vibration (audible bruit), increases hemolysis risk in narrow-lumen catheters, and promotes thrombus formation through platelet activation.</div>
+    </div>
+    <div class="pearl">
+      <div class="pearl-icon">💉</div>
+      <div class="pearl-title">Contrast Agents are High-Risk</div>
+      <div class="pearl-text">CT contrast at 4–5 mL/s through a small peripheral IV carries genuine turbulence risk. The combination of high velocity, high density (1200 kg/m³), and moderate viscosity pushes Re well above 4000 in the catheter hub.</div>
+    </div>
+    <div class="pearl">
+      <div class="pearl-icon">📐</div>
+      <div class="pearl-title">Diameter Has Linear Effect</div>
+      <div class="pearl-text">Unlike flow rate (where radius has fourth-power effect), Re scales linearly with diameter. Doubling the catheter diameter doubles Re for the same mean velocity — larger catheters actually tolerate less relative flow before going turbulent.</div>
+    </div>
+    <div class="pearl">
+      <div class="pearl-icon">🔴</div>
+      <div class="pearl-title">Blood is Protective</div>
+      <div class="pearl-text">Blood's high viscosity (3–4 cP vs saline's 1 cP) means Re is 3–4× lower at the same flow velocity. This is why normal cardiovascular flows stay laminar despite relatively high velocities in the aorta.</div>
+    </div>
+  </div>
+
+  <!-- History + Traffic Model + Intracav -->
+  <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1.25rem; margin-bottom:2rem;">
+
+    <div style="background:var(--surface); border:1px solid var(--border-lt); border-radius:var(--r); padding:1.5rem 1.75rem; box-shadow:var(--shadow-sm);">
+      <div style="font-size:0.62rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-3); margin-bottom:0.75rem;">Historical Origin · 1883</div>
+      <div style="font-family:'Cormorant Garamond',serif; font-size:1.2rem; margin-bottom:0.75rem;">Osborne Reynolds</div>
+      <p style="font-size:0.8rem; line-height:1.7; color:var(--text-2); font-weight:300;">
+        Reynolds injected dye threads into flowing water in glass tubes. Below the critical threshold, the thread stayed straight; above it, the thread dissolved into chaos. He proved that the transition from order to chaos follows a predictable, universal law — the same number applies to blood in an IV catheter and oil in a pipeline.
+      </p>
+    </div>
+
+    <div style="background:var(--surface); border:1px solid var(--border-lt); border-radius:var(--r); padding:1.5rem 1.75rem; box-shadow:var(--shadow-sm);">
+      <div style="font-size:0.62rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-3); margin-bottom:0.75rem;">Mental Model</div>
+      <div style="font-family:'Cormorant Garamond',serif; font-size:1.2rem; margin-bottom:0.75rem;">The Traffic Flow Model</div>
+      <div style="font-size:0.78rem; line-height:1.75; color:var(--text-2);">
+        <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.4rem;">
+          <span style="background:var(--bg);border:1px solid var(--border);border-radius:100px;padding:0.2rem 0.7rem;font-size:0.72rem;font-weight:600;">Laminar</span>
+          <span style="color:var(--text-3)">→</span>
+          <span style="color:var(--sage)">Highway at 65 mph</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.4rem;">
+          <span style="background:var(--bg);border:1px solid var(--border);border-radius:100px;padding:0.2rem 0.7rem;font-size:0.72rem;font-weight:600;">Transitional</span>
+          <span style="color:var(--text-3)">→</span>
+          <span style="color:var(--gold)">Merge lane chaos</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.9rem;">
+          <span style="background:var(--bg);border:1px solid var(--border);border-radius:100px;padding:0.2rem 0.7rem;font-size:0.72rem;font-weight:600;">Turbulent</span>
+          <span style="color:var(--text-3)">→</span>
+          <span style="color:var(--rose)">Traffic jam gridlock</span>
+        </div>
+        <p style="font-weight:300;">Energy that should carry fluid forward instead spins it sideways — wasted as heat and wall shear. The jam is the injury mechanism.</p>
+      </div>
+    </div>
+
+    <div style="background:var(--surface); border:1px solid var(--border-lt); border-radius:var(--r); padding:1.5rem 1.75rem; box-shadow:var(--shadow-sm);">
+      <div style="font-size:0.62rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); margin-bottom:0.75rem;">Intracav Opportunity</div>
+      <div style="font-family:'Cormorant Garamond',serif; font-size:1.2rem; margin-bottom:0.75rem;">Risk Heatmap Overlay</div>
+      <p style="font-size:0.8rem; line-height:1.7; color:var(--text-2); font-weight:300; margin-bottom:0.85rem;">
+        Overlay turbulence risk directly on the ultrasound image — before needle insertion. Using vessel diameter (measured by US) and planned flow rate (set by clinical context), compute Re in real time.
+      </p>
+      <div style="font-size:0.75rem; font-weight:300; line-height:1.8; color:var(--text-2); background:var(--bg); border-radius:var(--r-sm); padding:0.75rem 1rem;">
+        🟢 <strong>Green</strong> — Laminar, optimal access<br>
+        🟡 <strong>Amber</strong> — Transitional, proceed with care<br>
+        🔴 <strong>Red</strong> — Turbulence likely, reconsider gauge
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div style="display:flex;justify-content:space-between;padding:2rem 3rem;border-top:1px solid var(--border-lt);max-width:1100px;margin:0 auto;">
+  <a style="text-decoration:none;color:var(--text-3);font-size:0.82rem;display:flex;align-items:center;gap:0.5rem;" href="02-resistance-networks.html" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-3)'">
+    <span>←</span><div><div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.1em;">Previous</div>Resistance Networks</div>
+  </a>
+  <a style="text-decoration:none;color:var(--text-3);font-size:0.82rem;display:flex;align-items:center;gap:0.5rem;" href="04-shear-stress.html" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-3)'">
+    <div style="text-align:right"><div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.1em;">Next</div>Shear Stress</div><span>→</span>
+  </a>
+</div>
+
+<script>
+// ── State ──────────────────────────────────────────────────────────────
+let state = { v: 30, D: 2.0, rho: 1060, mu: 3.5 };
+let re = 0;
+let t = 0;
+
+// ── Reynolds Number ────────────────────────────────────────────────────
+function calcRe(v_cms, D_mm, rho, mu_cP) {
+  const v = v_cms / 100;
+  const D = D_mm / 1000;
+  const mu = mu_cP / 1000;
+  return (rho * v * D) / mu;
+}
+
+function getFlowState(re) {
+  if (re < 2300) return { label: 'Laminar Flow', color: '#7E9C84', turb: 0 };
+  if (re < 4000) return { label: 'Transitional', color: '#C9A84C', turb: (re - 2300) / 1700 };
+  return { label: 'Turbulent Flow', color: '#B87070', turb: 1 };
+}
+
+function reToScale(re) {
+  const max = 8000;
+  return Math.min(95, Math.max(2, (re / max) * 100));
+}
+
+// ── Canvas ─────────────────────────────────────────────────────────────
+const canvas = document.getElementById('turbCanvas');
+const ctx = canvas.getContext('2d');
+
+function resizeCanvas() {
+  canvas.width = canvas.offsetWidth;
+  canvas.height = 260;
+}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+
+// Streamlines
+const N_LINES = 12;
+const streamlines = Array.from({ length: N_LINES }, (_, i) => ({
+  baseY: 0.1 + (i / (N_LINES - 1)) * 0.8,
+  phase: Math.random() * Math.PI * 2,
+  freq: 0.8 + Math.random() * 0.4,
+}));
+
+function draw() {
+  const W = canvas.width, H = canvas.height;
+  t += 0.016;
+
+  ctx.clearRect(0, 0, W, H);
+
+  // Background
+  const bgGrad = ctx.createLinearGradient(0, 0, 0, H);
+  bgGrad.addColorStop(0, '#16100A');
+  bgGrad.addColorStop(1, '#0E0906');
+  ctx.fillStyle = bgGrad;
+  ctx.fillRect(0, 0, W, H);
+
+  const fs = getFlowState(re);
+  const turbulence = fs.turb;
+
+  // Vessel walls
+  const wallY_top = H * 0.05;
+  const wallY_bot = H * 0.95;
+  const wallGrad = ctx.createLinearGradient(0, 0, 0, H * 0.15);
+  wallGrad.addColorStop(0, 'rgba(188,114,80,0.5)');
+  wallGrad.addColorStop(1, 'rgba(188,114,80,0)');
+  ctx.fillStyle = wallGrad;
+  ctx.fillRect(0, wallY_top, W, H * 0.08);
+
+  const wallGrad2 = ctx.createLinearGradient(0, H * 0.87, 0, H);
+  wallGrad2.addColorStop(0, 'rgba(188,114,80,0)');
+  wallGrad2.addColorStop(1, 'rgba(188,114,80,0.5)');
+  ctx.fillStyle = wallGrad2;
+  ctx.fillRect(0, wallY_bot - H * 0.08, W, H * 0.08);
+
+  // Streamlines
+  streamlines.forEach((sl, li) => {
+    const baseY = sl.baseY * H;
+    const distFromCenter = Math.abs(sl.baseY - 0.5) * 2; // 0 at center, 1 at wall
+
+    // Turbulence amplitude — bigger near walls, especially in turbulent flow
+    const turbAmp = turbulence * (0.04 + distFromCenter * 0.06) * H;
+    const turbFreq = 2 + turbulence * 4;
+
+    // For turbulent flow, add chaotic high-frequency noise
+    const chaosAmp = turbulence > 0.5 ? turbulence * 0.04 * H : 0;
+
+    const alpha = 0.15 + 0.6 * (1 - distFromCenter * 0.7);
+
+    ctx.beginPath();
+    const steps = Math.min(300, W);
+    for (let i = 0; i <= steps; i++) {
+      const x = (i / steps) * W;
+      const xNorm = i / steps;
+
+      // Phase offset for animation
+      const phase = sl.phase + t * (2 + turbulence * 3) * sl.freq;
+      const waveY = Math.sin(xNorm * Math.PI * turbFreq + phase) * turbAmp;
+      const chaosY = turbulence > 0.5
+        ? Math.sin(xNorm * Math.PI * 8.7 + phase * 2.3) * chaosAmp
+          + Math.sin(xNorm * Math.PI * 13.1 + phase * 3.7) * chaosAmp * 0.5
+        : 0;
+
+      const y = baseY + waveY + chaosY;
+
+      if (i === 0) ctx.moveTo(x, y);
+      else ctx.lineTo(x, y);
+    }
+
+    // Color based on flow state
+    let r, g, b;
+    if (turbulence < 0.5) {
+      // Laminar → transitional: green to amber
+      const t2 = turbulence * 2;
+      r = Math.round(126 + (201 - 126) * t2);
+      g = Math.round(156 + (168 - 156) * t2);
+      b = Math.round(132 + (76 - 132) * t2);
+    } else {
+      // Transitional → turbulent: amber to rose
+      const t2 = (turbulence - 0.5) * 2;
+      r = Math.round(201 + (184 - 201) * t2);
+      g = Math.round(168 + (112 - 168) * t2);
+      b = Math.round(76 + (112 - 76) * t2);
+    }
+
+    ctx.strokeStyle = `rgba(${r},${g},${b},${alpha})`;
+    ctx.lineWidth = 1.5 - distFromCenter * 0.5;
+    ctx.stroke();
+  });
+
+  // In turbulent flow, draw some chaotic eddies
+  if (turbulence > 0.3) {
+    const eddyCount = Math.floor(turbulence * 8);
+    for (let i = 0; i < eddyCount; i++) {
+      const ex = ((t * 40 * (1 + i * 0.3) + i * 137) % W);
+      const ey = (0.15 + (i / eddyCount) * 0.7) * H;
+      const er = 4 + turbulence * 12;
+
+      ctx.beginPath();
+      ctx.arc(ex, ey, er, 0, Math.PI * 2);
+      ctx.strokeStyle = `rgba(184,112,112,${turbulence * 0.3})`;
+      ctx.lineWidth = 1;
+      ctx.stroke();
+    }
+  }
+
+  // Re number overlay
+  ctx.fillStyle = 'rgba(250,246,240,0.08)';
+  ctx.font = `300 ${Math.min(80, W/7)}px Cormorant Garamond`;
+  ctx.textAlign = 'right';
+  ctx.fillText(Math.round(re).toLocaleString(), W - 20, H - 20);
+  ctx.textAlign = 'left';
+
+  requestAnimationFrame(draw);
+}
+
+requestAnimationFrame(draw);
+
+// ── Update ─────────────────────────────────────────────────────────────
+function updateRe() {
+  state.v   = parseFloat(document.getElementById('vSlider').value);
+  state.D   = parseFloat(document.getElementById('dSlider').value);
+  state.rho = parseFloat(document.getElementById('rhoSlider').value);
+  state.mu  = parseFloat(document.getElementById('muSlider').value);
+
+  document.getElementById('vVal').innerHTML = state.v + ' <span class="ctrl-unit">cm/s</span>';
+  document.getElementById('dVal').innerHTML = state.D.toFixed(1) + ' <span class="ctrl-unit">mm</span>';
+  document.getElementById('rhoVal').innerHTML = state.rho.toLocaleString() + ' <span class="ctrl-unit">kg/m³</span>';
+  document.getElementById('muVal').innerHTML = state.mu.toFixed(1) + ' <span class="ctrl-unit">cP</span>';
+
+  re = calcRe(state.v, state.D, state.rho, state.mu);
+  const fs = getFlowState(re);
+
+  document.getElementById('reDisplay').textContent = Math.round(re).toLocaleString();
+  document.getElementById('reDisplay').style.color = fs.color;
+  document.getElementById('reState').textContent = fs.label;
+  document.getElementById('reState').style.color = fs.color;
+
+  // Scale needle
+  const pct = reToScale(re);
+  document.getElementById('scaleNeedle').style.left = pct + '%';
+
+  // Preset labels
+  updatePresetLabels();
+}
+
+// ── Presets ────────────────────────────────────────────────────────────
+const PRESETS = {
+  gravity:  { v: 2.5, D: 0.80, rho: 1005, mu: 1.0, label: 're-gravity' },
+  bolus:    { v: 38,  D: 1.02, rho: 1005, mu: 1.0, label: 're-bolus'   },
+  contrast: { v: 120, D: 1.02, rho: 1200, mu: 6.0, label: 're-contrast'},
+  blood:    { v: 3.5, D: 0.80, rho: 1060, mu: 4.0, label: 're-blood'   },
+  trauma:   { v: 180, D: 1.60, rho: 1005, mu: 1.0, label: 're-trauma'  },
+  picc:     { v: 4.0, D: 1.25, rho: 1060, mu: 5.0, label: 're-picc'    },
+};
+
+function loadPreset(key) {
+  const p = PRESETS[key];
+  document.getElementById('vSlider').value = p.v;
+  document.getElementById('dSlider').value = p.D;
+  document.getElementById('rhoSlider').value = p.rho;
+  document.getElementById('muSlider').value = p.mu;
+  state = { v: p.v, D: p.D, rho: p.rho, mu: p.mu };
+  updateRe();
+}
+
+function updatePresetLabels() {
+  Object.entries(PRESETS).forEach(([key, p]) => {
+    const presetRe = calcRe(p.v, p.D, p.rho, p.mu);
+    const el = document.getElementById(p.label);
+    if (el) el.textContent = `Re ≈ ${Math.round(presetRe).toLocaleString()}`;
+  });
+}
+
+updateRe();
+updatePresetLabels();
+</script>
+</body>
+</html>

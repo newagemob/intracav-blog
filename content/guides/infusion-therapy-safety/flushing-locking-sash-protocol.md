@@ -4,6 +4,7 @@ date = 2026-02-25T00:00:00-05:00
 lastmod = 2026-02-25T00:00:00-05:00
 content_type = "guide"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["Infusion Therapy Safety", "Flushing", "Catheter Maintenance"]
 tags = ["SASH protocol", "catheter flushing protocol", "heparin lock", "saline lock", "pulsatile flushing", "positive pressure flushing", "catheter patency flushing", "CVAD flushing standards"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

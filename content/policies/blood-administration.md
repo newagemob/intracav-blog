@@ -4,6 +4,7 @@ date = 2023-08-15T00:00:00-05:00
 lastmod = 2025-12-10T00:00:00-05:00
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["Transfusion Medicine", "Infusion Therapy", "Patient Safety"]
 tags = ["blood transfusion", "blood administration", "patient blood management", "PBM", "transfusion reaction", "TACO", "TRALI", "hemolytic reaction", "blood product verification", "vascular access transfusion"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

@@ -4,6 +4,7 @@ date = 2023-11-09T00:00:00-05:00
 lastmod = 2025-02-15T00:00:00-05:00
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access", "neonatal"]
 category = ["Neonatal Care", "Vascular Access", "Infection Prevention"]
 tags = ["umbilical catheter", "UAC", "UVC", "umbilical arterial catheter", "umbilical venous catheter", "neonatal vascular access", "neonatal antisepsis", "tip positioning", "radiographic confirmation", "catheter securement", "necrotizing enterocolitis", "NICU"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

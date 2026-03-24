@@ -4,6 +4,7 @@ date = 2026-01-21T13:16:02-05:00
 lastmod = 2026-01-21T13:16:02-05:00
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["Operations", "Service Delivery", "Clinical Practice"]
 tags = ["service delivery", "operational scope", "VAST", "vessel health", "VHP", "DIVA", "clinical rounding", "consultative model"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

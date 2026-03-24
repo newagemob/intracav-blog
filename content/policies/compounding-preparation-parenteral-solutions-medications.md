@@ -4,6 +4,7 @@ date = 2024-01-15T00:00:00-05:00
 lastmod = 2026-01-20T00:00:00-05:00
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access", "infection-prevention"]
 category = ["Infusion Therapy", "Medication Safety", "Pharmacy Practice"]
 tags = ["compounding", "sterile preparation", "aseptic technique", "parenteral medications", "multidose vials", "hazardous drugs", "immediate use", "beyond-use date"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

@@ -4,6 +4,7 @@ date = 2026-02-25T00:00:00-05:00
 lastmod = 2026-02-25T00:00:00-05:00
 content_type = "guide"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["Catheter Complications", "Phlebitis", "Infusion Safety"]
 tags = ["phlebitis vascular access", "phlebitis grading scale", "VIP scale phlebitis", "mechanical phlebitis", "chemical phlebitis", "IV phlebitis management", "peripheral IV phlebitis", "phlebitis assessment"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

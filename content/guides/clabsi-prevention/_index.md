@@ -4,6 +4,7 @@ date = 2026-02-25T00:00:00-05:00
 lastmod = 2026-02-25T00:00:00-05:00
 content_type = "guide"
 audience = "clinician"
+departments = ["vascular-access", "infection-prevention"]
 category = ["Infection Prevention", "CLABSI", "Patient Safety", "Quality Improvement"]
 tags = ["CLABSI", "central line associated bloodstream infection", "CLABSI prevention", "insertion bundle", "maintenance bundle", "catheter infection", "zero CLABSI", "NHSN", "central line infection", "infection prevention"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

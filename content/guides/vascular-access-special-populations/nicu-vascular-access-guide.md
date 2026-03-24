@@ -4,6 +4,7 @@ date = 2026-02-25T00:00:00-05:00
 lastmod = 2026-02-25T00:00:00-05:00
 content_type = "guide"
 audience = "clinician"
+departments = ["vascular-access", "neonatal"]
 category = ["Special Populations", "Neonatal", "NICU"]
 tags = ["NICU vascular access", "umbilical catheter", "UAC", "UVC", "neonatal PICC", "neonatal peripheral IV", "neonatal vascular access", "preterm infant vascular access"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

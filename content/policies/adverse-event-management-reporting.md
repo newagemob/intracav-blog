@@ -4,6 +4,7 @@ date = 2026-02-23T00:00:00-05:00
 lastmod = 2026-02-23T00:00:00-05:00
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["Patient Safety", "Quality Improvement", "Risk Management"]
 tags = ["adverse event", "near miss", "root cause analysis", "just culture", "sentinel event", "reporting", "patient safety", "second victim"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

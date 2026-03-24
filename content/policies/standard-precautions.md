@@ -4,6 +4,7 @@ date = 2023-09-07T00:00:00-05:00
 lastmod = 2023-09-07T00:00:00-05:00
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access", "infection-prevention"]
 category = ["Infection Control", "Standard Precautions", "PPE", "Patient Safety"]
 tags = ["standard precautions", "PPE", "gloves", "gown", "eye protection", "respiratory hygiene", "cough etiquette", "equipment disinfection", "infection prevention", "bloodborne pathogens"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

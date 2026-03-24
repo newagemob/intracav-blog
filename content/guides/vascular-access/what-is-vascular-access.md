@@ -4,6 +4,7 @@ date = 2026-02-25T00:00:00-05:00
 lastmod = 2026-02-25T00:00:00-05:00
 content_type = "guide"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["Vascular Access", "Clinical Fundamentals"]
 tags = ["vascular access", "vascular access definition", "types of vascular access", "VAD", "intravenous access", "peripheral IV", "central line", "catheter"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

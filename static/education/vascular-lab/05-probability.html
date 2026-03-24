@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Probability & Decision Theory — The Vascular Lab</title>
+<script src="https://unpkg.com/htmx.org@1.9.10"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Nunito:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #EDE4D5; --surface: #F6F0E8; --surface-hi: #FDFAF5;
+    --border: #D4C7B5; --border-lt: #E2D8CC;
+    --text: #28180C; --text-2: #685040; --text-3: #9E8272;
+    --accent: #BC7250; --accent-lt: #E8C4A8;
+    --sage: #7E9C84; --rose: #B87070; --rose-lt: #EBD0D0;
+    --gold: #C9A84C; --gold-lt: #EFE0A0;
+    --shadow-sm: 0 1px 8px rgba(40,24,12,0.06), 0 0 0 1px rgba(40,24,12,0.04);
+    --r: 16px; --r-sm: 10px;
+  }
+  body { font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+  body::after {
+    content: ''; position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+    opacity: 0.028; pointer-events: none; z-index: 9999;
+  }
+  nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.25rem 3rem; border-bottom: 1px solid var(--border-lt);
+    background: rgba(237,228,213,0.85); backdrop-filter: blur(12px);
+    position: sticky; top: 0; z-index: 100;
+  }
+  .nav-left { display: flex; align-items: center; gap: 1rem; }
+  .nav-back, .nav-next { font-size: 0.8rem; color: var(--text-3); text-decoration: none; transition: color 200ms; }
+  .nav-back:hover, .nav-next:hover { color: var(--accent); }
+  .nav-sep { color: var(--border); }
+  .nav-title { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--text-2); }
+  .nav-num { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--accent); }
+
+  .hero {
+    padding: 4rem 3rem 2.5rem; display: grid;
+    grid-template-columns: 1fr auto; gap: 2rem; align-items: end;
+    border-bottom: 1px solid var(--border-lt); max-width: 1100px; margin: 0 auto;
+  }
+  .module-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.75rem; }
+  .module-label::before { content: '05'; font-family: 'JetBrains Mono', monospace; }
+  h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 400; line-height: 1.1; color: var(--text); margin-bottom: 1rem; }
+  h1 em { font-style: italic; color: var(--text-2); }
+  .hero-desc { font-size: 0.92rem; line-height: 1.7; color: var(--text-2); font-weight: 300; max-width: 500px; }
+
+  .hero-eq { background: var(--surface); border: 1px solid var(--border-lt); border-radius: var(--r); padding: 1.75rem 2rem; text-align: center; min-width: 260px; }
+  .eq-row { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: var(--text); margin-bottom: 0.5rem; }
+  .eq-name { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3); margin-top: 0.3rem; }
+  .frac { display: inline-flex; flex-direction: column; align-items: center; vertical-align: middle; margin: 0 0.15rem; }
+  .frac .num { border-bottom: 1.5px solid var(--text-2); padding: 0 4px 3px; }
+  .frac .den { padding: 3px 4px 0; }
+
+  .main { max-width: 1100px; margin: 0 auto; padding: 2.5rem 3rem; }
+
+  /* --- Bayesian Panel --- */
+  .bayes-panel {
+    background: var(--surface); border: 1px solid var(--border-lt);
+    border-radius: var(--r); padding: 2rem; margin-bottom: 2rem;
+    box-shadow: var(--shadow-sm); display: grid;
+    grid-template-columns: 1.2fr 1fr; gap: 2rem;
+  }
+  .bayes-left {}
+  .section-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3); margin-bottom: 0.2rem; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; color: var(--text); margin-bottom: 1.25rem; }
+
+  .ctrl { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.25rem; }
+  .ctrl-label { display: flex; justify-content: space-between; align-items: baseline; }
+  .ctrl-name { font-size: 0.78rem; font-weight: 600; color: var(--text-2); }
+  .ctrl-val { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--accent); font-weight: 500; }
+  .ctrl-unit { font-size: 0.65rem; color: var(--text-3); margin-left: 0.25rem; }
+  input[type=range] {
+    -webkit-appearance: none; width: 100%; height: 4px;
+    background: var(--border); border-radius: 100px; outline: none; cursor: pointer;
+  }
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none; width: 18px; height: 18px; background: var(--accent); border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(188,114,80,0.15); transition: box-shadow 200ms;
+  }
+  input[type=range]::-webkit-slider-thumb:hover { box-shadow: 0 0 0 6px rgba(188,114,80,0.2); }
+  .ctrl-hint { font-size: 0.68rem; color: var(--text-3); font-weight: 300; }
+
+  .bayes-right { display: flex; flex-direction: column; gap: 1rem; }
+
+  .prob-dial-wrap { display: flex; flex-direction: column; align-items: center; }
+  #probDial { width: 200px; height: 200px; }
+
+  .posterior-display {
+    background: var(--bg); border-radius: var(--r-sm);
+    padding: 1rem 1.25rem; text-align: center;
+  }
+  .prob-big { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 400; line-height: 1; transition: color 500ms; }
+  .prob-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); margin-top: 0.3rem; }
+
+  .likelihood-chain {
+    background: var(--bg); border-radius: var(--r-sm); padding: 1rem 1.25rem;
+    font-size: 0.8rem; line-height: 1.8;
+  }
+  .lc-row { display: flex; justify-content: space-between; align-items: center; }
+  .lc-key { color: var(--text-2); }
+  .lc-val { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--accent); }
+  .lc-sep { border-top: 1px solid var(--border-lt); margin: 0.5rem 0; }
+
+  .recommendation-badge {
+    border-radius: var(--r-sm); padding: 0.75rem 1rem;
+    font-size: 0.82rem; font-weight: 500; text-align: center;
+    transition: all 400ms;
+  }
+
+  /* --- Decision Tree --- */
+  .tree-section {
+    background: var(--surface); border: 1px solid var(--border-lt);
+    border-radius: var(--r); margin-bottom: 2rem; overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+  .tree-header { padding: 1.5rem 2rem; border-bottom: 1px solid var(--border-lt); display: flex; justify-content: space-between; align-items: center; }
+  .tree-controls { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+  .tree-btn {
+    padding: 0.35rem 0.85rem; border: 1px solid var(--border);
+    border-radius: 100px; font-family: 'Nunito', sans-serif; font-size: 0.72rem;
+    font-weight: 600; background: var(--bg); color: var(--text-2);
+    cursor: pointer; transition: all 150ms;
+  }
+  .tree-btn:hover, .tree-btn.active { background: var(--accent); border-color: var(--accent); color: white; }
+  #treeCanvas { width: 100%; height: 440px; display: block; cursor: pointer; }
+
+  .tree-tooltip {
+    background: var(--surface-hi); border: 1px solid var(--border); border-radius: var(--r-sm);
+    padding: 1rem 1.25rem; margin: 0 2rem 1.5rem; font-size: 0.82rem; line-height: 1.6;
+    display: none; box-shadow: var(--shadow-sm);
+  }
+  .tree-tooltip.visible { display: block; }
+  .tt-name { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; margin-bottom: 0.4rem; }
+  .tt-stats { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+  .tt-stat { }
+  .tt-stat .val { font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; font-weight: 500; }
+  .tt-stat .key { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); }
+
+  /* --- Monte Carlo --- */
+  .mc-section {
+    background: var(--surface); border: 1px solid var(--border-lt);
+    border-radius: var(--r); margin-bottom: 2rem; overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+  .mc-header { padding: 1.5rem 2rem; border-bottom: 1px solid var(--border-lt); display: flex; justify-content: space-between; align-items: center; }
+  .mc-body { padding: 1.5rem 2rem; }
+  #mcCanvas { width: 100%; height: 340px; display: block; border-radius: 8px; margin-bottom: 1rem; }
+  .mc-run-btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.6rem 1.4rem; background: var(--accent); color: white;
+    border: none; border-radius: 100px; font-family: 'Nunito', sans-serif;
+    font-size: 0.82rem; font-weight: 600; cursor: pointer; transition: all 200ms;
+  }
+  .mc-run-btn:hover { background: #a85f40; transform: translateY(-1px); }
+  .mc-stats { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 1rem; }
+  .mc-stat { background: var(--bg); border-radius: var(--r-sm); padding: 0.75rem 1rem; flex: 1; min-width: 100px; }
+  .mc-stat .v { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 400; line-height: 1; }
+  .mc-stat .k { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); margin-top: 0.25rem; }
+
+  /* --- Expected Utility --- */
+  .eu-section {
+    background: var(--surface); border: 1px solid var(--border-lt);
+    border-radius: var(--r); margin-bottom: 2rem; overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+  .eu-header { padding: 1.5rem 2rem; border-bottom: 1px solid var(--border-lt); }
+  .eu-body { padding: 1.5rem 2rem; }
+  .weight-row { display: flex; gap: 1.5rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+  .weight-ctrl { display: flex; flex-direction: column; gap: 0.4rem; flex: 1; min-width: 140px; }
+  .eu-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+  .eu-table th { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--border); text-align: left; }
+  .eu-table td { padding: 0.75rem; border-bottom: 1px solid var(--border-lt); }
+  .eu-table tr:last-child td { border-bottom: none; }
+  .eu-name { font-family: 'Cormorant Garamond', serif; font-size: 1rem; }
+  .eu-bar-wrap { width: 100%; height: 8px; background: var(--border-lt); border-radius: 100px; overflow: hidden; }
+  .eu-bar { height: 100%; border-radius: 100px; transition: width 400ms cubic-bezier(0.25,0,0,1); }
+  .eu-score { font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; font-weight: 500; }
+  .eu-badge { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.2rem 0.6rem; border-radius: 100px; }
+
+  /* --- Clinical Pearls --- */
+  .pearls { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+  .pearl { background: var(--surface); border: 1px solid var(--border-lt); border-radius: var(--r-sm); padding: 1.25rem 1.5rem; box-shadow: var(--shadow-sm); }
+  .pearl-icon { font-size: 1.4rem; margin-bottom: 0.75rem; }
+  .pearl-title { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; margin-bottom: 0.5rem; }
+  .pearl-text { font-size: 0.8rem; line-height: 1.65; color: var(--text-2); font-weight: 300; }
+
+  /* Nav footer */
+  .nav-footer { display: flex; justify-content: space-between; align-items: center; padding: 2rem 3rem; border-top: 1px solid var(--border-lt); max-width: 1100px; margin: 0 auto; }
+  .nav-link { text-decoration: none; color: var(--text-3); font-size: 0.82rem; transition: color 200ms; display: flex; align-items: center; gap: 0.5rem; }
+  .nav-link:hover { color: var(--accent); }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+  .hero, .bayes-panel, .tree-section, .mc-section, .eu-section, .pearls { animation: fadeUp 0.5s ease both; }
+  .tree-section { animation-delay: 0.05s; }
+  .mc-section { animation-delay: 0.1s; }
+  .eu-section { animation-delay: 0.15s; }
+  .pearls { animation-delay: 0.2s; }
+
+  @media (max-width: 700px) {
+    nav, .hero, .main, .nav-footer { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .hero, .bayes-panel { grid-template-columns: 1fr; }
+    .hero-eq { min-width: unset; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-left">
+    <a href="index.html" class="nav-back">← Collection</a>
+    <span class="nav-sep">|</span>
+    <span class="nav-title">The Vascular Lab</span>
+  </div>
+  <div class="nav-left">
+    <span class="nav-num">05 / 05</span>
+    <a href="04-shear-stress.html" class="nav-back">← Shear Stress</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div>
+    <div class="module-label">Probability &amp; Decision Theory</div>
+    <h1>Knowing when to<br><em>escalate your approach</em></h1>
+    <p class="hero-desc">Every needle stick is a probability problem. Bayesian reasoning updates your first-attempt success estimate in real time as patient factors accumulate — turning clinical intuition into quantifiable decision logic.</p>
+  </div>
+  <div class="hero-eq">
+    <div class="eq-row">
+      P(A|B) = <span class="frac"><span class="num">P(B|A) · P(A)</span><span class="den">P(B)</span></span>
+    </div>
+    <div class="eq-name">Bayes' Theorem</div>
+    <div style="height:0.75rem"></div>
+    <div class="eq-row">
+      EU = Σ P(oᵢ) · U(oᵢ)
+    </div>
+    <div class="eq-name">Expected Utility</div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- ===== Bayesian Calculator ===== -->
+  <div class="bayes-panel">
+    <div class="bayes-left">
+      <div class="section-label">Bayesian Updater</div>
+      <div class="section-title">First-Attempt Success Probability</div>
+
+      <div class="ctrl">
+        <div class="ctrl-label">
+          <span class="ctrl-name">Prior probability (base rate)</span>
+          <span class="ctrl-val"><span id="priorVal">82</span><span class="ctrl-unit">%</span></span>
+        </div>
+        <input type="range" id="priorSlider" min="30" max="98" value="82">
+        <div class="ctrl-hint">Population-level first-attempt PIV success ~75–90%</div>
+      </div>
+
+      <div class="ctrl">
+        <div class="ctrl-label">
+          <span class="ctrl-name">Vein visibility / palpability</span>
+          <span class="ctrl-val" id="veinLabel">Visible &amp; palpable</span>
+        </div>
+        <input type="range" id="veinSlider" min="1" max="4" step="1" value="4">
+        <div class="ctrl-hint">Strongest single predictor of first-attempt success</div>
+      </div>
+
+      <div class="ctrl">
+        <div class="ctrl-label">
+          <span class="ctrl-name">BMI / subcutaneous fat</span>
+          <span class="ctrl-val" id="bmiLabel">Normal</span>
+        </div>
+        <input type="range" id="bmiSlider" min="1" max="4" step="1" value="2">
+        <div class="ctrl-hint">Obesity increases depth, reduces tactile feedback</div>
+      </div>
+
+      <div class="ctrl">
+        <div class="ctrl-label">
+          <span class="ctrl-name">Prior failed attempts (this encounter)</span>
+          <span class="ctrl-val"><span id="attemptsVal">0</span></span>
+        </div>
+        <input type="range" id="attemptsSlider" min="0" max="4" step="1" value="0">
+        <div class="ctrl-hint">Each failed attempt collapses usable veins and increases vasospasm</div>
+      </div>
+
+      <div class="ctrl">
+        <div class="ctrl-label">
+          <span class="ctrl-name">History of difficult access</span>
+          <span class="ctrl-val" id="histLabel">None</span>
+        </div>
+        <input type="range" id="histSlider" min="1" max="3" step="1" value="1">
+        <div class="ctrl-hint">Documented DIVA / DAWA status</div>
+      </div>
+
+      <div class="ctrl">
+        <div class="ctrl-label">
+          <span class="ctrl-name">Clinician experience level</span>
+          <span class="ctrl-val" id="expLabel">Experienced RN</span>
+        </div>
+        <input type="range" id="expSlider" min="1" max="4" step="1" value="3">
+        <div class="ctrl-hint">Operator skill modifies all other risk factors</div>
+      </div>
+    </div>
+
+    <div class="bayes-right">
+      <div class="prob-dial-wrap">
+        <canvas id="probDial" width="200" height="200"></canvas>
+      </div>
+      <div class="posterior-display">
+        <div class="prob-big" id="posteriorDisplay">—</div>
+        <div class="prob-label">Posterior P(first-attempt success)</div>
+      </div>
+      <div class="likelihood-chain" id="likelihoodChain">
+        <div class="lc-row"><span class="lc-key">Prior (base rate)</span><span class="lc-val" id="lcPrior">—</span></div>
+        <div class="lc-sep"></div>
+        <div class="lc-row"><span class="lc-key">Vein LR</span><span class="lc-val" id="lcVein">—</span></div>
+        <div class="lc-row"><span class="lc-key">BMI LR</span><span class="lc-val" id="lcBmi">—</span></div>
+        <div class="lc-row"><span class="lc-key">Failed attempts LR</span><span class="lc-val" id="lcAttempts">—</span></div>
+        <div class="lc-row"><span class="lc-key">History LR</span><span class="lc-val" id="lcHist">—</span></div>
+        <div class="lc-row"><span class="lc-key">Experience LR</span><span class="lc-val" id="lcExp">—</span></div>
+        <div class="lc-sep"></div>
+        <div class="lc-row"><span class="lc-key" style="font-weight:600">Posterior</span><span class="lc-val" id="lcPosterior" style="font-size:0.9rem">—</span></div>
+      </div>
+      <div class="recommendation-badge" id="recBadge"></div>
+    </div>
+  </div>
+
+  <!-- ===== Decision Tree ===== -->
+  <div class="tree-section">
+    <div class="tree-header">
+      <div>
+        <div class="section-label">Interactive Decision Tree</div>
+        <div class="section-title" style="font-family:'Cormorant Garamond',serif;font-size:1.35rem;">Vascular Access Escalation</div>
+      </div>
+      <div class="tree-controls">
+        <button class="tree-btn active" data-mode="success" onclick="setTreeMode('success',this)">Success Rate</button>
+        <button class="tree-btn" data-mode="time" onclick="setTreeMode('time',this)">Time to Access</button>
+        <button class="tree-btn" data-mode="complication" onclick="setTreeMode('complication',this)">Complication Risk</button>
+      </div>
+    </div>
+    <canvas id="treeCanvas" width="1060" height="440"></canvas>
+    <div class="tree-tooltip" id="treeTooltip">
+      <div class="tt-name" id="ttName">—</div>
+      <div class="tt-stats" id="ttStats"></div>
+    </div>
+  </div>
+
+  <!-- ===== Monte Carlo ===== -->
+  <div class="mc-section">
+    <div class="mc-header">
+      <div>
+        <div class="section-label">Monte Carlo Simulation</div>
+        <div class="section-title" style="font-family:'Cormorant Garamond',serif;font-size:1.35rem;">500 Simulated Patient Encounters</div>
+      </div>
+      <button class="mc-run-btn" onclick="runMonteCarlo()">
+        ▶ Run Simulation
+      </button>
+    </div>
+    <div class="mc-body">
+      <canvas id="mcCanvas" width="1060" height="340"></canvas>
+      <div class="mc-stats" id="mcStats">
+        <div class="mc-stat"><div class="v" id="mcPIV">—</div><div class="k">PIV success</div></div>
+        <div class="mc-stat"><div class="v" id="mcUS">—</div><div class="k">US-guided</div></div>
+        <div class="mc-stat"><div class="v" id="mcMid">—</div><div class="k">Midline placed</div></div>
+        <div class="mc-stat"><div class="v" id="mcPICC">—</div><div class="k">PICC required</div></div>
+        <div class="mc-stat"><div class="v" id="mcCVC">—</div><div class="k">CVC required</div></div>
+        <div class="mc-stat"><div class="v" id="mcAvg">—</div><div class="k">Avg attempts</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Expected Utility ===== -->
+  <div class="eu-section">
+    <div class="eu-header">
+      <div class="section-label">Multi-Criteria Decision Analysis</div>
+      <div class="section-title" style="font-family:'Cormorant Garamond',serif;font-size:1.35rem;">Expected Utility by Access Strategy</div>
+      <p style="font-size:0.8rem;color:var(--text-3);margin-top:0.4rem;font-weight:300;">Adjust outcome weights to match patient context. EU = Σ P(oᵢ) × U(oᵢ) normalized across criteria.</p>
+    </div>
+    <div class="eu-body">
+      <div class="weight-row">
+        <div class="weight-ctrl">
+          <div class="ctrl-label"><span class="ctrl-name">Success weight</span><span class="ctrl-val" id="wSuccess">40%</span></div>
+          <input type="range" id="wSuccessSlider" min="0" max="100" value="40" oninput="updateEU()">
+        </div>
+        <div class="weight-ctrl">
+          <div class="ctrl-label"><span class="ctrl-name">Speed weight</span><span class="ctrl-val" id="wSpeed">25%</span></div>
+          <input type="range" id="wSpeedSlider" min="0" max="100" value="25" oninput="updateEU()">
+        </div>
+        <div class="weight-ctrl">
+          <div class="ctrl-label"><span class="ctrl-name">Safety weight</span><span class="ctrl-val" id="wSafety">20%</span></div>
+          <input type="range" id="wSafetySlider" min="0" max="100" value="20" oninput="updateEU()">
+        </div>
+        <div class="weight-ctrl">
+          <div class="ctrl-label"><span class="ctrl-name">Patient comfort</span><span class="ctrl-val" id="wComfort">15%</span></div>
+          <input type="range" id="wComfortSlider" min="0" max="100" value="15" oninput="updateEU()">
+        </div>
+      </div>
+      <table class="eu-table" id="euTable">
+        <thead>
+          <tr>
+            <th>Strategy</th>
+            <th>Success</th>
+            <th>Speed</th>
+            <th>Safety</th>
+            <th>Comfort</th>
+            <th>EU Score</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="euBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ===== Clinical Pearls ===== -->
+  <div class="pearls">
+    <div class="pearl">
+      <div class="pearl-icon">🎯</div>
+      <div class="pearl-title">The 2-attempt rule</div>
+      <p class="pearl-text">After 2 failed PIV attempts, posterior P(success) drops below 50% for most operators. Escalate to US guidance or senior clinician — evidence supports this threshold.</p>
+    </div>
+    <div class="pearl">
+      <div class="pearl-icon">📐</div>
+      <div class="pearl-title">Bayes at the bedside</div>
+      <p class="pearl-text">Prior probability isn't fixed — it updates with every observation. Bruising, small veins, prior chemo, IV drug use: each is a likelihood ratio that shifts your estimate.</p>
+    </div>
+    <div class="pearl">
+      <div class="pearl-icon">⚖️</div>
+      <div class="pearl-title">Utility is not symmetrical</div>
+      <p class="pearl-text">A pneumothorax from a CVC has far greater negative utility than the inconvenience of ultrasound setup. Decision theory formalizes why we accept worse expected value to reduce variance.</p>
+    </div>
+    <div class="pearl">
+      <div class="pearl-icon">🎲</div>
+      <div class="pearl-title">Independence assumption</div>
+      <p class="pearl-text">Bayesian models assume conditionally independent predictors. In practice, obesity, poor visibility, and difficult history correlate — so naïve Bayes underestimates risk. Calibrate accordingly.</p>
+    </div>
+  </div>
+
+  <!-- Modern History + The Big Insight -->
+  <div style="background:var(--surface); border:1px solid var(--border-lt); border-radius:var(--r); padding:1.75rem 2rem; margin-bottom:2rem; box-shadow:var(--shadow-sm);">
+    <div style="font-size:0.65rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-3); margin-bottom:1rem;">How This Mathematics Reached the Bedside</div>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; margin-bottom:1.5rem;">
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace; font-size:0.7rem; color:var(--accent); margin-bottom:0.4rem;">1960s–1990s</div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:1rem; margin-bottom:0.4rem;">Anesthesiology &amp; Critical Care</div>
+        <p style="font-size:0.78rem; line-height:1.6; color:var(--text-2); font-weight:300;">Development of central venous catheters and flow-rate optimization created the first formal framework for access strategy as a clinical decision problem.</p>
+      </div>
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace; font-size:0.7rem; color:var(--accent); margin-bottom:0.4rem;">1980s–2000s</div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:1rem; margin-bottom:0.4rem;">Emergency Medicine &amp; Trauma</div>
+        <p style="font-size:0.78rem; line-height:1.6; color:var(--text-2); font-weight:300;">The "two large-bore IV" doctrine. Rapid infusion systems. Emergency medicine formalized gauge selection as a physics problem — not just a preference.</p>
+      </div>
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace; font-size:0.7rem; color:var(--accent); margin-bottom:0.4rem;">~2000s → Now</div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:1rem; margin-bottom:0.4rem;">Ultrasound-Guided Access Revolution</div>
+        <p style="font-size:0.78rem; line-height:1.6; color:var(--text-2); font-weight:300;">Real-time visualization made the geometry measurable. Diameter, depth, compressibility — suddenly the inputs to every equation in this collection are available at the bedside.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- THE BIG INSIGHT -->
+  <div style="background:var(--text); border-radius:var(--r); padding:2.5rem 3rem; margin-bottom:2rem; position:relative; overflow:hidden;">
+    <div style="position:absolute;top:-60px;right:-60px;width:300px;height:300px;background:radial-gradient(circle,rgba(188,114,80,0.18) 0%,transparent 70%);pointer-events:none;"></div>
+    <div style="font-size:0.62rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--accent); margin-bottom:0.75rem;">The Big Insight · Why All Five Modules Connect</div>
+    <div style="font-family:'Cormorant Garamond',serif; font-size:clamp(1.4rem,2.5vw,2rem); font-weight:400; color:#F6F0E8; margin-bottom:1rem; line-height:1.3;">Vascular access is an <em style="color:var(--accent-lt)">optimization problem under uncertainty</em><br>constrained by fluid physics and human anatomy.</div>
+    <p style="font-size:0.85rem; line-height:1.75; color:#B0A090; font-weight:300; max-width:620px; margin-bottom:2rem;">Every needle stick requires simultaneous reasoning across four mathematically distinct domains. The clinician is running a multi-variable optimization in real time — this collection makes that reasoning explicit, and Intracav's platform makes it computable.</p>
+    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:1rem;">
+      <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.08); border-radius:var(--r-sm); padding:1rem 1.25rem;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:0.68rem; color:var(--accent-lt); margin-bottom:0.4rem;">Q = πr⁴ΔP / 8ηL</div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:0.95rem; color:#F0E8E0; margin-bottom:0.3rem;">Flow Rate</div>
+        <div style="font-size:0.7rem; color:#6A5A4A; line-height:1.5;">Gauge selection constrains throughput before insertion.</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.08); border-radius:var(--r-sm); padding:1rem 1.25rem;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:0.68rem; color:var(--accent-lt); margin-bottom:0.4rem;">τ = 4ηQ / πr³</div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:0.95rem; color:#F0E8E0; margin-bottom:0.3rem;">Damage Risk</div>
+        <div style="font-size:0.7rem; color:#6A5A4A; line-height:1.5;">Every mL/hr carries a shear signature the endothelium reads.</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.08); border-radius:var(--r-sm); padding:1rem 1.25rem;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:0.68rem; color:var(--accent-lt); margin-bottom:0.4rem;">P(A|B) = P(B|A)P(A)/P(B)</div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:0.95rem; color:#F0E8E0; margin-bottom:0.3rem;">Success Probability</div>
+        <div style="font-size:0.7rem; color:#6A5A4A; line-height:1.5;">Patient anatomy updates first-attempt odds in real time.</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.08); border-radius:var(--r-sm); padding:1rem 1.25rem;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:0.68rem; color:var(--accent-lt); margin-bottom:0.4rem;">EU = Σ P(oᵢ) · U(oᵢ)</div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:0.95rem; color:#F0E8E0; margin-bottom:0.3rem;">Clinical Urgency</div>
+        <div style="font-size:0.7rem; color:#6A5A4A; line-height:1.5;">Time pressure reshapes expected utility at every acuity level.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="nav-footer">
+  <a href="04-shear-stress.html" class="nav-link">← 04 Shear Stress &amp; Vessel Injury</a>
+  <a href="index.html" class="nav-link">Return to Collection →</a>
+</div>
+
+<script>
+// ========== COLORS ===========
+const C = {
+  bg:'#EDE4D5', surface:'#F6F0E8', border:'#D4C7B5', borderLt:'#E2D8CC',
+  text:'#28180C', text2:'#685040', text3:'#9E8272',
+  accent:'#BC7250', accentLt:'#E8C4A8',
+  sage:'#7E9C84', rose:'#B87070', gold:'#C9A84C'
+};
+
+// ========== BAYESIAN CALCULATOR ===========
+const veinLabels  = ['Not visible/palpable','Barely palpable','Visible or palpable','Visible & palpable'];
+const veinLR      = [0.22, 0.55, 1.0, 2.1];
+const bmiLabels   = ['Obese (BMI>35)','Overweight','Normal','Thin'];
+const bmiLR       = [0.45, 0.75, 1.0, 1.15];
+const histLabels  = ['Documented DIVA/DAWA','Prior difficult access','None'];
+const histLR      = [0.35, 0.65, 1.0];
+const expLabels   = ['Student/intern','New grad RN','Experienced RN','IV specialist/PICC RN'];
+const expLR       = [0.60, 0.80, 1.0, 1.25];
+const attemptsLR  = [1.0, 0.72, 0.48, 0.30, 0.18];
+
+function bayesUpdate(prior_pct, lrs) {
+  let odds = prior_pct / (100 - prior_pct);
+  lrs.forEach(lr => odds *= lr);
+  const posterior = odds / (1 + odds);
+  return Math.min(0.99, Math.max(0.01, posterior));
+}
+
+function getProbColor(p) {
+  if (p > 0.80) return C.sage;
+  if (p > 0.60) return C.gold;
+  if (p > 0.40) return C.rose;
+  return '#8B3030';
+}
+
+function drawDial(p) {
+  const cv = document.getElementById('probDial');
+  const ctx = cv.getContext('2d');
+  const W = cv.width, H = cv.height;
+  ctx.clearRect(0,0,W,H);
+  const cx = W/2, cy = H/2 + 10, r = 80;
+  const startA = Math.PI * 0.75, endA = Math.PI * 2.25;
+  const totalAngle = endA - startA;
+
+  // Track background
+  ctx.beginPath(); ctx.arc(cx, cy, r, startA, endA);
+  ctx.strokeStyle = C.borderLt; ctx.lineWidth = 14; ctx.lineCap = 'round';
+  ctx.stroke();
+
+  // Colored arc
+  const fillA = startA + totalAngle * p;
+  const grad = ctx.createLinearGradient(cx-r, cy, cx+r, cy);
+  grad.addColorStop(0, '#8B3030');
+  grad.addColorStop(0.4, C.rose);
+  grad.addColorStop(0.65, C.gold);
+  grad.addColorStop(1, C.sage);
+  ctx.beginPath(); ctx.arc(cx, cy, r, startA, fillA);
+  ctx.strokeStyle = grad; ctx.lineWidth = 14; ctx.lineCap = 'round';
+  ctx.stroke();
+
+  // Needle
+  const needleA = startA + totalAngle * p;
+  const nx = cx + (r) * Math.cos(needleA);
+  const ny = cy + (r) * Math.sin(needleA);
+  ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(nx, ny);
+  ctx.strokeStyle = C.text; ctx.lineWidth = 2.5; ctx.lineCap = 'round';
+  ctx.stroke();
+  ctx.beginPath(); ctx.arc(cx, cy, 6, 0, Math.PI*2);
+  ctx.fillStyle = C.text; ctx.fill();
+
+  // Tick marks
+  for (let i = 0; i <= 10; i++) {
+    const a = startA + totalAngle * (i/10);
+    const outer = r + 18, inner = r + (i%5===0?26:20);
+    ctx.beginPath();
+    ctx.moveTo(cx + outer*Math.cos(a), cy + outer*Math.sin(a));
+    ctx.lineTo(cx + inner*Math.cos(a), cy + inner*Math.sin(a));
+    ctx.strokeStyle = C.border; ctx.lineWidth = i%5===0?2:1;
+    ctx.stroke();
+    if (i%5===0) {
+      const lx = cx + (outer+10)*Math.cos(a);
+      const ly = cy + (outer+10)*Math.sin(a);
+      ctx.fillStyle = C.text3;
+      ctx.font = '10px JetBrains Mono, monospace';
+      ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+      ctx.fillText((i*10)+'%', lx, ly);
+    }
+  }
+}
+
+function updateBayes() {
+  const prior     = +document.getElementById('priorSlider').value;
+  const vein      = +document.getElementById('veinSlider').value - 1;
+  const bmi       = +document.getElementById('bmiSlider').value - 1;
+  const attempts  = +document.getElementById('attemptsSlider').value;
+  const hist      = +document.getElementById('histSlider').value - 1;
+  const exp       = +document.getElementById('expSlider').value - 1;
+
+  document.getElementById('priorVal').textContent = prior;
+  document.getElementById('veinLabel').textContent = veinLabels[vein];
+  document.getElementById('bmiLabel').textContent = bmiLabels[bmi];
+  document.getElementById('attemptsVal').textContent = attempts;
+  document.getElementById('histLabel').textContent = histLabels[hist];
+  document.getElementById('expLabel').textContent = expLabels[exp];
+
+  const lrs = [veinLR[vein], bmiLR[bmi], attemptsLR[attempts], histLR[hist], expLR[exp]];
+  const p = bayesUpdate(prior, lrs);
+
+  document.getElementById('lcPrior').textContent = prior + '%';
+  document.getElementById('lcVein').textContent = 'LR = ' + veinLR[vein].toFixed(2);
+  document.getElementById('lcBmi').textContent = 'LR = ' + bmiLR[bmi].toFixed(2);
+  document.getElementById('lcAttempts').textContent = 'LR = ' + attemptsLR[attempts].toFixed(2);
+  document.getElementById('lcHist').textContent = 'LR = ' + histLR[hist].toFixed(2);
+  document.getElementById('lcExp').textContent = 'LR = ' + expLR[exp].toFixed(2);
+  document.getElementById('lcPosterior').textContent = (p*100).toFixed(1) + '%';
+
+  const pct = (p*100).toFixed(1);
+  const display = document.getElementById('posteriorDisplay');
+  display.textContent = pct + '%';
+  display.style.color = getProbColor(p);
+
+  drawDial(p);
+
+  const badge = document.getElementById('recBadge');
+  if (p > 0.80) {
+    badge.style.background = '#C7E0CA'; badge.style.color = '#2A4E2D';
+    badge.textContent = '✓ Proceed with standard PIV attempt';
+  } else if (p > 0.60) {
+    badge.style.background = C.gold+'30'; badge.style.color = '#5A4010';
+    badge.textContent = '⚠ Consider ultrasound guidance first';
+  } else if (p > 0.40) {
+    badge.style.background = '#EBD0D0'; badge.style.color = '#5A2020';
+    badge.textContent = '↑ Escalate: US-guided or midline indicated';
+  } else {
+    badge.style.background = '#D0A0A0'; badge.style.color = '#3A1010';
+    badge.textContent = '⛔ PICC or CVC consultation recommended';
+  }
+}
+
+['priorSlider','veinSlider','bmiSlider','attemptsSlider','histSlider','expSlider'].forEach(id => {
+  document.getElementById(id).addEventListener('input', updateBayes);
+});
+
+// ========== DECISION TREE ===========
+const treeNodes = [
+  { id:'root', label:'New\nAccess Need', x:0.07, y:0.5, r:36, color:C.text2, data:{success:null,time:null,complication:null}},
+  { id:'assess', label:'Bedside\nAssessment', x:0.22, y:0.5, r:30, color:C.accent, data:{success:null,time:'1 min',complication:null}},
+  { id:'visible', label:'Vein\nVisible', x:0.38, y:0.28, r:26, color:C.sage, data:{success:'92%',time:'3 min','complication':'2%'}},
+  { id:'poor', label:'Poor\nAccess', x:0.38, y:0.72, r:26, color:C.rose, data:{success:null,time:null,complication:null}},
+  { id:'piv_easy', label:'Standard\nPIV', x:0.55, y:0.17, r:26, color:C.sage, data:{success:'91%',time:'4 min','complication':'2%'}},
+  { id:'us_guided', label:'US-Guided\nPIV', x:0.55, y:0.38, r:26, color:C.gold, data:{success:'78%',time:'12 min','complication':'4%'}},
+  { id:'midline', label:'Midline\nCatheter', x:0.55, y:0.60, r:26, color:C.gold, data:{success:'85%',time:'30 min','complication':'6%'}},
+  { id:'picc', label:'PICC\nLine', x:0.55, y:0.80, r:26, color:C.rose, data:{success:'97%',time:'60 min','complication':'8%'}},
+  { id:'success_a', label:'Access\nSecured', x:0.78, y:0.25, r:28, color:C.sage, data:{success:'91%',time:'<5 min','complication':'2%'}},
+  { id:'cvc', label:'Central\nVenous', x:0.78, y:0.65, r:26, color:'#8B3030', data:{success:'98%',time:'45 min','complication':'12%'}},
+  { id:'success_b', label:'Access\nSecured', x:0.93, y:0.45, r:28, color:C.sage, data:{success:'95%',time:'varies','complication':'varies'}},
+];
+
+const treeEdges = [
+  {from:'root',to:'assess',label:''},
+  {from:'assess',to:'visible',label:'good veins'},
+  {from:'assess',to:'poor',label:'poor access'},
+  {from:'visible',to:'piv_easy',label:'P=0.92'},
+  {from:'visible',to:'us_guided',label:'P=0.08'},
+  {from:'poor',to:'us_guided',label:'1st line'},
+  {from:'poor',to:'midline',label:'>3 days'},
+  {from:'poor',to:'picc',label:'long term'},
+  {from:'piv_easy',to:'success_a',label:''},
+  {from:'us_guided',to:'success_a',label:'success'},
+  {from:'us_guided',to:'midline',label:'fail'},
+  {from:'midline',to:'success_b',label:''},
+  {from:'picc',to:'success_b',label:''},
+  {from:'picc',to:'cvc',label:'contraind.'},
+  {from:'cvc',to:'success_b',label:''},
+];
+
+let treeMode = 'success';
+let hoveredNode = null;
+
+function setTreeMode(mode, btn) {
+  treeMode = mode;
+  document.querySelectorAll('.tree-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  drawTree();
+}
+
+function getNodeMetric(node) {
+  if (!node.data) return null;
+  return node.data[treeMode] || null;
+}
+
+function getMetricColor(metric, mode) {
+  if (!metric || metric === null) return C.text3;
+  const val = parseFloat(metric);
+  if (mode === 'success') return val > 90 ? C.sage : val > 75 ? C.gold : C.rose;
+  if (mode === 'time') return val < 10 ? C.sage : val < 35 ? C.gold : C.rose;
+  if (mode === 'complication') return val < 4 ? C.sage : val < 9 ? C.gold : C.rose;
+  return C.text2;
+}
+
+function drawTree() {
+  const cv = document.getElementById('treeCanvas');
+  const ctx = cv.getContext('2d');
+  const W = cv.offsetWidth, H = cv.offsetHeight;
+  cv.width = W; cv.height = H;
+  ctx.clearRect(0,0,W,H);
+
+  // background
+  ctx.fillStyle = C.surface;
+  ctx.fillRect(0,0,W,H);
+
+  // edges
+  treeEdges.forEach(e => {
+    const from = treeNodes.find(n => n.id === e.from);
+    const to = treeNodes.find(n => n.id === e.to);
+    if (!from || !to) return;
+    const fx = from.x*W, fy = from.y*H, tx = to.x*W, ty = to.y*H;
+    ctx.beginPath();
+    const cpx = (fx + tx) / 2;
+    ctx.moveTo(fx, fy);
+    ctx.bezierCurveTo(cpx, fy, cpx, ty, tx, ty);
+    ctx.strokeStyle = C.borderLt; ctx.lineWidth = 1.5;
+    ctx.stroke();
+
+    if (e.label) {
+      const mx = (fx+tx)/2, my = (fy+ty)/2 - 6;
+      ctx.fillStyle = C.text3;
+      ctx.font = '10px Nunito, sans-serif';
+      ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+      ctx.fillText(e.label, mx, my);
+    }
+  });
+
+  // nodes
+  treeNodes.forEach(n => {
+    const x = n.x * W, y = n.y * H;
+    const isHovered = hoveredNode === n.id;
+    const r = n.r + (isHovered ? 4 : 0);
+
+    // shadow
+    ctx.shadowColor = 'rgba(40,24,12,0.12)';
+    ctx.shadowBlur = isHovered ? 18 : 8;
+    ctx.shadowOffsetY = 2;
+
+    // circle fill
+    ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI*2);
+    ctx.fillStyle = isHovered ? C.surface : C.bg;
+    ctx.fill();
+    ctx.strokeStyle = n.color; ctx.lineWidth = isHovered ? 3 : 2;
+    ctx.stroke();
+    ctx.shadowColor = 'transparent'; ctx.shadowBlur = 0; ctx.shadowOffsetY = 0;
+
+    // metric badge
+    const metric = getNodeMetric(n);
+    if (metric) {
+      const mColor = getMetricColor(metric, treeMode);
+      ctx.fillStyle = mColor + '22';
+      ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI*2);
+      ctx.fill();
+      ctx.fillStyle = mColor;
+      ctx.font = `bold 11px JetBrains Mono, monospace`;
+      ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+      ctx.fillText(metric, x, y + r + 13);
+    }
+
+    // label
+    const lines = n.label.split('\n');
+    ctx.fillStyle = C.text;
+    ctx.font = `500 ${r > 30 ? 11 : 10}px Nunito, sans-serif`;
+    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    if (lines.length === 1) {
+      ctx.fillText(lines[0], x, y);
+    } else {
+      ctx.fillText(lines[0], x, y - 6);
+      ctx.fillText(lines[1], x, y + 7);
+    }
+  });
+}
+
+document.getElementById('treeCanvas').addEventListener('mousemove', function(e) {
+  const rect = this.getBoundingClientRect();
+  const mx = (e.clientX - rect.left) * (this.width / rect.width);
+  const my = (e.clientY - rect.top) * (this.height / rect.height);
+  let found = null;
+  treeNodes.forEach(n => {
+    const dx = n.x*this.width - mx, dy = n.y*this.height - my;
+    if (Math.sqrt(dx*dx+dy*dy) < n.r + 5) found = n.id;
+  });
+  if (found !== hoveredNode) { hoveredNode = found; drawTree(); }
+});
+
+document.getElementById('treeCanvas').addEventListener('click', function(e) {
+  const rect = this.getBoundingClientRect();
+  const mx = (e.clientX - rect.left) * (this.width / rect.width);
+  const my = (e.clientY - rect.top) * (this.height / rect.height);
+  let clicked = null;
+  treeNodes.forEach(n => {
+    const dx = n.x*this.width - mx, dy = n.y*this.height - my;
+    if (Math.sqrt(dx*dx+dy*dy) < n.r + 5) clicked = n;
+  });
+  const tt = document.getElementById('treeTooltip');
+  if (clicked && clicked.data) {
+    document.getElementById('ttName').textContent = clicked.label.replace('\n',' ');
+    const stats = document.getElementById('ttStats');
+    stats.innerHTML = '';
+    if (clicked.data.success) stats.innerHTML += `<div class="tt-stat"><div class="val" style="color:${C.sage}">${clicked.data.success}</div><div class="key">First-attempt success</div></div>`;
+    if (clicked.data.time) stats.innerHTML += `<div class="tt-stat"><div class="val" style="color:${C.gold}">${clicked.data.time}</div><div class="key">Time to access</div></div>`;
+    if (clicked.data.complication) stats.innerHTML += `<div class="tt-stat"><div class="val" style="color:${C.rose}">${clicked.data.complication}</div><div class="key">Complication rate</div></div>`;
+    tt.classList.add('visible');
+  } else {
+    tt.classList.remove('visible');
+  }
+});
+
+// ========== MONTE CARLO ===========
+const STRATEGIES = {
+  PIV:    { pSuccess:0.85, escalate:'US',    color:C.sage,  label:'Standard PIV' },
+  US:     { pSuccess:0.78, escalate:'Mid',   color:C.gold,  label:'US-Guided PIV' },
+  Mid:    { pSuccess:0.85, escalate:'PICC',  color:'#B8965A',label:'Midline' },
+  PICC:   { pSuccess:0.97, escalate:'CVC',   color:C.rose,  label:'PICC' },
+  CVC:    { pSuccess:0.98, escalate:null,    color:'#8B3030',label:'CVC' }
+};
+
+const STRAT_ORDER = ['PIV','US','Mid','PICC','CVC'];
+const LANE_Y = [0.15, 0.33, 0.51, 0.69, 0.87];
+
+let mcParticles = [];
+let mcRunning = false;
+let mcAnimID = null;
+
+function runMonteCarlo() {
+  if (mcRunning) return;
+  mcRunning = true;
+  mcParticles = [];
+
+  const counts = {PIV:0, US:0, Mid:0, PICC:0, CVC:0};
+  const totalAttempts = [];
+
+  // Generate 500 patients
+  for (let i = 0; i < 500; i++) {
+    let strat = 'PIV';
+    let attempts = 0;
+    let finalStrat = 'PIV';
+    while (strat) {
+      attempts++;
+      const s = STRATEGIES[strat];
+      if (Math.random() < s.pSuccess) {
+        finalStrat = strat;
+        strat = null;
+      } else {
+        strat = s.escalate;
+        if (!strat) { finalStrat = finalStrat; break; }
+        finalStrat = strat;
+      }
+    }
+    counts[finalStrat]++;
+    totalAttempts.push(attempts);
+
+    // create particle
+    mcParticles.push({
+      stratIdx: STRAT_ORDER.indexOf(finalStrat),
+      strat: finalStrat,
+      x: 0,
+      progress: 0,
+      speed: 0.002 + Math.random() * 0.004,
+      delay: i * 0.00015,
+      done: false
+    });
+  }
+
+  const total = 500;
+  document.getElementById('mcPIV').textContent = counts.PIV;
+  document.getElementById('mcUS').textContent = counts.US;
+  document.getElementById('mcMid').textContent = counts.Mid;
+  document.getElementById('mcPICC').textContent = counts.PICC;
+  document.getElementById('mcCVC').textContent = counts.CVC;
+  document.getElementById('mcAvg').textContent = (totalAttempts.reduce((a,b)=>a+b,0)/total).toFixed(2);
+
+  let elapsed = 0;
+  const cv = document.getElementById('mcCanvas');
+
+  function animate(ts) {
+    const ctx = cv.getContext('2d');
+    const W = cv.offsetWidth, H = cv.offsetHeight;
+    cv.width = W; cv.height = H;
+
+    ctx.fillStyle = C.surface;
+    ctx.fillRect(0,0,W,H);
+
+    // Lane labels
+    STRAT_ORDER.forEach((s, i) => {
+      const y = LANE_Y[i] * H;
+      ctx.fillStyle = C.borderLt + 'CC';
+      ctx.fillRect(0, y - 12, W, 24);
+      ctx.fillStyle = C.text3;
+      ctx.font = '10px Nunito, sans-serif';
+      ctx.textAlign = 'left';
+      ctx.fillText(STRATEGIES[s].label, 8, y + 4);
+    });
+
+    elapsed++;
+
+    // Update + draw particles
+    let allDone = true;
+    mcParticles.forEach(p => {
+      if (elapsed < p.delay * 1000) { allDone = false; return; }
+      if (!p.done) {
+        p.progress = Math.min(1, p.progress + p.speed);
+        if (p.progress >= 1) p.done = true;
+        else allDone = false;
+      }
+      const x = p.progress * W;
+      const y = LANE_Y[p.stratIdx] * H;
+      const alpha = p.done ? 0.6 : 0.85;
+      ctx.beginPath();
+      ctx.arc(x, y, 3, 0, Math.PI*2);
+      ctx.fillStyle = STRATEGIES[p.strat].color + (p.done ? '99' : 'DD');
+      ctx.fill();
+    });
+
+    if (allDone) {
+      mcRunning = false;
+      // Draw final histogram on right
+      drawMCHistogram(ctx, W, H, counts, total);
+    } else {
+      mcAnimID = requestAnimationFrame(animate);
+    }
+  }
+  requestAnimationFrame(animate);
+}
+
+function drawMCHistogram(ctx, W, H, counts, total) {
+  const barW = W * 0.15;
+  const startX = W * 0.78;
+  STRAT_ORDER.forEach((s, i) => {
+    const frac = counts[s] / total;
+    const maxH = H * 0.7;
+    const bh = frac * maxH * 4;
+    const x = startX + i * (barW * 0.95 / STRAT_ORDER.length);
+  });
+}
+
+// ========== EXPECTED UTILITY ===========
+const EU_DATA = [
+  { name:'Standard PIV',   success:0.85, speed:0.95, safety:0.96, comfort:0.88 },
+  { name:'US-Guided PIV',  success:0.91, speed:0.72, safety:0.95, comfort:0.82 },
+  { name:'Midline',        success:0.93, speed:0.52, safety:0.88, comfort:0.70 },
+  { name:'PICC Line',      success:0.97, speed:0.30, safety:0.82, comfort:0.55 },
+  { name:'Central Venous', success:0.98, speed:0.38, safety:0.60, comfort:0.35 },
+];
+
+function updateEU() {
+  const wS = +document.getElementById('wSuccessSlider').value;
+  const wSp = +document.getElementById('wSpeedSlider').value;
+  const wSaf = +document.getElementById('wSafetySlider').value;
+  const wC = +document.getElementById('wComfortSlider').value;
+  const total = wS + wSp + wSaf + wC || 1;
+
+  document.getElementById('wSuccess').textContent = Math.round(wS/total*100) + '%';
+  document.getElementById('wSpeed').textContent   = Math.round(wSp/total*100) + '%';
+  document.getElementById('wSafety').textContent  = Math.round(wSaf/total*100) + '%';
+  document.getElementById('wComfort').textContent = Math.round(wC/total*100) + '%';
+
+  const scored = EU_DATA.map(d => ({
+    ...d,
+    eu: (d.success*(wS/total) + d.speed*(wSp/total) + d.safety*(wSaf/total) + d.comfort*(wC/total))
+  }));
+  const maxEU = Math.max(...scored.map(d => d.eu));
+
+  const colors = [C.sage, C.sage, C.gold, C.rose, '#8B3030'];
+  const tbody = document.getElementById('euBody');
+  tbody.innerHTML = '';
+  scored.forEach((d, i) => {
+    const isTop = d.eu === maxEU;
+    const pct = (d.eu / maxEU * 100).toFixed(0);
+    const row = document.createElement('tr');
+    row.innerHTML = `
+      <td><span class="eu-name">${d.name}</span></td>
+      <td><div class="eu-bar-wrap"><div class="eu-bar" style="width:${d.success*100}%;background:${C.sage}"></div></div></td>
+      <td><div class="eu-bar-wrap"><div class="eu-bar" style="width:${d.speed*100}%;background:${C.gold}"></div></div></td>
+      <td><div class="eu-bar-wrap"><div class="eu-bar" style="width:${d.safety*100}%;background:${C.rose}"></div></div></td>
+      <td><div class="eu-bar-wrap"><div class="eu-bar" style="width:${d.comfort*100}%;background:${C.accent}"></div></div></td>
+      <td><span class="eu-score" style="color:${colors[i]}">${(d.eu*100).toFixed(1)}</span></td>
+      <td>${isTop ? `<span class="eu-badge" style="background:${C.sage}22;color:${C.sage}">optimal</span>` : ''}</td>
+    `;
+    tbody.appendChild(row);
+  });
+}
+
+// ========== INIT ===========
+window.addEventListener('load', () => {
+  updateBayes();
+  drawTree();
+  updateEU();
+
+  // Resize observers
+  const treeObs = new ResizeObserver(() => drawTree());
+  treeObs.observe(document.getElementById('treeCanvas'));
+});
+</script>
+</body>
+</html>

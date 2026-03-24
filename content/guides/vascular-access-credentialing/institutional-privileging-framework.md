@@ -4,6 +4,7 @@ date = 2026-02-25T00:00:00-05:00
 lastmod = 2026-02-25T00:00:00-05:00
 content_type = "guide"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["Credentialing", "Privileging", "Program Leadership"]
 tags = ["vascular access privileging", "institutional credentialing vascular access", "PICC privileging", "clinical privileging framework", "vascular access scope of practice", "privileging delineation", "hospital credentialing vascular access", "vascular access competency program"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

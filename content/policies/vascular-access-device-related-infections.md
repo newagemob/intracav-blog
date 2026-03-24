@@ -4,6 +4,7 @@ date = 2023-11-02T00:00:00-05:00
 lastmod = 2025-09-18T00:00:00-05:00
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access", "infection-prevention"]
 category = ["Infection Prevention", "Patient Safety", "Device Maintenance"]
 tags = ["CLABSI", "CABSI", "bloodstream infection", "chlorhexidine", "care bundle", "infection prevention", "CVAD infection"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

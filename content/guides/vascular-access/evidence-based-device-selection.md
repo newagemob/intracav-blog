@@ -4,6 +4,7 @@ date = 2026-02-25T00:00:00-05:00
 lastmod = 2026-02-25T00:00:00-05:00
 content_type = "guide"
 audience = "clinician"
+departments = ["vascular-access"]
 category = ["Device Selection", "Clinical Practice"]
 tags = ["evidence based device selection", "vessel health preservation", "DIVA score", "vascular access decision", "appropriate device selection", "MAGIC criteria", "osmolarity threshold"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

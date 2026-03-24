@@ -4,6 +4,7 @@ date = 2026-02-25T00:00:00-05:00
 lastmod = 2026-02-25T00:00:00-05:00
 content_type = "guide"
 audience = "clinician"
+departments = ["vascular-access", "icu"]
 category = ["Catheter Complications", "Air Embolism", "Vascular Access Safety"]
 tags = ["air embolism vascular access", "CVAD air embolism", "air embolism prevention", "catheter removal air embolism", "Durant maneuver", "venous air embolism", "air embolism PICC", "air embolism emergency"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

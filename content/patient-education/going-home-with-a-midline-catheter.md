@@ -4,6 +4,7 @@ date = 2026-02-23T00:00:00-05:00
 lastmod = 2026-02-23T00:00:00-05:00
 content_type = "patient-education"
 audience = "patient"
+departments = ["vascular-access", "home-health"]
 category = ["Home Care", "Device Care", "Midline Catheter"]
 tags = ["midline catheter", "home care", "midline dressing", "midline flushing", "peripheral IV therapy", "discharge", "outpatient IV"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]

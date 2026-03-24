@@ -7,6 +7,7 @@ category = ["Healthcare Workforce", "Clinical Guidelines"]
 author = ["Dennis Woo", "IntraCav-CM01"]
 content_type = "policies"
 audience = "clinician"
+departments = ["vascular-access"]
 description = "Critical analysis of cortisol dysregulation in hospital staff and its impact on clinical performance, patient safety, and healthcare workforce wellbeing with evidence-based interventions."
 summary = "Addressing the hidden crisis of cortisol dysregulation among healthcare workers: evidence-based analysis of stress impact on medical excellence and practical interventions."
 slug = "cortisol-levels-hospital-staff-work-efficiency"

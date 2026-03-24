@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flow Dynamics — The Vascular Lab</title>
+<script src="https://unpkg.com/htmx.org@1.9.10"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Nunito:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #EDE4D5; --surface: #F6F0E8; --surface-hi: #FDFAF5;
+    --border: #D4C7B5; --border-lt: #E2D8CC;
+    --text: #28180C; --text-2: #685040; --text-3: #9E8272;
+    --accent: #BC7250; --accent-lt: #E8C4A8; --accent-glow: rgba(188,114,80,0.12);
+    --sage: #7E9C84; --rose: #B87070;
+    --shadow-sm: 0 1px 8px rgba(40,24,12,0.06), 0 0 0 1px rgba(40,24,12,0.04);
+    --shadow-md: 0 4px 28px rgba(40,24,12,0.10), 0 0 0 1px rgba(40,24,12,0.06);
+    --r: 16px; --r-sm: 10px;
+  }
+
+  body { font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+
+  body::after {
+    content: ''; position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+    opacity: 0.028; pointer-events: none; z-index: 9999;
+  }
+
+  nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.25rem 3rem; border-bottom: 1px solid var(--border-lt);
+    background: rgba(237,228,213,0.85); backdrop-filter: blur(12px);
+    position: sticky; top: 0; z-index: 100;
+  }
+
+  .nav-left { display: flex; align-items: center; gap: 1rem; }
+  .nav-back { font-size: 0.8rem; color: var(--text-3); text-decoration: none; letter-spacing: 0.04em; transition: color 200ms; }
+  .nav-back:hover { color: var(--accent); }
+  .nav-sep { color: var(--border); }
+  .nav-title { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--text-2); }
+  .nav-num { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--accent); }
+  .nav-next { font-size: 0.8rem; color: var(--text-3); text-decoration: none; letter-spacing: 0.04em; transition: color 200ms; }
+  .nav-next:hover { color: var(--accent); }
+
+  /* Hero */
+  .hero {
+    padding: 4rem 3rem 2.5rem;
+    display: grid; grid-template-columns: 1fr auto;
+    gap: 2rem; align-items: end;
+    border-bottom: 1px solid var(--border-lt);
+    max-width: 1100px; margin: 0 auto;
+  }
+
+  .module-label {
+    font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--accent);
+    display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.75rem;
+  }
+  .module-label::before { content: '01'; font-family: 'JetBrains Mono', monospace; }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 400; line-height: 1.1;
+    color: var(--text); margin-bottom: 1rem;
+  }
+  h1 em { font-style: italic; color: var(--text-2); }
+
+  .hero-desc { font-size: 0.92rem; line-height: 1.7; color: var(--text-2); font-weight: 300; max-width: 500px; }
+
+  .hero-eq {
+    background: var(--surface); border: 1px solid var(--border-lt);
+    border-radius: var(--r); padding: 1.75rem 2rem;
+    text-align: center; min-width: 220px;
+  }
+
+  .eq-main {
+    font-family: 'Cormorant Garamond', serif; font-size: 1.5rem;
+    color: var(--text); margin-bottom: 0.5rem;
+    display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+  }
+
+  .frac {
+    display: inline-flex; flex-direction: column;
+    align-items: center; vertical-align: middle; margin: 0 0.15rem;
+  }
+  .frac .num { border-bottom: 1.5px solid var(--text-2); padding: 0 4px 3px; }
+  .frac .den { padding: 3px 4px 0; }
+
+  .eq-name { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3); }
+
+  /* Main layout */
+  .main { max-width: 1100px; margin: 0 auto; padding: 2.5rem 3rem; }
+
+  /* Canvas section */
+  .viz-section {
+    background: var(--surface); border: 1px solid var(--border-lt);
+    border-radius: var(--r); padding: 1.75rem; margin-bottom: 2rem;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .viz-header {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    margin-bottom: 1.25rem;
+  }
+
+  .section-label {
+    font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--text-3); margin-bottom: 0.3rem;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--text);
+  }
+
+  #flowCanvas {
+    width: 100%; height: 280px; border-radius: var(--r-sm);
+    background: #1A1008; display: block;
+  }
+
+  /* Controls */
+  .controls {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem; margin-top: 1.5rem;
+  }
+
+  .ctrl {
+    display: flex; flex-direction: column; gap: 0.5rem;
+  }
+
+  .ctrl-label {
+    display: flex; justify-content: space-between; align-items: baseline;
+  }
+
+  .ctrl-name {
+    font-size: 0.78rem; font-weight: 600; color: var(--text-2); letter-spacing: 0.03em;
+  }
+
+  .ctrl-val {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.78rem;
+    color: var(--accent); font-weight: 500;
+  }
+
+  .ctrl-unit {
+    font-size: 0.65rem; color: var(--text-3); margin-left: 0.25rem;
+  }
+
+  input[type=range] {
+    -webkit-appearance: none; width: 100%; height: 4px;
+    background: var(--border); border-radius: 100px; outline: none; cursor: pointer;
+  }
+
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none; width: 18px; height: 18px;
+    background: var(--accent); border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(188,114,80,0.15);
+    transition: box-shadow 200ms;
+  }
+
+  input[type=range]::-webkit-slider-thumb:hover {
+    box-shadow: 0 0 0 6px rgba(188,114,80,0.2);
+  }
+
+  .ctrl-hint { font-size: 0.68rem; color: var(--text-3); font-weight: 300; }
+
+  /* Result display */
+  .result-section {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1rem; margin-bottom: 2rem;
+  }
+
+  .result-card {
+    background: var(--surface); border: 1px solid var(--border-lt);
+    border-radius: var(--r-sm); padding: 1.25rem 1.5rem;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .result-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); margin-bottom: 0.4rem; }
+
+  .result-value {
+    font-family: 'Cormorant Garamond', serif; font-size: 2.2rem;
+    font-weight: 500; color: var(--text); line-height: 1;
+  }
+
+  .result-unit { font-size: 0.8rem; color: var(--text-2); margin-left: 0.2rem; }
+
+  .result-sub { font-size: 0.72rem; color: var(--text-3); margin-top: 0.4rem; font-weight: 300; }
+
+  .result-accent { border-left: 3px solid var(--accent); }
+  .result-sage { border-left: 3px solid var(--sage); }
+
+  /* Gauge table */
+  .gauge-section {
+    background: var(--surface); border: 1px solid var(--border-lt);
+    border-radius: var(--r); overflow: hidden; margin-bottom: 2rem;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .gauge-header {
+    padding: 1.25rem 1.75rem; border-bottom: 1px solid var(--border-lt);
+  }
+
+  table { width: 100%; border-collapse: collapse; }
+  th {
+    font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--text-3);
+    padding: 0.85rem 1.75rem; text-align: left;
+    border-bottom: 1px solid var(--border-lt); background: var(--bg);
+  }
+
+  td {
+    padding: 0.85rem 1.75rem; font-size: 0.85rem;
+    border-bottom: 1px solid rgba(212,199,181,0.4);
+    font-weight: 300; color: var(--text-2);
+  }
+
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: rgba(188,114,80,0.03); }
+
+  .gauge-num { font-family: 'JetBrains Mono', monospace; font-weight: 500; color: var(--text); }
+
+  .flow-bar {
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+
+  .flow-bar-track {
+    flex: 1; height: 6px; background: var(--border);
+    border-radius: 100px; overflow: hidden;
+  }
+
+  .flow-bar-fill {
+    height: 100%; border-radius: 100px;
+    background: linear-gradient(90deg, var(--accent-lt), var(--accent));
+    transition: width 400ms ease;
+  }
+
+  /* Clinical pearls */
+  .pearls { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+
+  .pearl {
+    background: var(--surface-hi); border: 1px solid var(--border-lt);
+    border-radius: var(--r-sm); padding: 1.25rem;
+  }
+
+  .pearl-icon { font-size: 1.2rem; margin-bottom: 0.6rem; }
+  .pearl-title { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: var(--text); margin-bottom: 0.4rem; }
+  .pearl-text { font-size: 0.82rem; line-height: 1.6; color: var(--text-2); font-weight: 300; }
+
+  /* Gauge selector buttons */
+  .gauge-btns {
+    display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.25rem;
+  }
+
+  .gauge-btn {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.75rem;
+    padding: 0.35rem 0.85rem; border-radius: 100px;
+    border: 1px solid var(--border); background: var(--bg);
+    color: var(--text-2); cursor: pointer; transition: all 200ms;
+  }
+
+  .gauge-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .gauge-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
+
+  footer-nav {
+    display: flex; justify-content: space-between; padding: 2rem 3rem;
+    border-top: 1px solid var(--border-lt); max-width: 1100px; margin: 0 auto;
+  }
+
+  .fn-link {
+    text-decoration: none; color: var(--text-3); font-size: 0.82rem;
+    display: flex; align-items: center; gap: 0.5rem; transition: color 200ms;
+  }
+  .fn-link:hover { color: var(--accent); }
+  .fn-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .hero { animation: fadeUp 500ms ease-out both; }
+  .viz-section { animation: fadeUp 500ms 100ms ease-out both; }
+  .result-section { animation: fadeUp 500ms 180ms ease-out both; }
+
+  @media (max-width: 700px) {
+    .hero { grid-template-columns: 1fr; padding: 2.5rem 1.5rem; }
+    .main { padding: 1.5rem; }
+    .result-section { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-left">
+    <a class="nav-back" href="index.html">← Collection</a>
+    <span class="nav-sep">·</span>
+    <span class="nav-num">01</span>
+    <span class="nav-title">Flow Dynamics</span>
+  </div>
+  <a class="nav-next" href="02-resistance-networks.html">Resistance Networks →</a>
+</nav>
+
+<section class="hero">
+  <div>
+    <div class="module-label">— Hagen-Poiseuille Equation</div>
+    <h1>Flow <em>follows</em><br>the fourth power.</h1>
+    <p class="hero-desc">
+      Doubling a catheter's inner radius doesn't double flow — it multiplies it by sixteen.
+      This single mathematical truth explains more about clinical vascular access than
+      almost any other principle.
+    </p>
+  </div>
+  <div class="hero-eq">
+    <div class="eq-main">
+      Q =
+      <div class="frac">
+        <span class="num">π r⁴ ΔP</span>
+        <span class="den">8 η L</span>
+      </div>
+    </div>
+    <div class="eq-name">Hagen-Poiseuille Flow Rate</div>
+  </div>
+</section>
+
+<div class="main">
+
+  <!-- Canvas Visualization -->
+  <div class="viz-section">
+    <div class="viz-header">
+      <div>
+        <div class="section-label">Live Visualization</div>
+        <div class="section-title">Velocity Profile & Particle Flow</div>
+      </div>
+      <div style="font-size:0.75rem; color:var(--text-3); font-weight:300; text-align:right;">
+        Warm = fast · Cool = slow<br>Parabolic velocity profile
+      </div>
+    </div>
+
+    <div class="gauge-btns" id="gaugeBtns">
+      <button class="gauge-btn" onclick="setGauge(14)">14G</button>
+      <button class="gauge-btn" onclick="setGauge(16)">16G</button>
+      <button class="gauge-btn active" onclick="setGauge(18)">18G</button>
+      <button class="gauge-btn" onclick="setGauge(20)">20G</button>
+      <button class="gauge-btn" onclick="setGauge(22)">22G</button>
+      <button class="gauge-btn" onclick="setGauge(24)">24G</button>
+      <button class="gauge-btn" onclick="setGauge(0)">Custom</button>
+    </div>
+
+    <canvas id="flowCanvas"></canvas>
+
+    <div class="controls">
+      <div class="ctrl">
+        <div class="ctrl-label">
+          <span class="ctrl-name">Inner Radius (r)</span>
+          <span class="ctrl-val" id="rVal">0.51 <span class="ctrl-unit">mm</span></span>
+        </div>
+        <input type="range" id="rSlider" min="0.2" max="1.2" step="0.01" value="0.51" oninput="updateParams()">
+        <div class="ctrl-hint">The r⁴ relationship makes this the most powerful variable</div>
+      </div>
+      <div class="ctrl">
+        <div class="ctrl-label">
+          <span class="ctrl-name">Pressure Gradient (ΔP)</span>
+          <span class="ctrl-val" id="dpVal">100 <span class="ctrl-unit">mmHg</span></span>
+        </div>
+        <input type="range" id="dpSlider" min="10" max="300" step="5" value="100" oninput="updateParams()">
+        <div class="ctrl-hint">Gravity IV ≈ 73 mmHg · Pressure bag ≈ 150–300 mmHg</div>
+      </div>
+      <div class="ctrl">
+        <div class="ctrl-label">
+          <span class="ctrl-name">Viscosity (η)</span>
+          <span class="ctrl-val" id="etaVal">1.0 <span class="ctrl-unit">cP</span></span>
+        </div>
+        <input type="range" id="etaSlider" min="0.5" max="8" step="0.1" value="1.0" oninput="updateParams()">
+        <div class="ctrl-hint">NS ≈ 1 cP · Blood ≈ 3–4 cP · Contrast ≈ 5–8 cP</div>
+      </div>
+      <div class="ctrl">
+        <div class="ctrl-label">
+          <span class="ctrl-name">Catheter Length (L)</span>
+          <span class="ctrl-val" id="lVal">32 <span class="ctrl-unit">mm</span></span>
+        </div>
+        <input type="range" id="lSlider" min="12" max="80" step="1" value="32" oninput="updateParams()">
+        <div class="ctrl-hint">PIV ≈ 32 mm · Midline ≈ 200 mm · PICC ≈ 450 mm</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Results -->
+  <div class="result-section">
+    <div class="result-card result-accent">
+      <div class="result-label">Flow Rate (Q)</div>
+      <div class="result-value" id="qmlhr">—<span class="result-unit">mL/hr</span></div>
+      <div class="result-sub" id="qmlmin"></div>
+    </div>
+    <div class="result-card result-sage">
+      <div class="result-label">Max Velocity (center)</div>
+      <div class="result-value" id="vmax">—<span class="result-unit">cm/s</span></div>
+      <div class="result-sub">Parabolic peak at vessel axis</div>
+    </div>
+    <div class="result-card">
+      <div class="result-label">Hydraulic Resistance (R)</div>
+      <div class="result-value" id="resistance" style="font-size:1.4rem">—</div>
+      <div class="result-sub">Pa·s/m³ × 10¹²</div>
+    </div>
+  </div>
+
+  <!-- Gauge Reference Table -->
+  <div class="gauge-section">
+    <div class="gauge-header">
+      <div class="section-label">Reference Table</div>
+      <div class="section-title">Catheter Gauge Flow Comparison</div>
+    </div>
+    <table id="gaugeTable">
+      <thead>
+        <tr>
+          <th>Gauge</th>
+          <th>Inner Radius</th>
+          <th>Flow @ 100 mmHg, NS</th>
+          <th>Relative to 18G</th>
+          <th>Visual</th>
+        </tr>
+      </thead>
+      <tbody id="gaugeBody"></tbody>
+    </table>
+  </div>
+
+  <!-- Clinical Pearls -->
+  <div class="pearls">
+    <div class="pearl">
+      <div class="pearl-icon">⁴√</div>
+      <div class="pearl-title">The Fourth Power Law</div>
+      <div class="pearl-text">
+        A 14G catheter (r = 0.80mm) flows ~7.1× more than an 18G (r = 0.51mm).
+        That's (0.80/0.51)⁴ = 6.1. Radius is everything.
+      </div>
+    </div>
+    <div class="pearl">
+      <div class="pearl-icon">🩸</div>
+      <div class="pearl-title">Blood vs Saline</div>
+      <div class="pearl-text">
+        Blood is 3–4× more viscous than normal saline. The same catheter,
+        pressure, and length will flow 3–4× less blood than saline — critical
+        for trauma resuscitation planning.
+      </div>
+    </div>
+    <div class="pearl">
+      <div class="pearl-icon">📏</div>
+      <div class="pearl-title">Length Matters Less</div>
+      <div class="pearl-text">
+        A PICC (450mm) vs a PIV (32mm) has ~14× the length, reducing flow ~14×.
+        But changing from 20G to 18G radius (0.40→0.51mm) increases flow ~2.6×.
+        Gauge beats length.
+      </div>
+    </div>
+    <div class="pearl">
+      <div class="pearl-icon">💉</div>
+      <div class="pearl-title">Pressure Bag Rationale</div>
+      <div class="pearl-text">
+        Pressure bags at 300 mmHg provide ~4× the pressure of gravity (73 mmHg).
+        Flow scales linearly with ΔP — unlike radius, so it's a useful adjunct
+        but can't compensate for a small catheter.
+      </div>
+    </div>
+  </div>
+
+  <!-- History + Intracav -->
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-bottom:2rem;">
+
+    <div style="background:var(--surface); border:1px solid var(--border-lt); border-radius:var(--r); padding:1.75rem 2rem; box-shadow:var(--shadow-sm);">
+      <div style="font-size:0.65rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-3); margin-bottom:0.75rem;">Historical Origin</div>
+      <div style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; margin-bottom:1rem;">The math was already medical.</div>
+      <p style="font-size:0.82rem; line-height:1.7; color:var(--text-2); font-weight:300; margin-bottom:0.75rem;">
+        Gotthilf Hagen (1839) and Jean Léonard Marie Poiseuille (1838–42) derived this equation independently — but Poiseuille was a physician specifically studying <em>blood flow in capillaries</em>. Unlike most physics-to-medicine translations, the Poiseuille equation started at the bedside.
+      </p>
+      <p style="font-size:0.82rem; line-height:1.7; color:var(--text-2); font-weight:300;">
+        The clinical application to vascular access — catheter selection, pressure bags, large-bore doctrine — came from anesthesiology and trauma medicine in the 1960s–90s.
+      </p>
+    </div>
+
+    <div style="background:var(--surface); border:1px solid var(--border-lt); border-radius:var(--r); padding:1.75rem 2rem; box-shadow:var(--shadow-sm);">
+      <div style="font-size:0.65rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); margin-bottom:0.75rem;">Intracav Opportunity</div>
+      <div style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; margin-bottom:1rem;">Real-Time Ultrasound Flow Estimation</div>
+      <p style="font-size:0.82rem; line-height:1.7; color:var(--text-2); font-weight:300; margin-bottom:0.75rem;">
+        Ultrasound makes the Poiseuille equation actionable at the bedside. <strong style="color:var(--text)">Diameter</strong> is directly measurable. <strong style="color:var(--text)">Depth</strong> determines angle. <strong style="color:var(--text)">Compressibility</strong> is a proxy for pressure state.
+      </p>
+      <div style="font-size:0.78rem; color:var(--text-2); background:var(--bg); border-radius:var(--r-sm); padding:0.9rem 1rem; line-height:1.75;">
+        <strong>Proposed overlay:</strong><br>
+        US diameter → estimate flow rate (Poiseuille-based)<br>
+        Show <em>"optimal catheter size"</em> recommendation<br>
+        Flag turbulence risk before insertion<br>
+        Surface as green / amber / red risk signal
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div style="display:flex; justify-content:space-between; padding:2rem 3rem; border-top:1px solid var(--border-lt); max-width:1100px; margin:0 auto;">
+  <a class="fn-link" href="index.html">
+    <span>←</span>
+    <div><div class="fn-label">Back to</div>Collection</div>
+  </a>
+  <a class="fn-link" href="02-resistance-networks.html">
+    <div style="text-align:right"><div class="fn-label">Next Module</div>Resistance Networks</div>
+    <span>→</span>
+  </a>
+</div>
+
+<script>
+// ── Catheter data ─────────────────────────────────────────────────────
+const GAUGES = {
+  14: { id_mm: 1.60 },
+  16: { id_mm: 1.27 },
+  18: { id_mm: 1.02 },
+  20: { id_mm: 0.80 },
+  22: { id_mm: 0.64 },
+  24: { id_mm: 0.51 },
+};
+
+// ── Physics ────────────────────────────────────────────────────────────
+function calcFlow(r_mm, dP_mmHg, eta_cP, L_mm) {
+  const r = r_mm * 1e-3;
+  const dP = dP_mmHg * 133.322;
+  const eta = eta_cP * 1e-3;
+  const L = L_mm * 1e-3;
+  const Q_m3s = (Math.PI * Math.pow(r, 4) * dP) / (8 * eta * L);
+  const Q_mlhr = Q_m3s * 1e6 * 3600;
+  const Q_mls = Q_m3s * 1e6;
+  const v_max = (Math.pow(r, 2) * dP) / (4 * eta * L) * 100; // cm/s
+  const R = (8 * eta * L) / (Math.PI * Math.pow(r, 4)) / 1e12;
+  return { Q_mlhr, Q_mls, v_max, R };
+}
+
+// ── Canvas Setup ───────────────────────────────────────────────────────
+const canvas = document.getElementById('flowCanvas');
+const ctx = canvas.getContext('2d');
+
+function resizeCanvas() {
+  const rect = canvas.parentElement.getBoundingClientRect();
+  canvas.width = rect.width - 56;
+  canvas.height = 280;
+}
+
+resizeCanvas();
+window.addEventListener('resize', () => { resizeCanvas(); initParticles(); });
+
+// ── Particles ──────────────────────────────────────────────────────────
+let particles = [];
+let params = { r: 0.51, dP: 100, eta: 1.0, L: 32 };
+
+function initParticles() {
+  particles = [];
+  const N = Math.min(200, Math.floor(canvas.width / 3));
+  for (let i = 0; i < N; i++) {
+    const rNorm = Math.sqrt(Math.random()); // uniform area distribution
+    const angle = Math.random() * Math.PI * 2;
+    particles.push({
+      rNorm,
+      angle,
+      x: Math.random() * canvas.width,
+    });
+  }
+}
+
+initParticles();
+
+// ── Animation ──────────────────────────────────────────────────────────
+let last = 0;
+
+function velocityNorm(rNorm) {
+  return Math.max(0, 1 - rNorm * rNorm);
+}
+
+function lerp(a, b, t) { return a + (b - a) * t; }
+function clamp(x, a, b) { return Math.max(a, Math.min(b, x)); }
+
+function colorFromVelocity(vNorm) {
+  // Deep blue → warm amber/terracotta for fast
+  const t = clamp(vNorm, 0, 1);
+  const r = Math.round(lerp(40, 220, t));
+  const g = Math.round(lerp(60, 130, t));
+  const b = Math.round(lerp(120, 60, t));
+  return `rgb(${r},${g},${b})`;
+}
+
+function draw(ts) {
+  const dt = Math.min(ts - last, 32);
+  last = ts;
+
+  const W = canvas.width, H = canvas.height;
+  const cx = W * 0.22;      // cross-section center x
+  const R_px = H * 0.38;    // vessel radius in pixels
+  const vizX = W * 0.48;    // start of flow view
+
+  // Max velocity for speed scaling
+  const { Q_mlhr, v_max } = calcFlow(params.r, params.dP, params.eta, params.L);
+  const speedScale = clamp(v_max / 200, 0.02, 1.0); // normalize animation speed
+
+  // Clear
+  ctx.fillStyle = '#160E06';
+  ctx.fillRect(0, 0, W, H);
+
+  // ── Cross-section view ─────────────────────────────────────────────
+  // Vessel wall
+  const wallGrad = ctx.createRadialGradient(cx, H/2, R_px * 0.85, cx, H/2, R_px + 12);
+  wallGrad.addColorStop(0, 'rgba(200,170,140,0)');
+  wallGrad.addColorStop(0.6, 'rgba(180,140,100,0.35)');
+  wallGrad.addColorStop(1, 'rgba(160,110,70,0.6)');
+  ctx.beginPath(); ctx.arc(cx, H/2, R_px + 12, 0, Math.PI * 2);
+  ctx.fillStyle = wallGrad; ctx.fill();
+
+  // Vessel lumen
+  ctx.beginPath(); ctx.arc(cx, H/2, R_px, 0, Math.PI * 2);
+  ctx.fillStyle = '#0D0805'; ctx.fill();
+
+  // Particles in cross-section
+  particles.forEach(p => {
+    const x = cx + p.rNorm * R_px * Math.cos(p.angle);
+    const y = H/2 + p.rNorm * R_px * Math.sin(p.angle);
+    const v = velocityNorm(p.rNorm);
+    ctx.beginPath();
+    ctx.arc(x, y, 2.5, 0, Math.PI * 2);
+    ctx.fillStyle = colorFromVelocity(v);
+    ctx.fill();
+  });
+
+  // Vessel outline
+  ctx.beginPath(); ctx.arc(cx, H/2, R_px + 12, 0, Math.PI * 2);
+  ctx.strokeStyle = 'rgba(188,114,80,0.3)'; ctx.lineWidth = 1; ctx.stroke();
+
+  // Label
+  ctx.fillStyle = 'rgba(158,130,114,0.7)';
+  ctx.font = '500 11px Nunito';
+  ctx.fillText('cross-section', cx - 40, H - 14);
+
+  // ── Divider ────────────────────────────────────────────────────────
+  ctx.strokeStyle = 'rgba(188,114,80,0.12)'; ctx.lineWidth = 1;
+  ctx.setLineDash([4, 6]);
+  ctx.beginPath(); ctx.moveTo(W * 0.43, 20); ctx.lineTo(W * 0.43, H - 20); ctx.stroke();
+  ctx.setLineDash([]);
+
+  // ── Flow velocity profile (right side) ─────────────────────────────
+  const flowW = W - vizX - 20;
+  const flowCY = H / 2;
+
+  // Vessel walls (top/bottom lines)
+  ctx.strokeStyle = 'rgba(188,114,80,0.4)'; ctx.lineWidth = 1.5;
+  ctx.setLineDash([]);
+  ctx.beginPath(); ctx.moveTo(vizX, flowCY - R_px); ctx.lineTo(W - 20, flowCY - R_px); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(vizX, flowCY + R_px); ctx.lineTo(W - 20, flowCY + R_px); ctx.stroke();
+
+  // Particles (flow view)
+  particles.forEach(p => {
+    const v = velocityNorm(p.rNorm);
+    const newX = p.x + speedScale * v * 120 * (dt / 1000);
+    p.x = newX > W - 20 ? vizX + Math.random() * 40 : newX;
+
+    const y = flowCY + p.rNorm * R_px * Math.sign(Math.sin(p.angle));
+    ctx.beginPath();
+    ctx.arc(p.x, y, 2, 0, Math.PI * 2);
+    ctx.fillStyle = colorFromVelocity(v);
+    ctx.globalAlpha = 0.75;
+    ctx.fill();
+    ctx.globalAlpha = 1;
+  });
+
+  // Parabolic velocity profile curve
+  ctx.beginPath();
+  for (let iy = 0; iy <= H; iy++) {
+    const rNorm = (iy - flowCY) / R_px;
+    if (Math.abs(rNorm) > 1) continue;
+    const v = velocityNorm(rNorm);
+    const profileX = vizX + v * flowW * 0.6;
+    if (iy === 0 || Math.abs(rNorm) >= 0.99) ctx.moveTo(profileX, iy);
+    else ctx.lineTo(profileX, iy);
+  }
+  ctx.strokeStyle = 'rgba(188,114,80,0.5)'; ctx.lineWidth = 1.5; ctx.stroke();
+
+  // Profile shading
+  ctx.beginPath();
+  ctx.moveTo(vizX, flowCY - R_px);
+  for (let iy = flowCY - R_px; iy <= flowCY + R_px; iy++) {
+    const rNorm = (iy - flowCY) / R_px;
+    const v = velocityNorm(rNorm);
+    ctx.lineTo(vizX + v * flowW * 0.6, iy);
+  }
+  ctx.lineTo(vizX, flowCY + R_px);
+  ctx.closePath();
+  ctx.fillStyle = 'rgba(188,114,80,0.05)'; ctx.fill();
+
+  // Labels
+  ctx.fillStyle = 'rgba(158,130,114,0.7)';
+  ctx.font = '500 11px Nunito';
+  ctx.fillText('laminar flow (side view)', vizX + 8, H - 14);
+  ctx.fillText('v_max', vizX + flowW * 0.55, flowCY - 8);
+
+  requestAnimationFrame(draw);
+}
+
+requestAnimationFrame(draw);
+
+// ── UI Update ──────────────────────────────────────────────────────────
+function updateParams() {
+  params.r = parseFloat(document.getElementById('rSlider').value);
+  params.dP = parseFloat(document.getElementById('dpSlider').value);
+  params.eta = parseFloat(document.getElementById('etaSlider').value);
+  params.L = parseFloat(document.getElementById('lSlider').value);
+
+  document.getElementById('rVal').innerHTML = params.r.toFixed(2) + ' <span class="ctrl-unit">mm</span>';
+  document.getElementById('dpVal').innerHTML = params.dP + ' <span class="ctrl-unit">mmHg</span>';
+  document.getElementById('etaVal').innerHTML = params.eta.toFixed(1) + ' <span class="ctrl-unit">cP</span>';
+  document.getElementById('lVal').innerHTML = params.L + ' <span class="ctrl-unit">mm</span>';
+
+  const { Q_mlhr, Q_mls, v_max, R } = calcFlow(params.r, params.dP, params.eta, params.L);
+
+  document.getElementById('qmlhr').innerHTML = Math.round(Q_mlhr).toLocaleString() + '<span class="result-unit">mL/hr</span>';
+  document.getElementById('qmlmin').textContent = `${Q_mls.toFixed(1)} mL/s · ${(Q_mlhr/1000).toFixed(2)} L/hr`;
+  document.getElementById('vmax').innerHTML = v_max.toFixed(1) + '<span class="result-unit">cm/s</span>';
+  document.getElementById('resistance').textContent = R.toFixed(2);
+}
+
+function setGauge(g) {
+  document.querySelectorAll('.gauge-btn').forEach(b => b.classList.remove('active'));
+  if (g === 0) {
+    event.target.classList.add('active');
+    return;
+  }
+  event.target.classList.add('active');
+  const r_mm = GAUGES[g].id_mm / 2;
+  document.getElementById('rSlider').value = r_mm;
+  params.r = r_mm;
+  updateParams();
+}
+
+// ── Gauge Table ────────────────────────────────────────────────────────
+function buildGaugeTable() {
+  const tbody = document.getElementById('gaugeBody');
+  const base18 = calcFlow(GAUGES[18].id_mm / 2, 100, 1, 32).Q_mlhr;
+
+  const gaugeOrder = [14, 16, 18, 20, 22, 24];
+  gaugeOrder.forEach(g => {
+    const r_mm = GAUGES[g].id_mm / 2;
+    const { Q_mlhr } = calcFlow(r_mm, 100, 1, 32);
+    const ratio = Q_mlhr / base18;
+    const barPct = Math.min(100, (Q_mlhr / calcFlow(GAUGES[14].id_mm/2, 100, 1, 32).Q_mlhr) * 100);
+    const row = `<tr>
+      <td><span class="gauge-num">${g}G</span></td>
+      <td><span class="gauge-num">${(GAUGES[g].id_mm / 2).toFixed(2)} mm</span></td>
+      <td>${Math.round(Q_mlhr).toLocaleString()} mL/hr</td>
+      <td><span class="gauge-num" style="color:var(--accent)">${ratio.toFixed(1)}×</span></td>
+      <td>
+        <div class="flow-bar">
+          <div class="flow-bar-track" style="flex:1">
+            <div class="flow-bar-fill" style="width:${barPct}%"></div>
+          </div>
+          <span style="font-size:0.7rem;color:var(--text-3);width:36px;text-align:right">${barPct.toFixed(0)}%</span>
+        </div>
+      </td>
+    </tr>`;
+    tbody.innerHTML += row;
+  });
+}
+
+buildGaugeTable();
+updateParams();
+</script>
+</body>
+</html>

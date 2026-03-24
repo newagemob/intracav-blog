@@ -4,6 +4,7 @@ date = 2026-02-23T00:00:00-05:00
 lastmod = 2026-02-23T00:00:00-05:00
 content_type = "patient-education"
 audience = "patient"
+departments = ["vascular-access"]
 category = ["Device Care", "Procedures", "Patient Education"]
 tags = ["PICC removal", "removing PICC line", "end of PICC therapy", "PICC out", "PICC line procedure", "vascular access removal"]
 author = ["Dennis Woo", "Dr. Mike Stern", "I.M. Wright"]
