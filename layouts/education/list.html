@@ -6,6 +6,24 @@
     <p class="edu-hero-desc">{{ .Description }}</p>
   </header>
 
+  <!-- Featured: Clinician's Guide to AI -->
+  <a class="edu-featured" href="/education/clinician-ai-guide.html">
+    <div class="edu-featured-badge">Start Here</div>
+    <div class="edu-featured-content">
+      <div class="edu-featured-eyebrow">Lumen &middot; Clinical AI Education</div>
+      <h2 class="edu-featured-title">The Clinician&rsquo;s Guide to Working with AI</h2>
+      <p class="edu-featured-desc">AI doesn&rsquo;t replace clinical judgment &mdash; it sharpens it. Learn the principles, patterns, and practices that separate effective clinical AI use from dangerous over-reliance.</p>
+      <div class="edu-featured-stats">
+        <span>5 Interactive Modules</span>
+        <span>&middot;</span>
+        <span>12 Clinical Scenarios</span>
+        <span>&middot;</span>
+        <span>3 Prompt Frameworks</span>
+      </div>
+    </div>
+    <div class="edu-featured-cta">Begin guide <span>&rarr;</span></div>
+  </a>
+
   <div class="edu-series-grid">
 
     <!-- Series I: The Vascular Lab -->
@@ -156,6 +174,107 @@
   line-height: 1.7;
   color: var(--secondary, #685040);
   max-width: 640px;
+}
+
+.edu-featured {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: linear-gradient(135deg, #2A1A0E 0%, #1A120A 100%);
+  border: 1px solid rgba(188,114,80,0.2);
+  border-radius: 14px;
+  padding: 2.25rem 2.5rem;
+  margin-bottom: 2rem;
+  text-decoration: none;
+  color: #F6F0E8;
+  position: relative;
+  overflow: hidden;
+  transition: transform 250ms ease, box-shadow 250ms ease;
+}
+
+.edu-featured::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -60px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(188,114,80,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.edu-featured:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+}
+
+.edu-featured-badge {
+  display: inline-block;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.8rem;
+  border-radius: 100px;
+  background: rgba(188,114,80,0.2);
+  color: #E8C4A8;
+  border: 1px solid rgba(188,114,80,0.3);
+  width: fit-content;
+}
+
+.edu-featured-content {
+  position: relative;
+  z-index: 1;
+}
+
+.edu-featured-eyebrow {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #BC7250;
+  margin-bottom: 0.5rem;
+}
+
+.edu-featured-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 0.6rem;
+  color: #F6F0E8;
+}
+
+.edu-featured-desc {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: #A09080;
+  margin: 0;
+  max-width: 640px;
+}
+
+.edu-featured-stats {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  font-size: 0.72rem;
+  color: #7A6A5A;
+  margin-top: 0.75rem;
+}
+
+.edu-featured-cta {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #BC7250;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: gap 200ms ease;
+  position: relative;
+  z-index: 1;
+}
+
+.edu-featured:hover .edu-featured-cta {
+  gap: 0.7rem;
 }
 
 .edu-series-grid {

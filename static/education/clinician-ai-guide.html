@@ -1,0 +1,1474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clinician's Guide to AI — Intracav Lumen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Nunito:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #EDE4D5;
+    --surface: #F6F0E8;
+    --surface-hi: #FDFAF5;
+    --surface-dk: #E5D9C8;
+    --border: #D4C7B5;
+    --border-lt: #E2D8CC;
+    --text: #28180C;
+    --text-2: #685040;
+    --text-3: #9E8272;
+    --text-inv: #FDFAF5;
+    --accent: #BC7250;
+    --accent-lt: #E8C4A8;
+    --accent-dk: #8F4E2E;
+    --accent-glow: rgba(188,114,80,0.12);
+    --sage: #7E9C84;
+    --sage-lt: #C4D9C7;
+    --rose: #B87070;
+    --shadow-sm: 0 1px 8px rgba(40,24,12,0.06), 0 0 0 1px rgba(40,24,12,0.04);
+    --shadow-md: 0 4px 28px rgba(40,24,12,0.10), 0 0 0 1px rgba(40,24,12,0.06);
+    --r: 16px;
+    --r-sm: 10px;
+    --r-xs: 6px;
+    --r-pill: 100px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; font-size: 16px; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    line-height: 1.75;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Noise overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    opacity: 0.028;
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  /* Nav */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(237,228,213,0.88);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-lt);
+    padding: 1rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--text);
+    letter-spacing: 0.02em;
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--accent); }
+
+  .nav-progress {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex: 1;
+    max-width: 340px;
+    margin: 0 auto;
+  }
+
+  .progress-track {
+    flex: 1;
+    height: 4px;
+    background: var(--border);
+    border-radius: 100px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-lt), var(--accent));
+    border-radius: 100px;
+    transition: width 400ms ease;
+    width: 0%;
+  }
+  .progress-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--text-3);
+    white-space: nowrap;
+  }
+
+  .nav-module {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 5rem 3rem 4rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .hero-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeUp 500ms ease forwards;
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-weight: 400;
+    line-height: 1.05;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeUp 500ms ease 100ms forwards;
+  }
+  .hero h1 em { color: var(--accent); font-style: italic; }
+
+  .hero-sub {
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--text-2);
+    max-width: 560px;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    animation: fadeUp 500ms ease 180ms forwards;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 500ms ease 260ms forwards;
+  }
+
+  .stat-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--surface-hi);
+    border: 1px solid var(--border-lt);
+    border-radius: var(--r-pill);
+    padding: 0.45rem 1rem;
+    box-shadow: var(--shadow-sm);
+  }
+  .stat-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--sage);
+    flex-shrink: 0;
+  }
+  .stat-dot.accent { background: var(--accent); }
+  .stat-dot.rose { background: var(--rose); }
+  .stat-pill span {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--text-2);
+  }
+
+  /* Module nav pills */
+  .module-nav {
+    max-width: 1100px;
+    margin: 0 auto 2rem;
+    padding: 0 3rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .module-pill {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.9rem;
+    border-radius: var(--r-pill);
+    border: 1px solid var(--border);
+    background: var(--surface-hi);
+    color: var(--text-3);
+    cursor: pointer;
+    transition: all 200ms ease;
+    text-decoration: none;
+  }
+  .module-pill:hover, .module-pill.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--text-inv);
+  }
+
+  /* Sections */
+  .section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3rem;
+  }
+
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-3);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border-lt);
+    max-width: 60px;
+  }
+
+  .section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+  }
+  .section h2 em { color: var(--accent); font-style: italic; }
+
+  .section-intro {
+    font-size: 0.92rem;
+    font-weight: 300;
+    color: var(--text-2);
+    max-width: 580px;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+  }
+
+  /* Cards */
+  .card {
+    background: var(--surface-hi);
+    border: 1px solid var(--border-lt);
+    border-radius: var(--r);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 200ms;
+  }
+  .card:hover { box-shadow: var(--shadow-md); }
+
+  .card-grid { display: grid; gap: 1rem; }
+  .card-grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+  .card-grid-3 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+
+  .card-accent { border-left: 3px solid var(--accent); }
+  .card-sage { border-left: 3px solid var(--sage); }
+  .card-rose { border-left: 3px solid var(--rose); }
+
+  .card-icon {
+    width: 36px; height: 36px;
+    border-radius: var(--r-xs);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem;
+    margin-bottom: 0.85rem;
+    flex-shrink: 0;
+  }
+  .card-icon.accent { background: var(--accent-glow); }
+  .card-icon.sage { background: rgba(126,156,132,0.14); }
+  .card-icon.rose { background: rgba(184,112,112,0.12); }
+
+  .card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.25;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+  }
+
+  .card p {
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: var(--text-2);
+    line-height: 1.7;
+  }
+
+  /* Prompt comparison interactive */
+  .prompt-lab {
+    background: var(--surface-hi);
+    border: 1px solid var(--border-lt);
+    border-radius: var(--r);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+  }
+
+  .prompt-lab-header {
+    background: var(--surface-dk);
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .dot { width: 10px; height: 10px; border-radius: 50%; }
+  .dot-r { background: var(--rose); }
+  .dot-y { background: var(--accent-lt); }
+  .dot-g { background: var(--sage); }
+
+  .prompt-lab-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--text-3);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-left: 0.25rem;
+  }
+
+  .prompt-tabs {
+    display: flex;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .prompt-tab {
+    flex: 1;
+    padding: 0.9rem 1.5rem;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    color: var(--text-3);
+    transition: all 200ms;
+    position: relative;
+  }
+  .prompt-tab::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transition: transform 200ms;
+  }
+  .prompt-tab.active { color: var(--accent); }
+  .prompt-tab.active::after { transform: scaleX(1); }
+  .prompt-tab:first-child { border-right: 1px solid var(--border); }
+
+  .prompt-panels { padding: 0; }
+
+  .prompt-panel { display: none; }
+  .prompt-panel.active { display: block; }
+
+  .prompt-example {
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--border-lt);
+  }
+  .prompt-example:last-child { border-bottom: none; }
+
+  .prompt-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
+    border-radius: var(--r-pill);
+    margin-bottom: 0.6rem;
+  }
+  .badge-weak { background: rgba(184,112,112,0.12); color: var(--rose); }
+  .badge-strong { background: rgba(126,156,132,0.14); color: #4A7050; }
+
+  .prompt-text {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--text);
+    line-height: 1.7;
+    background: var(--bg);
+    border-radius: var(--r-xs);
+    padding: 0.85rem 1rem;
+    border: 1px solid var(--border);
+    margin-bottom: 0.6rem;
+    white-space: pre-wrap;
+  }
+
+  .prompt-annotation {
+    font-size: 0.78rem;
+    color: var(--text-3);
+    font-style: italic;
+  }
+
+  /* Scenario quiz */
+  .scenario-card {
+    background: var(--surface-hi);
+    border: 1px solid var(--border-lt);
+    border-radius: var(--r);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+  }
+
+  .scenario-header {
+    background: linear-gradient(135deg, var(--text) 0%, #4A2A10 100%);
+    padding: 2rem 1.75rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .scenario-header::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 160px; height: 160px;
+    border-radius: 50%;
+    background: var(--accent-glow);
+    border: 1px solid rgba(188,114,80,0.2);
+  }
+
+  .scenario-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: rgba(253,250,245,0.5);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .scenario-q {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--text-inv);
+    line-height: 1.3;
+    position: relative;
+    z-index: 1;
+  }
+
+  .scenario-body { padding: 1.5rem 1.75rem; }
+
+  .scenario-context {
+    font-size: 0.82rem;
+    font-weight: 300;
+    color: var(--text-2);
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+    padding: 0.85rem 1rem;
+    background: var(--surface);
+    border-radius: var(--r-sm);
+    border-left: 3px solid var(--accent-lt);
+  }
+
+  .scenario-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .option-btn {
+    text-align: left;
+    padding: 0.85rem 1.1rem;
+    border-radius: var(--r-sm);
+    border: 1.5px solid var(--border);
+    background: var(--surface);
+    cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.85rem;
+    color: var(--text-2);
+    transition: all 180ms ease;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .option-btn:hover:not(:disabled) {
+    border-color: var(--accent);
+    background: var(--accent-glow);
+    color: var(--text);
+  }
+  .option-letter {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--text-3);
+    background: var(--surface-dk);
+    border-radius: 4px;
+    padding: 0.1rem 0.4rem;
+    flex-shrink: 0;
+    margin-top: 1px;
+    transition: all 180ms;
+  }
+  .option-btn:hover:not(:disabled) .option-letter {
+    background: var(--accent);
+    color: white;
+  }
+  .option-btn.correct { border-color: var(--sage); background: rgba(126,156,132,0.1); color: var(--text); }
+  .option-btn.correct .option-letter { background: var(--sage); color: white; }
+  .option-btn.incorrect { border-color: var(--rose); background: rgba(184,112,112,0.08); color: var(--text-3); }
+  .option-btn.incorrect .option-letter { background: var(--rose); color: white; }
+  .option-btn:disabled { cursor: default; }
+
+  .scenario-feedback {
+    display: none;
+    padding: 1rem 1.1rem;
+    border-radius: var(--r-sm);
+    font-size: 0.82rem;
+    line-height: 1.65;
+    animation: fadeUp 300ms ease forwards;
+  }
+  .scenario-feedback.correct-fb {
+    background: rgba(126,156,132,0.1);
+    border-left: 3px solid var(--sage);
+    color: var(--text-2);
+  }
+  .scenario-feedback.incorrect-fb {
+    background: rgba(184,112,112,0.08);
+    border-left: 3px solid var(--rose);
+    color: var(--text-2);
+  }
+  .scenario-feedback strong { color: var(--text); }
+  .scenario-feedback.show { display: block; }
+
+  .scenario-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.75rem;
+    border-top: 1px solid var(--border-lt);
+    gap: 1rem;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: var(--text-inv);
+    border: none;
+    border-radius: var(--r-pill);
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    padding: 0.55rem 1.35rem;
+    cursor: pointer;
+    transition: background 200ms;
+  }
+  .btn-primary:hover { background: var(--accent-dk); }
+  .btn-primary:disabled { opacity: 0.4; cursor: not-allowed; }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--text-3);
+    border: 1px solid var(--border);
+    border-radius: var(--r-pill);
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 0.5rem 1.2rem;
+    cursor: pointer;
+    transition: all 200ms;
+  }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+  .scenario-score {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--text-3);
+    letter-spacing: 0.06em;
+  }
+
+  /* Dos and Don'ts grid */
+  .do-dont {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 680px) {
+    .do-dont { grid-template-columns: 1fr; }
+    .hero, .section, .module-nav { padding-left: 1.25rem; padding-right: 1.25rem; }
+    nav { padding: 1rem 1.25rem; }
+    .nav-progress { display: none; }
+    .do-dont { grid-template-columns: 1fr; }
+  }
+
+  .do-list, .dont-list {
+    background: var(--surface-hi);
+    border: 1px solid var(--border-lt);
+    border-radius: var(--r);
+    overflow: hidden;
+  }
+
+  .list-header {
+    padding: 0.85rem 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    border-bottom: 1px solid var(--border-lt);
+  }
+  .do-list .list-header { background: rgba(126,156,132,0.08); }
+  .dont-list .list-header { background: rgba(184,112,112,0.06); }
+
+  .list-header-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .do-list .list-header-label { color: #4A7050; }
+  .dont-list .list-header-label { color: #7A3A3A; }
+
+  .list-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.8rem 1.25rem;
+    border-bottom: 1px solid var(--border-lt);
+    font-size: 0.85rem;
+    color: var(--text-2);
+    font-weight: 300;
+    line-height: 1.55;
+    cursor: default;
+    transition: background 150ms;
+  }
+  .list-item:last-child { border-bottom: none; }
+  .list-item:hover { background: var(--surface); }
+
+  .list-mark {
+    width: 16px; height: 16px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    font-size: 0.6rem;
+    font-weight: 700;
+    margin-top: 2px;
+  }
+  .do-list .list-mark { background: rgba(126,156,132,0.2); color: #4A7050; }
+  .dont-list .list-mark { background: rgba(184,112,112,0.15); color: #7A3A3A; }
+
+  /* Principle cards */
+  .principle {
+    display: flex;
+    gap: 1.25rem;
+    padding: 1.5rem;
+    background: var(--surface-hi);
+    border: 1px solid var(--border-lt);
+    border-radius: var(--r);
+    align-items: flex-start;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 200ms;
+  }
+  .principle:hover { box-shadow: var(--shadow-md); }
+
+  .principle-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--accent-lt);
+    line-height: 1;
+    flex-shrink: 0;
+    width: 40px;
+    text-align: center;
+  }
+
+  .principle-content h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--text);
+    margin-bottom: 0.35rem;
+  }
+
+  .principle-content p {
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: var(--text-2);
+    line-height: 1.7;
+  }
+
+  /* Trust spectrum */
+  .trust-spectrum {
+    background: var(--surface-hi);
+    border: 1px solid var(--border-lt);
+    border-radius: var(--r);
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .spectrum-track {
+    position: relative;
+    height: 8px;
+    background: linear-gradient(90deg, var(--rose) 0%, var(--accent) 40%, var(--accent-lt) 65%, var(--sage) 100%);
+    border-radius: 100px;
+    margin: 1.5rem 0 2.5rem;
+  }
+
+  .spectrum-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -1.75rem;
+    margin-bottom: 1.5rem;
+  }
+  .spectrum-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.58rem;
+    color: var(--text-3);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .spectrum-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  .spectrum-item {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.7rem 1rem;
+    border-radius: var(--r-sm);
+    cursor: pointer;
+    transition: background 150ms;
+    border: 1px solid transparent;
+  }
+  .spectrum-item:hover { background: var(--surface); border-color: var(--border-lt); }
+
+  .spectrum-dot-wrap {
+    width: 36px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+  }
+  .spectrum-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .spectrum-item-label {
+    font-size: 0.85rem;
+    color: var(--text-2);
+    font-weight: 400;
+    flex: 1;
+  }
+
+  .spectrum-item-note {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    color: var(--text-3);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  /* Divider */
+  .divider {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 3rem;
+    height: 1px;
+    background: var(--border-lt);
+  }
+
+  /* Footer callout */
+  .callout {
+    max-width: 1100px;
+    margin: 3rem auto;
+    padding: 0 3rem;
+  }
+  .callout-inner {
+    background: var(--text);
+    border-radius: var(--r);
+    padding: 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .callout-inner::before {
+    content: '';
+    position: absolute;
+    bottom: -60px; right: -60px;
+    width: 220px; height: 220px;
+    border-radius: 50%;
+    background: rgba(188,114,80,0.12);
+    border: 1px solid rgba(188,114,80,0.15);
+  }
+  .callout-inner::after {
+    content: '';
+    position: absolute;
+    top: -40px; left: 30%;
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    background: rgba(126,156,132,0.1);
+  }
+
+  .callout-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    color: rgba(253,250,245,0.4);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .callout-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--text-inv);
+    line-height: 1.15;
+    margin-bottom: 0.75rem;
+    position: relative;
+    z-index: 1;
+  }
+  .callout-heading em { color: var(--accent-lt); font-style: italic; }
+
+  .callout-sub {
+    font-size: 0.88rem;
+    font-weight: 300;
+    color: rgba(253,250,245,0.65);
+    max-width: 480px;
+    line-height: 1.75;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Animations */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 500ms ease, transform 500ms ease;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Completion state */
+  .completion-banner {
+    display: none;
+    background: rgba(126,156,132,0.12);
+    border: 1px solid var(--sage-lt);
+    border-radius: var(--r);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1.25rem;
+    text-align: center;
+    animation: fadeUp 400ms ease forwards;
+  }
+  .completion-banner.show { display: block; }
+  .completion-banner h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #4A7050;
+    margin-bottom: 0.25rem;
+  }
+  .completion-banner p {
+    font-size: 0.82rem;
+    color: var(--text-2);
+  }
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav>
+  <a class="nav-logo" href="#">Intra<span>cav</span></a>
+  <div class="nav-progress">
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+    <span class="progress-label" id="progressLabel">0 / 5 modules</span>
+  </div>
+  <span class="nav-module" id="currentModule">01 — Foundations</span>
+</nav>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-eyebrow">Lumen · Clinical AI Education</div>
+  <h1>The Clinician's<br>Guide to <em>Working with AI</em></h1>
+  <p class="hero-sub">AI doesn't replace clinical judgment — it sharpens it. Learn the principles, patterns, and practices that separate effective clinical AI use from dangerous over-reliance.</p>
+  <div class="hero-stats">
+    <div class="stat-pill"><div class="stat-dot"></div><span>5 Interactive Modules</span></div>
+    <div class="stat-pill"><div class="stat-dot accent"></div><span>12 Clinical Scenarios</span></div>
+    <div class="stat-pill"><div class="stat-dot rose"></div><span>3 Prompt Frameworks</span></div>
+  </div>
+</div>
+
+<!-- Module Nav -->
+<div class="module-nav">
+  <a href="#foundations" class="module-pill active" data-module="1">01 Foundations</a>
+  <a href="#prompting" class="module-pill" data-module="2">02 Effective Prompting</a>
+  <a href="#trust" class="module-pill" data-module="3">03 Trust Calibration</a>
+  <a href="#scenarios" class="module-pill" data-module="4">04 Case Scenarios</a>
+  <a href="#principles" class="module-pill" data-module="5">05 Core Principles</a>
+</div>
+
+<div class="divider"></div>
+
+<!-- MODULE 1: Foundations -->
+<section class="section fade-in" id="foundations">
+  <div class="section-label">01 — Foundations</div>
+  <h2>What AI <em>actually</em> is — and isn't</h2>
+  <p class="section-intro">Before you interact with a clinical AI, understand its fundamental nature. The model predicts plausible language, not verified truth. That distinction changes everything.</p>
+
+  <div class="card-grid card-grid-3">
+    <div class="card card-accent fade-in">
+      <div class="card-icon accent">🧠</div>
+      <h3>Pattern, Not Reasoning</h3>
+      <p>AI generates responses based on statistical patterns learned from text. It can produce confident-sounding answers that are factually incorrect — especially for rare conditions or recent guidelines.</p>
+    </div>
+    <div class="card card-sage fade-in">
+      <div class="card-icon sage">📚</div>
+      <h3>Knowledge Has a Cutoff</h3>
+      <p>Training data ends at a specific date. Drug approvals, updated protocols, and new evidence published after that date are invisible to the model unless retrieved via real-time search tools.</p>
+    </div>
+    <div class="card card-rose fade-in">
+      <div class="card-icon rose">⚠️</div>
+      <h3>Confident, Not Certain</h3>
+      <p>AI does not experience uncertainty the way clinicians do. A model may state an incorrect dosage with the same fluency and apparent confidence as a correct one. Always verify critical values.</p>
+    </div>
+    <div class="card card-accent fade-in">
+      <div class="card-icon accent">🔍</div>
+      <h3>Context is Everything</h3>
+      <p>The same query yields dramatically different quality responses depending on how much clinical context you provide. Sparse prompts produce generic outputs. Specific prompts surface precise guidance.</p>
+    </div>
+    <div class="card card-sage fade-in">
+      <div class="card-icon sage">⚖️</div>
+      <h3>Not Diagnostic, Educational</h3>
+      <p>Clinical AI tools like Lumen operate in the knowledge and education space — not as diagnostic instruments. Your clinical judgment governs patient decisions. The AI informs it.</p>
+    </div>
+    <div class="card card-rose fade-in">
+      <div class="card-icon rose">🔄</div>
+      <h3>Iteration Improves Output</h3>
+      <p>Your first prompt rarely produces the best response. Refine, redirect, and challenge the output. The most effective clinicians treat AI interaction as a dialogue, not a query.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- MODULE 2: Effective Prompting -->
+<section class="section fade-in" id="prompting">
+  <div class="section-label">02 — Effective Prompting</div>
+  <h2>Write prompts that get<br><em>clinical-grade</em> responses</h2>
+  <p class="section-intro">The quality of your output is a direct function of your input. Here's the difference between a prompt that wastes time and one that surfaces real clinical value.</p>
+
+  <div class="prompt-lab fade-in">
+    <div class="prompt-lab-header">
+      <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
+      <span class="prompt-lab-title">Prompt Comparison Lab · Select a Clinical Domain</span>
+    </div>
+    <div class="prompt-tabs">
+      <button class="prompt-tab active" onclick="showTab(this,'vascular')">Vascular Access</button>
+      <button class="prompt-tab" onclick="showTab(this,'peds')">Pediatrics</button>
+    </div>
+    <div class="prompt-panels">
+
+      <div class="prompt-panel active" id="panel-vascular">
+        <div class="prompt-example">
+          <div class="prompt-badge badge-weak">⚠ Weak Prompt</div>
+          <div class="prompt-text">What's the best PICC line for chemo?</div>
+          <div class="prompt-annotation">No patient context, no indication detail, no preferred format — the model will return a generic, potentially inapplicable response.</div>
+        </div>
+        <div class="prompt-example">
+          <div class="prompt-badge badge-strong">✓ Strong Prompt</div>
+          <div class="prompt-text">Patient context: 58yo female with breast cancer, starting dose-dense AC-T chemotherapy. History of bilateral mastectomy, bilateral arm lymphedema. Requires long-term vesicant administration.
+
+What vascular access device should I consider, what anatomical alternatives exist given contraindications to both arms, and what does current NCCCP guidance recommend for vesicant administration routes?
+
+Format: Decision rationale first, then alternatives, then supporting evidence.</div>
+          <div class="prompt-annotation">Clinical specificity, explicit contraindications, preference for evidence-based response, and a structured output format — yields precise, actionable guidance.</div>
+        </div>
+      </div>
+
+      <div class="prompt-panel" id="panel-peds">
+        <div class="prompt-example">
+          <div class="prompt-badge badge-weak">⚠ Weak Prompt</div>
+          <div class="prompt-text">Dosing for vancomycin in a kid with sepsis</div>
+          <div class="prompt-annotation">Weight unknown, renal function unstated, severity undefined — any dosing returned here would be unsafe to apply without critical assumptions.</div>
+        </div>
+        <div class="prompt-example">
+          <div class="prompt-badge badge-strong">✓ Strong Prompt</div>
+          <div class="prompt-text">Pediatric patient: 7yo, 24kg, admitted with Staph aureus bacteremia, baseline creatinine 0.5 mg/dL, no prior vancomycin exposure.
+
+Summarize current IDSA/ASHP/SIDP 2020 consensus guidance on vancomycin AUC-guided dosing for pediatric patients. What AUC target is recommended, what is the initial dosing strategy for this weight and renal function, and when should the first trough or AUC measurement occur?
+
+Flag any areas where pediatric data is limited vs. extrapolated from adult studies.</div>
+          <div class="prompt-annotation">Weight, renal baseline, age, and organism specified. Evidence source named. Explicit request to flag extrapolation — critical for pediatric dosing safety.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div style="margin-top: 2rem;">
+    <div class="section-label" style="margin-bottom: 1rem;">The CLEAR Framework for Clinical Prompts</div>
+    <div class="card-grid card-grid-2 fade-in">
+      <div class="principle">
+        <div class="principle-num">C</div>
+        <div class="principle-content">
+          <h3>Context</h3>
+          <p>Age, weight, diagnosis, comorbidities, allergies, relevant labs. The more the model knows, the more specific its guidance. Treat it like a curbside consult — you'd give the receiving clinician this information.</p>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="principle-num">L</div>
+        <div class="principle-content">
+          <h3>Limitation</h3>
+          <p>Name the constraints: contraindications, drug intolerances, institutional formulary restrictions, access limitations. The model cannot infer what it doesn't know.</p>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="principle-num">E</div>
+        <div class="principle-content">
+          <h3>Evidence Source</h3>
+          <p>Request specific guidelines when relevant: "per ACLS 2023," "per ACC/AHA," "per Pediatric Red Book." This anchors the response to verifiable sources rather than generalized synthesis.</p>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="principle-num">A</div>
+        <div class="principle-content">
+          <h3>Answer Format</h3>
+          <p>Tell the model how you want the response structured. "Rationale first, then dosing, then monitoring parameters." Structured output reduces cognitive load when time is critical.</p>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="principle-num">R</div>
+        <div class="principle-content">
+          <h3>Risk Flags</h3>
+          <p>Explicitly request that the model flag its uncertainty: "Note where evidence is limited, extrapolated, or where I should verify independently." This surfaces the model's own epistemic edges.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- MODULE 3: Trust Calibration -->
+<section class="section fade-in" id="trust">
+  <div class="section-label">03 — Trust Calibration</div>
+  <h2>When to trust.<br>When to <em>verify.</em> When to reject.</h2>
+  <p class="section-intro">Not all AI outputs carry equal risk. Your verification effort should scale with the stakes of the decision — and with the known failure modes of the model.</p>
+
+  <div class="trust-spectrum fade-in">
+    <div class="section-label" style="margin-bottom: 0.5rem;">Clinical AI Reliability Spectrum</div>
+    <p style="font-size: 0.82rem; color: var(--text-3); margin-bottom: 1rem; font-weight: 300;">Click any item to see verification guidance</p>
+    <div class="spectrum-track"></div>
+    <div class="spectrum-labels">
+      <span class="spectrum-label">High Caution</span>
+      <span class="spectrum-label">Moderate</span>
+      <span class="spectrum-label">Lower Risk</span>
+    </div>
+    <div class="spectrum-items" id="spectrumItems">
+      <div class="spectrum-item" onclick="toggleSpectrum(this)" data-detail="Specific drug dosages change frequently, have narrow therapeutic windows, and are common sources of model hallucination. Always verify against current reference (Micromedex, prescribing info, pharmacist).">
+        <div class="spectrum-dot-wrap"><div class="spectrum-dot" style="background: var(--rose)"></div></div>
+        <span class="spectrum-item-label">Specific drug dosages and interactions</span>
+        <span class="spectrum-item-note">Always verify</span>
+      </div>
+      <div class="spectrum-item" onclick="toggleSpectrum(this)" data-detail="Lab reference ranges vary by institution, analyzer, and patient population. AI often cites textbook ranges that differ from your lab's reported normals. Check your institutional reference.">
+        <div class="spectrum-dot-wrap"><div class="spectrum-dot" style="background: var(--rose)"></div></div>
+        <span class="spectrum-item-label">Lab reference ranges and thresholds</span>
+        <span class="spectrum-item-note">Always verify</span>
+      </div>
+      <div class="spectrum-item" onclick="toggleSpectrum(this)" data-detail="Guidelines update frequently. The model's training cutoff means it may cite superseded guidance. For treatment decisions, always confirm you're working from the current published version.">
+        <div class="spectrum-dot-wrap"><div class="spectrum-dot" style="background: var(--accent)"></div></div>
+        <span class="spectrum-item-label">Clinical guideline recommendations</span>
+        <span class="spectrum-item-note">Verify currency</span>
+      </div>
+      <div class="spectrum-item" onclick="toggleSpectrum(this)" data-detail="AI can reliably summarize diagnostic criteria for well-established conditions (DSM, AHA definitions). Cross-check for any criteria set that has been recently revised.">
+        <div class="spectrum-dot-wrap"><div class="spectrum-dot" style="background: var(--accent)"></div></div>
+        <span class="spectrum-item-label">Established diagnostic criteria</span>
+        <span class="spectrum-item-note">Spot-check revisions</span>
+      </div>
+      <div class="spectrum-item" onclick="toggleSpectrum(this)" data-detail="AI is highly reliable for explaining the mechanism of action of well-characterized drugs and the pathophysiology of established diseases. Ideal for patient education drafts and clinical teaching.">
+        <div class="spectrum-dot-wrap"><div class="spectrum-dot" style="background: var(--sage)"></div></div>
+        <span class="spectrum-item-label">Mechanism of action and pathophysiology</span>
+        <span class="spectrum-item-note">Generally reliable</span>
+      </div>
+      <div class="spectrum-item" onclick="toggleSpectrum(this)" data-detail="Drafting patient education materials, summarizing medical records for handoff, generating template language for notes — AI performs well here with low risk of clinically actionable error.">
+        <div class="spectrum-dot-wrap"><div class="spectrum-dot" style="background: var(--sage)"></div></div>
+        <span class="spectrum-item-label">Documentation drafts and patient education</span>
+        <span class="spectrum-item-note">Review before use</span>
+      </div>
+    </div>
+    <div id="spectrumDetail" style="display:none; margin-top: 1rem; padding: 1rem 1.1rem; background: var(--surface); border-radius: var(--r-sm); border-left: 3px solid var(--accent); font-size: 0.82rem; color: var(--text-2); line-height: 1.7; animation: fadeUp 250ms ease forwards;"></div>
+  </div>
+
+  <div style="margin-top: 2rem;">
+    <div class="do-dont fade-in">
+      <div class="do-list">
+        <div class="list-header">
+          <div class="list-mark" style="background: rgba(126,156,132,0.2); color: #4A7050;">✓</div>
+          <span class="list-header-label">Effective Verification Habits</span>
+        </div>
+        <div class="list-item"><div class="list-mark">✓</div>Cross-reference drug dosages with Micromedex or institutional pharmacy before ordering</div>
+        <div class="list-item"><div class="list-mark">✓</div>Ask the AI to cite its source, then confirm that source exists and says what it claims</div>
+        <div class="list-item"><div class="list-mark">✓</div>Use AI output as a starting framework — your clinical exam always supersedes it</div>
+        <div class="list-item"><div class="list-mark">✓</div>Request that the model explicitly flag its uncertainty and knowledge limits</div>
+        <div class="list-item"><div class="list-mark">✓</div>For rare diseases or recent approvals, assume the model may lack sufficient training data</div>
+      </div>
+      <div class="dont-list">
+        <div class="list-header">
+          <div class="list-mark" style="background: rgba(184,112,112,0.15); color: #7A3A3A;">✕</div>
+          <span class="list-header-label">Failure Patterns to Avoid</span>
+        </div>
+        <div class="list-item"><div class="list-mark">✕</div>Copy-pasting AI-generated dosing into orders without independent verification</div>
+        <div class="list-item"><div class="list-mark">✕</div>Treating fluent, confident-sounding output as validated clinical truth</div>
+        <div class="list-item"><div class="list-mark">✕</div>Using AI to rule out a diagnosis when clinical suspicion remains high</div>
+        <div class="list-item"><div class="list-mark">✕</div>Assuming the model has access to your patient's actual data — it doesn't</div>
+        <div class="list-item"><div class="list-mark">✕</div>Bypassing your own reasoning because the AI "already figured it out"</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- MODULE 4: Scenarios -->
+<section class="section fade-in" id="scenarios">
+  <div class="section-label">04 — Case Scenarios</div>
+  <h2>Test your <em>clinical AI judgment</em></h2>
+  <p class="section-intro">Apply what you've learned. Each scenario reflects a real interaction pattern. There's one best answer — and understanding why matters more than the score.</p>
+
+  <div class="completion-banner" id="completionBanner">
+    <h4>Module Complete</h4>
+    <p id="completionMsg"></p>
+  </div>
+
+  <div class="scenario-card fade-in" id="scenarioCard">
+    <div class="scenario-header">
+      <div class="scenario-num" id="scenarioNum">Scenario 01 / 04</div>
+      <div class="scenario-q" id="scenarioQ"></div>
+    </div>
+    <div class="scenario-body">
+      <div class="scenario-context" id="scenarioContext"></div>
+      <div class="scenario-options" id="scenarioOptions"></div>
+      <div class="scenario-feedback" id="scenarioFeedback"></div>
+    </div>
+    <div class="scenario-nav">
+      <span class="scenario-score" id="scoreDisplay">Score: 0 / 0</span>
+      <div style="display:flex; gap: 0.65rem;">
+        <button class="btn-ghost" id="prevBtn" onclick="prevScenario()" disabled>← Prev</button>
+        <button class="btn-primary" id="nextBtn" onclick="nextScenario()" disabled>Next →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- MODULE 5: Core Principles -->
+<section class="section fade-in" id="principles">
+  <div class="section-label">05 — Core Principles</div>
+  <h2>The 6 laws of<br><em>responsible clinical AI use</em></h2>
+  <p class="section-intro">These aren't guidelines — they're invariants. Clinical AI deployed against these principles introduces patient risk, not clinical value.</p>
+
+  <div class="card-grid" style="gap: 1rem;" id="principlesList">
+    <div class="principle fade-in">
+      <div class="principle-num">1</div>
+      <div class="principle-content">
+        <h3>Clinical judgment is primary. AI is advisory.</h3>
+        <p>No AI output overrides your direct observation of the patient, your physical exam, or your gestalt. The model has never met your patient. You have.</p>
+      </div>
+    </div>
+    <div class="principle fade-in">
+      <div class="principle-num">2</div>
+      <div class="principle-content">
+        <h3>Verify before you act. Fluency is not accuracy.</h3>
+        <p>The most dangerous AI failure mode isn't nonsense — it's a plausible-sounding error. An incorrect creatinine cutoff stated confidently is more dangerous than an obviously garbled output.</p>
+      </div>
+    </div>
+    <div class="principle fade-in">
+      <div class="principle-num">3</div>
+      <div class="principle-content">
+        <h3>Specificity in → specificity out.</h3>
+        <p>Vague prompts return generic answers. The investment in a precise, contextual prompt pays compounding returns in response quality. Learn the frameworks. Build the habit.</p>
+      </div>
+    </div>
+    <div class="principle fade-in">
+      <div class="principle-num">4</div>
+      <div class="principle-content">
+        <h3>Uncertainty should be named, not hidden.</h3>
+        <p>Always ask the model to flag where it is uncertain, where evidence is sparse, and where you should verify independently. A good tool surfaces its own limitations. Insist on it.</p>
+      </div>
+    </div>
+    <div class="principle fade-in">
+      <div class="principle-num">5</div>
+      <div class="principle-content">
+        <h3>PHI belongs in protected environments.</h3>
+        <p>Do not enter identifying patient information into any AI tool not covered by a HIPAA BAA and institutional approval. De-identify before you prompt. Always.</p>
+      </div>
+    </div>
+    <div class="principle fade-in">
+      <div class="principle-num">6</div>
+      <div class="principle-content">
+        <h3>You remain accountable. The model does not.</h3>
+        <p>The AI cannot be named in a lawsuit, cannot hold a license, and will not stand before a medical board. The clinical decision — informed by AI or not — belongs entirely to you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Callout -->
+<div class="callout fade-in">
+  <div class="callout-inner">
+    <div class="callout-eyebrow">Lumen · Clinical Knowledge Platform</div>
+    <div class="callout-heading">Intelligence that stays<br><em>inside the wire.</em></div>
+    <p class="callout-sub" style="margin-top: 0.75rem;">Lumen is built for clinicians who demand both precision and accountability. Evidence-grounded. Disclaimer-forward. Never diagnostic.</p>
+  </div>
+</div>
+
+<script>
+// ── Scroll-triggered fade-in ──────────────────────────────────────
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// ── Progress tracking ─────────────────────────────────────────────
+const moduleEls = document.querySelectorAll('.section');
+const pillEls   = document.querySelectorAll('.module-pill');
+const moduleSeen = new Set();
+
+const progressFill  = document.getElementById('progressFill');
+const progressLabel = document.getElementById('progressLabel');
+const currentMod    = document.getElementById('currentModule');
+
+const modLabels = ['01 — Foundations','02 — Prompting','03 — Trust','04 — Scenarios','05 — Principles'];
+
+const sectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const idx = Array.from(moduleEls).indexOf(e.target);
+      if (idx >= 0) {
+        moduleSeen.add(idx);
+        progressFill.style.width = (moduleSeen.size / 5 * 100) + '%';
+        progressLabel.textContent = moduleSeen.size + ' / 5 modules';
+        currentMod.textContent = modLabels[idx] || '';
+        pillEls.forEach((p,i) => p.classList.toggle('active', i === idx));
+      }
+    }
+  });
+}, { threshold: 0.3 });
+moduleEls.forEach(el => sectionObserver.observe(el));
+
+// ── Prompt tab switch ────────────────────────────────────────────
+function showTab(btn, id) {
+  document.querySelectorAll('.prompt-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.prompt-panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('panel-' + id).classList.add('active');
+}
+
+// ── Trust spectrum toggle ────────────────────────────────────────
+let activeSpectrumItem = null;
+function toggleSpectrum(el) {
+  const detail = document.getElementById('spectrumDetail');
+  if (activeSpectrumItem === el) {
+    detail.style.display = 'none';
+    activeSpectrumItem = null;
+    return;
+  }
+  detail.textContent = el.dataset.detail;
+  detail.style.display = 'block';
+  detail.style.animation = 'none';
+  detail.offsetHeight;
+  detail.style.animation = 'fadeUp 250ms ease forwards';
+  document.querySelectorAll('.spectrum-item').forEach(i => i.style.background = '');
+  el.style.background = 'var(--surface)';
+  activeSpectrumItem = el;
+}
+
+// ── Scenarios ────────────────────────────────────────────────────
+const scenarios = [
+  {
+    q: "A resident asks you to verify an AI-suggested diagnosis before ordering labs. What's the most appropriate response?",
+    context: "The AI tool suggested pulmonary embolism as the most likely diagnosis in a 34-year-old patient with pleuritic chest pain and tachycardia. The model provided a Well's score calculation and recommended CTPA without seeing the patient.",
+    options: [
+      { text: "Trust the AI — Well's is algorithmic and the model handles scoring correctly.", correct: false },
+      { text: "Review the AI's reasoning, independently assess the patient, validate each criterion for the Well's score from your own exam, then decide on imaging.", correct: true },
+      { text: "Order the CTPA anyway since PE is life-threatening and AI recommends it.", correct: false },
+      { text: "Reject the AI output entirely and start the workup from scratch.", correct: false }
+    ],
+    fb_correct: "Correct. The AI can suggest frameworks — but it has not examined the patient. Each criterion in a clinical decision tool must be verified from your own assessment. The model's calculation is only as good as the inputs it assumed.",
+    fb_incorrect: "The best approach is to treat the AI's output as a hypothesis to test, not a diagnosis to accept. Validate every clinical criterion independently. The AI lacks access to your physical exam, your gestalt, and the patient's history as you heard it."
+  },
+  {
+    q: "You prompt Lumen for vancomycin dosing. The response is fluent, well-formatted, and includes a specific mg/kg dose. What do you do?",
+    context: "The patient is a 68-year-old with Stage 3 CKD (eGFR 28) admitted for MRSA bacteremia. Lumen returns a confident vancomycin dosing recommendation with loading dose and interval.",
+    options: [
+      { text: "Transcribe the dosing into the order — it looks correct and the model cited AUC-guided principles.", correct: false },
+      { text: "Verify against Micromedex or call pharmacy before entering the order, noting the renal impairment requires careful interval adjustment.", correct: true },
+      { text: "Double the interval the model suggested since CKD patients always need extended intervals.", correct: false },
+      { text: "Reject any AI-generated dosing as inherently unreliable.", correct: false }
+    ],
+    fb_correct: "Exactly right. Vancomycin in renal impairment sits in the high-verification zone of the trust spectrum. Even a well-formatted, plausible-sounding response must be cross-checked with a current reference before ordering — the consequences of error are serious.",
+    fb_incorrect: "Specific drug dosages — especially in renally impaired patients — must always be independently verified before ordering. The model's confident output is a starting point for verification, not the endpoint. Call pharmacy or check Micromedex."
+  },
+  {
+    q: "Which prompt is most likely to yield a clinically useful response about anticoagulation in a patient with HIT?",
+    context: "You need guidance on alternative anticoagulation options for a patient with confirmed heparin-induced thrombocytopenia and an acute DVT requiring treatment.",
+    options: [
+      { text: '"What do I use instead of heparin in HIT?"', correct: false },
+      { text: '"Alternatives to heparin in clotting"', correct: false },
+      { text: '"Patient has confirmed HIT (serotonin release assay positive) with acute proximal DVT. Summarize current ASH 2023 HIT guideline recommendations for alternative anticoagulation — include agent options, dosing considerations for renal function (eGFR 55), and duration of therapy."', correct: true },
+      { text: '"HIT treatment options with evidence"', correct: false }
+    ],
+    fb_correct: "This prompt applies the CLEAR framework: clinical context, confirmed diagnosis, specific guideline source, renal constraint, and structured output request. It gives the model everything it needs to return precise, applicable guidance rather than a generic list.",
+    fb_incorrect: "Sparse prompts return generic answers. Option C applies the CLEAR framework — clinical context, confirmed diagnosis (with assay specificity), guideline source named, renal constraint included, and output structure specified. The difference in response quality is significant."
+  },
+  {
+    q: "When is it appropriate to enter a patient's name, DOB, and MRN into an AI prompt?",
+    context: "You want to use a clinical AI tool to help summarize a complex patient's history for a handoff note. The tool is a general-purpose consumer AI with no institutional approval or BAA.",
+    options: [
+      { text: "Always — the AI needs context to help you effectively.", correct: false },
+      { text: "Only if you use a VPN.", correct: false },
+      { text: "Never. De-identify the case (age range, diagnosis, relevant history) before prompting any tool without a HIPAA BAA and institutional approval.", correct: true },
+      { text: "It's fine if you delete the conversation afterward.", correct: false }
+    ],
+    fb_correct: "Correct. PHI must never enter an AI tool without a signed BAA and institutional authorization. De-identification protects your patient and your license. Describe the case in clinical terms — the tool doesn't need the name to help you draft the note.",
+    fb_incorrect: "Entering PHI into any AI tool without a HIPAA BAA and institutional approval is a reportable privacy breach. De-identify the case completely before prompting — the AI needs clinical details, not identifying information, to help you."
+  }
+];
+
+let currentIdx = 0;
+let score = 0;
+let answered = new Array(scenarios.length).fill(false);
+let correct  = new Array(scenarios.length).fill(false);
+
+function renderScenario() {
+  const s = scenarios[currentIdx];
+  document.getElementById('scenarioNum').textContent =
+    'Scenario ' + String(currentIdx + 1).padStart(2,'0') + ' / ' + String(scenarios.length).padStart(2,'0');
+  document.getElementById('scenarioQ').textContent = s.q;
+  document.getElementById('scenarioContext').textContent = s.context;
+
+  const optContainer = document.getElementById('scenarioOptions');
+  optContainer.innerHTML = '';
+  const letters = ['A','B','C','D'];
+  s.options.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'option-btn';
+    btn.innerHTML = `<span class="option-letter">${letters[i]}</span> ${opt.text}`;
+    btn.onclick = () => selectOption(btn, opt.correct, i);
+    if (answered[currentIdx]) {
+      btn.disabled = true;
+      if (opt.correct) btn.classList.add('correct');
+    }
+    optContainer.appendChild(btn);
+  });
+
+  const fb = document.getElementById('scenarioFeedback');
+  if (answered[currentIdx]) {
+    fb.textContent = correct[currentIdx] ? s.fb_correct : s.fb_incorrect;
+    fb.className = 'scenario-feedback show ' + (correct[currentIdx] ? 'correct-fb' : 'incorrect-fb');
+  } else {
+    fb.className = 'scenario-feedback';
+    fb.textContent = '';
+  }
+
+  document.getElementById('prevBtn').disabled = currentIdx === 0;
+  document.getElementById('nextBtn').disabled = !answered[currentIdx] && currentIdx < scenarios.length - 1;
+  if (currentIdx === scenarios.length - 1 && answered[currentIdx]) {
+    document.getElementById('nextBtn').textContent = 'Finish ✓';
+    document.getElementById('nextBtn').disabled = false;
+  } else if (currentIdx < scenarios.length - 1) {
+    document.getElementById('nextBtn').textContent = 'Next →';
+  }
+
+  updateScore();
+}
+
+function selectOption(btn, isCorrect, idx) {
+  if (answered[currentIdx]) return;
+  answered[currentIdx] = true;
+  correct[currentIdx] = isCorrect;
+  if (isCorrect) score++;
+
+  const allBtns = document.querySelectorAll('.option-btn');
+  allBtns.forEach((b, i) => {
+    b.disabled = true;
+    if (scenarios[currentIdx].options[i].correct) b.classList.add('correct');
+  });
+  if (!isCorrect) btn.classList.add('incorrect');
+
+  const s = scenarios[currentIdx];
+  const fb = document.getElementById('scenarioFeedback');
+  fb.textContent = isCorrect ? s.fb_correct : s.fb_incorrect;
+  fb.className = 'scenario-feedback show ' + (isCorrect ? 'correct-fb' : 'incorrect-fb');
+
+  document.getElementById('nextBtn').disabled = false;
+  if (currentIdx === scenarios.length - 1) {
+    document.getElementById('nextBtn').textContent = 'Finish ✓';
+  }
+  updateScore();
+}
+
+function nextScenario() {
+  if (currentIdx < scenarios.length - 1) {
+    currentIdx++;
+    renderScenario();
+  } else {
+    showCompletion();
+  }
+}
+
+function prevScenario() {
+  if (currentIdx > 0) { currentIdx--; renderScenario(); }
+}
+
+function updateScore() {
+  const answeredCount = answered.filter(Boolean).length;
+  document.getElementById('scoreDisplay').textContent = 'Score: ' + score + ' / ' + answeredCount;
+}
+
+function showCompletion() {
+  const pct = Math.round(score / scenarios.length * 100);
+  let msg = pct === 100 ? "Perfect — " + score + "/" + scenarios.length + " correct. You've internalized these patterns." :
+            pct >= 75  ? score + "/" + scenarios.length + " correct. Strong fundamentals — revisit the missed scenarios." :
+                         score + "/" + scenarios.length + " correct. Review modules 2 and 3 before moving to clinical practice.";
+  document.getElementById('completionMsg').textContent = msg;
+  document.getElementById('completionBanner').classList.add('show');
+  document.getElementById('scenarioCard').style.display = 'none';
+}
+
+renderScenario();
+</script>
+</body>
+</html>
