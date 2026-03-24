@@ -3,11 +3,14 @@
 <article class="handbook-single-page">
   <nav class="handbook-breadcrumbs">
     <a href="/">Home</a>
+    {{- $ancestors := .Ancestors.Reverse }}
+    {{- range $ancestors }}
+    {{- if ne .RelPermalink "/" }}
     <span class="handbook-breadcrumbs-separator">/</span>
-    {{- if .Section }}
-    <a href="/{{ .Section }}/">{{ .Section | title }}</a>
-    <span class="handbook-breadcrumbs-separator">/</span>
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
     {{- end }}
+    {{- end }}
+    <span class="handbook-breadcrumbs-separator">/</span>
     <span class="handbook-breadcrumbs-current">{{ .Title }}</span>
   </nav>
 

@@ -40,32 +40,33 @@ sitemap:
 # Navigation menu
 menus:
   main:
-    - name: Guidelines
-      url: /guidelines/
+    - name: Vascular Access
+      url: /vascular-access/
       weight: 10
-    - name: Clinical Database
-      url: /guides/
+    - name: Emergency Medicine
+      url: /ed/
       weight: 20
-    - name: Education
-      url: /education/
-      weight: 25
-    - name: Policies
-      url: /policies/
+    - name: Critical Care
+      url: /icu/
       weight: 30
-    - name: Patient Education
-      url: /patient-education/
+    - name: Oncology
+      url: /oncology/
       weight: 40
+    - name: Infection Prevention
+      url: /infection-prevention/
+      weight: 50
     - name: Blog
       url: /blog/
-      weight: 50
+      weight: 60
 
 # Permalinks for clean URLs
 permalinks:
   blog: /blog/:slug/
-  policies: /policies/:slug/
-  patient-education: /patient-education/:slug/
-  resources: /resources/:slug/
-  guidelines: /guidelines/:sections/:slug/
+  vascular-access: /:sections/:slug/
+  ed: /:sections/:slug/
+  icu: /:sections/:slug/
+  oncology: /:sections/:slug/
+  infection-prevention: /:sections/:slug/
 
 # Output formats
 outputs:

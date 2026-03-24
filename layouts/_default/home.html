@@ -46,7 +46,7 @@
     </div>
   </section>
 
-  {{- $policies := where site.RegularPages "Section" "policies" }}
+  {{- $policies := where site.RegularPages "Params.content_type" "policies" }}
   {{- $blog := where site.RegularPages "Section" "blog" }}
 
   <div class="handbook-home-sections">
@@ -54,7 +54,7 @@
     <section class="handbook-home-section">
       <div class="handbook-section-header">
         <h2 class="handbook-section-title">
-          <a href="/policies/">Clinical Policies</a>
+          <a href="/vascular-access/policies/">Clinical Policies</a>
         </h2>
         <a href="https://qpolicy.ai" class="section-conversion-link" target="_blank" rel="noopener noreferrer">
           <span>For teams</span>
@@ -96,7 +96,7 @@
         {{- end }}
         {{- if gt (len $policies) 6 }}
         <div class="handbook-section-more">
-          <a href="/policies/">View all policies →</a>
+          <a href="/vascular-access/policies/">View all policies →</a>
           <a href="https://qpolicy.ai" class="section-more-conversion" target="_blank" rel="noopener noreferrer">
             <span>For teams</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -168,6 +168,7 @@
     "description" (.Description | default .Summary | default "")
     "content" ((.Plain | default "") | truncate 500)
     "section" .Section
+    "content_type" (.Params.content_type | default "")
   ) -}}
 {{- end -}}
 {{- $searchIndex | jsonify -}}

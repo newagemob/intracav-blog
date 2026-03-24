@@ -1,0 +1,1081 @@
+---
+title: "AVA CPG 2026 — Part 2: Section 1 Continued (Products, Bundles & Checklists)"
+description: "Association for Vascular Access Adult Clinical Practice Guidelines (JAVA 2026, Vol. 31) — Part 2 continuing Section 1 on implementation considerations, barriers, products, bundles, and checklists for vascular access infrastructure."
+date: 2026-01-01
+draft: false
+weight: 2
+source_org: "ava"
+guideline_set: "ava_cpg_2026"
+category: ["guidelines", "vascular-access", "clinical-practice"]
+audience: clinician
+content_type: guidelines
+aliases: ["/guidelines/ava-clinical-practice-guidelines/jvad-article-p2/"]
+---
+
+# JAVA | 2026 | Supplemental Issue
+
+---
+
+## Section 1 (Continued)
+
+### Implementation Considerations (Continued)
+
+- **Tailored tools and product selection** customize kits and checklists for high-acuity areas, difficult intravenous access patients, or settings like ICU and oncology.<sup><a href="#s1-ref-2">2</a>,<a href="#s1-ref-11">11</a></sup>
+- **Checklist design and iteration:** Involve frontline staff in designing concise, role-specific checklists that match the workflow and avoid duplication.<sup><a href="#s1-ref-11">11</a></sup>
+- **Technology and EHR integration:** Embed checklists into electronic health records with automated reminders and structured fields to promote real-time documentation.<sup><a href="#s1-ref-11">11</a></sup>
+
+### Barriers
+
+- **Limited budget allocation:** Many facilities may lack the funds to support the initial investment in standardized kits, antimicrobial devices, and IT tools for checklist integration.<sup><a href="#s1-ref-2">2</a>,<a href="#s1-ref-33">33</a></sup>
+- **Supply chain variability:** Disruptions in the supply of bundled kits or catheters can hinder sustained implementation, especially in resource-constrained or high-volume settings.<sup><a href="#s1-ref-2">2</a>,<a href="#s1-ref-6">6</a></sup>
+- **Workflow incompatibility:** If bundles or checklists are not designed to align with department-specific workflows (e.g., emergency department versus ICU), clinicians may find them cumbersome or impractical.<sup><a href="#s1-ref-11">11</a></sup>
+
+### References
+
+1. <a id="s1-ref-1"></a>Rowley S, Clare S. ANTT® standardisation facilitates new efficiencies with a novel partially-sterile standard-ANTT PIVC pack. *Br J Nurs*. 2023;32(7):S4–S10. doi:10.12968/bjon.2023.32.7.S4.
+2. <a id="s1-ref-2"></a>Santos-Costa P, Paiva-Santos F, Sousa LB, et al. Nurses' practices in the peripheral intravenous catheterization of adult oncology patients: a mix-method study. *J Pers Med*. 2022;12(2):151. doi:10.3390/jpm12020151.
+3. <a id="s1-ref-3"></a>Rowley S, Clare S. Aseptic non touch technique (ANTT®): a critical competency in infection control. *Infusion*. 2020;26(1):22–27.
+4. <a id="s1-ref-4"></a>Oliveira CG, Rodas ACD. Postmarketing surveillance in Brazil: vascular catheters—an overview of notifications of adverse events and technical complaints. *Cien Saude Colet*. 2017;22(10):3247–3257. doi:10.1590/1413-812320172210.17612017.
+5. <a id="s1-ref-5"></a>Busch JD, Vens M, Herrmann J, Adam G, Ittrich H. Material failure of silicone catheter lines: a retrospective review of partial and complete ruptures in 553 patients. *Am J Roentgenol*. 2017;208(2):464–469. doi:10.2214/AJR.16.16540.
+6. <a id="s1-ref-6"></a>Gorski LA, Lynn Hadaway F, Hagle ME, et al. Infusion therapy standards of practice. *J Infus Nurs*. 2021;44(Suppl 1):S1–S224. doi:10.1097/NAN.0000000000000396.
+7. <a id="s1-ref-7"></a>Ben Kridis W, Sahnoun M, Maraoui H, Amari N, Frikha M. Fracture at catheter of totally implantable venous access port with migration into the right pulmonary artery: a serious complication. *Acta Clin Belg*. 2016;71(5):349–352. doi:10.1080/17843286.2016.1153212.
+8. <a id="s1-ref-8"></a>Kara H, Arikan AE, Dulgeroglu O, et al. Detachment and embolization of totally implantable central venous access devices: diagnosis and management. *Acta Chir Belg*. 2022;122(4):240–247. doi:10.1080/00015458.2021.1896829.
+9. <a id="s1-ref-9"></a>Velapati SR, Schroeder S, Kuchkuntla AR, et al. Repair of central venous catheter in a single-center adult home parenteral nutrition cohort. *JPEN J Parenter Enteral Nutr*. 2020;44(2):265–273. doi:10.1002/jpen.1611.
+10. <a id="s1-ref-10"></a>Wichmann D, Belmar Campos CE, Ehrhardt S, et al. Efficacy of introducing a checklist to reduce central venous line associated bloodstream infections in the ICU caring for adult patients. *BMC Infect Dis*. 2018;18(1):267. doi:10.1186/s12879-018-3178-6.
+11. <a id="s1-ref-11"></a>Hade AD, Beckmann LA, Basappa BK. A checklist to improve the quality of central venous catheter tip positioning. *Anaesthesia*. 2019;74(7):896–903. doi:10.1111/anae.14679.
+12. <a id="s1-ref-12"></a>Thate JA, Couture B, Schnock KO, Rossetti SC. Information needs and the use of documentation to support collaborative decision-making: implications for the reduction of central line–associated blood stream infections. *Comput Inf Nurs*. 2020;39(4):208–214.
+13. <a id="s1-ref-13"></a>Li X, He M, Wang H. Application of failure mode and effect analysis in managing catheter-related blood stream infection in intensive care unit. *Medicine*. 2017;96(51):e9339.
+14. <a id="s1-ref-14"></a>McGuire R, Coronado A. Evaluation of clinically indicated removal versus routine replacement of peripheral vascular catheters. *Br J Nurs*. 2020;29(2):S10–S16. doi:10.12968/bjon.2020.29.2.S10.
+15. <a id="s1-ref-15"></a>Eturajulu RC, Ng KH, Tan MP, et al. Quality improvement report: safety program for prevention of central line–associated bloodstream infections. *Radiographics*. 2022;42(7):E216–E223.
+16. <a id="s1-ref-16"></a>Ista E, van der Hoven B, Kornelisse RF, et al. Effectiveness of insertion and maintenance bundles to prevent central-line-associated bloodstream infections in critically ill patients of all ages: a systematic review and meta-analysis. *Lancet Infect Dis*. 2016;16(6):724–734.
+17. <a id="s1-ref-17"></a>Wei AE, Markert RJ, Connelly C, Polenakovik H. Reduction of central line-associated bloodstream infections in a large acute care hospital in Midwest United States following implementation of a comprehensive central line insertion and maintenance bundle. *J Infect Prev*. 2021;22(5):186–193. doi:10.1177/17571774211012471.
+18. <a id="s1-ref-18"></a>Lai CC, Cia CT, Chiang HT, et al. Implementation of a national bundle care program to reduce central line-associated bloodstream infections in intensive care units in Taiwan. *J Microbiol Immunol Infect*. 2018;51(5):666–671. doi:10.1016/j.jmii.2017.10.001.
+19. <a id="s1-ref-19"></a>Rhodes D, Cheng AC, McLellan S, et al. Reducing *Staphylococcus aureus* bloodstream infections associated with peripheral intravenous cannulae: successful implementation of a care bundle at a large Australian health service. *J Hosp Infect*. 2016;94(1):86–91. doi:10.1016/j.jhin.2016.05.020.
+20. <a id="s1-ref-20"></a>van der Kooi TII, Smid EA, Koek MBG, et al. The effect of an intervention bundle to prevent central venous catheter-related bloodstream infection in a national programme in the Netherlands. *J Hosp Infect*. 2023;131:194–202. doi:10.1016/j.jhin.2022.11.006.
+21. <a id="s1-ref-21"></a>Patel PK. Prevention of central line–associated bloodstream infections. *J Clin Outcomes Manage*. 2018;25(6):273–277.
+22. <a id="s1-ref-22"></a>Omkar Prasad R, Chew T, Giri JR, Hoerauf K. Patient experience with vascular access management informs satisfaction with overall hospitalization experience. *J Infus Nurs*. 2022;45(2):95–103. doi:10.1097/nan.0000000000000460.
+23. <a id="s1-ref-23"></a>Wang P, He Q, Yuan J, Lu Q, Ji A, Peng A. Risk factors for peripherally inserted central catheter-related venous thrombosis in adult patients with cancer. *Thromb J*. 2024;22(1):1–9.
+24. <a id="s1-ref-24"></a>Ricou Rios L, Esposito Catala C, Pons Calsapeu A, et al. Implementation of a vascular access specialist team in a tertiary hospital: a cost-benefit analysis. *Cost Eff Resour Alloc*. 2023;21(1):1–8.
+25. <a id="s1-ref-25"></a>Sheng Y, Yang LH, Wu Y, Gao W, Dongye SY. Implementation of tunneled peripherally inserted central catheters placement in cancer patients: a randomized multicenter study. *Clin Nurs Res*. 2024;33(1):19–26. doi:10.1177/10547738231194099.
+26. <a id="s1-ref-26"></a>Kim IJ, Shim DJ, Lee JH, et al. Impact of subcutaneous tunnels on peripherally inserted catheter placement: a multicenter retrospective study. *Eur Radiol*. 2019;29(5):2716–2723. doi:10.1007/s00330-018-5917-x.
+27. <a id="s1-ref-27"></a>Santos-Costa P, Alves M, Sousa C, et al. Nurses' involvement in the development and usability assessment of an innovative peripheral intravenous catheterisation pack: a mix-method study. *Int J Environ Res Public Health*. 2022;19(17):11130. doi:10.3390/ijerph191711130.
+28. <a id="s1-ref-28"></a>Saliba P, Hornero A, Cuervo G, et al. Interventions to decrease short-term peripheral venous catheter-related bloodstream infections: impact on incidence and mortality. *J Hosp Infect*. 2018;100(3):e178–e186. doi:10.1016/j.jhin.2018.06.010.
+29. <a id="s1-ref-29"></a>Zawadka M, La Via L, Wong A, et al. Real-time ultrasound guidance as compared with landmark technique for subclavian central venous cannulation: a systematic review and meta-analysis with trial sequential analysis. *Crit Care Med*. 2023;51(5):642–652. doi:10.1097/ccm.0000000000005819.
+30. <a id="s1-ref-30"></a>Bozaan D, Skicki D, Brancaccio A, et al. Less lumens—less risk: a pilot intervention to increase the use of single-lumen peripherally inserted central catheters. *J Hosp Med*. 2019;14(1):42–46. doi:10.12788/jhm.3097.
+31. <a id="s1-ref-31"></a>Cooke M, Ullman AJ, Ray-Barruel G, Wallis M, Corley A, Rickard CM. Not "just" an intravenous line: consumer perspectives on peripheral intravenous cannulation (PIVC). An international cross-sectional survey of 25 countries. *PLoS ONE*. 2018;13(2):e0193436.
+32. <a id="s1-ref-32"></a>Yovanoff MA, Chen HE, Pepley DF, et al. Investigating the effect of simulator functional fidelity and personalized feedback on central venous catheterization training. *J Surg Educ*. 2018;75(5):1410–1421.
+33. <a id="s1-ref-33"></a>Ostroff MD, Moureau N, Pittiruti M. Rapid assessment of vascular exit site and tunneling options (RAVESTO): a new decision tool in the management of the complex vascular access patients. *J Vasc Access*. 2021;24(2):311–317. doi:10.1177/11297298211034306.
+
+---
+
+## Section 2: Patient Assessment & Planning
+
+### Chapter 2.1—Anatomical & Physiological Conditions
+
+Patient-specific conditions are critical in the risk profile and management of vascular access devices (VADs). Complications such as infection, thrombosis, and mechanical failure are significantly influenced by factors including age, comorbidities (e.g., malignancy, diabetes, chronic kidney disease), immune status, vascular anatomy, prior history of thrombosis, and patient mobility. High-risk populations, such as oncology and intensive care unit (ICU) patients, face unique challenges, where catheter-related complications can lead to treatment delays, increased morbidity, prolonged hospitalization, and elevated health care costs.
+
+Given the complexity and variability of these factors, vascular access planning must rely on a tailored, risk-based approach. Integrating comprehensive assessments into decision-making allows clinicians to proactively mitigate risks through appropriate device selection, insertion techniques, and surveillance protocols.
+
+An informed approach to vascular access supports better clinical outcomes, minimizes complications, and promotes more efficient use of health care resources by aligning device management strategies with individual patient needs.
+
+#### Recommendation 1: Anatomical and Device Considerations
+
+Clinicians should assess anatomical factors and prior venous access history before catheter insertion to guide device selection and reduce procedural complications.
+
+**Summary of Evidence**
+
+Anatomical and device-related factors play a critical role in vascular access planning and must be assessed before catheter insertion. Structural considerations, such as previous central VAD (CVAD) placements, known central venous stenosis, surgical alterations (e.g., mastectomy, arteriovenous fistula), or presence of indwelling implants, can influence catheter tip positioning, risk of malposition, and the feasibility of using specific sites or vessel pathways. Authors of 1 study have described a malpositioned CVAD in the accessory hemiazygos vein due to prior catheterizations and underlying vascular stenosis, underscoring the need for preprocedure anatomical review.<sup><a href="#s2-ref-1">1(Vb)</a></sup>
+
+Evidence has also suggested that device selection and placement success are affected by vascular patency and prior complications. In a comparison study, totally implantable venous access devices were associated with a lower risk of venous thromboembolism (VTE) than peripherally inserted central catheters (PICCs) in cancer patients, reinforcing the value of individualized vascular risk assessment.<sup><a href="#s2-ref-2">2(IIa)</a></sup> Moss et al. further demonstrated that anatomic and historical factors, including cancer type, vascular access history, and patient-specific vessel characteristics, directly influence optimal device selection and outcomes.<sup><a href="#s2-ref-3">3(Ia)</a></sup> Infection risk also varies by insertion site, with subclavian access showing a lower colonization risk than internal jugular or femoral access.<sup><a href="#s2-ref-4">4(IIa)</a></sup> Collectively, these findings support a thorough anatomical and device-related history as essential to improving patient safety and procedural success.
+
+#### Recommendation 2: Physiological Risk Factors
+
+Clinicians should consider evaluating patient-specific physiological risk factors, including comorbidities, coagulation status, and immune function, to inform safe vascular access planning and device selection.
+
+**Summary of Evidence**
+
+A growing body of evidence supports the inclusion of physiological risk factors during vascular access planning. Authors of multiple retrospective cohort studies and meta-analyses have identified prior history of VTE, active malignancy, immunosuppression, and renal dysfunction as significant contributors to catheter-related complications such as catheter-related VTE (CR-VTE), bloodstream infections, and thrombosis. For example, authors of 2 studies found that patients with a prior history of thrombosis were at significantly higher risk for CR-VTE following PICC insertion.<sup><a href="#s2-ref-5">5(IIIb)</a>,<a href="#s2-ref-6">6(IIIa)</a></sup> Others identified malignancy, diabetes, and elevated body mass index as contributing factors to thrombosis in breast cancer patients receiving PICCs.<sup><a href="#s2-ref-7">7(IIIa)</a></sup>
+
+Authors of 2 similar studies revealed that, while peripheral midlines (PMLs) are generally safe, patients with a history of thrombosis may still be at increased risk, with PMLs associated with higher rates of superficial vein thrombosis than PICCs in some studies.<sup><a href="#s2-ref-8">8(IIIa)</a>,<a href="#s2-ref-9">9(IIIb)</a></sup> Similarly, researchers have shown that prolonged dwell time, catheter diameter, and repeated access increase thrombosis risk, particularly in patients with hypercoagulable conditions.<sup><a href="#s2-ref-7">7</a></sup> These findings underscore the importance of individualized physiological risk review as a standard part of vascular access planning to support safer insertion and improve patient outcomes.<sup><a href="#s2-ref-8">8(IIIa)</a>,<a href="#s2-ref-9">9(IIIb)</a></sup>
+
+#### Clinical Considerations
+
+The following points summarize potential benefits, risks, and implementation factors identified in the literature and practice experience. They are intended to guide clinical reflection and local adaptation rather than serve as prescriptive recommendations.
+
+**Benefits**
+
+- Early identification of thrombosis history reduces CR-VTE risk and improves device selection and prophylaxis.<sup><a href="#s2-ref-5">5</a>,<a href="#s2-ref-6">6</a>,<a href="#s2-ref-9">9</a></sup>
+- Supports multidisciplinary management: Encourages collaboration with oncology, nephrology, and hematology for patients with complex comorbidities.<sup><a href="#s2-ref-10">10</a>,<a href="#s2-ref-11">11</a></sup>
+
+**Risks**
+
+- **Complications:** Incomplete clinical assessments may raise the risk of CR-VTE and other complications.<sup><a href="#s2-ref-8">8</a></sup>
+- **Investment:** Implementation of advanced protocols requires upfront investments, training, and may temporarily increase workload.<sup><a href="#s2-ref-10">10</a>,<a href="#s2-ref-11">11</a>,<a href="#s2-ref-12">12</a>,<a href="#s2-ref-13">13</a>,<a href="#s2-ref-14">14</a>,<a href="#s2-ref-15">15</a></sup>
+
+**Implementation Considerations**
+
+- **Clinical guidelines:** Use clinical guidelines and high-risk medication references to guide appropriate intravenous device selection.<sup><a href="#s2-ref-16">16</a>,<a href="#s2-ref-17">17</a></sup>
+- **Training:** Train staff on securement, surveillance, flushing, and maintenance using best practices and monitoring systems.<sup><a href="#s2-ref-10">10</a>,<a href="#s2-ref-11">11</a>,<a href="#s2-ref-12">12</a>,<a href="#s2-ref-14">14</a>,<a href="#s2-ref-18">18</a>,<a href="#s2-ref-19">19</a>,<a href="#s2-ref-20">20</a>,<a href="#s2-ref-21">21</a></sup>
+
+**Barriers to Implementation**
+
+- **Treatment plans:** Barriers include delayed orders due to unclear treatment plans, limited staff awareness, or vein accessibility.<sup><a href="#s2-ref-16">16</a>,<a href="#s2-ref-17">17</a>,<a href="#s2-ref-22">22</a>,<a href="#s2-ref-23">23</a></sup>
+- **Resistance to change:** Challenges such as resistance to change, budget limitations, and unit-level adherence variability affect widespread adoption of preventive measures.<sup><a href="#s2-ref-13">13</a>,<a href="#s2-ref-19">19</a>,<a href="#s2-ref-20">20</a>,<a href="#s2-ref-24">24</a>,<a href="#s2-ref-25">25</a>,<a href="#s2-ref-26">26</a>,<a href="#s2-ref-27">27</a></sup>
+
+#### References
+
+1. <a id="s2-ref-1"></a>Yuki I, Cammack I, Takeshi Y. Management of a malpositioned central venous catheter in the accessory hemiazygos vein. *BMJ Case Rep*. 2021;14(12):1–3. doi:10.1136/bcr-2021-245654.
+2. <a id="s2-ref-2"></a>Jiang M, Li C, Pan C, Cui X, Dietrich CF. Risk of venous thromboembolism associated with totally implantable venous access ports in cancer patients: a systematic review and meta-analysis. *J Thromb Haemostasis*. 2020;18(9):2253–2273. doi:10.1111/jth.14930.
+3. <a id="s2-ref-3"></a>Moss JG, Wu O, Bodenham AR, et al. Central venous access devices for the delivery of systemic anticancer therapy (CAVA): a randomised controlled trial. *Lancet*. 2021;398(10298):403–415. doi:10.1016/S0140-6736(21)00766-2.
+4. <a id="s2-ref-4"></a>Arvaniti K, Lathyris D, Blot S, Apostolidou-Kiouti F, Koulenti D, Haidich AB. Cumulative evidence of randomized controlled and observational studies on catheter-related infection risk of central venous catheter insertion site in ICU patients. *Crit Care Med*. 2017;45(4):e437–e448. doi:10.1097/CCM.0000000000002092.
+5. <a id="s2-ref-5"></a>Wang G, Wang H, Shen Y, et al. Association between ABO blood group and venous thrombosis related to the peripherally inserted central catheters in cancer patients. *J Vasc Access*. 2021;22(4):590–596. doi:10.1177/1129729820954721.
+6. <a id="s2-ref-6"></a>Hao N, Xie X, Zhou Z, et al. Nomogram predicted risk of peripherally inserted central catheter related thrombosis. *Sci Rep*. 2017;7(1):6344. doi:10.1038/s41598-017-06609-x.
+7. <a id="s2-ref-7"></a>Peng S, Wei T, Li X, Yuan Z, Lin Q. A model to assess the risk of peripherally inserted central venous catheter-related thrombosis in patients with breast cancer: a retrospective cohort study. *Supportive Care in Cancer*. 2022;30(2):1127–1137. doi:10.1007/s00520-021-06511-3.
+8. <a id="s2-ref-8"></a>Lu H, Yang Q, Yang L, et al. The risk of venous thromboembolism associated with midline catheters compared with peripherally inserted central catheters: a systematic review and meta-analysis. *Nurs Open*. 2022;9(3):1873–1882. doi:10.1002/nop2.935.
+9. <a id="s2-ref-9"></a>Zohourian H, Schaubschlager T, Phan L, et al. Comparing incidence of thrombosis in PICC and midlines and evaluating the role of anticoagulation, site of insertion, and risk factors. *J Assoc Vasc Access*. 2019;24(1):38–44. doi:10.1016/j.java.2018.29.004.
+10. <a id="s2-ref-10"></a>Puig-Asensio M, Marra AR, Childs CA, Kukla ME, Perencevich EN, Schweizer ML. Effectiveness of chlorhexidine dressings to prevent catheter-related bloodstream infections. Does one size fit all? A systematic literature review and meta-analysis. *Infect Control Hosp Epidemiol*. 2020;41(12):1388–1395. doi:10.1017/ice.2020.356.
+11. <a id="s2-ref-11"></a>Ricou Rios L, Esposito Catala C, Pons Calsapeu A, et al. Implementation of a vascular access specialist team in a tertiary hospital: a cost-benefit analysis. *Cost Eff Resour Alloc*. 2023;21(1):67. doi:10.1186/s12962-023-00464-6.
+12. <a id="s2-ref-12"></a>Corley A, Marsh N, Ullman AJ, Rickard CM. Peripheral intravenous catheter securement: an integrative review of contemporary literature around medical adhesive tapes and supplementary securement products. *J Clin Nurs*. 2023;32(9):1841–1857. doi:10.1111/jocn.16237.
+13. <a id="s2-ref-13"></a>Schora D, Patel P, Barza R, et al. Positive and neutral needleless connectors: a comparative study of central-line associated bloodstream infection, occlusion, and bacterial contamination of the connector lumen. *J Infus Nurs*. 2023;46(3):157–161. doi:10.1097/nan.0000000000000506.
+14. <a id="s2-ref-14"></a>Zhu Y, Li D, Li Y, Cai W. Predictive model for PICC occlusion risk for patients in intensive care units: a retrospective clinical study. *Altern Ther Health Med*. 2023;29(8):278–285.
+15. <a id="s2-ref-15"></a>Hymes JL, Mooney A, Van Zandt C, Lynch L, Ziebol R, Killion D. Dialysis catheter-related bloodstream infections: a cluster-randomized trial of the ClearGuard HD antimicrobial barrier cap. *Am J Kidney Dis*. 2017;69(2):220–227. doi:10.1053/j.ajkd.2016.09.014.
+16. <a id="s2-ref-16"></a>Foor JS, Moureau NL, Gibbons D, Gibson SM. Investigative study of hemodilution ratio: 4Vs for vein diameter, valve, velocity, and volumetric blood flow as factors for optimal forearm vein selection for intravenous infusion. *J Vasc Access*. 2024;25(1):140–148. doi:10.1177/11297298221095287.
+17. <a id="s2-ref-17"></a>Marsh N, Larsen EN, O'Brien C, et al. Safety and efficacy of midline catheters versus peripheral intravenous catheters: a pilot randomized controlled trial. *Int J Nurs Pract*. 2023;29(2):e13110. doi:10.1111/ijn.13110.
+18. <a id="s2-ref-18"></a>Menger J, Kaase M, Schulze MH, et al. Central venous catheter contamination rate in suspected sepsis patients: an observational clinical study. *J Hosp Infect*. 2023;135:98–105. doi:10.1016/j.jhin.2023.02.015.
+19. <a id="s2-ref-19"></a>Bahl A, Johnson S, Hijazi M, Mielke N, Chen NW. Cost effectiveness of ultrasound-guided long peripheral catheters in difficult vascular access patients. *J Vasc Access*. 2024;25(4):1204–1211. doi:10.1177/11297298231154297.
+20. <a id="s2-ref-20"></a>Rowe M, Spencer T. Catheter securement impact on PICC-related CLABSI: does securement effect risk? *Vasc Access*. 2020;14(1):12–15.
+21. <a id="s2-ref-21"></a>Baek G, Huynh P, Cunningham T, Eaton KD, Ghuman S. Central line patency: management with normal saline flushes for adult patients with cancer. *Clin J Oncol Nurs*. 2023;27(3):274–280. doi:10.1188/23.Cjon.274-280.
+22. <a id="s2-ref-22"></a>Manrique-Rodriguez S, Heras-Hidalgo I, Pernia-Lopez MS, et al. Standardization and chemical characterization of intravenous therapy in adult patients: a step further in medication safety. *Drugs R D*. 2021;21(1):39–64. doi:10.1007/s40268-020-00329-w.
+23. <a id="s2-ref-23"></a>Wu O, McCartney E, Heggie R, et al. Venous access devices for the delivery of long-term chemotherapy: the CAVA three-arm RCT. *Health Technol Assess (Rockv)*. 2021;25(47):1–126. doi:10.3310/hta25470.
+24. <a id="s2-ref-24"></a>Hawes ML. Vascular access device securement for oncology patients and those with chronic diseases. *Br J Nurs*. 2021;30(8):S20–S25. doi:10.12968/bjon.2021.30.8.S20.
+25. <a id="s2-ref-25"></a>Stewart AG, Laupland KB, Tabah A. Central line associated and primary bloodstream infections. *Curr Opin Crit Care*. 2023;29(5):423–429. doi:10.1097/mcc.0000000000001082.
+26. <a id="s2-ref-26"></a>Lima Zandonadi MG, Bolorino N, Tiroli CF, Guassu Nogueira DN, Pieri FM. Peripherally inserted central catheter and costs associated with nursing care: an integrative review. *Ciencia, Cuidado e Saude*. 2023;22:1–9.
+27. <a id="s2-ref-27"></a>Yu KC, Jung M, Ai C. Characteristics, costs, and outcomes associated with central-line-associated bloodstream infection and hospital-onset bacteremia and fungemia in US hospitals. *Infect Control Hosp Epidemiol*. 2023;44(12):1920–1926. doi:10.1017/ice.2023.132.
+
+---
+
+### Chapter 2.2—Behavioral, Psychosocial, and Environmental
+
+Safe vascular access requires more than choosing the right vein or device. A person's behavior, mental health, and living environment all influence whether a catheter can be maintained safely over time. Patients struggling with substance use or cognitive decline may be less able to protect their device or participate in care, which increases the risk of complications. Likewise, unstable housing, limited caregiver support, or fragmented health services can make it difficult to manage vascular access outside the hospital.
+
+These factors are not easily measured, but their impact is real. Outcomes vary not only because of anatomy or therapy but also because of the environments patients return to and the support systems they can rely on. Recognizing these influences early and planning around them with input from a multidisciplinary team allows clinicians to anticipate challenges and reduce preventable harm. A holistic assessment that considers the person, their circumstances, and the health care resources available is essential to providing safe and equitable vascular access across all settings.
+
+#### Recommendation 1: Behavioral Risk Factors
+
+Assess behavioral history, including substance use and potential for catheter misuse, when planning vascular access.
+
+**Summary of Evidence**
+
+In patients with a known history of injection drug use, intentional catheter manipulation, or line misuse may increase the risk of infection, overdose, or therapy failure. Planning should involve interprofessional consultation, risk stratification, and consideration of harm reduction strategies such as securement methods, tamper-evident technology, or supervised therapy.<sup><a href="#s3-ref-1">1(IIIb)</a></sup>
+
+Behavioral risk factors, including a history of substance use or intentional catheter misuse, warrant careful evaluation during vascular access planning. Although concerns persist about the safety of providing vascular access devices to persons who inject drugs (PWIDs), emerging evidence has challenged blanket exclusions. In a retrospective review by D'Couto et al., PWIDs discharged on outpatient parenteral antimicrobial therapy (OPAT) had similar rates of treatment completion, line complications, and readmissions to those discharged to supervised facilities, suggesting that outpatient intravenous (IV) therapy may be a viable option for select patients.<sup><a href="#s3-ref-1">1(IIIb)</a></sup> Similarly, in a multicenter analysis, Levin et al. found that PWIDs had no significant increase in infection, reintervention, or mortality at 1 year following arteriovenous access creation. However, they were more likely to have prosthetic grafts and social vulnerabilities such as homelessness.<sup><a href="#s3-ref-2">2(Va)</a></sup> These findings support individualized behavioral risk assessments and highlight the importance of securement strategies, education, and care planning in this population.
+
+#### Recommendation 2: Psychosocial and Cognitive Considerations
+
+Consider cognitive and psychosocial status when selecting vascular access devices.
+
+**Summary of Evidence**
+
+Cognitive and psychosocial factors, such as dementia, delirium, traumatic brain injury, or psychiatric illness, can compromise the safety of vascular access by increasing the risk of unintentional catheter dislodgement or poor self-management. Nakano et al. evaluated peripherally inserted central catheter (PICC) use in elderly patients with dementia and found favorable outcomes, with a median catheter dwell of 42 days, a catheter-related bloodstream infection rate of just 0.22 per 1000 PICC days, and only 3 cases of self-removal, none after securement strategies were enhanced.<sup><a href="#s3-ref-3">3(IIIb)</a></sup> These results suggest that, with thoughtful placement and securement, even cognitively impaired patients can safely receive vascular access therapy. In a 2018 cross-sectional survey, Moureau further reinforced that patient confusion is a leading contributor to catheter dislodgement, highlighting the need for tailored site selection, concealed dressing techniques, and robust staff training to reduce unintentional removal. Psychosocial complexity should not preclude access but should guide planning.<sup><a href="#s3-ref-4">4(Vb)</a></sup>
+
+#### Recommendation 3: Environmental and Socioeconomic Considerations
+
+Evaluate environmental stability, social support, and discharge feasibility when planning vascular access.
+
+**Summary of Evidence**
+
+Environmental and socioeconomic conditions, including housing instability, lack of caregiver support, or limited access to outpatient services, can significantly affect the safety and success of vascular access care, particularly for patients discharged with central catheters.<sup><a href="#s3-ref-5">5(IIb)</a></sup> In a cohort study by Ryan et al., homelessness was independently associated with higher rates of tunneled dialysis catheter use at the time of arteriovenous access creation, suggesting that inadequate preoperative care coordination and social support may lead to suboptimal access strategies.<sup><a href="#s3-ref-6">6(IIIb)</a></sup> D'Couto et al. also noted that patients discharged on OPAT without strong support systems or addictions counseling had higher risks of complications, regardless of whether they went home or to skilled facilities.<sup><a href="#s3-ref-1">1</a></sup> These findings underscore the importance of environmental assessments and multidisciplinary discharge planning in determining whether a long-term device can be safely managed outside the hospital setting.
+
+#### Clinical Considerations
+
+The following points summarize potential benefits, risks, and implementation factors identified in the literature and practice experience. They are intended to guide clinical reflection and local adaptation rather than serve as prescriptive recommendations.
+
+**Benefits**
+
+- **Improved safety and outcomes:** Assessing behavioral, cognitive, and environmental risks supports individualized access planning, reducing infection, dislodgement, and misuse.<sup><a href="#s3-ref-1">1</a>,<a href="#s3-ref-4">4</a></sup>
+- **Fewer device complications:** Securement strategies like tamper-evident connectors and concealed dressings reduce self-removal in cognitively or behaviorally complex patients.<sup><a href="#s3-ref-2">2</a></sup>
+- **Equitable care access:** Patients with substance use or social vulnerabilities can achieve comparable outcomes when provided with appropriate support and monitoring.<sup><a href="#s3-ref-2">2</a></sup>
+
+**Risks**
+
+- **Increased costs:** Accidental dislodgment of vascular devices leads to treatment interruption and increased health care costs.<sup><a href="#s3-ref-4">4</a></sup>
+- **Infection and misuse:** Behavioral instability and substance use increase risks of contamination, overdose, and line tampering.<sup><a href="#s3-ref-1">1</a></sup>
+- **Device dislodgement:** Cognitive impairment or psychiatric illness can lead to unintentional removal or poor device care.<sup><a href="#s3-ref-2">2</a></sup>
+
+**Implementation Considerations**
+
+- **Multidisciplinary collaboration:** Engage addiction medicine, vascular access, nursing, social work, and behavioral health for comprehensive risk assessment.<sup><a href="#s3-ref-1">1</a></sup>
+- **Harm reduction practices:** Use tamper-evident securement, reinforced dressings, and observation protocols to prevent manipulation or accidental removal.<sup><a href="#s3-ref-2">2</a></sup>
+- **Structured discharge planning:** Assess social support, home environment, and outpatient resources early to ensure safe transition and follow-up.<sup><a href="#s3-ref-1">1</a></sup>
+
+**Barriers to Implementation**
+
+- **Limited access to support services:** Gaps in addiction, behavioral health, and follow-up care hinder safe outpatient management.<sup><a href="#s3-ref-2">2</a></sup>
+- **Institutional bias and policy barriers:** Exclusionary practices toward PWIDs or unstable housing populations limit equitable vascular access.<sup><a href="#s3-ref-1">1</a></sup>
+- **Fragmented care coordination:** Poor linkage between inpatient, outpatient, and community teams leads to inconsistent monitoring and outcomes.<sup><a href="#s3-ref-2">2</a></sup>
+
+#### References
+
+1. <a id="s3-ref-1"></a>D'Couto HT, Robbins GK, Ard KL, Wakeman SE, Alves J, Nelson SB. Outcomes according to discharge location for persons who inject drugs receiving outpatient parenteral antimicrobial therapy. *Open Forum Infect Dis*. 2018;5(5):ofy056. doi:10.1093/ofid/ofy056.
+2. <a id="s3-ref-2"></a>Levin SR, Farber A, Arinze N, et al. Intravenous drug use history is not associated with poorer outcomes after arteriovenous access creation. *J Vasc Surg*. 2021;73(1):291–300.e7. doi:10.1016/j.jvs.2020.04.521.
+3. <a id="s3-ref-3"></a>Nakano Y, Kondo T, Murohara T, Yamauchi K. Option of using peripherally inserted central catheters in elderly patients with dementia: an observational study. *Gerontol Geriatr Med*. 2020;6:2333721420906922. doi:10.1177/2333721420906922.
+4. <a id="s3-ref-4"></a>Moureau N. Impact and safety associated with accidental dislodgement of vascular access devices: a survey of professions, settings, and devices. *J Assoc Vasc Access*. 2018;23(4):203–215. doi:10.1016/j.java.2018.07.002.
+5. <a id="s3-ref-5"></a>Sriskandarajah S, Hobbs J, Roughead E, Ryan M, Reynolds K. Safety and effectiveness of "hospital in the home" and "outpatient parenteral antimicrobial therapy" in different age groups: a systematic review of observational studies. *Int J Clin Pract*. 2018:e13216. doi:10.1111/ijcp.13216.
+6. <a id="s3-ref-6"></a>Ryan TJ, Farber A, Cheng TW, et al. Factors associated with a tunneled dialysis catheter in place at initial arteriovenous access creation. *J Vasc Surg*. 2021;73(5):1771–1777. doi:10.1016/j.jvs.2020.09.020.
+
+---
+
+### Chapter 2.3—Special Patient Considerations
+
+Vascular access planning is never one size fits all. Each patient brings a distinct set of circumstances, medical, anatomical, psychosocial, and environmental elements that shape the safety and success of device use. No 2 veins, skin types, prognoses, or personal preferences are alike, and clinicians must approach every patient as a unique case requiring thoughtful assessment and tailored planning.
+
+This chapter highlights 4 populations: those with difficult intravenous access (DIVA), risk for medical adhesive-related skin injury (MARSI), catheter-related venous thromboembolism (CR-VTE), and chronic kidney disease (CKD) because these conditions are supported by a body of evidence strong enough to inform specific recommendations. They do not represent the full spectrum of patient variation, rather they illustrate how focused research can guide practice when unique risks are present.
+
+Beyond these examples, clinicians must remain attentive to the nuances of each patient encounter. The true principle of special considerations lies not in categorizing patients by diagnosis or risk factor but in recognizing that all patients require individualized planning. By applying this perspective, balancing evidence-based guidance with patient-specific needs, clinicians can deliver safer, more equitable, and more sustainable vascular access across all settings.
+
+#### Recommendation 1: DIVA
+
+Clinicians should proactively identify patients at risk for DIVA during the planning phase of vascular access.
+
+**Summary of Evidence**
+
+DIVA is a common clinical challenge that may increase patient discomfort, delay therapy, and raise the risk of complications. Over 60 predictive factors have been identified, including advanced age, obesity, edema, chronic disease, and history of intravenous drug use.<sup><a href="#s4-ref-1">1(IIb)</a></sup> Early recognition of these risks allows clinicians to adapt their approach before repeated failed attempts occur. Systematic reviews and meta-analyses consistently show that ultrasound (US) guidance improves first-attempt success in DIVA cases, reduces complications, and minimizes the need for central line placement.<sup><a href="#s4-ref-2">2(Ia)</a>,<a href="#s4-ref-3">3(IIIb)</a></sup> Researchers have also shown that patients not classified as DIVA generally do well with conventional landmark-based methods, highlighting the value of early risk stratification.<sup><a href="#s4-ref-4">4(Ib)</a>,<a href="#s4-ref-5">5(IIb)</a></sup> Early consultation with an US-trained clinician has been associated with tripled success rates and reduced unnecessary central catheter use by as much as 85%.<sup><a href="#s4-ref-3">3(IIIb)</a>,<a href="#s4-ref-6">6(Ib)</a></sup>
+
+Note: DIVA should be used cautiously, emphasizing it refers to challenging veins rather than the patient, to avoid unintended stigma.
+
+#### Recommendation 2: MARSI
+
+Clinicians should assess patient-specific risk factors for MARSI as part of vascular access planning.
+
+**Summary of Evidence**
+
+MARSI affects patients across all care settings and device types, particularly those with fragile or compromised skin. Age, dermatologic history, comorbidities, and skin fragility should inform dressing and securement choices. Early risk identification enables preventive interventions that improve patient comfort and reduce complications.
+
+While no universal MARSI risk scale exists, authors of multiple high-quality studies have identified well-established risk factors such as female sex, extremes of age, critical illness, malnutrition, and anti-neoplastic therapy.<sup><a href="#s4-ref-7">7(IIIa)</a></sup> Several tools, including predictive nomograms, have been validated in oncology patients with peripherally inserted central catheters (PICCs) but are not generalizable to all populations or devices.<sup><a href="#s4-ref-8">8(Ib)</a>,<a href="#s4-ref-9">9(IVb)</a></sup> Effective MARSI prevention begins with preinsertion assessment and continues with tailored product selection, reduced dressing change frequency, and skin-protective strategies.
+
+#### Recommendation 3: CR-VTE
+
+Evaluate CR-VTE risk factors before device selection. Avoid high-risk devices in predisposed patients and coordinate anticoagulation and device planning with the multidisciplinary team.
+
+**Summary of Evidence**
+
+CR-VTE is a well-established complication associated with PICCs and midlines. Patients with cancer, elevated body mass index, or prior thrombosis are at significantly higher risk. In a retrospective analysis, a 22.8% VTE incidence in anticoagulated patients was shown compared with 77.2% without, though results were not statistically significant in matched controls.<sup><a href="#s4-ref-10">10(IIIb)</a></sup> Authors of multiple systematic reviews have confirmed that PICCs and midlines can contribute to thrombosis, with catheter characteristics and anatomical placement further influencing outcomes.<sup><a href="#s4-ref-11">11(IIb)</a>,<a href="#s4-ref-12">12(IIIb)</a></sup> In the 2019 kidney disease outcomes quality initiative (KDOQI) guidelines and subsequent reviews, avoiding high-risk device types in patients predisposed to thrombosis and encourage individualized planning have been recommended.<sup><a href="#s4-ref-13">13(IVa)</a></sup>
+
+#### Recommendation 4: CKD Preservation
+
+In patients with CKD, especially stage 3b or higher (Glomerular filtration rate < 45 mL/min), clinicians should avoid vascular access devices (VADs) that may compromise future dialysis options. Planning should include vein preservation, coordination with nephrology, and alternative strategies to support long-term vascular integrity.
+
+**Summary of Evidence**
+
+PICC use in CKD patients is consistently linked to increased rates of central vein stenosis and reduced likelihood of transitioning to a functioning arteriovenous fistula (AVF).<sup><a href="#s4-ref-14">14(IIIb)</a></sup> In the 2019 KDOQI guidelines, PICC placement in this population is discouraged, and caution is advised with midlines unless no alternative exists.<sup><a href="#s4-ref-13">13(IVa)</a></sup> While authors of 1 cohort study have suggested midlines may be safe in selected CKD patients, in most of the literature, comprehensive vein preservation protocols are supported as standard care.<sup><a href="#s4-ref-15">15(IIIa)</a></sup> Researchers have also confirmed that patients with a history of PICC use have lower AVF success rates after dialysis initiation.<sup><a href="#s4-ref-16">16(IVb)</a></sup>
+
+#### Recommendation 5: Match Dialysis Access Type to Indication and Duration
+
+In patients requiring dialysis, nontunneled centrally inserted central catheters may be used temporarily in emergency or inpatient settings. For long-term access, AVFs remain the gold standard due to lower rates of infection, thrombosis, and mortality than tunneled catheters.
+
+**Summary of Evidence**
+
+AVFs are associated with improved survival and fewer infections in chronic hemodialysis patients.<sup><a href="#s4-ref-17">17(IIIa)</a>,<a href="#s4-ref-18">18(IIIb)</a>,<a href="#s4-ref-19">19(IIIb)</a>,<a href="#s4-ref-20">20(IIIb)</a></sup> Long-term tunneled dialysis catheters (TDCs) are linked with increased complications when AVFs are not pursued or delayed. In intensive care unit patients, non-TDCs carry a higher risk of early infection and should be promptly replaced with permanent access when feasible.<sup><a href="#s4-ref-18">18(IIIb)</a>,<a href="#s4-ref-21">21(IIIb)</a></sup> Avoiding PICCs in this population reduces cumulative venous injury and aligns with nephrology best practice guidelines.<sup><a href="#s4-ref-22">22(IIIb)</a>,<a href="#s4-ref-23">23(Va)</a></sup>
+
+#### Clinical Considerations
+
+The following points summarize potential benefits, risks, and implementation factors identified in the literature and practice experience. They are intended to guide clinical reflection and local adaptation rather than serve as prescriptive recommendations.
+
+**Benefits**
+
+- **Adverse event minimization:** Appropriate device selection minimizes adverse events and supports optimal treatment outcomes.<sup><a href="#s4-ref-24">24</a></sup>
+- **Vessel health and preservation:** Minimizes the need for multiple PIVC starts and preserves vessel health.<sup><a href="#s4-ref-25">25</a>,<a href="#s4-ref-26">26</a></sup>
+- **Costs and satisfaction:** Early DIVA identification and US access reduce unsuccessful insertions, costs, and improve satisfaction and safety.<sup><a href="#s4-ref-1">1</a>,<a href="#s4-ref-3">3</a>,<a href="#s4-ref-6">6</a>,<a href="#s4-ref-27">27</a>,<a href="#s4-ref-28">28</a>,<a href="#s4-ref-29">29</a></sup>
+- **Reduced incidence of MARSI:** Implementing evidence-based strategies—such as selecting appropriate adhesives, using barrier films, and practicing gentle removal—can significantly lower MARSI rates.<sup><a href="#s4-ref-30">30</a>,<a href="#s4-ref-31">31</a>,<a href="#s4-ref-32">32</a></sup>
+- **Improved patient outcomes:** Prevention of MARSI supports skin integrity, reduces pain, and may lower the risk of secondary infections, promoting faster healing and recovery.<sup><a href="#s4-ref-7">7</a>,<a href="#s4-ref-33">33</a></sup>
+- **Cost savings:** Reducing MARSI incidence minimizes the need for advanced wound care, shortens hospital stays, and decreases complications, resulting in lower overall costs.<sup><a href="#s4-ref-34">34</a></sup>
+- Early identification of patients with a history of thrombosis reduces the risk of CR-VTE and optimizes VAD selection and anticoagulation prophylaxis.<sup><a href="#s4-ref-10">10</a>,<a href="#s4-ref-35">35</a>,<a href="#s4-ref-36">36</a></sup>
+- Improved patient outcomes and procedural safety with US-guided vascular access and risk-based strategies.<sup><a href="#s4-ref-37">37</a>,<a href="#s4-ref-38">38</a></sup>
+- Enhanced maintenance and monitoring through standardized protocols and staff education.<sup><a href="#s4-ref-39">39</a>,<a href="#s4-ref-40">40</a></sup>
+
+**Risks**
+
+- **Complications:** Inappropriate device selection may lead to vascular complications.<sup><a href="#s4-ref-41">41</a></sup>
+- **Decrease productivity:** Initial implementation and training can reduce productivity.<sup><a href="#s4-ref-1">1</a>,<a href="#s4-ref-3">3</a>,<a href="#s4-ref-6">6</a>,<a href="#s4-ref-27">27</a></sup>
+- **Increased workload:** Thorough assessments for MARSI risk require additional clinician time, particularly during VAD planning and dressing changes.<sup><a href="#s4-ref-42">42</a>,<a href="#s4-ref-43">43</a></sup>
+- **Resistance to change:** Staff may resist implementing new procedures or guidelines if perceived as cumbersome or not evidence based.<sup><a href="#s4-ref-44">44</a></sup>
+- **Added direct costs:** Incorporating skin barrier products and silicone-based adhesive removers into routine care increases material costs and may require additional staff training.<sup><a href="#s4-ref-30">30</a>,<a href="#s4-ref-32">32</a></sup>
+- **Increased risk:** Incomplete clinical assessment may increase the risk of CR-VTE and other VAD-related complications.<sup><a href="#s4-ref-45">45</a></sup>
+- **Bleeding:** Bleeding complications from prophylactic anticoagulation, requiring careful selection and dose management.<sup><a href="#s4-ref-46">46</a>,<a href="#s4-ref-47">47</a></sup>
+- **Resources:** Resource use required for US, prophylaxis, and staff training.<sup><a href="#s4-ref-48">48</a>,<a href="#s4-ref-49">49</a></sup>
+
+**Implementation Considerations**
+
+- **Team-based care:** Incorporate vascular access teams and embed decision support tools within electronic health record (EHR) systems to standardize practices and support timely, evidence-based decision-making.<sup><a href="#s4-ref-50">50</a>,<a href="#s4-ref-51">51</a>,<a href="#s4-ref-52">52</a></sup>
+- **Device selection:** Optimize outcomes by ensuring appropriate device selection based on patient needs, vessel health, and therapy duration.<sup><a href="#s4-ref-26">26</a></sup>
+- **Screening tools:** Implement DIVA screening tools and supportive policies to enable early recognition.<sup><a href="#s4-ref-2">2</a></sup>
+- **Complex risk factor profile:** Numerous patient-related factors, including age, dermatologic history, nutritional status, comorbidities, and frequency of dressing changes, must be considered in VAD and adhesive planning.<sup><a href="#s4-ref-7">7</a>,<a href="#s4-ref-30">30</a>,<a href="#s4-ref-42">42</a>,<a href="#s4-ref-44">44</a>,<a href="#s4-ref-53">53</a></sup>
+- **Clinical tools:** Algorithms such as catheter-associated skin injury provide structured approaches to managing catheter-related skin impairment and boost clinician confidence in treating MARSI.<sup><a href="#s4-ref-31">31</a>,<a href="#s4-ref-54">54</a></sup>
+- **Education:** Ensure staff education and competency validation in modified Seldinger technique-guided puncture, electrocardiogram tip positioning, and VAD management.<sup><a href="#s4-ref-45">45</a>,<a href="#s4-ref-55">55</a>,<a href="#s4-ref-56">56</a></sup>
+- **Documentation:** Integrate EHR tools for catheter documentation and complication tracking.<sup><a href="#s4-ref-49">49</a>,<a href="#s4-ref-57">57</a></sup>
+- **Team approach:** Engage multidisciplinary teams across departments for CR-VTE prevention and workflow improvement.<sup><a href="#s4-ref-39">39</a>,<a href="#s4-ref-58">58</a></sup>
+
+**Barriers to Implementation**
+
+- **Resources:** Limited access to skilled staff and resources to implement device selection strategies.<sup><a href="#s4-ref-24">24</a></sup>
+- **Resistance to change:** Clinician hesitancy and training demands may reduce capacity temporarily.<sup><a href="#s4-ref-1">1</a>,<a href="#s4-ref-3">3</a>,<a href="#s4-ref-6">6</a>,<a href="#s4-ref-28">28</a>,<a href="#s4-ref-59">59</a></sup>
+- **Absence of a validated universal risk tool:** No current MARSI risk assessment scale is applicable across all patient populations and VAD types. Existing models (e.g., nomograms for oncology patients) are limited in scope.<sup><a href="#s4-ref-8">8</a>,<a href="#s4-ref-9">9</a>,<a href="#s4-ref-60">60</a></sup>
+- **Organizational barriers:** Common issues include a lack of administrative support, insufficient funding for necessary supplies, time constraints, and inconsistent institutional policies.<sup><a href="#s4-ref-34">34</a></sup>
+- **Provider-level barriers:** Barriers may involve limited clinician awareness, resistance to guideline adherence, or discomfort with altering established routines.<sup><a href="#s4-ref-61">61</a></sup>
+- **Patient-level barriers:** Fragile skin, allergic sensitivities, and non-compliance with care instructions may complicate adherence to MARSI protocols.<sup><a href="#s4-ref-43">43</a></sup>
+- **Evidence variability:** Inconsistent guidelines for evidence on anticoagulation therapy before and after PICC insertion may hinder standardized practice adoption.<sup><a href="#s4-ref-10">10</a>,<a href="#s4-ref-11">11</a></sup>
+- **Framework deficiency:** Lack of structured frameworks to support midline catheter device selection limits consistency and informed decision-making.<sup><a href="#s4-ref-10">10</a></sup>
+- **Staff resistance:** Resistance to adopting new protocols and anticoagulation practices may delay implementation and reduce compliance.<sup><a href="#s4-ref-58">58</a>,<a href="#s4-ref-62">62</a></sup>
+
+#### References
+
+1. <a id="s4-ref-1"></a>van Loon FHJ, Buise MP, Claassen JJF, Dierick-van Daele ATM, Bouwman ARA. Comparison of ultrasound guidance with palpation and direct visualisation for peripheral vein cannulation in adult patients: a systematic review and meta-analysis. *Br J Anaesth*. 2018;121(2):358–366. doi:10.1016/j.bja.2018.04.047.
+2. <a id="s4-ref-2"></a>Poulsen E, Aagaard R, Bisgaard J, Sorensen HT, Juhl-Olsen P. The effects of ultrasound guidance on first-attempt success for difficult peripheral intravenous catheterization: a systematic review and meta-analysis. *Eur J Emerg Med*. 2023;30(2):70–77. doi:10.1097/mej.0000000000000993.
+3. <a id="s4-ref-3"></a>Tran QK, Fairchild M, Yardi I, Mirda D, Markin K, Pourmand A. Efficacy of ultrasound-guided peripheral intravenous cannulation versus standard of care: a systematic review and meta-analysis. *Ultrasound Med Biol*. 2021;47(11):3068–3078. doi:10.1016/j.ultrasmedbio.2021.07.002.
+4. <a id="s4-ref-4"></a>McCarthy ML, Shokoohi H, Boniface KS, et al. Ultrasonography versus landmark for peripheral intravenous cannulation: a randomized controlled trial. *Ann Emerg Med*. 2016;68(1):10–18. doi:10.1016/j.annemergmed.2015.09.009.
+5. <a id="s4-ref-5"></a>Sekiguchi S, Moriyama K, Tokumine J, et al. Near-infrared venous imaging may be more useful than ultrasound guidance for novices to obtain difficult peripheral venous access: a crossover simulation study. *Medicine*. 2023;102(12):e33320. doi:10.1097/md.0000000000033320.
+6. <a id="s4-ref-6"></a>Yalcinli S, Karbek Akarca F, Can O, Uz I, Konakci G. Comparison of standard technique, ultrasonography, and near-infrared light in difficult peripheral vascular access: a randomized controlled trial. *Prehosp Disaster Med*. 2022;37(1):65–70. doi:10.1017/S1049023X21001217.
+7. <a id="s4-ref-7"></a>Ullman AJ, Mihala G, O'Leary K, et al. Skin complications associated with vascular access devices: a secondary analysis of 13 studies involving 10,859 devices. *Int J Nurs Stud*. 2019;91:6–13. doi:10.1016/j.ijnurstu.2018.10.006.
+8. <a id="s4-ref-8"></a>Li J, Hao N, Han J, Zhang M, Li X. Incidence and predictive model of medical adhesive-related skin injury in cancer patients managed with central venous access devices: a retrospective study. *J Wound Ostomy Continence Nurs*. 2023;50(3):209–213. doi:10.1097/won.0000000000000971.
+9. <a id="s4-ref-9"></a>Liu M, Zheng C, Guan X, Ke Z, Zou P, Yang Y. Development of central venous access device-associated skin impairment assessment instrument. *Nurs Open*. 2022;9(4):2095–2107. doi:10.1002/nop2.1220.
+10. <a id="s4-ref-10"></a>Zohourian H, Schaubschlager T, Phan L, et al. Comparing incidence of thrombosis in PICC and midlines and evaluating the role of anticoagulation, site of insertion, and risk factors. *J Assoc Vasc Access*. 2019;24(1):38–44. doi:10.1016/j.java.2018.29.004.
+11. <a id="s4-ref-11"></a>Mavrovounis G, Mermiri M, Chatzis DG, Pantazopoulos I. Peripherally inserted central catheter lines for intensive care unit and onco-hematologic patients: a systematic review and meta-analysis. *Heart Lung*. 2020;49(6):922–933. doi:10.1016/j.hrtlng.2020.07.008.
+12. <a id="s4-ref-12"></a>Perek S, Khatib A, Izhaki N, Khalaila AS, Brenner B, Horowitz NA. A prediction model for central venous catheter-related thrombosis in patients with newly-diagnosed acute myeloid leukemia: a derivation cohort analysis. *Eur J Intern Med*. 2022;101:68–75. doi:10.1016/j.ejim.2022.04.025.
+13. <a id="s4-ref-13"></a>Lok CE, Huber TS, Lee T, et al. KDOQI clinical practice guideline for vascular access: 2019 update. *Am J Kidney Dis*. 2020;75(4):S1–S164.
+14. <a id="s4-ref-14"></a>McGill RL, Ruthazer R, Meyer KB, Miskulin DC, Weiner DE. Peripherally inserted central catheters and hemodialysis outcomes. *Clin J Am Soc Nephrol*. 2016;11(8):1434–1440. doi:10.2215/CJN.01980216.
+15. <a id="s4-ref-15"></a>Paje D, Heath M, Heung M, et al. Midline catheters in patients with advanced chronic kidney disease. *J Hosp Med*. 2023;18(11):969–977. doi:10.1002/jhm.13209.
+16. <a id="s4-ref-16"></a>Karim MS, Aryal P, Gardezi A, Clark DF, Aziz F, Parajuli S. Vascular access in kidney transplant recipients. *Transplant Rev*. 2020;34(3):100544. doi:10.1016/j.trre.2020.100544.
+17. <a id="s4-ref-17"></a>Firouraghi N, Ezzatzadegan Jahromi S, Sami A, Sharifian R. Duration of vascular access usage and patient survival in the first year of hemodialysis. *Iran J Kidney Dis*. 2019;13(6):398–403.
+18. <a id="s4-ref-18"></a>Yeh LM, Chiu SYH, Lai PC. The impact of vascular access types on hemodialysis patient long-term survival. *Sci Rep*. 2019;9(1):10708. doi:10.1038/s41598-019-47065-z.
+19. <a id="s4-ref-19"></a>Chiu CH, Wang CY, Moi SH, Wu CH, Yang CH, Chen JB. Comparison of tunneled central venous catheters and native arteriovenous fistulae by evaluating the mortality and morbidity of patients with prevalent hemodialysis. *J Formosan Med Assoc*. 2019;118(4):807–814. doi:10.1016/j.jfma.2018.08.025.
+20. <a id="s4-ref-20"></a>Castro V, Farber A, Zhang Y, et al. Reasons for long-term tunneled dialysis catheter use and associated morbidity. *J Vasc Surg*. 2021;73(2):588–592. doi:10.1016/j.jvs.2020.06.121.
+21. <a id="s4-ref-21"></a>Soleymanian T, Sheikh V, Tareh F, Argani H, Ossareh S. Hemodialysis vascular access and clinical outcomes: an observational multicenter study. *J Vasc Access*. 2017;18(1):35–42. doi:10.5301/jva.5000610.
+22. <a id="s4-ref-22"></a>Othman K, Abdulrahman S, Salman R, Al Harbi A, Al Malik W, Arabi M. Peripheral central catheter insertion in low eGFR patients: retrospective single institution study. *J Vasc Access*. 2023;24(1):41–44. doi:10.1177/11297298211023284.
+23. <a id="s4-ref-23"></a>Buetti N, Ruckly S, Lucet JC, Mimoz O, Souweine B, Timsit JF. Short-term dialysis catheter versus central venous catheter infections in ICU patients: a post hoc analysis of individual data of 4 multi-centric randomized trials. *Intensive Care Med*. 2019;45(12):1774–1782. doi:10.1007/s00134-019-05812-w.
+24. <a id="s4-ref-24"></a>Moureau N, Chopra V. Indications for peripheral, midline, and central catheters: summary of the Michigan appropriateness guide for intravenous catheters recommendations. *J Assoc Vasc Access*. 2016;21(3):140–148. doi:10.1016/j.java.2016.06.002.
+25. <a id="s4-ref-25"></a>Nielsen EB, Antonsen L, Mensel C, et al. The efficacy of midline catheters—a prospective, randomized, active-controlled study. *Int J Infect Dis*. 2021;102:220–225. doi:10.1016/j.ijid.2020.10.053.
+26. <a id="s4-ref-26"></a>Moureau NL, Carr PJ. Vessel health and preservation: a model and clinical pathway for using vascular access devices. *Br J Nurs*. 2018;27(8):S28–S35. doi:10.12968/bjon.2018.27.8.S28.
+27. <a id="s4-ref-27"></a>Salleras-Duran L, Fuentes-Pumarola C, Fontova-Almato A, Roqueta-Vall-Llosera M, Camara-Liebana D, Ballester-Ferrando D. Pain and satisfaction perceptions of ultrasound-guided versus conventional peripheral intravenous catheterization: a randomized controlled trial. *Pain Manag Nurs*. 2024;25(1):e37–e44. doi:10.1016/j.pmn.2023.07.010.
+28. <a id="s4-ref-28"></a>Saugel B, Scheeren TWL, Teboul JL. Ultrasound-guided central venous catheter placement: a structured review and recommendations for clinical practice. *Crit Care*. 2017;21(1):225.
+29. <a id="s4-ref-29"></a>Little A, Jones DG, Alsbrooks K. A narrative review of historic and current approaches for patients with difficult venous access: considerations for the emergency department. *Expert Rev Med Devices*. 2022;19(5):441–449. doi:10.1080/17434440.2022.2095904.
+30. <a id="s4-ref-30"></a>Hadfield G, De Freitas A, Bradbury S. Clinical evaluation of a silicone adhesive remover for prevention of MARSI at dressing change. *J Community Nurs*. 2019;33(3):36–41.
+31. <a id="s4-ref-31"></a>Gorski LA, Lynn Hadaway F, Hagle ME, et al. Infusion therapy standards of practice. *J Infus Nurs*. 2021;44(Suppl 1):S1–S224. doi:10.1097/NAN.0000000000000396.
+32. <a id="s4-ref-32"></a>Chen YH, Hsieh HL, Shih WM. Applying skin barrier film for skin tear management in patients with central venous catheterization. *Adv Skin Wound Care*. 2020;33(11):582–586. doi:10.1097/01.ASW.0000717208.20481.a0.
+33. <a id="s4-ref-33"></a>Pivkina AI, Gusarov VG, Blot SI, Zhivotneva IV, Pasko NV, Zamyatin MN. Effect of an acrylic terpolymer barrier film beneath transparent catheter dressings on skin integrity, risk of dressing disruption, catheter colonisation and infection. *Intensive Crit Care Nurs*. 2018;46:17–23. doi:10.1016/j.iccn.2017.11.002.
+34. <a id="s4-ref-34"></a>DeVries M, Sarbenoff J, Scott N, Wickert M, Hayes LM. Improving vascular access dressing integrity in the acute care setting: a quality improvement project. *J Wound Ostomy Continence Nurs*. 2021;48(5):383–388. doi:10.1097/won.0000000000000787.
+35. <a id="s4-ref-35"></a>Wang G, Wang H, Shen Y, et al. Association between ABO blood group and venous thrombosis related to the peripherally inserted central catheters in cancer patients. *J Vasc Access*. 2021;22(4):590–596. doi:10.1177/1129729820954721.
+36. <a id="s4-ref-36"></a>Hao N, Xie X, Zhou Z, et al. Nomogram predicted risk of peripherally inserted central catheter related thrombosis. *Sci Rep*. 2017;7(1):6344. doi:10.1038/s41598-017-06609-x.
+37. <a id="s4-ref-37"></a>Dai C, Li J, Li QM, Guo X, Fan YY, Qin HY. Effect of tunneled and nontunneled peripherally inserted central catheter placement: a randomized controlled trial. *J Vasc Access*. 2020;21(4):511–519. doi:10.1177/1129729819888120.
+38. <a id="s4-ref-38"></a>Yin YX, Gao W, Li XY, et al. Randomized multicenter study on long-term complications of peripherally inserted central catheters positioned by electrocardiographic technique. *Phlebology*. 2020;35(8):614–622. doi:10.1177/0268355520921357.
+39. <a id="s4-ref-39"></a>Slaughter E, Kynoch K, Brodribb M, Keogh SJ. Evaluating the impact of central venous catheter materials and design on thrombosis: a systematic review and meta-analysis. *Worldviews Evid Based Nurs*. 2020;17(5):376–384. doi:10.1111/wvn.12472.
+40. <a id="s4-ref-40"></a>Busch JD, Vens M, Mahler C, Herrmann J, Adam G, Ittrich H. Complication rates observed in silicone and polyurethane catheters of totally implanted central venous access devices implanted in the upper arm. *J Vasc Interv Radiol*. 2017;28(8):1177–1183. doi:10.1016/j.jvir.2017.04.024.
+41. <a id="s4-ref-41"></a>Lin FF, Murphy N, Martinez A, Marshall A. An audit of central venous catheter insertion and management practices in an Australian tertiary intensive care unit: a quality improvement project. *Intensive Crit Care Nurs*. 2022;70:103217. doi:10.1016/j.iccn.2022.103217.
+42. <a id="s4-ref-42"></a>Zhao H, He Y, Huang H, et al. Prevalence of medical adhesive-related skin injury at peripherally inserted central catheter insertion site in oncology patients. *J Vasc Access*. 2018;19(1):23–27. doi:10.5301/jva.5000805.
+43. <a id="s4-ref-43"></a>Yang Y, Liu H, He M, et al. Multivariate analysis of medical adhesive-related skin injury at the site of peripherally inserted central catheter insertion in cancer patients: a prospective cohort study. *J Vasc Access*. 2024;25(6):1894–1903. doi:10.1177/11297298231192171.
+44. <a id="s4-ref-44"></a>Pires-Junior JF, Chianca TCM, Borges EL, Azevedo C, Simino GPR. Medical adhesive-related skin injury in cancer patients: a prospective cohort study. *Rev Lat Am Enfermagem*. 2021;29:e3500. doi:10.1590/1518-8345.5227.3500.
+45. <a id="s4-ref-45"></a>Kang J, Sun W, Li H, Ma E, Wang K, Chen W. Peripherally inserted central catheter-related vein thrombosis in breast cancer patients. *J Vasc Access*. 2016;17(1):67–71. doi:10.5301/jva.5000457.
+46. <a id="s4-ref-46"></a>Han X, Yang X, Huang B, Yuan L, Cao Y. Low-dose versus high-dose heparin locks for hemodialysis catheters: a systematic review and meta-analysis. *Clin Nephrol*. 2016;86(7):1–8. doi:10.5414/cn108701.
+47. <a id="s4-ref-47"></a>Perez-Granda MJ, Bouza E, Pinilla B, et al. Randomized clinical trial analyzing maintenance of peripheral venous catheters in an internal medicine unit: Heparin vs. saline. *PLoS One*. 2020;15(1):e0226251. doi:10.1371/journal.pone.0226251.
+48. <a id="s4-ref-48"></a>Gonzalez S, Jimenez P, Saavedra P, et al. Five-year outcome of peripherally inserted central catheters in adults: a separated infectious and thrombotic complications analysis. *Infect Control Hosp Epidemiol*. 2021;42(7):833–841. doi:10.1017/ice.2020.1300.
+49. <a id="s4-ref-49"></a>Kim-Saechao SJ, Almario E, Rubin ZA. A novel infection prevention approach: leveraging a mandatory electronic communication tool to decrease peripherally inserted central catheter infections, complications, and cost. *Am J Infect Control*. 2016;44(11):1335–1345. doi:10.1016/j.ajic.2016.03.023.
+50. <a id="s4-ref-50"></a>Quinn M, Horowitz JK, Krein SL, Gaston A, Ullman A, Chopra V. The role of hospital-based vascular access teams and implications for patient safety: a multi-methods study. *J Hosp Med*. 2024;19(1):13–23. doi:10.1002/jhm.13253.
+51. <a id="s4-ref-51"></a>Bozaan D, Skicki D, Brancaccio A, et al. Less lumens-less risk: a pilot intervention to increase the use of single-lumen peripherally inserted central catheters. *J Hosp Med*. 2019;14(1):42–46. doi:10.12788/jhm.3097.
+52. <a id="s4-ref-52"></a>Kleinman Sween J, Lowrie A, Kirmse JM, Laughlin RK, Wodziak B, Sampathkumar P. A quality improvement project to decrease utilization of multilumen peripherally inserted central catheters. *Infect Control Hosp Epidemiol*. 2021;42(2):222–224. doi:10.1017/ice.2020.411.
+53. <a id="s4-ref-53"></a>Gavin NC, Webster J, Chan RJ, Rickard CM. Frequency of dressing changes for central venous access devices on catheter-related infections. *Cochrane Database Syst Rev*. 2016;2(2):Cd009213. doi:10.1002/14651858.CD009213.pub2.
+54. <a id="s4-ref-54"></a>Broadhurst D, Moureau N, Ullman A. Management of central venous access device-associated skin impairment: an evidence-based algorithm. *J Wound Ostomy Continence Nurs*. 2017;44(3):E1. doi:10.1097/won.0000000000000332.
+55. <a id="s4-ref-55"></a>Chen Y, Chen H, Yang J, et al. Patterns and risk factors of peripherally inserted central venous catheter-related symptomatic thrombosis events in patients with malignant tumors receiving chemotherapy. *J Vasc Surg Venous Lymphat Disord*. 2020;8(6):919–929. doi:10.1016/j.jvsv.2020.01.010.
+56. <a id="s4-ref-56"></a>Kang JR, Long LH, Yan SW, Wei WW, Jun HZ, Chen W. Peripherally inserted central catheter-related vein thrombosis in patients with lung cancer. *Clin Appl Thromb Hemost*. 2017;23(2):181–186. doi:10.1177/1076029615595880.
+57. <a id="s4-ref-57"></a>Dynan L, Smith RB. Sources of nurse-sensitive inpatient safety improvement. *Health Serv Res*. 2022;57(6):1235–1246. doi:10.1111/1475-6773.13979.
+58. <a id="s4-ref-58"></a>McDiarmid S, Scrivens N, Carrier M, et al. Outcomes in a nurse-led peripherally inserted central catheter program: a retrospective cohort study. *CMAJ Open*. 2017;5(3):E535–e539. doi:10.9778/cmajo.20170010.
+59. <a id="s4-ref-59"></a>Lee D, Kim JY, Kim HS, Lee KC, Lee SJ, Kwak HJ. Ultrasound evaluation of the radial artery for arterial catheterization in healthy anesthetized patients. *J Clin Monit Comput*. 2016;30(2):215–219. doi:10.1007/s10877-015-9704-9.
+60. <a id="s4-ref-60"></a>Li Y, Zhang H, Zhang S, Hou X, Feng L. Development and validation of medical adhesive-related skin injury risk assessment scale at peripherally inserted central catheter insertion site in oncology patients. *Nurs Open*. 2023;10(8):5244–5251.
+61. <a id="s4-ref-61"></a>Barton A. Prevention of medical adhesive-related skin injury (MARSI) during vascular access. *Br J Nurs*. 2021;30(Suppl 2):1–8. doi:10.12968/bjon.2021.30.Sup2.1.
+62. <a id="s4-ref-62"></a>Walters B, Price C. Quality improvement initiative reduces the occurrence of complications in peripherally inserted central catheters. *J Infus Nurs*. 2019;42(1):29–36. doi:10.1097/NAN.0000000000000310.
+
+---
+
+## Section 3: Vascular Access Device Selection
+
+### Chapter 3.1—Device Type Overview
+
+Vascular access devices (VADs) are categorized as peripheral or central based on the catheter tip location rather than the insertion site. This classification informs clinical decisions regarding infusate type, therapy duration, and patient risk factors.
+
+- **Peripheral VADs (PVADs)**, including peripheral intravenous catheters (PIVCs) and peripheral midlines (PMLs), terminate in peripheral veins. They are used for short- to intermediate-term therapy with peripheral infusates.
+- **Central VADs (CVADs)**, such as peripherally inserted central catheters (PICCs), centrally inserted central catheters (CICCs), tunneled catheters, and totally implanted venous access devices (TIVAD), terminate in the central vasculature and are used when prolonged therapy vesicants are required.
+
+Understanding the indications and limitations of each device is crucial for selecting a safe and appropriate VAD and achieving optimal patient outcomes. This chapter serves as a general guide, but individual patient considerations supersede recommended time frames.<sup><a href="#s5-ref-1">1</a></sup>
+
+#### Peripheral Intravenous Catheter (PIVC)
+
+PIVCs are the most commonly used VADs for short-term therapy (typically ≤5 days) with peripherally compatible infusates. They are associated with high failure rates due to dislodgement, phlebitis, and infiltration, especially in patients with difficult access.<sup><a href="#s5-ref-2">2</a></sup> Integrated PIVCs and those with blood-control features have shown improved outcomes, including lower complication rates and occupational safety benefits.<sup><a href="#s5-ref-2">2</a>,<a href="#s5-ref-3">3</a></sup>
+
+#### Peripheral Midline (PML)
+
+PMLs are upper arm catheters terminating in peripheral veins (not central vasculature), appropriate for intermediate-duration therapy (~1–4 weeks) involving peripherally compatible infusates.<sup><a href="#s5-ref-4">4</a>,<a href="#s5-ref-5">5</a></sup>
+
+#### Peripherally Inserted Central Catheter (PICC)
+
+PICCs are CVADs inserted through peripheral veins with tips in the superior vena cava. Suitable for long-term use and central infusates, they carry increased risks of thrombosis and catheter-related complications, particularly in patients with cancer or CKD.<sup><a href="#s5-ref-6">6</a>,<a href="#s5-ref-7">7</a>,<a href="#s5-ref-8">8</a></sup>
+
+#### Centrally Inserted Central Catheter (CICC)
+
+CICCs are centrally inserted CVADs, commonly used in critical care. While effective for rapid or high-volume infusion, especially in short-term intensive care unit (ICU) settings, they pose higher infection risks than TIVADs or tunneled catheters.<sup><a href="#s5-ref-9">9</a>,<a href="#s5-ref-10">10</a></sup>
+
+#### Tunneled Noncuffed and Cuffed CICCs (Tnc-/Tc-CICC)
+
+Tnc-CICCs are sometimes used for when intermediate access is needed or to reach an adequate vein diameter that may not be in an appropriate site for care and maintenance. Tc-CICCs are long-term devices with a tissue-ingrowth cuff and are often used for parenteral nutrition (PN), oncology, or dialysis.<sup><a href="#s5-ref-11">11</a>,<a href="#s5-ref-12">12</a></sup>
+
+#### Totally Implantable Venous Access Device (TIVAD)
+
+TIVADs, sometimes referred to as ports, are fully implanted under the skin and usually placed in the chest or arm for long-term intermittent therapy such as chemotherapy. They are associated with fewer infections and thrombotic complications than PICCs and offer better patient quality of life for long-term access needs.<sup><a href="#s5-ref-13">13</a>,<a href="#s5-ref-14">14</a>,<a href="#s5-ref-15">15</a></sup>
+
+#### Intraosseous (IO) Catheters
+
+Intraosseous (IO) devices provide emergency vascular access via bone marrow, ideal when intravenous (IV) access is unobtainable. They support medication, fluid, and blood product administration but are limited to short-term use.<sup><a href="#s5-ref-16">16</a>,<a href="#s5-ref-17">17</a></sup>
+
+#### Arterial Catheters
+
+Primarily used for continuous blood pressure monitoring or frequent arterial blood sampling, these devices are not used for drug or fluid infusion due to the risk of ischemic complications.<sup><a href="#s5-ref-18">18</a>,<a href="#s5-ref-19">19</a>,<a href="#s5-ref-20">20</a></sup> In rare cases, some arterial catheters are used for chemotherapy.
+
+#### Table 1: Vascular Access Device Overview
+
+| Device Type | Key Characteristics | Typical Duration | Special Considerations |
+|---|---|---|---|
+| **Peripheral IV catheter (PIVC)** | Short catheter in superficial vein; for short-term use (≤5 d); high failure rate; avoid vesicants. | Hours to ≤5 d | High failure rate; dislodgement and infiltration are possible. |
+| **Intraosseous (IO) access** | Emergency access via bone marrow; rapid, temporary; for resuscitation without IV access. | 24–48 h (emergent use only) | Short-term only; risks include infection and extravasation. |
+| **Peripheral midline (PML)** | Intermediate-length catheter in deep peripheral vein; 1–4 wk use; not central; avoid vesicants. | 1–4 wk | Lower infection rates versus PICC; mechanical failure possible. |
+| **Peripherally inserted central catheter (PICC)** | Central tip; long-term use; for vesicants, PN; avoid in chronic kidney disease (CKD) Stage 3b+; not ideal for ≤5 d. | >5 d to months | Avoid in CKD; complications increase with short-term use. |
+| **Centrally inserted central catheter (CICC)** | Inserted in subclavian, jugular, and femoral veins; central tip; used for acute or critical care access. | Days to weeks | Risk varies by insertion site; higher infection or thrombosis in femoral area. |
+| **Tunneled noncuffed catheter (Tnc)** | Tunneled under skin, no cuff; intermediate- or long-term use. Can be used with PML, PICC, or CICC. | Weeks to months | Used when the adequate vein diameter versus the exit site is a distance apart. |
+| **Tunneled cuffed catheter (Tc-CICC)** | Tunneling and a cuff reduce infection risk; ideal for continuous long-term infusion like PN. | Months to years | Preferred for extremely long-term PN or continuous infusions; requires surgical placement. |
+| **Totally implantable venous access device (TIVAD)** | Fully implanted under skin; accessed via noncoring needle; optimal for long-term intermittent therapy. | Months to years (intermittent use) | Requires needle access. |
+| **Arterial catheters** | Inserted into an artery; used for continuous blood pressure monitoring or frequent arterial blood sampling; not used for drug or fluid infusion. (except for rare chemotherapy) | Hours to days (short-term use) | High risk of ischemic complications and infection. |
+
+#### References
+
+1. <a id="s5-ref-1"></a>Pinelli F, Little A, Kokotis K, Alsbrooks K, Pittiruti M. Assessment of the MAGIC recommendations in context of evolving evidence based on the use of PICC in ICU. *J Vasc Access*. 2023;24(4):836–847. doi:10.1177/11297298211048019.
+2. <a id="s5-ref-2"></a>Rickard CM, Larsen E, Walker RM, et al. Integrated versus nonintegrated peripheral intravenous catheter in hospitalized adults (OPTIMUM): a randomized controlled trial. *J Hosp Med*. 2023;18(1):21–32. doi:10.1002/jhm.12995.
+3. <a id="s5-ref-3"></a>Cura JD. Comparing successful insertions, dwell time, reinsertions and the costs of supplies between integrated and simple short peripheral catheters. *J Vasc Access*. 2023;24(4):771–779. doi:10.1177/11297298211054893.
+4. <a id="s5-ref-4"></a>Swaminathan L, Flanders S, Horowitz J, Zhang Q, O'Malley M, Chopra V. Safety and outcomes of midline catheters vs peripherally inserted central catheters for patients with short-term indications: a multicenter study. *JAMA Intern Med*. 2022;182(1):50–58. doi:10.1001/jamainternmed.2021.6844.
+5. <a id="s5-ref-5"></a>Lu H, Yang Q, Yang L, et al. The risk of venous thromboembolism associated with midline catheters compared with peripherally inserted central catheters: a systematic review and meta-analysis. *Nurs Open*. 2022;9(3):1873–1882. doi:10.1002/nop2.935.
+6. <a id="s5-ref-6"></a>Picardi M, Della Pepa R, Cerchione C, et al. A frontline approach with peripherally inserted versus centrally inserted central venous catheters for remission induction chemotherapy phase of acute myeloid leukemia: a randomized comparison. *Clin Lymphoma Myeloma Leuk*. 2019;19(4):e184–e194. doi:10.1016/j.clml.2018.12.008.
+7. <a id="s5-ref-7"></a>Chopra V, Kaatz S, Grant P, et al. Risk of venous thromboembolism following peripherally inserted central catheter exchange: an analysis of 23,000 hospitalized patients. *Am J Med*. 2018;131(6):651–660. doi:10.1016/j.amjmed.2018.01.017.
+8. <a id="s5-ref-8"></a>McGill RL, Ruthazer R, Meyer KB, Miskulin DC, Weiner DE. Peripherally inserted central catheters and hemodialysis outcomes. *Clin J Am Soc Nephrol*. 2016;11(8):1434–1440. doi:10.2215/CJN.01980216.
+9. <a id="s5-ref-9"></a>Takashima M, Schults J, Mihala G, Corley A, Ullman A. Complication and failures of central vascular access device in adult critical care settings. *Crit Care Med*. 2018;46(12):1998–2009. doi:10.1097/ccm.0000000000003370.
+10. <a id="s5-ref-10"></a>Takashima M, Ray-Barruel G, Ullman A, Keogh S, Rickard CM. Randomized controlled trials in central vascular access devices: a scoping review. *PLoS One*. 2017;12(3):e0174164. doi:10.1371/journal.pone.0174164.
+11. <a id="s5-ref-11"></a>Karim MS, Aryal P, Gardezi A, Clark DF, Aziz F, Parajuli S. Vascular access in kidney transplant recipients. *Transplant Rev*. 2020;34(3):100544. doi:10.1016/j.trre.2020.100544.
+12. <a id="s5-ref-12"></a>Moss JG, Wu O, Bodenham AR, et al. Central venous access devices for the delivery of systemic anticancer therapy (CAVA): a randomised controlled trial. *Lancet*. 2021;398(10298):403–415. doi:10.1016/S0140-6736(21)00766-2.
+13. <a id="s5-ref-13"></a>Jiang M, Li CL, Pan CQ, Yu L. The risk of bloodstream infection associated with totally implantable venous access ports in cancer patient: a systematic review and meta-analysis. *Support Care Cancer*. 2020;28(1):361–372. doi:10.1007/s00520-019-04809-x.
+14. <a id="s5-ref-14"></a>Yu XY, Xu JL, Li D, Jiang ZF. Late complications of totally implantable venous access ports in patients with cancer: risk factors and related nursing strategies. *Medicine (Baltimore)*. 2018;97(38):e12427. doi:10.1097/md.0000000000012427.
+15. <a id="s5-ref-15"></a>Zhang Y, Zhao R, Jiang N, Shi Y, Wang Q, Sheng Y. A retrospective observational study on maintenance and complications of totally implantable venous access ports in 563 patients: prolonged versus short flushing intervals. *Int J Nurs Sci*. 2021;8(3):252–256. doi:10.1016/j.ijnss.2021.05.005.
+16. <a id="s5-ref-16"></a>Wang D, Deng L, Zhang R, Zhou Y, Zeng J, Jiang H. Efficacy of intraosseous access for trauma resuscitation: a systematic review and meta-analysis. *World J Emerg Surg*. 2023;18(1):17. doi:10.1186/s13017-023-00487-7.
+17. <a id="s5-ref-17"></a>Drozd A, Wolska M, Szarpak L. Intraosseous vascular access in emergency and trauma settings: a comparison of the most universally used intraosseous devices. *Expert Rev Med Devices*. 2021;18(9):855–864. doi:10.1080/17434440.2021.1962287.
+18. <a id="s5-ref-18"></a>Reynolds H, Gowardman J, Woods C. Care bundles and peripheral arterial catheters. *Br J Nurs*. 2024;33(2):S34–S41. doi:10.12968/bjon.2024.33.2.S34.
+19. <a id="s5-ref-19"></a>Porritt K. Peripheral arterial catheters: dressing and catheter securement. *JBI EBP Database*. 2021;JBI-ES-3594-3.
+20. <a id="s5-ref-20"></a>Spencer TR, Imbriaco G, Bardin-Spencer A, et al. Safe insertion of arterial catheters (SIA): an ultrasound-guided protocol to minimize complications for arterial cannulation. *J Vasc Access*. 2024;25(5):1403–1408. doi:10.1177/11297298231178064.
+
+---
+
+### Chapter 3.2—Material and Design
+
+Catheter material and design features are fundamental to vascular access device (VAD) performance, durability, and complication risk. While insertion technique and care practices are essential to long-term outcomes, intrinsic device properties also determine how catheters interact with the vasculature and infusates. A well-matched design can reduce the incidence of infection, thrombosis, occlusion, dislodgement, and mechanical failure. Device selection must therefore consider multiple design factors, including material composition, number of lumens, surface coatings, valve mechanisms, and other structural attributes, based on patient-specific risk and therapy goals.
+
+#### Overview
+
+**Catheter Material Composition**
+
+Two primary catheter materials dominate the market: polyurethane and silicone. Both are biocompatible but differ in mechanical properties:
+
+- **Polyurethane:** Stiffer, pressure-tolerant (supports power injection), but may be more thrombogenic and cause vessel irritation. Newer technologies allow these catheters to soften as they reach body temperature.
+- **Silicone:** Softer, more flexible, may kink or be harder to advance, but associated with lower rates of thrombosis in high-risk patients.
+
+Material properties influence patient safety. In a meta-analysis, Wildgruber et al. found a significantly higher thrombosis rate in polyurethane ports than in silicone ports (35.6% versus 2.0%). Silicone catheters may be especially beneficial in oncology and hypercoagulable populations.<sup><a href="#s6-ref-1">1</a></sup>
+
+**Design Features**
+
+Key design elements include:
+
+- **Number of lumens:** Single-lumen catheters are preferred when clinically feasible, as they reduce the risk of central line-associated bloodstream infection, catheter-related thrombosis, and occlusion. Multilumen catheters should be reserved for patients requiring multiple simultaneous infusions.<sup><a href="#s6-ref-2">2</a>,<a href="#s6-ref-3">3</a>,<a href="#s6-ref-4">4</a></sup>
+- **Catheter diameter:** A larger diameter in French or gauge size increases the risk of thrombosis. Selection should balance required flow rates with vessel size and patient risk.<sup><a href="#s6-ref-1">1</a>,<a href="#s6-ref-5">5</a></sup>
+- **Pressure capacity:** Power-injectable catheters must be labeled for high pressure contrast media injection protocols.<sup><a href="#s6-ref-6">6</a>,<a href="#s6-ref-7">7</a></sup>
+- **Valve technology:** Pressure-activated safety valves (integrated or add-on) and blood control features may improve safety, reduce blood exposure, and minimize occlusion risk.<sup><a href="#s6-ref-8">8</a></sup>
+- **Integrated peripheral intravenous catheters (PIVCs):** Design enhancements such as integrated PIVCs (with extension tubing and stabilization features) have demonstrated longer dwell times and reduced failure rates compared to nonintegrated systems.<sup><a href="#s6-ref-8">8</a>,<a href="#s6-ref-9">9</a></sup>
+
+**Antimicrobial and Antithrombotic Surface Technologies**
+
+Catheters may be modified or manufactured with antimicrobial or antithrombotic coatings to reduce colonization and fibrin adherence:
+
+- **Antimicrobial:** Chlorhexidine-silver sulfadiazine, silver ions, and minocycline-rifampin reduce bacterial proliferation. These may be helpful in patients with prolonged dwell times or a higher risk of infection.<sup><a href="#s6-ref-10">10</a>,<a href="#s6-ref-11">11</a></sup>
+- **Antithrombotic:** Heparin bonding, hydrogel coatings, or hydrophilic surfaces reduce platelet adhesion and fibrin sheath formation. Evidence of benefit is strongest in select, high-risk populations.<sup><a href="#s6-ref-12">12</a>,<a href="#s6-ref-13">13</a>,<a href="#s6-ref-14">14</a></sup>
+
+While authors of studies have suggested these technologies may reduce complications in some settings, their routine use remains a matter of debate. They must be paired with stringent adherence to infection prevention and catheter care practices.<sup><a href="#s6-ref-10">10</a>,<a href="#s6-ref-11">11</a>,<a href="#s6-ref-12">12</a>,<a href="#s6-ref-13">13</a>,<a href="#s6-ref-14">14</a></sup>
+
+#### Recommendation 1: PIVC Design Recommendation
+
+Use integrated PIVCs and those with blood control features when available. These devices are associated with reduced dislodgement, longer dwell time, and improved clinician safety.
+
+**Summary of Evidence**
+
+Authors of 1 large, randomized controlled trial demonstrated significantly reduced failure rates for integrated PIVCs compared with nonintegrated designs. Blood control technology also improves occupational safety by reducing exposure and helps maintain dressing integrity.<sup><a href="#s6-ref-8">8(Ia)</a>,<a href="#s6-ref-9">9(IIb)</a></sup>
+
+#### Recommendations 2: Catheter Material Selection Recommendation
+
+Clinicians should consider catheter material (silicone versus polyurethane) when selecting a central venous access device, particularly for patients at elevated thrombotic risk.
+
+**Summary of Evidence**
+
+In a retrospective analysis, Wildgruber et al. showed silicone catheters had significantly lower thrombosis rates than polyurethane (2.0% versus 35.6%, P < 0.0001) in central venous ports.<sup><a href="#s6-ref-1">1(IIIb)</a></sup> Authors of additional studies have confirmed that silicone catheters are structurally more durable and less thrombogenic in high-risk populations such as oncology patients.<sup><a href="#s6-ref-1">1(IIIb)</a>,<a href="#s6-ref-15">15(Ib)</a>,<a href="#s6-ref-16">16(IIIb)</a></sup>
+
+#### Recommendation 3: Lumen Number Recommendation
+
+Use the fewest number of lumens required to meet therapeutic needs.
+
+**Summary of Evidence**
+
+Authors of multiple studies have linked multilumen catheters with increased risks of bloodstream infection, catheter-related venous thrombosis, and occlusion. In a modeling study, Ratz et al. and, in observational work, Chopra et al. showed that increasing single-lumen use can reduce complications and hospital costs.<sup><a href="#s6-ref-2">2(Vb)</a>,<a href="#s6-ref-3">3(IIIa)</a>,<a href="#s6-ref-4">4(IIa)</a>,<a href="#s6-ref-17">17(IIb)</a></sup> Multilumen catheters should be reserved for patients requiring multiple simultaneous infusions. These complex intravenous (IV) therapies may require dedicated lumens (i.e., not mixed with other infusions) or the option to allow bolus infusions during intermittent infusions.<sup><a href="#s6-ref-2">2(Vb)</a>,<a href="#s6-ref-3">3(IIIa)</a></sup>
+
+#### Recommendation 4: Coated Catheters in High-Risk Patients Recommendation
+
+Antimicrobial or antithrombotic catheters may be considered in adults with anticipated catheter dwell times of greater than 7 days and elevated risk for catheter-related bloodstream infection (CRBSI) or thrombosis. Product selection should reflect patient risk profile, institutional data, and cost-benefit analysis.
+
+**Summary of Evidence**
+
+In a prospective-observational study, Winkler et al. showed a trend toward reduced thrombosis with chlorhexidine-coated peripherally inserted central catheters (PICCs) despite their original labeling of antimicrobial.<sup><a href="#s6-ref-11">11(IIIa)</a></sup> Authors of other studies have suggested mixed outcomes and emphasized appropriate patient selection.<sup><a href="#s6-ref-18">18(Ia)</a>,<a href="#s6-ref-19">19(IIb)</a></sup>
+
+**Cautionary Note:** Coated catheters are not a substitute for good technique. Antimicrobial and antithrombotic surfaces must complement, not replace, adherence to aseptic insertion, maintenance, and surveillance protocols. Inappropriate use may increase costs without reducing complications.
+
+#### Clinical Considerations
+
+**Benefits**
+
+- **Reduced complications:** Integrated PIVCs with integrated extension sets are associated with fewer complications, such as dislodgement and site contamination, improving overall device stability.<sup><a href="#s6-ref-8">8</a></sup>
+- **Enhanced safety:** Blood control technology reduces blood exposure during insertion and access, promoting clinician safety and minimizing site contamination.<sup><a href="#s6-ref-9">9</a></sup>
+- **Tailored risk reduction:** Selecting catheter materials based on patient-specific risk factors, such as higher thrombotic risk, may lower the incidence of catheter-related venous thrombosis.<sup><a href="#s6-ref-1">1</a>,<a href="#s6-ref-16">16</a>,<a href="#s6-ref-20">20</a></sup>
+- **Patient safety:** Reduced risk of thrombotic complications enhances patient safety and may lower morbidity.<sup><a href="#s6-ref-12">12</a>,<a href="#s6-ref-14">14</a>,<a href="#s6-ref-21">21</a></sup>
+- **Reduced adverse events:** Using single-lumen PICCs and midlines by default, unless multiple lumens are clearly indicated, may lower the risk of device-related complications.<sup><a href="#s6-ref-7">7</a>,<a href="#s6-ref-24">24</a></sup>
+
+**Risks**
+
+- **Material sensitivity:** Some patients may experience adverse reactions to specific catheter materials, although both polyurethane and silicone are generally safe.<sup><a href="#s6-ref-1">1</a>,<a href="#s6-ref-16">16</a>,<a href="#s6-ref-20">20</a></sup>
+- **Device failure:** Inadequate flushing or improper handling may lead to catheter damage, occlusion, or premature failure.<sup><a href="#s6-ref-9">9</a></sup>
+- **False security:** Reliance on blood control features or integrated designs may lead to lapses in aseptic technique or handling vigilance.<sup><a href="#s6-ref-9">9</a></sup>
+- **Anticoagulant interaction:** Potential adverse interactions with anticoagulant therapies may complicate patient management.<sup><a href="#s6-ref-12">12</a>,<a href="#s6-ref-14">14</a>,<a href="#s6-ref-21">21</a></sup>
+- **Insufficient access capacity:** Patients requiring concurrent or incompatible infusions may need additional or replacement devices to meet their therapy needs.<sup><a href="#s6-ref-25">25</a></sup>
+- **Adverse events from nonadherence:** Failure to follow device selection recommendations may increase the risk of CRBSI, catheter-related venous thromboembolism, and catheter occlusion.<sup><a href="#s6-ref-26">26</a>,<a href="#s6-ref-27">27</a>,<a href="#s6-ref-28">28</a></sup>
+
+**Implementation Considerations**
+
+- **Device selection protocols:** Institutions should incorporate catheter material, integration, and safety features into standardized device selection protocols based on clinical indication and patient risk.<sup><a href="#s6-ref-9">9</a></sup>
+- **Staff education:** Clinicians must be trained on appropriate handling techniques, flushing protocols, and the clinical advantages of integrated and blood control technologies.<sup><a href="#s6-ref-9">9</a></sup>
+- **Antithrombotic PICCs:** Consider use of antithrombotic-impregnated central VADs (CVADs) in high-risk patients, with attention to cost-effectiveness given the variability in clinical benefit.<sup><a href="#s6-ref-11">11</a>,<a href="#s6-ref-14">14</a></sup>
+- **Training:** Staff training and adherence to infection control protocols are essential for the effective use of antimicrobial-impregnated catheters.<sup><a href="#s6-ref-22">22</a>,<a href="#s6-ref-23">23</a></sup>
+- **Preinsertion planning:** Collaborate with pharmacists and vascular access specialists to assess vascular access needs and determine the appropriate catheter lumen number before ordering a VAD.<sup><a href="#s6-ref-7">7</a>,<a href="#s6-ref-24">24</a>,<a href="#s6-ref-25">25</a></sup>
+
+**Barriers to Implementation**
+
+- **Limited availability:** Integrated or blood control PIVCs and CVAD silicone-based catheters may not be available in all clinical settings or for all patient populations.<sup><a href="#s6-ref-9">9</a></sup>
+- **Cost concerns:** Advanced catheter designs and safety features may incur higher upfront costs, which can limit routine use in resource-constrained environments.<sup><a href="#s6-ref-9">9</a></sup>
+- **Inconsistent adoption:** Variability in clinician awareness or institutional protocols may hinder consistent use of integrated designs or tailored material selection.<sup><a href="#s6-ref-9">9</a></sup>
+- **Limited data:** Limited long-term efficacy data, variability in clinical benefits, and high device costs complicate widespread adoption of antithrombotic CVADs.<sup><a href="#s6-ref-14">14</a>,<a href="#s6-ref-22">22</a></sup>
+- **Overestimation of access needs:** Clinicians may request multilumen catheters unnecessarily, for example, to separate blood draws from infusions or to maintain a backup lumen, thereby increasing patient risk.<sup><a href="#s6-ref-25">25</a></sup>
+
+#### References
+
+1. <a id="s6-ref-1"></a>Wildgruber M, Lueg C, Borgmeyer S, et al. Polyurethane versus silicone catheters for central venous port devices implanted at the forearm. *Eur J Cancer*. 2016;59:113–124. doi:10.1016/j.ejca.2016.02.011.
+2. <a id="s6-ref-2"></a>Ratz D, Hofer T, Flanders SA, Saint S, Chopra V. Limiting the number of lumens in peripherally inserted central catheters to improve outcomes and reduce cost: a simulation study. *Infect Control Hosp Epidemiol*. 2016;37(7):811–817. doi:10.1017/ice.2016.55.
+3. <a id="s6-ref-3"></a>Herc E, Patel P, Washer LL, Conlon A, Flanders SA, Chopra V. A model to predict central-line-associated bloodstream infection among patients with peripherally inserted central catheters: the MPC score. *Infect Control Hosp Epidemiol*. 2017;38(10):1155–1166. doi:10.1017/ice.2017.167.
+4. <a id="s6-ref-4"></a>Chopra V, O'Malley M, Horowitz J, et al. Improving peripherally inserted central catheter appropriateness and reducing device-related complications: a quasiexperimental study in 52 Michigan hospitals. *BMJ Qual Saf*. 2022;31(1):23–30. doi:10.1136/bmjqs-2021-013015.
+5. <a id="s6-ref-5"></a>Bahl A, Mielke N, Xing Y. Risk of midline catheter-related thrombosis due to catheter diameter: an observational cohort study. *Thromb Res*. 2023;228:172–180. doi:10.1016/j.thromres.2023.06.007.
+6. <a id="s6-ref-6"></a>Fielding JC, Wagner-Bartak NA, Javadi S, et al. Improved computed tomography contrast injection rates through implantable chest power ports. *J Comput Assist Tomogr*. 2020;44(6):911–913. doi:10.1097/RCT.0000000000001048.
+7. <a id="s6-ref-7"></a>Gorski LA, Lynn Hadaway F, Hagle ME, et al. Infusion therapy standards of practice. *J Infus Nurs*. 2021;44(Suppl 1):S1–S224. doi:10.1097/NAN.0000000000000396.
+8. <a id="s6-ref-8"></a>Rickard CM, Larsen E, Walker RM, et al. Integrated versus nonintegrated peripheral intravenous catheter in hospitalized adults (OPTIMUM): a randomized controlled trial. *J Hosp Med*. 2023;18(1):21–32. doi:10.1002/jhm.12995.
+9. <a id="s6-ref-9"></a>Cura JD. Comparing successful insertions, dwell time, reinsertions and the costs of supplies between integrated and simple short peripheral catheters. *J Vasc Access*. 2023;24(4):771–779. doi:10.1177/11297298211054893.
+10. <a id="s6-ref-10"></a>Malek AE, Raad II. Preventing catheter-related infections in cancer patients: a review of current strategies. *Expert Rev Anti Infect Ther*. 2020;18(6):531–538. doi:10.1080/14787210.2020.1750367.
+11. <a id="s6-ref-11"></a>Winkler MA, Spencer TR, Siddiqi N, et al. Clinical experience with a chlorhexidine-coated PICC: a prospective, multicenter, observational study. *J Vasc Access*. 2024;25(1):225–231. doi:10.1177/11297298211049648.
+12. <a id="s6-ref-12"></a>Mannarino MM, Bassett M, Donahue DT, Biggins JF. Novel high-strength thromboresistant poly(vinyl alcohol)-based hydrogel for vascular access applications. *J Biomater Sci Polym Ed*. 2020;31(5):601–621. doi:10.1080/09205063.2019.1706148.
+13. <a id="s6-ref-13"></a>Kariya S, Nakatani M, Ono Y, et al. Assessment of the antithrombogenicity of a poly-2-methoxyethylacrylate-coated central venous port-catheter system. *Cardiovasc Intervent Radiol*. 2020;43(5):775–780. doi:10.1007/s00270-020-02408-6.
+14. <a id="s6-ref-14"></a>Ullman AJ, Paterson RS, Schults JA, et al. Do antimicrobial and antithrombogenic peripherally inserted central catheter (PICC) materials prevent catheter complications? An analysis of 42,562 hospitalized medical patients. *Infect Control Hosp Epidemiol*. 2022;43(4):427–434. doi:10.1017/ice.2021.141.
+15. <a id="s6-ref-15"></a>Busch JD, Vens M, Herrmann J, Adam G, Ittrich H. Material failure of silicone catheter lines: a retrospective review of partial and complete ruptures in 553 patients. *Am J Roentgenol*. 2017;208(2):464–469. doi:10.2214/AJR.16.16540.
+16. <a id="s6-ref-16"></a>Slaughter E, Kynoch K, Brodribb M, Keogh SJ. Evaluating the impact of central venous catheter materials and design on thrombosis: a systematic review and meta-analysis. *Worldviews Evid Based Nurs*. 2020;17(5):376–384. doi:10.1111/wvn.12472.
+17. <a id="s6-ref-17"></a>Bozaan D, Skicki D, Brancaccio A, et al. Less lumens-less risk: a pilot intervention to increase the use of single-lumen peripherally inserted central catheters. *J Hosp Med*. 2019;14(1):42–46. doi:10.12788/jhm.3097.
+18. <a id="s6-ref-18"></a>Lai NM, Chaiyakunapruk N, Lai NA, O'Riordan E, Pau WS, Saint S. Catheter impregnation, coating or bonding for reducing central venous catheter-related infections in adults. *Cochrane Database Syst Rev*. 2016;3(3):Cd007878. doi:10.1002/14651858.CD007878.pub3.
+19. <a id="s6-ref-19"></a>Iftikhar R, Chaudhry QUN, Satti TM, et al. Noble metal coated central venous catheters are not superior to uncoated catheters in preventing infectious and non-infectious complications in immunocompromised patients. *J Ayub Med Coll Abbottabad*. 2018;30(4):S647–S651.
+20. <a id="s6-ref-20"></a>Busch JD, Vens M, Mahler C, Herrmann J, Adam G, Ittrich H. Complication rates observed in silicone and polyurethane catheters of totally implanted central venous access devices implanted in the upper arm. *J Vasc Interv Radiol*. 2017;28(8):1177–1183. doi:10.1016/j.jvir.2017.04.024.
+21. <a id="s6-ref-21"></a>Thorarinsdottir H, Kander T, Johansson D, Nilsson B, Klarin B, Sanchez J. Blood compatibility of widely used central venous catheters; an experimental study. *Sci Rep*. 2022;12(1):8600. doi:10.1038/s41598-022-12564-z.
+22. <a id="s6-ref-22"></a>Wu Y, Liu Y, Wang B, Feng B. Efficacy of antimicrobial peripherally inserted central catheters in line-associated bloodstream infections: a systematic review and meta-analysis. *Am J Infect Control*. 2023;51(12):1425–1429. doi:10.1016/j.ajic.2023.04.163.
+23. <a id="s6-ref-23"></a>Lai NM, Chaiyakunapruk N, Lai NA, O'Riordan E, Pau WSC, Saint S. Catheter impregnation, coating or bonding for reducing central venous catheter-related infections in adults. *Cochrane Database Syst Rev*. 2016;(6):CD007878. doi:10.1002/14651858.CD007878.pub2.
+24. <a id="s6-ref-24"></a>Coyer B, Carlucci M. Reducing central line utilization by peripherally infusing vasopressors. *Dimens Crit Care Nurs*. 2023;42(3):131–136. doi:10.1097/DCC.0000000000000576.
+25. <a id="s6-ref-25"></a>Deveau RF Jr, Marino KK, Crowley KE, McLaughlin KC, Culbreth SE. Safety of peripherally administered 3% hypertonic saline. *Am J Emerg Med*. 2023;63:127–131. doi:10.1016/j.ajem.2022.10.051.
+26. <a id="s6-ref-26"></a>Manrique-Rodriguez S, Heras-Hidalgo I, Pernia-Lopez MS, et al. Standardization and chemical characterization of intravenous therapy in adult patients: a step further in medication safety. *Drugs R D*. 2021;21(1):39–64. doi:10.1007/s40268-020-00329-w.
+27. <a id="s6-ref-27"></a>Silva EVC, Ochiai ME, Vieira KRN, Pereira Barretto AC. The use of peripherally inserted central catheter reduced the incidence of phlebitis in heart failure patients: a randomized trial. *J Vasc Access*. 2023;24(5):942–947. doi:10.1177/11297298211059650.
+28. <a id="s6-ref-28"></a>Gorski LA, Stranz M, Cook LS, et al. Development of an evidence-based list of noncytotoxic vesicant medications and solutions. *J Infus Nurs*. 2017;40(1):26–40. doi:10.1097/NAN.0000000000000202.
+
+---
+
+### Chapter 3.3—Indications & Contraindications
+
+Selecting the right vascular access device (VAD) depends on where the catheter tip terminates and the clinical purpose it must serve. Peripheral devices such as peripheral intravenous catheters (PIVCs) and peripheral midlines (PMLs) are suited for short to intermediate therapies with nonvesicant, nonirritant solutions of lower osmolality. Central VADs (CVADs), with tips positioned in the superior or inferior vena cava, are indicated for long-term therapy, vesicants or irritants, infusates with high osmolality or extreme pH, and when reliable access is needed for monitoring or rapid infusion.
+
+Safe use of VADs also requires recognition of contraindications. Inappropriate device or tip placement increases the risk of infiltration, thrombosis, arrhythmia, or treatment delays. Understanding when not to use a device is as important as knowing when to use it correctly. Therapy type, anticipated duration, vessel health, and patient-specific factors should always guide device choice, ensuring that the benefits outweigh potential risks and that vascular integrity is preserved over time.
+
+#### Recommendation 1: Device Selection Protocols
+
+Clinicians are advised to implement structured, evidence-based protocols for the selection and maintenance of VADs. These protocols should consider incorporating therapy type, duration, vessel health, and patient-specific factors to ensure device appropriateness, prevent complications, and support high-value care.
+
+**Summary of Evidence**
+
+Implementing standardized device selection frameworks, such as the Michigan Appropriateness Guide for Intravenous Catheters (MAGIC), improves catheter appropriateness and reduces complications. Authors of a quasiexperimental study across 52 Michigan hospitals found that improved peripherally inserted central catheter (PICC) selection was associated with lower central line–associated bloodstream infection (CLABSI) rates.<sup><a href="#s7-ref-1">1(IIa)</a></sup> Predictors of short-term PICCs use included difficult venous access, use of multilumen devices, and care in teaching hospitals.<sup><a href="#s7-ref-2">2(IIIa)</a></sup> MAGIC guidelines discourage short-term PICC use (<5 days), recommending PMLs or ultrasound-guided PIVCs instead.<sup><a href="#s7-ref-3">3(Va)</a>,<a href="#s7-ref-4">4(Vb)</a></sup>
+
+Avoiding unnecessary VADs is a core strategy in CLABSI prevention. In a scoping review on central venous catheter complications, avoiding unnecessary catheterization was the only strategy that eliminated the risk of catheter-related bloodstream infection and other complications.<sup><a href="#s7-ref-5">5(IIa)</a></sup> In a meta-analysis, Bahl et al. found that smaller-diameter PICCs were associated with reduced rates of symptomatic deep vein thrombosis (DVT).<sup><a href="#s7-ref-6">6(IIIa)</a></sup> Midlines and ultrasound-guided long peripheral catheters further reduced DVT risk and hospital costs.<sup><a href="#s7-ref-6">6(IIIa)</a>,<a href="#s7-ref-7">7(IIIb)</a>,<a href="#s7-ref-8">8(IIIb)</a>,<a href="#s7-ref-9">9(IVb)</a></sup> The introduction of vascular access teams and structured protocols has shown additional cost savings and improved patient outcomes.<sup><a href="#s7-ref-7">7(IIIb)</a>,<a href="#s7-ref-8">8(IIIb)</a>,<a href="#s7-ref-9">9(IVb)</a>,<a href="#s7-ref-10">10(IIIb)</a></sup>
+
+#### Recommendation 2: VAD Selection for Postacute Care
+
+Clinicians should assess therapy type, duration, patient capacity, and available support systems when selecting VADs for patients discharged to postacute care settings, including home infusion.
+
+**Summary of Evidence**
+
+In a systematic review of hospital-in-the-home and outpatient antibiotic therapy programs, high treatment success rates were reported. Still, the authors of this study noted vascular access–related complications occurred in up to 29% of cases, particularly in older adults and those lacking caregiver support.<sup><a href="#s7-ref-11">11(IIb)</a></sup> Device-specific risks vary by therapy type and patient capacity: Authors of 1 large cohort study found that 28% of home infusion patients experienced catheter occlusions, many within a week of discharge.<sup><a href="#s7-ref-12">12(IIb)</a></sup>
+
+Risks increase with therapy complexity. For long-term therapies like parenteral nutrition, additional risks include dwell time, cyclic infusion, and compounded formulations.<sup><a href="#s7-ref-13">13(IIIb)</a></sup> Careful patient selection, standardized discharge education, and access to follow-up support are key strategies to improve outcomes and reduce complications across the continuum of postacute care.<sup><a href="#s7-ref-11">11(IIb)</a>,<a href="#s7-ref-12">12(IIb)</a>,<a href="#s7-ref-13">13(IIIb)</a></sup>
+
+#### Recommendation 3: VAD for High-Flow Contrast Injection
+
+Device choice considerations should be based on the required flow rate, therapy duration, vessel size and depth, and the injection parameters specified by the imaging protocol. Clinicians should select VADs labeled for high-flow contrast injections.
+
+**Summary of Evidence**
+
+Power-injectable devices, including PIVCs, PMLs, and CVADs, are designed to withstand high-pressure contrast delivery. In 1 study, optimized high-flow contrast injection through power-rated totally implanted VADs (TIVADs) improved contrast delivery without increasing complications.<sup><a href="#s7-ref-14">14(IIb)</a></sup> Polyurethane power-injectable PMLs safely achieve flow rates up to 283 mL/min, supporting their use in diagnostic imaging.<sup><a href="#s7-ref-3">3(Va)</a></sup> The manufacturer lists flow rates for PIVCs on each package.<sup><a href="#s7-ref-15">15(Vb)</a></sup>
+
+#### Recommendation 4: Vasopressor Administration via Peripheral VADs
+
+Vasopressors may be administered through peripheral VADs (PVADs) when central access is not immediately available, provided the infusion is closely monitored for early signs of extravasation. Central access should be obtained as soon as feasible for ongoing therapy.
+
+**Summary of Evidence**
+
+Vasopressors are traditionally administered via central venous access due to the risk of tissue necrosis from extravasation. However, peripheral administration may be necessary to prevent treatment delays in urgent or emergent situations where central access is not immediately available. Authors have shown that the risk of serious complications is low with proper catheter selection.<sup><a href="#s7-ref-16">16(Vb)</a>,<a href="#s7-ref-17">17(IIIb)</a></sup> The standard of care supports infusing peripheral vasopressors under these conditions, emphasizing frequent reassessment and early transition to central access when appropriate.<sup><a href="#s7-ref-18">18(IVa)</a></sup>
+
+#### Clinical Considerations
+
+**Benefits**
+
+- **Improved patient outcomes:** Optimized catheter management reduces unplanned removals, lowers infection and thrombosis risks, and decreases adverse events and mortality.<sup><a href="#s7-ref-10">10</a>,<a href="#s7-ref-19">19</a>,<a href="#s7-ref-20">20</a>,<a href="#s7-ref-21">21</a>,<a href="#s7-ref-22">22</a>,<a href="#s7-ref-23">23</a>,<a href="#s7-ref-24">24</a>,<a href="#s7-ref-25">25</a>,<a href="#s7-ref-26">26</a>,<a href="#s7-ref-27">27</a></sup>
+- **Cost efficiency:** Fewer complications and better care coordination through specialist teams and evidence-based practices lead to more efficient resource use and cost savings.<sup><a href="#s7-ref-10">10</a>,<a href="#s7-ref-23">23</a>,<a href="#s7-ref-25">25</a>,<a href="#s7-ref-26">26</a></sup>
+- **Reduced length of stay:** Proactive complication prevention and improved catheter dwell time management support shorter hospital stays and reduced health care costs.<sup><a href="#s7-ref-10">10</a>,<a href="#s7-ref-20">20</a>,<a href="#s7-ref-22">22</a>,<a href="#s7-ref-23">23</a>,<a href="#s7-ref-24">24</a>,<a href="#s7-ref-26">26</a></sup>
+
+**Risks**
+
+- Integrating predictive modeling and surveillance tools into clinical practice necessitates staff training, Electronic health record adaptation, and continuous compliance monitoring, which may temporarily increase workload during implementation.<sup><a href="#s7-ref-8">8</a>,<a href="#s7-ref-10">10</a></sup>
+- Learning curve for clinical staff when transitioning to new protocols.<sup><a href="#s7-ref-10">10</a>,<a href="#s7-ref-21">21</a>,<a href="#s7-ref-28">28</a></sup>
+- Possible mechanical failure under high-pressure injections if catheter integrity is compromised.<sup><a href="#s7-ref-29">29</a></sup>
+- Extravasation of vesicant medications into the tissues can lead to tissue damage, nerve injury, necrosis, and in severe cases, necessitate surgical intervention.<sup><a href="#s7-ref-30">30</a>,<a href="#s7-ref-31">31</a></sup>
+
+**Implementation Considerations**
+
+- Train staff in proper catheter selection to enhance compliance with best practices.<sup><a href="#s7-ref-10">10</a>,<a href="#s7-ref-27">27</a>,<a href="#s7-ref-28">28</a></sup>
+- Lower costs through better vascular access management.<sup><a href="#s7-ref-10">10</a>,<a href="#s7-ref-23">23</a></sup>
+- Prioritize smaller catheter-to-vein ratios to lower thrombosis risks.<sup><a href="#s7-ref-29">29</a></sup>
+- Using algorithms and frequently educating clinical staff to select the most appropriate intravenous device for the patient may result in longer catheter dwell time without complications, supporting patient safety.<sup><a href="#s7-ref-30">30</a>,<a href="#s7-ref-32">32</a></sup>
+
+**Barriers to Implementation**
+
+- Resistance to practice change among health care providers.<sup><a href="#s7-ref-19">19</a>,<a href="#s7-ref-20">20</a>,<a href="#s7-ref-21">21</a>,<a href="#s7-ref-27">27</a></sup>
+- Variability in adherence across different hospital units.<sup><a href="#s7-ref-19">19</a>,<a href="#s7-ref-20">20</a></sup>
+- Treatment needs, patient vein options, and clinical staff understanding are often barriers to receiving timely orders for the most appropriate VAD and establishing consistent policy applications.<sup><a href="#s7-ref-30">30</a>,<a href="#s7-ref-32">32</a>,<a href="#s7-ref-33">33</a>,<a href="#s7-ref-34">34</a></sup>
+
+#### References
+
+1. <a id="s7-ref-1"></a>Chopra V, O'Malley M, Horowitz J, et al. Improving peripherally inserted central catheter appropriateness and reducing device-related complications: a quasiexperimental study in 52 Michigan hospitals. *BMJ Qual Saf*. 2022;31(1):23–30. doi:10.1136/bmjqs-2021-013015.
+2. <a id="s7-ref-2"></a>Paje D, Conlon A, Kaatz S, et al. Patterns and predictors of short-term peripherally inserted central catheter use: a multicenter prospective cohort study. *J Hosp Med*. 2018;13(2):76–82. doi:10.12788/jhm.2847.
+3. <a id="s7-ref-3"></a>Moureau N, Chopra V. Indications for peripheral, midline, and central catheters: summary of the Michigan Appropriateness Guide for Intravenous Catheters recommendations. *J Assoc Vasc Access*. 2016;21(3):140–148. doi:10.1016/j.java.2016.06.002.
+4. <a id="s7-ref-4"></a>Patel PK, Gupta A, Vaughn VM, Mann JD, Ameling JM, Meddings J. Review of strategies to reduce central line–associated bloodstream infection (CLABSI) and catheter-associated urinary tract infection (CAUTI) in adult ICUs. *J Hosp Med*. 2018;13(2):105–116. doi:10.12788/jhm.2856.
+5. <a id="s7-ref-5"></a>Bahl A, Alsbrooks K, Gala S, Hoerauf K. Symptomatic deep vein thrombosis associated with peripherally inserted central catheters of different diameters: a systematic review and meta-analysis. *Clin Appl Thromb Hemost*. 2023;29:10760296221144040. doi:10.1177/10760296221144041.
+6. <a id="s7-ref-6"></a>Paje D, Heath M, Heung M, et al. Midline catheters in patients with advanced chronic kidney disease. *J Hosp Med*. 2023;18(11):969–977. doi:10.1002/jhm.13209.
+7. <a id="s7-ref-7"></a>Picardi M, Giordano C, Della Pepa R, et al. Intravascular complications of central venous catheterization by insertion site in acute leukemia during remission induction chemotherapy phase: lower risk with peripherally inserted catheters in a single-center retrospective study. *Cancers (Basel)*. 2023;15(7):2147. doi:10.3390/cancers15072147.
+8. <a id="s7-ref-8"></a>Zhu Y, Li D, Li Y, Cai W. Predictive model for PICC occlusion risk for patients in intensive care units: a retrospective clinical study. *Altern Ther Health Med*. 2023;29(8):278–285.
+9. <a id="s7-ref-9"></a>Lima Zandonadi MG, Bolorino N, Tiroli CF, Guassu Nogueira DN, Pieri FM. Peripherally inserted central catheter and costs associated with nursing care: an integrative review. *Ciencia, Cuidado e Saude*. 2023;22:1–9.
+10. <a id="s7-ref-10"></a>Ricou Rios L, Esposito Catala CE, Pons Calsapeu AP, et al. Implementation of a vascular access specialist team in a tertiary hospital: a cost-benefit analysis. *Cost Eff Resour Alloc*. 2023;21(1):67. doi:10.1186/s12962-023-00464-6.
+11. <a id="s7-ref-11"></a>Sriskandarajah S, Hobbs J, Roughead E, Ryan M, Reynolds K. Safety and effectiveness of "hospital in the home" and "outpatient parenteral antimicrobial therapy" in different age groups: a systematic review of observational studies. *Int J Clin Pract*. 2018:e13216. doi:10.1111/ijcp.13216.
+12. <a id="s7-ref-12"></a>Buzas B, Smith J, Gilbert GE, Moureau N. Home infusion pharmacy quality improvement for central venous access devices using anti-reflux needleless connectors to reduce occlusions, emergency room visits, and alteplase costs. *Am J Health Syst Pharm*. 2022;79(13):1079–1085. doi:10.1093/ajhp/zxac083.
+13. <a id="s7-ref-13"></a>Pichitchaipitak O, Ckumdee S, Apivanich S, Chotiprasitsakul D, Shantavasinkul PC. Predictive factors of catheter-related bloodstream infection in patients receiving home parenteral nutrition. *Nutrition*. 2018;46:1–6. doi:10.1016/j.nut.2017.08.002.
+14. <a id="s7-ref-14"></a>Fielding JC, Wagner-Bartak NA, Javadi S, et al. Improved computed tomography contrast injection rates through implantable chest power ports. *J Comput Assist Tomogr*. 2020;44(6):911–913. doi:10.1097/RCT.0000000000001048.
+15. <a id="s7-ref-15"></a>Araiza A, Duran M, Varon J. Administration of vasopressors through peripheral venous catheters. *CMAJ*. 2022;194(21):E739. doi:10.1503/cmaj.211966.
+16. <a id="s7-ref-16"></a>Coyer B, Carlucci M. Reducing central line utilization by peripherally infusing vasopressors. *Dimens Crit Care Nurs*. 2023;42(3):131–136. doi:10.1097/DCC.0000000000000576.
+17. <a id="s7-ref-17"></a>Tian DH, Smyth C, Keijzers G, et al. Safety of peripheral administration of vasopressor medications: a systematic review. *Emerg Med Australas*. 2020;32(2):220–227. doi:10.1111/1742-6723.13406.
+18. <a id="s7-ref-18"></a>Gorski LA, Hadaway L, Hagle ME, et al. Infusion therapy standards of practice. *J Infus Nurs*. 2021;44(Suppl 1):S1–S224. doi:10.1097/NAN.0000000000000396.
+19. <a id="s7-ref-19"></a>Hawes ML. Vascular access device securement for oncology patients and those with chronic diseases. *Br J Nurs*. 2021;30(8):S20–S25. doi:10.12968/bjon.2021.30.8.S20.
+20. <a id="s7-ref-20"></a>Stewart AG, Laupland KB, Tabah A. Central line associated and primary bloodstream infections. *Curr Opin Crit Care*. 2023;29(5):423–429. doi:10.1097/mcc.0000000000001082.
+21. <a id="s7-ref-21"></a>Schora D, Patel P, Barza R, et al. Positive and neutral needleless connectors: a comparative study of central-line associated bloodstream infection, occlusion, and bacterial contamination of the connector lumen. *J Infus Nurs*. 2023;46(3):157–161. doi:10.1097/nan.0000000000000506.
+22. <a id="s7-ref-22"></a>Wang P, He Q, Yuan J, Lu Q, Ji A, Peng A. Risk factors for peripherally inserted central catheter-related venous thrombosis in adult patients with cancer. *Thromb J*. 2024;22(1):1–9.
+23. <a id="s7-ref-23"></a>Bahl A, Johnson S, Hijazi M, Mielke N, Chen NW. Cost effectiveness of ultrasound-guided long peripheral catheters in difficult vascular access patients. *J Vasc Access*. 2024;25(4):1204–1211. doi:10.1177/11297298231154297.
+24. <a id="s7-ref-24"></a>Hymes JL, Mooney A, Van Zandt C, Lynch L, Ziebol R, Killion D. Dialysis catheter-related bloodstream infections: a cluster-randomized trial of the ClearGuard HD antimicrobial barrier cap. *Am J Kidney Dis*. 2017;69(2):220–227. doi:10.1053/j.ajkd.2016.09.014.
+25. <a id="s7-ref-25"></a>Puig-Asensio M, Marra AR, Childs CA, Kukla ME, Perencevich EN, Schweizer ML. Effectiveness of chlorhexidine dressings to prevent catheter-related bloodstream infections. Does one size fit all? A systematic literature review and meta-analysis. *Infect Control Hosp Epidemiol*. 2020;41(12):1388–1395. doi:10.1017/ice.2020.356.
+26. <a id="s7-ref-26"></a>Yu KC, Jung M, Ai C. Characteristics, costs, and outcomes associated with central-line-associated bloodstream infection and hospital-onset bacteremia and fungemia in US hospitals. *Infect Control Hosp Epidemiol*. 2023;44(12):1920–1926. doi:10.1017/ice.2023.132.
+27. <a id="s7-ref-27"></a>Rowe M, Spencer T. Catheter securement impact on PICC-related CLABSI: does securement effect risk? *Vasc Access*. 2020;14(1):12–15.
+28. <a id="s7-ref-28"></a>Corley A, Marsh N, Ullman AJ, Rickard CM. Peripheral intravenous catheter securement: an integrative review of contemporary literature around medical adhesive tapes and supplementary securement products. *J Clin Nurs*. 2023;32(9):1841–1857. doi:10.1111/jocn.16237.
+29. <a id="s7-ref-29"></a>Brugioni L, Bertellini E, Ravazzini M, et al. Guide-wire replacement of a mini-midline catheter with a central venous catheter: a retrospective study on 63 cases. *J Vasc Access*. 2021;22(3):394–397. doi:10.1177/1129729820944066.
+30. <a id="s7-ref-30"></a>Marsh N, Larsen EN, O'Brien C, et al. Safety and efficacy of midline catheters versus peripheral intravenous catheters: a pilot randomized controlled trial. *Int J Nurs Pract*. 2023;29(2):e13110. doi:10.1111/ijn.13110.
+31. <a id="s7-ref-31"></a>Spiegel RJ, Eraso D, Leibner E, Thode H, Morley EJ, Weingart S. The utility of midline intravenous catheters in critically ill emergency department patients. *Ann Emerg Med*. 2020;75(4):538–545. doi:10.1016/j.annemergmed.2019.09.018.
+32. <a id="s7-ref-32"></a>Foor JS, Moureau NL, Gibbons D, Gibson SM. Investigative study of hemodilution ratio: 4Vs for vein diameter, valve, velocity, and volumetric blood flow as factors for optimal forearm vein selection for intravenous infusion. *J Vasc Access*. 2024;25(1):140–148. doi:10.1177/11297298221095287.
+33. <a id="s7-ref-33"></a>Manrique-Rodriguez S, Heras-Hidalgo I, Pernia-Lopez MS, et al. Standardization and chemical characterization of intravenous therapy in adult patients: a step further in medication safety. *Drugs R D*. 2021;21(1):39–64. doi:10.1007/s40268-020-00329-w.
+34. <a id="s7-ref-34"></a>Wu O, McCartney E, Heggie R, et al. Venous access devices for the delivery of long-term chemotherapy: the CAVA three-arm RCT. *Health Technol Assess (Rockv)*. 2021;25(47):1–126. doi:10.3310/hta25470.
+
+---
+
+### Chapter 3.4—Infusate Characteristics
+
+The physical and chemical properties of intravenous infusates are critical determinants in vascular access device (VAD) selection. Medications and solutions administered intravenously carry inherent risks, and incongruities between infusate characteristics and device type can result in serious complications, including phlebitis, thrombophlebitis, and premature catheter failure.
+
+Key infusate characteristics such as pH, osmolality, and vesicant or irritant potential must be carefully evaluated. Solutions with extreme pH, high osmolality, or known tissue-damaging effects increase the risk of vessel irritation, inflammation, infiltration, extravasation, and vein sclerosis. These risks are amplified with prolonged therapy or rapid infusion rates.
+
+For high-risk infusates, the use of central venous access devices (CVADs) is recommended. The greater blood flow in central veins enables rapid dilution of harsh infusates, reducing the potential for endothelial injury and systemic complications.
+
+Establishing clear, evidence-based guidelines that match infusate properties to specific VAD types is essential to maintain device integrity, prevent complications, and ensure uninterrupted therapy. Tailoring VAD selection to the infusate improves patient safety, protects vascular health, and promotes optimal clinical outcomes.
+
+#### Recommendation 1: Irritant and Vesicant Administration
+
+Clinicians should evaluate the characteristics of all infusates for their vesicant or irritant potential, pH, osmolality, and particle content when determining the appropriate VAD.
+
+**Summary of Evidence**
+
+Infusate characteristics should always be considered in the broader context of vein health, therapy duration, and patient-specific risk factors. Infusates with properties that increase the risk of vessel irritation, such as extreme pH, high or low osmolality (the concentration of dissolved particles per kilogram of solvent), or vesicant potential, are associated with complications including phlebitis, infiltration, and extravasation when delivered through peripheral veins. Standards recommend using CVADs for vesicant drugs whenever possible to reduce the risk of tissue injury.<sup><a href="#s8-ref-1">1(IVa)</a></sup> Similarly, clinical alerts and authors of observational studies have emphasized that vesicants and irritants, especially in older adults or patients with vascular impairment, can lead to necrosis, compartment syndrome, or loss of function if extravasation occurs.<sup><a href="#s8-ref-2">2(Va)</a>,<a href="#s8-ref-3">3(IIIb)</a></sup>
+
+High particulate content (undissolved or suspended particles ≥10–25 µm) can also provoke phlebitis, microvascular obstruction, and tissue injury when infused intravenously.<sup><a href="#s8-ref-2">2(Va)</a>,<a href="#s8-ref-4">4(IIb)</a></sup> In a large prospective cohort study of over 5000 patients, a significantly higher rate of catheter failure was found in those receiving irritant fluids through peripheral devices, with phlebitis and extravasation accounting for nearly one-third of failures.<sup><a href="#s8-ref-4">4(IIb)</a></sup> While many infiltration injuries today are managed conservatively, central access remains the safer option for infusates with a high risk of tissue injury or prolonged duration of therapy.<sup><a href="#s8-ref-1">1(IVa)</a>,<a href="#s8-ref-5">5(IIIb)</a></sup> Evidence has supported tailoring device selection not only to the infusate characteristics but also to the patient's vascular health, therapy duration, and likelihood of complications.<sup><a href="#s8-ref-5">5(IIIb)</a></sup>
+
+#### Recommendation 2: Peripheral Administration of Infusates
+
+When administering infusates through peripheral VADs (PVADs), clinicians should consider a combination of factors, including pH, osmolality, particle content, infusion rate, therapy duration, and vein condition.
+
+**Summary of Evidence**
+
+In extensive literature, the concept has been supported that infusates with extreme pH or high osmolality are associated with increased risks of phlebitis, thrombophlebitis, and infiltration when administered peripherally.<sup><a href="#s8-ref-1">1(IVa)</a>,<a href="#s8-ref-6">6(IVa)</a>,<a href="#s8-ref-7">7(IIIb)</a></sup> However, complications have also been observed with infusates within normal ranges, particularly in patients with fragile veins or prolonged therapy.<sup><a href="#s8-ref-8">8(IIb)</a>,<a href="#s8-ref-9">9(IIIb)</a></sup> Hemodilution strategies, such as using larger veins, slower infusion rates, or more dilute solutions, have been shown to reduce complications and improve catheter longevity.<sup><a href="#s8-ref-8">8(IIb)</a>,<a href="#s8-ref-9">9(IIIb)</a></sup>
+
+Authors of studies evaluating peripheral administration of hypertonic or concentrated solutions have emphasized the importance of site selection and infusion monitoring.<sup><a href="#s8-ref-7">7(IIIb)</a>,<a href="#s8-ref-9">9(IIIb)</a></sup> Wu et al. and others have demonstrated that proper dilution protocols reduce local tissue injury and catheter failure rates.<sup><a href="#s8-ref-8">8(IIb)</a>,<a href="#s8-ref-9">9(IIIb)</a></sup> Clinicians should avoid relying on a single infusate characteristic or numeric thresholds alone and instead assess infusate compatibility within the full context of patient factors, the access site, and infusion goals.
+
+#### Clinical Considerations
+
+**Benefits**
+
+- **Fewer complications:** Selecting devices based on therapy duration optimizes access and reduces device-related adverse events.<sup><a href="#s8-ref-10">10</a></sup>
+- **Targeted therapy support:** Anticipating access needs and tailoring device selection enhances efficiency and supports effective therapy delivery.<sup><a href="#s8-ref-10">10</a>,<a href="#s8-ref-11">11</a>,<a href="#s8-ref-12">12</a></sup>
+
+**Risks**
+
+- **Tissue injury:** Infiltration of vesicant medications into peripheral sites may cause necrosis, nerve damage, or require surgical intervention.<sup><a href="#s8-ref-13">13</a>,<a href="#s8-ref-14">14</a></sup>
+- **Device overload:** Inadequate assessment of infusion needs may lead to use of multiple devices, increasing complication risk.<sup><a href="#s8-ref-10">10</a></sup>
+
+**Implementation Considerations**
+
+- **Ongoing clinician education:** Use updated drug references, clinical algorithms, and case-based learning to guide device selection and support longer catheter dwell times.<sup><a href="#s8-ref-8">8</a>,<a href="#s8-ref-13">13</a></sup>
+- **Vascular access teams:** Engage trained teams across care settings to ensure appropriate device selection and insertion.<sup><a href="#s8-ref-15">15</a></sup>
+- **Electronic health record (EHR) integration:** Incorporate decision support tools, such as physician order entry prompts, into the EHR to standardize catheter selection and reinforce best practices.<sup><a href="#s8-ref-11">11</a>,<a href="#s8-ref-12">12</a></sup>
+
+**Barriers to Implementation**
+
+- **Staffing limitations:** Lack of trained staff or vascular access specialists may impede implementation of best practices.<sup><a href="#s8-ref-10">10</a></sup>
+- **Clinical variability:** Practice deviations may persist despite awareness of evidence, due to inconsistent adherence to guidelines.<sup><a href="#s8-ref-16">16</a></sup>
+- **Inappropriate device use:** Overestimating access needs, such as ordering multilumen catheters without a clear indication, can expose patients to unnecessary risk.<sup><a href="#s8-ref-17">17</a></sup>
+
+#### References
+
+1. <a id="s8-ref-1"></a>Gorski LA, Lynn Hadaway F, Hagle ME, et al. Infusion therapy standards of practice. *J Infus Nurs*. 2021;44(suppl 1):S1–S224. doi:10.1097/NAN.0000000000000396.
+2. <a id="s8-ref-2"></a>Bartzak PJ. Patient safety alert: What to know about infiltration, vesicants, and extravasation. *Med-Surg Matters*. 2019;28(4):12–14.
+3. <a id="s8-ref-3"></a>Massand S, Carr L, Schneider E, Johnson TS. Management of intravenous infiltration injuries. *Ann Plast Surg*. 2019;83(6):e55–e58. doi:10.1097/sap.0000000000001984.
+4. <a id="s8-ref-4"></a>Chen Y-M, Fan X-W, Liu M-H, Wang J, Yang Y-Q, Su Y-F. Risk factors for peripheral venous catheter failure: a prospective cohort study of 5345 patients. *J Vasc Access*. 2022;23(6):911–921. doi:10.1177/11297298211015035.
+5. <a id="s8-ref-5"></a>Johnson JL, Norton C, Fryfogle E, Fincher TK, Burmeister MA. The pharmacist's role in reducing infusion-related phlebitis. *Am J Health Syst Pharm*. 2023;80(15):974–983. doi:10.1093/ajhp/zxad090.
+6. <a id="s8-ref-6"></a>Manrique-Rodriguez S, Heras-Hidalgo I, Pernia-Lopez MS, et al. Standardization and chemical characterization of intravenous therapy in adult patients: a step further in medication safety. *Drugs R D*. 2021;21(1):39–64. doi:10.1007/s40268-020-00329-w.
+7. <a id="s8-ref-7"></a>Deveau RF Jr, Marino KK, Crowley KE, McLaughlin KC, Culbreth SE. Safety of peripherally administered 3% hypertonic saline. *Am J Emerg Med*. 2023;63:127–131. doi:10.1016/j.ajem.2022.10.051.
+8. <a id="s8-ref-8"></a>Foor JS, Moureau NL, Gibbons D, Gibson SM. Investigative study of hemodilution ratio: 4Vs for vein diameter, valve, velocity, and volumetric blood flow as factors for optimal forearm vein selection for intravenous infusion. *J Vasc Access*. 2024;25(1):140–148. doi:10.1177/11297298221095287.
+9. <a id="s8-ref-9"></a>Wu O, McCartney E, Heggie R, et al. Venous access devices for the delivery of long-term chemotherapy: the CAVA three-arm RCT. *Health Technol Assess (Rockv)*. 2021;25(47):1–126. doi:10.3310/hta25470.
+10. <a id="s8-ref-10"></a>Moureau N, Chopra V. Indications for peripheral, midline, and central catheters: summary of the Michigan Appropriateness Guide for Intravenous Catheters recommendations. *J Assoc Vasc Access*. 2016;21(3):140–148. doi:10.1016/j.java.2016.06.002.
+11. <a id="s8-ref-11"></a>Kleinman Sween J, Lowrie A, Kirmse JM, Laughlin RK, Wodziak B, Sampathkumar P. A quality improvement project to decrease utilization of multilumen peripherally inserted central catheters. *Infect Control Hosp Epidemiol*. 2021;42(2):222–224. doi:10.1017/ice.2020.411.
+12. <a id="s8-ref-12"></a>Bozaan D, Skicki D, Brancaccio A, et al. Less lumens–less risk: a pilot intervention to increase the use of single-lumen peripherally inserted central catheters. *J Hosp Med*. 2019;14(1):42–46. doi:10.12788/jhm.3097.
+13. <a id="s8-ref-13"></a>Marsh N, Larsen EN, O'Brien C, et al. Safety and efficacy of midline catheters versus peripheral intravenous catheters: a pilot randomized controlled trial. *Int J Nurs Pract*. 2023;29(2):e13110. doi:10.1111/ijn.13110.
+14. <a id="s8-ref-14"></a>Spiegel RJ, Eraso D, Leibner E, Thode H, Morley EJ, Weingart S. The utility of midline intravenous catheters in critically ill emergency department patients. *Ann Emerg Med*. 2020;75(4):538–545. doi:10.1016/j.annemergmed.2019.09.018.
+15. <a id="s8-ref-15"></a>Quinn M, Horowitz JK, Krein SL, Gaston A, Ullman A, Chopra V. The role of hospital-based vascular access teams and implications for patient safety: a multi-methods study. *J Hosp Med*. 2024;19(1):13–23. doi:10.1002/jhm.13253.
+16. <a id="s8-ref-16"></a>Lin FF, Murphy N, Martinez A, Marshall A. An audit of central venous catheter insertion and management practices in an Australian tertiary intensive care unit: a quality improvement project. *Intensive Crit Care Nurs*. 2022;70:103217. doi:10.1016/j.iccn.2022.103217.
+17. <a id="s8-ref-17"></a>Moureau N, Chopra V. Indications for peripheral, midline and central catheters: summary of the MAGIC recommendations. *Br J Nurs*. 2016;25(8):S15–S24. doi:10.12968/bjon.2016.25.8.S15.
+
+---
+
+### Chapter 3.5—Anticipated Duration
+
+The anticipated duration of therapy is a key determinant in selecting a vascular access device (VAD). Matching the device type to the expected treatment length supports continuity of care, reduces the need for repeated insertions, and minimizes complications such as infection, thrombosis, or mechanical failure.
+
+Short-term therapies are generally suited for peripheral intravenous catheters (PIVCs), provided the infusate is compatible with peripheral administration. For intermediate durations, peripheral midlines (PMLs) may offer improved vessel preservation and greater patient comfort while reducing the need for frequent replacements. Long-term therapies often require central venous access devices (CVADs), such as peripherally inserted central catheters (PICCs), tunneled catheters, or totally implanted VADs (TIVADs), selected according to the regimen and individual patient factors.
+
+Considering therapy duration during initial device planning enhances treatment efficiency, patient satisfaction, and cost-effectiveness. It also helps ensure the device remains functional throughout the intended course of care, reducing the risk of premature failure or unplanned interruptions. Integrating therapy duration with other clinical factors, including vein quality, infusate characteristics, and patient preferences, promotes safe, individualized, and patient-centered vascular access management.
+
+#### Recommendation 1: Use of PIVCs for Short-Term Therapy
+
+PIVCs are appropriate for intravenous (IV) therapies expected to last 5 days or fewer, provided the infusate is compatible with peripheral administration.
+
+**Summary of Evidence**
+
+In randomized controlled trials (RCTs) and cohort studies, PIVCs can reliably provide access for short courses of therapy, with average dwell times around 2.5 days.<sup><a href="#s9-ref-1">1(Ib)</a>,<a href="#s9-ref-2">2(IIb)</a></sup> Expert consensus recommends escalation to a longer-term device if therapy is expected to exceed 5 days or involve infusates that pose a higher risk to peripheral veins.<sup><a href="#s9-ref-3">3(Va)</a></sup>
+
+Note: PIVCs may remain viable for more than 5 days. The recommendation is asking the clinician to consider how long the patient is expected to need vascular access prior to choosing an appropriate device.
+
+#### Recommendation 2: Use of PML for Intermediate Duration Therapy
+
+PMLs are appropriate for IV therapy, lasting approximately 1–4 weeks when the infusate is peripherally compatible and central access is not required.
+
+**Summary of Evidence**
+
+In systematic reviews and multicenter cohort studies, PMLs have provided effective access for intermediate-duration therapy, with lower rates of bloodstream infection and occlusion than PICCs.<sup><a href="#s9-ref-4">4(IIIb)</a>,<a href="#s9-ref-5">5(IIIa)</a></sup> They are especially beneficial in patients with difficult IV access or when frequent replacement of PIVCs would be burdensome. Mechanical complications such as catheter-related venous thromboembolism remain a concern.<sup><a href="#s9-ref-6">6(IIa)</a>,<a href="#s9-ref-7">7(IIIa)</a></sup>
+
+#### Recommendation 3: Avoid PICCs for Therapy ≤5 Days
+
+PICCs should be avoided when the anticipated duration of IV therapy is 5 days or fewer, unless no other safe or reliable access is available.
+
+**Summary of Evidence**
+
+Authors of an extensive multicenter cohort study found that nearly 25% of PICCs were removed within 5 days, with a notable rate of complications, including venous thromboembolism (VTE).<sup><a href="#s9-ref-8">8(IIIa)</a></sup> Expert consensus recommends avoiding PICC placement in these cases to reduce unnecessary central line risks.<sup><a href="#s9-ref-3">3(Va)</a></sup>
+
+#### Recommendation 4: PICC Use for Short or Long-Term Therapy
+
+PICCs may be considered for short-term therapy when peripheral access is not feasible and for long-term therapy when other CVAD options are contraindicated or unavailable.
+
+**Summary of Evidence**
+
+In RCTs and cohort studies, PICCs can safely deliver centrally compatible infusates, including vesicants and parenteral nutrition, when peripheral options are inadequate or contraindicated.<sup><a href="#s9-ref-9">9(IVa)</a>,<a href="#s9-ref-10">10(Ib)</a></sup> In leukemia patients undergoing intensive chemotherapy, PICCs demonstrated lower infection and thrombosis rates than centrally inserted central catheters (CICCs).<sup><a href="#s9-ref-9">9(IVa)</a>,<a href="#s9-ref-10">10(Ib)</a></sup> However, PICCs are associated with higher risks of thrombotic events in patients with chronic kidney disease or high VTE risk and are not preferred for patients requiring central access for less than 14 days.<sup><a href="#s9-ref-3">3(Va)</a>,<a href="#s9-ref-11">11(IVb)</a></sup>
+
+#### Recommendation 5: Long-Term Access Device Selection
+
+For patients requiring long-term vascular access, clinicians should strongly consider tunneled-cuffed (Tc) catheters, tunneled noncuffed catheters, or TIVADs, as these options are associated with a lower risk of thrombosis compared to PICCs.
+
+**Summary of Evidence**
+
+Authors of multiple studies have supported the use of TIVADs over PICCs in patients with long-term vascular access needs, especially those at high risk for VTE. In a meta-analysis, Jiang et al. found that TIVADs were associated with a significantly lower risk of VTE in cancer patients than PICCs.<sup><a href="#s9-ref-12">12(IIa)</a></sup> Similarly, Lin et al. reported reduced rates of catheter-related thrombosis with ports compared with PICCs in oncology populations.<sup><a href="#s9-ref-13">13(IIIb)</a></sup>
+
+Bertoglio et al. evaluated PICC ports (fully implanted devices inserted via peripheral veins). They found that, while they offer some advantages over external catheters, thrombosis rates remained higher than chest ports.<sup><a href="#s9-ref-14">14(IIIa)</a></sup> Collectively, these findings support prioritizing tunneled or implanted chest ports over PICCs for long-term therapies in patients with elevated thrombotic risk, such as those receiving chemotherapy or prolonged infusions.
+
+#### Recommendation 6: Thrombosis Risk and Device Selection
+
+When selecting a VAD, clinicians should evaluate individual thrombosis risk factors, such as age >60, history of VTE, malignancy, obesity, critical illness, reduced mobility, and certain chemotherapies.
+
+**Summary of Evidence**
+
+Catheter-related deep vein thrombosis (CR-DVT) is a significant complication influenced by both patient-specific and device-related factors. Authors of numerous studies have identified older age, malignancy, body mass index ≥ 25, critical illness, hyperglycemia, and certain chemotherapies as contributors to increased CR-DVT risk.<sup><a href="#s9-ref-15">15(IIIb)</a>,<a href="#s9-ref-16">16(IVb)</a>,<a href="#s9-ref-17">17(IIIb)</a></sup> Device type also plays a critical role: in a meta-analysis by Lin et al. and a multicenter study by Haggstrom et al., TIVADs had significantly lower thrombosis rates than PICCs in cancer patients receiving long-term therapy.<sup><a href="#s9-ref-13">13(IIIb)</a>,<a href="#s9-ref-18">18(IIIb)</a></sup>
+
+#### Recommendation 7: TIVAD Use
+
+A TIVAD is strongly recommended for patients requiring long-term intermittent IV therapy. When continuous infusion is not required, TIVADs are associated with fewer complications and greater patient satisfaction than externalized CVADs.
+
+**Summary of Evidence**
+
+TIVADs offer a practical and durable option for patients requiring long-term intermittent IV therapy, such as chemotherapy. Compared with PICCs and external tunneled CVADs, TIVADs have resulted in lower infection rates, occlusion, and thrombosis.<sup><a href="#s9-ref-19">19(Ia)</a>,<a href="#s9-ref-20">20(Ia)</a>,<a href="#s9-ref-21">21(Ib)</a>,<a href="#s9-ref-22">22(IIIb)</a>,<a href="#s9-ref-23">23(IIIb)</a></sup> They are generally associated with better patient quality of life and reduced disruption to daily activities.<sup><a href="#s9-ref-20">20(Ia)</a>,<a href="#s9-ref-21">21(Ib)</a></sup> In a large RCT (CAVA) and a systematic review by Yeow et al., TIVADs were more cost-effective than PICCs over time, especially when therapy extended beyond 6 to 12 months.<sup><a href="#s9-ref-19">19(Ia)</a>,<a href="#s9-ref-20">20(Ia)</a></sup>
+
+TIVADs are best suited for long-term intermittent use. For patients requiring long-term continuous therapy (e.g., parenteral nutrition or 24-hour infusion), external Tc-CICC lines may be more appropriate. They allow stable, continuous access without the need for repeated needle access or the risk of dislodgement during daily activity or sleep.<sup><a href="#s9-ref-24">24(IIIb)</a></sup>
+
+#### Clinical Considerations
+
+**Benefits**
+
+- **Optimal vascular access:** Selecting the appropriate device based on therapy duration supports treatment needs while minimizing device-related complications.<sup><a href="#s9-ref-3">3</a></sup>
+- **Vessel preservation:** Reduces the need for multiple PIVC insertions, supporting vessel health and lowering risks associated with improper device use.<sup><a href="#s9-ref-25">25</a>,<a href="#s9-ref-26">26</a></sup>
+- **Fewer complications:** Decreases bloodstream infection rates, enhances quality of life, and reduces overall complication rates.<sup><a href="#s9-ref-19">19</a>,<a href="#s9-ref-27">27</a></sup>
+
+**Risks**
+
+- **Vascular injury:** Inappropriate device selection may increase the likelihood of inadvertent vascular complications.<sup><a href="#s9-ref-28">28</a></sup>
+- **Access-related complications:** Alternative catheter choices may raise the risk of thrombosis and infection during insertion or maintenance.<sup><a href="#s9-ref-24">24</a></sup>
+- **Implementation burden:** High costs, training demands, and staff learning curves may challenge early implementation.<sup><a href="#s9-ref-29">29</a>,<a href="#s9-ref-30">30</a>,<a href="#s9-ref-31">31</a>,<a href="#s9-ref-32">32</a>,<a href="#s9-ref-33">33</a>,<a href="#s9-ref-34">34</a></sup>
+
+**Implementation Considerations**
+
+- **Standardized care delivery:** Use vascular access teams and integrate decision support tools within the electronic health record (EHR) to standardize care and improve outcomes.<sup><a href="#s9-ref-35">35</a>,<a href="#s9-ref-36">36</a>,<a href="#s9-ref-37">37</a></sup>
+- **TIVAD use:** Encourage use of implanted ports for long-term therapy, emphasizing their physical and emotional benefits.<sup><a href="#s9-ref-19">19</a></sup>
+- **Staff training and monitoring:** Provide education on catheter use and management, implement EHR-based reminders, and establish surveillance systems for high-risk patients.<sup><a href="#s9-ref-29">29</a>,<a href="#s9-ref-31">31</a>,<a href="#s9-ref-32">32</a>,<a href="#s9-ref-34">34</a>,<a href="#s9-ref-38">38</a>,<a href="#s9-ref-39">39</a>,<a href="#s9-ref-40">40</a>,<a href="#s9-ref-41">41</a></sup>
+
+**Barriers to Implementation**
+
+- **Availability:** Requires trained personnel and resource availability.<sup><a href="#s9-ref-3">3</a></sup>
+- **Inconsistencies:** Evidence exists, but practices are inconsistently applied.<sup><a href="#s9-ref-28">28</a></sup>
+- **Resistance:** Provider resistance; budget constraints; unit variability in adherence.<sup><a href="#s9-ref-30">30</a>,<a href="#s9-ref-39">39</a>,<a href="#s9-ref-40">40</a>,<a href="#s9-ref-42">42</a>,<a href="#s9-ref-43">43</a>,<a href="#s9-ref-44">44</a>,<a href="#s9-ref-45">45</a></sup>
+
+#### References
+
+1. <a id="s9-ref-1"></a>Marsh N, Larsen EN, O'Brien C, et al. Safety and efficacy of midline catheters versus peripheral intravenous catheters: a pilot randomized controlled trial. *Int J Nurs Pract*. 2023;29(2):e13110. doi:10.1111/ijn.13110.
+2. <a id="s9-ref-2"></a>Shokoohi H, Boniface KS, Kulie P, Long A, McCarthy M. The utility and survivorship of peripheral intravenous catheters inserted in the emergency department. *Ann Emerg Med*. 2019;74(3):381–390. doi:10.1016/j.annemergmed.2019.02.003.
+3. <a id="s9-ref-3"></a>Moureau N, Chopra V. Indications for peripheral, midline, and central catheters: summary of the Michigan Appropriateness Guide for Intravenous Catheters recommendations. *J Assoc Vasc Access*. 2016;21(3):140–148. doi:10.1016/j.java.2016.06.002.
+4. <a id="s9-ref-4"></a>Swaminathan L, Flanders S, Horowitz J, Zhang Q, O'Malley M, Chopra V. Safety and outcomes of midline catheters vs peripherally inserted central catheters for patients with short-term indications: a multicenter study. *JAMA Intern Med*. 2022;182(1):50–58. doi:10.1001/jamainternmed.2021.6844.
+5. <a id="s9-ref-5"></a>Urtecho M, Torres Roldan VD, Nayfeh T, et al. Comparing complication rates of midline catheter vs peripherally inserted central catheter. A systematic review and meta-analysis. *Open Forum Infect Dis*. 2023;10(2):ofad024. doi:10.1093/ofid/ofad024.
+6. <a id="s9-ref-6"></a>Tripathi S, Kumar S, Kaushik S. The practice and complications of midline catheters: a systematic review. *Crit Care Med*. 2021;49(2):e140–e150. doi:10.1097/ccm.0000000000004764.
+7. <a id="s9-ref-7"></a>Lu H, Yang Q, Yang L, et al. The risk of venous thromboembolism associated with midline catheters compared with peripherally inserted central catheters: a systematic review and meta-analysis. *Nurs Open*. 2022;9(3):1873–1882. doi:10.1002/nop2.935.
+8. <a id="s9-ref-8"></a>Paje D, Conlon A, Kaatz S, et al. Patterns and predictors of short-term peripherally inserted central catheter use: a multicenter prospective cohort study. *J Hosp Med*. 2018;13(2):76–82. doi:10.12788/jhm.2847.
+9. <a id="s9-ref-9"></a>Gorski LA, Lynn Hadaway F, Hagle ME, et al. Infusion therapy standards of practice. *J Infus Nurs*. 2021;44(Suppl 1):S1–S224. doi:10.1097/NAN.0000000000000396.
+10. <a id="s9-ref-10"></a>Picardi M, Della Pepa R, Cerchione C, et al. A frontline approach with peripherally inserted versus centrally inserted central venous catheters for remission induction chemotherapy phase of acute myeloid leukemia: a randomized comparison. *Clin Lymphoma Myeloma Leuk*. 2019;19(4):e184–e194. doi:10.1016/j.clml.2018.12.008.
+11. <a id="s9-ref-11"></a>Magallon-Pedrera I, Perez-Altozano J, Virizuela Echaburu JA, Beato-Zambrano C, Borrega-Garcia P, de la Torre-Montero JC. ECO-SEOM-SEEO safety recommendations guideline for cancer patients receiving intravenous therapy. *Clin Transl Oncol*. 2020;22(11):2049–2060. doi:10.1007/s12094-020-02347-1.
+12. <a id="s9-ref-12"></a>Jiang M, Li C, Pan C, Cui X, Dietrich CF. Risk of venous thromboembolism associated with totally implantable venous access ports in cancer patients: a systematic review and meta-analysis. *J Thromb Haemost*. 2020;18(9):2253–2273. doi:10.1111/jth.14930.
+13. <a id="s9-ref-13"></a>Lin L, Li W, Chen C, Wei A, Liu Y. Peripherally inserted central catheters versus implantable port catheters for cancer patients: a meta-analysis. *Front Oncol*. 2023;13:1228092. doi:10.3389/fonc.2023.1228092.
+14. <a id="s9-ref-14"></a>Bertoglio S, Annetta MG, Brescia F, et al. A multicenter retrospective study on 4480 implanted PICC-ports: a GAVeCeLT project. *J Vasc Access*. 2022:112972982110676. doi:10.1177/11297298211067683.
+15. <a id="s9-ref-15"></a>Chen Y, Chen H, Yang J, et al. Patterns and risk factors of peripherally inserted central venous catheter-related symptomatic thrombosis events in patients with malignant tumors receiving chemotherapy. *J Vasc Surg Venous Lymphat Disord*. 2020;8(6):919–929. doi:10.1016/j.jvsv.2020.01.010.
+16. <a id="s9-ref-16"></a>Liu GD, Ma WJ, Liu HX, Tang L, Tan YH. Risk factors associated with catheter-related venous thrombosis: a meta-analysis. *Public Health*. 2022;205:45–54. doi:10.1016/j.puhe.2022.01.018.
+17. <a id="s9-ref-17"></a>Perek S, Khatib A, Izhaki N, Khalaila AS, Brenner B, Horowitz NA. A prediction model for central venous catheter-related thrombosis in patients with newly-diagnosed acute myeloid leukemia: a derivation cohort analysis. *Eur J Intern Med*. 2022;101:68–75. doi:10.1016/j.ejim.2022.04.025.
+18. <a id="s9-ref-18"></a>Haggstrom L, Parmar G, Brungs D. Central venous catheter thrombosis in cancer: a multi-centre retrospective study investigating risk factors and contemporary trends in management. *Clin Med Insights Oncol*. 2020;14:1179554920953097. doi:10.1177/1179554920953097.
+19. <a id="s9-ref-19"></a>Moss JG, Wu O, Bodenham AR, et al. Central venous access devices for the delivery of systemic anticancer therapy (CAVA): a randomised controlled trial. *Lancet*. 2021;398(10298):403–415. doi:10.1016/S0140-6736(21)00766-2.
+20. <a id="s9-ref-20"></a>Yeow M, Soh S, Yap R, et al. A systematic review and network meta-analysis of randomized controlled trials on choice of central venous access device for delivery of chemotherapy. *J Vasc Surg Venous Lymphat Disord*. 2022;10(5):1184–1191.e1188. doi:10.1016/j.jvsv.2022.03.007.
+21. <a id="s9-ref-21"></a>Clatot F, Fontanilles M, Lefebvre L, et al. Randomised phase II trial evaluating the safety of peripherally inserted catheters versus implanted port catheters during adjuvant chemotherapy in patients with early breast cancer. *Eur J Cancer*. 2020;126:116–124. doi:10.1016/j.ejca.2019.11.022.
+22. <a id="s9-ref-22"></a>Fang S, Yang J, Song L, Jiang Y, Liu Y. Comparison of three types of central venous catheters in patients with malignant tumor receiving chemotherapy. *Patient Prefer Adherence*. 2017;11:1197–1204. doi:10.2147/PPA.S142556.
+23. <a id="s9-ref-23"></a>Jiang M, Li CL, Pan CQ, Yu L. The risk of bloodstream infection associated with totally implantable venous access ports in cancer patient: a systematic review and meta-analysis. *Support Care Cancer*. 2020;28(1):361–372. doi:10.1007/s00520-019-04809-x.
+24. <a id="s9-ref-24"></a>Liu B, Wu Z, Lin C, Li L, Kuang X. Applicability of TIVAP versus PICC in non-hematological malignancies patients: a meta-analysis and systematic review. *PLoS One*. 2021;16(8):e0255473. doi:10.1371/journal.pone.0255473.
+25. <a id="s9-ref-25"></a>Nielsen EB, Antonsen L, Mensel C, et al. The efficacy of midline catheters—a prospective, randomized, active-controlled study. *Int J Infect Dis*. 2021;102:220–225. doi:10.1016/j.ijid.2020.10.053.
+26. <a id="s9-ref-26"></a>Moureau NL, Carr PJ. Vessel health and preservation: a model and clinical pathway for using vascular access devices. *Br J Nurs*. 2018;27(8):S28–S35. doi:10.12968/bjon.2018.27.8.S28.
+27. <a id="s9-ref-27"></a>Arvaniti K, Lathyris D, Blot S, Apostolidou-Kiouti F, Koulenti D, Haidich AB. Cumulative evidence of randomized controlled and observational studies on catheter-related infection risk of central venous catheter insertion site in ICU patients. *Crit Care Med*. 2017;45(4):e437–e448. doi:10.1097/CCM.0000000000002092.
+28. <a id="s9-ref-28"></a>Lin FF, Murphy N, Martinez A, Marshall A. An audit of central venous catheter insertion and management practices in an Australian tertiary intensive care unit: a quality improvement project. *Intensive Crit Care Nurs*. 2022;70:103217. doi:10.1016/j.iccn.2022.103217.
+29. <a id="s9-ref-29"></a>Corley A, Marsh N, Ullman AJ, Rickard CM. Peripheral intravenous catheter securement: an integrative review of contemporary literature around medical adhesive tapes and supplementary securement products. *J Clin Nurs*. 2023;32(9):1841–1857. doi:10.1111/jocn.16237.
+30. <a id="s9-ref-30"></a>Schora D, Patel P, Barza R, et al. Positive and neutral needleless connectors: a comparative study of central-line associated bloodstream infection, occlusion, and bacterial contamination of the connector lumen. *J Infus Nurs*. 2023;46(3):157–161. doi:10.1097/nan.0000000000000506.
+31. <a id="s9-ref-31"></a>Ricou Rios L, Esposito Catala C, Pons Calsapeu A, et al. Implementation of a vascular access specialist team in a tertiary hospital: a cost-benefit analysis. *Cost Eff Resour Alloc*. 2023;21(1):67. doi:10.1186/s12962-023-00464-6.
+32. <a id="s9-ref-32"></a>Zhu Y, Li D, Li Y, Cai W. Predictive model for PICC occlusion risk for patients in intensive care units: a retrospective clinical study. *Altern Ther Health Med*. 2023;29(8):278–285.
+33. <a id="s9-ref-33"></a>Hymes JL, Mooney A, Van Zandt C, Lynch L, Ziebol R, Killion D. Dialysis catheter-related bloodstream infections: a cluster-randomized trial of the ClearGuard HD antimicrobial barrier cap. *Am J Kidney Dis*. 2017;69(2):220–227. doi:10.1053/j.ajkd.2016.09.014.
+34. <a id="s9-ref-34"></a>Puig-Asensio M, Marra AR, Childs CA, Kukla ME, Perencevich EN, Schweizer ML. Effectiveness of chlorhexidine dressings to prevent catheter-related bloodstream infections. Does one size fit all? A systematic literature review and meta-analysis. *Infect Control Hosp Epidemiol*. 2020;41(12):1388–1395. doi:10.1017/ice.2020.356.
+35. <a id="s9-ref-35"></a>Quinn M, Horowitz JK, Krein SL, Gaston A, Ullman A, Chopra V. The role of hospital-based vascular access teams and implications for patient safety: a multi-methods study. *J Hosp Med*. 2024;19(1):13–23. doi:10.1002/jhm.13253.
+36. <a id="s9-ref-36"></a>Bozaan D, Skicki D, Brancaccio A, et al. Less lumens-less risk: a pilot intervention to increase the use of single-lumen peripherally inserted central catheters. *J Hosp Med*. 2019;14(1):42–46. doi:10.12788/jhm.3097.
+37. <a id="s9-ref-37"></a>Kleinman Sween J, Lowrie A, Kirmse JM, Laughlin RK, Wodziak B, Sampathkumar P. A quality improvement project to decrease utilization of multilumen peripherally inserted central catheters. *Infect Control Hosp Epidemiol*. 2021;42(2):222–224. doi:10.1017/ice.2020.411.
+38. <a id="s9-ref-38"></a>Menger J, Kaase M, Schulze MH, et al. Central venous catheter contamination rate in suspected sepsis patients: an observational clinical study. *J Hosp Infect*. 2023;135:98–105. doi:10.1016/j.jhin.2023.02.015.
+39. <a id="s9-ref-39"></a>Bahl A, Johnson S, Hijazi M, Mielke N, Chen NW. Cost effectiveness of ultrasound-guided long peripheral catheters in difficult vascular access patients. *J Vasc Access*. 2024;25(4):1204–1211. doi:10.1177/11297298231154297.
+40. <a id="s9-ref-40"></a>Rowe M, Spencer T. Catheter securement impact on PICC-related CLABSI: does securement effect risk? *Vascular Access*. 2020;14(1):12–15.
+41. <a id="s9-ref-41"></a>Baek G, Huynh P, Cunningham T, Eaton KD, Ghuman S. Central line patency: management with normal saline flushes for adult patients with cancer. *Clin J Oncol Nurs*. 2023;27(3):274–280. doi:10.1188/23.Cjon.274-280.
+42. <a id="s9-ref-42"></a>Hawes ML. Vascular access device securement for oncology patients and those with chronic diseases. *Br J Nurs*. 2021;30(8):S20–S25. doi:10.12968/bjon.2021.30.8.S20.
+43. <a id="s9-ref-43"></a>Stewart AG, Laupland KB, Tabah A. Central line associated and primary bloodstream infections. *Curr Opin Crit Care*. 2023;29(5):423–429. doi:10.1097/mcc.0000000000001082.
+44. <a id="s9-ref-44"></a>Lima Zandonadi MG, Bolorino N, Tiroli CF, Guassu Nogueira DN, Pieri FM. Peripherally inserted central catheter and costs associated with nursing care: an integrative review. *Ciencia, Cuidado e Saude*. 2023;22:1–9.
+45. <a id="s9-ref-45"></a>Yu KC, Jung M, Ai C. Characteristics, costs, and outcomes associated with central-line-associated bloodstream infection and hospital-onset bacteremia and fungemia in US hospitals. *Infect Control Hosp Epidemiol*. 2023;44(12):1920–1926. doi:10.1017/ice.2023.132.
+
+---
+
+### Chapter 3.6—Emergent vs Planned Access
+
+The clinical setting in which vascular access is established, whether emergent or planned, significantly impacts device selection, insertion technique, and risk of complications. In true emergencies, rapid vascular access takes precedence over optimization. Peripheral intravenous catheters (PIVCs) and centrally inserted central catheters are often selected in these settings due to their speed and availability, even if conditions are less than ideal. Site sterility, catheter dwell time, and long-term complications must be weighed against immediate patient survival and stabilization.
+
+Planned vascular access allows for careful assessment of patient-specific factors, including vein condition, anticipated duration of therapy, and compatibility of the infusate with peripheral administration. This approach supports using ultrasound guidance, optimal catheter selection, and improved insertion outcomes.
+
+The goal in emergency care is not perfection but best clinical judgment. Once the patient is stabilized, transition to an appropriate long-term device should follow, reducing the cumulative risk of infection, thrombosis, and mechanical failure.
+
+#### Recommendation 1: Use of PIVCs for Emergency Access
+
+In emergency situations, PIVCs should be the first-line vascular access, provided that access can be achieved promptly. If ultrasound is readily available and can be used without delay, it should be considered to improve insertion success.
+
+**Summary of Evidence**
+
+Authors of studies have shown that PIVCs remain the most expedient and reliable initial emergency access, with first-pass success rates ranging from 46% to 79% depending on patient and operator factors. Ultrasound guidance improves outcomes, particularly in patients with difficult venous access, but may not be practical in time-critical situations. In emergent cases, up to 2 blind-stick attempts are considered acceptable before escalating to alternate access strategies.<sup><a href="#s10-ref-1">1(Ia)</a>,<a href="#s10-ref-2">2(Ib)</a>,<a href="#s10-ref-3">3(Ib)</a></sup>
+
+#### Recommendation 2: Intraosseous (IO) Access
+
+When PIVC placement is not feasible in an emergency, IO access is the preferred alternative.
+
+**Summary of Evidence**
+
+IO access provides rapid and effective delivery of fluids and medications in life-threatening situations. Emergency guidelines endorse it as a primary alternative when peripheral access cannot be obtained quickly. If IO is not an option, escalation to central access may be necessary depending on clinical urgency and provider skill.<sup><a href="#s10-ref-4">4(Vb)</a>,<a href="#s10-ref-5">5(Vb)</a>,<a href="#s10-ref-6">6(Ia)</a></sup>
+
+#### Recommendation 3: Vasopressor Administration Through Peripheral Vascular Access Devices in Emergencies
+
+Vasopressors may be administered via peripheral vascular access devices when central access is not immediately available, provided that infusion is closely monitored for signs of extravasation. For ongoing therapy, central access should be obtained as soon as feasible.
+
+**Summary of Evidence**
+
+Although central access is generally preferred for vasopressor administration due to the risk of tissue injury, authors of several studies have supported the short-term use of vasopressors through peripheral lines in emergencies. Complication rates remain low when appropriate monitoring and rescue protocols (e.g., antidotes) are in place. Authors of 1 systematic review reported a 3.4% complication rate, with no cases of tissue necrosis.<sup><a href="#s10-ref-7">7(Vb)</a>,<a href="#s10-ref-8">8(IIb)</a></sup>
+
+#### Clinical Considerations
+
+**Benefits**
+
+- **Immediate use:** Successful PIVC or IO insertions can be used immediately.<sup><a href="#s10-ref-1">1</a>,<a href="#s10-ref-2">2</a>,<a href="#s10-ref-3">3</a>,<a href="#s10-ref-6">6</a></sup>
+
+**Risks**
+
+- **Extravasation or infiltration:** Leakage of vesicants or irritants into tissue may cause necrosis, nerve injury, and potentially require surgical intervention.<sup><a href="#s10-ref-9">9</a>,<a href="#s10-ref-10">10</a></sup>
+
+**Implementation Considerations**
+
+- **Staff education:** Using references with listings of high-risk solutions and medications that may indicate CVAD placement, using algorithms, and frequently educating clinical staff to select the most appropriate intravenous device for the patient may result in longer catheter dwell time without complications, supporting patient safety.<sup><a href="#s10-ref-10">10</a>,<a href="#s10-ref-11">11</a></sup>
+
+**Barriers to Implementation**
+
+- **Timely implementation:** Treatment needs, patient vein options, and clinical staff understanding are often barriers to receiving timely orders for the most appropriate vascular access device and establishing consistent policy applications.<sup><a href="#s10-ref-10">10</a>,<a href="#s10-ref-11">11</a>,<a href="#s10-ref-12">12</a>,<a href="#s10-ref-13">13</a></sup>
+
+#### References
+
+1. <a id="s10-ref-1"></a>Murayama R, Abe-Doi M, Masamoto Y, et al. Verification study on the catheterization of an upper arm vein using the new long peripheral intravenous catheter to reduce catheter failure incidence: a randomized controlled trial. *Drug Discov Ther*. 2023;17(1):52–59. doi:10.5582/ddt.2022.01108.
+2. <a id="s10-ref-2"></a>Mishra A, Kumar M, Kumar N, Goyal K, Soni KD, Yadav A. Short-axis versus long-axis approach for ultrasound-guided vascular access: an updated systematic review and meta-analysis of randomised controlled trials. *Indian J Anaesth*. 2023;67:S208–S217. doi:10.4103/ija.ija_965_22.
+3. <a id="s10-ref-3"></a>Baion DE, La Ferrara A, Maserin D, et al. Mono- and bi-plane sonographic approach for difficult accesses in the emergency department—a randomized trial. *Am J Emerg Med*. 2023;74:49–56. doi:10.1016/j.ajem.2023.09.018.
+4. <a id="s10-ref-4"></a>Drozd A, Wolska M, Szarpak L. Intraosseous vascular access in emergency and trauma settings: a comparison of the most universally used intraosseous devices. *Expert Rev Med Devices*. 2021;18(9):855–864. doi:10.1080/17434440.2021.1962287.
+5. <a id="s10-ref-5"></a>Dornhofer P, Kellar JZ. Intraosseous vascular access. 2023. https://www.ncbi.nlm.nih.gov/books/NBK554373/. Accessed April 3, 2023.
+6. <a id="s10-ref-6"></a>Philbeck TE, Puga TA, Montez DF, Davlantes C, DeNoia EP, Miller LJ. Intraosseous vascular access using the EZ-IO can be safely maintained in the adult proximal humerus and proximal tibia for up to 48 h: report of a clinical study. *J Vasc Access*. 2022;23(3):339–347. doi:10.1177/1129729821992667.
+7. <a id="s10-ref-7"></a>Coyer B, Carlucci M. Reducing central line utilization by peripherally infusing vasopressors. *Dimens Crit Care Nurs*. 2023;42(3):131–136.
+8. <a id="s10-ref-8"></a>Tian DH, Smyth C, Keijzers G, et al. Safety of peripheral administration of vasopressor medications: a systematic review. *Emerg Med Australas*. 2020;32(2):220–227. doi:10.1111/1742-6723.13406.
+9. <a id="s10-ref-9"></a>Spiegel RJ, Eraso D, Leibner E, Thode H, Morley EJ, Weingart S. The utility of midline intravenous catheters in critically ill emergency department patients. *Ann Emerg Med*. 2020;75(4):538–545. doi:10.1016/j.annemergmed.2019.09.018.
+10. <a id="s10-ref-10"></a>Marsh N, Larsen EN, O'Brien C, et al. Safety and efficacy of midline catheters versus peripheral intravenous catheters: a pilot randomized controlled trial. *Int J Nurs Pract*. 2023;29(2):e13110. doi:10.1111/ijn.13110.
+11. <a id="s10-ref-11"></a>Foor JS, Moureau NL, Gibbons D, Gibson SM. Investigative study of hemodilution ratio: 4Vs for vein diameter, valve, velocity, and volumetric blood flow as factors for optimal forearm vein selection for intravenous infusion. *J Vasc Access*. 2024;25(1):140–148. doi:10.1177/11297298221095287.
+12. <a id="s10-ref-12"></a>Wu O, McCartney E, Heggie R, et al. Venous access devices for the delivery of long-term chemotherapy: the CAVA three-arm RCT. *Health Technol Assess (Rockv)*. 2021;25(47):1–126. doi:10.3310/hta25470.
+13. <a id="s10-ref-13"></a>Manrique-Rodriguez S, Heras-Hidalgo I, Pernia-Lopez MS, et al. Standardization and chemical characterization of intravenous therapy in adult patients: a step further in medication safety. *Drugs R D*. 2021;21(1):39–64. doi:10.1007/s40268-020-00329-w.
+
+---
+
+## Section 4: Clinical Considerations for Insertion
+
+### Chapter 4.1—Preinsertion: Chart and Imaging Review
+
+A thorough review of the patient's medical chart and available imaging is an essential preparatory step in vascular access planning. This process provides critical insights into patient-specific risk factors, such as coagulopathy, history of venous thromboembolism (VTE), prior access complications, and anatomical variations, that influence safe and effective device placement. This chapter is an overview of key elements to assess prior to insertion.
+
+Key elements of the preinsertion chart review include current medications, known allergies, recent or planned surgeries, and relevant laboratory values. Reviewing prior vascular access history, including previous catheter types, insertion sites, and documented complications, supports vessel preservation and prevents repeated trauma to compromised sites.
+
+Preprocedural imaging may reveal thrombosed or stenosed vessels, aberrant anatomy, or retained or embedded devices. These findings inform insertion strategy, reduce the risk of malposition or vascular injury, and help avoid procedural delays.
+
+Standardizing chart and imaging review as a routine step enhances procedural safety, supports informed decision-making, and enables personalized care for vascular access. By prioritizing this foundational assessment, clinicians can proactively mitigate risks and improve outcomes across all vascular access device types.
+
+This section of the guideline addresses clinical considerations relevant to the planning and insertion of vascular access devices. Topics include the selection of insertion sites, the use of imaging and tunneling techniques, strategies for avoiding complications, and procedural best practices across multiple anatomic sites and care settings.
+
+Preinsertion chart and imaging review is a critical safety step before vascular access device placement. The following checklist summarizes key considerations to guide clinicians in identifying bleeding and thrombosis risks, assessing skin and anatomy, and reviewing the chart and imaging findings. It is intended as a quick reference; institutions may have additional requirements based on local policy or patient population.
+
+#### Table 2: Preinsertion Assessment Checklist
+
+| Preinsertion Assessment | Key Elements |
+|---|---|
+| **Bleeding risk**<sup><a href="#s11-ref-1">1</a>,<a href="#s11-ref-2">2</a></sup> | - Coagulopathy |
+| | - Thrombocytopenia |
+| | - Anticoagulation or antiplatelet therapy |
+| **Thrombosis risk**<sup><a href="#s11-ref-3">3</a>,<a href="#s11-ref-4">4</a></sup> | - History of venous thromboembolism, including: |
+| | &nbsp;&nbsp;&nbsp;&nbsp;- Catheter-related thrombosis |
+| | &nbsp;&nbsp;&nbsp;&nbsp;- Catheter-related deep vein thrombosis |
+| | &nbsp;&nbsp;&nbsp;&nbsp;- Catheter-related venous thromboembolism |
+| | &nbsp;&nbsp;&nbsp;&nbsp;- Superficial vein thrombosis |
+| | &nbsp;&nbsp;&nbsp;&nbsp;- Pulmonary embolism |
+| | - Prior catheter occlusion or unexplained catheter dysfunction |
+| **Skin and tissue integrity**<sup><a href="#s11-ref-2">2</a>,<a href="#s11-ref-5">5</a></sup> | - Fragile or aging skin |
+| | - Medical adhesive-related skin injury |
+| | - Catheter-associated skin injury |
+| | - Dermatitis, eczema, or psoriasis |
+| | - Burns, scars, grafts, or radiation injury |
+| | - Genetic disorders affecting skin (e.g., epidermolysis bullosa, Ehlers-Danlos) |
+| | - Chronic wounds or compromised healing |
+| **Anatomical challenges**<sup><a href="#s11-ref-6">6</a>,<a href="#s11-ref-7">7</a>,<a href="#s11-ref-8">8</a></sup> | - Obesity or limited landmarks |
+| | - Surgical alterations (e.g., mastectomy, axillary dissection) |
+| | - Difficult intravenous access |
+| | - Prior vascular surgery or device placement affecting access |
+| | - Contractures |
+| **Chart review**<sup><a href="#s11-ref-9">9</a>,<a href="#s11-ref-10">10</a>,<a href="#s11-ref-11">11</a>,<a href="#s11-ref-12">12</a></sup> | - Current medications (anticoagulants, antiplatelets, immunosuppressants, chemotherapy) |
+| | - Allergies (chlorhexidine, latex, adhesives, medications) |
+| | - Recent or planned surgeries near the proposed site |
+| | - Relevant labs (e.g., INR, platelet count, creatinine) |
+| | - Comorbid conditions (e.g., chronic kidney disease, malignancy, diabetes, lymphedema) |
+| **Imaging and devices**<sup><a href="#s11-ref-13">13</a>,<a href="#s11-ref-14">14</a></sup> | - Prior vascular access history (device type, insertion site, complications) |
+| | - Vessel patency (stenosis, thrombosis, occlusion) |
+| | - Retained or embedded hardware (catheters, ports, stents, pacemakers) |
+| | - Aberrant anatomy (e.g., dextrocardia, persistent or duplicated superior vena cava) |
+
+#### References
+
+1. <a id="s11-ref-1"></a>Annetta MG, Ostroff M, Marche B, et al. Chest-to-arm tunneling: a novel technique for medium/long term venous access devices. *J Vasc Access*. 2023;24(1):92–98. doi:10.1177/11297298211026825.
+2. <a id="s11-ref-2"></a>Giustivi D, Gidaro A, Baroni M, Paglia S. Tunneling technique of PICCs and midline catheters. *J Vasc Access*. 2022;23(4):610–614. doi:10.1177/11297298211002579.
+3. <a id="s11-ref-3"></a>Spencer TR, Mahoney KJ. Reducing catheter-related thrombosis using a risk reduction tool centered on catheter to vessel ratio. *J Thromb Thrombolysis*. 2017;44(4):427–434. doi:10.1007/s11239-017-1569-y.
+4. <a id="s11-ref-4"></a>Arvaniti K, Lathyris D, Blot S, Apostolidou-Kiouti F, Koulenti D, Haidich AB. Cumulative evidence of randomized controlled and observational studies on catheter-related infection risk of central venous catheter insertion site in ICU patients. *Crit Care Med*. 2017;45(4):e437–e448. doi:10.1097/CCM.0000000000002092.
+5. <a id="s11-ref-5"></a>Ostroff MD, Moureau N, Pittiruti M. Rapid Assessment of Vascular Exit Site and Tunneling Options (RAVESTO): a new decision tool in the management of the complex vascular access patients. *J Vasc Access*. 2021;24(2):311–317. doi:10.1177/11297298211034306.
+6. <a id="s11-ref-6"></a>Ablordeppey EA, Huang W, Holley I, Willman M, Griffey R, Theodoro DL. Clinical practices in central venous catheter mechanical adverse events. *J Intensive Care Med*. 2022;37(9):1215–1222. doi:10.1177/08850666221076798.
+7. <a id="s11-ref-7"></a>Sun X, Bai X, Zhang Y, et al. Perioperative and postoperative complications of ultrasound-guided totally implantable venous access ports via the brachiocephalic vein in patients with cancer: a prospective study. *J Cancer*. 2021;12(5):1379–1385. doi:10.7150/jca.55343.
+8. <a id="s11-ref-8"></a>Kim H, Chang JE, Won D, et al. Effect of head and shoulder positioning on the cross-sectional area of the subclavian vein in obese subjects. *Am J Emerg Med*. 2021;50:561–565. doi:10.1016/j.ajem.2021.08.013.
+9. <a id="s11-ref-9"></a>Chouhani BA, Kabbali N, Chiba Bennani S, El Bardai G, Sqalli Houssaini T. Tunneled catheters in hemodialysis: indications and complications. *J Med Vasc*. 2022;47(2):87–93. doi:10.1016/j.jdmv.2022.04.007.
+10. <a id="s11-ref-10"></a>Gras E, Jean A, Rocher V, et al. Incidence of and risk factors for local complications of peripheral venous catheters in patients older than 70 years: empirical research quantitative. *J Clin Nurs*. 2023;32(15):5000–5009. doi:10.1111/jocn.16732.
+11. <a id="s11-ref-11"></a>Zhu Y, Li D, Li Y, Cai W. Predictive model for PICC occlusion risk for patients in intensive care units: a retrospective clinical study. *Altern Ther Health Med*. 2023;29(8):278–285.
+12. <a id="s11-ref-12"></a>Yu KC, Jung M, Ai C. Characteristics, costs, and outcomes associated with central-line-associated bloodstream infection and hospital-onset bacteremia and fungemia in US hospitals. *Infect Control Hosp Epidemiol*. 2023;44(12):1920–1926. doi:10.1017/ice.2023.132.
+13. <a id="s11-ref-13"></a>Aurshina A, Hingorani A, Hingorani A, Marks N, Ascher E. Routine use of ultrasound to avert mechanical complications during placement of tunneled dialysis catheters for hemodialysis. *J Vasc Surg Venous Lymphat Disord*. 2019;7(4):543–546. doi:10.1016/j.jvsv.2018.12.016.
+14. <a id="s11-ref-14"></a>Pitts S, Ostroff M. The use of visualization technology for the insertion of peripheral intravenous catheters. *J Assoc Vasc Access*. 2019;24(3):10–14. doi:10.2309/j.java.2019.003.007.

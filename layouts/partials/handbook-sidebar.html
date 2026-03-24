@@ -10,15 +10,58 @@
       </ul>
     </details>
 
-    <details class="handbook-nav-section" {{ if eq .Section "policies" }}open{{ end }}>
+    {{- /* Department sections */ -}}
+    <details class="handbook-nav-section" {{ if eq .Section "vascular-access" }}open{{ end }}>
       <summary>
-        <span class="handbook-nav-title">Policies</span>
+        <span class="handbook-nav-title">Vascular Access</span>
       </summary>
       <ul class="handbook-nav-list">
-        <li><a href="/policies/" class="handbook-nav-link {{ if and (eq .Section "policies") (not .IsPage) }}active{{ end }}">All Policies</a></li>
-        {{- range first 10 (where site.RegularPages "Section" "policies").ByDate.Reverse }}
-        <li><a href="{{ .RelPermalink }}" class="handbook-nav-link {{ if eq $.RelPermalink .RelPermalink }}active{{ end }}">{{ .Title | truncate 40 }}</a></li>
-        {{- end }}
+        <li><a href="/vascular-access/" class="handbook-nav-link">Overview</a></li>
+        <li><a href="/vascular-access/guides/" class="handbook-nav-link {{ if in .RelPermalink "/guides/" }}active{{ end }}">Guides</a></li>
+        <li><a href="/vascular-access/policies/" class="handbook-nav-link {{ if in .RelPermalink "/policies/" }}active{{ end }}">Policies</a></li>
+        <li><a href="/vascular-access/guidelines/" class="handbook-nav-link {{ if and (eq .Section "vascular-access") (in .RelPermalink "/guidelines/") }}active{{ end }}">Guidelines</a></li>
+        <li><a href="/vascular-access/patient-education/" class="handbook-nav-link {{ if in .RelPermalink "/patient-education/" }}active{{ end }}">Patient Education</a></li>
+        <li><a href="/vascular-access/resources/" class="handbook-nav-link {{ if in .RelPermalink "/resources/" }}active{{ end }}">Resources</a></li>
+      </ul>
+    </details>
+
+    <details class="handbook-nav-section" {{ if eq .Section "ed" }}open{{ end }}>
+      <summary>
+        <span class="handbook-nav-title">Emergency Medicine</span>
+      </summary>
+      <ul class="handbook-nav-list">
+        <li><a href="/ed/" class="handbook-nav-link">Overview</a></li>
+        <li><a href="/ed/guidelines/" class="handbook-nav-link {{ if and (eq .Section "ed") (in .RelPermalink "/guidelines/") }}active{{ end }}">Guidelines</a></li>
+      </ul>
+    </details>
+
+    <details class="handbook-nav-section" {{ if eq .Section "icu" }}open{{ end }}>
+      <summary>
+        <span class="handbook-nav-title">Critical Care</span>
+      </summary>
+      <ul class="handbook-nav-list">
+        <li><a href="/icu/" class="handbook-nav-link">Overview</a></li>
+        <li><a href="/icu/guidelines/" class="handbook-nav-link {{ if and (eq .Section "icu") (in .RelPermalink "/guidelines/") }}active{{ end }}">Guidelines</a></li>
+      </ul>
+    </details>
+
+    <details class="handbook-nav-section" {{ if eq .Section "oncology" }}open{{ end }}>
+      <summary>
+        <span class="handbook-nav-title">Oncology</span>
+      </summary>
+      <ul class="handbook-nav-list">
+        <li><a href="/oncology/" class="handbook-nav-link">Overview</a></li>
+        <li><a href="/oncology/guidelines/" class="handbook-nav-link {{ if and (eq .Section "oncology") (in .RelPermalink "/guidelines/") }}active{{ end }}">Guidelines</a></li>
+      </ul>
+    </details>
+
+    <details class="handbook-nav-section" {{ if eq .Section "infection-prevention" }}open{{ end }}>
+      <summary>
+        <span class="handbook-nav-title">Infection Prevention</span>
+      </summary>
+      <ul class="handbook-nav-list">
+        <li><a href="/infection-prevention/" class="handbook-nav-link">Overview</a></li>
+        <li><a href="/infection-prevention/guidelines/" class="handbook-nav-link {{ if and (eq .Section "infection-prevention") (in .RelPermalink "/guidelines/") }}active{{ end }}">Guidelines</a></li>
       </ul>
     </details>
 
@@ -36,20 +79,12 @@
 
     <details class="handbook-nav-section">
       <summary>
-        <span class="handbook-nav-title">Audience</span>
+        <span class="handbook-nav-title">Browse</span>
       </summary>
       <ul class="handbook-nav-list">
         <li><a href="/audience/clinician/" class="handbook-nav-link {{ if and (eq .Kind "term") (eq .Title "Clinician") }}active{{ end }}">For Clinicians</a></li>
         <li><a href="/audience/patient/" class="handbook-nav-link {{ if and (eq .Kind "term") (eq .Title "Patient") }}active{{ end }}">For Patients</a></li>
-      </ul>
-    </details>
-
-    <details class="handbook-nav-section">
-      <summary>
-        <span class="handbook-nav-title">Browse</span>
-      </summary>
-      <ul class="handbook-nav-list">
-        <li><a href="/category/" class="handbook-nav-link {{ if and (eq .Kind "taxonomy") }}active{{ end }}">Categories</a></li>
+        <li><a href="/category/" class="handbook-nav-link {{ if eq .Kind "taxonomy" }}active{{ end }}">Categories</a></li>
         <li><a href="/about/" class="handbook-nav-link {{ if eq .Section "about" }}active{{ end }}">About</a></li>
       </ul>
     </details>
