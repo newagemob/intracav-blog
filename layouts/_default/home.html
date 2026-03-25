@@ -65,7 +65,7 @@
         </a>
       </div>
       <p class="handbook-section-description">Evidence-based protocols and standardized procedures</p>
-      <div class="handbook-article-list">
+      <div class="handbook-article-list stagger-children">
         {{- range first 6 $policies.ByDate.Reverse }}
         <a href="{{ .RelPermalink }}" class="handbook-article-card handbook-article-card-policy">
           <article class="handbook-article-card-content">
@@ -118,7 +118,7 @@
         </h2>
       </div>
       <p class="handbook-section-description">Analysis, perspectives, and healthcare innovation</p>
-      <div class="handbook-article-list">
+      <div class="handbook-article-list stagger-children">
         {{- range first 6 $blog.ByDate.Reverse }}
         <a href="{{ .RelPermalink }}" class="handbook-article-card handbook-article-card-blog">
           <article class="handbook-article-card-content">

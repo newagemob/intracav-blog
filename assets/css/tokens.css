@@ -156,12 +156,19 @@
   --transition-slow: 300ms ease;
 
   /* Layout */
-  --layout-max: 1100px;
-  --sidebar-width: 260px;
+  --layout-max: 1400px;
+  --sidebar-width: 280px;
   --toc-width: 220px;
   --header-height: 64px;
-  --content-max: 1024px;
+  --content-max: 720px;
   --prose-max: 68ch;
+
+  /* Animation */
+  --ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-fast: 200ms;
+  --dur-med: 350ms;
+  --dur-slow: 600ms;
 }
 
 .dark {

@@ -82,6 +82,17 @@
   {{- end }}
 {{- end }}
 
+{{- /* Scroll Reveal Animations */ -}}
+{{- $scrollRevealJS := resources.Get "js/scroll-reveal.js" -}}
+{{- if $scrollRevealJS }}
+  {{- if not site.Params.assets.disableFingerprinting }}
+    {{- $scrollRevealJS = $scrollRevealJS | fingerprint }}
+    <script src="{{ $scrollRevealJS.RelPermalink }}" integrity="{{ $scrollRevealJS.Data.Integrity }}" crossorigin="anonymous" defer></script>
+  {{- else }}
+    <script src="{{ $scrollRevealJS.RelPermalink }}" defer></script>
+  {{- end }}
+{{- end }}
+
 {{- /* Structured Data: MedicalWebPage schema for guide and resource pages */ -}}
 {{- partial "templates/schema-medical-guide.html" . -}}
 

@@ -1,66 +1,6 @@
-{{- /* Multi-column mega footer */ -}}
+{{- /* Simple footer — aligned with content area */ -}}
 <footer class="handbook-footer">
   <div class="handbook-footer-container">
-    <div class="handbook-footer-grid">
-      {{- /* Brand Column */ -}}
-      <div class="handbook-footer-column">
-        <p class="handbook-footer-brand-name"><span class="handbook-logo-intra">Intra</span><span class="handbook-logo-cav">cav</span></p>
-        <p class="handbook-footer-brand-tagline">Healthcare AI Infrastructure</p>
-      </div>
-
-      {{- /* Departments */ -}}
-      <div class="handbook-footer-column">
-        <h3 class="handbook-footer-column-title">Departments</h3>
-        <ul class="handbook-footer-column-list">
-          <li><a href="/vascular-access/">Vascular Access</a></li>
-          <li><a href="/ed/">Emergency Medicine</a></li>
-          <li><a href="/icu/">Critical Care</a></li>
-          <li><a href="/oncology/">Oncology</a></li>
-          <li><a href="/infection-prevention/">Infection Prevention</a></li>
-          <li><a href="/blog/">Blog</a></li>
-        </ul>
-      </div>
-
-      {{- /* Audience Links */ -}}
-      <div class="handbook-footer-column">
-        <h3 class="handbook-footer-column-title">Audience</h3>
-        <ul class="handbook-footer-column-list">
-          <li><a href="/audience/clinician/">For Clinicians</a></li>
-          <li><a href="/audience/patient/">For Patients</a></li>
-        </ul>
-      </div>
-
-      {{- /* Partner Links */ -}}
-      <div class="handbook-footer-column">
-        <h3 class="handbook-footer-column-title">Partners</h3>
-        <ul class="handbook-footer-column-list">
-          <li><a href="https://lumen.intracav.ai" target="_blank" rel="noopener noreferrer">Lumen</a></li>
-          <li><a href="https://qpolicy.ai" target="_blank" rel="noopener noreferrer">qpolicy.ai</a></li>
-        </ul>
-      </div>
-    </div>
-
-    {{- /* Bottom Bar */ -}}
-    <div class="handbook-footer-bottom">
-      <p class="handbook-footer-text">
-        &copy; {{ now.Year }} Intracav
-      </p>
-      <div class="handbook-footer-links">
-        <a href="https://lumen.intracav.ai" class="handbook-footer-link" target="_blank" rel="noopener noreferrer">
-          <span>Lumen</span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-            <polyline points="12 5 19 12 12 19"></polyline>
-          </svg>
-        </a>
-        <a href="https://qpolicy.ai" class="handbook-footer-link" target="_blank" rel="noopener noreferrer">
-          <span>For teams</span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-            <polyline points="12 5 19 12 12 19"></polyline>
-          </svg>
-        </a>
-      </div>
-    </div>
+    <p class="handbook-footer-text">&copy; {{ now.Year }} The Clinical Database</p>
   </div>
 </footer>
