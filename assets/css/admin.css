@@ -34,60 +34,39 @@
 
 .handbook-form-group label {
   font-weight: 500;
-  color: #4e5058;
+  color: var(--color-text-secondary);
   font-size: 0.95rem;
-}
-
-.dark .handbook-form-group label {
-  color: #dbdee1;
 }
 
 .handbook-form-input,
 .handbook-form-textarea {
-  padding: 0.75rem;
-  border: 1px solid #e3e5e8;
-  border-radius: 6px;
-  font-size: 1rem;
-  font-family: inherit;
-  background-color: #ffffff;
-  color: #060607;
+  padding: 0.65rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xs);
+  font-size: var(--text-base);
+  font-family: var(--font-sans);
+  background-color: var(--color-neutral-50);
+  color: var(--color-text-primary);
   transition: all 0.2s;
-}
-
-.dark .handbook-form-input,
-.dark .handbook-form-textarea {
-  border-color: #3f4147;
-  background-color: #383a40;
-  color: #dbdee1;
 }
 
 .handbook-form-input:focus,
 .handbook-form-textarea:focus {
   outline: none;
-  border-color: #5865f2;
-  box-shadow: 0 0 0 3px rgba(88, 101, 242, 0.15);
-}
-
-.dark .handbook-form-input:focus,
-.dark .handbook-form-textarea:focus {
-  border-color: #5865f2;
-  box-shadow: 0 0 0 3px rgba(88, 101, 242, 0.15);
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(188, 114, 80, 0.12);
 }
 
 .handbook-form-textarea {
-  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
-  font-size: 0.9rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
   line-height: 1.6;
 }
 
 .handbook-form-help {
-  font-size: 0.875rem;
-  color: #80848e;
+  font-size: var(--text-sm);
+  color: var(--color-text-tertiary);
   margin-top: 0.25rem;
-}
-
-.dark .handbook-form-help {
-  color: #949ba4;
 }
 
 .handbook-form-actions {
@@ -97,70 +76,46 @@
 }
 
 .handbook-btn {
-  padding: 0.75rem 1.5rem;
+  padding: 0.55rem 1.25rem;
   border: none;
-  border-radius: 6px;
-  font-size: 1rem;
-  font-weight: 500;
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  font-family: var(--font-sans);
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .handbook-btn-primary {
-  background-color: #5865f2;
-  color: #ffffff;
-}
-
-.dark .handbook-btn-primary {
-  background-color: #5865f2;
+  background-color: var(--color-accent);
+  color: var(--color-text-inverse);
 }
 
 .handbook-btn-primary:hover {
-  background-color: #4752c4;
-}
-
-.dark .handbook-btn-primary:hover {
-  background-color: #4752c4;
+  background-color: var(--color-accent-hover);
 }
 
 .handbook-btn-secondary {
-  background-color: #f2f3f5;
-  color: #4e5058;
-  border: 1px solid #e3e5e8;
-}
-
-.dark .handbook-btn-secondary {
-  background-color: #2b2d31;
-  color: #dbdee1;
-  border-color: #3f4147;
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-secondary);
+  border: 1.5px solid var(--color-border);
 }
 
 .handbook-btn-secondary:hover {
-  background-color: #e3e5e8;
-}
-
-.dark .handbook-btn-secondary:hover {
-  background-color: #383a40;
+  background-color: var(--color-bg-tertiary);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
 }
 
 .handbook-preview-section {
   margin-top: 2rem;
   padding: 1.5rem;
-  border: 1px solid #e3e5e8;
-  border-radius: 8px;
-  background-color: #f2f3f5;
-}
-
-.dark .handbook-preview-section {
-  border-color: #3f4147;
-  background-color: #2b2d31;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg-secondary);
 }
 
 .handbook-preview-content {
-  color: #4e5058;
+  color: var(--color-text-secondary);
   line-height: 1.8;
-}
-
-.dark .handbook-preview-content {
-  color: #dbdee1;
 }
