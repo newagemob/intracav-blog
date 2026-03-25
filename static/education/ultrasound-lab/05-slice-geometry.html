@@ -13,10 +13,10 @@
     --bg: #EDE4D5; --surface: #F6F0E8; --surface-hi: #FDFAF5;
     --border: #D4C7B5; --border-lt: #E2D8CC;
     --text: #28180C; --text-2: #685040; --text-3: #9E8272;
-    --accent: #BC7250; --accent-lt: #E8C4A8;
-    --sage: #7E9C84; --rose: #B87070; --gold: #C9A84C;
-    --shadow-sm: 0 1px 8px rgba(40,24,12,0.06), 0 0 0 1px rgba(40,24,12,0.04);
-    --shadow-md: 0 4px 28px rgba(40,24,12,0.10), 0 0 0 1px rgba(40,24,12,0.06);
+    --accent: #BB5C4D; --accent-lt: #E4A89E;
+    --sage: #527A56; --rose: #3D6E90; --gold: #C9A84C;
+    --shadow-sm: 0 1px 8px rgba(22,21,20,0.06), 0 0 0 1px rgba(22,21,20,0.04);
+    --shadow-md: 0 4px 28px rgba(22,21,20,0.10), 0 0 0 1px rgba(22,21,20,0.06);
     --r: 16px; --r-sm: 10px;
   }
   body { font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
@@ -59,7 +59,7 @@
   .ctrl-unit { font-size: 0.65rem; color: var(--text-3); }
   .ctrl-hint { font-size: 0.68rem; color: var(--text-3); font-weight: 300; }
   input[type=range] { -webkit-appearance: none; width: 100%; height: 4px; background: var(--border); border-radius: 100px; outline: none; cursor: pointer; }
-  input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 0 4px rgba(188,114,80,0.15); }
+  input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 0 4px rgba(187,92,77,0.15); }
 
   /* === VIEW CARDS === */
   .view-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-bottom: 2rem; }
@@ -565,18 +565,18 @@ function drawRotator() {
   const probeY = cy - vesselR * 2.2;
   rctx.save();
   rctx.globalAlpha = 0.35;
-  rctx.fillStyle = '#BC7250';
+  rctx.fillStyle = '#BB5C4D';
   rctx.fillRect(cx - planeW, probeY, planeW * 2, 4);
   rctx.globalAlpha = 1;
   rctx.restore();
-  rctx.fillStyle = 'rgba(188,114,80,0.7)';
+  rctx.fillStyle = 'rgba(187,92,77,0.7)';
   rctx.font = '9px Nunito, sans-serif'; rctx.textAlign = 'center';
   rctx.fillText('probe plane', cx, probeY - 4);
 
   // Vertical dotted cut line
   rctx.setLineDash([3, 5]);
   rctx.beginPath(); rctx.moveTo(cx, probeY + 4); rctx.lineTo(cx, cy);
-  rctx.strokeStyle = 'rgba(188,114,80,0.35)'; rctx.lineWidth = 1; rctx.stroke();
+  rctx.strokeStyle = 'rgba(187,92,77,0.35)'; rctx.lineWidth = 1; rctx.stroke();
   rctx.setLineDash([]);
   rctx.textAlign = 'left';
 }
@@ -633,13 +633,13 @@ function drawSlice() {
     sctx.stroke();
 
     // Diameter annotation
-    sctx.strokeStyle = 'rgba(188,114,80,0.5)';
+    sctx.strokeStyle = 'rgba(187,92,77,0.5)';
     sctx.lineWidth = 1;
     sctx.setLineDash([2, 5]);
     sctx.beginPath(); sctx.moveTo(cx - rx, cy); sctx.lineTo(cx + rx, cy); sctx.stroke();
     sctx.setLineDash([]);
     const measuredMm = (rp.diam * tiltFactor * rotFactor).toFixed(1);
-    sctx.fillStyle = 'rgba(188,114,80,0.8)';
+    sctx.fillStyle = 'rgba(187,92,77,0.8)';
     sctx.font = '10px JetBrains Mono, monospace'; sctx.textAlign = 'center';
     sctx.fillText(`⌀ ${measuredMm} mm`, cx, cy + ry + 22);
     if (tiltAbs > 10 || rotAbs > 10) {
@@ -685,7 +685,7 @@ function drawSlice() {
 
   // View label
   const viewName = rotAbs < 20 && tiltAbs < 15 ? 'SHORT AXIS' : rotAbs > 70 ? 'LONG AXIS' : 'OBLIQUE';
-  const viewColor = rotAbs < 20 && tiltAbs < 15 ? '#7E9C84' : rotAbs > 70 ? '#4A8ACA' : '#C9A84C';
+  const viewColor = rotAbs < 20 && tiltAbs < 15 ? '#527A56' : rotAbs > 70 ? '#9CBDD8' : '#C9A84C';
   sctx.fillStyle = viewColor;
   sctx.font = '500 11px Nunito, sans-serif'; sctx.textAlign = 'center';
   sctx.fillText(viewName, cx, 20);
@@ -765,7 +765,7 @@ function drawNeedle() {
     const tipInVessel = vesselDepth <= np.depth && np.depth <= vesselDepth + 0.5;
     nctx.beginPath();
     nctx.arc(nEndX, nEndY, 5, 0, Math.PI * 2);
-    nctx.fillStyle = tipInVessel ? 'rgba(126,156,132,0.9)' : 'rgba(188,114,80,0.9)';
+    nctx.fillStyle = tipInVessel ? 'rgba(126,156,132,0.9)' : 'rgba(187,92,77,0.9)';
     nctx.fill();
 
     nctx.fillStyle = 'rgba(158,130,114,0.8)';

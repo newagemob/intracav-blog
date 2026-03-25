@@ -13,10 +13,10 @@
     --bg: #EDE4D5; --surface: #F6F0E8; --surface-hi: #FDFAF5;
     --border: #D4C7B5; --border-lt: #E2D8CC;
     --text: #28180C; --text-2: #685040; --text-3: #9E8272;
-    --accent: #BC7250; --accent-lt: #E8C4A8;
-    --sage: #7E9C84; --rose: #B87070; --rose-lt: #E8C0C0;
-    --laminar: #7E9C84; --trans: #C9A84C; --turb: #B87070;
-    --shadow-sm: 0 1px 8px rgba(40,24,12,0.06), 0 0 0 1px rgba(40,24,12,0.04);
+    --accent: #BB5C4D; --accent-lt: #E4A89E;
+    --sage: #527A56; --rose: #3D6E90; --rose-lt: #E8C0C0;
+    --laminar: #527A56; --trans: #C9A84C; --turb: #3D6E90;
+    --shadow-sm: 0 1px 8px rgba(22,21,20,0.06), 0 0 0 1px rgba(22,21,20,0.04);
     --r: 16px; --r-sm: 10px;
   }
   body { font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
@@ -89,7 +89,7 @@
     position: absolute; top: -8px; width: 3px; height: 28px;
     background: var(--text); border-radius: 2px; transform: translateX(-50%);
     transition: left 400ms cubic-bezier(0.25, 0, 0, 1);
-    box-shadow: 0 0 8px rgba(40,24,12,0.3);
+    box-shadow: 0 0 8px rgba(22,21,20,0.3);
   }
 
   .scale-labels {
@@ -130,9 +130,9 @@
   input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none; width: 18px; height: 18px;
     background: var(--accent); border-radius: 50%;
-    box-shadow: 0 0 0 4px rgba(188,114,80,0.15); transition: box-shadow 200ms;
+    box-shadow: 0 0 0 4px rgba(187,92,77,0.15); transition: box-shadow 200ms;
   }
-  input[type=range]::-webkit-slider-thumb:hover { box-shadow: 0 0 0 6px rgba(188,114,80,0.2); }
+  input[type=range]::-webkit-slider-thumb:hover { box-shadow: 0 0 0 6px rgba(187,92,77,0.2); }
   .ctrl-hint { font-size: 0.68rem; color: var(--text-3); font-weight: 300; }
 
   /* Clinical scenarios */
@@ -409,9 +409,9 @@ function calcRe(v_cms, D_mm, rho, mu_cP) {
 }
 
 function getFlowState(re) {
-  if (re < 2300) return { label: 'Laminar Flow', color: '#7E9C84', turb: 0 };
+  if (re < 2300) return { label: 'Laminar Flow', color: '#527A56', turb: 0 };
   if (re < 4000) return { label: 'Transitional', color: '#C9A84C', turb: (re - 2300) / 1700 };
-  return { label: 'Turbulent Flow', color: '#B87070', turb: 1 };
+  return { label: 'Turbulent Flow', color: '#3D6E90', turb: 1 };
 }
 
 function reToScale(re) {
@@ -458,14 +458,14 @@ function draw() {
   const wallY_top = H * 0.05;
   const wallY_bot = H * 0.95;
   const wallGrad = ctx.createLinearGradient(0, 0, 0, H * 0.15);
-  wallGrad.addColorStop(0, 'rgba(188,114,80,0.5)');
-  wallGrad.addColorStop(1, 'rgba(188,114,80,0)');
+  wallGrad.addColorStop(0, 'rgba(187,92,77,0.5)');
+  wallGrad.addColorStop(1, 'rgba(187,92,77,0)');
   ctx.fillStyle = wallGrad;
   ctx.fillRect(0, wallY_top, W, H * 0.08);
 
   const wallGrad2 = ctx.createLinearGradient(0, H * 0.87, 0, H);
-  wallGrad2.addColorStop(0, 'rgba(188,114,80,0)');
-  wallGrad2.addColorStop(1, 'rgba(188,114,80,0.5)');
+  wallGrad2.addColorStop(0, 'rgba(187,92,77,0)');
+  wallGrad2.addColorStop(1, 'rgba(187,92,77,0.5)');
   ctx.fillStyle = wallGrad2;
   ctx.fillRect(0, wallY_bot - H * 0.08, W, H * 0.08);
 

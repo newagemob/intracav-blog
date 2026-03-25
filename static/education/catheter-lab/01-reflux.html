@@ -13,10 +13,10 @@
     --bg: #EDE4D5; --surface: #F6F0E8;
     --border: #D4C7B5; --border-lt: #E2D8CC;
     --text: #28180C; --text-2: #685040; --text-3: #9E8272;
-    --accent: #BC7250; --accent-lt: #E8C4A8;
-    --sage: #7E9C84; --rose: #B87070; --gold: #C9A84C;
+    --accent: #BB5C4D; --accent-lt: #E4A89E;
+    --sage: #527A56; --rose: #3D6E90; --gold: #C9A84C;
     --blood: #8B2020; --blood-lt: #C04040;
-    --shadow-sm: 0 1px 8px rgba(40,24,12,0.06), 0 0 0 1px rgba(40,24,12,0.04);
+    --shadow-sm: 0 1px 8px rgba(22,21,20,0.06), 0 0 0 1px rgba(22,21,20,0.04);
     --r: 16px; --r-sm: 10px;
   }
   body { font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
@@ -70,7 +70,7 @@
   .ctrl-val { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--accent); }
   .ctrl-unit { font-size: 0.65rem; color: var(--text-3); }
   input[type=range] { -webkit-appearance: none; width: 100%; height: 4px; background: var(--border); border-radius: 100px; outline: none; cursor: pointer; }
-  input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 0 4px rgba(188,114,80,0.15); }
+  input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 0 4px rgba(187,92,77,0.15); }
 
   /* Timeline */
   .timeline { margin-bottom: 2rem; }
@@ -292,7 +292,7 @@
         <div class="tl-content">
           <div class="tl-title">Heparin Locks — First Systematic Response</div>
           <p class="tl-desc">Dilute heparin flush was adopted hospital-wide to prevent reflux-induced clotting at catheter tips. The "heparin lock" became a clinical standard, but introduced iatrogenic anticoagulation risk. The saline-vs-heparin controversy persisted for 40 years before large randomized trials (2000s) showed normal saline equivalent for peripheral IVs.</p>
-          <span class="tl-tag" style="background:rgba(188,114,80,0.15);color:var(--accent);">Clinical Response</span>
+          <span class="tl-tag" style="background:rgba(187,92,77,0.15);color:var(--accent);">Clinical Response</span>
         </div>
       </div>
       <div class="tl-item">
@@ -444,7 +444,7 @@ function draw() {
   const bagX = W * 0.2, bagY = H * 0.06;
 
   // Bag outline
-  ctx.strokeStyle = 'rgba(40,24,12,0.2)';
+  ctx.strokeStyle = 'rgba(22,21,20,0.2)';
   ctx.lineWidth = 2;
   ctx.beginPath();
   ctx.roundRect(bagX - bagW/2, bagY, bagW, bagH, 6);
@@ -485,7 +485,7 @@ function draw() {
   ctx.beginPath();
   ctx.moveTo(tubeStartX, tubeStartY);
   ctx.bezierCurveTo(cp1x, cp1y, cp2x, cp2y, siteX - 40, siteY);
-  ctx.strokeStyle = 'rgba(40,24,12,0.08)';
+  ctx.strokeStyle = 'rgba(22,21,20,0.08)';
   ctx.lineWidth = 12;
   ctx.stroke();
   ctx.strokeStyle = isReflux ? 'rgba(139,32,32,0.15)' : 'rgba(180,210,240,0.5)';
@@ -512,7 +512,7 @@ function draw() {
   // === Patient arm / vessel ===
   const armY = siteY + 18;
   const armGrad = ctx.createLinearGradient(0, armY - 14, 0, armY + 30);
-  armGrad.addColorStop(0, '#E8C4A8');
+  armGrad.addColorStop(0, '#E4A89E');
   armGrad.addColorStop(1, '#D4A880');
   ctx.fillStyle = armGrad;
   ctx.beginPath();
@@ -528,7 +528,7 @@ function draw() {
 
   // Catheter
   const cathR = GAUGE_RADIUS[state.gauge];
-  const cathColor = isReflux ? '#C04040' : '#BC7250';
+  const cathColor = isReflux ? '#C04040' : '#BB5C4D';
   ctx.strokeStyle = cathColor;
   ctx.lineWidth = 4;
   ctx.beginPath();
@@ -557,7 +557,7 @@ function draw() {
   const dp = getDeltaP();
   const dpEl = document.getElementById('deltaP');
   dpEl.textContent = (dp >= 0 ? '+' : '') + dp.toFixed(0);
-  dpEl.style.color = isReflux ? '#C04040' : dp < 15 ? '#C9A84C' : '#7E9C84';
+  dpEl.style.color = isReflux ? '#C04040' : dp < 15 ? '#C9A84C' : '#527A56';
 
   const badge = document.getElementById('statusBadge');
   if (isReflux) {
@@ -568,7 +568,7 @@ function draw() {
     badge.style.cssText = 'background:rgba(201,168,76,0.15);color:#C9A84C;border:1px solid #C9A84C;';
   } else {
     badge.textContent = '● PATENT — forward flow';
-    badge.style.cssText = 'background:rgba(126,156,132,0.15);color:#7E9C84;border:1px solid #7E9C84;';
+    badge.style.cssText = 'background:rgba(126,156,132,0.15);color:#527A56;border:1px solid #527A56;';
   }
 
   // Pressure arrow indicator
@@ -578,7 +578,7 @@ function draw() {
   ctx.beginPath();
   ctx.moveTo(arrX, arrY);
   ctx.lineTo(arrX + arrDir * arrLen, arrY);
-  ctx.strokeStyle = isReflux ? '#C04040' : '#7E9C84';
+  ctx.strokeStyle = isReflux ? '#C04040' : '#527A56';
   ctx.lineWidth = 2.5;
   ctx.stroke();
   // Arrowhead
@@ -586,9 +586,9 @@ function draw() {
   ctx.moveTo(arrX + arrDir * arrLen - arrDir * 8, arrY - 5);
   ctx.lineTo(arrX + arrDir * arrLen, arrY);
   ctx.lineTo(arrX + arrDir * arrLen - arrDir * 8, arrY + 5);
-  ctx.strokeStyle = isReflux ? '#C04040' : '#7E9C84';
+  ctx.strokeStyle = isReflux ? '#C04040' : '#527A56';
   ctx.stroke();
-  ctx.fillStyle = 'rgba(40,24,12,0.45)';
+  ctx.fillStyle = 'rgba(22,21,20,0.45)';
   ctx.font = '9px Nunito, sans-serif';
   ctx.textAlign = 'center';
   ctx.fillText(isReflux ? 'REFLUX' : 'FORWARD', arrX + arrDir * arrLen / 2, arrY - 10);

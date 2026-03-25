@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Nunito:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-  :root{--bg:#EDE4D5;--surface:#F6F0E8;--border:#D4C7B5;--border-lt:#E2D8CC;--text:#28180C;--text-2:#685040;--text-3:#9E8272;--accent:#BC7250;--accent-lt:#E8C4A8;--sage:#7E9C84;--rose:#B87070;--gold:#C9A84C;--blue:#4A8ACA;--shadow-sm:0 1px 8px rgba(40,24,12,0.06),0 0 0 1px rgba(40,24,12,0.04);--r:16px;--r-sm:10px;}
+  :root{--bg:#EDE4D5;--surface:#F6F0E8;--border:#D4C7B5;--border-lt:#E2D8CC;--text:#28180C;--text-2:#685040;--text-3:#9E8272;--accent:#BB5C4D;--accent-lt:#E4A89E;--sage:#527A56;--rose:#3D6E90;--gold:#C9A84C;--blue:#9CBDD8;--shadow-sm:0 1px 8px rgba(22,21,20,0.06),0 0 0 1px rgba(22,21,20,0.04);--r:16px;--r-sm:10px;}
   body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
   body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");opacity:.028;pointer-events:none;z-index:9999}
   nav{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 3rem;border-bottom:1px solid var(--border-lt);background:rgba(237,228,213,0.85);backdrop-filter:blur(12px);position:sticky;top:0;z-index:100}
@@ -131,7 +131,7 @@
       <div class="cc-section">Mechanism</div><p class="cc-text">Air enters the venous system through an open central line hub (insertion, tubing change, disconnection). 50–300 mL of air can be lethal. Air in RV outflow tract creates "air lock" — no blood pumped to pulmonary circulation. Cardiac arrest within seconds to minutes.</p>
       <div class="cc-section">Recognition</div><p class="cc-text">"Mill-wheel" machinery murmur (pathognomonic — air in RV). Sudden cardiovascular collapse, hypoxia, altered consciousness during or after central line manipulation. Etco2 drops.</p>
       <div class="cc-section">Response</div><p class="cc-text">Left lateral decubitus + Trendelenburg (air floats to apex, off RVOT). 100% O2. Aspiration via central line if in situ. CPR if pulseless. Hyperbaric O2 if available.</p>
-      <div class="cc-badge" style="background:rgba(188,114,80,0.12);color:var(--accent)">Prevention: always cap open hubs</div>
+      <div class="cc-badge" style="background:rgba(187,92,77,0.12);color:var(--accent)">Prevention: always cap open hubs</div>
     </div>
     <div class="cc">
       <div class="cc-name" style="color:var(--text-2)">Catheter Fracture / Pinch-Off</div>
@@ -197,7 +197,7 @@ BUNDLE.forEach((b,i)=>{
     div.classList.toggle('done');
     if(div.classList.contains('done'))bundleDone.add(i);else bundleDone.delete(i);
     document.getElementById('clabsiScore').textContent=bundleDone.size+' / 5';
-    document.getElementById('clabsiScore').style.color=bundleDone.size===5?'#7E9C84':bundleDone.size>=3?'#C9A84C':'#BC7250';
+    document.getElementById('clabsiScore').style.color=bundleDone.size===5?'#527A56':bundleDone.size>=3?'#C9A84C':'#BB5C4D';
   };
   bundleContainer.appendChild(div);
 });
@@ -271,7 +271,7 @@ function drawClabsi(){
   });
 
   // Bundle compliance label
-  const compColor=bundleDone.size===5?'#7E9C84':bundleDone.size>=3?'#C9A84C':'#C04040';
+  const compColor=bundleDone.size===5?'#527A56':bundleDone.size>=3?'#C9A84C':'#C04040';
   cctx.fillStyle=compColor;cctx.font='500 10px Nunito';cctx.textAlign='center';
   cctx.fillText(bundleDone.size===5?'Bundle complete — biofilm suppressed':'Bundle incomplete — biofilm growing',cX,H*.12);
   cctx.fillStyle='rgba(158,130,114,0.4)';cctx.font='9px Nunito';
@@ -298,15 +298,15 @@ function drawRiskChart(){
   function ty(r){return pad.t+(1-r/maxRisk)*cH}
   // Grid
   for(let r=0;r<=0.35;r+=.05){
-    rctx.strokeStyle='rgba(40,24,12,0.06)';rctx.lineWidth=1;
+    rctx.strokeStyle='rgba(22,21,20,0.06)';rctx.lineWidth=1;
     rctx.beginPath();rctx.moveTo(pad.l,ty(r));rctx.lineTo(W-pad.r,ty(r));rctx.stroke();
-    rctx.fillStyle='rgba(40,24,12,0.35)';rctx.font='9px JetBrains Mono';rctx.textAlign='right';
+    rctx.fillStyle='rgba(22,21,20,0.35)';rctx.font='9px JetBrains Mono';rctx.textAlign='right';
     rctx.fillText((r*100).toFixed(0)+'%',pad.l-4,ty(r)+3);
   }
   for(let d=0;d<=28;d+=7){
-    rctx.strokeStyle='rgba(40,24,12,0.06)';rctx.lineWidth=1;
+    rctx.strokeStyle='rgba(22,21,20,0.06)';rctx.lineWidth=1;
     rctx.beginPath();rctx.moveTo(tx(d),pad.t);rctx.lineTo(tx(d),H-pad.b);rctx.stroke();
-    rctx.fillStyle='rgba(40,24,12,0.35)';rctx.font='9px Nunito';rctx.textAlign='center';
+    rctx.fillStyle='rgba(22,21,20,0.35)';rctx.font='9px Nunito';rctx.textAlign='center';
     rctx.fillText('Day '+d,tx(d),H-pad.b+14);
   }
   // CLABSI CVC
@@ -315,32 +315,32 @@ function drawRiskChart(){
     const r=1-Math.exp(-0.0015*d);
     if(d===0)rctx.moveTo(tx(d),ty(r));else rctx.lineTo(tx(d),ty(r));
   }
-  rctx.strokeStyle='#B87070';rctx.lineWidth=2.5;rctx.stroke();
+  rctx.strokeStyle='#3D6E90';rctx.lineWidth=2.5;rctx.stroke();
   // CLABSI PICC
   rctx.beginPath();
   for(let d=0;d<=28;d++){
     const r=1-Math.exp(-0.001*d);
     if(d===0)rctx.moveTo(tx(d),ty(r));else rctx.lineTo(tx(d),ty(r));
   }
-  rctx.strokeStyle='#7E9C84';rctx.lineWidth=2.5;rctx.stroke();
+  rctx.strokeStyle='#527A56';rctx.lineWidth=2.5;rctx.stroke();
   // DVT PICC
   rctx.beginPath();rctx.setLineDash([6,4]);
   for(let d=0;d<=28;d++){
     const r=1-Math.exp(-0.006*d);
     if(d===0)rctx.moveTo(tx(d),ty(r));else rctx.lineTo(tx(d),ty(r));
   }
-  rctx.strokeStyle='#4A8ACA';rctx.lineWidth=2;rctx.stroke();rctx.setLineDash([]);
+  rctx.strokeStyle='#9CBDD8';rctx.lineWidth=2;rctx.stroke();rctx.setLineDash([]);
   // Legend
-  const legends=[['CVC CLABSI rate','#B87070',false],['PICC CLABSI rate','#7E9C84',false],['PICC DVT risk','#4A8ACA',true]];
+  const legends=[['CVC CLABSI rate','#3D6E90',false],['PICC CLABSI rate','#527A56',false],['PICC DVT risk','#9CBDD8',true]];
   legends.forEach(([l,c,d],i)=>{
     const lx=pad.l+10+i*130;
     if(d)rctx.setLineDash([5,4]);
     rctx.beginPath();rctx.moveTo(lx,pad.t+8);rctx.lineTo(lx+24,pad.t+8);
     rctx.strokeStyle=c;rctx.lineWidth=2;rctx.stroke();rctx.setLineDash([]);
-    rctx.fillStyle='rgba(40,24,12,0.6)';rctx.font='9px Nunito';rctx.textAlign='left';
+    rctx.fillStyle='rgba(22,21,20,0.6)';rctx.font='9px Nunito';rctx.textAlign='left';
     rctx.fillText(l,lx+28,pad.t+11);
   });
-  rctx.fillStyle='rgba(40,24,12,0.3)';rctx.font='9px Nunito';rctx.textAlign='right';
+  rctx.fillStyle='rgba(22,21,20,0.3)';rctx.font='9px Nunito';rctx.textAlign='right';
   rctx.fillText('Cumulative risk (%)',pad.l-2,pad.t-6);
 }
 drawRiskChart();

@@ -13,10 +13,10 @@
     --bg: #EDE4D5; --surface: #F6F0E8; --surface-hi: #FDFAF5;
     --border: #D4C7B5; --border-lt: #E2D8CC;
     --text: #28180C; --text-2: #685040; --text-3: #9E8272;
-    --accent: #BC7250; --accent-lt: #E8C4A8;
-    --sage: #7E9C84; --rose: #B87070; --gold: #C9A84C;
-    --shadow-sm: 0 1px 8px rgba(40,24,12,0.06), 0 0 0 1px rgba(40,24,12,0.04);
-    --shadow-md: 0 4px 28px rgba(40,24,12,0.10), 0 0 0 1px rgba(40,24,12,0.06);
+    --accent: #BB5C4D; --accent-lt: #E4A89E;
+    --sage: #527A56; --rose: #3D6E90; --gold: #C9A84C;
+    --shadow-sm: 0 1px 8px rgba(22,21,20,0.06), 0 0 0 1px rgba(22,21,20,0.04);
+    --shadow-md: 0 4px 28px rgba(22,21,20,0.10), 0 0 0 1px rgba(22,21,20,0.06);
     --r: 16px; --r-sm: 10px;
   }
   html { scroll-behavior: smooth; }
@@ -65,7 +65,7 @@
   .card { background: var(--surface); border: 1px solid var(--border-lt); border-radius: var(--r); padding: 2rem; text-decoration: none; color: var(--text); display: flex; flex-direction: column; gap: 1rem; transition: all 220ms; box-shadow: var(--shadow-sm); position: relative; overflow: hidden; }
   .card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; border-radius: var(--r) var(--r) 0 0; opacity: 0; transition: opacity 200ms; }
   .card-1::before { background: var(--rose); }
-  .card-2::before { background: #4A8ACA; }
+  .card-2::before { background: #9CBDD8; }
   .card-3::before { background: var(--gold); }
   .card-4::before { background: var(--accent); }
   .card:hover::before { opacity: 1; }
@@ -107,7 +107,7 @@
   .footer-brand strong { color: var(--accent); font-weight: 500; }
   .footer-note { font-size: 0.7rem; color: var(--text-3); font-weight: 300; }
 
-  .ambient { position: fixed; top: -200px; right: -100px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(188,114,80,0.07) 0%, transparent 70%); border-radius: 50%; pointer-events: none; z-index: 0; }
+  .ambient { position: fixed; top: -200px; right: -100px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(187,92,77,0.07) 0%, transparent 70%); border-radius: 50%; pointer-events: none; z-index: 0; }
 
   @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
   .hero { animation: fadeUp 600ms ease-out both; }

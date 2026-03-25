@@ -13,11 +13,11 @@
     --bg: #EDE4D5; --surface: #F6F0E8;
     --border: #D4C7B5; --border-lt: #E2D8CC;
     --text: #28180C; --text-2: #685040; --text-3: #9E8272;
-    --accent: #BC7250; --accent-lt: #E8C4A8;
-    --sage: #7E9C84; --rose: #B87070; --gold: #C9A84C;
+    --accent: #BB5C4D; --accent-lt: #E4A89E;
+    --sage: #527A56; --rose: #3D6E90; --gold: #C9A84C;
     --blood: #8B1A1A; --blood-lt: #C04040;
-    --shadow-sm: 0 1px 8px rgba(40,24,12,0.06), 0 0 0 1px rgba(40,24,12,0.04);
-    --shadow-md: 0 4px 28px rgba(40,24,12,0.10); --r: 16px; --r-sm: 10px;
+    --shadow-sm: 0 1px 8px rgba(22,21,20,0.06), 0 0 0 1px rgba(22,21,20,0.04);
+    --shadow-md: 0 4px 28px rgba(22,21,20,0.10); --r: 16px; --r-sm: 10px;
   }
   body { font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
   body::after { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E"); opacity: 0.028; pointer-events: none; z-index: 9999; }
@@ -27,7 +27,7 @@
   .nav-back:hover { color: var(--accent); }
   .nav-sep { color: var(--border); }
   .hero { padding: 4rem 3rem 2.5rem; display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: end; border-bottom: 1px solid var(--border-lt); max-width: 1100px; margin: 0 auto; }
-  .module-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #4A8ACA; display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.75rem; }
+  .module-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #9CBDD8; display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.75rem; }
   .module-label::before { content: '02'; font-family: 'JetBrains Mono', monospace; color: var(--accent); }
   h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 400; line-height: 1.1; margin-bottom: 1rem; }
   h1 em { font-style: italic; color: var(--text-2); }
@@ -52,7 +52,7 @@
   /* Hemolysis meter */
   .hemolysis-meter { background: var(--bg); border-radius: var(--r-sm); padding: 1.25rem; }
   .hm-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); margin-bottom: 0.5rem; }
-  .hm-bar-wrap { height: 20px; background: rgba(40,24,12,0.08); border-radius: 100px; overflow: hidden; margin-bottom: 0.4rem; position: relative; }
+  .hm-bar-wrap { height: 20px; background: rgba(22,21,20,0.08); border-radius: 100px; overflow: hidden; margin-bottom: 0.4rem; position: relative; }
   .hm-bar { height: 100%; border-radius: 100px; transition: width 400ms, background 400ms; }
   .hm-marks { display: flex; justify-content: space-between; font-size: 0.6rem; color: var(--text-3); font-family: 'JetBrains Mono', monospace; }
   .hm-val { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 300; }
@@ -68,7 +68,7 @@
   .ctrl-val { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--accent); }
   .ctrl-unit { font-size: 0.65rem; color: var(--text-3); }
   input[type=range] { -webkit-appearance: none; width: 100%; height: 4px; background: var(--border); border-radius: 100px; outline: none; cursor: pointer; }
-  input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 0 4px rgba(188,114,80,0.15); }
+  input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 0 4px rgba(187,92,77,0.15); }
 
   /* Results row */
   .results-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.75rem; margin-bottom: 2rem; }
@@ -288,8 +288,8 @@
         <tr>
           <td><strong>Navi (Venocare)</strong></td>
           <td style="font-family:'JetBrains Mono',monospace;">Controlled</td>
-          <td>Protocol-defined <div class="disc-bar"><div class="disc-bar-fill" style="width:10%;background:#4A8ACA"></div></div></td>
-          <td><span class="risk-badge" style="background:rgba(74,138,202,0.12);color:#4A8ACA;">Minimized</span></td>
+          <td>Protocol-defined <div class="disc-bar"><div class="disc-bar-fill" style="width:10%;background:#9CBDD8"></div></div></td>
+          <td><span class="risk-badge" style="background:rgba(74,138,202,0.12);color:#9CBDD8;">Minimized</span></td>
           <td style="font-size:0.78rem;color:var(--text-2);">Engineered to eliminate shear hemolysis</td>
         </tr>
       </tbody>
@@ -341,16 +341,16 @@
       <div>
         <div class="tl-title">ED "Nurse-Draw" Controversy — The Clinical Debate</div>
         <p class="tl-desc">Emergency departments adopted IV catheter blood draw as a standard practice during line placement — saving time and patient pain. Large studies showed hemolysis rates of 8–15% in catheter-drawn samples vs 1–2% in venipuncture draws. The College of American Pathologists flagged IV-drawn specimens as a leading cause of reportable lab errors.</p>
-        <span class="tl-tag" style="background:rgba(188,114,80,0.15);color:var(--accent);">Clinical Debate</span>
+        <span class="tl-tag" style="background:rgba(187,92,77,0.15);color:var(--accent);">Clinical Debate</span>
       </div>
     </div>
     <div class="tl-item">
       <div class="tl-year">2024</div>
-      <div class="tl-dot" style="background:#4A8ACA"></div>
+      <div class="tl-dot" style="background:#9CBDD8"></div>
       <div>
         <div class="tl-title">Navi — FDA 510(k) K244047 · Venocare Inc.</div>
         <p class="tl-desc">The first FDA-cleared device engineered specifically for needle-free blood collection through existing peripheral IV catheters. Rather than eliminating catheter-draw (which nurses will continue regardless), Navi controls the negative pressure profile to stay below hemolysis threshold — making what clinicians already do, safe.</p>
-        <span class="tl-tag" style="background:rgba(74,138,202,0.15);color:#4A8ACA;">Clinical Innovation</span>
+        <span class="tl-tag" style="background:rgba(74,138,202,0.15);color:#9CBDD8;">Clinical Innovation</span>
       </div>
     </div>
   </div>
@@ -455,15 +455,15 @@ function updateDraw() {
 
   document.getElementById('tauVal').textContent = tau.toFixed(1) + ' Pa';
   document.getElementById('hemBar').style.width = pct + '%';
-  document.getElementById('hemBar').style.background = isHem ? '#C04040' : tau > 80 ? '#C9A84C' : '#7E9C84';
+  document.getElementById('hemBar').style.background = isHem ? '#C04040' : tau > 80 ? '#C9A84C' : '#527A56';
   document.getElementById('hemWarning').style.display = isHem ? 'block' : 'none';
 
   const maxQ = (Math.PI * Math.pow(GAUGE_DATA[currentGauge].r * 0.001, 4) * 13332) / (8 * 0.003 * 0.032) / 0.001 * 60;
   document.getElementById('resShear').textContent = tau.toFixed(0);
-  document.getElementById('resShear').style.color = isHem ? '#C04040' : tau > 80 ? '#C9A84C' : '#7E9C84';
+  document.getElementById('resShear').style.color = isHem ? '#C04040' : tau > 80 ? '#C9A84C' : '#527A56';
   document.getElementById('resFlow').textContent = maxQ.toFixed(0);
   document.getElementById('resHem').textContent = isHem ? Math.round((tau / 150 - 1) * 100) + '%' : 'OK';
-  document.getElementById('resHem').style.color = isHem ? '#C04040' : '#7E9C84';
+  document.getElementById('resHem').style.color = isHem ? '#C04040' : '#527A56';
 }
 
 function drawSim() {
@@ -485,15 +485,15 @@ function drawSim() {
   const syH = H * 0.5, syW = 50;
 
   // Syringe body
-  ctx.strokeStyle = 'rgba(40,24,12,0.2)'; ctx.lineWidth = 1.5;
+  ctx.strokeStyle = 'rgba(22,21,20,0.2)'; ctx.lineWidth = 1.5;
   ctx.fillStyle = 'rgba(255,255,255,0.5)';
   ctx.beginPath(); ctx.roundRect(syX, syY, syW, syH, [0, 0, 4, 4]); ctx.fill(); ctx.stroke();
 
   // Plunger
   const plungerY = syY + (1 - progress) * syH * 0.85;
-  ctx.fillStyle = '#BC7250';
+  ctx.fillStyle = '#BB5C4D';
   ctx.fillRect(syX + 4, plungerY, syW - 8, 10);
-  ctx.fillStyle = 'rgba(40,24,12,0.2)';
+  ctx.fillStyle = 'rgba(22,21,20,0.2)';
   ctx.fillRect(syX + syW/2 - 3, plungerY - syH * 0.3, 6, syH * 0.3 + 2);
 
   // Fluid in syringe
@@ -515,7 +515,7 @@ function drawSim() {
   }
 
   // Syringe tip / needle connector
-  ctx.fillStyle = '#BC7250';
+  ctx.fillStyle = '#BB5C4D';
   ctx.beginPath(); ctx.roundRect(syX + syW/2 - 4, syY + syH, 8, 16, [0, 0, 4, 4]); ctx.fill();
 
   // === Catheter tube ===
@@ -523,7 +523,7 @@ function drawSim() {
   const cathEndX = W * 0.62, cathEndY = H * 0.68;
 
   // Tube outline
-  ctx.strokeStyle = 'rgba(40,24,12,0.1)'; ctx.lineWidth = displayR * 2 + 4;
+  ctx.strokeStyle = 'rgba(22,21,20,0.1)'; ctx.lineWidth = displayR * 2 + 4;
   ctx.beginPath(); ctx.moveTo(cathStartX, cathStartY); ctx.lineTo(cathEndX, cathEndY); ctx.stroke();
 
   // Tube interior — blood flow
@@ -562,7 +562,7 @@ function drawSim() {
   }
 
   // Shear stress label
-  ctx.fillStyle = isHem ? '#C04040' : '#7E9C84';
+  ctx.fillStyle = isHem ? '#C04040' : '#527A56';
   ctx.font = '500 10px JetBrains Mono, monospace';
   ctx.textAlign = 'center';
   ctx.fillText('τ = ' + tau.toFixed(0) + ' Pa', midX + 40, midY - 20);
@@ -572,7 +572,7 @@ function drawSim() {
 
   // === Vessel / arm ===
   const armGrad = ctx.createLinearGradient(0, H*0.62-16, 0, H*0.62+30);
-  armGrad.addColorStop(0, '#E8C4A8'); armGrad.addColorStop(1, '#D4A880');
+  armGrad.addColorStop(0, '#E4A89E'); armGrad.addColorStop(1, '#D4A880');
   ctx.fillStyle = armGrad;
   ctx.beginPath(); ctx.roundRect(W*0.55, H*0.62-16, W*0.4, 46, 8); ctx.fill();
 
@@ -581,11 +581,11 @@ function drawSim() {
   ctx.beginPath(); ctx.roundRect(W*0.57, H*0.62-4, W*0.35, 18, 9); ctx.fill();
 
   // Catheter tip in vein
-  ctx.fillStyle = '#BC7250';
+  ctx.fillStyle = '#BB5C4D';
   ctx.beginPath(); ctx.roundRect(cathEndX - 6, cathEndY - 3, 20, 8, 4); ctx.fill();
 
   // Gauge label
-  ctx.fillStyle = 'rgba(40,24,12,0.4)'; ctx.font = '500 9px Nunito, sans-serif';
+  ctx.fillStyle = 'rgba(22,21,20,0.4)'; ctx.font = '500 9px Nunito, sans-serif';
   ctx.fillText(GAUGE_DATA[currentGauge].label + ' (r=' + r_mm + 'mm)', cathEndX - 20, cathEndY + 24);
 
   ctx.textAlign = 'left';

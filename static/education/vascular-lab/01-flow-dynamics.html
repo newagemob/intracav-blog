@@ -14,10 +14,10 @@
     --bg: #EDE4D5; --surface: #F6F0E8; --surface-hi: #FDFAF5;
     --border: #D4C7B5; --border-lt: #E2D8CC;
     --text: #28180C; --text-2: #685040; --text-3: #9E8272;
-    --accent: #BC7250; --accent-lt: #E8C4A8; --accent-glow: rgba(188,114,80,0.12);
-    --sage: #7E9C84; --rose: #B87070;
-    --shadow-sm: 0 1px 8px rgba(40,24,12,0.06), 0 0 0 1px rgba(40,24,12,0.04);
-    --shadow-md: 0 4px 28px rgba(40,24,12,0.10), 0 0 0 1px rgba(40,24,12,0.06);
+    --accent: #BB5C4D; --accent-lt: #E4A89E; --accent-glow: rgba(187,92,77,0.12);
+    --sage: #527A56; --rose: #3D6E90;
+    --shadow-sm: 0 1px 8px rgba(22,21,20,0.06), 0 0 0 1px rgba(22,21,20,0.04);
+    --shadow-md: 0 4px 28px rgba(22,21,20,0.10), 0 0 0 1px rgba(22,21,20,0.06);
     --r: 16px; --r-sm: 10px;
   }
 
@@ -155,12 +155,12 @@
   input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none; width: 18px; height: 18px;
     background: var(--accent); border-radius: 50%;
-    box-shadow: 0 0 0 4px rgba(188,114,80,0.15);
+    box-shadow: 0 0 0 4px rgba(187,92,77,0.15);
     transition: box-shadow 200ms;
   }
 
   input[type=range]::-webkit-slider-thumb:hover {
-    box-shadow: 0 0 0 6px rgba(188,114,80,0.2);
+    box-shadow: 0 0 0 6px rgba(187,92,77,0.2);
   }
 
   .ctrl-hint { font-size: 0.68rem; color: var(--text-3); font-weight: 300; }
@@ -217,7 +217,7 @@
   }
 
   tr:last-child td { border-bottom: none; }
-  tr:hover td { background: rgba(188,114,80,0.03); }
+  tr:hover td { background: rgba(187,92,77,0.03); }
 
   .gauge-num { font-family: 'JetBrains Mono', monospace; font-weight: 500; color: var(--text); }
 
@@ -596,7 +596,7 @@ function draw(ts) {
   const speedScale = clamp(v_max / 200, 0.02, 1.0); // normalize animation speed
 
   // Clear
-  ctx.fillStyle = '#160E06';
+  ctx.fillStyle = '#161514';
   ctx.fillRect(0, 0, W, H);
 
   // ── Cross-section view ─────────────────────────────────────────────
@@ -625,7 +625,7 @@ function draw(ts) {
 
   // Vessel outline
   ctx.beginPath(); ctx.arc(cx, H/2, R_px + 12, 0, Math.PI * 2);
-  ctx.strokeStyle = 'rgba(188,114,80,0.3)'; ctx.lineWidth = 1; ctx.stroke();
+  ctx.strokeStyle = 'rgba(187,92,77,0.3)'; ctx.lineWidth = 1; ctx.stroke();
 
   // Label
   ctx.fillStyle = 'rgba(158,130,114,0.7)';
@@ -633,7 +633,7 @@ function draw(ts) {
   ctx.fillText('cross-section', cx - 40, H - 14);
 
   // ── Divider ────────────────────────────────────────────────────────
-  ctx.strokeStyle = 'rgba(188,114,80,0.12)'; ctx.lineWidth = 1;
+  ctx.strokeStyle = 'rgba(187,92,77,0.12)'; ctx.lineWidth = 1;
   ctx.setLineDash([4, 6]);
   ctx.beginPath(); ctx.moveTo(W * 0.43, 20); ctx.lineTo(W * 0.43, H - 20); ctx.stroke();
   ctx.setLineDash([]);
@@ -643,7 +643,7 @@ function draw(ts) {
   const flowCY = H / 2;
 
   // Vessel walls (top/bottom lines)
-  ctx.strokeStyle = 'rgba(188,114,80,0.4)'; ctx.lineWidth = 1.5;
+  ctx.strokeStyle = 'rgba(187,92,77,0.4)'; ctx.lineWidth = 1.5;
   ctx.setLineDash([]);
   ctx.beginPath(); ctx.moveTo(vizX, flowCY - R_px); ctx.lineTo(W - 20, flowCY - R_px); ctx.stroke();
   ctx.beginPath(); ctx.moveTo(vizX, flowCY + R_px); ctx.lineTo(W - 20, flowCY + R_px); ctx.stroke();
@@ -673,7 +673,7 @@ function draw(ts) {
     if (iy === 0 || Math.abs(rNorm) >= 0.99) ctx.moveTo(profileX, iy);
     else ctx.lineTo(profileX, iy);
   }
-  ctx.strokeStyle = 'rgba(188,114,80,0.5)'; ctx.lineWidth = 1.5; ctx.stroke();
+  ctx.strokeStyle = 'rgba(187,92,77,0.5)'; ctx.lineWidth = 1.5; ctx.stroke();
 
   // Profile shading
   ctx.beginPath();
@@ -685,7 +685,7 @@ function draw(ts) {
   }
   ctx.lineTo(vizX, flowCY + R_px);
   ctx.closePath();
-  ctx.fillStyle = 'rgba(188,114,80,0.05)'; ctx.fill();
+  ctx.fillStyle = 'rgba(187,92,77,0.05)'; ctx.fill();
 
   // Labels
   ctx.fillStyle = 'rgba(158,130,114,0.7)';

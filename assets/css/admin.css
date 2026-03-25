@@ -54,7 +54,7 @@
 .handbook-form-textarea:focus {
   outline: none;
   border-color: var(--color-accent);
-  box-shadow: 0 0 0 3px rgba(188, 114, 80, 0.12);
+  box-shadow: 0 0 0 3px rgba(187, 92, 77, 0.12);
 }
 
 .handbook-form-textarea {

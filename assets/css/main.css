@@ -128,10 +128,9 @@ dd:last-child {
 code {
   font-family: var(--font-mono);
   font-size: 0.85em;
-  color: var(--color-accent);
-  background-color: var(--color-bg-secondary);
-  border: 1px solid var(--color-border-subtle);
-  padding: 0.15em 0.4em;
+  color: var(--color-code-text);
+  background-color: var(--color-code-bg);
+  padding: 0.1em 0.45em;
   border-radius: 4px;
 }
 
@@ -156,8 +155,8 @@ pre code {
 }
 
 .dark pre {
-  background-color: #160E06;
-  border-color: #3A2818;
+  background-color: #0D0C0C;
+  border-color: rgba(253, 250, 245, 0.1);
 }
 
 blockquote {
@@ -234,7 +233,7 @@ time {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: rgba(237, 228, 213, 0.85);
+  background-color: rgba(237, 228, 213, 0.9);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--color-border-subtle);
@@ -253,7 +252,7 @@ time {
 }
 
 .dark .handbook-header {
-  background-color: rgba(22, 14, 6, 0.92);
+  background-color: rgba(22, 21, 20, 0.92);
 }
 
 .handbook-header-container {
@@ -979,10 +978,9 @@ time {
 .handbook-content code {
   font-family: var(--font-mono);
   font-size: 0.85em;
-  color: var(--color-accent);
-  background-color: var(--color-bg-secondary);
-  border: 1px solid var(--color-border-subtle);
-  padding: 0.15em 0.4em;
+  color: var(--color-code-text);
+  background-color: var(--color-code-bg);
+  padding: 0.1em 0.45em;
   border-radius: 4px;
 }
 
@@ -1053,7 +1051,7 @@ time {
 }
 
 .handbook-content tbody tr:hover {
-  background-color: rgba(188, 114, 80, 0.03);
+  background-color: rgba(187, 92, 77, 0.025);
 }
 
 .handbook-page-footer {
@@ -1286,7 +1284,7 @@ time {
 .handbook-filter-select:focus {
   outline: none;
   border-color: var(--color-accent);
-  box-shadow: 0 0 0 3px rgba(188, 114, 80, 0.12);
+  box-shadow: 0 0 0 3px rgba(187, 92, 77, 0.12);
 }
 
 .handbook-filter-clear {
@@ -1541,7 +1539,7 @@ time {
 }
 
 .command-palette-result-title mark {
-  background-color: rgba(188, 114, 80, 0.2);
+  background-color: rgba(187, 92, 77, 0.2);
   color: inherit;
   padding: 0 2px;
   border-radius: 2px;

@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Nunito:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-  :root{--bg:#EDE4D5;--surface:#F6F0E8;--border:#D4C7B5;--border-lt:#E2D8CC;--text:#28180C;--text-2:#685040;--text-3:#9E8272;--accent:#BC7250;--accent-lt:#E8C4A8;--sage:#7E9C84;--rose:#B87070;--gold:#C9A84C;--blue:#4A8ACA;--shadow-sm:0 1px 8px rgba(40,24,12,0.06),0 0 0 1px rgba(40,24,12,0.04);--r:16px;--r-sm:10px;}
+  :root{--bg:#EDE4D5;--surface:#F6F0E8;--border:#D4C7B5;--border-lt:#E2D8CC;--text:#28180C;--text-2:#685040;--text-3:#9E8272;--accent:#BB5C4D;--accent-lt:#E4A89E;--sage:#527A56;--rose:#3D6E90;--gold:#C9A84C;--blue:#9CBDD8;--shadow-sm:0 1px 8px rgba(22,21,20,0.06),0 0 0 1px rgba(22,21,20,0.04);--r:16px;--r-sm:10px;}
   body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
   body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");opacity:.028;pointer-events:none;z-index:9999}
   nav{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 3rem;border-bottom:1px solid var(--border-lt);background:rgba(237,228,213,0.85);backdrop-filter:blur(12px);position:sticky;top:0;z-index:100}
@@ -147,7 +147,7 @@
       <div class="app-row"><span class="app-key">US guidance</span><span class="app-val">Limited by clavicle</span></div>
       <div class="app-row"><span class="app-key">Comfortable</span><span class="app-val">Best (shoulder)</span></div>
       <div class="app-row"><span class="app-key">Best for</span><span class="app-val">Long dwell, TPN, ambulatory</span></div>
-      <div class="app-badge" style="background:rgba(188,114,80,0.12);color:var(--accent)">Lowest infection rate</div>
+      <div class="app-badge" style="background:rgba(187,92,77,0.12);color:var(--accent)">Lowest infection rate</div>
     </div>
     <div class="app-card">
       <div class="app-name" style="color:var(--gold)">Femoral</div>
@@ -212,7 +212,7 @@
       <div class="tl-year">1953</div><div class="tl-dot" style="background:var(--accent)"></div>
       <div><div class="tl-title">The Seldinger Paper — One Page That Changed Medicine</div>
       <p class="tl-desc">Sven-Ivar Seldinger's 1953 paper in Acta Radiologica described a catheter-exchange technique originally intended for percutaneous arterial access in angiography. The technique — needle puncture, wire insertion, needle removal, catheter threading over wire — eliminated the need to push a catheter through the same needle that had punctured the vessel, dramatically reducing vessel trauma. The paper is now the most-cited technique paper in vascular access history.</p>
-      <span class="tl-tag" style="background:rgba(188,114,80,0.15);color:var(--accent)">Paradigm Shift</span></div>
+      <span class="tl-tag" style="background:rgba(187,92,77,0.15);color:var(--accent)">Paradigm Shift</span></div>
     </div>
     <div class="tl-item">
       <div class="tl-year">1961</div><div class="tl-dot" style="background:var(--blue)"></div>
@@ -348,12 +348,12 @@ function drawSeldinger(){
   if(phaseIdx>=1&&phaseIdx<=2){
     ctx.fillStyle='#3A3028';
     ctx.beginPath();ctx.roundRect(entryX-20,skinY-40,40,35,6);ctx.fill();
-    ctx.fillStyle='#BC7250';
+    ctx.fillStyle='#BB5C4D';
     ctx.fillRect(entryX-20,skinY-8,40,8);
     // US beam
     const beamGrad=ctx.createLinearGradient(entryX,skinY,entryX,veinY+veinR);
-    beamGrad.addColorStop(0,'rgba(188,114,80,0.2)');
-    beamGrad.addColorStop(1,'rgba(188,114,80,0)');
+    beamGrad.addColorStop(0,'rgba(187,92,77,0.2)');
+    beamGrad.addColorStop(1,'rgba(187,92,77,0)');
     ctx.beginPath();ctx.moveTo(entryX-15,skinY);ctx.lineTo(entryX+15,skinY);ctx.lineTo(entryX+30,veinY+veinR);ctx.lineTo(entryX-30,veinY+veinR);ctx.closePath();
     ctx.fillStyle=beamGrad;ctx.fill();
   }
@@ -423,7 +423,7 @@ function drawSeldinger(){
   }
 
   // Step label
-  ctx.fillStyle='rgba(188,114,80,0.7)';ctx.font='500 10px Nunito';ctx.textAlign='center';
+  ctx.fillStyle='rgba(187,92,77,0.7)';ctx.font='500 10px Nunito';ctx.textAlign='center';
   ctx.fillText('Step '+(currentStep+1)+': '+STEPS[currentStep].label.replace(/^\d+\.\s/,''),W*.5,H-10);
 
   ctx.textAlign='left';

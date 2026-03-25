@@ -13,9 +13,9 @@
     --bg: #EDE4D5; --surface: #F6F0E8;
     --border: #D4C7B5; --border-lt: #E2D8CC;
     --text: #28180C; --text-2: #685040; --text-3: #9E8272;
-    --accent: #BC7250; --accent-lt: #E8C4A8;
-    --sage: #7E9C84; --rose: #B87070; --gold: #C9A84C;
-    --shadow-sm: 0 1px 8px rgba(40,24,12,0.06), 0 0 0 1px rgba(40,24,12,0.04);
+    --accent: #BB5C4D; --accent-lt: #E4A89E;
+    --sage: #527A56; --rose: #3D6E90; --gold: #C9A84C;
+    --shadow-sm: 0 1px 8px rgba(22,21,20,0.06), 0 0 0 1px rgba(22,21,20,0.04);
     --r: 16px; --r-sm: 10px;
   }
   body { font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
@@ -59,12 +59,12 @@
   .ctrl-val { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--accent); }
   .ctrl-unit { font-size: 0.65rem; color: var(--text-3); }
   input[type=range] { -webkit-appearance: none; width: 100%; height: 4px; background: var(--border); border-radius: 100px; outline: none; cursor: pointer; }
-  input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 0 4px rgba(188,114,80,0.15); }
+  input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 0 4px rgba(187,92,77,0.15); }
 
   /* Drug presets */
   .drug-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
   .drug-card { background: var(--surface); border: 1px solid var(--border-lt); border-radius: var(--r-sm); padding: 1.1rem 1.25rem; box-shadow: var(--shadow-sm); cursor: pointer; transition: all 200ms; }
-  .drug-card:hover, .drug-card.active { border-color: var(--accent); background: rgba(188,114,80,0.05); }
+  .drug-card:hover, .drug-card.active { border-color: var(--accent); background: rgba(187,92,77,0.05); }
   .dc-name { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; margin-bottom: 0.5rem; }
   .dc-row { display: flex; justify-content: space-between; font-size: 0.72rem; padding: 0.15rem 0; }
   .dc-key { color: var(--text-3); }
@@ -235,7 +235,7 @@
       <div>
         <div class="tl-title">Needleless Connectors Add New Deadspace</div>
         <p class="tl-desc">The OSHA mandate for needleless connectors introduced devices with internal deadspace of 0.06–0.2 mL — filled with whatever drug was infusing before the syringe disconnect. Positive-displacement connectors, designed to prevent reflux, push this deadspace content into the line on disconnect. The reflux solution had created the surge problem.</p>
-        <span class="tl-tag" style="background:rgba(188,114,80,0.15);color:var(--accent);">Technology Tradeoff</span>
+        <span class="tl-tag" style="background:rgba(187,92,77,0.15);color:var(--accent);">Technology Tradeoff</span>
       </div>
     </div>
     <div class="tl-item">
@@ -295,7 +295,7 @@ const DRUGS = [
   { name:'Heparin', conc:100, deadspaceRisk:'High', color:'#C04040', note:'Anticoagulation spike', riskColor:'rgba(184,112,112,0.15)', riskTextColor:'var(--rose)' },
   { name:'Propofol', conc:10, deadspaceRisk:'Moderate', color:'#C9A84C', note:'Sedation surge on flush', riskColor:'rgba(201,168,76,0.15)', riskTextColor:'var(--gold)' },
   { name:'Insulin', conc:1, deadspaceRisk:'Moderate', color:'#C9A84C', note:'Hypoglycemia from bolus', riskColor:'rgba(201,168,76,0.15)', riskTextColor:'var(--gold)' },
-  { name:'Vancomycin', conc:5, deadspaceRisk:'Low', color:'#7E9C84', note:'Red man syndrome if too fast', riskColor:'rgba(126,156,132,0.15)', riskTextColor:'var(--sage)' },
+  { name:'Vancomycin', conc:5, deadspaceRisk:'Low', color:'#527A56', note:'Red man syndrome if too fast', riskColor:'rgba(126,156,132,0.15)', riskTextColor:'var(--sage)' },
 ];
 
 function buildDrugGrid() {
@@ -352,7 +352,7 @@ function updateSurge() {
   const bolus = sp.conc * sp.deadspace;
 
   document.getElementById('surgeConc').textContent = (1 + surgeMult).toFixed(2) + '×';
-  document.getElementById('surgeConc').style.color = surgeMult > 1 ? '#C04040' : surgeMult > 0.3 ? '#C9A84C' : '#7E9C84';
+  document.getElementById('surgeConc').style.color = surgeMult > 1 ? '#C04040' : surgeMult > 0.3 ? '#C9A84C' : '#527A56';
   document.getElementById('bolusVal').textContent = bolus.toFixed(2) + ' mg';
   document.getElementById('surgeWarning').style.display = (1 + surgeMult) > 2 ? 'block' : 'none';
 }
@@ -384,25 +384,25 @@ function draw() {
   // Bag
   const bagX = W * 0.12, bagY = H * 0.05;
   const bagW = 60, bagH = 75;
-  ctx.strokeStyle = 'rgba(40,24,12,0.2)'; ctx.lineWidth = 1.5;
+  ctx.strokeStyle = 'rgba(22,21,20,0.2)'; ctx.lineWidth = 1.5;
   ctx.fillStyle = 'rgba(200,225,245,0.5)';
   ctx.beginPath(); ctx.roundRect(bagX - bagW/2, bagY, bagW, bagH, 6); ctx.fill(); ctx.stroke();
-  ctx.fillStyle = 'rgba(40,24,12,0.35)'; ctx.font = '10px Nunito'; ctx.textAlign = 'center';
+  ctx.fillStyle = 'rgba(22,21,20,0.35)'; ctx.font = '10px Nunito'; ctx.textAlign = 'center';
   ctx.fillText('DRUG', bagX, bagY + bagH/2 - 4);
-  ctx.font = '9px JetBrains Mono'; ctx.fillStyle = 'rgba(188,114,80,0.8)';
+  ctx.font = '9px JetBrains Mono'; ctx.fillStyle = 'rgba(187,92,77,0.8)';
   ctx.fillText(sp.conc.toFixed(1)+'mg/mL', bagX, bagY + bagH/2 + 10);
 
   // Saline bag
   const salX = W * 0.28, salY = H * 0.05;
   ctx.fillStyle = isFlushing ? 'rgba(150,210,240,0.7)' : 'rgba(200,220,245,0.35)';
-  ctx.strokeStyle = 'rgba(40,24,12,0.2)'; ctx.lineWidth = 1.5;
+  ctx.strokeStyle = 'rgba(22,21,20,0.2)'; ctx.lineWidth = 1.5;
   ctx.beginPath(); ctx.roundRect(salX - bagW/2, salY, bagW, bagH * 0.8, 6); ctx.fill(); ctx.stroke();
-  ctx.fillStyle = isFlushing ? 'rgba(60,120,160,0.9)' : 'rgba(40,24,12,0.3)'; ctx.font = '10px Nunito';
+  ctx.fillStyle = isFlushing ? 'rgba(60,120,160,0.9)' : 'rgba(22,21,20,0.3)'; ctx.font = '10px Nunito';
   ctx.fillText(isFlushing ? 'FLUSHING' : 'NS Flush', salX, salY + bagH * 0.4);
 
   // Stopcock/connector (deadspace)
   const connX = W * 0.45, connY = H * 0.28;
-  ctx.fillStyle = isFlushing ? '#C04040' : '#BC7250';
+  ctx.fillStyle = isFlushing ? '#C04040' : '#BB5C4D';
   ctx.beginPath(); ctx.roundRect(connX - 18, connY - 12, 36, 24, 5); ctx.fill();
   ctx.fillStyle = 'white'; ctx.font = '8px Nunito';
   ctx.fillText('DS', connX, connY + 3);
@@ -416,7 +416,7 @@ function draw() {
   const cathStartX = connX + 18, cathStartY = connY;
 
   // Tube (drug line)
-  ctx.strokeStyle = 'rgba(40,24,12,0.08)'; ctx.lineWidth = 14;
+  ctx.strokeStyle = 'rgba(22,21,20,0.08)'; ctx.lineWidth = 14;
   ctx.beginPath(); ctx.moveTo(cathStartX, cathStartY); ctx.lineTo(cathEndX, cathEndY); ctx.stroke();
 
   // Drug in tube (highlighted when flushing)
@@ -442,7 +442,7 @@ function draw() {
 
   // Arm
   const armGrad = ctx.createLinearGradient(0, cathEndY - 14, 0, cathEndY + 30);
-  armGrad.addColorStop(0, '#E8C4A8'); armGrad.addColorStop(1, '#D4A880');
+  armGrad.addColorStop(0, '#E4A89E'); armGrad.addColorStop(1, '#D4A880');
   ctx.fillStyle = armGrad;
   ctx.beginPath(); ctx.roundRect(cathEndX - 20, cathEndY - 14, W - cathEndX + 10, 44, [0, 0, 8, 0]); ctx.fill();
 
@@ -477,7 +477,7 @@ function draw() {
     const y = waveBaseY - v * 32;
     if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
   });
-  const waveColor = isFlushing && surgeT < 1.5 ? '#FF6060' : '#7E9C84';
+  const waveColor = isFlushing && surgeT < 1.5 ? '#FF6060' : '#527A56';
   ctx.strokeStyle = waveColor; ctx.lineWidth = 1.5; ctx.stroke();
 
   ctx.fillStyle = 'rgba(158,130,114,0.6)'; ctx.font = '8px Nunito'; ctx.textAlign = 'left';
@@ -489,7 +489,7 @@ function draw() {
 
   // CLICK TO FLUSH hint
   if (!isFlushing) {
-    ctx.fillStyle = 'rgba(188,114,80,0.5)'; ctx.font = '10px Nunito'; ctx.textAlign = 'center';
+    ctx.fillStyle = 'rgba(187,92,77,0.5)'; ctx.font = '10px Nunito'; ctx.textAlign = 'center';
     ctx.fillText('Click canvas to simulate flush →', W * 0.45, H - 14);
   }
 

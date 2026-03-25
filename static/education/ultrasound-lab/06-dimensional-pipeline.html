@@ -13,9 +13,9 @@
     --bg: #EDE4D5; --surface: #F6F0E8; --surface-hi: #FDFAF5;
     --border: #D4C7B5; --border-lt: #E2D8CC;
     --text: #28180C; --text-2: #685040; --text-3: #9E8272;
-    --accent: #BC7250; --accent-lt: #E8C4A8;
-    --sage: #7E9C84; --rose: #B87070; --gold: #C9A84C;
-    --shadow-sm: 0 1px 8px rgba(40,24,12,0.06), 0 0 0 1px rgba(40,24,12,0.04);
+    --accent: #BB5C4D; --accent-lt: #E4A89E;
+    --sage: #527A56; --rose: #3D6E90; --gold: #C9A84C;
+    --shadow-sm: 0 1px 8px rgba(22,21,20,0.06), 0 0 0 1px rgba(22,21,20,0.04);
     --r: 16px; --r-sm: 10px;
   }
   body { font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
@@ -98,7 +98,7 @@
   .ac-desc { font-size: 0.72rem; line-height: 1.6; color: #6A5A4A; font-weight: 300; }
 
   /* === DEEP INSIGHT === */
-  .insight-section { background: linear-gradient(135deg, rgba(188,114,80,0.08), rgba(126,156,132,0.05)); border: 1px solid var(--border-lt); border-radius: var(--r); padding: 2.5rem; margin-bottom: 2rem; }
+  .insight-section { background: linear-gradient(135deg, rgba(187,92,77,0.08), rgba(126,156,132,0.05)); border: 1px solid var(--border-lt); border-radius: var(--r); padding: 2.5rem; margin-bottom: 2rem; }
   .is-kicker { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; }
   .is-title { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 300; line-height: 1.25; color: var(--text); margin-bottom: 1rem; }
   .is-title em { font-style: italic; color: var(--text-2); }
@@ -314,7 +314,7 @@
 // ===== COLORS =====
 const C = {
   bg:'#EDE4D5', surface:'#F6F0E8', text:'#28180C', text2:'#685040', text3:'#9E8272',
-  accent:'#BC7250', accentLt:'#E8C4A8', sage:'#7E9C84', rose:'#B87070', gold:'#C9A84C',
+  accent:'#BB5C4D', accentLt:'#E4A89E', sage:'#527A56', rose:'#3D6E90', gold:'#C9A84C',
   border:'#D4C7B5', borderLt:'#E2D8CC'
 };
 
@@ -322,7 +322,7 @@ const C = {
 const STAGES = [
   {
     dim:'3D', label:'Physical Reality', sub:'Tissue + Blood',
-    color:'#7E9C84',
+    color:'#527A56',
     step:'Stage 1 — Input',
     title:'3D Physical Reality',
     desc:'Tissue structures, vessel geometry, blood flow velocity, depth — all exist simultaneously in three spatial dimensions. This is the complete truth the machine is trying to approximate.',
@@ -338,7 +338,7 @@ const STAGES = [
   },
   {
     dim:'1D', label:'Sensor Signal', sub:'Echo amplitudes over time',
-    color:'#BC7250',
+    color:'#BB5C4D',
     step:'Stage 3 — Measurement',
     title:'1D Time Signal (A-line)',
     desc:'Each transducer element records a single time-series: amplitude vs time. This is all the machine actually measures. Everything else is reconstruction. One number per moment in time.',
@@ -346,7 +346,7 @@ const STAGES = [
   },
   {
     dim:'2D', label:'Beamformed Image', sub:'Grayscale slice',
-    color:'#B87070',
+    color:'#3D6E90',
     step:'Stage 4 — Reconstruction',
     title:'2D Beamformed Image',
     desc:'Using phase delays across the transducer array, the machine reconstructs a 2D cross-sectional slice. Beamforming, Fourier transforms, and signal processing convert the 1D signals into the image you see on screen.',
@@ -391,7 +391,7 @@ function drawPipeline() {
       pctx.beginPath();
       pctx.moveTo(ax, cy);
       pctx.lineTo(ax + 18, cy);
-      pctx.strokeStyle = s.loss ? '#B87070' : '#4A3A2A';
+      pctx.strokeStyle = s.loss ? '#3D6E90' : '#4A3A2A';
       pctx.lineWidth = 1.5;
       pctx.stroke();
       // Arrowhead
@@ -399,11 +399,11 @@ function drawPipeline() {
       pctx.moveTo(ax + 14, cy - 5);
       pctx.lineTo(ax + 20, cy);
       pctx.lineTo(ax + 14, cy + 5);
-      pctx.strokeStyle = s.loss ? '#B87070' : '#4A3A2A';
+      pctx.strokeStyle = s.loss ? '#3D6E90' : '#4A3A2A';
       pctx.stroke();
 
       if (s.loss) {
-        pctx.fillStyle = '#B87070';
+        pctx.fillStyle = '#3D6E90';
         pctx.font = '8px Nunito, sans-serif';
         pctx.textAlign = 'center';
         pctx.fillText('loss', ax + 10, cy - 8);
@@ -455,7 +455,7 @@ function drawPipeline() {
 
     // Loss indicator
     if (s.loss) {
-      pctx.fillStyle = '#B87070';
+      pctx.fillStyle = '#3D6E90';
       pctx.font = '8px JetBrains Mono, monospace';
       pctx.fillText('↑ info lost', x + blockW/2, by + bh - 8);
     }
@@ -550,7 +550,7 @@ function drawShortAxis() {
   ctx.fillText('Circle = perfectly centered', W/2, H - 10);
 
   // Probe indicator at top
-  ctx.fillStyle = '#BC7250';
+  ctx.fillStyle = '#BB5C4D';
   ctx.fillRect(W/2 - 25, 0, 50, 5);
 }
 
@@ -589,7 +589,7 @@ function drawLongAxis() {
   ctx.textAlign = 'center';
   ctx.fillText('Two parallel bright walls', W/2, H - 10);
 
-  ctx.fillStyle = '#BC7250';
+  ctx.fillStyle = '#BB5C4D';
   ctx.fillRect(W/2 - 25, 0, 50, 5);
 }
 
@@ -621,7 +621,7 @@ function drawOblique() {
   ctx.textAlign = 'center';
   ctx.fillText('Oval = off-axis; looks "smaller"', W/2, H - 10);
 
-  ctx.fillStyle = '#BC7250';
+  ctx.fillStyle = '#BB5C4D';
   const offCenter = W/2 - 30;
   ctx.save();
   ctx.translate(offCenter + 30, 0);
@@ -651,7 +651,7 @@ function setScenario(s, btn) {
   const setConf = (id, valId, val, color) => {
     const el = document.getElementById(id);
     el.style.width = val + '%';
-    el.style.background = val > 75 ? '#7E9C84' : val > 55 ? '#C9A84C' : '#B87070';
+    el.style.background = val > 75 ? '#527A56' : val > 55 ? '#C9A84C' : '#3D6E90';
     document.getElementById(valId).textContent = val + '%';
   };
   setConf('ciVessel','ciVesselVal', sc.ciVessel);
@@ -690,7 +690,7 @@ function drawUncertainty() {
     const nx = transW + Math.random() * (W - transW);
     const ny = Math.random() * H;
     const alpha = Math.random() * 0.3;
-    uctx.fillStyle = `rgba(188,114,80,${alpha})`;
+    uctx.fillStyle = `rgba(187,92,77,${alpha})`;
     uctx.fillRect(nx, ny, 1 + Math.random() * 2, 1 + Math.random() * 2);
   }
 
@@ -743,7 +743,7 @@ function drawUncertainty() {
   uctx.beginPath();
   uctx.moveTo(needleX, 0);
   uctx.lineTo(needleX + Math.sin(needleAngle) * nLen, nLen * Math.cos(needleAngle));
-  uctx.strokeStyle = 'rgba(188,114,80,0.4)';
+  uctx.strokeStyle = 'rgba(187,92,77,0.4)';
   uctx.lineWidth = 1;
   uctx.setLineDash([3, 6]);
   uctx.stroke();
@@ -752,7 +752,7 @@ function drawUncertainty() {
   // Transducer
   uctx.fillStyle = '#3A3028';
   uctx.fillRect(0, 0, transW - 2, H);
-  uctx.fillStyle = '#BC7250';
+  uctx.fillStyle = '#BB5C4D';
   uctx.fillRect(transW - 4, 0, 4, H);
 
   // Depth tick

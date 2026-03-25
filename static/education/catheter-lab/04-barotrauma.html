@@ -13,10 +13,10 @@
     --bg: #EDE4D5; --surface: #F6F0E8;
     --border: #D4C7B5; --border-lt: #E2D8CC;
     --text: #28180C; --text-2: #685040; --text-3: #9E8272;
-    --accent: #BC7250; --accent-lt: #E8C4A8;
-    --sage: #7E9C84; --rose: #B87070; --gold: #C9A84C;
+    --accent: #BB5C4D; --accent-lt: #E4A89E;
+    --sage: #527A56; --rose: #3D6E90; --gold: #C9A84C;
     --danger: #C04040; --warning: #D08040;
-    --shadow-sm: 0 1px 8px rgba(40,24,12,0.06), 0 0 0 1px rgba(40,24,12,0.04);
+    --shadow-sm: 0 1px 8px rgba(22,21,20,0.06), 0 0 0 1px rgba(22,21,20,0.04);
     --r: 16px; --r-sm: 10px;
   }
   body { font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
@@ -62,7 +62,7 @@
   .ctrl-val { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--accent); }
   .ctrl-unit { font-size: 0.65rem; color: var(--text-3); }
   input[type=range] { -webkit-appearance: none; width: 100%; height: 4px; background: var(--border); border-radius: 100px; outline: none; cursor: pointer; }
-  input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 0 4px rgba(188,114,80,0.15); }
+  input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 0 4px rgba(187,92,77,0.15); }
 
   /* Injury progression */
   .injury-stages { display: flex; flex-direction: column; gap: 0; border: 1px solid var(--border-lt); border-radius: var(--r); overflow: hidden; margin-bottom: 2rem; }
@@ -368,7 +368,7 @@
       <div>
         <div class="tl-title">Electronic Pump Alarms — Pressure-Based Detection</div>
         <p class="tl-desc">IV pump manufacturers integrated back-pressure sensing as a proxy for extravasation detection. If the downstream resistance drops (vessel lumen lost, fluid now entering low-resistance tissue), some pumps alarm on pressure deviation. However, these alarms are late — triggering only after significant volume has already extravasated. The detection gap remains a clinical problem.</p>
-        <span class="tl-tag" style="background:rgba(188,114,80,0.15);color:var(--accent);">Technology Gap</span>
+        <span class="tl-tag" style="background:rgba(187,92,77,0.15);color:var(--accent);">Technology Gap</span>
       </div>
     </div>
   </div>
@@ -441,9 +441,9 @@ resize();
 window.addEventListener('resize', resize);
 
 const DRUGS = {
-  saline:  { color:'#4A8ACA', name:'Normal Saline', injuryMult:1.0 },
+  saline:  { color:'#9CBDD8', name:'Normal Saline', injuryMult:1.0 },
   kci:     { color:'#C9A84C', name:'KCl Infusion', injuryMult:2.2 },
-  phenyto: { color:'#BC7250', name:'Phenytoin', injuryMult:4.5 },
+  phenyto: { color:'#BB5C4D', name:'Phenytoin', injuryMult:4.5 },
   chemo:   { color:'#C04040', name:'Chemotherapy', injuryMult:8.0 },
 };
 
@@ -530,12 +530,12 @@ function drawPressureArc() {
   // Background arc
   pactx.beginPath();
   pactx.arc(cx, cy, r, startAngle, endAngle);
-  pactx.strokeStyle = 'rgba(40,24,12,0.08)';
+  pactx.strokeStyle = 'rgba(22,21,20,0.08)';
   pactx.lineWidth = 12;
   pactx.stroke();
 
   // Colored arc
-  const arcColor = compP >= 30 ? '#C04040' : compP >= 15 ? '#C9A84C' : '#7E9C84';
+  const arcColor = compP >= 30 ? '#C04040' : compP >= 15 ? '#C9A84C' : '#527A56';
   pactx.beginPath();
   pactx.arc(cx, cy, r, startAngle, startAngle + pct * Math.PI);
   pactx.strokeStyle = arcColor;
@@ -578,7 +578,7 @@ function drawBaro() {
 
   // Skin
   const skinGrad = bctx.createRadialGradient(armCX, armCY, armR * 0.85, armCX, armCY, armR);
-  skinGrad.addColorStop(0, '#E8C4A8');
+  skinGrad.addColorStop(0, '#E4A89E');
   skinGrad.addColorStop(1, '#D4A070');
   bctx.beginPath(); bctx.arc(armCX, armCY, armR, 0, Math.PI * 2);
   bctx.fillStyle = skinGrad; bctx.fill();
@@ -615,7 +615,7 @@ function drawBaro() {
   const cathEndY = isExtr ? armCY + Math.sin(cathAngle) * armR * 0.6 : veinY;
 
   bctx.beginPath(); bctx.moveTo(cathStartX, cathStartY); bctx.lineTo(cathEndX, cathEndY);
-  bctx.strokeStyle = '#BC7250'; bctx.lineWidth = 3; bctx.stroke();
+  bctx.strokeStyle = '#BB5C4D'; bctx.lineWidth = 3; bctx.stroke();
 
   // Extravasation fluid plume
   if (isExtr && bp.extravVol > 0) {
@@ -648,9 +648,9 @@ function drawBaro() {
   }
 
   // Labels
-  bctx.fillStyle = 'rgba(40,24,12,0.35)'; bctx.font = '500 9px Nunito, sans-serif'; bctx.textAlign = 'center';
+  bctx.fillStyle = 'rgba(22,21,20,0.35)'; bctx.font = '500 9px Nunito, sans-serif'; bctx.textAlign = 'center';
   bctx.fillText('MUSCLE', armCX, armCY - 4);
-  bctx.fillStyle = 'rgba(40,24,12,0.25)'; bctx.font = '9px Nunito';
+  bctx.fillStyle = 'rgba(22,21,20,0.25)'; bctx.font = '9px Nunito';
   bctx.fillText('arm cross-section', armCX, armCY + armR + 10);
 
   // Compartment pressure ring indicator

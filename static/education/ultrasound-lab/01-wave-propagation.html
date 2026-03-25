@@ -13,9 +13,9 @@
     --bg: #EDE4D5; --surface: #F6F0E8; --surface-hi: #FDFAF5;
     --border: #D4C7B5; --border-lt: #E2D8CC;
     --text: #28180C; --text-2: #685040; --text-3: #9E8272;
-    --accent: #BC7250; --accent-lt: #E8C4A8;
-    --sage: #7E9C84; --rose: #B87070;
-    --shadow-sm: 0 1px 8px rgba(40,24,12,0.06), 0 0 0 1px rgba(40,24,12,0.04);
+    --accent: #BB5C4D; --accent-lt: #E4A89E;
+    --sage: #527A56; --rose: #3D6E90;
+    --shadow-sm: 0 1px 8px rgba(22,21,20,0.06), 0 0 0 1px rgba(22,21,20,0.04);
     --r: 16px; --r-sm: 10px;
   }
   body { font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
@@ -72,7 +72,7 @@
   .ctrl-val { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--accent); font-weight: 500; }
   .ctrl-unit { font-size: 0.65rem; color: var(--text-3); margin-left: 0.2rem; }
   input[type=range] { -webkit-appearance: none; width: 100%; height: 4px; background: var(--border); border-radius: 100px; outline: none; cursor: pointer; }
-  input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 0 4px rgba(188,114,80,0.15); transition: box-shadow 200ms; }
+  input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 0 4px rgba(187,92,77,0.15); transition: box-shadow 200ms; }
   .ctrl-hint { font-size: 0.68rem; color: var(--text-3); font-weight: 300; }
 
   .results-section { background: var(--surface); border: 1px solid var(--border-lt); border-radius: var(--r); padding: 1.5rem 2rem; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; gap: 1rem; }
@@ -321,11 +321,11 @@
 
 <script>
 const TISSUES = {
-  blood:  { name:'Blood',        c:1570, atten:0.18, color:'#4A8ACA', label:'Blood' },
+  blood:  { name:'Blood',        c:1570, atten:0.18, color:'#9CBDD8', label:'Blood' },
   fat:    { name:'Fat',          c:1450, atten:0.63, color:'#C9A84C', label:'Fat' },
-  muscle: { name:'Muscle',       c:1580, atten:1.09, color:'#BC7250', label:'Muscle' },
+  muscle: { name:'Muscle',       c:1580, atten:1.09, color:'#BB5C4D', label:'Muscle' },
   bone:   { name:'Bone',         c:3500, atten:22.0, color:'#9E8272', label:'Bone' },
-  air:    { name:'Air/Lung',     c:330,  atten:100,  color:'#B87070', label:'Air' },
+  air:    { name:'Air/Lung',     c:330,  atten:100,  color:'#3D6E90', label:'Air' },
 };
 
 let currentTissue = 'blood';
@@ -399,7 +399,7 @@ function draw() {
   // Transducer face
   ctx.fillStyle = '#3A3028';
   ctx.fillRect(0, H * 0.06, 32, H * 0.82);
-  ctx.fillStyle = '#BC7250';
+  ctx.fillStyle = '#BB5C4D';
   ctx.fillRect(28, H * 0.06, 4, H * 0.82);
 
   // Tissue tint stripe

@@ -19,12 +19,12 @@
     --text:       #28180C;
     --text-2:     #685040;
     --text-3:     #9E8272;
-    --accent:     #BC7250;
-    --accent-lt:  #E8C4A8;
-    --sage:       #7E9C84;
-    --shadow-sm:  0 1px 8px rgba(40,24,12,0.06), 0 0 0 1px rgba(40,24,12,0.04);
-    --shadow-md:  0 4px 28px rgba(40,24,12,0.10), 0 0 0 1px rgba(40,24,12,0.06);
-    --shadow-lg:  0 12px 48px rgba(40,24,12,0.14), 0 0 0 1px rgba(40,24,12,0.07);
+    --accent:     #BB5C4D;
+    --accent-lt:  #E4A89E;
+    --sage:       #527A56;
+    --shadow-sm:  0 1px 8px rgba(22,21,20,0.06), 0 0 0 1px rgba(22,21,20,0.04);
+    --shadow-md:  0 4px 28px rgba(22,21,20,0.10), 0 0 0 1px rgba(22,21,20,0.06);
+    --shadow-lg:  0 12px 48px rgba(22,21,20,0.14), 0 0 0 1px rgba(22,21,20,0.07);
     --r:          16px;
     --r-sm:       10px;
   }
@@ -131,7 +131,7 @@
   .card::before {
     content: '';
     position: absolute; inset: 0;
-    background: linear-gradient(135deg, rgba(188,114,80,0.03) 0%, transparent 60%);
+    background: linear-gradient(135deg, rgba(187,92,77,0.03) 0%, transparent 60%);
     transition: opacity 300ms;
   }
 
@@ -272,7 +272,7 @@
 
   /* Big Insight */
   .insight-section { margin: 0 3.5rem 3rem; background: var(--text); border-radius: var(--r); padding: 2.5rem 3rem; color: var(--bg); overflow: hidden; position: relative; }
-  .insight-section::before { content: ''; position: absolute; top: -60px; right: -60px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(188,114,80,0.18) 0%, transparent 70%); pointer-events: none; }
+  .insight-section::before { content: ''; position: absolute; top: -60px; right: -60px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(187,92,77,0.18) 0%, transparent 70%); pointer-events: none; }
   .insight-kicker { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
   .insight-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 400; line-height: 1.25; color: #F6F0E8; margin-bottom: 1.25rem; }
   .insight-title em { font-style: italic; color: var(--accent-lt); }
@@ -285,7 +285,7 @@
 
   /* Intracav callout (used across modules) */
   .intracav-callout {
-    border-left: 3px solid var(--accent); background: linear-gradient(135deg, rgba(188,114,80,0.06) 0%, transparent 70%);
+    border-left: 3px solid var(--accent); background: linear-gradient(135deg, rgba(187,92,77,0.06) 0%, transparent 70%);
     border-radius: 0 var(--r-sm) var(--r-sm) 0; padding: 1.25rem 1.5rem; margin-top: 1.5rem;
   }
   .ic-kicker { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.4rem; }
@@ -328,7 +328,7 @@
   .ambient {
     position: fixed; top: -200px; right: -100px;
     width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(188,114,80,0.08) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(187,92,77,0.08) 0%, transparent 70%);
     border-radius: 50%;
     pointer-events: none; z-index: 0;
   }

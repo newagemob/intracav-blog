@@ -2,7 +2,7 @@
 title = "ICU Clinical Guidelines"
 description = "Comprehensive, evidence-based clinical guidelines for intensive care practice — synthesized from multiple professional society recommendations covering sepsis, ventilation, sedation, infection prevention, nutrition, hemostasis, renal support, post-arrest care, and transfusion medicine."
 date = 2026-03-15T00:00:00-05:00
-lastmod = 2026-03-15T00:00:00-05:00
+lastmod = 2026-03-25T00:00:00-05:00
 draft = false
 content_type = "guidelines"
 audience = "clinician"
@@ -20,6 +20,8 @@ A comprehensive ICU guideline library synthesizing recommendations from multiple
 | Guideline | Scope |
 |---|---|
 | [Sepsis and Septic Shock](/icu/guidelines/sepsis-septic-shock/) | Sepsis-3 definitions, hour-1 bundle, vasopressor dosing, empiric antimicrobials by source, corticosteroids, and organ support |
+| [Surviving Sepsis Campaign 2026 (Adult)](/icu/guidelines/surviving-sepsis-campaign-2026/) | SSC/SCCM/ESICM 2026 international guidelines — 129 recommendations covering screening, antimicrobial therapy, hemodynamic management, respiratory support, adjunctive therapies, goals of care, transitions, and long-term outcomes |
+| [Surviving Sepsis Campaign 2026 (Children)](/icu/guidelines/surviving-sepsis-campaign-children-2026/) | SSC/SCCM/ESICM 2026 pediatric guidelines — 61 recommendations covering recognition, antimicrobials, fluid therapy, vasoactives, ventilation, corticosteroids, metabolic management, ECMO, immune therapies, and long-term follow-up |
 | [Post-Cardiac Arrest Care & TTM](/icu/guidelines/post-cardiac-arrest-ttm/) | Post-ROSC management, targeted temperature management protocols, multimodal neuroprognostication, and seizure management |
 
 ## Respiratory

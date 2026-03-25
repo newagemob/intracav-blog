@@ -13,9 +13,9 @@
     --bg: #EDE4D5; --surface: #F6F0E8; --surface-hi: #FDFAF5;
     --border: #D4C7B5; --border-lt: #E2D8CC;
     --text: #28180C; --text-2: #685040; --text-3: #9E8272;
-    --accent: #BC7250; --accent-lt: #E8C4A8;
-    --sage: #7E9C84; --rose: #B87070;
-    --shadow-sm: 0 1px 8px rgba(40,24,12,0.06), 0 0 0 1px rgba(40,24,12,0.04);
+    --accent: #BB5C4D; --accent-lt: #E4A89E;
+    --sage: #527A56; --rose: #3D6E90;
+    --shadow-sm: 0 1px 8px rgba(22,21,20,0.06), 0 0 0 1px rgba(22,21,20,0.04);
     --r: 16px; --r-sm: 10px;
   }
   body { font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
@@ -101,7 +101,7 @@
   .ctrl-val { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--accent); }
   .ctrl-unit { font-size: 0.65rem; color: var(--text-3); }
   input[type=range] { -webkit-appearance: none; width: 100%; height: 4px; background: var(--border); border-radius: 100px; outline: none; cursor: pointer; }
-  input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 0 4px rgba(188,114,80,0.15); }
+  input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 0 4px rgba(187,92,77,0.15); }
 
   .nav-footer { display: flex; justify-content: space-between; align-items: center; padding: 2rem 3rem; border-top: 1px solid var(--border-lt); max-width: 1100px; margin: 0 auto; }
   .nav-link { text-decoration: none; color: var(--text-3); font-size: 0.82rem; transition: color 200ms; display: flex; align-items: center; gap: 0.5rem; }
@@ -267,10 +267,10 @@ const TISSUES = {
   skin:    { name:'Skin',    rho:1100, c:1600, color:'#C9A87A', Z:1.76 },
   fat:     { name:'Fat',     rho: 925, c:1450, color:'#C9A84C', Z:1.34 },
   fascia:  { name:'Fascia',  rho:1100, c:1600, color:'#9E8272', Z:1.76 },
-  muscle:  { name:'Muscle',  rho:1060, c:1580, color:'#BC7250', Z:1.65 },
-  blood:   { name:'Blood',   rho:1055, c:1570, color:'#4A8ACA', Z:1.61 },
+  muscle:  { name:'Muscle',  rho:1060, c:1580, color:'#BB5C4D', Z:1.65 },
+  blood:   { name:'Blood',   rho:1055, c:1570, color:'#9CBDD8', Z:1.61 },
   bone:    { name:'Bone',    rho:1900, c:3500, color:'#D4C7B5', Z:7.80 },
-  air:     { name:'Air',     rho:1.2,  c: 330, color:'#7E9C84', Z:0.0004 },
+  air:     { name:'Air',     rho:1.2,  c: 330, color:'#527A56', Z:0.0004 },
 };
 
 function calcZ(t) { return (t.rho * t.c / 1e6).toFixed(3); }
@@ -286,7 +286,7 @@ function buildImpTable() {
     const R = calcR(blood.Z, Z);
     const pct = Math.min(100, (Z / maxZ) * 100);
     const rPct = (R * 100).toFixed(1);
-    const rColor = R > 0.5 ? '#B87070' : R > 0.1 ? '#C9A84C' : '#7E9C84';
+    const rColor = R > 0.5 ? '#3D6E90' : R > 0.1 ? '#C9A84C' : '#527A56';
     const tr = document.createElement('tr');
     tr.innerHTML = `
       <td><span class="imp-name">${t.name}</span></td>
@@ -346,7 +346,7 @@ function renderLayers() {
     depth += layers[i].thick;
     const R = calcR(t1.Z, t2.Z);
     const T = 1 - R;
-    const rColor = R > 0.5 ? '#B87070' : R > 0.1 ? '#C9A84C' : '#7E9C84';
+    const rColor = R > 0.5 ? '#3D6E90' : R > 0.1 ? '#C9A84C' : '#527A56';
     const tof = (2 * depth * 0.001 / 1540 * 1e6).toFixed(1);
     html += `
       <div style="display:flex;gap:1.5rem;align-items:center;padding:0.5rem 0;border-bottom:1px solid var(--border-lt);">
@@ -417,7 +417,7 @@ function drawScene(t) {
       sctx.fillText(l.label, transW + 6, yOffset + h * 0.5 + 4);
     }
     // Boundary line
-    sctx.strokeStyle = 'rgba(188,114,80,0.2)';
+    sctx.strokeStyle = 'rgba(187,92,77,0.2)';
     sctx.lineWidth = 1;
     sctx.beginPath(); sctx.moveTo(transW, yOffset); sctx.lineTo(W, yOffset); sctx.stroke();
     yOffset += h;
@@ -439,7 +439,7 @@ function drawScene(t) {
   const alpha = transmitted ? 0.25 : 0.7;
 
   const pGrad = sctx.createRadialGradient(W * 0.55, pY, 0, W * 0.55, pY, 40);
-  pGrad.addColorStop(0, `rgba(188,114,80,${alpha})`);
+  pGrad.addColorStop(0, `rgba(187,92,77,${alpha})`);
   pGrad.addColorStop(1, 'transparent');
   sctx.fillStyle = pGrad;
   sctx.fillRect(transW, pY - 40, W - transW, 80);
@@ -448,14 +448,14 @@ function drawScene(t) {
   sctx.beginPath();
   sctx.moveTo(transW, pY);
   sctx.lineTo(W, pY);
-  sctx.strokeStyle = `rgba(188,114,80,${alpha * 1.2})`;
+  sctx.strokeStyle = `rgba(187,92,77,${alpha * 1.2})`;
   sctx.lineWidth = 2;
   sctx.stroke();
 
   // Transducer
   sctx.fillStyle = '#3A3028';
   sctx.fillRect(0, 0, transW - 2, H);
-  sctx.fillStyle = '#BC7250';
+  sctx.fillStyle = '#BB5C4D';
   sctx.fillRect(transW - 4, 0, 4, H);
 
   // Depth ruler
@@ -514,14 +514,14 @@ function drawALine() {
     if (d === 0) alctx.moveTo(x, y);
     else alctx.lineTo(x, y);
   }
-  alctx.strokeStyle = '#BC7250';
+  alctx.strokeStyle = '#BB5C4D';
   alctx.lineWidth = 1.5;
   alctx.stroke();
 
   // Labels
   boundaries.forEach(b => {
     const y = b.depth * pxPerCm;
-    alctx.strokeStyle = 'rgba(188,114,80,0.2)';
+    alctx.strokeStyle = 'rgba(187,92,77,0.2)';
     alctx.lineWidth = 0.5;
     alctx.setLineDash([2, 6]);
     alctx.beginPath(); alctx.moveTo(baseline, y); alctx.lineTo(W * 0.85, y); alctx.stroke();
@@ -530,7 +530,7 @@ function drawALine() {
     alctx.font = '9px Nunito, sans-serif';
     alctx.fillText(b.label, W * 0.55, y - 3);
     const tof = (2 * b.depth * 0.01 / 1540 * 1e6).toFixed(1);
-    alctx.fillStyle = 'rgba(188,114,80,0.6)';
+    alctx.fillStyle = 'rgba(187,92,77,0.6)';
     alctx.font = '9px JetBrains Mono, monospace';
     alctx.fillText(tof + 'μs', baseline - 32, y + 3);
   });

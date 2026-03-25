@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Nunito:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-  :root{--bg:#EDE4D5;--surface:#F6F0E8;--border:#D4C7B5;--border-lt:#E2D8CC;--text:#28180C;--text-2:#685040;--text-3:#9E8272;--accent:#BC7250;--accent-lt:#E8C4A8;--sage:#7E9C84;--rose:#B87070;--gold:#C9A84C;--blue:#4A8ACA;--shadow-sm:0 1px 8px rgba(40,24,12,0.06),0 0 0 1px rgba(40,24,12,0.04);--r:16px;--r-sm:10px;}
+  :root{--bg:#EDE4D5;--surface:#F6F0E8;--border:#D4C7B5;--border-lt:#E2D8CC;--text:#28180C;--text-2:#685040;--text-3:#9E8272;--accent:#BB5C4D;--accent-lt:#E4A89E;--sage:#527A56;--rose:#3D6E90;--gold:#C9A84C;--blue:#9CBDD8;--shadow-sm:0 1px 8px rgba(22,21,20,0.06),0 0 0 1px rgba(22,21,20,0.04);--r:16px;--r-sm:10px;}
   body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
   body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");opacity:.028;pointer-events:none;z-index:9999}
   nav{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 3rem;border-bottom:1px solid var(--border-lt);background:rgba(237,228,213,0.85);backdrop-filter:blur(12px);position:sticky;top:0;z-index:100}
@@ -139,11 +139,11 @@
   <div class="sl" style="margin-bottom:.75rem">Waveform Components</div>
   <div class="st">The Five Named Events in the CVP Waveform</div>
   <div class="component-legend">
-    <div class="cl-item"><div class="cli-wave" style="color:#4A8ACA">a</div><div class="cli-name">a-wave</div><p class="cli-desc">Atrial contraction. RA contracts against closed tricuspid valve — pressure rises. Absent in AF, exaggerated in heart block (cannon).</p></div>
-    <div class="cl-item"><div class="cli-wave" style="color:#BC7250">c</div><div class="cli-name">c-wave</div><p class="cli-desc">Tricuspid valve closure. Slight bulging of tricuspid leaflets into RA at onset of systole. Small, often not visible clinically.</p></div>
-    <div class="cl-item"><div class="cli-wave" style="color:#7E9C84">x</div><div class="cli-name">x-descent</div><p class="cli-desc">Atrial relaxation. RA moves away from tricuspid annulus during ventricular systole. Absent/blunted in tricuspid regurgitation.</p></div>
+    <div class="cl-item"><div class="cli-wave" style="color:#9CBDD8">a</div><div class="cli-name">a-wave</div><p class="cli-desc">Atrial contraction. RA contracts against closed tricuspid valve — pressure rises. Absent in AF, exaggerated in heart block (cannon).</p></div>
+    <div class="cl-item"><div class="cli-wave" style="color:#BB5C4D">c</div><div class="cli-name">c-wave</div><p class="cli-desc">Tricuspid valve closure. Slight bulging of tricuspid leaflets into RA at onset of systole. Small, often not visible clinically.</p></div>
+    <div class="cl-item"><div class="cli-wave" style="color:#527A56">x</div><div class="cli-name">x-descent</div><p class="cli-desc">Atrial relaxation. RA moves away from tricuspid annulus during ventricular systole. Absent/blunted in tricuspid regurgitation.</p></div>
     <div class="cl-item"><div class="cli-wave" style="color:#C9A84C">v</div><div class="cli-name">v-wave</div><p class="cli-desc">Venous filling. Blood fills the RA during ventricular systole (tricuspid still closed). Giant v-wave = tricuspid regurgitation.</p></div>
-    <div class="cl-item"><div class="cli-wave" style="color:#B87070">y</div><div class="cli-name">y-descent</div><p class="cli-desc">Tricuspid opening. RA empties into RV as tricuspid opens. Steep y-descent = constrictive pericarditis or tamponade.</p></div>
+    <div class="cl-item"><div class="cli-wave" style="color:#3D6E90">y</div><div class="cli-name">y-descent</div><p class="cli-desc">Tricuspid opening. RA empties into RV as tricuspid opens. Steep y-descent = constrictive pericarditis or tamponade.</p></div>
   </div>
 
   <!-- PATHOLOGICAL WAVEFORMS -->
@@ -217,7 +217,7 @@
   <!-- HISTORY -->
   <div class="sl" style="margin-bottom:1rem">Historical Record</div>
   <div class="tl-items">
-    <div class="tl-item"><div class="tl-year">1970</div><div class="tl-dot" style="background:var(--accent)"></div><div><div class="tl-title">Swan-Ganz Catheter — The Hemodynamic Revolution</div><p class="tl-desc">Harold Swan and William Ganz published their description of the flow-directed, balloon-tipped pulmonary artery catheter in the NEJM in 1970. For the first time, bedside hemodynamic measurement was possible without fluoroscopy or cardiac catheterization — CVP, pulmonary artery pressure, pulmonary capillary wedge pressure (PCWP), and thermodilution cardiac output could all be measured at the ICU bedside. The Swan-Ganz catheter was the dominant hemodynamic monitoring tool in ICUs for 30 years.</p><span class="tl-tag" style="background:rgba(188,114,80,0.15);color:var(--accent)">Clinical Revolution</span></div></div>
+    <div class="tl-item"><div class="tl-year">1970</div><div class="tl-dot" style="background:var(--accent)"></div><div><div class="tl-title">Swan-Ganz Catheter — The Hemodynamic Revolution</div><p class="tl-desc">Harold Swan and William Ganz published their description of the flow-directed, balloon-tipped pulmonary artery catheter in the NEJM in 1970. For the first time, bedside hemodynamic measurement was possible without fluoroscopy or cardiac catheterization — CVP, pulmonary artery pressure, pulmonary capillary wedge pressure (PCWP), and thermodilution cardiac output could all be measured at the ICU bedside. The Swan-Ganz catheter was the dominant hemodynamic monitoring tool in ICUs for 30 years.</p><span class="tl-tag" style="background:rgba(187,92,77,0.15);color:var(--accent)">Clinical Revolution</span></div></div>
     <div class="tl-item"><div class="tl-year">2008</div><div class="tl-dot" style="background:var(--rose)"></div><div><div class="tl-title">Marik et al. — CVP Is Dead as a Resuscitation Target</div><p class="tl-desc">Marik, Baram, and Vahid published a systematic review in Chest (2008) analyzing 24 studies and 803 patients examining CVP as a predictor of fluid responsiveness. The pooled analysis found CVP had essentially no predictive value — r²=0.02. This paper, combined with the ARDS Network's FACTT trial (2006) showing that conservative fluid management improved outcomes, ended CVP as a resuscitation endpoint in modern sepsis management. The Surviving Sepsis Campaign removed CVP targets from their guidelines in 2012.</p><span class="tl-tag" style="background:rgba(184,112,112,0.15);color:var(--rose)">Paradigm Shift</span></div></div>
   </div>
 
@@ -337,16 +337,16 @@ function drawCvp(){
     const x=30+i;const y=baseline-v*mmPerPx;
     if(i===0)cctx.moveTo(x,y);else cctx.lineTo(x,y);
   });
-  cctx.strokeStyle='#7E9C84';cctx.lineWidth=2;cctx.stroke();
+  cctx.strokeStyle='#527A56';cctx.lineWidth=2;cctx.stroke();
 
   // Label waves live
   const currentBeat=cvpT%1;
   const labels=cvpMode==='normal'?[
-    {phase:.06,name:'a',.color:'#4A8ACA'},
-    {phase:.17,name:'c',.color:'#BC7250'},
-    {phase:.29,name:'x',.color:'#7E9C84'},
+    {phase:.06,name:'a',.color:'#9CBDD8'},
+    {phase:.17,name:'c',.color:'#BB5C4D'},
+    {phase:.29,name:'x',.color:'#527A56'},
     {phase:.5,name:'v',.color:'#C9A84C'},
-    {phase:.75,name:'y',.color:'#B87070'},
+    {phase:.75,name:'y',.color:'#3D6E90'},
   ]:[];
   labels.forEach(l=>{
     const bx=W*.15+(l.phase)*W*.7;
@@ -376,15 +376,15 @@ function drawStarling(){
   const pad={l:50,r:20,t:20,b:40};
   const cW=W-pad.l-pad.r,cH=H-pad.t-pad.b;
   // Grid
-  sctx.strokeStyle='rgba(40,24,12,0.06)';sctx.lineWidth=1;
+  sctx.strokeStyle='rgba(22,21,20,0.06)';sctx.lineWidth=1;
   for(let i=0;i<=5;i++){
     sctx.beginPath();sctx.moveTo(pad.l,pad.t+i*cH/5);sctx.lineTo(W-pad.r,pad.t+i*cH/5);sctx.stroke();
     sctx.beginPath();sctx.moveTo(pad.l+i*cW/5,pad.t);sctx.lineTo(pad.l+i*cW/5,H-pad.b);sctx.stroke();
   }
   // Axes
-  sctx.strokeStyle='rgba(40,24,12,0.3)';sctx.lineWidth=1.5;
+  sctx.strokeStyle='rgba(22,21,20,0.3)';sctx.lineWidth=1.5;
   sctx.beginPath();sctx.moveTo(pad.l,pad.t);sctx.lineTo(pad.l,H-pad.b);sctx.lineTo(W-pad.r,H-pad.b);sctx.stroke();
-  sctx.fillStyle='rgba(40,24,12,0.4)';sctx.font='9px Nunito';
+  sctx.fillStyle='rgba(22,21,20,0.4)';sctx.font='9px Nunito';
   sctx.textAlign='center';sctx.fillText('Preload (CVP / LVEDP)',W*.5,H-8);
   sctx.save();sctx.translate(12,H*.5);sctx.rotate(-Math.PI/2);sctx.fillText('Stroke Volume / Cardiac Output',0,0);sctx.restore();
 
@@ -395,7 +395,7 @@ function drawStarling(){
     const x=i/cW;const y=curve(x);
     if(i===0)sctx.moveTo(pad.l+i,H-pad.b-y);else sctx.lineTo(pad.l+i,H-pad.b-y);
   }
-  sctx.strokeStyle='#7E9C84';sctx.lineWidth=2.5;sctx.stroke();
+  sctx.strokeStyle='#527A56';sctx.lineWidth=2.5;sctx.stroke();
 
   // Failing heart curve
   const failCurve=(x)=>Math.tanh(x*0.8)*cH*.45;
@@ -404,25 +404,25 @@ function drawStarling(){
     const x=i/cW;const y=failCurve(x);
     if(i===0)sctx.moveTo(pad.l+i,H-pad.b-y);else sctx.lineTo(pad.l+i,H-pad.b-y);
   }
-  sctx.strokeStyle='#B87070';sctx.lineWidth=2;sctx.setLineDash([6,4]);sctx.stroke();sctx.setLineDash([]);
+  sctx.strokeStyle='#3D6E90';sctx.lineWidth=2;sctx.setLineDash([6,4]);sctx.stroke();sctx.setLineDash([]);
 
   // Animated patient dot
   const cvpFrac=(.5+Math.sin(starT*.3)*.15);
   const svNorm=curve(cvpFrac)/cH*.8;
   const dotX=pad.l+cvpFrac*cW,dotY=H-pad.b-curve(cvpFrac);
   sctx.beginPath();sctx.arc(dotX,dotY,7,0,Math.PI*2);
-  sctx.fillStyle='#BC7250';sctx.fill();
+  sctx.fillStyle='#BB5C4D';sctx.fill();
   // CVP label on x-axis
-  sctx.fillStyle='#BC7250';sctx.font='500 9px Nunito';sctx.textAlign='center';
+  sctx.fillStyle='#BB5C4D';sctx.font='500 9px Nunito';sctx.textAlign='center';
   sctx.fillText('CVP='+(cvpFrac*20).toFixed(0)+'mmHg',dotX,H-pad.b+16);
   // Dashed drop to axis
-  sctx.strokeStyle='rgba(188,114,80,0.3)';sctx.lineWidth=1;sctx.setLineDash([3,5]);
+  sctx.strokeStyle='rgba(187,92,77,0.3)';sctx.lineWidth=1;sctx.setLineDash([3,5]);
   sctx.beginPath();sctx.moveTo(dotX,dotY);sctx.lineTo(dotX,H-pad.b);sctx.stroke();sctx.setLineDash([]);
 
   // Legend
-  sctx.fillStyle='#7E9C84';sctx.font='9px Nunito';sctx.textAlign='left';
+  sctx.fillStyle='#527A56';sctx.font='9px Nunito';sctx.textAlign='left';
   sctx.fillText('Normal ventricle',pad.l+10,pad.t+12);
-  sctx.fillStyle='#B87070';sctx.fillText('Failing ventricle',pad.l+10,pad.t+24);
+  sctx.fillStyle='#3D6E90';sctx.fillText('Failing ventricle',pad.l+10,pad.t+24);
 
   requestAnimationFrame(drawStarling);
 }
@@ -437,7 +437,7 @@ function calcSvr(){
   document.getElementById('svrResult').textContent=svr.toLocaleString();
   const interp=svr<700?'Low SVR — vasodilated (sepsis, hepatic failure)':svr>1600?'High SVR — vasoconstricted (cardiogenic shock, hypothermia)':'Normal SVR — adequate vascular tone';
   document.getElementById('svrInterp').textContent=interp;
-  document.getElementById('svrResult').style.color=svr<700?'#4A8ACA':svr>1600?'#C04040':'#BC7250';
+  document.getElementById('svrResult').style.color=svr<700?'#9CBDD8':svr>1600?'#C04040':'#BB5C4D';
 }
 calcSvr();
 </script>

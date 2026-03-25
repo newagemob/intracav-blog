@@ -13,10 +13,10 @@
     --bg: #EDE4D5; --surface: #F6F0E8; --surface-hi: #FDFAF5;
     --border: #D4C7B5; --border-lt: #E2D8CC;
     --text: #28180C; --text-2: #685040; --text-3: #9E8272;
-    --accent: #BC7250; --accent-lt: #E8C4A8;
-    --sage: #7E9C84; --sage-lt: #C8DEC8; --rose: #B87070;
-    --shadow-sm: 0 1px 8px rgba(40,24,12,0.06), 0 0 0 1px rgba(40,24,12,0.04);
-    --shadow-md: 0 4px 28px rgba(40,24,12,0.10), 0 0 0 1px rgba(40,24,12,0.06);
+    --accent: #BB5C4D; --accent-lt: #E4A89E;
+    --sage: #527A56; --sage-lt: #C8DEC8; --rose: #3D6E90;
+    --shadow-sm: 0 1px 8px rgba(22,21,20,0.06), 0 0 0 1px rgba(22,21,20,0.04);
+    --shadow-md: 0 4px 28px rgba(22,21,20,0.10), 0 0 0 1px rgba(22,21,20,0.06);
     --r: 16px; --r-sm: 10px;
   }
   body { font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
@@ -174,7 +174,7 @@
     text-align: left; transition: all 200ms;
   }
   .scenario-btn:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
-  .scenario-btn.active { border-color: var(--accent); background: rgba(188,114,80,0.06); }
+  .scenario-btn.active { border-color: var(--accent); background: rgba(187,92,77,0.06); }
   .sc-label { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); margin-bottom: 0.3rem; }
   .sc-name { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: var(--text); margin-bottom: 0.3rem; }
   .sc-desc { font-size: 0.72rem; color: var(--text-3); font-weight: 300; line-height: 1.5; }
@@ -401,12 +401,12 @@ const COMPONENTS = [
   { id: 'cat18', name: '18G Catheter', short: '18G', icon: '💉', R: 3.85, color: '#C07856', desc: 'r=0.51mm, L=32mm' },
   { id: 'cat20', name: '20G Catheter', short: '20G', icon: '💉', R: 9.80, color: '#C07856', desc: 'r=0.40mm, L=32mm' },
   { id: 'cat22', name: '22G Catheter', short: '22G', icon: '💉', R: 24.4, color: '#C07856', desc: 'r=0.32mm, L=25mm' },
-  { id: 'tubing', name: 'Standard Tubing', short: 'Tubing', icon: '〰️', R: 1.20, color: '#7E9C84', desc: '150cm, r=1.3mm' },
+  { id: 'tubing', name: 'Standard Tubing', short: 'Tubing', icon: '〰️', R: 1.20, color: '#527A56', desc: '150cm, r=1.3mm' },
   { id: 'ext10', name: '10cm Extension', short: 'Ext-10', icon: '📏', R: 0.15, color: '#9E8272', desc: 'r=0.8mm, L=10cm' },
   { id: 'ext30', name: '30cm Extension', short: 'Ext-30', icon: '📏', R: 0.45, color: '#9E8272', desc: 'r=0.8mm, L=30cm' },
-  { id: 'filter', name: '0.2μm Filter', short: 'Filter', icon: '🔲', R: 12.0, color: '#B87070', desc: 'High resistance!' },
+  { id: 'filter', name: '0.2μm Filter', short: 'Filter', icon: '🔲', R: 12.0, color: '#3D6E90', desc: 'High resistance!' },
   { id: 'connector', name: 'Needleless Conn.', short: 'NLC', icon: '🔌', R: 0.80, color: '#9E8272', desc: 'Split-septum type' },
-  { id: 'mvalve', name: 'Mech. Valve Conn.', short: 'MVC', icon: '🔐', R: 3.20, color: '#B87070', desc: 'High resistance!' },
+  { id: 'mvalve', name: 'Mech. Valve Conn.', short: 'MVC', icon: '🔐', R: 3.20, color: '#3D6E90', desc: 'High resistance!' },
 ];
 
 // ── State ──────────────────────────────────────────────────────────────
@@ -589,7 +589,7 @@ function drawWire(x1, y1, x2, y2, flow) {
 
 function drawResistorBox(x, y, w, h, comp, flow) {
   // Shadow
-  ctx.fillStyle = 'rgba(40,24,12,0.07)';
+  ctx.fillStyle = 'rgba(22,21,20,0.07)';
   ctx.beginPath();
   ctx.roundRect(x+2, y+2, w, h, 8);
   ctx.fill();
@@ -622,11 +622,11 @@ function drawResistorBox(x, y, w, h, comp, flow) {
 function drawPressureSource(x, y, label) {
   ctx.beginPath();
   ctx.arc(x, y, 16, 0, Math.PI*2);
-  ctx.fillStyle = 'rgba(188,114,80,0.12)';
-  ctx.strokeStyle = 'rgba(188,114,80,0.4)';
+  ctx.fillStyle = 'rgba(187,92,77,0.12)';
+  ctx.strokeStyle = 'rgba(187,92,77,0.4)';
   ctx.lineWidth = 1.5;
   ctx.fill(); ctx.stroke();
-  ctx.fillStyle = '#BC7250';
+  ctx.fillStyle = '#BB5C4D';
   ctx.font = '600 8px Nunito';
   ctx.textAlign = 'center';
   ctx.fillText('ΔP', x, y+3);
@@ -637,7 +637,7 @@ function drawPressureSource(x, y, label) {
 }
 
 function drawFlowLabel(x, y, flow) {
-  ctx.fillStyle = 'rgba(188,114,80,0.9)';
+  ctx.fillStyle = 'rgba(187,92,77,0.9)';
   ctx.font = '600 12px JetBrains Mono';
   ctx.textAlign = 'center';
   ctx.fillText(`${Math.round(flow)} mL/hr`, x, y - 22);

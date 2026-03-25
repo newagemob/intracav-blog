@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Nunito:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-  :root{--bg:#EDE4D5;--surface:#F6F0E8;--border:#D4C7B5;--border-lt:#E2D8CC;--text:#28180C;--text-2:#685040;--text-3:#9E8272;--accent:#BC7250;--accent-lt:#E8C4A8;--sage:#7E9C84;--rose:#B87070;--gold:#C9A84C;--blue:#4A8ACA;--shadow-sm:0 1px 8px rgba(40,24,12,0.06),0 0 0 1px rgba(40,24,12,0.04);--r:16px;--r-sm:10px;}
+  :root{--bg:#EDE4D5;--surface:#F6F0E8;--border:#D4C7B5;--border-lt:#E2D8CC;--text:#28180C;--text-2:#685040;--text-3:#9E8272;--accent:#BB5C4D;--accent-lt:#E4A89E;--sage:#527A56;--rose:#3D6E90;--gold:#C9A84C;--blue:#9CBDD8;--shadow-sm:0 1px 8px rgba(22,21,20,0.06),0 0 0 1px rgba(22,21,20,0.04);--r:16px;--r-sm:10px;}
   body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
   body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");opacity:.028;pointer-events:none;z-index:9999}
   nav{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 3rem;border-bottom:1px solid var(--border-lt);background:rgba(237,228,213,0.85);backdrop-filter:blur(12px);position:sticky;top:0;z-index:100}
@@ -126,7 +126,7 @@
       <div class="mpc-row"><span class="mpc-key">Consequences</span><span class="mpc-val">Perforation risk, poor flow, thrombosis</span></div>
       <div class="mpc-row"><span class="mpc-key">Detection</span><span class="mpc-val">CXR: tip angled right paramedian, curves posteriorly</span></div>
       <div class="mpc-row"><span class="mpc-key">Action</span><span class="mpc-val">Reposition — azygos too small for central line</span></div>
-      <div class="mpc-risk" style="background:rgba(188,114,80,0.12);color:var(--accent)">Reposition required</div>
+      <div class="mpc-risk" style="background:rgba(187,92,77,0.12);color:var(--accent)">Reposition required</div>
     </div>
     <div class="mp-card">
       <div class="mpc-title" style="color:var(--blue)">Contralateral SVC</div>
@@ -202,16 +202,16 @@ let cT=0;
 let tipPos='optimal';
 
 const TIP_DATA={
-  optimal:{y:.68,x:.51,color:'#7E9C84',label:'CAJ (optimal)',info:'Optimal position. Tip at the cavoatrial junction, 2–3 cm below the carina. High-flow environment for drug dilution. Safe for TPN, vesicants, all concentrations.',status:'✓ Optimal position',statusColor:'rgba(126,156,132,0.15)',statusText:var('--sage')},
+  optimal:{y:.68,x:.51,color:'#527A56',label:'CAJ (optimal)',info:'Optimal position. Tip at the cavoatrial junction, 2–3 cm below the carina. High-flow environment for drug dilution. Safe for TPN, vesicants, all concentrations.',status:'✓ Optimal position',statusColor:'rgba(126,156,132,0.15)',statusText:var('--sage')},
   high:{y:.5,x:.5,color:'#C9A84C',label:'Proximal SVC (too high)',info:'Too high — mid/proximal SVC. Inadequate dilution for hyperosmolar solutions (TPN). Higher thrombosis rate from slower flow. Not acceptable for vesicant chemotherapy. Advance if possible.',status:'⬆ Too high — reposition',statusColor:'rgba(201,168,76,0.15)',statusText:'var(--gold)'},
   subclavian:{y:.35,x:.36,color:'#C9A84C',label:'Subclavian (too short)',info:'Tip in subclavian vein — too short. Not a central line by function. Cannot measure CVP. Risk of subclavian DVT. Advance to SVC.',status:'↩ Too short — subclavian',statusColor:'rgba(201,168,76,0.15)',statusText:'var(--gold)'},
   ra:{y:.77,x:.52,color:'#C04040',label:'Right atrium (too low)',info:'Tip in right atrium — withdraw 2–4 cm to CAJ. Risk of arrhythmia, atrial perforation, cardiac tamponade. Not acceptable for TPN.',status:'⬇ Right atrium — withdraw',statusColor:'rgba(192,64,64,0.15)',statusText:'#C04040'},
   rv:{y:.88,x:.55,color:'#8B0000',label:'Right ventricle — EMERGENCY',info:'EMERGENCY: Tip in right ventricle. Arrhythmia, VF risk. Withdraw immediately to SVC position. Continuous ECG monitoring during withdrawal.',status:'🔴 RV — withdraw immediately',statusColor:'rgba(139,0,0,0.2)',statusText:'#8B0000'},
-  azygos:{y:.62,x:.6,color:'#BC7250',label:'Azygos vein (malposition)',info:'Azygos malposition — tip angles rightward at level of SVC-azygos junction. High perforation risk (small vessel). Must reposition under fluoroscopy.',status:'↪ Azygos malposition',statusColor:'rgba(188,114,80,0.15)',statusText:'var(--accent)'},
-  contralateral:{y:.48,x:.42,color:'#4A8ACA',label:'Contralateral SVC (malposition)',info:'Tip crossed midline into contralateral brachiocephalic or SVC. Reposition under fluoroscopy. Risk of contralateral venous perforation.',status:'↩ Contralateral malposition',statusColor:'rgba(74,138,202,0.15)',statusText:'var(--blue)'},
+  azygos:{y:.62,x:.6,color:'#BB5C4D',label:'Azygos vein (malposition)',info:'Azygos malposition — tip angles rightward at level of SVC-azygos junction. High perforation risk (small vessel). Must reposition under fluoroscopy.',status:'↪ Azygos malposition',statusColor:'rgba(187,92,77,0.15)',statusText:'var(--accent)'},
+  contralateral:{y:.48,x:.42,color:'#9CBDD8',label:'Contralateral SVC (malposition)',info:'Tip crossed midline into contralateral brachiocephalic or SVC. Reposition under fluoroscopy. Risk of contralateral venous perforation.',status:'↩ Contralateral malposition',statusColor:'rgba(74,138,202,0.15)',statusText:'var(--blue)'},
 };
 
-function varColor(v){const map={'var(--sage)':'#7E9C84','var(--gold)':'#C9A84C','var(--accent)':'#BC7250','var(--blue)':'#4A8ACA','#C04040':'#C04040','#8B0000':'#8B0000'};return map[v]||v}
+function varColor(v){const map={'var(--sage)':'#527A56','var(--gold)':'#C9A84C','var(--accent)':'#BB5C4D','var(--blue)':'#9CBDD8','#C04040':'#C04040','#8B0000':'#8B0000'};return map[v]||v}
 
 function setTip(t,btn){
   tipPos=t;
@@ -282,10 +282,10 @@ function drawCxr(){
 
   // CAJ marker
   const cajY=H*.7;
-  ctx.strokeStyle='rgba(188,114,80,0.5)';ctx.lineWidth=1;ctx.setLineDash([3,6]);
+  ctx.strokeStyle='rgba(187,92,77,0.5)';ctx.lineWidth=1;ctx.setLineDash([3,6]);
   ctx.beginPath();ctx.moveTo(W*.3,cajY);ctx.lineTo(W*.7,cajY);ctx.stroke();
   ctx.setLineDash([]);
-  ctx.fillStyle='rgba(188,114,80,0.7)';ctx.font='9px Nunito';ctx.textAlign='right';
+  ctx.fillStyle='rgba(187,92,77,0.7)';ctx.font='9px Nunito';ctx.textAlign='right';
   ctx.fillText('CAJ',W*.7,cajY-4);
 
   // Heart

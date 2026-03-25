@@ -13,9 +13,9 @@
     --bg: #EDE4D5; --surface: #F6F0E8;
     --border: #D4C7B5; --border-lt: #E2D8CC;
     --text: #28180C; --text-2: #685040; --text-3: #9E8272;
-    --accent: #BC7250; --accent-lt: #E8C4A8;
-    --sage: #7E9C84; --rose: #B87070; --gold: #C9A84C;
-    --shadow-sm: 0 1px 8px rgba(40,24,12,0.06), 0 0 0 1px rgba(40,24,12,0.04);
+    --accent: #BB5C4D; --accent-lt: #E4A89E;
+    --sage: #527A56; --rose: #3D6E90; --gold: #C9A84C;
+    --shadow-sm: 0 1px 8px rgba(22,21,20,0.06), 0 0 0 1px rgba(22,21,20,0.04);
     --r: 16px; --r-sm: 10px;
   }
   body { font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
@@ -65,7 +65,7 @@
   .ctrl-unit { font-size: 0.65rem; color: var(--text-3); }
   .ctrl-hint { font-size: 0.68rem; color: var(--text-3); font-weight: 300; }
   input[type=range] { -webkit-appearance: none; width: 100%; height: 4px; background: var(--border); border-radius: 100px; outline: none; cursor: pointer; }
-  input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 0 4px rgba(188,114,80,0.15); }
+  input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 0 4px rgba(187,92,77,0.15); }
 
   /* Angle visualization */
   .angle-zone { display: flex; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
@@ -244,8 +244,8 @@
       <div class="av-row"><span class="av-key">Color Doppler</span><span class="av-val">Red (toward probe)</span></div>
     </div>
     <div class="av-card">
-      <div class="av-title"><div class="av-dot" style="background:#4A8ACA"></div>Vein</div>
-      <div class="av-row"><span class="av-key">Waveform</span><span class="av-val" style="color:#4A8ACA">Low, continuous, respiratory</span></div>
+      <div class="av-title"><div class="av-dot" style="background:#9CBDD8"></div>Vein</div>
+      <div class="av-row"><span class="av-key">Waveform</span><span class="av-val" style="color:#9CBDD8">Low, continuous, respiratory</span></div>
       <div class="av-row"><span class="av-key">Peak velocity</span><span class="av-val">5–30 cm/s</span></div>
       <div class="av-row"><span class="av-key">Compressibility</span><span class="av-val">Fully compressible</span></div>
       <div class="av-row"><span class="av-key">Wall</span><span class="av-val">Thin, collapses</span></div>
@@ -313,9 +313,9 @@ function updateDoppler() {
   const fD = (2 * dp.f0 * 1e6 * (dp.vel / 100) * cosTheta) / c;
   const errorPct = ((1/cosTheta - 1) * 100).toFixed(1);
 
-  const color = dp.angle < 30 ? '#B87070' : dp.angle < 65 ? '#7E9C84' : dp.angle < 80 ? '#C9A84C' : '#B87070';
+  const color = dp.angle < 30 ? '#3D6E90' : dp.angle < 65 ? '#527A56' : dp.angle < 80 ? '#C9A84C' : '#3D6E90';
   document.getElementById('fdBig').textContent = Math.abs(fD).toFixed(0);
-  document.getElementById('fdBig').style.color = dp.angle >= 88 ? '#B87070' : '#BC7250';
+  document.getElementById('fdBig').style.color = dp.angle >= 88 ? '#3D6E90' : '#BB5C4D';
   document.getElementById('vResult').textContent = dp.vel + ' cm/s';
   document.getElementById('cosResult').textContent = cosTheta.toFixed(3);
   document.getElementById('errorResult').innerHTML = dp.angle >= 88 ? '∞%' : `+${errorPct}%`;
@@ -330,7 +330,7 @@ function drawDoppler() {
   const angleRad = dp.angle * Math.PI / 180;
   const vesselY = H * 0.55;
   const vesselR = H * 0.1;
-  const vesselColor = dp.vesselType ? '#C9A84C' : '#4A8ACA';
+  const vesselColor = dp.vesselType ? '#C9A84C' : '#9CBDD8';
 
   // Vessel
   dctx.beginPath();
@@ -364,7 +364,7 @@ function drawDoppler() {
   dctx.rotate(angleRad - Math.PI/2);
   dctx.fillStyle = '#3A3028';
   dctx.fillRect(-18, -30, 36, 30);
-  dctx.fillStyle = '#BC7250';
+  dctx.fillStyle = '#BB5C4D';
   dctx.fillRect(-18, 0, 36, 5);
   dctx.restore();
 
@@ -372,8 +372,8 @@ function drawDoppler() {
   const bEndX = probeX + Math.cos(angleRad) * (vesselY - probeY) * 1.2;
   const bEndY = probeY + Math.sin(angleRad) * (vesselY - probeY);
   const bGrad = dctx.createLinearGradient(probeX, probeY, bEndX, bEndY);
-  bGrad.addColorStop(0, 'rgba(188,114,80,0.5)');
-  bGrad.addColorStop(1, 'rgba(188,114,80,0.1)');
+  bGrad.addColorStop(0, 'rgba(187,92,77,0.5)');
+  bGrad.addColorStop(1, 'rgba(187,92,77,0.1)');
   dctx.beginPath();
   dctx.moveTo(probeX, probeY + 5);
   dctx.lineTo(bEndX, bEndY);
@@ -439,7 +439,7 @@ function drawWaveform() {
     if (i === 0) wctx.moveTo(x, y);
     else wctx.lineTo(x, y);
   });
-  const vesselColor = isArtery ? '#C9A84C' : '#4A8ACA';
+  const vesselColor = isArtery ? '#C9A84C' : '#9CBDD8';
   wctx.strokeStyle = vesselColor;
   wctx.lineWidth = 1.5;
   wctx.stroke();
@@ -455,11 +455,11 @@ function drawWaveform() {
   wctx.font = '10px Nunito, sans-serif';
   wctx.textAlign = 'left';
   wctx.fillText(isArtery ? 'Arterial waveform (pulsatile)' : 'Venous waveform (continuous)', 8, 14);
-  wctx.fillStyle = 'rgba(188,114,80,0.6)';
+  wctx.fillStyle = 'rgba(187,92,77,0.6)';
   wctx.font = '9px JetBrains Mono, monospace';
   wctx.fillText('Peak: ' + baseV.toFixed(1) + ' cm/s', 8, H - 8);
   if (dp.angle >= 85) {
-    wctx.fillStyle = '#B87070';
+    wctx.fillStyle = '#3D6E90';
     wctx.font = '11px Nunito, sans-serif';
     wctx.textAlign = 'center';
     wctx.fillText('⚠ Angle ≥ 85° — signal unreliable', W/2, H/2);

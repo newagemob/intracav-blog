@@ -13,10 +13,10 @@
     --bg: #EDE4D5; --surface: #F6F0E8; --surface-hi: #FDFAF5;
     --border: #D4C7B5; --border-lt: #E2D8CC;
     --text: #28180C; --text-2: #685040; --text-3: #9E8272;
-    --accent: #BC7250; --accent-lt: #E8C4A8;
-    --sage: #7E9C84; --rose: #B87070; --rose-lt: #EBD0D0;
-    --safe: #7E9C84; --warn: #C9A84C; --danger: #B87070; --critical: #8B3030;
-    --shadow-sm: 0 1px 8px rgba(40,24,12,0.06), 0 0 0 1px rgba(40,24,12,0.04);
+    --accent: #BB5C4D; --accent-lt: #E4A89E;
+    --sage: #527A56; --rose: #3D6E90; --rose-lt: #EBD0D0;
+    --safe: #527A56; --warn: #C9A84C; --danger: #3D6E90; --critical: #8B3030;
+    --shadow-sm: 0 1px 8px rgba(22,21,20,0.06), 0 0 0 1px rgba(22,21,20,0.04);
     --r: 16px; --r-sm: 10px;
   }
   body { font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
@@ -74,13 +74,13 @@
   .stress-bar-section { flex: 1; }
   .threshold-bar {
     position: relative; height: 14px; border-radius: 100px; margin: 1rem 0;
-    background: linear-gradient(90deg, #7E9C84 0%, #7E9C84 35%, #C9A84C 45%, #C9A84C 60%, #B87070 70%, #8B3030 100%);
+    background: linear-gradient(90deg, #527A56 0%, #527A56 35%, #C9A84C 45%, #C9A84C 60%, #3D6E90 70%, #8B3030 100%);
   }
   .threshold-needle {
     position: absolute; top: -10px; width: 3px; height: 34px;
     background: var(--text); border-radius: 2px; transform: translateX(-50%);
     transition: left 400ms cubic-bezier(0.25, 0, 0, 1);
-    box-shadow: 0 0 8px rgba(40,24,12,0.4);
+    box-shadow: 0 0 8px rgba(22,21,20,0.4);
   }
   .threshold-labels { display: flex; justify-content: space-between; font-size: 0.62rem; color: var(--text-3); font-family: 'JetBrains Mono', monospace; }
   .stress-state { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-style: italic; transition: color 500ms; margin-top: 0.5rem; }
@@ -110,9 +110,9 @@
   }
   input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none; width: 18px; height: 18px; background: var(--accent); border-radius: 50%;
-    box-shadow: 0 0 0 4px rgba(188,114,80,0.15); transition: box-shadow 200ms;
+    box-shadow: 0 0 0 4px rgba(187,92,77,0.15); transition: box-shadow 200ms;
   }
-  input[type=range]::-webkit-slider-thumb:hover { box-shadow: 0 0 0 6px rgba(188,114,80,0.2); }
+  input[type=range]::-webkit-slider-thumb:hover { box-shadow: 0 0 0 6px rgba(187,92,77,0.2); }
   .ctrl-hint { font-size: 0.68rem; color: var(--text-3); font-weight: 300; }
 
   /* Medication effects */
@@ -333,7 +333,7 @@
 
   <!-- Thomas Young + Intracav Risk Heatmap -->
   <div style="background:var(--text); border-radius:var(--r); padding:2.5rem 3rem; margin-bottom:2rem; position:relative; overflow:hidden;">
-    <div style="position:absolute;top:-80px;right:-80px;width:350px;height:350px;background:radial-gradient(circle,rgba(188,114,80,0.15) 0%,transparent 70%);pointer-events:none;"></div>
+    <div style="position:absolute;top:-80px;right:-80px;width:350px;height:350px;background:radial-gradient(circle,rgba(187,92,77,0.15) 0%,transparent 70%);pointer-events:none;"></div>
     <div style="font-size:0.62rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--accent); margin-bottom:0.75rem;">Intracav · The Product Vision</div>
     <div style="font-family:'Cormorant Garamond',serif; font-size:1.8rem; font-weight:400; color:#F6F0E8; margin-bottom:1.25rem; line-height:1.2;">A risk heatmap on the ultrasound — <em style="color:var(--accent-lt)">before you insert.</em></div>
     <p style="font-size:0.85rem; line-height:1.75; color:#B0A090; font-weight:300; max-width:600px; margin-bottom:2rem;">
@@ -341,7 +341,7 @@
     </p>
     <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1rem;">
       <div style="background:rgba(126,156,132,0.15); border:1px solid rgba(126,156,132,0.25); border-radius:var(--r-sm); padding:1.25rem;">
-        <div style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:#7E9C84; margin-bottom:0.5rem;">τ &lt; 1 Pa</div>
+        <div style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:#527A56; margin-bottom:0.5rem;">τ &lt; 1 Pa</div>
         <div style="font-family:'Cormorant Garamond',serif; font-size:1.1rem; color:#C8E0CA; margin-bottom:0.3rem;">🟢 Optimal</div>
         <div style="font-size:0.75rem; color:#6A8A6E; font-weight:300; line-height:1.5;">Normal endothelial physiology. Proceed with planned gauge and rate.</div>
       </div>
@@ -351,7 +351,7 @@
         <div style="font-size:0.75rem; color:#8A7830; font-weight:300; line-height:1.5;">Reduce rate, dilute medications, or step up to a larger vessel.</div>
       </div>
       <div style="background:rgba(184,112,112,0.12); border:1px solid rgba(184,112,112,0.25); border-radius:var(--r-sm); padding:1.25rem;">
-        <div style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:#B87070; margin-bottom:0.5rem;">&gt; 10 Pa</div>
+        <div style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:#3D6E90; margin-bottom:0.5rem;">&gt; 10 Pa</div>
         <div style="font-family:'Cormorant Garamond',serif; font-size:1.1rem; color:#EBD0D0; margin-bottom:0.3rem;">🔴 Injury Risk</div>
         <div style="font-size:0.75rem; color:#7A5050; font-weight:300; line-height:1.5;">Phlebitis / thrombosis likely. Escalate access or reformulate infusion.</div>
       </div>
@@ -382,9 +382,9 @@ function calcShearStress(Q_mlhr, r_mm, eta_cP) {
 }
 
 function getStressState(tau) {
-  if (tau < 1) return { label: 'Safe — Normal physiology', color: '#7E9C84', risk: 0 };
+  if (tau < 1) return { label: 'Safe — Normal physiology', color: '#527A56', risk: 0 };
   if (tau < 10) return { label: 'Warning — Monitor closely', color: '#C9A84C', risk: (tau - 1) / 9 * 0.33 + 0.1 };
-  if (tau < 40) return { label: 'Injury risk — Phlebitis possible', color: '#B87070', risk: (tau - 10) / 30 * 0.33 + 0.43 };
+  if (tau < 40) return { label: 'Injury risk — Phlebitis possible', color: '#3D6E90', risk: (tau - 10) / 30 * 0.33 + 0.43 };
   return { label: 'Critical — Endothelial damage', color: '#8B3030', risk: Math.min(0.95, 0.76 + (tau - 40) / 200) };
 }
 
@@ -547,7 +547,7 @@ function drawForceCanvas() {
 
   // Vessel wall lines
   const R_px = usableH / 2 * 0.85;
-  fctx.strokeStyle = 'rgba(188,114,80,0.4)'; fctx.lineWidth = 1.5;
+  fctx.strokeStyle = 'rgba(187,92,77,0.4)'; fctx.lineWidth = 1.5;
   fctx.setLineDash([]);
   fctx.beginPath();
   fctx.moveTo(margin, cy - R_px); fctx.lineTo(W - margin/2, cy - R_px);

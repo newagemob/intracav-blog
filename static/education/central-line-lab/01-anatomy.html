@@ -12,8 +12,8 @@
   :root{
     --bg:#EDE4D5;--surface:#F6F0E8;--border:#D4C7B5;--border-lt:#E2D8CC;
     --text:#28180C;--text-2:#685040;--text-3:#9E8272;
-    --accent:#BC7250;--accent-lt:#E8C4A8;--sage:#7E9C84;--rose:#B87070;--gold:#C9A84C;--blue:#4A8ACA;
-    --shadow-sm:0 1px 8px rgba(40,24,12,0.06),0 0 0 1px rgba(40,24,12,0.04);
+    --accent:#BB5C4D;--accent-lt:#E4A89E;--sage:#527A56;--rose:#3D6E90;--gold:#C9A84C;--blue:#9CBDD8;
+    --shadow-sm:0 1px 8px rgba(22,21,20,0.06),0 0 0 1px rgba(22,21,20,0.04);
     --r:16px;--r-sm:10px;
   }
   body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
@@ -131,11 +131,11 @@
       <canvas id="anatCanvas"></canvas>
       <div class="anat-panel">
         <div class="sl" style="margin-bottom:.5rem">Access Sites</div>
-        <button class="site-btn" onclick="selectSite('ij',this)"><div class="site-dot" style="background:#4A8ACA"></div>Internal Jugular (IJ)</button>
-        <button class="site-btn" onclick="selectSite('subclavian',this)"><div class="site-dot" style="background:#BC7250"></div>Subclavian</button>
+        <button class="site-btn" onclick="selectSite('ij',this)"><div class="site-dot" style="background:#9CBDD8"></div>Internal Jugular (IJ)</button>
+        <button class="site-btn" onclick="selectSite('subclavian',this)"><div class="site-dot" style="background:#BB5C4D"></div>Subclavian</button>
         <button class="site-btn" onclick="selectSite('femoral',this)"><div class="site-dot" style="background:#C9A84C"></div>Femoral</button>
-        <button class="site-btn" onclick="selectSite('basilic',this)"><div class="site-dot" style="background:#7E9C84"></div>Basilic (PICC)</button>
-        <button class="site-btn" onclick="selectSite('brachial',this)"><div class="site-dot" style="background:#B87070"></div>Brachial (PICC)</button>
+        <button class="site-btn" onclick="selectSite('basilic',this)"><div class="site-dot" style="background:#527A56"></div>Basilic (PICC)</button>
+        <button class="site-btn" onclick="selectSite('brachial',this)"><div class="site-dot" style="background:#3D6E90"></div>Brachial (PICC)</button>
 
         <div class="site-info show" id="siteInfo">
           <div class="si-name" id="siName">← Select a site</div>
@@ -243,7 +243,7 @@
       <div class="tl-year">1953</div><div class="tl-dot" style="background:var(--accent)"></div>
       <div><div class="tl-title">Seldinger's Wire Exchange — The Technique That Changed Everything</div>
       <p class="tl-desc">Swedish radiologist Sven-Ivar Seldinger published a one-page paper describing access via a hollow needle, insertion of a flexible guidewire, removal of the needle over the wire, and threading of a catheter over the wire. The simplicity was radical: you no longer needed to thread a catheter through the same needle that punctured the vessel. Seventy years later, every central line uses this technique unchanged.</p>
-      <span class="tl-tag" style="background:rgba(188,114,80,0.15);color:var(--accent)">Paradigm Shift</span></div>
+      <span class="tl-tag" style="background:rgba(187,92,77,0.15);color:var(--accent)">Paradigm Shift</span></div>
     </div>
     <div class="tl-item">
       <div class="tl-year">1962</div><div class="tl-dot" style="background:var(--blue)"></div>
@@ -275,14 +275,14 @@
 
 <script>
 const SITES = {
-  ij:{name:'Internal Jugular Vein',color:'#4A8ACA',cx:.55,cy:.17,rows:[
+  ij:{name:'Internal Jugular Vein',color:'#9CBDD8',cx:.55,cy:.17,rows:[
     ['Approach','Anterior / central / posterior'],['Needle angle','45° to skin, aim for ipsilateral nipple'],
     ['Depth to vein','1–3 cm'],['Compressible','Yes — confirms vein vs artery'],
     ['Pneumothorax risk','<0.5% with ultrasound'],['DVT risk','Low'],
     ['CLABSI risk','Low-Moderate'],['US-guided standard','Yes (NICE mandated)'],
     ['Adjacent structures','Carotid artery (medial), vagus nerve, brachial plexus'],
   ]},
-  subclavian:{name:'Subclavian Vein',color:'#BC7250',cx:.43,cy:.22,rows:[
+  subclavian:{name:'Subclavian Vein',color:'#BB5C4D',cx:.43,cy:.22,rows:[
     ['Approach','Infraclavicular (most common)'],['Needle angle','15° below horizontal, aim for sternal notch'],
     ['Depth to vein','1–4 cm'],['Compressible','No — clavicle blocks US'],
     ['Pneumothorax risk','1–3% landmark; <0.5% US-guided supraclavicular'],['DVT risk','Low'],
@@ -296,13 +296,13 @@ const SITES = {
     ['CLABSI risk','Highest of all sites'],['Tip position','Inferior vena cava'],
     ['Adjacent structures','Femoral artery (lateral), femoral nerve (lateral to artery)'],
   ]},
-  basilic:{name:'Basilic Vein (PICC)',color:'#7E9C84',cx:.8,cy:.48,rows:[
+  basilic:{name:'Basilic Vein (PICC)',color:'#527A56',cx:.8,cy:.48,rows:[
     ['Approach','Medial upper arm, ultrasound guided'],['Preferred for PICC?','Yes — largest, straightest path'],
     ['Depth to skin','0.5–1.5 cm'],['Diameter','3–8 mm (increases with tourniquet)'],
     ['Path to SVC','Basilic → axillary → subclavian → SVC'],['PICC length (adult)','45–55 cm'],
     ['Nerve risk','Medial cutaneous nerve (superficial, minimal)'],['DVT risk','5–14% (PICC-associated)'],
   ]},
-  brachial:{name:'Brachial Vein (PICC)',color:'#B87070',cx:.78,cy:.42,rows:[
+  brachial:{name:'Brachial Vein (PICC)',color:'#3D6E90',cx:.78,cy:.42,rows:[
     ['Approach','Paired veins, medial aspect of upper arm'],['Preferred for PICC?','Second choice to basilic'],
     ['Depth to skin','1–2.5 cm'],['Diameter','3–6 mm (paired)'],
     ['Nerve risk','Median nerve runs alongside — high if inadvertent needle pass'],['DVT risk','Higher than basilic'],
@@ -409,7 +409,7 @@ function drawAnat(){
   }
 
   // SVC (central target)
-  const svcColor='#BC7250';
+  const svcColor='#BB5C4D';
   ctx.beginPath();
   ctx.moveTo(W*.5,H*.19);ctx.lineTo(W*.5,H*.29);
   ctx.strokeStyle=svcColor+'44';ctx.lineWidth=14;ctx.stroke();
@@ -418,9 +418,9 @@ function drawAnat(){
   // SVC pulsing glow
   const svcGlow=Math.sin(aT*3)*0.15+0.35;
   const g=ctx.createRadialGradient(W*.5,H*.245,0,W*.5,H*.245,W*.06);
-  g.addColorStop(0,`rgba(188,114,80,${svcGlow})`);g.addColorStop(1,'transparent');
+  g.addColorStop(0,`rgba(187,92,77,${svcGlow})`);g.addColorStop(1,'transparent');
   ctx.fillStyle=g;ctx.fillRect(W*.4,H*.19,W*.2,H*.1);
-  ctx.fillStyle='rgba(188,114,80,0.7)';ctx.font='500 9px Nunito';ctx.textAlign='center';
+  ctx.fillStyle='rgba(187,92,77,0.7)';ctx.font='500 9px Nunito';ctx.textAlign='center';
   ctx.fillText('SVC',W*.5,H*.19-6);
   ctx.fillText('CAJ ▼',W*.5,H*.3+12);
 
@@ -433,36 +433,36 @@ function drawAnat(){
 
   // Left IJ
   const ijPoints=[[.51,.15],[.52,.19]];
-  drawVein(ijPoints,'#4A8ACA',4,'IJ');
+  drawVein(ijPoints,'#9CBDD8',4,'IJ');
   // Right IJ
   ctx.beginPath();ctx.moveTo(W*.49,H*.15);ctx.lineTo(W*.48,H*.19);
-  ctx.strokeStyle='#4A8ACA55';ctx.lineWidth=7;ctx.stroke();
-  ctx.strokeStyle='#4A8ACA';ctx.lineWidth=3;ctx.stroke();
+  ctx.strokeStyle='#9CBDD855';ctx.lineWidth=7;ctx.stroke();
+  ctx.strokeStyle='#9CBDD8';ctx.lineWidth=3;ctx.stroke();
 
   // Left subclavian → SVC
   ctx.beginPath();ctx.moveTo(W*.38,H*.21);ctx.bezierCurveTo(W*.42,H*.21,W*.46,H*.2,W*.5,H*.2);
-  ctx.strokeStyle='#BC7250AA';ctx.lineWidth=5;ctx.stroke();
-  ctx.strokeStyle='#BC7250';ctx.lineWidth=3;ctx.stroke();
-  ctx.fillStyle='rgba(188,114,80,0.6)';ctx.font='8px Nunito';ctx.textAlign='right';
+  ctx.strokeStyle='#BB5C4DAA';ctx.lineWidth=5;ctx.stroke();
+  ctx.strokeStyle='#BB5C4D';ctx.lineWidth=3;ctx.stroke();
+  ctx.fillStyle='rgba(187,92,77,0.6)';ctx.font='8px Nunito';ctx.textAlign='right';
   ctx.fillText('Subclavian',W*.37,H*.19);
 
   // Brachiocephalic veins
   ctx.beginPath();ctx.moveTo(W*.62,H*.21);ctx.bezierCurveTo(W*.56,H*.21,W*.52,H*.2,W*.5,H*.2);
-  ctx.strokeStyle='#BC725066';ctx.lineWidth=5;ctx.stroke();
-  ctx.strokeStyle='#BC7250';ctx.lineWidth=3;ctx.stroke();
+  ctx.strokeStyle='#BB5C4D66';ctx.lineWidth=5;ctx.stroke();
+  ctx.strokeStyle='#BB5C4D';ctx.lineWidth=3;ctx.stroke();
 
   // Basilic vein right arm
   ctx.beginPath();ctx.moveTo(W*.8,H*.48);ctx.bezierCurveTo(W*.79,H*.36,W*.75,H*.28,W*.66,H*.22);
   ctx.bezierCurveTo(W*.6,H*.19,W*.54,H*.19,W*.5,H*.2);
-  ctx.strokeStyle='#7E9C8433';ctx.lineWidth=7;ctx.stroke();
-  ctx.strokeStyle='#7E9C84AA';ctx.lineWidth=3;ctx.stroke();
+  ctx.strokeStyle='#527A5633';ctx.lineWidth=7;ctx.stroke();
+  ctx.strokeStyle='#527A56AA';ctx.lineWidth=3;ctx.stroke();
   ctx.fillStyle='rgba(126,156,132,0.6)';ctx.font='8px Nunito';ctx.textAlign='left';
   ctx.fillText('Basilic',W*.82,H*.48);
 
   // Brachial vein
   ctx.beginPath();ctx.moveTo(W*.78,H*.42);ctx.bezierCurveTo(W*.77,H*.32,W*.72,H*.26,W*.65,H*.22);
-  ctx.strokeStyle='#B8707044';ctx.lineWidth=5;ctx.stroke();
-  ctx.strokeStyle='#B87070AA';ctx.lineWidth=2;ctx.stroke();
+  ctx.strokeStyle='#3D6E9044';ctx.lineWidth=5;ctx.stroke();
+  ctx.strokeStyle='#3D6E90AA';ctx.lineWidth=2;ctx.stroke();
 
   // Femoral vein
   ctx.beginPath();ctx.moveTo(W*.52,H*.82);ctx.bezierCurveTo(W*.52,H*.72,W*.51,H*.6,W*.51,H*.5);
@@ -486,10 +486,10 @@ function drawAnat(){
   const ij_path=[[.51,.15],[.51,.18],[.5,.19],[.5,.22]];
   const bas_path=[[.8,.48],[.78,.36],[.74,.28],[.66,.22],[.58,.2],[.5,.2]];
   const fem_path=[[.52,.82],[.52,.7],[.51,.55],[.51,.42],[.5,.35],[.5,.3]];
-  flowParticle(ij_path,'#4A8ACA',aT*.4);
-  flowParticle(ij_path,'#4A8ACA',(aT*.4+.5)%1);
-  flowParticle(bas_path,'#7E9C84',aT*.25);
-  flowParticle(bas_path,'#7E9C84',(aT*.25+.5)%1);
+  flowParticle(ij_path,'#9CBDD8',aT*.4);
+  flowParticle(ij_path,'#9CBDD8',(aT*.4+.5)%1);
+  flowParticle(bas_path,'#527A56',aT*.25);
+  flowParticle(bas_path,'#527A56',(aT*.25+.5)%1);
   flowParticle(fem_path,'#C9A84C',aT*.35);
 
   // Highlighted site dot
