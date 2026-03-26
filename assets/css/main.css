@@ -3066,12 +3066,21 @@ body.mobile-menu-open {
   background-color: var(--_accent-bg);
 }
 
+/* ── Group Container ────────────────────────────────────────────────────── */
+
+.featured-home-group {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
 /* ── Banner ────────────────────────────────────────────────────────────── */
 
 .featured-banner {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: var(--space-8) var(--space-6) 0;
+  max-width: none;
 }
 
 .featured-banner-inner {
@@ -3270,7 +3279,7 @@ body.mobile-menu-open {
     text-align: left;
   }
 
-  .featured-banner {
+  .featured-home-group {
     padding: 0 var(--space-4);
   }
 

@@ -12,22 +12,18 @@
 # Best for a single high-priority feature with description and multiple links.
 banner:
   enabled: true
-  eyebrow: "New Guidelines"
-  title: "Surviving Sepsis Campaign 2026"
+  eyebrow: "2026 Guidelines"
+  title: "AVA Clinical Practice Guidelines"
   description: >-
-    The SSC international guidelines for adult and pediatric sepsis
-    management are now available — 129 adult and 61 pediatric
-    recommendations across screening, antimicrobials, hemodynamics,
-    respiratory support, and more. Both guideline sets have been added to
-    the [Lumen](https://lumen.intracav.ai) knowledge base for
-    AI-assisted clinical reference.
-  accent: "info"
+    The Association for Vascular Access 2026 adult clinical practice
+    guidelines are now hosted on The Clinical Database — the complete
+    JAVA January Supplement covering evidence-based recommendations for
+    vascular access practice. Available in the
+    [Lumen](https://lumen.intracav.ai) knowledge base.
+  accent: "success"
   links:
-    - label: "Adult Guidelines"
-      url: "/icu/guidelines/surviving-sepsis-campaign-2026/"
-      style: "primary"
-    - label: "Pediatric Guidelines"
-      url: "/icu/guidelines/surviving-sepsis-campaign-children-2026/"
+    - label: "Read Guidelines"
+      url: "/vascular-access/guidelines/ava-clinical-practice-guidelines/"
       style: "primary"
     - label: "Ask Lumen"
       url: "https://lumen.intracav.ai"
@@ -51,9 +47,9 @@ strip:
 # Included on the homepage above the standard article cards.
 highlight:
   enabled: true
-  eyebrow: "Featured Guideline"
+  eyebrow: "New Guidelines"
   title: "Surviving Sepsis Campaign 2026"
-  description: "129 evidence-based recommendations for management of sepsis and septic shock in adults — the most comprehensive SSC update since 2021."
+  description: "The SSC international guidelines for adult and pediatric sepsis management — 129 adult and 61 pediatric evidence-based recommendations across screening, antimicrobials, hemodynamics, respiratory support, and more."
   url: "/icu/guidelines/surviving-sepsis-campaign-2026/"
   accent: "info"
   secondary:
