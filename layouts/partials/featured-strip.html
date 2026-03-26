@@ -1,0 +1,35 @@
+{{- /*
+  FEATURED STRIP
+  Thin, dismissible notification bar at the top of the page.
+  Reads from data/featured.yaml → strip.
+
+  Usage (in any template, typically in baseof.html or handbook-header.html):
+    {{ partial "featured-strip" . }}
+
+  Dismissal is persisted to sessionStorage so it stays hidden for the browser session.
+*/ -}}
+
+{{- with site.Data.featured.strip -}}
+{{- if .enabled -}}
+{{- $accent := .accent | default "info" -}}
+{{- $dismissible := .dismissible | default true -}}
+<div class="featured-strip featured-strip--{{ $accent }}" id="featured-strip" role="banner">
+  <div class="featured-strip-inner">
+    <p class="featured-strip-text">
+      {{ .text }}
+      {{- if .link_url }}
+      <a href="{{ .link_url }}" class="featured-strip-link">{{ .link_label | default "Learn more" }} →</a>
+      {{- end }}
+    </p>
+    {{- if $dismissible }}
+    <button class="featured-strip-dismiss" aria-label="Dismiss notification" onclick="this.closest('.featured-strip').remove();try{sessionStorage.setItem('featured-strip-dismissed','1')}catch(e){}">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
+    {{- end }}
+  </div>
+</div>
+{{- if $dismissible }}
+<script>try{if(sessionStorage.getItem('featured-strip-dismissed')==='1'){document.getElementById('featured-strip').remove()}}catch(e){}</script>
+{{- end }}
+{{- end -}}
+{{- end -}}

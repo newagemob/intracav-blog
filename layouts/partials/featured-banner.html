@@ -1,0 +1,43 @@
+{{- /*
+  FEATURED BANNER
+  Data-driven horizontal announcement banner.
+  Reads from data/featured.yaml → banner.
+
+  Usage (in any template):
+    {{ partial "featured-banner" . }}
+
+  Accent variants: "info" (smoky blue), "success" (palace green), "primary" (tandoori)
+*/ -}}
+
+{{- with site.Data.featured.banner -}}
+{{- if .enabled -}}
+{{- $accent := .accent | default "info" -}}
+<div class="featured-banner featured-banner--{{ $accent }}">
+  <div class="featured-banner-inner">
+    <div class="featured-banner-content">
+      <span class="featured-banner-eyebrow">{{ .eyebrow }}</span>
+      <h3 class="featured-banner-title">{{ .title }}</h3>
+      <p class="featured-banner-text">{{ .description | markdownify }}</p>
+    </div>
+    {{- if .links }}
+    <div class="featured-banner-actions">
+      {{- range .links }}
+      {{- $external := .external | default false }}
+      {{- $icon := .icon | default "arrow" }}
+      <a href="{{ .url }}" class="featured-banner-link featured-banner-link--{{ .style | default "primary" }}"{{ if $external }} target="_blank" rel="noopener noreferrer"{{ end }}>
+        <span>{{ .label }}</span>
+        {{- if eq $icon "chat" }}
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+        {{- else if eq $icon "external" }}
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+        {{- else }}
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        {{- end }}
+      </a>
+      {{- end }}
+    </div>
+    {{- end }}
+  </div>
+</div>
+{{- end -}}
+{{- end -}}

@@ -1,0 +1,61 @@
+# ==========================================================================
+#  FEATURED CONTENT CONFIGURATION
+#  Controls the announcement components on the landing page.
+#  To feature new guidelines: update the fields below — no template edits needed.
+#
+#  Accent options: "info" (smoky blue), "success" (palace green), "primary" (tandoori)
+#  Icon options for links: "arrow" (default), "chat", "external"
+# ==========================================================================
+
+# ── Banner ────────────────────────────────────────────────────────────────
+# Detailed horizontal announcement below the hero section.
+# Best for a single high-priority feature with description and multiple links.
+banner:
+  enabled: true
+  eyebrow: "New Guidelines"
+  title: "Surviving Sepsis Campaign 2026"
+  description: >-
+    The SSC international guidelines for adult and pediatric sepsis
+    management are now available — 129 adult and 61 pediatric
+    recommendations across screening, antimicrobials, hemodynamics,
+    respiratory support, and more. Both guideline sets have been added to
+    the [Lumen](https://lumen.intracav.ai) knowledge base for
+    AI-assisted clinical reference.
+  accent: "info"
+  links:
+    - label: "Adult Guidelines"
+      url: "/icu/guidelines/surviving-sepsis-campaign-2026/"
+      style: "primary"
+    - label: "Pediatric Guidelines"
+      url: "/icu/guidelines/surviving-sepsis-campaign-children-2026/"
+      style: "primary"
+    - label: "Ask Lumen"
+      url: "https://lumen.intracav.ai"
+      style: "lumen"
+      external: true
+      icon: "chat"
+
+# ── Strip ─────────────────────────────────────────────────────────────────
+# Thin top-of-page notification bar. Dismissible via JS (stored in sessionStorage).
+# Best for brief, time-sensitive awareness across all pages.
+strip:
+  enabled: true
+  text: "SSC 2026 Guidelines now available — 129 adult & 61 pediatric recommendations"
+  link_label: "View guidelines"
+  link_url: "/icu/guidelines/surviving-sepsis-campaign-2026/"
+  accent: "info"
+  dismissible: true
+
+# ── Highlight Card ────────────────────────────────────────────────────────
+# Elevated card that can be inserted into any article grid to draw attention.
+# Included on the homepage above the standard article cards.
+highlight:
+  enabled: true
+  eyebrow: "Featured Guideline"
+  title: "Surviving Sepsis Campaign 2026"
+  description: "129 evidence-based recommendations for management of sepsis and septic shock in adults — the most comprehensive SSC update since 2021."
+  url: "/icu/guidelines/surviving-sepsis-campaign-2026/"
+  accent: "info"
+  secondary:
+    label: "Pediatric Guidelines"
+    url: "/icu/guidelines/surviving-sepsis-campaign-children-2026/"

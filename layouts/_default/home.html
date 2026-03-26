@@ -46,35 +46,16 @@
     </div>
   </section>
 
-  {{- /* Surviving Sepsis Campaign 2026 Announcement Banner */ -}}
-  <div class="ssc-banner">
-    <div class="ssc-banner-inner">
-      <div class="ssc-banner-content">
-        <span class="ssc-banner-eyebrow">New Guidelines</span>
-        <h3 class="ssc-banner-title">Surviving Sepsis Campaign 2026</h3>
-        <p class="ssc-banner-text">The SSC international guidelines for adult and pediatric sepsis management are now available — 129 adult and 61 pediatric recommendations across screening, antimicrobials, hemodynamics, respiratory support, and more. Both guideline sets have been added to the <a href="https://lumen.intracav.ai" target="_blank" rel="noopener noreferrer">Lumen</a> knowledge base for AI-assisted clinical reference.</p>
-      </div>
-      <div class="ssc-banner-actions">
-        <a href="/icu/guidelines/surviving-sepsis-campaign-2026/" class="ssc-banner-link ssc-banner-link--primary">
-          <span>Adult Guidelines</span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-        </a>
-        <a href="/icu/guidelines/surviving-sepsis-campaign-children-2026/" class="ssc-banner-link ssc-banner-link--primary">
-          <span>Pediatric Guidelines</span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-        </a>
-        <a href="https://lumen.intracav.ai" class="ssc-banner-link ssc-banner-link--lumen" target="_blank" rel="noopener noreferrer">
-          <span>Ask Lumen</span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-        </a>
-      </div>
-    </div>
-  </div>
+  {{- /* Featured Banner — driven by data/featured.yaml */ -}}
+  {{- partial "featured-banner" . -}}
 
   {{- $policies := where site.RegularPages "Params.content_type" "policies" }}
   {{- $blog := where site.RegularPages "Section" "blog" }}
 
   <div class="handbook-home-sections">
+    {{- /* Featured Highlight Card — driven by data/featured.yaml */ -}}
+    {{- partial "featured-highlight" . -}}
+
     {{- if $policies }}
     <section class="handbook-home-section">
       <div class="handbook-section-header">
