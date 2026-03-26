@@ -3069,9 +3069,9 @@ body.mobile-menu-open {
 /* ── Banner ────────────────────────────────────────────────────────────── */
 
 .featured-banner {
-  max-width: var(--layout-max);
+  max-width: 900px;
   margin: 0 auto;
-  padding: 0 var(--space-6);
+  padding: var(--space-8) var(--space-6) 0;
 }
 
 .featured-banner-inner {
@@ -3092,7 +3092,7 @@ body.mobile-menu-open {
 }
 
 .featured-banner-eyebrow {
-  display: inline-block;
+  display: block;
   font-family: var(--font-mono);
   font-size: 0.62rem;
   font-weight: 500;
@@ -3174,13 +3174,14 @@ body.mobile-menu-open {
 /* ── Highlight Card ────────────────────────────────────────────────────── */
 
 .featured-highlight {
-  display: flex;
+  display: block;
   text-decoration: none;
   color: inherit;
   background-color: var(--color-neutral-50);
   border: 1px solid var(--color-border-subtle);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
+  border-left: 3px solid var(--_accent);
+  border-radius: var(--radius-sm);
+  padding: var(--space-6) var(--space-8);
   transition: box-shadow var(--transition-base), transform var(--transition-base);
   cursor: pointer;
 }
@@ -3190,19 +3191,8 @@ body.mobile-menu-open {
   transform: translateY(-2px);
 }
 
-.featured-highlight-accent {
-  width: 4px;
-  flex-shrink: 0;
-  background-color: var(--_accent);
-}
-
-.featured-highlight-content {
-  flex: 1;
-  padding: var(--space-6) var(--space-8);
-}
-
 .featured-highlight-eyebrow {
-  display: inline-block;
+  display: block;
   font-family: var(--font-mono);
   font-size: 0.62rem;
   font-weight: 500;
@@ -3296,7 +3286,7 @@ body.mobile-menu-open {
     gap: var(--space-3);
   }
 
-  .featured-highlight-content {
+  .featured-highlight {
     padding: var(--space-5);
   }
 
