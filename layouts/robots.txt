@@ -1,6 +1,9 @@
+User-agent: LumenCrawler
+Allow: /
+
 User-agent: *
 Disallow: /admin/
 Disallow: /api/
 Allow: /
 
-Sitemap: {{ .Site.BaseURL }}/sitemap.xml
+Sitemap: {{ .Site.BaseURL | strings.TrimSuffix "/" }}/sitemap.xml

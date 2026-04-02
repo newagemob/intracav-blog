@@ -1,0 +1,35 @@
+# Static education module URLs to include in sitemap.
+# These live in static/education/ and are not Hugo content pages,
+# so they must be listed here to appear in the generated sitemap.xml.
+
+modules:
+  - /education/clinician-ai-guide.html
+  # The Vascular Lab (Vol. I)
+  - /education/vascular-lab/
+  - /education/vascular-lab/01-flow-dynamics.html
+  - /education/vascular-lab/02-resistance-networks.html
+  - /education/vascular-lab/03-turbulence.html
+  - /education/vascular-lab/04-shear-stress.html
+  - /education/vascular-lab/05-probability.html
+  # The Ultrasound Lab (Vol. II)
+  - /education/ultrasound-lab/
+  - /education/ultrasound-lab/01-wave-propagation.html
+  - /education/ultrasound-lab/02-echo-mapping.html
+  - /education/ultrasound-lab/03-beamforming.html
+  - /education/ultrasound-lab/04-doppler.html
+  - /education/ultrasound-lab/05-slice-geometry.html
+  - /education/ultrasound-lab/06-dimensional-pipeline.html
+  # The Catheter Lab (Vol. III)
+  - /education/catheter-lab/
+  - /education/catheter-lab/01-reflux.html
+  - /education/catheter-lab/02-blood-draw.html
+  - /education/catheter-lab/03-medication-surge.html
+  - /education/catheter-lab/04-barotrauma.html
+  # The Central Line Lab (Vol. IV)
+  - /education/central-line-lab/
+  - /education/central-line-lab/01-anatomy.html
+  - /education/central-line-lab/02-picc.html
+  - /education/central-line-lab/03-insertion.html
+  - /education/central-line-lab/04-tip-position.html
+  - /education/central-line-lab/05-complications.html
+  - /education/central-line-lab/06-cvp-monitoring.html
